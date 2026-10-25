@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Styleguide — Learning Spanish with Penguin</title>
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/theme.css">
+<style>
+  /* styleguide chrome only (not part of the design system) */
+  .sg-section { margin: 40px 0; }
+  .sg-section > h2 { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; border-bottom: 2px dashed var(--line); padding-bottom: 6px; margin-bottom: 18px; }
+  .sg-section > h2 code { font-size: 0.8rem; font-weight: 600; color: var(--ink-soft); }
+  .sg-note { font-size: 0.92rem; color: var(--ink-soft); margin: -8px 0 16px; }
+  .sg-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
+  .swatch { border-radius: 14px; overflow: hidden; border: 1px solid var(--line); background: var(--surface); box-shadow: var(--shadow-sm); }
+  .swatch .sw { height: 64px; display: flex; align-items: flex-end; padding: 8px 10px; font-weight: 800; font-size: 0.95rem; }
+  .swatch .sw.light { color: var(--ink); } .swatch .sw.dark { color: #fff; }
+  .swatch .meta { padding: 8px 10px; font-size: 0.8rem; color: var(--ink-soft); line-height: 1.35; }
+  .swatch .meta b { color: var(--ink); display: block; }
+  .moods { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 16px; }
+  .mood { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px; text-align: center; box-shadow: var(--shadow-sm); }
+  .mood .sizes { display: flex; align-items: flex-end; justify-content: center; gap: 10px; min-height: 206px; }
+  .mood .lbl { font-family: var(--font-display); font-weight: 600; margin-top: 8px; }
+  .mood .lbl small { display: block; font-family: var(--font-body); color: var(--ink-soft); font-weight: 600; }
+  .demo { padding: 20px; border: 1px dashed var(--line); border-radius: var(--radius); background: rgba(255,255,255,0.4); }
+  .demo + .demo { margin-top: 14px; }
+  .phone { width: 360px; max-width: 100%; margin: 0 auto; border: 10px solid #2A2E45; border-radius: 34px; overflow: hidden; background: var(--bg); box-shadow: var(--shadow-lg); }
+  .phone .app-header { position: static; }
+  .phone .page { padding: 16px 16px 24px; }
+  .two { display: grid; grid-template-columns: 1fr; gap: 24px; align-items: start; }
+  @media (min-width: 860px) { .two { grid-template-columns: 1fr 1fr; } }
+  .type-sample { display: grid; gap: 8px; }
+  .type-sample .row { gap: 16px; }
+  .type-sample .lbl { font-size: 0.78rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-soft); min-width: 120px; }
+  .sg-toc { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; }
+  .sg-toc a { font-size: 0.9rem; padding: 4px 10px; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); text-decoration: none; color: var(--talavera-deep); font-weight: 700; }
+</style>
+</head>
+<body>
+
+<header class="app-header">
+  <a class="brand" href="#" id="brand-avatar">
+    <span class="brand-text">Penguin Spanish<span class="brand-sub">con Penguin · a México</span></span>
+  </a>
+  <nav class="nav" aria-label="Main">
+    <a href="#" class="active">Today</a>
+    <a href="#">Course</a>
+    <a href="#">Words</a>
+    <a href="#">Sounds</a>
+    <a href="#">Grammar</a>
+  </nav>
+</header>
+<div class="papel-picado" aria-hidden="true"></div>
+
+<main class="page">
+  <ul class="crumbs"><li><a href="#">Design</a></li><li class="current">Styleguide</li></ul>
+  <h1 class="page-title">Styleguide</h1>
+  <p class="lead">Every token, component and penguin mood on one page. Loads <code>css/theme.css</code> and <code>js/penguin.js</code> only — no network, no build step.</p>
+  <div class="sg-toc">
+    <a href="#penguin">Penguin</a><a href="#palette">Palette</a><a href="#type">Type</a><a href="#buttons">Buttons</a><a href="#cards">Cards</a><a href="#map">Course map</a><a href="#words">Words</a><a href="#drills">Drills</a><a href="#feedback">Feedback</a><a href="#coach">Coach</a><a href="#explain">Explain</a><a href="#screens">Mock screens</a>
+  </div>
+
+  <!-- ============ PENGUIN ============ -->
+  <section class="sg-section" id="penguin">
+    <h2>Penguin, the mascot <code>Penguin.svg(mood, size)</code></h2>
+    <p class="sg-note">All 8 moods at 40 / 120 / 200 px, built from shared parts. Penguins inside <code>.penguin-coach</code> get a gentle idle bob; wave/cheer/sleepy/thinking/proud/oops have small CSS animations (all off under <code>prefers-reduced-motion</code>).</p>
+    <div class="moods" id="moods"></div>
+  </section>
+
+  <!-- ============ PALETTE ============ -->
+  <section class="sg-section" id="palette">
+    <h2>Palette <code>:root tokens</code></h2>
+    <p class="sg-note">Contrast ratios are WCAG 2.x against the surface named. All body text pairs ≥ 4.5:1.</p>
+    <div class="sg-grid" id="swatches"></div>
+  </section>
+
+  <!-- ============ TYPE ============ -->
+  <section class="sg-section" id="type">
+    <h2>Typography <code>--font-display / --font-body</code></h2>
+    <div class="card type-sample">
+      <div class="row"><span class="lbl">Display · Fredoka</span><span style="font-family:var(--font-display);font-size:2rem;font-weight:600">¡Órale! ¿Qué onda, güey? Ñandú</span></div>
+      <div class="row"><span class="lbl">Body · Nunito</span><span>El camión sale a las ocho y media. ¿Mande? Ahorita vengo. ¡No pasa nada! áéíóú ñ ü ¿¡</span></div>
+      <div class="row"><span class="lbl">Body italic</span><span><em>Mi casa es tu casa.</em> — careful speed vs. natural speed</span></div>
+      <div class="row"><span class="lbl">Weights</span><span style="font-weight:400">400 regular</span><span style="font-weight:600">600 semibold</span><span style="font-weight:800">800 extrabold</span></div>
+      <div class="row"><span class="lbl">Headings</span><div><h1 style="margin:0">H1 Survival basics</h1><h2 style="margin:0">H2 Hello &amp; please</h2><h3 style="margin:0">H3 Masculine &amp; feminine</h3></div></div>
+      <div class="row"><span class="lbl">Inline</span><span>Use <code>¿mande?</code> instead of <code>¿qué?</code> · press <kbd>Enter</kbd> to check · <a href="#">a link</a> · <strong>strong</strong></span></div>
+    </div>
+  </section>
+
+  <!-- ============ BUTTONS ============ -->
+  <section class="sg-section" id="buttons">
+    <h2>Buttons <code>.btn .btn-primary .btn-secondary .btn-ghost .btn-big [disabled]</code></h2>
+    <div class="demo">
+      <div class="btn-row">
+        <button class="btn btn-primary">Check answer</button>
+        <button class="btn btn-secondary">Skip</button>
+        <button class="btn btn-ghost">Show hint</button>
+        <button class="btn">Default</button>
+        <button class="btn btn-accent">Rosa accent</button>
+        <button class="btn btn-good">Jade</button>
+        <button class="btn btn-primary" disabled>Disabled</button>
+        <button class="btn btn-sm btn-secondary">Small</button>
+        <button class="btn btn-icon btn-secondary" aria-label="Settings">⚙</button>
+      </div>
+    </div>
+    <div class="demo center">
+      <button class="btn btn-big">Continue</button>
+      <p class="sg-note" style="margin-top:12px">The giant Continue. Variants: <code>.btn-big.btn-accent</code>, <code>.btn-big.btn-good</code>, <code>.btn-big.btn-secondary</code>, <code>.btn-big[disabled]</code>.</p>
+      <div class="btn-row center"><button class="btn btn-big btn-good" style="max-width:220px">¡Listo!</button><button class="btn btn-big btn-secondary" style="max-width:220px">Not yet</button><button class="btn btn-big" style="max-width:220px" disabled>Continue</button></div>
+    </div>
+    <div class="demo">
+      <h4>Audio buttons <code>.audio-btn .slow .fast .playing</code></h4>
+      <div class="audio-row">
+        <button class="audio-btn">Listen</button>
+        <button class="audio-btn slow">Slow</button>
+        <button class="audio-btn fast">Natural</button>
+        <button class="audio-btn" aria-label="Play"></button>
+        <button class="audio-btn playing">Playing…</button>
+        <button class="audio-btn fast playing">pa' que</button>
+      </div>
+    </div>
+    <div class="demo">
+      <h4>Accent keys (helper) <code>.accent-keys</code></h4>
+      <div class="accent-keys"><button class="btn">á</button><button class="btn">é</button><button class="btn">í</button><button class="btn">ó</button><button class="btn">ú</button><button class="btn">ñ</button><button class="btn">¿</button><button class="btn">¡</button></div>
+    </div>
+  </section>
+
+  <!-- ============ CARDS ============ -->
+  <section class="sg-section" id="cards">
+    <h2>Cards, progress, chips, stats, countdown <code>.card .card-hero .card-grid .progress-bar .chip .tag .stat .countdown</code></h2>
+    <div class="card-hero stack">
+      <div class="row" style="justify-content:space-between">
+        <div>
+          <h2 style="margin:0">¡Buenos días!</h2>
+          <p class="lead" style="margin:0">Today: 12 new words · 30 reviews · 1 grammar bite</p>
+        </div>
+        <div class="countdown"><span class="num" id="cd-num">5</span><span class="label"><strong>days to Mexico</strong>Oct 30 · CDMX</span></div>
+      </div>
+      <div class="progress-bar" aria-label="Daily goal"><span class="fill" style="width:62%"></span></div>
+      <div class="btn-row"><button class="btn btn-big" style="max-width:320px">Continue lesson</button><button class="btn btn-ghost">Review only</button></div>
+    </div>
+    <div class="card-grid" style="margin-top:16px">
+      <div class="card"><h3>Plain card</h3><p>Body copy inside a card. <span class="chip">chip</span> <span class="tag">tag</span> <span class="tag topic">food</span> <span class="tag tier">tier 1</span> <span class="tag mx">MX</span></p></div>
+      <div class="card"><h3>Progress bars</h3>
+        <div class="stack">
+          <div class="progress-bar"><span class="fill" style="width:35%"></span></div>
+          <div class="progress-bar good"><span class="fill" style="width:80%"></span></div>
+          <div class="progress-bar accent thin"><span class="fill" style="width:55%"></span></div>
+          <div class="progress-bar marigold thin"><span class="fill" style="width:20%"></span></div>
+        </div>
+      </div>
+      <div class="card"><h3>Gender chips</h3>
+        <p>Always the same two colours + letter badge: <span class="chip m">el carro</span> <span class="chip f">la casa</span> <span class="chip mf">el/la estudiante</span></p>
+        <p>Outcome chips: <span class="chip good">good</span> <span class="chip close">close</span> <span class="chip miss">miss</span> <span class="chip primary">new</span> <span class="chip accent">due</span> <span class="chip marigold">streak 5</span></p>
+      </div>
+    </div>
+    <div class="stat-row" style="margin-top:16px">
+      <div class="stat"><span class="num">184</span><span class="label">words known</span></div>
+      <div class="stat good"><span class="num">92%</span><span class="label">recall today</span></div>
+      <div class="stat accent"><span class="num">7</span><span class="label">day streak</span></div>
+      <div class="stat marigold"><span class="num">31</span><span class="label">due now</span></div>
+    </div>
+  </section>
+
+  <!-- ============ COURSE MAP ============ -->
+  <section class="sg-section" id="map">
+    <h2>Course map <code>.lesson-path .node .done .current .locked</code></h2>
+    <p class="sg-note">Each <code>.node</code> is the clickable row (button or link); the circle badge and number are generated. Optional <code>.unit-title</code> rows and <code>.sub</code>/<code>.meta</code> children.</p>
+    <div class="two">
+      <ol class="lesson-path">
+        <li class="unit-title">Unit 1 · Survival basics</li>
+        <li><button class="node done">Hello &amp; please <small class="sub">hola · por favor · gracias · ¿mande?</small><span class="meta"><span class="chip good">12/12</span></span></button></li>
+        <li><button class="node done">Numbers 1–20 <small class="sub">uno… veinte · ¿cuánto cuesta?</small></button></li>
+        <li><button class="node current">Ordering tacos <small class="sub">me da… · al pastor · con todo</small><span class="meta"><span class="chip primary">new</span></span></button></li>
+        <li><button class="node locked">Getting around <small class="sub">camión · metro · ¿dónde está…?</small></button></li>
+        <li class="unit-title">Unit 2 · At the hotel</li>
+        <li><button class="node locked">Checking in <small class="sub">cuarto · llave · reservación</small></button></li>
+      </ol>
+      <div class="card">
+        <h3>Flashcard <code>.flashcard .front .back .flipped</code></h3>
+        <div class="flashcard" id="fc" tabindex="0" role="button" aria-pressed="false">
+          <div class="front">
+            <p class="word-big"><span class="article">el</span>camión</p>
+            <span class="chip m">m · los camiones</span>
+            <div class="audio-row"><button class="audio-btn">Listen</button><button class="audio-btn fast">Natural</button></div>
+          </div>
+          <div class="back">
+            <p class="gloss">bus (CDMX); truck</p>
+            <p class="example">El camión pasa cada diez minutos.<span class="en">The bus comes every ten minutes.</span></p>
+            <span class="natural">el camión → "el camión"</span>
+          </div>
+        </div>
+        <p class="sg-note" style="margin-top:10px">Click / Enter to flip.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WORDS ============ -->
+  <section class="sg-section" id="words">
+    <h2>Word display <code>.word-big .gloss .example .natural</code></h2>
+    <div class="card center stack">
+      <p class="word-big"><span class="article">la</span>cuenta</p>
+      <p class="gloss">the bill, the check</p>
+      <div class="row" style="justify-content:center"><span class="chip f">f · las cuentas</span><span class="tag topic">restaurant</span><span class="tag tier">tier 1</span></div>
+      <p class="example" style="display:inline-block">¿Me trae la cuenta, por favor?<span class="en">Could you bring me the bill, please?</span></p>
+      <div><span class="natural">¿me trae la cuenta porfa?</span></div>
+      <div class="audio-row" style="justify-content:center"><button class="audio-btn slow">Slow</button><button class="audio-btn">Careful</button><button class="audio-btn fast">Natural</button></div>
+    </div>
+  </section>
+
+  <!-- ============ DRILLS ============ -->
+  <section class="sg-section" id="drills">
+    <h2>Drills <code>.choice-grid .choice .answer-input .answer-row .tile-bank .tile-slots .tile</code></h2>
+    <div class="two">
+      <div class="card">
+        <h3>Multiple choice</h3>
+        <p class="gloss">Which one is <strong>"the bill"</strong>?</p>
+        <div class="choice-grid">
+          <button class="choice"><span class="key">1</span>la mesa</button>
+          <button class="choice selected"><span class="key">2</span>la cuenta</button>
+          <button class="choice correct"><span class="key">3</span>la cuenta</button>
+          <button class="choice wrong"><span class="key">4</span>el cuento</button>
+        </div>
+        <p class="sg-note" style="margin-top:10px">States: default · <code>.selected</code> · <code>.correct</code> · <code>.wrong</code> (gentle, with ✓ / ✕ so colour isn't the only cue).</p>
+      </div>
+      <div class="card stack">
+        <h3>Typed answer</h3>
+        <p class="gloss">Say: <strong>"Three tacos al pastor, please."</strong></p>
+        <div class="answer-row">
+          <input class="answer-input" placeholder="Escribe en español…" value="Tres tacos de pastor porfavor">
+          <button class="btn btn-primary">Check</button>
+        </div>
+        <div class="accent-keys"><button class="btn">á</button><button class="btn">é</button><button class="btn">í</button><button class="btn">ó</button><button class="btn">ú</button><button class="btn">ñ</button><button class="btn">¿</button><button class="btn">¡</button></div>
+        <textarea class="answer-input" placeholder="Write your story here (5–8 sentences)…"></textarea>
+        <div class="row"><input class="answer-input good" value="la casa bonita" style="width:auto;flex:1"><input class="answer-input close" value="el casa bonita" style="width:auto;flex:1"><input class="answer-input miss" value="la mesa" style="width:auto;flex:1"></div>
+      </div>
+    </div>
+    <div class="card stack" style="margin-top:16px">
+      <h3>Sentence building</h3>
+      <p class="gloss">Build: <strong>"A table for two, please."</strong></p>
+      <div class="tile-slots"><button class="tile">Una</button><button class="tile">mesa</button></div>
+      <div class="tile-bank">
+        <button class="tile used">Una</button><button class="tile used">mesa</button><button class="tile">para</button><button class="tile">dos,</button><button class="tile">por</button><button class="tile">favor.</button><button class="tile">cuatro</button><button class="tile">silla</button>
+      </div>
+      <div class="tile-slots empty"></div>
+      <div class="row"><span class="tile correct">por favor</span><span class="tile wrong">porfavor</span></div>
+    </div>
+  </section>
+
+  <!-- ============ FEEDBACK ============ -->
+  <section class="sg-section" id="feedback">
+    <h2>Feedback &amp; marked answers <code>.feedback .good .close .miss · .diff .ok .typo .accent .grammar .missing .extra · .rate-row</code></h2>
+    <div class="stack">
+      <div class="feedback good">
+        <h3 class="title">¡Muy bien!</h3>
+        <p>You said it just right. <em>Me da tres tacos al pastor, por favor.</em></p>
+        <div class="diff"><span class="ok">Me</span> <span class="ok">da</span> <span class="ok">tres</span> <span class="ok">tacos</span> <span class="ok">al</span> <span class="ok">pastor,</span> <span class="ok">por</span> <span class="ok">favor.</span></div>
+      </div>
+      <div class="feedback close">
+        <h3 class="title">¡Casi!</h3>
+        <p>I understood you perfectly — two small things to polish.</p>
+        <div class="diff"><span class="ok">Quiero</span> <span class="grammar" title="casa is feminine → la casa">el</span> <span class="ok">casa</span> <span class="grammar">bonito</span> <span class="ok">cerca</span> <span class="ok">de</span> <span class="ok">la</span> <span class="accent" title="watch the accent: estación">estacion</span> <span class="typo" title="typo: autobús">autobs</span> <span class="missing">por favor</span> <span class="extra">muy</span></div>
+        <ul class="diff-legend">
+          <li><span class="typo">typo</span> dotted</li>
+          <li><span class="accent">accent</span> dashed</li>
+          <li><span class="grammar">grammar</span> wavy</li>
+          <li><span class="missing">missing</span> dashed box</li>
+          <li><span class="extra">extra</span> struck</li>
+        </ul>
+        <p class="note"><strong>casa</strong> is feminine → <em>la casa bonita</em>. Accents are forgiven, but it's <em>estación</em>.</p>
+        <div class="model"><span class="lbl">A natural way to say it</span>Quiero la casa bonita cerca de la estación de autobús, por favor.</div>
+      </div>
+      <div class="feedback miss">
+        <h3 class="title">No pasa nada</h3>
+        <p>That one's tricky. Here's the answer — read it once, say it once, and we move on.</p>
+        <div class="diff"><span class="extra">Yo</span> <span class="extra">tengo</span> <span class="missing">Me</span> <span class="missing">llamo</span> <span class="ok">Mateo</span></div>
+        <div class="model"><span class="lbl">Answer</span>Me llamo Mateo.</div>
+      </div>
+      <div class="card">
+        <h3>SRS self-rating <code>.rate-row</code></h3>
+        <div class="rate-row">
+          <button class="rate-again">Again<small class="when">1 min</small></button>
+          <button class="rate-hard">Hard<small class="when">10 min</small></button>
+          <button class="rate-good suggested">Good<small class="when">1 day</small></button>
+          <button class="rate-easy">Easy<small class="when">4 days</small></button>
+        </div>
+        <p class="sg-note" style="margin-top:10px"><code>.suggested</code> outlines the rating the grader derived; the learner can override.</p>
+      </div>
+      <div class="row">
+        <span class="toast static">Saved · 3 words due tomorrow</span>
+        <span class="toast static good">+10 XP · ¡Órale!</span>
+        <span class="toast static close">Audio voice: es-MX not found, using es-ES</span>
+        <span class="toast static miss">Couldn't reach the server — progress saved locally</span>
+        <button class="btn btn-secondary btn-sm" id="toast-btn">Show a real toast</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COACH ============ -->
+  <section class="sg-section" id="coach">
+    <h2>Penguin coach <code>Penguin.coach(el, mood, html) · .penguin-coach .speech-bubble</code></h2>
+    <p class="sg-note">Also <code>Penguin.say(el, kind)</code> picks a random line from <code>Penguin.lines[kind]</code> with the matching mood (<code>Penguin.moodFor</code>). Layout modifiers on <code>.penguin-coach</code>: <code>.big</code>, <code>.sm</code>, <code>.reverse</code>, <code>.stack</code>.</p>
+    <div class="stack">
+      <div id="coach-welcome"></div>
+      <div id="coach-good"></div>
+      <div id="coach-close"></div>
+      <div id="coach-miss"></div>
+      <div id="coach-streak"></div>
+      <div id="coach-done"></div>
+      <div class="row" style="gap:16px">
+        <button class="btn btn-secondary" id="reroll">Re-roll lines</button>
+        <span class="muted">Lines: good <b id="n-good"></b> · close <b id="n-close"></b> · miss <b id="n-miss"></b> · streak <b id="n-streak"></b> · done <b id="n-done"></b> · welcome <b id="n-welcome"></b></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EXPLAIN ============ -->
+  <section class="sg-section" id="explain">
+    <h2>Grammar explain <code>.explain</code></h2>
+    <div class="card explain">
+      <h2>Masculine &amp; feminine nouns (o / a)</h2>
+      <p>Every Spanish noun has a gender. It mostly follows the <strong>last letter</strong>: <em>-o</em> → masculine, <em>-a</em> → feminine. Articles and adjectives <strong>agree</strong> with the noun.</p>
+      <table>
+        <thead><tr><th></th><th>singular</th><th>plural</th></tr></thead>
+        <tbody>
+          <tr><td><span class="chip m">el</span></td><td>el carro rojo</td><td>los carros rojos</td></tr>
+          <tr><td><span class="chip f">la</span></td><td>la casa bonita</td><td>las casas bonitas</td></tr>
+        </tbody>
+      </table>
+      <ul>
+        <li>Nouns in <code>-o</code> are usually masculine: <em>el libro, el vaso, el boleto</em>.</li>
+        <li>Nouns in <code>-a</code> are usually feminine: <em>la mesa, la cuenta, la playa</em>.</li>
+        <li>Exceptions worth memorising: <em>la mano, la foto, el día, el mapa, el problema</em>.</li>
+      </ul>
+      <blockquote>Tip: learn every noun <strong>with its article</strong> — <em>la cuenta</em>, never just <em>cuenta</em>.</blockquote>
+      <p class="mx">In Mexico you'll hear <em>el camión</em> for the city bus and <em>el carro</em> for car (not <em>coche</em> so much).</p>
+      <p class="tip">When in doubt, say it anyway — a wrong article never stops anyone from understanding you.</p>
+    </div>
+  </section>
+
+  <!-- ============ MOCK SCREENS ============ -->
+  <section class="sg-section" id="screens">
+    <h2>Mock screens (360 px)</h2>
+    <p class="sg-note">A lesson step (left) and the feedback step after a typed answer (right), as the engine would render them.</p>
+    <div class="two">
+      <div class="phone">
+        <header class="app-header">
+          <a class="brand" href="#" id="phone-brand">Penguin Spanish</a>
+          <nav class="nav"><a href="#" class="active">Today</a><a href="#">Course</a></nav>
+        </header>
+        <div class="papel-picado subtle"></div>
+        <div class="page stack">
+          <div class="progress-bar thin"><span class="fill" style="width:40%"></span></div>
+          <ul class="crumbs"><li>Unit 1</li><li>Ordering tacos</li><li class="current">4 / 10</li></ul>
+          <div id="phone-coach"></div>
+          <div class="card center stack">
+            <p class="word-big"><span class="article">el</span>taco</p>
+            <p class="gloss">taco (of course)</p>
+            <div class="row" style="justify-content:center"><span class="chip m">m · los tacos</span><span class="tag topic">food</span></div>
+            <p class="example" style="display:inline-block;text-align:left">¿Me da tres tacos al pastor?<span class="en">Can I get three tacos al pastor?</span></p>
+            <div><span class="natural">¿me da tres tacos al pastor?</span></div>
+            <div class="audio-row" style="justify-content:center"><button class="audio-btn slow">Slow</button><button class="audio-btn">Careful</button><button class="audio-btn fast">Natural</button></div>
+          </div>
+          <button class="btn btn-big">Continue</button>
+        </div>
+      </div>
+      <div class="phone">
+        <header class="app-header">
+          <a class="brand" href="#" id="phone-brand-2">Penguin Spanish</a>
+          <nav class="nav"><a href="#" class="active">Today</a><a href="#">Course</a></nav>
+        </header>
+        <div class="papel-picado subtle"></div>
+        <div class="page stack">
+          <div class="progress-bar thin"><span class="fill" style="width:70%"></span></div>
+          <p class="gloss" style="margin:0">Say: <strong>"The bill, please."</strong></p>
+          <div class="answer-row"><input class="answer-input close" value="El cuenta, porfavor" readonly></div>
+          <div id="phone-feedback"></div>
+          <div class="feedback close">
+            <h3 class="title">Close</h3>
+            <div class="diff"><span class="grammar">El</span> <span class="ok">cuenta,</span> <span class="typo">porfavor</span></div>
+            <p class="note"><strong>cuenta</strong> is feminine → <em>la cuenta</em>. And it's two words: <em>por favor</em> (you'll hear <em>porfa</em>).</p>
+          </div>
+          <div class="rate-row">
+            <button class="rate-again">Again</button><button class="rate-hard">Hard</button><button class="rate-good suggested">Good</button><button class="rate-easy">Easy</button>
+          </div>
+          <button class="btn btn-big">Continue</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <p class="footer-note">Learning Spanish with Penguin · design system v1 · fonts: Fredoka &amp; Nunito (SIL OFL, self-hosted)</p>
+</main>
+
+<script src="js/penguin.js"></script>
+<script>
+(function () {
+  // brand avatars
+  ['brand-avatar', 'phone-brand', 'phone-brand-2'].forEach(function (id, i) {
+    var el = document.getElementById(id);
+    if (el) el.insertAdjacentHTML('afterbegin', Penguin.svg(i === 0 ? 'happy' : 'wave', 40));
+  });
+
+  // moods grid
+  var moods = document.getElementById('moods');
+  var blurb = { happy: 'default · good answers', talking: 'reading a prompt aloud', thinking: 'close · "let\'s look"', cheer: 'streaks · lesson complete', oops: 'miss · gentle, never harsh', proud: 'unit finished · badges', sleepy: 'all done for today', wave: 'welcome / hello' };
+  Penguin.moods.forEach(function (m) {
+    moods.insertAdjacentHTML('beforeend',
+      '<div class="mood"><div class="sizes">' + Penguin.svg(m, 40) + Penguin.svg(m, 120) + Penguin.svg(m, 200) + '</div>' +
+      '<div class="lbl">' + m + '<small>' + blurb[m] + '</small></div></div>');
+  });
+  // animate the big ones so the motion can be reviewed
+  moods.querySelectorAll('svg[width="200"]').forEach(function (s) { s.classList.add('animate'); });
+
+  // swatches with live contrast
+  function lum(hex) {
+    var c = hex.replace('#', '').match(/.{2}/g).map(function (h) { var v = parseInt(h, 16) / 255; return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4); });
+    return 0.2126 * c[0] + 0.7152 * c[1] + 0.0722 * c[2];
+  }
+  function ratio(a, b) { var l1 = lum(a), l2 = lum(b); return ((Math.max(l1, l2) + 0.05) / (Math.min(l1, l2) + 0.05)).toFixed(2); }
+  var css = getComputedStyle(document.documentElement);
+  var tok = function (n) { return css.getPropertyValue(n).trim(); };
+  var sw = [
+    ['--bg', 'papel cream', '--ink'], ['--surface', 'surface', '--ink'], ['--surface-2', 'arena', '--ink'],
+    ['--ink', 'noche (text)', '--bg'], ['--ink-soft', 'soft text', '--bg'], ['--line', 'line', null],
+    ['--primary', 'talavera', '--primary-ink'], ['--accent', 'rosa mexicano', '--accent-ink'], ['--accent-2', 'cempasúchil', '--ink'],
+    ['--good', 'jade', '#FFFFFF'], ['--close', 'amber (fill)', '--ink'], ['--miss', 'terracotta', '#FFFFFF'],
+    ['--good-ink', 'good text', '--good-bg'], ['--close-ink', 'close text', '--close-bg'], ['--miss-ink', 'miss text', '--miss-bg'],
+    ['--talavera-soft', 'talavera soft', '--talavera-deep'], ['--rosa-soft', 'rosa soft', '--rosa-deep'], ['--marigold-soft', 'marigold soft', '--marigold-deep'],
+    ['--jade-soft', 'jade soft', '--jade-deep'], ['--terracotta-soft', 'terracotta soft', '--terracotta-deep']
+  ];
+  var grid = document.getElementById('swatches');
+  sw.forEach(function (s) {
+    var hex = tok(s[0]).toUpperCase();
+    var onHex = s[2] ? (s[2][0] === '#' ? s[2] : tok(s[2])) : null;
+    var light = lum(hex) > 0.4;
+    var r = onHex ? ratio(hex, onHex) : null;
+    grid.insertAdjacentHTML('beforeend',
+      '<div class="swatch"><div class="sw ' + (light ? 'light' : 'dark') + '" style="background:' + hex + '">' + hex + '</div>' +
+      '<div class="meta"><b>' + s[0] + '</b>' + s[1] + (r ? '<br>' + r + ':1 vs ' + s[2] + (parseFloat(r) >= 4.5 ? ' ✓' : (parseFloat(r) >= 3 ? ' (large text / UI)' : '')) : '') + '</div></div>');
+  });
+
+  // flashcard flip
+  var fc = document.getElementById('fc');
+  function flip() { fc.classList.toggle('flipped'); fc.setAttribute('aria-pressed', fc.classList.contains('flipped')); }
+  fc.addEventListener('click', function (e) { if (!e.target.closest('button')) flip(); });
+  fc.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); flip(); } });
+
+  // coach demos
+  function renderCoaches() {
+    Penguin.say('#coach-welcome', 'welcome');
+    Penguin.say('#coach-good', 'good', '<p>Me da tres tacos al pastor, por favor.</p>');
+    Penguin.say('#coach-close', 'close',
+      '<div class="diff"><span class="ok">Quiero</span> <span class="grammar">el</span> <span class="ok">cuenta</span> <span class="typo">porfavor</span> <span class="missing">de</span></div>' +
+      '<p class="note"><strong>cuenta</strong> is feminine → <span class="es">la cuenta</span>. And <em>por favor</em> is two words.</p>');
+    Penguin.say('#coach-miss', 'miss', '<p>The answer was <span class="es">la llave</span> — the key.</p>');
+    Penguin.say('#coach-streak', 'streak');
+    Penguin.say('#coach-done', 'done', '<p>Tomorrow: 14 reviews waiting.</p>');
+    document.getElementById('coach-done').firstChild.classList.add('big');
+    document.getElementById('coach-streak').firstChild.classList.add('reverse');
+    ['good', 'close', 'miss', 'streak', 'done', 'welcome'].forEach(function (k) { document.getElementById('n-' + k).textContent = Penguin.lines[k].length; });
+  }
+  renderCoaches();
+  document.getElementById('reroll').addEventListener('click', renderCoaches);
+
+  // mock screens
+  Penguin.coach('#phone-coach', 'talking', '<p class="speech-line">New word! Tap <b>Natural</b> to hear how it really sounds.</p>', { size: 96 });
+  Penguin.coach('#phone-feedback', 'thinking', '<p class="speech-line">¡Casi! I understood you — one small fix.</p>', { size: 96 });
+
+  // countdown to 2026-10-30
+  var days = Math.max(0, Math.ceil((new Date('2026-10-30T00:00:00') - new Date()) / 86400000));
+  document.getElementById('cd-num').textContent = days;
+
+  // toast
+  document.getElementById('toast-btn').addEventListener('click', function () {
+    var t = document.createElement('div'); t.className = 'toast good'; t.textContent = '¡Órale! Progress saved.'; document.body.appendChild(t);
+    setTimeout(function () { t.classList.add('hide'); setTimeout(function () { t.remove(); }, 300); }, 2200);
+  });
+})();
+</script>
+</body>
+</html>

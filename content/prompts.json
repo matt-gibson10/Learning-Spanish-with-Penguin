@@ -1,0 +1,2012 @@
+[
+  {
+    "id": "p_introduce_name",
+    "tier": 1,
+    "after_grammar": "g_ser",
+    "situation": "Small talk",
+    "prompt_en": "Someone at a party asks your name. Tell them, and say you're from the United States.",
+    "prompt_es": "¡Hola! ¿Cómo te llamas?",
+    "targets": [
+      "me llamo",
+      "soy",
+      "Estados Unidos"
+    ],
+    "grammar": [
+      "g_ser"
+    ],
+    "models": [
+      "Me llamo Matt. Soy de Estados Unidos.",
+      "Soy Matt, de Estados Unidos. Mucho gusto.",
+      "Hola, me llamo Matt y soy de Estados Unidos."
+    ],
+    "hints": [
+      "Me llamo… = my name is…",
+      "Origin → soy de…"
+    ]
+  },
+  {
+    "id": "p_where_from",
+    "tier": 1,
+    "after_grammar": "g_ser",
+    "situation": "Small talk",
+    "prompt_en": "A taxi driver asks where you're from. Say you're from Houston, in Texas.",
+    "prompt_es": "¿Y usted de dónde es, joven?",
+    "targets": [
+      "soy",
+      "Houston",
+      "Texas"
+    ],
+    "grammar": [
+      "g_ser"
+    ],
+    "models": [
+      "Soy de Houston, Texas.",
+      "Soy de Houston, en Texas. ¿Y usted?",
+      "De Houston, en Texas, Estados Unidos."
+    ],
+    "hints": [
+      "Origin is always ser de…"
+    ]
+  },
+  {
+    "id": "p_engineer_job",
+    "tier": 1,
+    "after_grammar": "g_ser",
+    "situation": "Small talk",
+    "prompt_en": "Your new friend asks what you do. Say you're an engineer and a researcher.",
+    "prompt_es": "¿Y a qué te dedicas?",
+    "targets": [
+      "soy",
+      "ingeniero",
+      "investigador"
+    ],
+    "grammar": [
+      "g_ser"
+    ],
+    "models": [
+      "Soy ingeniero.",
+      "Soy ingeniero e investigador.",
+      "Soy ingeniero; también soy investigador."
+    ],
+    "hints": [
+      "No un/una before a job: Soy ingeniero.",
+      "y becomes e before an i- sound: ingeniero e investigador."
+    ]
+  },
+  {
+    "id": "p_oxxo_water_price",
+    "tier": 1,
+    "after_grammar": "g_numbers",
+    "situation": "OXXO",
+    "prompt_en": "You're at an OXXO with a bottle of water. Ask how much it costs.",
+    "prompt_es": "Buenas, ¿qué le cobro?",
+    "targets": [
+      "cuánto",
+      "cuesta",
+      "agua"
+    ],
+    "grammar": [
+      "g_numbers"
+    ],
+    "models": [
+      "¿Cuánto cuesta el agua?",
+      "Disculpe, ¿cuánto cuesta esta agua?",
+      "¿Cuánto es el agua, por favor?"
+    ],
+    "hints": [
+      "¿Cuánto cuesta…? = How much does … cost?"
+    ]
+  },
+  {
+    "id": "p_order_tacos",
+    "tier": 1,
+    "after_grammar": "g_numbers",
+    "situation": "Taquería",
+    "prompt_en": "The taquero asks what you want. Order three tacos al pastor and a Coke.",
+    "prompt_es": "¿Qué le damos, joven?",
+    "targets": [
+      "tres",
+      "tacos",
+      "pastor",
+      "coca"
+    ],
+    "grammar": [
+      "g_numbers"
+    ],
+    "models": [
+      "Me da tres tacos al pastor y una Coca, por favor.",
+      "Tres de pastor y una Coca, por favor.",
+      "Quiero tres tacos al pastor y una Coca-Cola, por favor."
+    ],
+    "hints": [
+      "'Me da…' is the natural way to order in Mexico.",
+      "Coca is feminine: una Coca."
+    ]
+  },
+  {
+    "id": "p_restaurant_table",
+    "tier": 1,
+    "after_grammar": "g_numbers",
+    "situation": "Restaurant",
+    "prompt_en": "The host asks how many people. Ask for a table for two.",
+    "prompt_es": "Buenas noches, ¿cuántas personas?",
+    "targets": [
+      "mesa",
+      "para",
+      "dos"
+    ],
+    "grammar": [
+      "g_numbers"
+    ],
+    "models": [
+      "Una mesa para dos, por favor.",
+      "Somos dos.",
+      "Para dos personas, por favor."
+    ],
+    "hints": [
+      "una mesa para dos = a table for two."
+    ]
+  },
+  {
+    "id": "p_tell_time",
+    "tier": 1,
+    "after_grammar": "g_numbers",
+    "situation": "Street",
+    "prompt_en": "A stranger asks you the time. It's 4:30.",
+    "prompt_es": "Disculpe, ¿qué hora tiene?",
+    "targets": [
+      "son",
+      "cuatro",
+      "media"
+    ],
+    "grammar": [
+      "g_numbers",
+      "g_ser"
+    ],
+    "models": [
+      "Son las cuatro y media.",
+      "Son las cuatro treinta.",
+      "Ya son las cuatro y media."
+    ],
+    "hints": [
+      "Son las + hour; :30 = y media."
+    ]
+  },
+  {
+    "id": "p_pay_cash",
+    "tier": 1,
+    "after_grammar": "g_numbers",
+    "situation": "OXXO",
+    "prompt_en": "The cashier tells you the total and asks how you'll pay. Say cash, and 'here you go'.",
+    "prompt_es": "Son ciento veinte pesos. ¿Con tarjeta o en efectivo?",
+    "targets": [
+      "efectivo",
+      "aquí"
+    ],
+    "grammar": [
+      "g_numbers"
+    ],
+    "models": [
+      "En efectivo. Aquí tiene.",
+      "Efectivo, por favor. Aquí está.",
+      "En efectivo. Aquí tiene, gracias."
+    ],
+    "hints": [
+      "Aquí tiene = here you go (to usted)."
+    ]
+  },
+  {
+    "id": "p_bus_teotihuacan",
+    "tier": 1,
+    "after_grammar": "g_numbers",
+    "situation": "Bus station",
+    "prompt_en": "At the Terminal del Norte ticket window, buy two round-trip tickets to Teotihuacán.",
+    "prompt_es": "Siguiente. ¿A dónde va?",
+    "targets": [
+      "dos",
+      "boletos",
+      "ida y vuelta",
+      "Teotihuacán"
+    ],
+    "grammar": [
+      "g_numbers"
+    ],
+    "models": [
+      "Dos boletos de ida y vuelta a Teotihuacán, por favor.",
+      "A Teotihuacán. Dos, de ida y vuelta, por favor.",
+      "Quiero dos boletos a las pirámides, ida y vuelta."
+    ],
+    "hints": [
+      "ida y vuelta = round trip; sencillo = one way."
+    ]
+  },
+  {
+    "id": "p_museum_tickets",
+    "tier": 1,
+    "after_grammar": "g_numbers",
+    "situation": "Museum",
+    "prompt_en": "At the museum ticket desk, ask for two adult tickets and ask how much it is.",
+    "prompt_es": "Buenos días, ¿cuántos boletos?",
+    "targets": [
+      "dos",
+      "boletos",
+      "cuánto"
+    ],
+    "grammar": [
+      "g_numbers"
+    ],
+    "models": [
+      "Dos boletos, por favor. ¿Cuánto es?",
+      "Dos para adultos, por favor. ¿Cuánto cuesta?",
+      "Dos boletos de adulto. ¿Cuánto es en total?"
+    ],
+    "hints": [
+      "¿Cuánto es? asks for the total."
+    ]
+  },
+  {
+    "id": "p_cempasuchil",
+    "tier": 1,
+    "after_grammar": "g_numbers",
+    "situation": "Día de Muertos",
+    "prompt_en": "At a market full of orange marigolds, the vendor asks how many bunches you want. Ask for three and ask how much they cost.",
+    "prompt_es": "¿Cuántos manojos de cempasúchil le doy?",
+    "targets": [
+      "tres",
+      "cuánto",
+      "cuestan"
+    ],
+    "grammar": [
+      "g_numbers"
+    ],
+    "models": [
+      "Tres, por favor. ¿Cuánto cuestan?",
+      "Me da tres. ¿Cuánto es?",
+      "Tres manojos, por favor. ¿Cuánto cuesta cada uno?"
+    ],
+    "hints": [
+      "Several things → ¿Cuánto cuestan?"
+    ]
+  },
+  {
+    "id": "p_hotel_checkin",
+    "tier": 1,
+    "after_grammar": "g_numbers",
+    "situation": "Hotel",
+    "prompt_en": "At check-in, the receptionist asks if you have a reservation. Say yes, under the name Matt, for three nights.",
+    "prompt_es": "Bienvenido. ¿Tiene reservación?",
+    "targets": [
+      "sí",
+      "reservación",
+      "nombre",
+      "tres noches"
+    ],
+    "grammar": [
+      "g_numbers"
+    ],
+    "models": [
+      "Sí, tengo una reservación a nombre de Matt, para tres noches.",
+      "Sí, a nombre de Matt. Son tres noches.",
+      "Sí, una reservación para tres noches, a nombre de Matt."
+    ],
+    "hints": [
+      "a nombre de… = under the name…",
+      "Mexico says reservación (Spain: reserva)."
+    ]
+  },
+  {
+    "id": "p_greet_neighbor",
+    "tier": 1,
+    "after_grammar": "g_estar",
+    "situation": "Small talk",
+    "prompt_en": "An older lady at your hotel greets you. Say you're fine, thanks, and ask how she is.",
+    "prompt_es": "Buenas tardes, joven. ¿Cómo está?",
+    "targets": [
+      "bien",
+      "gracias",
+      "usted"
+    ],
+    "grammar": [
+      "g_estar",
+      "g_pronouns"
+    ],
+    "models": [
+      "Muy bien, gracias. ¿Y usted?",
+      "Bien, gracias. ¿Y usted, cómo está?",
+      "Buenas tardes. Estoy bien, gracias, ¿y usted?"
+    ],
+    "hints": [
+      "She used usted, so answer with ¿Y usted?"
+    ]
+  },
+  {
+    "id": "p_where_bathroom",
+    "tier": 1,
+    "after_grammar": "g_estar",
+    "situation": "Restaurant",
+    "prompt_en": "The waiter asks if you need anything else. Say no thanks, and ask where the bathroom is.",
+    "prompt_es": "¿Le traigo algo más?",
+    "targets": [
+      "no",
+      "dónde",
+      "está",
+      "baño"
+    ],
+    "grammar": [
+      "g_estar"
+    ],
+    "models": [
+      "No, gracias. ¿Dónde está el baño?",
+      "No, gracias. Disculpe, ¿dónde está el baño?",
+      "Nada más, gracias. ¿Dónde está el baño, por favor?"
+    ],
+    "hints": [
+      "Location → estar: ¿Dónde está…?"
+    ]
+  },
+  {
+    "id": "p_good_but_tired",
+    "tier": 1,
+    "after_grammar": "g_estar",
+    "situation": "Small talk",
+    "prompt_en": "A friend asks how you're doing. Say you're good, but a little tired.",
+    "prompt_es": "¿Qué onda? ¿Cómo estás?",
+    "targets": [
+      "bien",
+      "pero",
+      "cansado",
+      "poco"
+    ],
+    "grammar": [
+      "g_estar"
+    ],
+    "models": [
+      "Bien, pero un poco cansado.",
+      "Estoy bien, pero un poco cansado.",
+      "Todo bien, nomás un poco cansado."
+    ],
+    "hints": [
+      "Temporary state → estar.",
+      "¿Qué onda? = What's up? (casual)"
+    ]
+  },
+  {
+    "id": "p_taxi_destination",
+    "tier": 1,
+    "after_grammar": "g_estar",
+    "situation": "Taxi / Uber",
+    "prompt_en": "The taxi driver asks where to. Say the Hotel Catedral, which is downtown, on Donceles street.",
+    "prompt_es": "¿A dónde lo llevo?",
+    "targets": [
+      "hotel",
+      "está",
+      "centro",
+      "calle"
+    ],
+    "grammar": [
+      "g_estar"
+    ],
+    "models": [
+      "Al Hotel Catedral, por favor. Está en el centro, en la calle Donceles.",
+      "Voy al Hotel Catedral, en la calle Donceles, en el centro.",
+      "Al Hotel Catedral, en Donceles. Está en el Centro Histórico."
+    ],
+    "hints": [
+      "a + el = al: al Hotel Catedral.",
+      "Location → está en…"
+    ]
+  },
+  {
+    "id": "p_atm_nearby",
+    "tier": 1,
+    "after_grammar": "g_hay",
+    "situation": "Street",
+    "prompt_en": "You stopped a passer-by. Ask if there's an ATM around here.",
+    "prompt_es": "¿Sí, dígame?",
+    "targets": [
+      "hay",
+      "cajero",
+      "aquí"
+    ],
+    "grammar": [
+      "g_hay"
+    ],
+    "models": [
+      "¿Hay un cajero por aquí?",
+      "Disculpe, ¿hay un cajero cerca?",
+      "Perdón, ¿sabe si hay un cajero por aquí?"
+    ],
+    "hints": [
+      "Asking whether something exists → ¿Hay…?",
+      "ATM = cajero (automático)."
+    ]
+  },
+  {
+    "id": "p_market_what_is",
+    "tier": 1,
+    "after_grammar": "g_hay",
+    "situation": "Market",
+    "prompt_en": "A fruit vendor calls you over. Point at a strange fruit, ask what it is and how much it costs.",
+    "prompt_es": "¡Pásele, pásele! ¿Qué le damos?",
+    "targets": [
+      "qué",
+      "es",
+      "cuánto",
+      "cuesta"
+    ],
+    "grammar": [
+      "g_hay",
+      "g_numbers"
+    ],
+    "models": [
+      "¿Qué es esto? ¿Cuánto cuesta?",
+      "Disculpe, ¿qué fruta es esta? ¿Y cuánto cuesta el kilo?",
+      "¿Qué es eso? ¿A cómo está?"
+    ],
+    "hints": [
+      "¿A cómo está? = What's the price (per kilo)? — very Mexican market phrase."
+    ]
+  },
+  {
+    "id": "p_coffee_order",
+    "tier": 1,
+    "after_grammar": "g_present_ar",
+    "situation": "Café",
+    "prompt_en": "The barista asks what you'd like. Order an americano and a concha (sweet bread).",
+    "prompt_es": "¿Qué te sirvo?",
+    "targets": [
+      "americano",
+      "concha",
+      "por favor"
+    ],
+    "grammar": [
+      "g_numbers"
+    ],
+    "models": [
+      "Un americano y una concha, por favor.",
+      "¿Me das un café americano y una concha, por favor?",
+      "Quiero un americano y una concha, por favor."
+    ],
+    "hints": [
+      "The barista used te, so tú is fine: ¿Me das…?"
+    ]
+  },
+  {
+    "id": "p_work_university",
+    "tier": 1,
+    "after_grammar": "g_present_ar",
+    "situation": "Small talk",
+    "prompt_en": "Your new friend asks where you work. Say you work at a university in Houston and you study the brain.",
+    "prompt_es": "¿Y en qué trabajas?",
+    "targets": [
+      "trabajo",
+      "universidad",
+      "estudio",
+      "cerebro"
+    ],
+    "grammar": [
+      "g_present_ar"
+    ],
+    "models": [
+      "Trabajo en una universidad en Houston. Estudio el cerebro.",
+      "Soy ingeniero y trabajo en una universidad en Houston. Estudio el cerebro.",
+      "Trabajo en una universidad, en Houston; estudio el cerebro."
+    ],
+    "hints": [
+      "trabajar → trabajo; estudiar → estudio."
+    ]
+  },
+  {
+    "id": "p_speak_english",
+    "tier": 1,
+    "after_grammar": "g_present_ar",
+    "situation": "Metro",
+    "prompt_en": "A metro worker gives you fast directions. Say you speak a little Spanish and ask if he speaks English.",
+    "prompt_es": "Mire, tiene que tomar la línea dos, bajarse en Pino Suárez y luego transbordar a la uno…",
+    "targets": [
+      "hablo",
+      "poco",
+      "español",
+      "habla",
+      "inglés"
+    ],
+    "grammar": [
+      "g_present_ar"
+    ],
+    "models": [
+      "Perdón, hablo un poco de español. ¿Habla inglés?",
+      "Disculpe, hablo poquito español. ¿Usted habla inglés?",
+      "Lo siento, hablo un poco de español nada más. ¿Habla inglés?"
+    ],
+    "hints": [
+      "Him → usted → habla."
+    ]
+  },
+  {
+    "id": "p_live_where",
+    "tier": 1,
+    "after_grammar": "g_present_er_ir",
+    "situation": "Small talk",
+    "prompt_en": "Someone asks where you live. Say you live in Houston and you're in Mexico City for a week.",
+    "prompt_es": "¿Y dónde vives?",
+    "targets": [
+      "vivo",
+      "Houston",
+      "semana"
+    ],
+    "grammar": [
+      "g_present_er_ir",
+      "g_estar"
+    ],
+    "models": [
+      "Vivo en Houston. Estoy en la Ciudad de México una semana.",
+      "Vivo en Houston, Texas, pero estoy aquí de vacaciones una semana.",
+      "En Houston. Estoy en la ciudad por una semana."
+    ],
+    "hints": [
+      "vivir → vivo.",
+      "Being somewhere for a while → estar."
+    ]
+  },
+  {
+    "id": "p_eat_spicy",
+    "tier": 1,
+    "after_grammar": "g_present_er_ir",
+    "situation": "Taquería",
+    "prompt_en": "The taquero asks if you eat spicy food. Say yes, but just a little.",
+    "prompt_es": "¿Le pongo salsa? ¿Sí come picante?",
+    "targets": [
+      "sí",
+      "como",
+      "picante",
+      "poco"
+    ],
+    "grammar": [
+      "g_present_er_ir"
+    ],
+    "models": [
+      "Sí, como picante, pero poquito.",
+      "Sí, pero solo un poco, por favor.",
+      "Sí, un poco de salsa, por favor."
+    ],
+    "hints": [
+      "comer → como.",
+      "poquito = just a little (very Mexican)."
+    ]
+  },
+  {
+    "id": "p_metro_line",
+    "tier": 2,
+    "after_grammar": "g_questions",
+    "situation": "Metro",
+    "prompt_en": "At the metro ticket booth, ask which line goes to Coyoacán.",
+    "prompt_es": "¿Sí, joven?",
+    "targets": [
+      "qué",
+      "línea",
+      "Coyoacán"
+    ],
+    "grammar": [
+      "g_questions"
+    ],
+    "models": [
+      "¿Qué línea va a Coyoacán?",
+      "Disculpe, ¿cómo llego a Coyoacán? ¿Qué línea tomo?",
+      "¿Cuál línea me lleva a Coyoacán?"
+    ],
+    "hints": [
+      "¿Cómo llego a…? = How do I get to…?"
+    ]
+  },
+  {
+    "id": "p_ask_whats_this",
+    "tier": 2,
+    "after_grammar": "g_questions",
+    "situation": "Taquería",
+    "prompt_en": "There's a word on the menu you don't know: 'suadero'. Ask what it is.",
+    "prompt_es": "¿Qué va a querer?",
+    "targets": [
+      "qué",
+      "es",
+      "suadero"
+    ],
+    "grammar": [
+      "g_questions"
+    ],
+    "models": [
+      "Perdón, ¿qué es el suadero?",
+      "¿Qué es suadero?",
+      "Disculpe, ¿qué tipo de carne es el suadero?"
+    ],
+    "hints": [
+      "¿Qué es…? asks for a definition."
+    ]
+  },
+  {
+    "id": "p_no_pork",
+    "tier": 2,
+    "after_grammar": "g_negation",
+    "situation": "Restaurant",
+    "prompt_en": "The waiter recommends carnitas. Say no thanks, you don't eat pork, and ask if there's something with chicken.",
+    "prompt_es": "Le recomiendo las carnitas, joven, están buenísimas.",
+    "targets": [
+      "no",
+      "como",
+      "pollo",
+      "hay"
+    ],
+    "grammar": [
+      "g_negation",
+      "g_hay"
+    ],
+    "models": [
+      "No, gracias, no como puerco. ¿Hay algo con pollo?",
+      "Gracias, pero no como cerdo. ¿Tiene algo de pollo?",
+      "No como carne de puerco. ¿Hay algo con pollo?"
+    ],
+    "hints": [
+      "Mexico usually says puerco (cerdo is fine too)."
+    ]
+  },
+  {
+    "id": "p_oxxo_nothing_else",
+    "tier": 2,
+    "after_grammar": "g_negation",
+    "situation": "OXXO",
+    "prompt_en": "The OXXO cashier asks if you want anything else. Say no, nothing else, thanks.",
+    "prompt_es": "¿Algo más? ¿Su recarga, alguna galleta?",
+    "targets": [
+      "no",
+      "nada",
+      "gracias"
+    ],
+    "grammar": [
+      "g_negation"
+    ],
+    "models": [
+      "No, nada más, gracias.",
+      "Es todo, gracias.",
+      "No, gracias, nada más."
+    ],
+    "hints": [
+      "nada más = nothing else."
+    ]
+  },
+  {
+    "id": "p_hotel_problem",
+    "tier": 2,
+    "after_grammar": "g_negation",
+    "situation": "Hotel",
+    "prompt_en": "Call reception: in room 304 the air conditioning doesn't work and there's no hot water.",
+    "prompt_es": "Recepción, buenas noches. ¿En qué le puedo ayudar?",
+    "targets": [
+      "cuarto",
+      "no funciona",
+      "aire",
+      "no hay",
+      "agua caliente"
+    ],
+    "grammar": [
+      "g_negation",
+      "g_hay"
+    ],
+    "models": [
+      "Buenas noches. En el cuarto trescientos cuatro no funciona el aire acondicionado y no hay agua caliente.",
+      "Hola, estoy en la habitación 304. El aire no funciona y no hay agua caliente.",
+      "Buenas noches, hablo del cuarto 304. No funciona el aire acondicionado y tampoco hay agua caliente."
+    ],
+    "hints": [
+      "no funciona = it doesn't work.",
+      "No hay + noun, no article."
+    ]
+  },
+  {
+    "id": "p_very_hungry",
+    "tier": 2,
+    "after_grammar": "g_tener",
+    "situation": "Small talk",
+    "prompt_en": "It's 1 pm and your friend asks if you're hungry. Say yes, very, and that you feel like tacos.",
+    "prompt_es": "¿Tienes hambre? Ya es la una.",
+    "targets": [
+      "tengo",
+      "hambre",
+      "ganas",
+      "tacos"
+    ],
+    "grammar": [
+      "g_tener"
+    ],
+    "models": [
+      "Sí, tengo mucha hambre. Tengo ganas de unos tacos.",
+      "¡Sí! Tengo muchísima hambre. ¿Vamos por unos tacos?",
+      "Sí, mucha. Tengo ganas de comer tacos."
+    ],
+    "hints": [
+      "mucha hambre — hambre is feminine.",
+      "tener ganas de = feel like."
+    ]
+  },
+  {
+    "id": "p_change_500",
+    "tier": 2,
+    "after_grammar": "g_tener",
+    "situation": "Street food",
+    "prompt_en": "The tamale seller says it's 35 pesos. You only have a 500-peso bill. Ask if she has change.",
+    "prompt_es": "Son treinta y cinco, güero.",
+    "targets": [
+      "tiene",
+      "cambio",
+      "quinientos"
+    ],
+    "grammar": [
+      "g_tener",
+      "g_numbers"
+    ],
+    "models": [
+      "¿Tiene cambio de quinientos?",
+      "Perdón, solo tengo un billete de quinientos. ¿Tiene cambio?",
+      "Disculpe, nada más traigo de quinientos. ¿Tiene cambio?"
+    ],
+    "hints": [
+      "cambio = change; billete = bill.",
+      "Small stalls struggle with big bills — say sorry first."
+    ]
+  },
+  {
+    "id": "p_age_question",
+    "tier": 2,
+    "after_grammar": "g_tener",
+    "situation": "Small talk",
+    "prompt_en": "Your friend's curious little nephew asks how old you are. Answer (use your real age; the models say 32).",
+    "prompt_es": "¿Cuántos años tienes?",
+    "targets": [
+      "tengo",
+      "años"
+    ],
+    "grammar": [
+      "g_tener",
+      "g_numbers"
+    ],
+    "models": [
+      "Tengo treinta y dos años.",
+      "Tengo treinta y dos. ¿Y tú?",
+      "Treinta y dos años. ¿Y tú cuántos tienes?"
+    ],
+    "hints": [
+      "Age uses tener: Tengo … años."
+    ]
+  },
+  {
+    "id": "p_plans_tomorrow",
+    "tier": 2,
+    "after_grammar": "g_ir_a",
+    "situation": "Small talk",
+    "prompt_en": "Someone asks your plans for tomorrow. Say you're going to go to Teotihuacán and then eat at a market.",
+    "prompt_es": "¿Y qué vas a hacer mañana?",
+    "targets": [
+      "voy a",
+      "Teotihuacán",
+      "comer",
+      "mercado"
+    ],
+    "grammar": [
+      "g_ir_a"
+    ],
+    "models": [
+      "Mañana voy a ir a Teotihuacán y luego voy a comer en un mercado.",
+      "Voy a ir a las pirámides de Teotihuacán. Después voy a comer en el mercado.",
+      "Voy a Teotihuacán y después voy a comer en un mercado."
+    ],
+    "hints": [
+      "ir a + infinitive = going to."
+    ]
+  },
+  {
+    "id": "p_tonight_plans",
+    "tier": 2,
+    "after_grammar": "g_ir_a",
+    "situation": "Hotel",
+    "prompt_en": "The receptionist asks if you're going out tonight. Say yes, you're going to Coyoacán with a friend and you'll come back late.",
+    "prompt_es": "¿Va a salir esta noche? Le recomiendo Garibaldi.",
+    "targets": [
+      "voy",
+      "Coyoacán",
+      "amigo",
+      "regresar",
+      "tarde"
+    ],
+    "grammar": [
+      "g_ir_a"
+    ],
+    "models": [
+      "Sí, voy a ir a Coyoacán con un amigo. Voy a regresar tarde.",
+      "Sí, voy a Coyoacán con una amiga y voy a volver tarde.",
+      "Sí, vamos a Coyoacán. Voy a regresar tarde."
+    ],
+    "hints": [
+      "regresar = come back (very common in Mexico)."
+    ]
+  },
+  {
+    "id": "p_dia_muertos_plans",
+    "tier": 2,
+    "after_grammar": "g_ir_a",
+    "situation": "Día de Muertos",
+    "prompt_en": "A local asks what you'll do for Día de Muertos. Say you're going to see the ofrendas in the Zócalo and go to the parade.",
+    "prompt_es": "¿Ya sabe qué va a hacer para Día de Muertos?",
+    "targets": [
+      "voy a",
+      "ofrendas",
+      "Zócalo",
+      "desfile"
+    ],
+    "grammar": [
+      "g_ir_a"
+    ],
+    "models": [
+      "Sí, voy a ver las ofrendas en el Zócalo y voy a ir al desfile.",
+      "Voy a ir al desfile y después voy a ver las ofrendas del Zócalo.",
+      "Voy a ver el desfile y las ofrendas en el Zócalo."
+    ],
+    "hints": [
+      "desfile = parade; ofrenda = altar with offerings."
+    ]
+  },
+  {
+    "id": "p_dont_understand",
+    "tier": 2,
+    "after_grammar": "g_modals",
+    "situation": "Small talk",
+    "prompt_en": "A friendly local talks fast and you lose them. Say you don't understand and ask them to speak more slowly.",
+    "prompt_es": "¿Y ya fue a la Casa Azul? Ahí está bien padre, nomás que tiene que comprar el boleto en línea con tiempo…",
+    "targets": [
+      "no",
+      "entiendo",
+      "despacio"
+    ],
+    "grammar": [
+      "g_negation",
+      "g_modals"
+    ],
+    "models": [
+      "Perdón, no entiendo. ¿Puede hablar más despacio, por favor?",
+      "Disculpe, no entiendo bien. Más despacio, por favor.",
+      "Lo siento, no entendí. ¿Me lo repite más despacio?"
+    ],
+    "hints": [
+      "no goes right before the verb.",
+      "más despacio = more slowly."
+    ]
+  },
+  {
+    "id": "p_uber_wait",
+    "tier": 2,
+    "after_grammar": "g_modals",
+    "situation": "Taxi / Uber",
+    "prompt_en": "Your Uber driver calls to say he's outside. Say you're coming and you need two minutes.",
+    "prompt_es": "Ya estoy afuera, joven, en un Aveo gris.",
+    "targets": [
+      "ya voy",
+      "necesito",
+      "dos minutos"
+    ],
+    "grammar": [
+      "g_modals"
+    ],
+    "models": [
+      "¡Ya voy! Necesito dos minutos, por favor.",
+      "Gracias, ya voy. ¿Me puede esperar dos minutos?",
+      "Ya bajo. Necesito dos minutitos."
+    ],
+    "hints": [
+      "Ya voy = I'm coming (not 'I'm going')."
+    ]
+  },
+  {
+    "id": "p_pay_card_tip",
+    "tier": 2,
+    "after_grammar": "g_modals",
+    "situation": "Restaurant",
+    "prompt_en": "The waiter brings the bill and asks how you'll pay. Ask if you can pay by card, and say you want to leave the tip in cash.",
+    "prompt_es": "¿Cómo va a pagar?",
+    "targets": [
+      "puedo",
+      "pagar",
+      "tarjeta",
+      "propina",
+      "efectivo"
+    ],
+    "grammar": [
+      "g_modals"
+    ],
+    "models": [
+      "¿Puedo pagar con tarjeta? Y quiero dejar la propina en efectivo.",
+      "Con tarjeta, por favor. Y la propina en efectivo.",
+      "¿Se puede con tarjeta? La propina la dejo en efectivo."
+    ],
+    "hints": [
+      "¿Puedo + infinitive? = Can I…?",
+      "Tip is usually 10–15% in Mexico."
+    ]
+  },
+  {
+    "id": "p_ask_for_bill",
+    "tier": 2,
+    "after_grammar": "g_modals",
+    "situation": "Restaurant",
+    "prompt_en": "The waiter offers dessert. Say no thanks, and ask for the bill.",
+    "prompt_es": "¿Algo más? ¿Un postrecito, un cafecito?",
+    "targets": [
+      "no",
+      "gracias",
+      "cuenta"
+    ],
+    "grammar": [
+      "g_modals"
+    ],
+    "models": [
+      "No, gracias. ¿Me trae la cuenta, por favor?",
+      "No, así está bien. La cuenta, por favor.",
+      "Nada más, gracias. ¿Me puede traer la cuenta?"
+    ],
+    "hints": [
+      "Mexican waiters won't bring the bill until you ask for it."
+    ]
+  },
+  {
+    "id": "p_pharmacy_need",
+    "tier": 2,
+    "after_grammar": "g_modals",
+    "situation": "Pharmacy",
+    "prompt_en": "The pharmacist asks what you need. Say you need something for a stomach ache.",
+    "prompt_es": "Buenas tardes, ¿qué necesita?",
+    "targets": [
+      "necesito",
+      "algo",
+      "estómago"
+    ],
+    "grammar": [
+      "g_modals"
+    ],
+    "models": [
+      "Necesito algo para el dolor de estómago.",
+      "Buenas tardes. ¿Tiene algo para el dolor de estómago?",
+      "Necesito algo para el estómago, por favor."
+    ],
+    "hints": [
+      "algo para… = something for…"
+    ]
+  },
+  {
+    "id": "p_repeat_please",
+    "tier": 2,
+    "after_grammar": "g_modals",
+    "situation": "Taxi / Uber",
+    "prompt_en": "The taxi driver asks you something you didn't catch. Ask him to repeat, please.",
+    "prompt_es": "¿Por dónde quiere que me vaya, por Reforma o por Insurgentes?",
+    "targets": [
+      "puede",
+      "repetir",
+      "por favor"
+    ],
+    "grammar": [
+      "g_modals"
+    ],
+    "models": [
+      "¿Puede repetir, por favor?",
+      "Perdón, ¿me lo repite, por favor?",
+      "¿Mande? ¿Puede repetirlo más despacio?"
+    ],
+    "hints": [
+      "¿Mande? = Pardon? — the polite Mexican way."
+    ]
+  },
+  {
+    "id": "p_inside_outside",
+    "tier": 2,
+    "after_grammar": "g_stem_change",
+    "situation": "Restaurant",
+    "prompt_en": "The host asks if you want to sit inside or outside. Say you prefer outside.",
+    "prompt_es": "¿Adentro o afuera?",
+    "targets": [
+      "prefiero",
+      "afuera"
+    ],
+    "grammar": [
+      "g_stem_change"
+    ],
+    "models": [
+      "Prefiero afuera, por favor.",
+      "Afuera, por favor. Preferimos la terraza.",
+      "Afuera, si se puede."
+    ],
+    "hints": [
+      "preferir → prefiero (e → ie)."
+    ]
+  },
+  {
+    "id": "p_museum_hours",
+    "tier": 2,
+    "after_grammar": "g_stem_change",
+    "situation": "Museum",
+    "prompt_en": "Ask the museum guard what time the museum closes and whether you can take photos.",
+    "prompt_es": "Buenas tardes.",
+    "targets": [
+      "a qué hora",
+      "cierra",
+      "fotos"
+    ],
+    "grammar": [
+      "g_stem_change",
+      "g_modals"
+    ],
+    "models": [
+      "Buenas tardes. ¿A qué hora cierra el museo? ¿Se puede tomar fotos?",
+      "¿A qué hora cierran? ¿Y puedo tomar fotos?",
+      "Disculpe, ¿a qué hora cierra? ¿Se pueden tomar fotos?"
+    ],
+    "hints": [
+      "cerrar → cierra (e → ie).",
+      "¿Se puede…? = is it allowed?"
+    ]
+  },
+  {
+    "id": "p_know_oaxaca",
+    "tier": 2,
+    "after_grammar": "g_irregular_yo",
+    "situation": "Small talk",
+    "prompt_en": "Someone asks if you know Oaxaca. Say no, but you want to go next year.",
+    "prompt_es": "¿Conoces Oaxaca?",
+    "targets": [
+      "no",
+      "conozco",
+      "quiero",
+      "ir",
+      "año"
+    ],
+    "grammar": [
+      "g_irregular_yo",
+      "g_modals"
+    ],
+    "models": [
+      "No, no conozco Oaxaca, pero quiero ir el próximo año.",
+      "Todavía no, pero quiero ir el año que viene.",
+      "No lo conozco, pero quiero ir el próximo año."
+    ],
+    "hints": [
+      "Places you've been → conocer → conozco."
+    ]
+  },
+  {
+    "id": "p_dont_know_where",
+    "tier": 2,
+    "after_grammar": "g_irregular_yo",
+    "situation": "Street",
+    "prompt_en": "Another tourist asks YOU for directions. Say sorry, you don't know, you're not from here.",
+    "prompt_es": "Oye, ¿sabes dónde está el Palacio de Bellas Artes?",
+    "targets": [
+      "no sé",
+      "no soy de aquí"
+    ],
+    "grammar": [
+      "g_irregular_yo",
+      "g_negation"
+    ],
+    "models": [
+      "Lo siento, no sé. No soy de aquí.",
+      "Perdón, no sé. Yo tampoco soy de aquí.",
+      "Ay, no sé, no soy de aquí. Lo siento."
+    ],
+    "hints": [
+      "saber → sé."
+    ]
+  },
+  {
+    "id": "p_weekend_routine",
+    "tier": 2,
+    "after_grammar": "g_irregular_yo",
+    "situation": "Small talk",
+    "prompt_en": "A new friend asks what you do on weekends. Say you go out with friends, cook and exercise.",
+    "prompt_es": "¿Y qué haces los fines de semana?",
+    "targets": [
+      "salgo",
+      "amigos",
+      "cocino",
+      "hago ejercicio"
+    ],
+    "grammar": [
+      "g_irregular_yo"
+    ],
+    "models": [
+      "Salgo con mis amigos, cocino y hago ejercicio.",
+      "Normalmente salgo con amigos y hago ejercicio. También cocino mucho.",
+      "Hago ejercicio, cocino y salgo con mis amigos."
+    ],
+    "hints": [
+      "salir → salgo; hacer → hago."
+    ]
+  },
+  {
+    "id": "p_like_food",
+    "tier": 2,
+    "after_grammar": "g_gustar",
+    "situation": "Small talk",
+    "prompt_en": "Someone asks if you like Mexican food. Say you love it, especially mole and tacos al pastor.",
+    "prompt_es": "¿Te gusta la comida mexicana?",
+    "targets": [
+      "me encanta",
+      "mole",
+      "tacos"
+    ],
+    "grammar": [
+      "g_gustar"
+    ],
+    "models": [
+      "¡Me encanta! Sobre todo el mole y los tacos al pastor.",
+      "Sí, me gusta muchísimo. Me encantan los tacos al pastor y el mole.",
+      "¡Me encanta! Me gustan mucho el mole y los tacos al pastor."
+    ],
+    "hints": [
+      "Plural things → me encantan / me gustan."
+    ]
+  },
+  {
+    "id": "p_mezcal_like",
+    "tier": 2,
+    "after_grammar": "g_gustar",
+    "situation": "Mezcal tasting",
+    "prompt_en": "The mezcalero asks if you like the espadín. Say you like it a lot, but it's very strong.",
+    "prompt_es": "¿Qué tal? ¿Le gusta este espadín?",
+    "targets": [
+      "me gusta",
+      "mucho",
+      "fuerte"
+    ],
+    "grammar": [
+      "g_gustar"
+    ],
+    "models": [
+      "Me gusta mucho, pero es muy fuerte.",
+      "Sí, está muy rico, pero está fuerte.",
+      "Me encanta, pero es bastante fuerte."
+    ],
+    "hints": [
+      "Sip mezcal slowly — 'a besitos' (in little kisses)."
+    ]
+  },
+  {
+    "id": "p_headache_fever",
+    "tier": 2,
+    "after_grammar": "g_gustar",
+    "situation": "Pharmacy",
+    "prompt_en": "The pharmacist asks about your symptoms. Say your head hurts and you have a fever.",
+    "prompt_es": "¿Qué síntomas tiene?",
+    "targets": [
+      "me duele",
+      "cabeza",
+      "tengo",
+      "fiebre"
+    ],
+    "grammar": [
+      "g_gustar",
+      "g_tener"
+    ],
+    "models": [
+      "Me duele la cabeza y tengo fiebre.",
+      "Tengo fiebre y me duele mucho la cabeza.",
+      "Me duele la cabeza y creo que tengo fiebre."
+    ],
+    "hints": [
+      "Me duele la cabeza — la, not mi."
+    ]
+  },
+  {
+    "id": "p_lost_phone",
+    "tier": 3,
+    "after_grammar": "g_possessives",
+    "situation": "Lost item",
+    "prompt_en": "You return to a restaurant. The manager asks if you lost something. Say yes, you can't find your phone; it's black.",
+    "prompt_es": "¿Se le perdió algo, joven?",
+    "targets": [
+      "mi celular",
+      "no",
+      "encuentro",
+      "negro"
+    ],
+    "grammar": [
+      "g_possessives",
+      "g_stem_change"
+    ],
+    "models": [
+      "Sí, no encuentro mi celular. Es negro.",
+      "Sí, mi celular. Es negro, con una funda azul.",
+      "Sí, no encuentro mi celular por ningún lado. Es negro."
+    ],
+    "hints": [
+      "encontrar → encuentro (o → ue).",
+      "funda = phone case."
+    ]
+  },
+  {
+    "id": "p_bakery_this_one",
+    "tier": 3,
+    "after_grammar": "g_possessives",
+    "situation": "Bakery",
+    "prompt_en": "At the bakery counter, point and ask for this concha and those two (near the clerk).",
+    "prompt_es": "¿Cuál le doy?",
+    "targets": [
+      "esta",
+      "concha",
+      "esos",
+      "dos"
+    ],
+    "grammar": [
+      "g_possessives"
+    ],
+    "models": [
+      "Esta concha y esos dos, por favor.",
+      "Me da esta concha y esos dos, por favor.",
+      "Esta y esos dos de ahí, por favor."
+    ],
+    "hints": [
+      "este/esta = near you; ese/esa = near the other person."
+    ]
+  },
+  {
+    "id": "p_is_it_yours",
+    "tier": 3,
+    "after_grammar": "g_possessives",
+    "situation": "Hotel",
+    "prompt_en": "The bellboy points at a suitcase. Say no, it's not yours — yours is the black one.",
+    "prompt_es": "¿Esta maleta es suya?",
+    "targets": [
+      "no",
+      "mía",
+      "negra"
+    ],
+    "grammar": [
+      "g_possessives"
+    ],
+    "models": [
+      "No, la mía es la negra.",
+      "No, no es mía. Mi maleta es negra.",
+      "No, esa no es mía. La mía es negra."
+    ],
+    "hints": [
+      "la mía = mine (maleta is feminine)."
+    ]
+  },
+  {
+    "id": "p_tickets_have_them",
+    "tier": 3,
+    "after_grammar": "g_direct_objects",
+    "situation": "Museum",
+    "prompt_en": "The guard asks if you have your tickets. Say yes, you have them on your phone.",
+    "prompt_es": "¿Ya tiene sus boletos?",
+    "targets": [
+      "sí",
+      "los tengo",
+      "celular"
+    ],
+    "grammar": [
+      "g_direct_objects"
+    ],
+    "models": [
+      "Sí, los tengo en el celular.",
+      "Sí, aquí los tengo, en mi celular.",
+      "Sí, los tengo en el teléfono."
+    ],
+    "hints": [
+      "los boletos → los."
+    ]
+  },
+  {
+    "id": "p_more_tortillas",
+    "tier": 3,
+    "after_grammar": "g_indirect_objects",
+    "situation": "Restaurant",
+    "prompt_en": "The waiter asks if you need anything. Ask him to bring you more tortillas and some napkins.",
+    "prompt_es": "¿Le traigo algo más?",
+    "targets": [
+      "me trae",
+      "tortillas",
+      "servilletas"
+    ],
+    "grammar": [
+      "g_indirect_objects"
+    ],
+    "models": [
+      "Sí, ¿me trae más tortillas y unas servilletas, por favor?",
+      "¿Me puede traer más tortillas y servilletas?",
+      "Sí, más tortillas y unas servilletas, por favor."
+    ],
+    "hints": [
+      "¿Me trae…? = Could you bring me…?"
+    ]
+  },
+  {
+    "id": "p_market_haggle",
+    "tier": 3,
+    "after_grammar": "g_indirect_objects",
+    "situation": "Market",
+    "prompt_en": "A vendor offers you a rebozo (shawl) for 800 pesos. Say it's a bit expensive and ask if she'll let you have it for 600.",
+    "prompt_es": "Ese rebozo se lo dejo en ochocientos, güero.",
+    "targets": [
+      "caro",
+      "deja",
+      "seiscientos"
+    ],
+    "grammar": [
+      "g_indirect_objects",
+      "g_numbers"
+    ],
+    "models": [
+      "Está un poco caro. ¿Me lo deja en seiscientos?",
+      "Uy, está caro. ¿En seiscientos me lo deja?",
+      "Es mucho. ¿No me lo deja en seiscientos?"
+    ],
+    "hints": [
+      "¿Me lo deja en…? = Will you let me have it for…?",
+      "Haggle politely at craft markets, not at food stalls."
+    ]
+  },
+  {
+    "id": "p_directions_check",
+    "tier": 3,
+    "after_grammar": "g_commands",
+    "situation": "Street",
+    "prompt_en": "You asked for the Zócalo. A passer-by gives directions. Repeat them back to check you understood.",
+    "prompt_es": "Siga derecho dos cuadras y luego dé vuelta a la izquierda.",
+    "targets": [
+      "derecho",
+      "dos cuadras",
+      "izquierda"
+    ],
+    "grammar": [
+      "g_commands"
+    ],
+    "models": [
+      "¿Derecho dos cuadras y luego a la izquierda?",
+      "O sea, sigo derecho dos cuadras y doy vuelta a la izquierda, ¿verdad?",
+      "Dos cuadras derecho y luego a la izquierda. ¡Gracias!"
+    ],
+    "hints": [
+      "derecho = straight; a la izquierda = to the left."
+    ]
+  },
+  {
+    "id": "p_taxi_corner",
+    "tier": 3,
+    "after_grammar": "g_commands",
+    "situation": "Taxi / Uber",
+    "prompt_en": "The taxi driver asks where to drop you. Ask him to leave you at the corner and to wait a moment for you.",
+    "prompt_es": "¿Aquí está bien o lo dejo en la esquina?",
+    "targets": [
+      "esquina",
+      "espéreme",
+      "momento"
+    ],
+    "grammar": [
+      "g_commands"
+    ],
+    "models": [
+      "En la esquina, por favor. Y espéreme un momento.",
+      "Déjeme en la esquina, por favor. ¿Me espera un momentito?",
+      "En la esquina está bien. Espéreme tantito, por favor."
+    ],
+    "hints": [
+      "Espéreme = wait for me (usted command + me).",
+      "tantito = a little bit (Mexico)."
+    ]
+  },
+  {
+    "id": "p_wake_up_call",
+    "tier": 3,
+    "after_grammar": "g_reflexive",
+    "situation": "Hotel",
+    "prompt_en": "The receptionist offers a wake-up call for your Teotihuacán trip. Say yes; you get up at six, so call at 5:45.",
+    "prompt_es": "¿Quiere que le hagamos una llamada para despertarlo?",
+    "targets": [
+      "me levanto",
+      "seis",
+      "despierta",
+      "cuarto para las seis"
+    ],
+    "grammar": [
+      "g_reflexive",
+      "g_numbers"
+    ],
+    "models": [
+      "Sí, por favor. Me levanto a las seis. ¿Me despierta a un cuarto para las seis?",
+      "Sí, gracias. Me levanto temprano; despiérteme a las cinco cuarenta y cinco.",
+      "Sí, por favor, a un cuarto para las seis. Me levanto a las seis."
+    ],
+    "hints": [
+      "un cuarto para las seis = 5:45 (Mexico)."
+    ]
+  },
+  {
+    "id": "p_staying_nights",
+    "tier": 3,
+    "after_grammar": "g_reflexive",
+    "situation": "Hotel",
+    "prompt_en": "At check-in you're asked how many nights you're staying. Say four nights, until Monday.",
+    "prompt_es": "¿Cuántas noches se va a quedar?",
+    "targets": [
+      "me quedo",
+      "cuatro noches",
+      "lunes"
+    ],
+    "grammar": [
+      "g_reflexive"
+    ],
+    "models": [
+      "Me quedo cuatro noches, hasta el lunes.",
+      "Voy a quedarme cuatro noches; me voy el lunes.",
+      "Cuatro noches. Me voy el lunes."
+    ],
+    "hints": [
+      "quedarse = stay; irse = leave."
+    ]
+  },
+  {
+    "id": "p_feel_sick",
+    "tier": 3,
+    "after_grammar": "g_reflexive",
+    "situation": "Small talk",
+    "prompt_en": "Your friend says you look pale. Say you feel bad and you're going to go to bed early.",
+    "prompt_es": "Te ves pálido. ¿Te sientes bien?",
+    "targets": [
+      "me siento",
+      "mal",
+      "acostar",
+      "temprano"
+    ],
+    "grammar": [
+      "g_reflexive"
+    ],
+    "models": [
+      "No, me siento mal. Me voy a acostar temprano.",
+      "La verdad me siento un poco mal. Voy a acostarme temprano.",
+      "Me siento mal. Hoy me voy a dormir temprano."
+    ],
+    "hints": [
+      "sentirse → me siento; acostarse → me acuesto."
+    ]
+  },
+  {
+    "id": "p_just_looking",
+    "tier": 3,
+    "after_grammar": "g_progressive",
+    "situation": "Market",
+    "prompt_en": "A vendor in a crafts market asks what you're looking for. Say you're just looking, thanks.",
+    "prompt_es": "¡Pásele, joven, pásele! ¿Qué anda buscando?",
+    "targets": [
+      "nomás",
+      "viendo",
+      "gracias"
+    ],
+    "grammar": [
+      "g_progressive"
+    ],
+    "models": [
+      "Nomás estoy viendo, gracias.",
+      "Solo estoy viendo, gracias.",
+      "Nada más ando viendo, gracias."
+    ],
+    "hints": [
+      "Nomás / nada más = just (very Mexican)."
+    ]
+  },
+  {
+    "id": "p_doing_now",
+    "tier": 3,
+    "after_grammar": "g_progressive",
+    "situation": "Small talk",
+    "prompt_en": "A friend texts asking what you're doing and if you're coming to the party. Say you're eating with coworkers and will come later.",
+    "prompt_es": "¿Qué estás haciendo? ¿Vienes a la fiesta?",
+    "targets": [
+      "estoy comiendo",
+      "compañeros",
+      "más tarde"
+    ],
+    "grammar": [
+      "g_progressive"
+    ],
+    "models": [
+      "Estoy comiendo con unos compañeros del trabajo. Voy más tarde.",
+      "Ahorita estoy comiendo con mis compañeros, pero llego más tarde.",
+      "Estoy comiendo con unos compañeros. ¡Ahorita voy!"
+    ],
+    "hints": [
+      "ahorita = right now / in a bit — context decides."
+    ]
+  },
+  {
+    "id": "p_send_photo",
+    "tier": 3,
+    "after_grammar": "g_por_para",
+    "situation": "Small talk",
+    "prompt_en": "A new friend loves a photo you took and asks you to send it. Say sure, you'll send it by WhatsApp right now.",
+    "prompt_es": "¡Qué buena foto! ¿Me la mandas?",
+    "targets": [
+      "te la mando",
+      "WhatsApp",
+      "ahorita"
+    ],
+    "grammar": [
+      "g_indirect_objects",
+      "g_por_para"
+    ],
+    "models": [
+      "¡Claro! Te la mando por WhatsApp ahorita.",
+      "Sí, ahorita te la mando por WhatsApp.",
+      "¡Claro que sí! Te la mando por WhatsApp."
+    ],
+    "hints": [
+      "te + la → te la mando.",
+      "Means of communication → por."
+    ]
+  },
+  {
+    "id": "p_takeout_salsa",
+    "tier": 3,
+    "after_grammar": "g_por_para",
+    "situation": "Taquería",
+    "prompt_en": "The taquero asks if it's for here or to go. Say to go, and ask for the salsa on the side.",
+    "prompt_es": "¿Para aquí o para llevar?",
+    "targets": [
+      "para llevar",
+      "salsa",
+      "aparte"
+    ],
+    "grammar": [
+      "g_por_para"
+    ],
+    "models": [
+      "Para llevar, por favor. ¿Me pone la salsa aparte?",
+      "Para llevar. Y la salsa aparte, por favor.",
+      "Para llevar, con la salsa aparte, por favor."
+    ],
+    "hints": [
+      "para llevar = to go; aparte = on the side."
+    ]
+  },
+  {
+    "id": "p_thanks_everything",
+    "tier": 3,
+    "after_grammar": "g_por_para",
+    "situation": "Small talk",
+    "prompt_en": "You're leaving your friend's family's house after dinner. Thank them for everything and for the delicious food.",
+    "prompt_es": "¡Que te vaya muy bien! Aquí tienes tu casa.",
+    "targets": [
+      "gracias",
+      "por todo",
+      "comida"
+    ],
+    "grammar": [
+      "g_por_para"
+    ],
+    "models": [
+      "¡Muchas gracias por todo! La comida estuvo riquísima.",
+      "Gracias por todo, de verdad. ¡Y gracias por la comida tan rica!",
+      "Mil gracias por todo y por la comida. ¡Estuvo deliciosa!"
+    ],
+    "hints": [
+      "Thanks for… → gracias por…",
+      "Aquí tienes tu casa = you're always welcome here."
+    ]
+  },
+  {
+    "id": "p_gift_for_mom",
+    "tier": 3,
+    "after_grammar": "g_por_para",
+    "situation": "Market",
+    "prompt_en": "Buying a talavera mug, the vendor asks if it's for you or a gift. Say it's a gift for your mother.",
+    "prompt_es": "¿Es para usted o es para regalo?",
+    "targets": [
+      "regalo",
+      "para",
+      "mamá"
+    ],
+    "grammar": [
+      "g_por_para",
+      "g_possessives"
+    ],
+    "models": [
+      "Es un regalo para mi mamá.",
+      "Es para regalo, para mi mamá.",
+      "Para regalo. Es para mi mamá."
+    ],
+    "hints": [
+      "Recipient → para."
+    ]
+  },
+  {
+    "id": "p_yesterday_did",
+    "tier": 4,
+    "after_grammar": "g_preterite_regular",
+    "situation": "Small talk",
+    "prompt_en": "Someone asks what you did yesterday. Say you visited the Anthropology Museum and ate tacos in Coyoacán.",
+    "prompt_es": "¿Y qué hiciste ayer?",
+    "targets": [
+      "visité",
+      "museo",
+      "comí",
+      "tacos"
+    ],
+    "grammar": [
+      "g_preterite_regular"
+    ],
+    "models": [
+      "Visité el Museo de Antropología y comí tacos en Coyoacán.",
+      "Ayer visité el Museo de Antropología y luego comí unos tacos en Coyoacán.",
+      "Fui al Museo de Antropología y después comí tacos en Coyoacán."
+    ],
+    "hints": [
+      "visitar → visité; comer → comí."
+    ]
+  },
+  {
+    "id": "p_when_arrived",
+    "tier": 4,
+    "after_grammar": "g_preterite_regular",
+    "situation": "Taxi / Uber",
+    "prompt_en": "The driver asks when you arrived in Mexico. Say you arrived two days ago.",
+    "prompt_es": "¿Y cuándo llegó a México?",
+    "targets": [
+      "llegué",
+      "hace",
+      "días"
+    ],
+    "grammar": [
+      "g_preterite_regular"
+    ],
+    "models": [
+      "Llegué hace dos días.",
+      "Llegué antier, hace dos días.",
+      "Hace dos días. Llegué el viernes."
+    ],
+    "hints": [
+      "hace + time = ago.",
+      "antier = the day before yesterday (Mexico)."
+    ]
+  },
+  {
+    "id": "p_lost_wallet",
+    "tier": 4,
+    "after_grammar": "g_preterite_regular",
+    "situation": "Lost item",
+    "prompt_en": "At the tourist police booth, the officer asks where you lost your wallet. Say you think you lost it on the metro, at Pino Suárez station, around three.",
+    "prompt_es": "¿Dónde perdió su cartera?",
+    "targets": [
+      "creo",
+      "perdí",
+      "metro",
+      "estación",
+      "tres"
+    ],
+    "grammar": [
+      "g_preterite_regular",
+      "g_direct_objects"
+    ],
+    "models": [
+      "Creo que la perdí en el metro, en la estación Pino Suárez, como a las tres.",
+      "No sé, creo que en el metro Pino Suárez, a las tres de la tarde.",
+      "Creo que la perdí en el metro. Fue en Pino Suárez, como a las tres."
+    ],
+    "hints": [
+      "la cartera → la perdí.",
+      "como a las tres = around three."
+    ]
+  },
+  {
+    "id": "p_explain_research",
+    "tier": 4,
+    "after_grammar": "g_preterite_regular",
+    "situation": "Small talk",
+    "prompt_en": "At dinner, someone asks what exactly you research. Say you develop small sensors that measure the brain's electrical activity, and last year you tested them in patients.",
+    "prompt_es": "¿Y qué investigas exactamente?",
+    "targets": [
+      "sensores",
+      "cerebro",
+      "actividad",
+      "probamos"
+    ],
+    "grammar": [
+      "g_preterite_regular",
+      "g_direct_objects"
+    ],
+    "models": [
+      "Desarrollo sensores muy pequeños que miden la actividad eléctrica del cerebro. El año pasado los probamos en pacientes.",
+      "Trabajo en unos sensores pequeños para medir la actividad del cerebro. El año pasado los probamos con pacientes.",
+      "Hacemos sensores chiquitos que miden la actividad eléctrica del cerebro; el año pasado los probamos en pacientes."
+    ],
+    "hints": [
+      "medir → mide / miden (e → i).",
+      "los sensores → los probamos."
+    ]
+  },
+  {
+    "id": "p_how_was_teotihuacan",
+    "tier": 4,
+    "after_grammar": "g_preterite_irregular",
+    "situation": "Small talk",
+    "prompt_en": "Your friend asks how Teotihuacán went. Say it went great, you walked the Avenue of the Dead, but it was very hot.",
+    "prompt_es": "¿Cómo te fue en Teotihuacán?",
+    "targets": [
+      "me fue",
+      "bien",
+      "caminamos",
+      "calor"
+    ],
+    "grammar": [
+      "g_preterite_irregular",
+      "g_preterite_regular"
+    ],
+    "models": [
+      "¡Me fue muy bien! Caminamos por la Calzada de los Muertos, pero hizo mucho calor.",
+      "Muy bien, gracias. Caminé por la Calzada de los Muertos; hizo un calorón.",
+      "¡Increíble! Caminamos por la Calzada de los Muertos, aunque hizo mucho calor."
+    ],
+    "hints": [
+      "¿Cómo te fue? → Me fue bien.",
+      "hacer → hizo calor."
+    ]
+  },
+  {
+    "id": "p_parade_went",
+    "tier": 4,
+    "after_grammar": "g_imperfect",
+    "situation": "Día de Muertos",
+    "prompt_en": "A coworker asks if you went to the Día de Muertos parade. Say yes, you went with friends; there were lots of people and the catrinas were incredible.",
+    "prompt_es": "¿Fuiste al desfile de Día de Muertos?",
+    "targets": [
+      "fui",
+      "amigos",
+      "había",
+      "gente",
+      "catrinas"
+    ],
+    "grammar": [
+      "g_imperfect",
+      "g_preterite_irregular"
+    ],
+    "models": [
+      "Sí, fui con unos amigos. Había mucha gente y las catrinas estaban increíbles.",
+      "¡Sí! Fui con mis amigos. Había muchísima gente y las catrinas eran increíbles.",
+      "Sí, fui con unos amigos. ¡Había un montón de gente! Las catrinas estuvieron increíbles."
+    ],
+    "hints": [
+      "Event → fui; description → había."
+    ]
+  },
+  {
+    "id": "p_ofrenda_grandpa",
+    "tier": 4,
+    "after_grammar": "g_imperfect",
+    "situation": "Día de Muertos",
+    "prompt_en": "Your host shows you her ofrenda and asks if people do something like this in your country. Say not really, it's beautiful, and ask what her grandpa liked.",
+    "prompt_es": "Esta ofrenda es para mi abuelo. ¿En tu país hacen algo así?",
+    "targets": [
+      "no",
+      "bonita",
+      "le gustaba",
+      "abuelo"
+    ],
+    "grammar": [
+      "g_imperfect",
+      "g_gustar"
+    ],
+    "models": [
+      "No, la verdad no. Pero me parece muy bonita. ¿Qué le gustaba a tu abuelo?",
+      "Casi no. ¡Está preciosa! ¿Qué cosas le gustaban a tu abuelo?",
+      "No mucho. Es muy bonita. ¿Qué le gustaba comer a tu abuelo?"
+    ],
+    "hints": [
+      "Past habits / likes → imperfect: le gustaba."
+    ]
+  },
+  {
+    "id": "p_compare_cities",
+    "tier": 4,
+    "after_grammar": "g_comparisons",
+    "situation": "Small talk",
+    "prompt_en": "A local asks which you like more, Mexico City or Houston. Say Mexico City is more beautiful and the food is better than in Houston.",
+    "prompt_es": "¿Qué te gusta más, la Ciudad de México o Houston?",
+    "targets": [
+      "más",
+      "bonita",
+      "mejor",
+      "comida"
+    ],
+    "grammar": [
+      "g_comparisons"
+    ],
+    "models": [
+      "La Ciudad de México es más bonita, y la comida es mejor que en Houston.",
+      "Me gusta más la Ciudad de México. Es más bonita y la comida es mucho mejor.",
+      "¡La Ciudad de México! Es más bonita que Houston y la comida es mejor."
+    ],
+    "hints": [
+      "bueno → mejor; más … que."
+    ]
+  },
+  {
+    "id": "p_cheaper_hat",
+    "tier": 4,
+    "after_grammar": "g_comparisons",
+    "situation": "Market",
+    "prompt_en": "A sombrero costs 1,000 pesos. Ask if they have a cheaper one, a bit smaller.",
+    "prompt_es": "Este sombrero cuesta mil pesos.",
+    "targets": [
+      "tiene",
+      "más barato",
+      "más chico"
+    ],
+    "grammar": [
+      "g_comparisons"
+    ],
+    "models": [
+      "¿No tiene uno más barato?",
+      "¿Tiene uno más barato y un poco más chico?",
+      "Está muy caro. ¿Tiene otro más barato, más chico?"
+    ],
+    "hints": [
+      "más barato = cheaper; chico = small (Mexico)."
+    ]
+  },
+  {
+    "id": "p_pan_de_muerto",
+    "tier": 4,
+    "after_grammar": "g_comparisons",
+    "situation": "Día de Muertos",
+    "prompt_en": "A baker asks if you've tried pan de muerto. Say not yet, ask for two, and ask if it's better with hot chocolate.",
+    "prompt_es": "¿Ya probó el pan de muerto, joven?",
+    "targets": [
+      "todavía no",
+      "dos",
+      "mejor",
+      "chocolate"
+    ],
+    "grammar": [
+      "g_comparisons",
+      "g_negation"
+    ],
+    "models": [
+      "Todavía no. Me da dos, por favor. ¿Es mejor con chocolate caliente?",
+      "¡Todavía no! Deme dos. ¿Sabe mejor con chocolate?",
+      "Todavía no. Dos, por favor. ¿Es mejor con chocolate o con café?"
+    ],
+    "hints": [
+      "todavía no = not yet.",
+      "saber mejor = taste better."
+    ]
+  },
+  {
+    "id": "p_just_arrived_airbnb",
+    "tier": 4,
+    "after_grammar": "g_acabar_volver_soler",
+    "situation": "Hotel",
+    "prompt_en": "Your Airbnb host calls to check if you made it. Say you just arrived and everything is fine.",
+    "prompt_es": "¿Ya llegaste al departamento?",
+    "targets": [
+      "acabo de",
+      "llegar",
+      "todo",
+      "bien"
+    ],
+    "grammar": [
+      "g_acabar_volver_soler"
+    ],
+    "models": [
+      "Sí, acabo de llegar. Todo bien, gracias.",
+      "Sí, acabo de llegar y todo está muy bien.",
+      "Acabo de llegar. ¡Todo perfecto, gracias!"
+    ],
+    "hints": [
+      "acabar de + infinitive = have just."
+    ]
+  },
+  {
+    "id": "p_usual_breakfast",
+    "tier": 4,
+    "after_grammar": "g_acabar_volver_soler",
+    "situation": "Small talk",
+    "prompt_en": "Someone asks what you usually have for breakfast. Say you usually have coffee and eggs, but here in Mexico you eat chilaquiles.",
+    "prompt_es": "¿Qué sueles desayunar?",
+    "targets": [
+      "suelo",
+      "café",
+      "huevos",
+      "chilaquiles"
+    ],
+    "grammar": [
+      "g_acabar_volver_soler"
+    ],
+    "models": [
+      "Suelo desayunar café con huevos, pero aquí en México como chilaquiles.",
+      "Normalmente tomo café y huevos, pero en México desayuno chilaquiles.",
+      "Suelo tomar café y huevos. ¡Pero aquí, chilaquiles!"
+    ],
+    "hints": [
+      "soler → suelo + infinitive."
+    ]
+  },
+  {
+    "id": "p_hotel_goodbye",
+    "tier": 4,
+    "after_grammar": "g_subjunctive_taste",
+    "situation": "Hotel",
+    "prompt_en": "Checking out, the receptionist asks if you'll come back. Say you hope so, you want to return next year, and wish her a good day.",
+    "prompt_es": "¡Gracias por su visita! ¿Regresa pronto?",
+    "targets": [
+      "ojalá",
+      "regresar",
+      "próximo año",
+      "que le vaya bien"
+    ],
+    "grammar": [
+      "g_subjunctive_taste"
+    ],
+    "models": [
+      "¡Ojalá! Quiero regresar el próximo año. ¡Que le vaya bien!",
+      "Espero que sí. Quiero volver el año que viene. ¡Que tenga buen día!",
+      "¡Ojalá que sí! Quiero regresar el próximo año. Que le vaya muy bien."
+    ],
+    "hints": [
+      "¡Que le vaya bien! = Have a good one (usted)."
+    ]
+  },
+  {
+    "id": "p_next_visit",
+    "tier": 4,
+    "after_grammar": "g_subjunctive_taste",
+    "situation": "Small talk",
+    "prompt_en": "Your friend asks when you'll come back to Mexico. Say you hope soon; next time you're going to visit Oaxaca.",
+    "prompt_es": "¿Y cuándo vuelves a México?",
+    "targets": [
+      "ojalá",
+      "pronto",
+      "próxima vez",
+      "Oaxaca"
+    ],
+    "grammar": [
+      "g_subjunctive_taste",
+      "g_ir_a"
+    ],
+    "models": [
+      "Ojalá que pronto. La próxima vez voy a visitar Oaxaca.",
+      "Espero volver pronto. La próxima vez quiero ir a Oaxaca y quedarme más tiempo.",
+      "¡Ojalá muy pronto! La próxima vez voy a ir a Oaxaca."
+    ],
+    "hints": [
+      "Ojalá que pronto = hopefully soon."
+    ]
+  },
+  {
+    "id": "p_get_well",
+    "tier": 4,
+    "after_grammar": "g_subjunctive_taste",
+    "situation": "Small talk",
+    "prompt_en": "Your friend texts that she's sick and can't come out tonight. Tell her no worries, get well soon, and you'll see each other tomorrow.",
+    "prompt_es": "Perdón, me siento fatal y no voy a poder salir hoy.",
+    "targets": [
+      "no te preocupes",
+      "que te mejores",
+      "mañana"
+    ],
+    "grammar": [
+      "g_subjunctive_taste",
+      "g_commands"
+    ],
+    "models": [
+      "¡No te preocupes! Que te mejores. Nos vemos mañana.",
+      "No pasa nada. ¡Que te mejores pronto! Nos vemos mañana.",
+      "Ay, no te preocupes. Descansa y que te mejores. Mañana nos vemos."
+    ],
+    "hints": [
+      "¡Que te mejores! = Get well soon (tú)."
+    ]
+  }
+]

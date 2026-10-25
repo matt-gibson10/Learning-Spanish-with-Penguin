@@ -1,0 +1,89 @@
+[
+  {
+    "id": "rd_el_taxi",
+    "tier": 1,
+    "after_grammar": "g_present_ar",
+    "title": "El taxi",
+    "title_en": "The taxi",
+    "topic": "transport",
+    "level_note": "present tense, ~60 words",
+    "sentences": [
+      {
+        "es": "Matt llega al aeropuerto a las once de la noche.",
+        "en": "Matt arrives at the airport at eleven at night.",
+        "gist": "He lands late at night.",
+        "words": [
+          {
+            "es": "llega",
+            "en": "arrives (llegar)"
+          },
+          {
+            "es": "noche",
+            "en": "night"
+          }
+        ],
+        "natural": "Matt llegal aeropuerto a lasonce de la noche."
+      },
+      {
+        "es": "Está cansado, pero tiene mucha hambre.",
+        "en": "He's tired, but he's very hungry.",
+        "gist": "Tired and hungry.",
+        "words": [
+          {
+            "es": "cansado",
+            "en": "tired"
+          },
+          {
+            "es": "hambre",
+            "en": "hunger"
+          }
+        ]
+      },
+      {
+        "es": "Toma un taxi y le dice al taxista: «Al centro, por favor».",
+        "en": "He takes a taxi and tells the driver: 'Downtown, please.'",
+        "gist": "He asks the taxi to take him downtown.",
+        "words": [
+          {
+            "es": "taxista",
+            "en": "taxi driver"
+          },
+          {
+            "es": "centro",
+            "en": "downtown"
+          }
+        ]
+      },
+      {
+        "es": "El taxista habla muy rápido y Matt dice: «¿Mande?».",
+        "en": "The driver talks very fast and Matt says: 'Pardon?'",
+        "gist": "He doesn't catch what the driver says.",
+        "words": [
+          {
+            "es": "rápido",
+            "en": "fast"
+          },
+          {
+            "es": "¿mande?",
+            "en": "pardon? (Mexico)"
+          }
+        ]
+      },
+      {
+        "es": "Al final, los dos se ríen y Matt paga con tarjeta.",
+        "en": "In the end, they both laugh and Matt pays by card.",
+        "gist": "It ends well; he pays.",
+        "words": [
+          {
+            "es": "se ríen",
+            "en": "they laugh (reírse)"
+          },
+          {
+            "es": "paga",
+            "en": "pays (pagar)"
+          }
+        ]
+      }
+    ]
+  }
+]

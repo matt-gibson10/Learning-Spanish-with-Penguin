@@ -1,0 +1,623 @@
+[
+  {
+    "id": "v_ser",
+    "es": "ser",
+    "en": "to be (identity, origin, time)",
+    "pos": "verb",
+    "rank": 2,
+    "topic": "function",
+    "conj": {
+      "pres": [
+        "soy",
+        "eres",
+        "es",
+        "somos",
+        "son"
+      ],
+      "pret": [
+        "fui",
+        "fuiste",
+        "fue",
+        "fuimos",
+        "fueron"
+      ],
+      "imp": [
+        "era",
+        "eras",
+        "era",
+        "éramos",
+        "eran"
+      ],
+      "fut": [
+        "seré",
+        "serás",
+        "será",
+        "seremos",
+        "serán"
+      ],
+      "subj": [
+        "sea",
+        "seas",
+        "sea",
+        "seamos",
+        "sean"
+      ],
+      "cmd": {
+        "tu": "sé",
+        "usted": "sea"
+      },
+      "ger": "siendo",
+      "part": "sido",
+      "irregular": true,
+      "reflexive": false
+    },
+    "ex_es": "Soy de Texas.",
+    "ex_en": "I'm from Texas.",
+    "tier": 1
+  },
+  {
+    "id": "v_estar",
+    "es": "estar",
+    "en": "to be (location, state)",
+    "pos": "verb",
+    "rank": 6,
+    "topic": "function",
+    "conj": {
+      "pres": [
+        "estoy",
+        "estás",
+        "está",
+        "estamos",
+        "están"
+      ],
+      "pret": [
+        "estuve",
+        "estuviste",
+        "estuvo",
+        "estuvimos",
+        "estuvieron"
+      ],
+      "imp": [
+        "estaba",
+        "estabas",
+        "estaba",
+        "estábamos",
+        "estaban"
+      ],
+      "fut": [
+        "estaré",
+        "estarás",
+        "estará",
+        "estaremos",
+        "estarán"
+      ],
+      "subj": [
+        "esté",
+        "estés",
+        "esté",
+        "estemos",
+        "estén"
+      ],
+      "cmd": {
+        "tu": "está",
+        "usted": "esté"
+      },
+      "ger": "estando",
+      "part": "estado",
+      "irregular": true,
+      "reflexive": false
+    },
+    "ex_es": "¿Dónde está el metro?",
+    "ex_en": "Where is the metro?",
+    "natural": [
+      "'toy",
+      "'tá"
+    ],
+    "tier": 1
+  },
+  {
+    "id": "v_tener",
+    "es": "tener",
+    "en": "to have",
+    "pos": "verb",
+    "rank": 9,
+    "topic": "function",
+    "conj": {
+      "pres": [
+        "tengo",
+        "tienes",
+        "tiene",
+        "tenemos",
+        "tienen"
+      ],
+      "pret": [
+        "tuve",
+        "tuviste",
+        "tuvo",
+        "tuvimos",
+        "tuvieron"
+      ],
+      "imp": [
+        "tenía",
+        "tenías",
+        "tenía",
+        "teníamos",
+        "tenían"
+      ],
+      "fut": [
+        "tendré",
+        "tendrás",
+        "tendrá",
+        "tendremos",
+        "tendrán"
+      ],
+      "subj": [
+        "tenga",
+        "tengas",
+        "tenga",
+        "tengamos",
+        "tengan"
+      ],
+      "cmd": {
+        "tu": "ten",
+        "usted": "tenga"
+      },
+      "ger": "teniendo",
+      "part": "tenido",
+      "irregular": true,
+      "reflexive": false
+    },
+    "ex_es": "¿Tiene mesa para dos?",
+    "ex_en": "Do you have a table for two?",
+    "tier": 1
+  },
+  {
+    "id": "v_ir",
+    "es": "ir",
+    "en": "to go",
+    "pos": "verb",
+    "rank": 12,
+    "topic": "actions",
+    "conj": {
+      "pres": [
+        "voy",
+        "vas",
+        "va",
+        "vamos",
+        "van"
+      ],
+      "pret": [
+        "fui",
+        "fuiste",
+        "fue",
+        "fuimos",
+        "fueron"
+      ],
+      "imp": [
+        "iba",
+        "ibas",
+        "iba",
+        "íbamos",
+        "iban"
+      ],
+      "fut": [
+        "iré",
+        "irás",
+        "irá",
+        "iremos",
+        "irán"
+      ],
+      "subj": [
+        "vaya",
+        "vayas",
+        "vaya",
+        "vayamos",
+        "vayan"
+      ],
+      "cmd": {
+        "tu": "ve",
+        "usted": "vaya"
+      },
+      "ger": "yendo",
+      "part": "ido",
+      "irregular": true,
+      "reflexive": false
+    },
+    "ex_es": "Voy al centro.",
+    "ex_en": "I'm going downtown.",
+    "tier": 1
+  },
+  {
+    "id": "v_querer",
+    "es": "querer",
+    "en": "to want; to love",
+    "pos": "verb",
+    "rank": 30,
+    "topic": "actions",
+    "conj": {
+      "pres": [
+        "quiero",
+        "quieres",
+        "quiere",
+        "queremos",
+        "quieren"
+      ],
+      "pret": [
+        "quise",
+        "quisiste",
+        "quiso",
+        "quisimos",
+        "quisieron"
+      ],
+      "imp": [
+        "quería",
+        "querías",
+        "quería",
+        "queríamos",
+        "querían"
+      ],
+      "fut": [
+        "querré",
+        "querrás",
+        "querrá",
+        "querremos",
+        "querrán"
+      ],
+      "subj": [
+        "quiera",
+        "quieras",
+        "quiera",
+        "queramos",
+        "quieran"
+      ],
+      "cmd": {
+        "tu": "quiere",
+        "usted": "quiera"
+      },
+      "ger": "queriendo",
+      "part": "querido",
+      "irregular": true,
+      "reflexive": false
+    },
+    "ex_es": "Quiero un café, por favor.",
+    "ex_en": "I want a coffee, please.",
+    "tier": 1
+  },
+  {
+    "id": "v_poder",
+    "es": "poder",
+    "en": "can, to be able to",
+    "pos": "verb",
+    "rank": 20,
+    "topic": "function",
+    "conj": {
+      "pres": [
+        "puedo",
+        "puedes",
+        "puede",
+        "podemos",
+        "pueden"
+      ],
+      "pret": [
+        "pude",
+        "pudiste",
+        "pudo",
+        "pudimos",
+        "pudieron"
+      ],
+      "imp": [
+        "podía",
+        "podías",
+        "podía",
+        "podíamos",
+        "podían"
+      ],
+      "fut": [
+        "podré",
+        "podrás",
+        "podrá",
+        "podremos",
+        "podrán"
+      ],
+      "subj": [
+        "pueda",
+        "puedas",
+        "pueda",
+        "podamos",
+        "puedan"
+      ],
+      "cmd": {
+        "tu": "puede",
+        "usted": "pueda"
+      },
+      "ger": "pudiendo",
+      "part": "podido",
+      "irregular": true,
+      "reflexive": false
+    },
+    "ex_es": "¿Me puede ayudar?",
+    "ex_en": "Can you help me?",
+    "tier": 1
+  },
+  {
+    "id": "v_hablar",
+    "es": "hablar",
+    "en": "to speak, to talk",
+    "pos": "verb",
+    "rank": 70,
+    "topic": "communication",
+    "conj": {
+      "pres": [
+        "hablo",
+        "hablas",
+        "habla",
+        "hablamos",
+        "hablan"
+      ],
+      "pret": [
+        "hablé",
+        "hablaste",
+        "habló",
+        "hablamos",
+        "hablaron"
+      ],
+      "imp": [
+        "hablaba",
+        "hablabas",
+        "hablaba",
+        "hablábamos",
+        "hablaban"
+      ],
+      "fut": [
+        "hablaré",
+        "hablarás",
+        "hablará",
+        "hablaremos",
+        "hablarán"
+      ],
+      "subj": [
+        "hable",
+        "hables",
+        "hable",
+        "hablemos",
+        "hablen"
+      ],
+      "cmd": {
+        "tu": "habla",
+        "usted": "hable"
+      },
+      "ger": "hablando",
+      "part": "hablado",
+      "irregular": false,
+      "reflexive": false
+    },
+    "ex_es": "¿Habla inglés?",
+    "ex_en": "Do you speak English?",
+    "tier": 1
+  },
+  {
+    "id": "v_comer",
+    "es": "comer",
+    "en": "to eat",
+    "pos": "verb",
+    "rank": 190,
+    "topic": "food",
+    "conj": {
+      "pres": [
+        "como",
+        "comes",
+        "come",
+        "comemos",
+        "comen"
+      ],
+      "pret": [
+        "comí",
+        "comiste",
+        "comió",
+        "comimos",
+        "comieron"
+      ],
+      "imp": [
+        "comía",
+        "comías",
+        "comía",
+        "comíamos",
+        "comían"
+      ],
+      "fut": [
+        "comeré",
+        "comerás",
+        "comerá",
+        "comeremos",
+        "comerán"
+      ],
+      "subj": [
+        "coma",
+        "comas",
+        "coma",
+        "comamos",
+        "coman"
+      ],
+      "cmd": {
+        "tu": "come",
+        "usted": "coma"
+      },
+      "ger": "comiendo",
+      "part": "comido",
+      "irregular": false,
+      "reflexive": false
+    },
+    "ex_es": "¿Dónde comemos hoy?",
+    "ex_en": "Where are we eating today?",
+    "tier": 1
+  },
+  {
+    "id": "v_vivir",
+    "es": "vivir",
+    "en": "to live",
+    "pos": "verb",
+    "rank": 150,
+    "topic": "home",
+    "conj": {
+      "pres": [
+        "vivo",
+        "vives",
+        "vive",
+        "vivimos",
+        "viven"
+      ],
+      "pret": [
+        "viví",
+        "viviste",
+        "vivió",
+        "vivimos",
+        "vivieron"
+      ],
+      "imp": [
+        "vivía",
+        "vivías",
+        "vivía",
+        "vivíamos",
+        "vivían"
+      ],
+      "fut": [
+        "viviré",
+        "vivirás",
+        "vivirá",
+        "viviremos",
+        "vivirán"
+      ],
+      "subj": [
+        "viva",
+        "vivas",
+        "viva",
+        "vivamos",
+        "vivan"
+      ],
+      "cmd": {
+        "tu": "vive",
+        "usted": "viva"
+      },
+      "ger": "viviendo",
+      "part": "vivido",
+      "irregular": false,
+      "reflexive": false
+    },
+    "ex_es": "Vivo en Houston.",
+    "ex_en": "I live in Houston.",
+    "tier": 1
+  },
+  {
+    "id": "v_gustar",
+    "es": "gustar",
+    "en": "to like (lit. to please)",
+    "pos": "verb",
+    "rank": 210,
+    "topic": "emotions",
+    "conj": {
+      "pres": [
+        "gusto",
+        "gustas",
+        "gusta",
+        "gustamos",
+        "gustan"
+      ],
+      "pret": [
+        "gusté",
+        "gustaste",
+        "gustó",
+        "gustamos",
+        "gustaron"
+      ],
+      "imp": [
+        "gustaba",
+        "gustabas",
+        "gustaba",
+        "gustábamos",
+        "gustaban"
+      ],
+      "fut": [
+        "gustaré",
+        "gustarás",
+        "gustará",
+        "gustaremos",
+        "gustarán"
+      ],
+      "subj": [
+        "guste",
+        "gustes",
+        "guste",
+        "gustemos",
+        "gusten"
+      ],
+      "cmd": {
+        "tu": "gusta",
+        "usted": "guste"
+      },
+      "ger": "gustando",
+      "part": "gustado",
+      "irregular": false,
+      "reflexive": false
+    },
+    "ex_es": "Me gustan los tacos.",
+    "ex_en": "I like tacos.",
+    "note": "Backwards from English: me gusta el café = coffee pleases me.",
+    "tier": 1
+  },
+  {
+    "id": "v_pagar",
+    "es": "pagar",
+    "en": "to pay",
+    "pos": "verb",
+    "rank": 600,
+    "topic": "money",
+    "conj": {
+      "pres": [
+        "pago",
+        "pagas",
+        "paga",
+        "pagamos",
+        "pagan"
+      ],
+      "pret": [
+        "pagué",
+        "pagaste",
+        "pagó",
+        "pagamos",
+        "pagaron"
+      ],
+      "imp": [
+        "pagaba",
+        "pagabas",
+        "pagaba",
+        "pagábamos",
+        "pagaban"
+      ],
+      "fut": [
+        "pagaré",
+        "pagarás",
+        "pagará",
+        "pagaremos",
+        "pagarán"
+      ],
+      "subj": [
+        "pague",
+        "pagues",
+        "pague",
+        "paguemos",
+        "paguen"
+      ],
+      "cmd": {
+        "tu": "paga",
+        "usted": "pague"
+      },
+      "ger": "pagando",
+      "part": "pagado",
+      "irregular": false,
+      "reflexive": false
+    },
+    "ex_es": "¿Puedo pagar con tarjeta?",
+    "ex_en": "Can I pay by card?",
+    "tier": 2
+  }
+]

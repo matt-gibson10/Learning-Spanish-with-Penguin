@@ -1,0 +1,212 @@
+[
+  {
+    "id": "v_el",
+    "es": "el",
+    "en": "the (masculine)",
+    "pos": "det",
+    "rank": 1,
+    "topic": "function",
+    "ex_es": "el carro rojo",
+    "ex_en": "the red car",
+    "tier": 1
+  },
+  {
+    "id": "v_de",
+    "es": "de",
+    "en": "of, from",
+    "pos": "prep",
+    "rank": 3,
+    "topic": "function",
+    "ex_es": "Soy de Chicago.",
+    "ex_en": "I'm from Chicago.",
+    "tier": 1
+  },
+  {
+    "id": "v_que",
+    "es": "que",
+    "en": "that, which",
+    "pos": "conj",
+    "rank": 4,
+    "topic": "function",
+    "ex_es": "Creo que sí.",
+    "ex_en": "I think so.",
+    "natural": [
+      "ke"
+    ],
+    "tier": 1
+  },
+  {
+    "id": "v_y",
+    "es": "y",
+    "en": "and",
+    "pos": "conj",
+    "rank": 5,
+    "topic": "function",
+    "ex_es": "Tacos y una coca.",
+    "ex_en": "Tacos and a Coke.",
+    "tier": 1
+  },
+  {
+    "id": "v_no",
+    "es": "no",
+    "en": "no, not",
+    "pos": "adv",
+    "rank": 8,
+    "topic": "function",
+    "ex_es": "No hablo mucho español.",
+    "ex_en": "I don't speak much Spanish.",
+    "tier": 1
+  },
+  {
+    "id": "v_para",
+    "es": "para",
+    "en": "for, in order to",
+    "pos": "prep",
+    "rank": 14,
+    "topic": "function",
+    "ex_es": "Una mesa para dos.",
+    "ex_en": "A table for two.",
+    "natural": [
+      "pa'"
+    ],
+    "tier": 1
+  },
+  {
+    "id": "v_bueno",
+    "es": "bueno",
+    "en": "good; well…; hello? (phone)",
+    "pos": "adj",
+    "rank": 60,
+    "topic": "description",
+    "ex_es": "La comida está muy buena.",
+    "ex_en": "The food is really good.",
+    "fem": "buena",
+    "plural": "buenos",
+    "natural": [
+      "'ueno"
+    ],
+    "tier": 1
+  },
+  {
+    "id": "v_bonito",
+    "es": "bonito",
+    "en": "pretty, nice",
+    "pos": "adj",
+    "rank": 800,
+    "topic": "description",
+    "ex_es": "Qué bonita ciudad.",
+    "ex_en": "What a pretty city.",
+    "fem": "bonita",
+    "plural": "bonitos",
+    "tier": 2
+  },
+  {
+    "id": "v_grande",
+    "es": "grande",
+    "en": "big, large",
+    "pos": "adj",
+    "rank": 110,
+    "topic": "description",
+    "ex_es": "Un café grande, por favor.",
+    "ex_en": "A large coffee, please.",
+    "fem": "grande",
+    "plural": "grandes",
+    "tier": 1
+  },
+  {
+    "id": "v_aqui",
+    "es": "aquí",
+    "en": "here",
+    "pos": "adv",
+    "rank": 90,
+    "topic": "directions",
+    "ex_es": "Aquí está la llave.",
+    "ex_en": "Here is the key.",
+    "tier": 1
+  },
+  {
+    "id": "v_donde",
+    "es": "dónde",
+    "en": "where",
+    "pos": "adv",
+    "rank": 95,
+    "topic": "directions",
+    "ex_es": "¿Dónde está la estación?",
+    "ex_en": "Where is the station?",
+    "tier": 1
+  },
+  {
+    "id": "v_tres",
+    "es": "tres",
+    "en": "three",
+    "pos": "num",
+    "rank": 130,
+    "topic": "numbers",
+    "ex_es": "Tres tacos, por favor.",
+    "ex_en": "Three tacos, please.",
+    "tier": 1
+  },
+  {
+    "id": "v_gracias",
+    "es": "gracias",
+    "en": "thank you, thanks",
+    "pos": "interj",
+    "rank": 140,
+    "topic": "courtesy",
+    "ex_es": "Muchas gracias, joven.",
+    "ex_en": "Thank you very much.",
+    "tier": 1
+  },
+  {
+    "id": "v_hola",
+    "es": "hola",
+    "en": "hello, hi",
+    "pos": "interj",
+    "rank": 300,
+    "topic": "courtesy",
+    "ex_es": "Hola, buenas tardes.",
+    "ex_en": "Hi, good afternoon.",
+    "tier": 1
+  },
+  {
+    "id": "v_todo",
+    "es": "todo",
+    "en": "all, everything",
+    "pos": "det",
+    "rank": 25,
+    "topic": "function",
+    "ex_es": "Todo bien, gracias.",
+    "ex_en": "All good, thanks.",
+    "fem": "toda",
+    "plural": "todos",
+    "natural": [
+      "to'o"
+    ],
+    "tier": 1
+  },
+  {
+    "id": "v_mucho",
+    "es": "mucho",
+    "en": "a lot, much, many",
+    "pos": "det",
+    "rank": 45,
+    "topic": "function",
+    "ex_es": "Mucho gusto.",
+    "ex_en": "Nice to meet you.",
+    "fem": "mucha",
+    "plural": "muchos",
+    "tier": 1
+  },
+  {
+    "id": "v_ahorita",
+    "es": "ahorita",
+    "en": "right now; in a bit (Mexico)",
+    "pos": "adv",
+    "rank": 1800,
+    "topic": "time",
+    "ex_es": "Ahorita vengo.",
+    "ex_en": "I'll be right back.",
+    "note": "In Mexico ahorita can mean 'right now' or 'later, maybe'.",
+    "tier": 4
+  }
+]

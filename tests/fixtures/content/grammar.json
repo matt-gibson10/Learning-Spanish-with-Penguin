@@ -1,0 +1,363 @@
+[
+  {
+    "id": "g_gender",
+    "title": "Masculine & feminine nouns (o / a)",
+    "order": 1,
+    "tier": 1,
+    "summary": "Every noun is masculine or feminine; the article and adjectives follow it.",
+    "explain": "Every Spanish noun has a gender. It matters because **the words around it change** to match.\n\n| | masculine | feminine |\n|---|---|---|\n| the | **el** carro | **la** casa |\n| a | **un** boleto | **una** cuenta |\n\n- Most nouns ending in **-o** are masculine: *el taco, el boleto*.\n- Most nouns ending in **-a** are feminine: *la casa, la cuenta*.\n- Learn the exceptions as you meet them: *el día, la mano*.\n\nTip: always learn a noun **with its article**: not *casa* but *la casa*.",
+    "rules": [
+      {
+        "rule": "Nouns ending in -o are usually masculine.",
+        "examples": [
+          "el libro",
+          "el vaso"
+        ],
+        "exceptions": [
+          "la mano",
+          "la foto",
+          "la radio"
+        ]
+      },
+      {
+        "rule": "Nouns ending in -a are usually feminine.",
+        "examples": [
+          "la casa",
+          "la mesa"
+        ],
+        "exceptions": [
+          "el día",
+          "el mapa",
+          "el problema"
+        ]
+      }
+    ],
+    "drills": [
+      {
+        "type": "choice",
+        "q": "___ casa",
+        "answer": "la",
+        "why": "casa ends in -a → feminine",
+        "options": [
+          "el",
+          "la"
+        ]
+      },
+      {
+        "type": "choice",
+        "q": "___ carro",
+        "answer": "el",
+        "why": "carro ends in -o → masculine",
+        "options": [
+          "el",
+          "la"
+        ]
+      },
+      {
+        "type": "choice",
+        "q": "___ día",
+        "answer": "el",
+        "why": "día is an exception: masculine",
+        "options": [
+          "el",
+          "la"
+        ]
+      },
+      {
+        "type": "choice",
+        "q": "___ mano",
+        "answer": "la",
+        "why": "mano is an exception: feminine",
+        "options": [
+          "el",
+          "la"
+        ]
+      },
+      {
+        "type": "choice",
+        "q": "___ cuenta",
+        "answer": "una",
+        "why": "cuenta is feminine → una",
+        "options": [
+          "un",
+          "una"
+        ]
+      },
+      {
+        "type": "choice",
+        "q": "___ boleto",
+        "answer": "un",
+        "why": "boleto is masculine → un",
+        "options": [
+          "un",
+          "una"
+        ]
+      },
+      {
+        "type": "fill",
+        "q": "___ calle (the)",
+        "answer": "la",
+        "why": "calle is feminine"
+      },
+      {
+        "type": "fill",
+        "q": "___ hotel (the)",
+        "answer": "el",
+        "why": "hotel is masculine"
+      },
+      {
+        "type": "translate",
+        "q": "the house",
+        "answer": "la casa",
+        "why": "casa is feminine"
+      },
+      {
+        "type": "translate",
+        "q": "a ticket",
+        "answer": "un boleto",
+        "why": "boleto is masculine"
+      },
+      {
+        "type": "translate",
+        "q": "the check",
+        "answer": "la cuenta",
+        "why": "cuenta is feminine"
+      },
+      {
+        "type": "transform",
+        "q": "el carro → plural",
+        "answer": "los carros",
+        "why": "el → los, add -s"
+      }
+    ]
+  },
+  {
+    "id": "g_agreement",
+    "title": "Adjectives agree (bonito / bonita)",
+    "order": 2,
+    "tier": 1,
+    "summary": "Adjectives copy the noun's gender and number.",
+    "explain": "Adjectives usually go **after** the noun and **match it**:\n\n- *el carro rojo* → *la casa roja*\n- *los carros rojos* → *las casas rojas*\n\nAdjectives ending in **-e** or a consonant don't change for gender: *un café grande, una casa grande*.",
+    "rules": [
+      {
+        "rule": "-o adjectives change to -a for feminine nouns.",
+        "examples": [
+          "la casa bonita",
+          "el carro bonito"
+        ],
+        "exceptions": []
+      },
+      {
+        "rule": "Add -s (or -es) for plural.",
+        "examples": [
+          "las casas bonitas",
+          "los hoteles grandes"
+        ],
+        "exceptions": []
+      }
+    ],
+    "drills": [
+      {
+        "type": "fill",
+        "q": "La casa es ___ (bonito).",
+        "answer": "bonita",
+        "why": "casa is feminine"
+      },
+      {
+        "type": "fill",
+        "q": "El hotel es ___ (bonito).",
+        "answer": "bonito",
+        "why": "hotel is masculine"
+      },
+      {
+        "type": "choice",
+        "q": "una ciudad ___",
+        "answer": "bonita",
+        "why": "ciudad is feminine",
+        "options": [
+          "bonito",
+          "bonita"
+        ]
+      },
+      {
+        "type": "choice",
+        "q": "los tacos ___",
+        "answer": "buenos",
+        "why": "tacos: masculine plural",
+        "options": [
+          "buenos",
+          "buenas",
+          "bueno"
+        ]
+      },
+      {
+        "type": "transform",
+        "q": "la casa bonita → plural",
+        "answer": "las casas bonitas",
+        "why": "everything goes plural"
+      },
+      {
+        "type": "transform",
+        "q": "el carro grande → plural",
+        "answer": "los carros grandes",
+        "why": "grande → grandes"
+      },
+      {
+        "type": "translate",
+        "q": "a big coffee",
+        "answer": "un café grande",
+        "why": "grande doesn't change"
+      },
+      {
+        "type": "translate",
+        "q": "the pretty house",
+        "answer": "la casa bonita",
+        "why": "adjective after the noun, feminine",
+        "alts": [
+          "la bonita casa"
+        ]
+      },
+      {
+        "type": "choice",
+        "q": "una casa ___",
+        "answer": "grande",
+        "why": "-e adjectives don't change",
+        "options": [
+          "grande",
+          "granda"
+        ]
+      },
+      {
+        "type": "fill",
+        "q": "Las calles son ___ (bonito).",
+        "answer": "bonitas",
+        "why": "feminine plural"
+      },
+      {
+        "type": "translate",
+        "q": "the good tacos",
+        "answer": "los tacos buenos",
+        "why": "masculine plural",
+        "alts": [
+          "los buenos tacos"
+        ]
+      },
+      {
+        "type": "fill",
+        "q": "La comida está muy ___ (bueno).",
+        "answer": "buena",
+        "why": "comida is feminine"
+      }
+    ]
+  },
+  {
+    "id": "g_present_ar",
+    "title": "Present tense: -ar verbs",
+    "order": 3,
+    "tier": 1,
+    "summary": "hablo, hablas, habla, hablamos, hablan.",
+    "explain": "Drop **-ar** and add the ending for *who* is doing it:\n\n| | hablar |\n|---|---|\n| yo | habl**o** |\n| tú | habl**as** |\n| usted / él / ella | habl**a** |\n| nosotros | habl**amos** |\n| ustedes / ellos | habl**an** |\n\nIn Mexico use **usted** with strangers and **ustedes** for any group (never *vosotros*). You can usually drop the pronoun: *Hablo inglés.*",
+    "rules": [
+      {
+        "rule": "yo → -o, tú → -as, usted → -a, nosotros → -amos, ustedes → -an.",
+        "examples": [
+          "hablo",
+          "pagas",
+          "habla"
+        ],
+        "exceptions": []
+      }
+    ],
+    "drills": [
+      {
+        "type": "fill",
+        "q": "Yo ___ inglés. (hablar)",
+        "answer": "hablo",
+        "why": "yo → -o"
+      },
+      {
+        "type": "fill",
+        "q": "¿Usted ___ inglés? (hablar)",
+        "answer": "habla",
+        "why": "usted → -a"
+      },
+      {
+        "type": "fill",
+        "q": "Tú ___ muy bien. (hablar)",
+        "answer": "hablas",
+        "why": "tú → -as"
+      },
+      {
+        "type": "fill",
+        "q": "Nosotros ___ con tarjeta. (pagar)",
+        "answer": "pagamos",
+        "why": "nosotros → -amos"
+      },
+      {
+        "type": "fill",
+        "q": "Ellos ___ la cuenta. (pagar)",
+        "answer": "pagan",
+        "why": "ellos → -an"
+      },
+      {
+        "type": "choice",
+        "q": "Yo ___ con tarjeta. (pagar)",
+        "answer": "pago",
+        "why": "yo → pago",
+        "options": [
+          "pago",
+          "pagas",
+          "pagan"
+        ]
+      },
+      {
+        "type": "translate",
+        "q": "I speak a little Spanish.",
+        "answer": "hablo un poco de español",
+        "why": "yo → hablo",
+        "alts": [
+          "yo hablo un poco de español"
+        ]
+      },
+      {
+        "type": "translate",
+        "q": "Do you speak English? (usted)",
+        "answer": "¿habla inglés?",
+        "why": "usted → habla",
+        "alts": [
+          "¿usted habla inglés?",
+          "¿habla usted inglés?"
+        ]
+      },
+      {
+        "type": "transform",
+        "q": "hablo → nosotros",
+        "answer": "hablamos",
+        "why": "-amos"
+      },
+      {
+        "type": "transform",
+        "q": "pagas → ustedes",
+        "answer": "pagan",
+        "why": "-an"
+      },
+      {
+        "type": "choice",
+        "q": "Ustedes ___ español.",
+        "answer": "hablan",
+        "why": "ustedes → -an (vosotros is Spain only)",
+        "options": [
+          "hablan",
+          "habláis",
+          "hablamos"
+        ]
+      },
+      {
+        "type": "fill",
+        "q": "¿Dónde ___ la cuenta? (pagar, yo)",
+        "answer": "pago",
+        "why": "yo → -o"
+      }
+    ]
+  }
+]

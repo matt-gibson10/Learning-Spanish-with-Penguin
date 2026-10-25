@@ -1,0 +1,219 @@
+[
+  {
+    "id": "c_por_favor",
+    "es": "por favor",
+    "en": "please",
+    "rank": 1,
+    "tier": 1,
+    "topic": "courtesy",
+    "kind": "phrase",
+    "slot": null,
+    "ex_es": "Una mesa para dos, por favor.",
+    "ex_en": "A table for two, please.",
+    "natural": [
+      "porfa",
+      "por fa'"
+    ],
+    "sound_rules": [
+      "s_apocope"
+    ]
+  },
+  {
+    "id": "c_buenos_dias",
+    "es": "buenos días",
+    "en": "good morning",
+    "rank": 2,
+    "tier": 1,
+    "topic": "courtesy",
+    "kind": "phrase",
+    "slot": null,
+    "ex_es": "Buenos días, ¿cómo está?",
+    "ex_en": "Good morning, how are you?",
+    "natural": [
+      "buen día"
+    ]
+  },
+  {
+    "id": "c_mucho_gusto",
+    "es": "mucho gusto",
+    "en": "nice to meet you",
+    "rank": 3,
+    "tier": 1,
+    "topic": "courtesy",
+    "kind": "reply",
+    "slot": null,
+    "ex_es": "Mucho gusto, soy Matt.",
+    "ex_en": "Nice to meet you, I'm Matt."
+  },
+  {
+    "id": "c_donde_esta",
+    "es": "¿dónde está…?",
+    "en": "where is…?",
+    "rank": 4,
+    "tier": 1,
+    "topic": "directions",
+    "kind": "frame",
+    "slot": "¿Dónde está ___?",
+    "ex_es": "¿Dónde está el baño?",
+    "ex_en": "Where is the bathroom?",
+    "slot_examples": [
+      "el baño",
+      "el metro",
+      "el hotel"
+    ],
+    "natural": [
+      "¿ónde 'tá?"
+    ],
+    "sound_rules": [
+      "s_aspiration"
+    ]
+  },
+  {
+    "id": "c_me_da",
+    "es": "¿me da…?",
+    "en": "can I have…? (ordering)",
+    "rank": 5,
+    "tier": 1,
+    "topic": "restaurant",
+    "kind": "frame",
+    "slot": "¿Me da ___, por favor?",
+    "ex_es": "¿Me da la cuenta, por favor?",
+    "ex_en": "Can I have the check, please?",
+    "slot_examples": [
+      "la cuenta",
+      "un agua"
+    ],
+    "note": "The everyday Mexican way to order or ask for something."
+  },
+  {
+    "id": "c_mande",
+    "es": "¿mande?",
+    "en": "pardon? / yes? (Mexico)",
+    "rank": 6,
+    "tier": 1,
+    "topic": "communication",
+    "kind": "reply",
+    "slot": null,
+    "ex_es": "¿Mande? No le entendí.",
+    "ex_en": "Pardon? I didn't understand you.",
+    "note": "Polite Mexican way to say 'sorry, what?' or answer when called."
+  },
+  {
+    "id": "c_cuanto_cuesta",
+    "es": "¿cuánto cuesta?",
+    "en": "how much is it?",
+    "rank": 7,
+    "tier": 1,
+    "topic": "shopping",
+    "kind": "question",
+    "slot": null,
+    "ex_es": "¿Cuánto cuesta el boleto?",
+    "ex_en": "How much is the ticket?"
+  },
+  {
+    "id": "c_la_cuenta",
+    "es": "la cuenta, por favor",
+    "en": "the check, please",
+    "rank": 8,
+    "tier": 1,
+    "topic": "restaurant",
+    "kind": "phrase",
+    "slot": null,
+    "ex_es": "Joven, la cuenta, por favor.",
+    "ex_en": "Excuse me, the check, please.",
+    "natural": [
+      "la cuenta, porfa"
+    ]
+  },
+  {
+    "id": "c_no_entiendo",
+    "es": "no entiendo",
+    "en": "I don't understand",
+    "rank": 9,
+    "tier": 1,
+    "topic": "communication",
+    "kind": "reply",
+    "slot": null,
+    "ex_es": "Perdón, no entiendo.",
+    "ex_en": "Sorry, I don't understand."
+  },
+  {
+    "id": "c_mas_despacio",
+    "es": "más despacio, por favor",
+    "en": "slower, please",
+    "rank": 10,
+    "tier": 1,
+    "topic": "communication",
+    "kind": "phrase",
+    "slot": null,
+    "ex_es": "¿Puede hablar más despacio, por favor?",
+    "ex_en": "Can you speak more slowly, please?"
+  },
+  {
+    "id": "c_que_onda",
+    "es": "¿qué onda?",
+    "en": "what's up?",
+    "rank": 20,
+    "tier": 1,
+    "topic": "courtesy",
+    "kind": "question",
+    "slot": null,
+    "ex_es": "¿Qué onda? ¿Todo bien?",
+    "ex_en": "What's up? All good?",
+    "note": "Casual Mexican greeting among friends.",
+    "natural": [
+      "¿quiubo?"
+    ]
+  },
+  {
+    "id": "c_este",
+    "es": "este…",
+    "en": "um… (filler)",
+    "rank": 30,
+    "tier": 1,
+    "topic": "function",
+    "kind": "filler",
+    "slot": null,
+    "ex_es": "Este… quiero dos tacos.",
+    "ex_en": "Um… I want two tacos.",
+    "natural": [
+      "esteee"
+    ]
+  },
+  {
+    "id": "c_para_que",
+    "es": "para que",
+    "en": "so that",
+    "rank": 60,
+    "tier": 1,
+    "topic": "function",
+    "kind": "collocation",
+    "slot": null,
+    "ex_es": "Te lo digo para que sepas.",
+    "ex_en": "I'm telling you so you know.",
+    "natural": [
+      "pa' que"
+    ],
+    "sound_rules": [
+      "s_apocope"
+    ]
+  },
+  {
+    "id": "c_lo_que_es",
+    "es": "lo que es",
+    "en": "what it is",
+    "rank": 70,
+    "tier": 1,
+    "topic": "function",
+    "kind": "collocation",
+    "slot": null,
+    "ex_es": "No sé lo que es.",
+    "ex_en": "I don't know what it is.",
+    "natural": [
+      "lo kes"
+    ],
+    "sound_rules": [
+      "s_sinalefa"
+    ]
+  }
+]

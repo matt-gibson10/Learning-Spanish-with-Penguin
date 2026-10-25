@@ -1,0 +1,69 @@
+[
+  {
+    "title": "Why 3,000 words?",
+    "body_md": "In everyday speech, a small set of words does most of the work. In big Spanish corpora, the top **1,000 lemmas cover about 88–93% of spoken words**, and the top **3,000 cover about 94–97%**. That is right at the ~95% level where listeners can follow a conversation and guess the rest from context. Reading newspapers or novels needs more (around 5,000–8,000), and we'll get there later.",
+    "sources": [
+      {"title": "Davies (2005), Vocabulary Range and Text Coverage: Insights from the Routledge Frequency Dictionary of Spanish", "url": "https://www.mark-davies.org/articles/davies_26.pdf"},
+      {"title": "Rojo (2025), Un breve apunte sobre las frecuencias léxicas", "url": "https://gramatica.usc.es/~grojo/Publicaciones/Rojo_Apunte_sobre_frecuencias_lexicas.pdf"},
+      {"title": "Schmitt, Cobb, Horst & Schmitt (2017), How much vocabulary is needed to use English?", "url": "https://www.cambridge.org/core/product/1D217A56A2E0056E67802A6A8360FDDE/core-reader"}
+    ]
+  },
+  {
+    "title": "Your English hunch was right, for listening",
+    "body_md": "In English, about **3,000 word families cover ~95–96% of unscripted speech**, so \"3,000 words to get by\" holds up for conversation. Comfortable reading takes far more: **8,000–9,000 families**. Spanish works the same way. 3,000 lemmas buys you conversations, not yet the newspaper.",
+    "sources": [
+      {"title": "Nation (2006), How large a vocabulary is needed for reading and listening?", "url": "https://www.wgtn.ac.nz/__data/assets/pdf_file/0018/1626120/2006-How-large-a-vocab.pdf"},
+      {"title": "Laufer & Ravenhorst-Kalovski (2010), Lexical threshold revisited", "url": "https://nflrc.hawaii.edu/rfl/item/206"}
+    ]
+  },
+  {
+    "title": "Phrases, not just words",
+    "body_md": "A big share of real speech, roughly half by common estimates, is made of ready-made phrases like *¿me da…?*, *lo que pasa es que*, *a lo mejor*. Phrases you already know are processed faster, and they make you sound more fluent. They are also the parts people say fastest and squash the most, so we teach them as items of their own, each with fast-speech audio.",
+    "sources": [
+      {"title": "Conklin & Schmitt (2008), Formulaic sequences: are they processed more quickly?", "url": "https://nottingham-repository.worktribe.com/output/3208445/formulaic-sequences-are-they-processed-more-quickly-than-nonformulaic-language-by-native-and-nonnative-speakers"},
+      {"title": "Boers & Lindstromberg (2012), Experimental and intervention studies on formulaic sequences", "url": "https://www.cambridge.org/core/journals/annual-review-of-applied-linguistics/article/experimental-and-intervention-studies-on-formulaic-sequences-in-a-second-language/A2ACDF54604CFAC4443240748360C403"},
+      {"title": "Brysbaert et al. (2016), How many words do we know?", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4965448"}
+    ]
+  },
+  {
+    "title": "How Mexico really sounds",
+    "body_md": "Spanish glues words together: *los otros* is heard as **lo-so-tros**, and *lo que es* as **lo kes**. Central Mexican speech also shortens its favourite words. In recordings of *educated* Mexico City speakers, *pues* came out as full **pues** only about 40% of the time. The rest was **pus** or **ps**. *Entonces* was often **tons**. Once you know the pattern, you will hear it everywhere.",
+    "sources": [
+      {"title": "Soler Arechalde (2025), Los marcadores pues y entonces en el habla de la Ciudad de México", "url": "https://www.mundoalfal.org/sites/default/files/revista/17_2_cuaderno_005.pdf"},
+      {"title": "Wikipedia: Mexican Spanish (phonology)", "url": "https://en.wikipedia.org/wiki/Mexican_Spanish"},
+      {"title": "Wikipedia: Spanish phonology (enlace and synalepha)", "url": "https://en.wikipedia.org/wiki/Spanish_phonology"}
+    ]
+  },
+  {
+    "title": "Testing beats re-reading",
+    "body_md": "In a classic experiment, students who kept **testing themselves** on new vocabulary remembered **about 80%** a week later. Students who just kept re-studying remembered **about 35%**, and they had no idea they would do worse. Even a wrong guess helps, as long as you see the right answer right away. That's why every card asks you first and shows the answer immediately.",
+    "sources": [
+      {"title": "Karpicke & Roediger (2008), The critical importance of retrieval for learning (Science)", "url": "https://www.brucehayes.org/Teaching/papers/2008_Roediger_Karpicke_Science.pdf"},
+      {"title": "Kornell, Hays & Bjork (2009), Unsuccessful retrieval attempts enhance subsequent learning", "url": "https://pubmed.ncbi.nlm.nih.gov/19586265/"}
+    ]
+  },
+  {
+    "title": "A little, often, spaced out",
+    "body_md": "Memories last longer when reviews are spread out, and the best gap grows with how long you need to remember. Before the trip, short gaps of hours to a day are fine. After it, reviews stretch to weeks and months. About **20 new items a day** is a pace you can keep up (expect ~200 quick reviews a day once things settle), which reaches 3,000 words in about six months.",
+    "sources": [
+      {"title": "Cepeda, Vul, Rohrer, Wixted & Pashler (2008), Spacing effects in learning", "url": "https://pubmed.ncbi.nlm.nih.gov/19076480/"},
+      {"title": "Anki manual: deck options (new cards vs. review load)", "url": "https://docs.ankiweb.net/manual/deck-options"}
+    ]
+  },
+  {
+    "title": "Read it, hear it, then just hear it",
+    "body_md": "You understand Spanish best once you've seen how it's written, so every item plays **careful audio with the text**, then **natural speed with a \"sounds like\" spelling**, then **audio alone**. Reading while listening links the written and spoken forms of a word. In one study, learners kept over a third of new words three months later just from reading along with audio.",
+    "sources": [
+      {"title": "Webb & Chang (2015), Second language vocabulary learning through extensive reading with audio support", "url": "https://uwo.scholaris.ca/handle/20.500.14721/14630"},
+      {"title": "Chang & Millett (2014), The effect of extensive listening on developing L2 listening fluency", "url": "https://academic.oup.com/eltj/issue/68/1"}
+    ]
+  },
+  {
+    "title": "Meaning first, kind corrections",
+    "body_md": "Getting the message across is what counts, so answers are scored on **whether you recalled the meaning**. Missing accents, small typos and grammar slips (*el casa*) still count. You just get a friendly one-line note. Research shows corrective feedback helps, and you don't need to fail an answer to learn from it.",
+    "sources": [
+      {"title": "Lyster & Saito (2010), Oral feedback in classroom SLA: a meta-analysis", "url": "https://resolve.cambridge.org/core/journals/studies-in-second-language-acquisition/article/oral-feedback-in-classroom-sla/4999EE1C8379B2BF026B148EAF373CA1"},
+      {"title": "Nation & Yamamoto, Applying the four strands to language learning", "url": "https://vuw-web.matrix.squiz.cloud/lals/resources/paul-nations-resources/paul-nations-publications/publications/documents/yamamoto-four-strands.pdf"}
+    ]
+  }
+]

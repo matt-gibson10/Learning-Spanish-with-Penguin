@@ -1,0 +1,20 @@
+[
+  {
+    "id": "a_frequency",
+    "title": "The most frequent words first",
+    "body": "About 3,000 word families cover roughly 90% of everyday conversation. Learning in frequency order means every word you learn pays off immediately.",
+    "source": "Nation (2006); Davies, A Frequency Dictionary of Spanish"
+  },
+  {
+    "id": "a_spacing",
+    "title": "Spaced repetition",
+    "body": "Reviewing a word just as you're about to forget it makes the memory last longer. The review queue schedules every card for you.",
+    "source": "Ebbinghaus; Cepeda et al. (2006)"
+  },
+  {
+    "id": "a_chunks",
+    "title": "Chunks, not just words",
+    "body": "Native speakers lean on ready-made phrases (¿me da…?, ¿qué onda?). Learning them whole gets you speaking faster and helps you hear them in fast speech.",
+    "source": "Wray (2002)"
+  }
+]

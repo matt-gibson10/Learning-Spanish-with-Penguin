@@ -1,0 +1,89 @@
+[
+  {
+    "id": "p_greet",
+    "tier": 1,
+    "after_grammar": null,
+    "situation": "Hotel lobby",
+    "prompt_en": "The receptionist greets you. Say good morning and that it's nice to meet them.",
+    "prompt_es": "¡Buenos días! Bienvenido.",
+    "targets": [
+      "buenos días",
+      "mucho gusto"
+    ],
+    "grammar": [],
+    "models": [
+      "Buenos días, mucho gusto.",
+      "¡Buenos días! Mucho gusto, soy Matt."
+    ],
+    "hints": [
+      "Buenos días works until about noon."
+    ]
+  },
+  {
+    "id": "p_order_tacos",
+    "tier": 1,
+    "after_grammar": "g_gender",
+    "situation": "Taquería",
+    "prompt_en": "The taquero asks what you want. Order three tacos al pastor and a Coke.",
+    "prompt_es": "¿Qué le damos, joven?",
+    "targets": [
+      "tres",
+      "tacos",
+      "pastor",
+      "por favor"
+    ],
+    "grammar": [
+      "g_gender"
+    ],
+    "models": [
+      "Quiero tres tacos al pastor y una Coca, por favor.",
+      "Me da tres de pastor y una coca, por favor."
+    ],
+    "hints": [
+      "'Me da…' is the natural way to order in Mexico."
+    ]
+  },
+  {
+    "id": "p_bathroom",
+    "tier": 1,
+    "after_grammar": null,
+    "situation": "Restaurant",
+    "prompt_en": "Ask the waiter where the bathroom is.",
+    "prompt_es": "¿Algo más?",
+    "targets": [
+      "dónde",
+      "baño"
+    ],
+    "grammar": [],
+    "models": [
+      "Perdón, ¿dónde está el baño?",
+      "¿Dónde está el baño, por favor?"
+    ],
+    "hints": [
+      "Use está for location."
+    ]
+  },
+  {
+    "id": "p_speak_english",
+    "tier": 1,
+    "after_grammar": "g_present_ar",
+    "situation": "Street",
+    "prompt_en": "Someone asks you something fast. Say you speak a little Spanish and ask if they speak English.",
+    "prompt_es": "Oiga, ¿sabe dónde queda la calle Madero?",
+    "targets": [
+      "hablo",
+      "español",
+      "habla",
+      "inglés"
+    ],
+    "grammar": [
+      "g_present_ar"
+    ],
+    "models": [
+      "Perdón, hablo un poco de español. ¿Habla inglés?"
+    ],
+    "hints": [
+      "usted → habla"
+    ]
+  }
+]

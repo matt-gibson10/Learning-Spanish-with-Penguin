@@ -1,0 +1,6372 @@
+[
+  {
+    "id": "g_pronunciation",
+    "title": "Sounds, stress & accent marks",
+    "order": 1,
+    "tier": 1,
+    "summary": "Spanish is spelled the way it sounds: learn a few letters and the stress rule and you can read anything aloud.",
+    "explain": "Spanish spelling is almost perfectly phonetic. Once you know these rules you can read any word on a menu or a metro sign.\n\n**Vowels** are short and pure — never 'uh': **a** (pa), **e** (pe), **i** (pi), **o** (po), **u** (pu).\n\n| Letter | Sounds like | Example |\n|---|---|---|\n| **h** | silent | **h**otel = 'otel', **h**ola = 'ola' |\n| **j**, and **g** before e/i | a strong English h | **j**ugo, **g**ente |\n| **ll**, **y** | English y | ca**ll**e = 'KA-ye', **y**o |\n| **ñ** | ny, as in canyon | ma**ñ**ana |\n| **c** before e/i, **z** | s (in Mexico) | **c**ena, ta**z**a |\n| **qu** | k (the u is silent) | **qu**eso = 'KE-so' |\n| **r** / **rr** | quick tap / rolled | pe**r**o (but) vs pe**rr**o (dog) |\n| **b** = **v** | same soft b | **v**aso, **b**ien |\n| **x** in Mexican place names | Spanish j | Mé**x**ico, Oa**x**aca |\n\n**Where's the stress?**\n\n1. Word ends in a **vowel, n or s** → stress the **second-to-last** syllable: *CA-sa, HA-blan, TA-cos*.\n2. Ends in **any other consonant** → stress the **last** syllable: *ho-TEL, co-MER, ciu-DAD*.\n3. A **written accent** overrides both rules: *ca-FÉ, MÉ-xi-co, ca-mión, ár-bol*.\n\nSome accents only tell apart look-alike words: **sí** (yes) / si (if), **él** (he) / el (the), **tú** (you) / tu (your), **qué** (what?) / que (that).\n\n> The app forgives missing accents when you type — but reading them right tells you where the stress goes.",
+    "rules": [
+      {
+        "rule": "Ends in a vowel, n or s → stress the second-to-last syllable.",
+        "examples": [
+          "casa (CA-sa)",
+          "hablan (HA-blan)",
+          "tacos (TA-cos)"
+        ],
+        "exceptions": [
+          "café (ca-FÉ) — the written accent wins"
+        ]
+      },
+      {
+        "rule": "Ends in any other consonant → stress the last syllable.",
+        "examples": [
+          "hotel (ho-TEL)",
+          "comer (co-MER)",
+          "ciudad (ciu-DAD)"
+        ],
+        "exceptions": [
+          "árbol, fácil, lápiz — the written accent pulls the stress back"
+        ]
+      },
+      {
+        "rule": "A written accent always marks the stressed syllable.",
+        "examples": [
+          "México",
+          "teléfono",
+          "está",
+          "canción"
+        ]
+      },
+      {
+        "rule": "Some accents just separate words that sound the same.",
+        "examples": [
+          "sí (yes) / si (if)",
+          "él (he) / el (the)",
+          "tú (you) / tu (your)",
+          "mí (me) / mi (my)"
+        ]
+      },
+      {
+        "rule": "h is silent; j and soft g sound like a strong h; ll and y sound like English y.",
+        "examples": [
+          "hola",
+          "jugo",
+          "gente",
+          "calle",
+          "yo"
+        ],
+        "exceptions": [
+          "In México and Oaxaca the x sounds like a Spanish j."
+        ]
+      }
+    ],
+    "drills": [
+      {
+        "type": "choice",
+        "q": "Where is the stress in *casa*?",
+        "options": [
+          "CA-sa",
+          "ca-SA"
+        ],
+        "answer": "CA-sa",
+        "why": "Ends in a vowel → stress the second-to-last syllable."
+      },
+      {
+        "type": "choice",
+        "q": "Where is the stress in *hotel*?",
+        "options": [
+          "HO-tel",
+          "ho-TEL"
+        ],
+        "answer": "ho-TEL",
+        "why": "Ends in -l (not n or s) → stress the last syllable."
+      },
+      {
+        "type": "choice",
+        "q": "Where is the stress in *hablan*?",
+        "options": [
+          "HA-blan",
+          "ha-BLAN"
+        ],
+        "answer": "HA-blan",
+        "why": "Ends in -n → second-to-last syllable."
+      },
+      {
+        "type": "choice",
+        "q": "Where is the stress in *ciudad*?",
+        "options": [
+          "CIU-dad",
+          "ciu-DAD"
+        ],
+        "answer": "ciu-DAD",
+        "why": "Ends in -d → last syllable."
+      },
+      {
+        "type": "choice",
+        "q": "Where is the stress in *México*?",
+        "options": [
+          "MÉ-xi-co",
+          "Me-XI-co",
+          "Me-xi-CO"
+        ],
+        "answer": "MÉ-xi-co",
+        "why": "The written accent marks the stress."
+      },
+      {
+        "type": "choice",
+        "q": "The *h* in *hotel* sounds like…",
+        "options": [
+          "nothing — it's silent",
+          "English h",
+          "English j"
+        ],
+        "answer": "nothing — it's silent",
+        "why": "Spanish h is always silent."
+      },
+      {
+        "type": "choice",
+        "q": "The *j* in *jugo* sounds like…",
+        "options": [
+          "a strong English h",
+          "English j",
+          "English y"
+        ],
+        "answer": "a strong English h",
+        "why": "Spanish j is a breathy h: 'HU-go'."
+      },
+      {
+        "type": "choice",
+        "q": "*calle* (street) sounds like…",
+        "options": [
+          "KA-ye",
+          "KA-le",
+          "KAL-le"
+        ],
+        "answer": "KA-ye",
+        "why": "ll sounds like English y."
+      },
+      {
+        "type": "choice",
+        "q": "*queso* sounds like…",
+        "options": [
+          "KE-so",
+          "KWE-so"
+        ],
+        "answer": "KE-so",
+        "why": "In qu the u is silent."
+      },
+      {
+        "type": "choice",
+        "q": "*gente* (people) sounds like…",
+        "options": [
+          "HEN-te",
+          "GEN-te (hard g)",
+          "YEN-te"
+        ],
+        "answer": "HEN-te",
+        "why": "g before e or i sounds like Spanish j."
+      },
+      {
+        "type": "choice",
+        "q": "The *x* in *México* sounds like…",
+        "options": [
+          "a Spanish j (strong h)",
+          "ks",
+          "sh"
+        ],
+        "answer": "a Spanish j (strong h)",
+        "why": "Old spelling: México is said 'MÉ-hi-co'."
+      },
+      {
+        "type": "choice",
+        "q": "Which one has the rolled r?",
+        "options": [
+          "perro (dog)",
+          "pero (but)"
+        ],
+        "answer": "perro (dog)",
+        "why": "rr is always rolled; a single r in the middle is a quick tap."
+      },
+      {
+        "type": "choice",
+        "q": "Which spelling is correct? (coffee)",
+        "options": [
+          "café",
+          "cafe",
+          "cáfe"
+        ],
+        "answer": "café",
+        "why": "Stress on the last syllable of a word ending in a vowel needs an accent."
+      },
+      {
+        "type": "choice",
+        "q": "Which spelling is correct? (phone)",
+        "options": [
+          "teléfono",
+          "telefono",
+          "telefóno"
+        ],
+        "answer": "teléfono",
+        "why": "Stress three syllables from the end always gets an accent."
+      },
+      {
+        "type": "choice",
+        "q": "Which one means *yes*?",
+        "options": [
+          "sí",
+          "si"
+        ],
+        "answer": "sí",
+        "why": "sí with an accent = yes; si = if."
+      },
+      {
+        "type": "choice",
+        "q": "¿___ eres de aquí? (you)",
+        "options": [
+          "Tú",
+          "Tu"
+        ],
+        "answer": "Tú",
+        "why": "tú with an accent = you; tu = your."
+      },
+      {
+        "type": "choice",
+        "q": "Which word is stressed on the last syllable?",
+        "options": [
+          "comer",
+          "comen",
+          "coma"
+        ],
+        "answer": "comer",
+        "why": "Ends in -r → last syllable; -n and vowels → second-to-last."
+      },
+      {
+        "type": "translate",
+        "q": "yes (written with its accent)",
+        "answer": "sí",
+        "why": "sí with an accent = yes; si without = if."
+      },
+      {
+        "type": "fill",
+        "q": "Spell the word you hear: 'O-la' (hello) → ___",
+        "answer": "hola",
+        "why": "The h is written but never pronounced."
+      },
+      {
+        "type": "fill",
+        "q": "Spell the word you hear: 'KE-so' (cheese) → ___",
+        "answer": "queso",
+        "why": "The k sound before e is spelled qu."
+      }
+    ]
+  },
+  {
+    "id": "g_gender",
+    "title": "Masculine & feminine nouns",
+    "order": 2,
+    "tier": 1,
+    "summary": "Every noun is masculine or feminine — learn each one with el or la.",
+    "explain": "Every Spanish noun has a gender. It's grammar, not meaning — so learn each new noun **with its article**: *el taco*, *la salsa*.\n\n| Ending | Usually | Examples |\n|---|---|---|\n| **-o** | masculine | el libro, el vaso, el carro |\n| **-a** | feminine | la mesa, la casa, la cerveza |\n| **-ción, -sión, -dad, -tad, -tud** | feminine | la estación, la ciudad, la verdad |\n| **-ma** (Greek words) | masculine | el problema, el idioma, el tema, el programa |\n| **-e** or other consonant | learn it | el café, la noche, el hotel, la flor |\n\n**Exceptions worth memorising:** *el día, el mapa, el sofá* (masculine) · *la mano, la foto, la moto, la radio* (feminine).\n\n**El agua:** *agua* is feminine, but a stressed *a-* at the start takes **el** in the singular so it sounds better: *el agua fría*, *las aguas*. Same with *el hambre* (tengo mucha hambre).\n\n**People:** change -o → -a or add -a (*el amigo / la amiga, el doctor / la doctora*). Words in **-ista** and **-ante/-ente** don't change — only the article does: *el / la turista, el / la estudiante*.",
+    "rules": [
+      {
+        "rule": "Nouns ending in -o are usually masculine.",
+        "examples": [
+          "el libro",
+          "el vaso",
+          "el carro"
+        ],
+        "exceptions": [
+          "la mano",
+          "la foto (short for fotografía)",
+          "la moto",
+          "la radio"
+        ]
+      },
+      {
+        "rule": "Nouns ending in -a are usually feminine.",
+        "examples": [
+          "la mesa",
+          "la casa",
+          "la cerveza"
+        ],
+        "exceptions": [
+          "el día",
+          "el mapa",
+          "el problema",
+          "el idioma",
+          "el programa"
+        ]
+      },
+      {
+        "rule": "-ción, -sión, -dad, -tad, -tud are always feminine.",
+        "examples": [
+          "la estación",
+          "la televisión",
+          "la ciudad",
+          "la verdad"
+        ]
+      },
+      {
+        "rule": "Feminine nouns starting with a stressed a- take el in the singular.",
+        "examples": [
+          "el agua fría",
+          "el hambre"
+        ],
+        "exceptions": [
+          "las aguas (plural is normal)",
+          "la amiga (the stress isn't on the first a)"
+        ]
+      },
+      {
+        "rule": "For people: -o → -a, consonant + -a; -ista/-ante only change the article.",
+        "examples": [
+          "el amigo / la amiga",
+          "el doctor / la doctora",
+          "el / la turista",
+          "el / la estudiante"
+        ]
+      }
+    ],
+    "drills": [
+      {
+        "type": "choice",
+        "q": "___ mesa",
+        "options": [
+          "el",
+          "la"
+        ],
+        "answer": "la",
+        "why": "mesa ends in -a → feminine."
+      },
+      {
+        "type": "choice",
+        "q": "___ libro",
+        "options": [
+          "el",
+          "la"
+        ],
+        "answer": "el",
+        "why": "libro ends in -o → masculine."
+      },
+      {
+        "type": "choice",
+        "q": "___ día",
+        "options": [
+          "el",
+          "la"
+        ],
+        "answer": "el",
+        "why": "Classic exception: día is masculine (buenos días)."
+      },
+      {
+        "type": "choice",
+        "q": "___ mano",
+        "options": [
+          "el",
+          "la"
+        ],
+        "answer": "la",
+        "why": "Classic exception: mano is feminine."
+      },
+      {
+        "type": "choice",
+        "q": "___ problema",
+        "options": [
+          "el",
+          "la"
+        ],
+        "answer": "el",
+        "why": "-ma words from Greek are masculine."
+      },
+      {
+        "type": "choice",
+        "q": "___ ciudad",
+        "options": [
+          "el",
+          "la"
+        ],
+        "answer": "la",
+        "why": "-dad → always feminine."
+      },
+      {
+        "type": "choice",
+        "q": "___ estación",
+        "options": [
+          "el",
+          "la"
+        ],
+        "answer": "la",
+        "why": "-ción → always feminine."
+      },
+      {
+        "type": "choice",
+        "q": "___ agua",
+        "options": [
+          "el",
+          "la"
+        ],
+        "answer": "el",
+        "why": "Feminine, but a stressed a- takes el: el agua."
+      },
+      {
+        "type": "choice",
+        "q": "___ idioma",
+        "options": [
+          "el",
+          "la"
+        ],
+        "answer": "el",
+        "why": "Another -ma word: masculine."
+      },
+      {
+        "type": "choice",
+        "q": "___ foto",
+        "options": [
+          "el",
+          "la"
+        ],
+        "answer": "la",
+        "why": "Short for la fotografía, so feminine."
+      },
+      {
+        "type": "choice",
+        "q": "___ mapa",
+        "options": [
+          "el",
+          "la"
+        ],
+        "answer": "el",
+        "why": "Exception: el mapa."
+      },
+      {
+        "type": "choice",
+        "q": "___ noche",
+        "options": [
+          "el",
+          "la"
+        ],
+        "answer": "la",
+        "why": "-e words must be learned: la noche (buenas noches)."
+      },
+      {
+        "type": "choice",
+        "q": "___ turista (a woman)",
+        "options": [
+          "el",
+          "la"
+        ],
+        "answer": "la",
+        "why": "-ista is the same word for both; the article shows gender."
+      },
+      {
+        "type": "fill",
+        "q": "El agua está muy ___ (frío).",
+        "answer": "fría",
+        "why": "agua is feminine — el is only there for the sound."
+      },
+      {
+        "type": "translate",
+        "q": "the problem",
+        "answer": "el problema",
+        "why": "-ma → masculine."
+      },
+      {
+        "type": "translate",
+        "q": "the hand",
+        "answer": "la mano",
+        "why": "mano is feminine despite the -o."
+      },
+      {
+        "type": "translate",
+        "q": "the city",
+        "answer": "la ciudad",
+        "why": "-dad → feminine."
+      },
+      {
+        "type": "transform",
+        "q": "el amigo → feminine",
+        "answer": "la amiga",
+        "why": "-o → -a, and el → la."
+      },
+      {
+        "type": "transform",
+        "q": "el doctor → feminine",
+        "answer": "la doctora",
+        "why": "Consonant ending: add -a for a woman."
+      }
+    ]
+  },
+  {
+    "id": "g_articles",
+    "title": "Articles (el, la, un, una) & plurals",
+    "order": 3,
+    "tier": 1,
+    "summary": "the = el/la/los/las, a = un/una; make plurals with -s or -es.",
+    "explain": "| | masculine | feminine |\n|---|---|---|\n| the (one) | **el** taco | **la** salsa |\n| the (several) | **los** tacos | **las** salsas |\n| a / an / one | **un** taco | **una** salsa |\n| some / a few | **unos** tacos | **unas** salsas |\n\n**Contractions:** a + el = **al** (*Voy al mercado*), de + el = **del** (*el carro del hotel*). Never with la: *a la playa, de la casa*.\n\n**Plurals**\n\n| Noun ends in… | Do this | Example |\n|---|---|---|\n| a vowel | + **s** | taco → tacos, café → cafés |\n| a consonant | + **es** | hotel → hoteles, ciudad → ciudades |\n| **-z** | → **-ces** | lápiz → lápices, vez → veces |\n| unstressed **-s** | no change | el lunes → los lunes |\n\nAccents can move: *estación → estaciones, camión → camiones*, but *joven → jóvenes*.\n\n**Mixed groups** take the masculine: *los amigos* (men and women), *los papás* (parents).\n\nSpanish uses *the* more than English: ***La** gente es amable. Me gusta **el** café.*",
+    "rules": [
+      {
+        "rule": "Vowel ending → add -s.",
+        "examples": [
+          "taco → tacos",
+          "cerveza → cervezas",
+          "café → cafés"
+        ]
+      },
+      {
+        "rule": "Consonant ending → add -es.",
+        "examples": [
+          "hotel → hoteles",
+          "ciudad → ciudades",
+          "mujer → mujeres"
+        ],
+        "exceptions": [
+          "el lunes → los lunes (unstressed -s: no change)"
+        ]
+      },
+      {
+        "rule": "-z changes to -ces.",
+        "examples": [
+          "lápiz → lápices",
+          "vez → veces",
+          "luz → luces"
+        ]
+      },
+      {
+        "rule": "Accents may disappear or appear to keep the stress in place.",
+        "examples": [
+          "estación → estaciones",
+          "camión → camiones",
+          "joven → jóvenes"
+        ]
+      },
+      {
+        "rule": "a + el = al, de + el = del.",
+        "examples": [
+          "Voy al centro.",
+          "Es el carro del hotel."
+        ],
+        "exceptions": [
+          "a la playa, de la ciudad — no contraction with la"
+        ]
+      },
+      {
+        "rule": "Mixed groups use the masculine plural.",
+        "examples": [
+          "los amigos (men and women)",
+          "los papás = parents"
+        ]
+      }
+    ],
+    "drills": [
+      {
+        "type": "choice",
+        "q": "___ tacos",
+        "options": [
+          "los",
+          "las",
+          "el"
+        ],
+        "answer": "los",
+        "why": "taco is masculine, plural → los."
+      },
+      {
+        "type": "choice",
+        "q": "___ cervezas",
+        "options": [
+          "los",
+          "las"
+        ],
+        "answer": "las",
+        "why": "cerveza is feminine, plural → las."
+      },
+      {
+        "type": "choice",
+        "q": "Quiero ___ café, por favor.",
+        "options": [
+          "un",
+          "una"
+        ],
+        "answer": "un",
+        "why": "café is masculine → un."
+      },
+      {
+        "type": "choice",
+        "q": "Two male and two female friends = ___",
+        "options": [
+          "los amigos",
+          "las amigas"
+        ],
+        "answer": "los amigos",
+        "why": "Mixed groups take the masculine."
+      },
+      {
+        "type": "choice",
+        "q": "el lunes → plural",
+        "options": [
+          "los lunes",
+          "los luneses"
+        ],
+        "answer": "los lunes",
+        "why": "Unstressed -s: the noun doesn't change, only the article."
+      },
+      {
+        "type": "transform",
+        "q": "el hotel → plural",
+        "answer": "los hoteles",
+        "why": "Consonant ending → add -es."
+      },
+      {
+        "type": "transform",
+        "q": "la ciudad → plural",
+        "answer": "las ciudades",
+        "why": "Consonant ending → add -es."
+      },
+      {
+        "type": "transform",
+        "q": "el lápiz → plural",
+        "answer": "los lápices",
+        "why": "-z → -ces."
+      },
+      {
+        "type": "transform",
+        "q": "la estación → plural",
+        "answer": "las estaciones",
+        "why": "Add -es; the accent is no longer needed."
+      },
+      {
+        "type": "transform",
+        "q": "el camión → plural",
+        "answer": "los camiones",
+        "why": "Add -es; the accent drops."
+      },
+      {
+        "type": "transform",
+        "q": "el joven → plural",
+        "answer": "los jóvenes",
+        "why": "Add -es; now it needs an accent to keep the stress on JO."
+      },
+      {
+        "type": "fill",
+        "q": "Vamos ___ mercado. (a + el)",
+        "answer": "al",
+        "why": "a + el always contracts to al."
+      },
+      {
+        "type": "fill",
+        "q": "Es el carro ___ hotel. (de + el)",
+        "answer": "del",
+        "why": "de + el always contracts to del."
+      },
+      {
+        "type": "fill",
+        "q": "Voy ___ playa. (a + la)",
+        "answer": "a la",
+        "why": "No contraction with la."
+      },
+      {
+        "type": "translate",
+        "q": "the tacos",
+        "answer": "los tacos",
+        "why": "Masculine plural."
+      },
+      {
+        "type": "translate",
+        "q": "a beer",
+        "answer": "una cerveza",
+        "why": "cerveza is feminine → una."
+      },
+      {
+        "type": "translate",
+        "q": "some friends",
+        "answer": "unos amigos",
+        "alts": [
+          "unas amigas"
+        ],
+        "why": "unos = some; a mixed or male group is masculine."
+      },
+      {
+        "type": "translate",
+        "q": "the women",
+        "answer": "las mujeres",
+        "why": "mujer + es; feminine plural → las."
+      }
+    ]
+  },
+  {
+    "id": "g_adjectives",
+    "title": "Adjectives: agreement & position",
+    "order": 4,
+    "tier": 1,
+    "summary": "Adjectives match the noun (o/a, -s) and usually come after it.",
+    "explain": "Adjectives **agree** with the noun in gender and number, and usually go **after** it.\n\n| | singular | plural |\n|---|---|---|\n| masculine | el carro **rojo** | los carros **rojos** |\n| feminine | la casa **roja** | las casas **rojas** |\n\n**Adjectives ending in -e or a consonant** don't change for gender: *un mercado grande / una ciudad grande*, *el cielo azul / la camisa azul*. Plural: *grandes, azules, fáciles*.\n\n**Nationalities** add -a even after a consonant: *inglés → inglesa, español → española, alemán → alemana* (written lowercase).\n\n**Before the noun:**\n- quantity words: *mucha gente, poco tiempo, otra cerveza, todos los días* — never *una otra*\n- *bueno / malo* drop the -o before a masculine singular noun: *un **buen** restaurante, un **mal** día*\n- *grande* → ***gran*** before a singular noun = great: *una gran ciudad*\n\nIn Mexico you'll hear **bien** used as *very*: *bien rico, bien bonito*.",
+    "rules": [
+      {
+        "rule": "Adjectives agree in gender and number.",
+        "examples": [
+          "un mercado bonito",
+          "una playa bonita",
+          "unos tacos ricos"
+        ]
+      },
+      {
+        "rule": "-e and most consonant endings don't change for gender.",
+        "examples": [
+          "un carro grande / una casa grande",
+          "el cielo azul / la camisa azul"
+        ],
+        "exceptions": [
+          "Plural still adds -s/-es: grandes, azules"
+        ]
+      },
+      {
+        "rule": "Most adjectives go after the noun.",
+        "examples": [
+          "agua fría",
+          "un hotel barato",
+          "comida mexicana"
+        ]
+      },
+      {
+        "rule": "Quantity words go before the noun.",
+        "examples": [
+          "mucha gente",
+          "otra cerveza",
+          "todos los días"
+        ],
+        "exceptions": [
+          "Never 'un otro': just otro / otra."
+        ]
+      },
+      {
+        "rule": "bueno/malo → buen/mal before a masculine singular noun; grande → gran before any singular noun.",
+        "examples": [
+          "un buen restaurante",
+          "un mal día",
+          "una gran ciudad (a great city)"
+        ],
+        "exceptions": [
+          "una buena idea (feminine keeps -a)"
+        ]
+      },
+      {
+        "rule": "Nationalities ending in a consonant add -a.",
+        "examples": [
+          "un amigo inglés / una amiga inglesa",
+          "español → española"
+        ]
+      }
+    ],
+    "drills": [
+      {
+        "type": "choice",
+        "q": "la casa ___",
+        "options": [
+          "bonito",
+          "bonita",
+          "bonitos"
+        ],
+        "answer": "bonita",
+        "why": "casa is feminine singular."
+      },
+      {
+        "type": "choice",
+        "q": "los tacos ___",
+        "options": [
+          "rico",
+          "ricos",
+          "ricas"
+        ],
+        "answer": "ricos",
+        "why": "tacos is masculine plural."
+      },
+      {
+        "type": "choice",
+        "q": "Es un ___ restaurante.",
+        "options": [
+          "bueno",
+          "buen",
+          "buena"
+        ],
+        "answer": "buen",
+        "why": "bueno → buen before a masculine singular noun."
+      },
+      {
+        "type": "choice",
+        "q": "Quiero ___ cerveza, por favor.",
+        "options": [
+          "otra",
+          "una otra",
+          "otro"
+        ],
+        "answer": "otra",
+        "why": "otra already means 'another' — no una."
+      },
+      {
+        "type": "choice",
+        "q": "El problema es muy ___.",
+        "options": [
+          "complicado",
+          "complicada"
+        ],
+        "answer": "complicado",
+        "why": "problema is masculine (-ma word)."
+      },
+      {
+        "type": "fill",
+        "q": "una cerveza ___ (frío)",
+        "answer": "fría",
+        "why": "cerveza is feminine → fría."
+      },
+      {
+        "type": "fill",
+        "q": "las playas ___ (bonito)",
+        "answer": "bonitas",
+        "why": "Feminine plural → -as."
+      },
+      {
+        "type": "fill",
+        "q": "un hotel ___ (grande)",
+        "answer": "grande",
+        "why": "-e adjectives don't change for gender."
+      },
+      {
+        "type": "fill",
+        "q": "las ciudades ___ (grande)",
+        "answer": "grandes",
+        "why": "Plural → add -s."
+      },
+      {
+        "type": "fill",
+        "q": "una camisa ___ (azul)",
+        "answer": "azul",
+        "why": "Consonant-ending colors don't change for gender."
+      },
+      {
+        "type": "transform",
+        "q": "el carro rojo → plural",
+        "answer": "los carros rojos",
+        "why": "Noun, article and adjective all go plural."
+      },
+      {
+        "type": "transform",
+        "q": "el chile verde → plural",
+        "answer": "los chiles verdes",
+        "why": "verde → verdes; still no gender change."
+      },
+      {
+        "type": "transform",
+        "q": "el amigo mexicano → feminine",
+        "answer": "la amiga mexicana",
+        "why": "Everything switches to -a."
+      },
+      {
+        "type": "transform",
+        "q": "un señor inglés → feminine",
+        "answer": "una señora inglesa",
+        "why": "Nationalities add -a (and lose the accent)."
+      },
+      {
+        "type": "translate",
+        "q": "Mexican food",
+        "answer": "comida mexicana",
+        "alts": [
+          "la comida mexicana"
+        ],
+        "why": "Adjective after the noun, feminine."
+      },
+      {
+        "type": "translate",
+        "q": "a cheap hotel",
+        "answer": "un hotel barato",
+        "why": "Adjective after the noun."
+      },
+      {
+        "type": "translate",
+        "q": "cold water",
+        "answer": "agua fría",
+        "alts": [
+          "el agua fría"
+        ],
+        "why": "agua is feminine → fría (even though it's el agua)."
+      },
+      {
+        "type": "translate",
+        "q": "a lot of people",
+        "answer": "mucha gente",
+        "why": "gente is a singular feminine noun → mucha."
+      }
+    ]
+  },
+  {
+    "id": "g_pronouns",
+    "title": "Subject pronouns: tú, usted, ustedes",
+    "order": 5,
+    "tier": 1,
+    "summary": "I, you, he… — and when to say tú, usted or ustedes in Mexico.",
+    "explain": "| | singular | plural |\n|---|---|---|\n| 1st | **yo** — I | **nosotros / nosotras** — we |\n| 2nd | **tú** — you (informal) | **ustedes** — you all |\n| 3rd | **él** — he · **ella** — she · **usted** — you (formal) | **ellos / ellas** — they |\n\n**tú or usted?**\n- **usted** with older people, staff, police, strangers, anyone you'd call *señor / señora*. In Mexico, *when in doubt, usted*.\n- **tú** with friends, kids, people your age in a relaxed setting. If someone uses tú with you, you can mirror them.\n- **usted** uses the same verb form as él/ella: *¿Usted **es** de aquí?*\n\n**ustedes** is the only plural *you* in Mexico — for friends and strangers alike. (*vosotros* is Spain only.)\n\n**Drop the pronoun.** The verb ending already says who: *Soy ingeniero* (not *Yo soy…*). Add it for contrast or emphasis: *Ella es de Monterrey y **yo** soy de Houston.*\n\n**It** has no subject pronoun: *Es bueno.* (It's good.) *Está aquí.* (It's here.)\n\nMixed groups (even one man) → **nosotros, ellos**.",
+    "rules": [
+      {
+        "rule": "usted (formal you) takes the same verb form as él / ella.",
+        "examples": [
+          "¿Usted es de aquí?",
+          "¿Usted habla inglés?"
+        ]
+      },
+      {
+        "rule": "ustedes is the plural you — friends or strangers.",
+        "examples": [
+          "¿Ustedes son de aquí?"
+        ],
+        "exceptions": [
+          "vosotros is only used in Spain."
+        ]
+      },
+      {
+        "rule": "Subject pronouns are usually dropped.",
+        "examples": [
+          "Soy de Texas.",
+          "Hablo un poco de español."
+        ],
+        "exceptions": [
+          "Keep them for contrast: Yo soy de Texas, ella es de aquí."
+        ]
+      },
+      {
+        "rule": "Any mixed group is masculine.",
+        "examples": [
+          "Ana y Pedro → ellos",
+          "María y yo (a man) → nosotros"
+        ]
+      },
+      {
+        "rule": "There's no word for 'it' as a subject.",
+        "examples": [
+          "Es muy bonito.",
+          "Está cerrado."
+        ]
+      }
+    ],
+    "drills": [
+      {
+        "type": "choice",
+        "q": "Talking to a waiter of about 60: ¿___ es de aquí?",
+        "options": [
+          "Tú",
+          "Usted"
+        ],
+        "answer": "Usted",
+        "why": "An older stranger in service → usted."
+      },
+      {
+        "type": "choice",
+        "q": "A police officer asks you: ¿___ tiene su pasaporte?",
+        "options": [
+          "Usted",
+          "Tú"
+        ],
+        "answer": "Usted",
+        "why": "Officials always use usted."
+      },
+      {
+        "type": "choice",
+        "q": "The hotel receptionist → you say ___",
+        "options": [
+          "tú",
+          "usted"
+        ],
+        "answer": "usted",
+        "why": "Staff and strangers get usted."
+      },
+      {
+        "type": "choice",
+        "q": "A friend your age says '¡Háblame de tú!' — now you use ___",
+        "options": [
+          "tú",
+          "usted"
+        ],
+        "answer": "tú",
+        "why": "They're inviting you to be informal."
+      },
+      {
+        "type": "choice",
+        "q": "Talking to a group of friends: ¿___ son de aquí?",
+        "options": [
+          "Ustedes",
+          "Vosotros",
+          "Usted"
+        ],
+        "answer": "Ustedes",
+        "why": "In Mexico ustedes is the only plural 'you'."
+      },
+      {
+        "type": "choice",
+        "q": "Ana y Lucía → ___",
+        "options": [
+          "ellos",
+          "ellas"
+        ],
+        "answer": "ellas",
+        "why": "Two women → ellas."
+      },
+      {
+        "type": "choice",
+        "q": "Pedro y Ana → ___",
+        "options": [
+          "ellos",
+          "ellas"
+        ],
+        "answer": "ellos",
+        "why": "Mixed group → masculine."
+      },
+      {
+        "type": "choice",
+        "q": "My friend and I (both men) → ___",
+        "options": [
+          "nosotros",
+          "nosotras",
+          "ellos"
+        ],
+        "answer": "nosotros",
+        "why": "We, masculine → nosotros."
+      },
+      {
+        "type": "choice",
+        "q": "usted takes the same verb form as ___",
+        "options": [
+          "él / ella",
+          "tú",
+          "yo"
+        ],
+        "answer": "él / ella",
+        "why": "Usted es… just like él es…"
+      },
+      {
+        "type": "choice",
+        "q": "Which is NOT used in Mexico?",
+        "options": [
+          "vosotros",
+          "ustedes",
+          "usted"
+        ],
+        "answer": "vosotros",
+        "why": "vosotros is Spain only."
+      },
+      {
+        "type": "choice",
+        "q": "'Soy de Houston.' Who is speaking?",
+        "options": [
+          "yo",
+          "él",
+          "tú"
+        ],
+        "answer": "yo",
+        "why": "soy = I am; the pronoun is dropped."
+      },
+      {
+        "type": "translate",
+        "q": "I",
+        "answer": "yo",
+        "why": "yo = I (only capitalised at the start of a sentence)."
+      },
+      {
+        "type": "translate",
+        "q": "she",
+        "answer": "ella",
+        "why": "ella = she."
+      },
+      {
+        "type": "translate",
+        "q": "we (a group of women)",
+        "answer": "nosotras",
+        "why": "All women → nosotras."
+      },
+      {
+        "type": "translate",
+        "q": "you all",
+        "answer": "ustedes",
+        "why": "ustedes for any group in Mexico."
+      },
+      {
+        "type": "translate",
+        "q": "they (men)",
+        "answer": "ellos",
+        "why": "ellos = they (masculine or mixed)."
+      },
+      {
+        "type": "transform",
+        "q": "Juan → pronoun",
+        "answer": "él",
+        "why": "Juan is a man → él."
+      },
+      {
+        "type": "transform",
+        "q": "María y yo (you're a man) → pronoun",
+        "answer": "nosotros",
+        "why": "Any man in the group → nosotros."
+      }
+    ]
+  },
+  {
+    "id": "g_ser",
+    "title": "Ser: who and what you are",
+    "order": 6,
+    "tier": 1,
+    "summary": "ser = to be for identity, origin, job, description, time and totals.",
+    "explain": "| yo **soy** | nosotros **somos** |\n|---|---|\n| tú **eres** | ellos / ellas / ustedes **son** |\n| él / ella / usted **es** | |\n\nUse **ser** for what something *is*:\n\n| Use | Example |\n|---|---|\n| Identity | *Soy Matt. Ella es mi esposa.* |\n| Job | *Soy ingeniero.* — **no un/una** before a bare job |\n| Origin | *Soy de Estados Unidos. ¿De dónde eres?* |\n| Description (traits) | *La ciudad es enorme. Los tacos son baratos.* |\n| Time & dates | *Es la una. Son las tres. Hoy es viernes.* |\n| Totals | *¿Cuánto es? — Son ochenta pesos.* |\n| Where an event happens | *La fiesta es en mi casa.* |\n\n> *Es la una* (singular), but *son las dos, son las tres*…",
+    "rules": [
+      {
+        "rule": "Identity and job — no un/una before a bare profession.",
+        "examples": [
+          "Soy Matt.",
+          "Soy ingeniero.",
+          "Ella es doctora."
+        ],
+        "exceptions": [
+          "Add un/una when there's an adjective: Es un buen doctor."
+        ]
+      },
+      {
+        "rule": "Origin and nationality: ser de…",
+        "examples": [
+          "Soy de Estados Unidos.",
+          "¿De dónde eres?",
+          "Somos de Texas."
+        ]
+      },
+      {
+        "rule": "Characteristics.",
+        "examples": [
+          "La Ciudad de México es grande.",
+          "Los tacos son baratos."
+        ]
+      },
+      {
+        "rule": "Time and dates.",
+        "examples": [
+          "Es la una.",
+          "Son las tres.",
+          "Hoy es viernes."
+        ],
+        "exceptions": [
+          "Es la una (singular) — son las dos, son las tres…"
+        ]
+      },
+      {
+        "rule": "Totals: ¿Cuánto es? — Son… pesos.",
+        "examples": [
+          "¿Cuánto es?",
+          "Son ochenta pesos."
+        ]
+      },
+      {
+        "rule": "Where an event takes place → ser en.",
+        "examples": [
+          "La fiesta es en mi casa."
+        ],
+        "exceptions": [
+          "Where a thing or person is → estar: El hotel está en el centro."
+        ]
+      }
+    ],
+    "drills": [
+      {
+        "type": "fill",
+        "q": "Yo ___ ingeniero.",
+        "answer": "soy",
+        "why": "yo → soy."
+      },
+      {
+        "type": "fill",
+        "q": "¿Tú ___ de aquí?",
+        "answer": "eres",
+        "why": "tú → eres."
+      },
+      {
+        "type": "fill",
+        "q": "Ella ___ de Guadalajara.",
+        "answer": "es",
+        "why": "ella → es."
+      },
+      {
+        "type": "fill",
+        "q": "Nosotros ___ de Estados Unidos.",
+        "answer": "somos",
+        "why": "nosotros → somos."
+      },
+      {
+        "type": "fill",
+        "q": "Ustedes ___ muy amables.",
+        "answer": "son",
+        "why": "ustedes → son."
+      },
+      {
+        "type": "fill",
+        "q": "¿Usted ___ el señor García?",
+        "answer": "es",
+        "why": "usted takes the él form: es."
+      },
+      {
+        "type": "choice",
+        "q": "I'm an engineer.",
+        "options": [
+          "Soy ingeniero.",
+          "Soy un ingeniero.",
+          "Estoy ingeniero."
+        ],
+        "answer": "Soy ingeniero.",
+        "why": "No un/una before a bare profession."
+      },
+      {
+        "type": "choice",
+        "q": "It's one o'clock.",
+        "options": [
+          "Es la una.",
+          "Son la una.",
+          "Es una."
+        ],
+        "answer": "Es la una.",
+        "why": "One o'clock is singular: es la una."
+      },
+      {
+        "type": "choice",
+        "q": "It's three o'clock.",
+        "options": [
+          "Son las tres.",
+          "Es las tres.",
+          "Son tres."
+        ],
+        "answer": "Son las tres.",
+        "why": "Two o'clock on → son las…"
+      },
+      {
+        "type": "choice",
+        "q": "La fiesta ___ en la casa de Ana.",
+        "options": [
+          "es",
+          "está"
+        ],
+        "answer": "es",
+        "why": "Where an event takes place → ser."
+      },
+      {
+        "type": "translate",
+        "q": "I'm from the United States.",
+        "answer": "Soy de Estados Unidos.",
+        "alts": [
+          "Yo soy de Estados Unidos.",
+          "Soy de los Estados Unidos.",
+          "Yo soy de los Estados Unidos."
+        ],
+        "why": "Origin → ser de."
+      },
+      {
+        "type": "translate",
+        "q": "Where are you from? (informal)",
+        "answer": "¿De dónde eres?",
+        "alts": [
+          "¿De dónde eres tú?",
+          "¿Tú de dónde eres?"
+        ],
+        "why": "de + dónde + eres."
+      },
+      {
+        "type": "translate",
+        "q": "Where are you from? (formal)",
+        "answer": "¿De dónde es usted?",
+        "alts": [
+          "¿De dónde es?",
+          "¿Usted de dónde es?"
+        ],
+        "why": "usted takes es."
+      },
+      {
+        "type": "translate",
+        "q": "She is my wife.",
+        "answer": "Ella es mi esposa.",
+        "alts": [
+          "Es mi esposa."
+        ],
+        "why": "Identity/relationship → ser."
+      },
+      {
+        "type": "translate",
+        "q": "Today is Friday.",
+        "answer": "Hoy es viernes.",
+        "alts": [
+          "Es viernes."
+        ],
+        "why": "Dates → ser; days are lowercase."
+      },
+      {
+        "type": "translate",
+        "q": "We are friends.",
+        "answer": "Somos amigos.",
+        "alts": [
+          "Nosotros somos amigos.",
+          "Somos amigas.",
+          "Nosotras somos amigas."
+        ],
+        "why": "nosotros → somos."
+      },
+      {
+        "type": "transform",
+        "q": "Soy de Texas. → nosotros",
+        "answer": "Somos de Texas.",
+        "why": "soy → somos."
+      },
+      {
+        "type": "transform",
+        "q": "Es muy alto. → ellos",
+        "answer": "Son muy altos.",
+        "why": "es → son, and the adjective goes plural."
+      }
+    ]
+  },
+  {
+    "id": "g_numbers",
+    "title": "Numbers, prices & telling time",
+    "order": 7,
+    "tier": 1,
+    "summary": "Count, pay and tell the time — the Mexican way.",
+    "explain": "| Range | Numbers |\n|---|---|\n| 0–15 | cero, uno, dos, tres, cuatro, cinco, seis, siete, ocho, nueve, diez, once, doce, trece, catorce, quince |\n| 16–29 (one word) | dieciséis, diecisiete, dieciocho, diecinueve, veinte, veintiuno, veintidós … veintinueve |\n| 30–90 (+ **y**) | treinta y uno, cuarenta, cincuenta, sesenta, setenta, ochenta, noventa |\n| 100s | **cien** (exactly 100), ciento uno, doscientos, trescientos, cuatrocientos, **quinientos**, seiscientos, **setecientos**, ochocientos, **novecientos** |\n| 1000s | mil, dos mil, diez mil |\n\n- *uno* → **un** before a masculine noun (*un taco, veintiún pesos*), **una** before a feminine one (*una cerveza*).\n- Hundreds agree: *doscient**os** pesos* but *doscient**as** personas*.\n- No **y** after hundreds: *ciento cinco, trescientos veinte*.\n\n**Prices:** *¿Cuánto cuesta?* (one thing) · *¿Cuánto cuestan?* (several) · *¿Cuánto es?* (the total) → *Son 250 pesos.* In Mexico **$** means pesos.\n\n**Time:** *¿Qué hora es?* → *Es la una. Son las ocho.* · *y cuarto* (:15), *y media* (:30) · Mexico counts down with **para**: *diez para las nueve* (8:50), *un cuarto para las ocho* (7:45). *¿A qué hora…? — A las siete de la noche.*\n\n| de la mañana | de la tarde | de la noche |\n|---|---|---|\n| until noon | ~noon–7 pm | after dark |",
+    "rules": [
+      {
+        "rule": "16–29 are written as one word.",
+        "examples": [
+          "dieciséis",
+          "veintidós",
+          "veintiocho"
+        ]
+      },
+      {
+        "rule": "From 31 on, join tens and units with y.",
+        "examples": [
+          "treinta y cinco",
+          "cuarenta y dos",
+          "noventa y nueve"
+        ],
+        "exceptions": [
+          "No y after hundreds: ciento cinco, doscientos veinte"
+        ]
+      },
+      {
+        "rule": "cien = exactly 100; ciento = 101–199.",
+        "examples": [
+          "cien pesos",
+          "ciento cincuenta pesos"
+        ]
+      },
+      {
+        "rule": "uno → un before a masculine noun, una before a feminine one.",
+        "examples": [
+          "un taco",
+          "veintiún pesos",
+          "una cerveza"
+        ]
+      },
+      {
+        "rule": "Hundreds agree with feminine nouns.",
+        "examples": [
+          "doscientos pesos",
+          "doscientas personas"
+        ],
+        "exceptions": [
+          "Irregular: quinientos, setecientos, novecientos"
+        ]
+      },
+      {
+        "rule": "Time: es la una / son las…; ask ¿a qué hora? → a las…",
+        "examples": [
+          "Son las ocho y media.",
+          "Es la una y cuarto.",
+          "Son diez para las nueve.",
+          "A las siete de la noche."
+        ]
+      }
+    ],
+    "drills": [
+      {
+        "type": "translate",
+        "q": "15",
+        "answer": "quince",
+        "why": "11–15 are their own words: once, doce, trece, catorce, quince."
+      },
+      {
+        "type": "translate",
+        "q": "17",
+        "answer": "diecisiete",
+        "why": "16–19: one word, dieci- + number."
+      },
+      {
+        "type": "translate",
+        "q": "25",
+        "answer": "veinticinco",
+        "why": "21–29: one word, veinti- + number."
+      },
+      {
+        "type": "translate",
+        "q": "48",
+        "answer": "cuarenta y ocho",
+        "why": "From 31 on: tens + y + units."
+      },
+      {
+        "type": "translate",
+        "q": "100 pesos",
+        "answer": "cien pesos",
+        "why": "Exactly 100 → cien."
+      },
+      {
+        "type": "translate",
+        "q": "150",
+        "answer": "ciento cincuenta",
+        "why": "101–199 → ciento…"
+      },
+      {
+        "type": "translate",
+        "q": "500",
+        "answer": "quinientos",
+        "why": "Irregular: quinientos, not cincocientos."
+      },
+      {
+        "type": "translate",
+        "q": "700",
+        "answer": "setecientos",
+        "why": "Irregular-ish: sete-, not siete-."
+      },
+      {
+        "type": "translate",
+        "q": "2,000 pesos",
+        "answer": "dos mil pesos",
+        "why": "mil doesn't take -es: dos mil."
+      },
+      {
+        "type": "choice",
+        "q": "21 tacos",
+        "options": [
+          "veintiún tacos",
+          "veintiuno tacos",
+          "veintiuna tacos"
+        ],
+        "answer": "veintiún tacos",
+        "why": "-uno shortens to -ún before a masculine noun."
+      },
+      {
+        "type": "choice",
+        "q": "It's 1:30.",
+        "options": [
+          "Es la una y media.",
+          "Son la una y media.",
+          "Es una y media."
+        ],
+        "answer": "Es la una y media.",
+        "why": "One o'clock is singular: es la una."
+      },
+      {
+        "type": "choice",
+        "q": "How much do they cost? (several things)",
+        "options": [
+          "¿Cuánto cuestan?",
+          "¿Cuánto cuesta?"
+        ],
+        "answer": "¿Cuánto cuestan?",
+        "why": "Several things → plural cuestan."
+      },
+      {
+        "type": "choice",
+        "q": "7:50, the Mexican way",
+        "options": [
+          "Son diez para las ocho.",
+          "Son las ocho y diez.",
+          "Son las diez para siete."
+        ],
+        "answer": "Son diez para las ocho.",
+        "why": "Mexico counts minutes 'to' the next hour with para."
+      },
+      {
+        "type": "translate",
+        "q": "It's 8:15.",
+        "answer": "Son las ocho y cuarto.",
+        "alts": [
+          "Son las ocho y quince."
+        ],
+        "why": "y cuarto = quarter past."
+      },
+      {
+        "type": "translate",
+        "q": "at seven in the evening",
+        "answer": "a las siete de la noche",
+        "alts": [
+          "a las siete de la tarde"
+        ],
+        "why": "a las + hour; after dark → de la noche."
+      },
+      {
+        "type": "translate",
+        "q": "How much is it? (the total)",
+        "answer": "¿Cuánto es?",
+        "alts": [
+          "¿Cuánto le debo?",
+          "¿Cuánto sería?"
+        ],
+        "why": "Totals → ¿Cuánto es?"
+      },
+      {
+        "type": "fill",
+        "q": "Son ___ pesos. (350)",
+        "answer": "trescientos cincuenta",
+        "why": "300 = trescientos; no y after hundreds."
+      },
+      {
+        "type": "transform",
+        "q": "veintidós → add 10",
+        "answer": "treinta y dos",
+        "why": "From 31 on you need y."
+      }
+    ]
+  },
+  {
+    "id": "g_estar",
+    "title": "Estar & ser vs estar",
+    "order": 8,
+    "tier": 1,
+    "summary": "estar = where something is and how it is right now.",
+    "explain": "| yo **estoy** | nosotros **estamos** |\n|---|---|\n| tú **estás** | ellos / ellas / ustedes **están** |\n| él / ella / usted **está** | |\n\nUse **estar** for:\n- **Location:** *¿Dónde está el baño? El hotel está en el centro.*\n- **States & feelings:** *¿Cómo estás? — Estoy bien. Estoy cansado.*\n- **Conditions after a change:** *La tienda está cerrada. El café está frío.*\n- **How food tastes right now:** *¡Está riquísimo!*\n\n> *How you feel and where you are — that is when you use estar.*\n\n**Ser vs estar** — some adjectives change meaning:\n\n| ser = what it is (trait) | estar = how / where it is (state) |\n|---|---|\n| *Es aburrido.* He's boring. | *Está aburrido.* He's bored. |\n| *Es listo.* He's clever. | *Está listo.* He's ready. |\n| *Es rico.* He's rich. | *Está rico.* It's tasty. |\n| *La fiesta **es** en mi casa.* (event) | *Mi casa **está** en Coyoacán.* (location) |\n\nIdentity, origin, job, time → always **ser**.",
+    "rules": [
+      {
+        "rule": "Location of people and things → estar.",
+        "examples": [
+          "¿Dónde está el metro?",
+          "Estamos en el hotel."
+        ],
+        "exceptions": [
+          "Events use ser: La fiesta es en la playa."
+        ]
+      },
+      {
+        "rule": "Temporary states and feelings → estar.",
+        "examples": [
+          "Estoy cansado.",
+          "Ella está enferma.",
+          "¿Cómo está usted?"
+        ]
+      },
+      {
+        "rule": "Conditions that result from a change → estar.",
+        "examples": [
+          "La tienda está cerrada.",
+          "El baño está ocupado."
+        ]
+      },
+      {
+        "rule": "Some adjectives change meaning: ser = trait, estar = state.",
+        "examples": [
+          "es aburrido / está aburrido",
+          "es listo / está listo",
+          "es rico / está rico"
+        ]
+      },
+      {
+        "rule": "Identity, origin, job and time → ser, never estar.",
+        "examples": [
+          "Soy ingeniero.",
+          "Es la una."
+        ]
+      }
+    ],
+    "drills": [
+      {
+        "type": "fill",
+        "q": "Yo ___ cansado.",
+        "answer": "estoy",
+        "why": "yo → estoy."
+      },
+      {
+        "type": "fill",
+        "q": "¿Dónde ___ el baño?",
+        "answer": "está",
+        "why": "Location → estar; one thing → está."
+      },
+      {
+        "type": "fill",
+        "q": "¿Cómo ___ (tú)?",
+        "answer": "estás",
+        "why": "tú → estás."
+      },
+      {
+        "type": "fill",
+        "q": "Nosotros ___ en el hotel.",
+        "answer": "estamos",
+        "why": "nosotros → estamos."
+      },
+      {
+        "type": "fill",
+        "q": "Los tacos ___ muy ricos.",
+        "answer": "están",
+        "why": "Taste right now → estar; plural → están."
+      },
+      {
+        "type": "choice",
+        "q": "El museo ___ en el centro.",
+        "options": [
+          "es",
+          "está"
+        ],
+        "answer": "está",
+        "why": "Where a thing is → estar."
+      },
+      {
+        "type": "choice",
+        "q": "Mi amigo ___ de Puebla.",
+        "options": [
+          "es",
+          "está"
+        ],
+        "answer": "es",
+        "why": "Origin → ser."
+      },
+      {
+        "type": "choice",
+        "q": "La tienda ___ cerrada.",
+        "options": [
+          "es",
+          "está"
+        ],
+        "answer": "está",
+        "why": "A condition (it got closed) → estar."
+      },
+      {
+        "type": "choice",
+        "q": "Mi hermana ___ doctora.",
+        "options": [
+          "es",
+          "está"
+        ],
+        "answer": "es",
+        "why": "Profession → ser."
+      },
+      {
+        "type": "choice",
+        "q": "La fiesta ___ en la casa de Luis.",
+        "options": [
+          "es",
+          "está"
+        ],
+        "answer": "es",
+        "why": "Where an event happens → ser."
+      },
+      {
+        "type": "choice",
+        "q": "I'm ready.",
+        "options": [
+          "Estoy listo.",
+          "Soy listo."
+        ],
+        "answer": "Estoy listo.",
+        "why": "listo with estar = ready; with ser = clever."
+      },
+      {
+        "type": "choice",
+        "q": "You take a bite and say: 'It's delicious!'",
+        "options": [
+          "¡Está muy rico!",
+          "¡Soy muy rico!"
+        ],
+        "answer": "¡Está muy rico!",
+        "why": "Reacting to food in front of you → estar."
+      },
+      {
+        "type": "translate",
+        "q": "I'm fine, thanks.",
+        "answer": "Estoy bien, gracias.",
+        "alts": [
+          "Bien, gracias.",
+          "Muy bien, gracias.",
+          "Estoy muy bien, gracias.",
+          "Yo estoy bien, gracias."
+        ],
+        "why": "How you are → estar."
+      },
+      {
+        "type": "translate",
+        "q": "Where is the hotel?",
+        "answer": "¿Dónde está el hotel?",
+        "why": "Location → estar."
+      },
+      {
+        "type": "translate",
+        "q": "We are tired.",
+        "answer": "Estamos cansados.",
+        "alts": [
+          "Nosotros estamos cansados.",
+          "Estamos cansadas.",
+          "Nosotras estamos cansadas."
+        ],
+        "why": "State → estar; plural adjective."
+      },
+      {
+        "type": "translate",
+        "q": "How are you? (formal)",
+        "answer": "¿Cómo está usted?",
+        "alts": [
+          "¿Cómo está?"
+        ],
+        "why": "usted → está."
+      },
+      {
+        "type": "translate",
+        "q": "The coffee is cold.",
+        "answer": "El café está frío.",
+        "why": "A condition right now → estar."
+      },
+      {
+        "type": "transform",
+        "q": "Estoy enfermo. → ella",
+        "answer": "Está enferma.",
+        "alts": [
+          "Ella está enferma."
+        ],
+        "why": "estoy → está; enfermo → enferma."
+      }
+    ]
+  },
+  {
+    "id": "g_hay",
+    "title": "Hay: there is / there are",
+    "order": 9,
+    "tier": 1,
+    "summary": "hay = there is AND there are; use it to ask if something exists or is available.",
+    "explain": "**hay** (from *haber*) means *there is* **and** *there are* — one form for everything.\n\n- *¿Hay un baño aquí?* — Is there a bathroom here?\n- *Hay muchos puestos de tacos.* — There are lots of taco stands.\n- *No hay agua.* — There's no water. (No article after *no hay*: *No hay problema.*)\n\n**hay or estar?**\n\n| hay — introduces something (a, some, numbers, no article) | estar — locates a specific thing (the) |\n|---|---|\n| *¿Hay un OXXO por aquí?* | *¿Dónde está el OXXO?* |\n| *Hay una farmacia en la esquina.* | *La farmacia está en la esquina.* |\n\n**At stalls and shops** *¿Hay…?* = *do you have…?*: *¿Hay de pastor? ¿Hay agua fría?*\n\n**hay que + infinitive** = you have to / one must: *Hay que pagar en efectivo.*\n\nPast: *había* (there was / were). Near future: *va a haber*.",
+    "rules": [
+      {
+        "rule": "hay = there is AND there are.",
+        "examples": [
+          "Hay un problema.",
+          "Hay tres personas."
+        ]
+      },
+      {
+        "rule": "hay goes with un/una, numbers, mucho or no article — not el/la.",
+        "examples": [
+          "Hay una farmacia aquí.",
+          "Hay mucha gente.",
+          "No hay agua."
+        ],
+        "exceptions": [
+          "With el/la use estar: La farmacia está aquí."
+        ]
+      },
+      {
+        "rule": "¿Hay…? at a stall or shop = do you have…?",
+        "examples": [
+          "¿Hay de suadero?",
+          "¿Hay agua fría?"
+        ]
+      },
+      {
+        "rule": "hay que + infinitive = you have to / one must.",
+        "examples": [
+          "Hay que pagar en efectivo.",
+          "Hay que reservar."
+        ]
+      }
+    ],
+    "drills": [
+      {
+        "type": "choice",
+        "q": "¿___ un banco por aquí?",
+        "options": [
+          "Hay",
+          "Está"
+        ],
+        "answer": "Hay",
+        "why": "Asking if one exists (un) → hay."
+      },
+      {
+        "type": "choice",
+        "q": "¿Dónde ___ el banco?",
+        "options": [
+          "hay",
+          "está"
+        ],
+        "answer": "está",
+        "why": "Locating a specific thing (el) → estar."
+      },
+      {
+        "type": "choice",
+        "q": "___ muchas personas en el metro.",
+        "options": [
+          "Hay",
+          "Están"
+        ],
+        "answer": "Hay",
+        "why": "There are… → hay, even for plural."
+      },
+      {
+        "type": "choice",
+        "q": "No ___ problema.",
+        "options": [
+          "hay",
+          "está"
+        ],
+        "answer": "hay",
+        "why": "No hay problema = no problem."
+      },
+      {
+        "type": "choice",
+        "q": "El baño ___ al fondo.",
+        "options": [
+          "hay",
+          "está"
+        ],
+        "answer": "está",
+        "why": "The bathroom (specific) → está."
+      },
+      {
+        "type": "choice",
+        "q": "There's a problem with my room.",
+        "options": [
+          "Hay un problema con mi cuarto.",
+          "Está un problema con mi cuarto."
+        ],
+        "answer": "Hay un problema con mi cuarto.",
+        "why": "Introducing a problem (un) → hay."
+      },
+      {
+        "type": "choice",
+        "q": "Is there pastor? (at a taco stand)",
+        "options": [
+          "¿Hay de pastor?",
+          "¿Está de pastor?"
+        ],
+        "answer": "¿Hay de pastor?",
+        "why": "¿Hay…? = do you have…? at a stall."
+      },
+      {
+        "type": "fill",
+        "q": "___ que reservar con tiempo.",
+        "answer": "Hay",
+        "why": "hay que + infinitive = you have to."
+      },
+      {
+        "type": "translate",
+        "q": "Is there a pharmacy around here?",
+        "answer": "¿Hay una farmacia por aquí?",
+        "alts": [
+          "¿Hay una farmacia cerca?",
+          "¿Hay farmacia por aquí?",
+          "¿Hay alguna farmacia por aquí?"
+        ],
+        "why": "Asking if one exists → hay."
+      },
+      {
+        "type": "translate",
+        "q": "There's no hot water.",
+        "answer": "No hay agua caliente.",
+        "why": "No hay + noun, no article."
+      },
+      {
+        "type": "translate",
+        "q": "There are a lot of people.",
+        "answer": "Hay mucha gente.",
+        "why": "One form for singular and plural."
+      },
+      {
+        "type": "translate",
+        "q": "Is there Wi-Fi?",
+        "answer": "¿Hay wifi?",
+        "alts": [
+          "¿Hay internet?",
+          "¿Tienen wifi?"
+        ],
+        "why": "¿Hay…? to ask if something is available."
+      },
+      {
+        "type": "translate",
+        "q": "You have to pay in cash.",
+        "answer": "Hay que pagar en efectivo.",
+        "why": "General obligation → hay que."
+      },
+      {
+        "type": "translate",
+        "q": "Where is the bathroom?",
+        "answer": "¿Dónde está el baño?",
+        "why": "The bathroom (specific) → estar, not hay."
+      },
+      {
+        "type": "transform",
+        "q": "Hay una mesa libre. → two tables",
+        "answer": "Hay dos mesas libres.",
+        "why": "hay stays the same; the noun goes plural."
+      },
+      {
+        "type": "transform",
+        "q": "La tienda está en la esquina. → 'There's a store on the corner.'",
+        "answer": "Hay una tienda en la esquina.",
+        "why": "Introducing a store (una) → hay."
+      }
+    ]
+  },
+  {
+    "id": "g_present_ar",
+    "title": "Present tense: -ar verbs",
+    "order": 10,
+    "tier": 1,
+    "summary": "hablo, hablas, habla, hablamos, hablan — the biggest verb family.",
+    "explain": "Take the infinitive, drop **-ar**, add the ending:\n\n| | ending | hablar | trabajar |\n|---|---|---|---|\n| yo | **-o** | hablo | trabajo |\n| tú | **-as** | hablas | trabajas |\n| él / ella / usted | **-a** | habla | trabaja |\n| nosotros | **-amos** | hablamos | trabajamos |\n| ellos / ellas / ustedes | **-an** | hablan | trabajan |\n\nOne present form covers *I speak, I'm speaking, I do speak* — and scheduled near future: *Mañana regreso a Texas.*\n\n**Useful -ar verbs:** hablar, trabajar, tomar (take / drink), llegar, buscar, necesitar, pagar, comprar, llamar, esperar, viajar, caminar, estudiar, cambiar, regresar, preguntar, escuchar, mirar.\n\n**Mexico flavour:** *tomar* = drink (*¿Qué vas a tomar?*), *manejar* = drive, *platicar* = chat, *rentar* = rent, *checar* = check, *regresar* = go back.",
+    "rules": [
+      {
+        "rule": "Drop -ar, add -o, -as, -a, -amos, -an.",
+        "examples": [
+          "hablo, hablas, habla, hablamos, hablan"
+        ]
+      },
+      {
+        "rule": "The ending already says who — the pronoun is optional.",
+        "examples": [
+          "Trabajo en Houston.",
+          "¿Hablas inglés?"
+        ]
+      },
+      {
+        "rule": "One present = 'I work', 'I'm working', 'I do work'.",
+        "examples": [
+          "Trabajo mucho.",
+          "¿Qué buscas? — What are you looking for?"
+        ]
+      },
+      {
+        "rule": "The present can describe a scheduled near future.",
+        "examples": [
+          "Mañana regreso a Texas.",
+          "Llego el viernes."
+        ]
+      },
+      {
+        "rule": "usted / ustedes take the él / ellos endings.",
+        "examples": [
+          "¿Usted habla inglés?",
+          "¿Ustedes trabajan aquí?"
+        ]
+      }
+    ],
+    "drills": [
+      {
+        "type": "fill",
+        "q": "Yo ___ en una universidad. (trabajar)",
+        "answer": "trabajo",
+        "why": "yo → -o."
+      },
+      {
+        "type": "fill",
+        "q": "¿Tú ___ inglés? (hablar)",
+        "answer": "hablas",
+        "why": "tú → -as."
+      },
+      {
+        "type": "fill",
+        "q": "Ella ___ un taxi. (tomar)",
+        "answer": "toma",
+        "why": "ella → -a."
+      },
+      {
+        "type": "fill",
+        "q": "Nosotros ___ el viernes. (llegar)",
+        "answer": "llegamos",
+        "why": "nosotros → -amos."
+      },
+      {
+        "type": "fill",
+        "q": "Ellos ___ en efectivo. (pagar)",
+        "answer": "pagan",
+        "why": "ellos → -an."
+      },
+      {
+        "type": "fill",
+        "q": "¿Usted ___ español? (hablar)",
+        "answer": "habla",
+        "why": "usted takes the él form."
+      },
+      {
+        "type": "fill",
+        "q": "Ustedes ___ mucho. (trabajar)",
+        "answer": "trabajan",
+        "why": "ustedes takes the ellos form."
+      },
+      {
+        "type": "choice",
+        "q": "Mañana ___ a Texas. (I go back)",
+        "options": [
+          "regreso",
+          "regresa",
+          "regresas"
+        ],
+        "answer": "regreso",
+        "why": "yo → -o; the present works for a planned tomorrow."
+      },
+      {
+        "type": "choice",
+        "q": "¿Ustedes ___ aquí?",
+        "options": [
+          "trabajan",
+          "trabajas",
+          "trabajamos"
+        ],
+        "answer": "trabajan",
+        "why": "ustedes → -an."
+      },
+      {
+        "type": "transform",
+        "q": "Hablo español. → nosotros",
+        "answer": "Hablamos español.",
+        "why": "hablo → hablamos."
+      },
+      {
+        "type": "transform",
+        "q": "Ella busca el metro. → yo",
+        "answer": "Busco el metro.",
+        "alts": [
+          "Yo busco el metro."
+        ],
+        "why": "busca → busco."
+      },
+      {
+        "type": "transform",
+        "q": "¿Necesitas ayuda? → usted",
+        "answer": "¿Necesita ayuda?",
+        "alts": [
+          "¿Usted necesita ayuda?"
+        ],
+        "why": "tú -as → usted -a."
+      },
+      {
+        "type": "translate",
+        "q": "I'm looking for my phone.",
+        "answer": "Busco mi celular.",
+        "alts": [
+          "Estoy buscando mi celular.",
+          "Busco mi teléfono.",
+          "Yo busco mi celular."
+        ],
+        "why": "Present covers 'I'm looking'. Mexico says celular."
+      },
+      {
+        "type": "translate",
+        "q": "Do you speak English? (formal)",
+        "answer": "¿Habla inglés?",
+        "alts": [
+          "¿Usted habla inglés?",
+          "¿Habla usted inglés?"
+        ],
+        "why": "usted → habla."
+      },
+      {
+        "type": "translate",
+        "q": "We work in Houston.",
+        "answer": "Trabajamos en Houston.",
+        "alts": [
+          "Nosotros trabajamos en Houston."
+        ],
+        "why": "nosotros → -amos."
+      },
+      {
+        "type": "translate",
+        "q": "I need a taxi.",
+        "answer": "Necesito un taxi.",
+        "alts": [
+          "Yo necesito un taxi.",
+          "Necesito un Uber."
+        ],
+        "why": "yo → necesito."
+      },
+      {
+        "type": "translate",
+        "q": "I speak a little Spanish.",
+        "answer": "Hablo un poco de español.",
+        "alts": [
+          "Yo hablo un poco de español.",
+          "Hablo poquito español.",
+          "Hablo un poquito de español."
+        ],
+        "why": "un poco de = a little."
+      }
+    ]
+  },
+  {
+    "id": "g_present_er_ir",
+    "title": "Present tense: -er & -ir verbs",
+    "order": 11,
+    "tier": 1,
+    "summary": "como, comes, come… vivo, vives, vive… — only nosotros differs.",
+    "explain": "| | -er (**comer**) | -ir (**vivir**) |\n|---|---|---|\n| yo | com**o** | viv**o** |\n| tú | com**es** | viv**es** |\n| él / ella / usted | com**e** | viv**e** |\n| nosotros | com**emos** | viv**imos** |\n| ellos / ellas / ustedes | com**en** | viv**en** |\n\n-er and -ir verbs differ **only in nosotros** (-emos vs -imos).\n\n**Common:** comer, beber (Mexico usually says *tomar*), aprender, leer, vender, correr, creer, deber, comprender · vivir, escribir, abrir, subir, recibir, compartir, decidir.\n\n**Ready-made phrases:** *Creo que sí / Creo que no* (I think so / I don't think so) · *¿A qué hora abre?* · *¿Venden chips?* (SIM cards).\n\nSome very common -er/-ir verbs are irregular in the yo form (*hago, salgo, tengo, veo*) — that's a later unit.",
+    "rules": [
+      {
+        "rule": "-er: -o, -es, -e, -emos, -en.",
+        "examples": [
+          "como, comes, come, comemos, comen"
+        ]
+      },
+      {
+        "rule": "-ir: the same, except nosotros -imos.",
+        "examples": [
+          "vivo, vives, vive, vivimos, viven"
+        ]
+      },
+      {
+        "rule": "Handy fixed phrases.",
+        "examples": [
+          "Creo que sí. / Creo que no.",
+          "¿A qué hora abre?",
+          "No comprendo."
+        ]
+      }
+    ],
+    "drills": [
+      {
+        "type": "fill",
+        "q": "Yo ___ tacos todos los días. (comer)",
+        "answer": "como",
+        "why": "yo → -o."
+      },
+      {
+        "type": "fill",
+        "q": "¿Dónde ___ tú? (vivir)",
+        "answer": "vives",
+        "why": "tú → -es."
+      },
+      {
+        "type": "fill",
+        "q": "Nosotros ___ en Houston. (vivir)",
+        "answer": "vivimos",
+        "why": "-ir verbs: nosotros → -imos."
+      },
+      {
+        "type": "fill",
+        "q": "Ella ___ fruta en el mercado. (vender)",
+        "answer": "vende",
+        "why": "ella → -e."
+      },
+      {
+        "type": "fill",
+        "q": "¿A qué hora ___ el museo? (abrir)",
+        "answer": "abre",
+        "why": "The museum = él form → -e."
+      },
+      {
+        "type": "fill",
+        "q": "Ustedes ___ muy rápido. (aprender)",
+        "answer": "aprenden",
+        "why": "ustedes → -en."
+      },
+      {
+        "type": "fill",
+        "q": "Nosotros ___ en un restaurante. (comer)",
+        "answer": "comemos",
+        "why": "-er verbs: nosotros → -emos."
+      },
+      {
+        "type": "choice",
+        "q": "we write",
+        "options": [
+          "escribimos",
+          "escribemos"
+        ],
+        "answer": "escribimos",
+        "why": "escribir is -ir → -imos."
+      },
+      {
+        "type": "choice",
+        "q": "¿Usted ___ aquí?",
+        "options": [
+          "vive",
+          "vives",
+          "vivo"
+        ],
+        "answer": "vive",
+        "why": "usted takes the él form."
+      },
+      {
+        "type": "transform",
+        "q": "Leo el menú. → nosotros",
+        "answer": "Leemos el menú.",
+        "why": "leer is -er → leemos."
+      },
+      {
+        "type": "transform",
+        "q": "Comes muy rápido. → usted",
+        "answer": "Come muy rápido.",
+        "alts": [
+          "Usted come muy rápido."
+        ],
+        "why": "tú -es → usted -e."
+      },
+      {
+        "type": "translate",
+        "q": "I think so.",
+        "answer": "Creo que sí.",
+        "alts": [
+          "Yo creo que sí."
+        ],
+        "why": "creer → creo; que sí = so."
+      },
+      {
+        "type": "translate",
+        "q": "Where do you live? (formal)",
+        "answer": "¿Dónde vive usted?",
+        "alts": [
+          "¿Dónde vive?",
+          "¿Usted dónde vive?"
+        ],
+        "why": "usted → vive."
+      },
+      {
+        "type": "translate",
+        "q": "They sell fruit.",
+        "answer": "Venden fruta.",
+        "alts": [
+          "Ellos venden fruta.",
+          "Ellas venden fruta.",
+          "Venden frutas."
+        ],
+        "why": "ellos → -en."
+      },
+      {
+        "type": "translate",
+        "q": "What time does the store open?",
+        "answer": "¿A qué hora abre la tienda?",
+        "why": "abrir → abre."
+      },
+      {
+        "type": "translate",
+        "q": "I receive a lot of emails.",
+        "answer": "Recibo muchos correos.",
+        "alts": [
+          "Yo recibo muchos correos.",
+          "Recibo muchos emails.",
+          "Recibo muchos mails."
+        ],
+        "why": "recibir → recibo."
+      },
+      {
+        "type": "translate",
+        "q": "Do you sell SIM cards? (to a shop)",
+        "answer": "¿Venden chips?",
+        "alts": [
+          "¿Vende chips?",
+          "¿Tienen chips?",
+          "¿Venden chips para celular?"
+        ],
+        "why": "Mexico calls a SIM card a chip; ustedes → venden."
+      }
+    ]
+  },
+  {
+    "id": "g_questions",
+    "title": "Asking questions",
+    "order": 12,
+    "tier": 2,
+    "summary": "qué, dónde, cuándo, cuánto, cómo, por qué, cuál — always with an accent.",
+    "explain": "Question words carry an **accent** and the question opens with **¿**.\n\n| Word | Meaning | Example |\n|---|---|---|\n| **qué** | what | *¿Qué es esto?* |\n| **quién / quiénes** | who | *¿Quién es?* |\n| **dónde** | where | *¿Dónde está el metro?* |\n| **adónde** | where to | *¿Adónde vas?* |\n| **de dónde** | where from | *¿De dónde eres?* |\n| **cuándo** | when | *¿Cuándo llegas?* |\n| **cuánto / cuánta / cuántos / cuántas** | how much / many | *¿Cuánto cuesta? ¿Cuántas personas?* |\n| **cómo** | how | *¿Cómo se dice…? ¿Cómo te llamas?* |\n| **por qué** | why | *¿Por qué? — **Porque**…* |\n| **cuál / cuáles** | which (one) | *¿Cuál es tu número?* |\n| **a qué hora** | at what time | *¿A qué hora abre?* |\n\n- **Prepositions go first:** *¿De dónde? ¿Con quién? ¿Para qué?*\n- **Yes/no questions** are just a statement with rising intonation: *¿Tienes cambio?*\n- **What is your…?** → ***cuál** es…*: *¿Cuál es tu número? ¿Cuál es la dirección?* (*¿Qué es…?* asks for a definition.)\n- Didn't catch it? Mexicans say **¿Mande?** — polite and very common. A bare *¿Qué?* can sound blunt.",
+    "rules": [
+      {
+        "rule": "Question words carry an accent.",
+        "examples": [
+          "¿Qué?",
+          "¿Dónde?",
+          "¿Cuándo?"
+        ],
+        "exceptions": [
+          "Without the accent they're connectors: Creo que… / Porque…"
+        ]
+      },
+      {
+        "rule": "cuánto agrees with the noun it counts.",
+        "examples": [
+          "¿Cuánto cuesta?",
+          "¿Cuánta agua?",
+          "¿Cuántos tacos?",
+          "¿Cuántas personas?"
+        ]
+      },
+      {
+        "rule": "'What is your…?' with ser → cuál.",
+        "examples": [
+          "¿Cuál es tu número?",
+          "¿Cuál es la dirección?"
+        ],
+        "exceptions": [
+          "¿Qué es esto? asks for a definition."
+        ]
+      },
+      {
+        "rule": "Prepositions come first.",
+        "examples": [
+          "¿De dónde eres?",
+          "¿Con quién vas?",
+          "¿A qué hora?"
+        ]
+      },
+      {
+        "rule": "Yes/no questions = statement + rising tone.",
+        "examples": [
+          "¿Tienes cambio?",
+          "¿Usted habla inglés?"
+        ]
+      },
+      {
+        "rule": "por qué asks why; porque answers.",
+        "examples": [
+          "¿Por qué? — Porque es tarde."
+        ]
+      }
+    ],
+    "drills": [
+      {
+        "type": "choice",
+        "q": "¿___ está el metro?",
+        "options": [
+          "Dónde",
+          "Cuándo",
+          "Quién"
+        ],
+        "answer": "Dónde",
+        "why": "Location → dónde."
+      },
+      {
+        "type": "choice",
+        "q": "¿___ cuesta?",
+        "options": [
+          "Cuánto",
+          "Cuántos",
+          "Cómo"
+        ],
+        "answer": "Cuánto",
+        "why": "Price → cuánto."
+      },
+      {
+        "type": "choice",
+        "q": "¿___ personas? — Somos cuatro.",
+        "options": [
+          "Cuántas",
+          "Cuántos",
+          "Cuánto"
+        ],
+        "answer": "Cuántas",
+        "why": "personas is feminine plural → cuántas."
+      },
+      {
+        "type": "choice",
+        "q": "¿___ es tu número de celular?",
+        "options": [
+          "Cuál",
+          "Qué"
+        ],
+        "answer": "Cuál",
+        "why": "'What is your…' with ser → cuál."
+      },
+      {
+        "type": "choice",
+        "q": "¿___ hora abre el museo?",
+        "options": [
+          "A qué",
+          "Qué",
+          "Cuándo"
+        ],
+        "answer": "A qué",
+        "why": "At what time → ¿a qué hora?"
+      },
+      {
+        "type": "choice",
+        "q": "¿___ eres? — De Texas.",
+        "options": [
+          "De dónde",
+          "Dónde",
+          "Adónde"
+        ],
+        "answer": "De dónde",
+        "why": "Origin → de dónde."
+      },
+      {
+        "type": "choice",
+        "q": "¿___ vas? — Al centro.",
+        "options": [
+          "Adónde",
+          "Dónde",
+          "De dónde"
+        ],
+        "answer": "Adónde",
+        "why": "Movement toward a place → adónde (a + dónde)."
+      },
+      {
+        "type": "choice",
+        "q": "¿___ se llama usted?",
+        "options": [
+          "Cómo",
+          "Qué",
+          "Cuál"
+        ],
+        "answer": "Cómo",
+        "why": "Literally 'How do you call yourself?'"
+      },
+      {
+        "type": "choice",
+        "q": "You didn't catch what someone said. The polite Mexican reply:",
+        "options": [
+          "¿Mande?",
+          "¿Qué?",
+          "¿Cuál?"
+        ],
+        "answer": "¿Mande?",
+        "why": "¿Mande? is the polite Mexican 'Pardon?'; a bare ¿Qué? can sound blunt."
+      },
+      {
+        "type": "fill",
+        "q": "¿Por qué no vienes? — ___ estoy cansado.",
+        "answer": "Porque",
+        "why": "The answer 'because' is one word, no accent."
+      },
+      {
+        "type": "translate",
+        "q": "What is this?",
+        "answer": "¿Qué es esto?",
+        "why": "Asking for a definition → qué."
+      },
+      {
+        "type": "translate",
+        "q": "How do you say 'fork' in Spanish?",
+        "answer": "¿Cómo se dice 'fork' en español?",
+        "alts": [
+          "¿Cómo se dice fork en español?",
+          "¿Cómo se dice fork?"
+        ],
+        "why": "¿Cómo se dice…? = How do you say…?"
+      },
+      {
+        "type": "translate",
+        "q": "Why?",
+        "answer": "¿Por qué?",
+        "why": "Two words, accent on qué."
+      },
+      {
+        "type": "translate",
+        "q": "When do you arrive? (informal)",
+        "answer": "¿Cuándo llegas?",
+        "alts": [
+          "¿Cuándo llegas tú?",
+          "¿Tú cuándo llegas?"
+        ],
+        "why": "cuándo + tú form."
+      },
+      {
+        "type": "translate",
+        "q": "Who is it?",
+        "answer": "¿Quién es?",
+        "why": "quién = who."
+      },
+      {
+        "type": "translate",
+        "q": "How many tacos?",
+        "answer": "¿Cuántos tacos?",
+        "why": "tacos is masculine plural → cuántos."
+      },
+      {
+        "type": "translate",
+        "q": "Where is the bathroom, please?",
+        "answer": "¿Dónde está el baño, por favor?",
+        "alts": [
+          "¿Dónde está el baño?",
+          "Disculpe, ¿dónde está el baño?"
+        ],
+        "why": "dónde + estar."
+      },
+      {
+        "type": "transform",
+        "q": "Usted vive en Coyoacán. → ask where he lives",
+        "answer": "¿Dónde vive usted?",
+        "alts": [
+          "¿Dónde vive?",
+          "¿Usted dónde vive?"
+        ],
+        "why": "Question word first, then verb."
+      }
+    ]
+  },
+  {
+    "id": "g_negation",
+    "title": "Saying no: no, nada, nadie, nunca",
+    "order": 13,
+    "tier": 2,
+    "summary": "no goes before the verb; double negatives are correct Spanish.",
+    "explain": "Put **no** right before the verb (and before pronouns like *lo, me*): *No hablo francés. No lo sé. No me gusta.*\n\n**Double negatives are required:**\n\n| Positive | Negative | Example |\n|---|---|---|\n| algo — something | **nada** — nothing | *No quiero nada.* |\n| alguien — someone | **nadie** — nobody | *No hay nadie.* |\n| siempre — always | **nunca** — never | *No como carne nunca. / Nunca como carne.* |\n| también — also | **tampoco** — neither | *Yo tampoco.* (Me neither.) |\n| algún, alguna — some | **ningún, ninguna** — no, not any | *No hay ningún problema.* |\n| o… o | **ni… ni** — neither… nor | *No tomo ni café ni té.* |\n\n- Negative word **after** the verb → keep *no* before the verb: *No veo a nadie.*\n- Negative word **first** → no *no*: *Nadie sabe. Nunca bebo.*\n\n**Handy:** *todavía no* (not yet) · *ya no* (not anymore) · *yo tampoco* (me neither) · *No, gracias.* · *No, no hablo inglés* (first no = answer, second = negation).",
+    "rules": [
+      {
+        "rule": "no goes directly before the verb (and before object pronouns).",
+        "examples": [
+          "No hablo francés.",
+          "No lo sé.",
+          "No me gusta."
+        ]
+      },
+      {
+        "rule": "Negative words after the verb need no in front.",
+        "examples": [
+          "No quiero nada.",
+          "No veo a nadie.",
+          "No voy nunca."
+        ]
+      },
+      {
+        "rule": "If the negative word comes first, drop no.",
+        "examples": [
+          "Nadie sabe.",
+          "Nunca como carne.",
+          "Yo tampoco."
+        ]
+      },
+      {
+        "rule": "ningún before a masculine singular noun, ninguna before a feminine one.",
+        "examples": [
+          "No hay ningún problema.",
+          "No hay ninguna farmacia aquí."
+        ]
+      },
+      {
+        "rule": "Useful: todavía no, ya no, yo tampoco.",
+        "examples": [
+          "Todavía no.",
+          "Ya no trabajo ahí.",
+          "—No hablo francés. —Yo tampoco."
+        ]
+      }
+    ],
+    "drills": [
+      {
+        "type": "choice",
+        "q": "I don't want anything.",
+        "options": [
+          "No quiero nada.",
+          "Quiero nada.",
+          "No quiero algo."
+        ],
+        "answer": "No quiero nada.",
+        "why": "nada after the verb needs no before it."
+      },
+      {
+        "type": "choice",
+        "q": "There's nobody here.",
+        "options": [
+          "No hay nadie aquí.",
+          "No hay alguien aquí.",
+          "Hay nadie aquí."
+        ],
+        "answer": "No hay nadie aquí.",
+        "why": "Double negative: no… nadie."
+      },
+      {
+        "type": "choice",
+        "q": "I never eat meat.",
+        "options": [
+          "Nunca como carne.",
+          "No nunca como carne.",
+          "Nunca no como carne."
+        ],
+        "answer": "Nunca como carne.",
+        "why": "nunca first → no extra no."
+      },
+      {
+        "type": "choice",
+        "q": "—No hablo francés. —___ (Me neither.)",
+        "options": [
+          "Yo tampoco.",
+          "Yo también.",
+          "Yo no también."
+        ],
+        "answer": "Yo tampoco.",
+        "why": "Agreeing with a negative → tampoco."
+      },
+      {
+        "type": "choice",
+        "q": "I eat neither meat nor fish.",
+        "options": [
+          "No como ni carne ni pescado.",
+          "No como carne ni no pescado.",
+          "Como ni carne ni pescado."
+        ],
+        "answer": "No como ni carne ni pescado.",
+        "why": "no + verb + ni… ni…"
+      },
+      {
+        "type": "fill",
+        "q": "No hay ___ problema. (not any)",
+        "answer": "ningún",
+        "why": "ninguno → ningún before a masculine singular noun."
+      },
+      {
+        "type": "fill",
+        "q": "No conozco a ___ aquí. (nobody)",
+        "answer": "nadie",
+        "why": "nobody → nadie."
+      },
+      {
+        "type": "fill",
+        "q": "¿Ya estás listo? — Todavía ___. (not yet)",
+        "answer": "no",
+        "why": "todavía no = not yet."
+      },
+      {
+        "type": "transform",
+        "q": "Hablo francés. → negative",
+        "answer": "No hablo francés.",
+        "alts": [
+          "Yo no hablo francés."
+        ],
+        "why": "no right before the verb."
+      },
+      {
+        "type": "transform",
+        "q": "Hay agua. → negative",
+        "answer": "No hay agua.",
+        "why": "no + hay."
+      },
+      {
+        "type": "transform",
+        "q": "Siempre como aquí. → never",
+        "answer": "Nunca como aquí.",
+        "alts": [
+          "No como aquí nunca."
+        ],
+        "why": "siempre ↔ nunca."
+      },
+      {
+        "type": "transform",
+        "q": "Alguien sabe. → nobody",
+        "answer": "Nadie sabe.",
+        "why": "nadie first → no extra no."
+      },
+      {
+        "type": "translate",
+        "q": "I don't understand.",
+        "answer": "No entiendo.",
+        "alts": [
+          "No comprendo.",
+          "Yo no entiendo."
+        ],
+        "why": "no + verb."
+      },
+      {
+        "type": "translate",
+        "q": "I don't know.",
+        "answer": "No sé.",
+        "alts": [
+          "No lo sé.",
+          "Yo no sé."
+        ],
+        "why": "no + sé."
+      },
+      {
+        "type": "translate",
+        "q": "Nothing, thanks.",
+        "answer": "Nada, gracias.",
+        "alts": [
+          "Nada más, gracias."
+        ],
+        "why": "nada alone = nothing."
+      },
+      {
+        "type": "translate",
+        "q": "I don't have anything.",
+        "answer": "No tengo nada.",
+        "alts": [
+          "Yo no tengo nada."
+        ],
+        "why": "no… nada."
+      },
+      {
+        "type": "translate",
+        "q": "Me neither.",
+        "answer": "Yo tampoco.",
+        "alts": [
+          "Tampoco yo."
+        ],
+        "why": "tampoco = neither."
+      },
+      {
+        "type": "translate",
+        "q": "I don't drink coffee anymore.",
+        "answer": "Ya no tomo café.",
+        "alts": [
+          "Ya no bebo café.",
+          "Yo ya no tomo café."
+        ],
+        "why": "ya no = not anymore; Mexico drinks with tomar."
+      }
+    ]
+  },
+  {
+    "id": "g_tener",
+    "title": "Tener: have, hungry, thirsty, have to",
+    "order": 14,
+    "tier": 2,
+    "summary": "tener = to have; also hungry, thirsty, cold, age, and tener que = have to.",
+    "explain": "| yo **tengo** | nosotros **tenemos** |\n|---|---|\n| tú **tienes** | ellos / ustedes **tienen** |\n| él / ella / usted **tiene** | |\n\n**Where English says 'be', Spanish often says 'have':**\n\n| tener… | English |\n|---|---|\n| hambre / sed | be hungry / thirsty |\n| frío / calor | be cold / hot (a person) |\n| sueño | be sleepy |\n| prisa | be in a hurry |\n| miedo | be afraid |\n| razón | be right |\n| … años | be … years old |\n| ganas de + infinitive | feel like (doing) |\n| cuidado | be careful |\n\n**'Very' = mucho / mucha** (they're nouns): *tengo **mucha** hambre* (hambre is feminine), *mucho frío*, *mucha sed*. Not *muy hambre*.\n\n**tener que + infinitive** = have to: *Tengo que trabajar mañana.*\n\nWeather is different: ***hace** frío* (it's cold out) · ***tengo** frío* (I'm cold) · *el café **está** frío* (the coffee is cold).\n\nMexico: *¿Tiene cambio?* (Do you have change?) · *¿Tienen mesa para dos?*",
+    "rules": [
+      {
+        "rule": "tener is irregular: tengo, tienes, tiene, tenemos, tienen.",
+        "examples": [
+          "Tengo dos boletos.",
+          "¿Tiene cambio?"
+        ]
+      },
+      {
+        "rule": "Physical states use tener + noun.",
+        "examples": [
+          "Tengo hambre.",
+          "¿Tienes frío?",
+          "Tenemos prisa."
+        ],
+        "exceptions": [
+          "Not 'estoy hambre'."
+        ]
+      },
+      {
+        "rule": "'Very' = mucho/mucha, agreeing with the noun.",
+        "examples": [
+          "Tengo mucha hambre.",
+          "Tengo mucho calor.",
+          "Tengo mucha sed."
+        ]
+      },
+      {
+        "rule": "Age: tener + años.",
+        "examples": [
+          "Tengo treinta años.",
+          "¿Cuántos años tienes?"
+        ]
+      },
+      {
+        "rule": "tener que + infinitive = have to.",
+        "examples": [
+          "Tengo que pagar.",
+          "Tenemos que llegar a las ocho."
+        ]
+      },
+      {
+        "rule": "tener ganas de = feel like.",
+        "examples": [
+          "Tengo ganas de unos tacos.",
+          "No tengo ganas de salir."
+        ]
+      }
+    ],
+    "drills": [
+      {
+        "type": "fill",
+        "q": "Yo ___ dos boletos. (tener)",
+        "answer": "tengo",
+        "why": "yo → tengo."
+      },
+      {
+        "type": "fill",
+        "q": "¿___ cambio? (usted, tener)",
+        "answer": "Tiene",
+        "why": "usted → tiene."
+      },
+      {
+        "type": "fill",
+        "q": "Nosotros ___ una reservación. (tener)",
+        "answer": "tenemos",
+        "why": "nosotros → tenemos (no stem change)."
+      },
+      {
+        "type": "fill",
+        "q": "¿Ustedes ___ mesa para dos? (tener)",
+        "answer": "tienen",
+        "why": "ustedes → tienen."
+      },
+      {
+        "type": "fill",
+        "q": "¡Hay que tener ___! El piso está mojado. (careful)",
+        "answer": "cuidado",
+        "why": "tener cuidado = be careful."
+      },
+      {
+        "type": "choice",
+        "q": "I'm hungry.",
+        "options": [
+          "Tengo hambre.",
+          "Estoy hambre.",
+          "Soy hambre."
+        ],
+        "answer": "Tengo hambre.",
+        "why": "Hunger is something you 'have'."
+      },
+      {
+        "type": "choice",
+        "q": "I'm very thirsty.",
+        "options": [
+          "Tengo mucha sed.",
+          "Tengo muy sed.",
+          "Estoy muy sed."
+        ],
+        "answer": "Tengo mucha sed.",
+        "why": "sed is a feminine noun → mucha."
+      },
+      {
+        "type": "choice",
+        "q": "I'm 35 years old.",
+        "options": [
+          "Tengo treinta y cinco años.",
+          "Soy treinta y cinco años.",
+          "Estoy treinta y cinco años."
+        ],
+        "answer": "Tengo treinta y cinco años.",
+        "why": "Age → tener … años."
+      },
+      {
+        "type": "choice",
+        "q": "It's hot today (weather).",
+        "options": [
+          "Hace calor hoy.",
+          "Tengo calor hoy.",
+          "Es calor hoy."
+        ],
+        "answer": "Hace calor hoy.",
+        "why": "Weather → hacer; tengo calor = I feel hot."
+      },
+      {
+        "type": "translate",
+        "q": "I have to work tomorrow.",
+        "answer": "Tengo que trabajar mañana.",
+        "alts": [
+          "Mañana tengo que trabajar.",
+          "Yo tengo que trabajar mañana."
+        ],
+        "why": "tener que + infinitive."
+      },
+      {
+        "type": "translate",
+        "q": "Are you cold? (informal)",
+        "answer": "¿Tienes frío?",
+        "alts": [
+          "¿Tú tienes frío?"
+        ],
+        "why": "A person feeling cold → tener frío."
+      },
+      {
+        "type": "translate",
+        "q": "We're in a hurry.",
+        "answer": "Tenemos prisa.",
+        "alts": [
+          "Tenemos mucha prisa.",
+          "Nosotros tenemos prisa.",
+          "Estamos apurados."
+        ],
+        "why": "tener prisa = be in a hurry."
+      },
+      {
+        "type": "translate",
+        "q": "You're right. (formal)",
+        "answer": "Tiene razón.",
+        "alts": [
+          "Usted tiene razón.",
+          "Tiene toda la razón."
+        ],
+        "why": "tener razón = be right."
+      },
+      {
+        "type": "translate",
+        "q": "How old are you? (informal)",
+        "answer": "¿Cuántos años tienes?",
+        "alts": [
+          "¿Cuántos años tienes tú?"
+        ],
+        "why": "'How many years do you have?'"
+      },
+      {
+        "type": "translate",
+        "q": "I feel like tacos.",
+        "answer": "Tengo ganas de comer tacos.",
+        "alts": [
+          "Tengo ganas de unos tacos.",
+          "Tengo ganas de tacos."
+        ],
+        "why": "tener ganas de + infinitive or noun."
+      },
+      {
+        "type": "transform",
+        "q": "Tengo que pagar. → nosotros",
+        "answer": "Tenemos que pagar.",
+        "why": "tengo → tenemos."
+      },
+      {
+        "type": "transform",
+        "q": "Tengo sueño. → ella",
+        "answer": "Tiene sueño.",
+        "alts": [
+          "Ella tiene sueño."
+        ],
+        "why": "tengo → tiene."
+      }
+    ]
+  },
+  {
+    "id": "g_ir_a",
+    "title": "Ir & ir a + infinitive (near future)",
+    "order": 15,
+    "tier": 2,
+    "summary": "voy, vas, va, vamos, van — and voy a + verb, the everyday future.",
+    "explain": "| yo **voy** | nosotros **vamos** |\n|---|---|\n| tú **vas** | ellos / ustedes **van** |\n| él / ella / usted **va** | |\n\n**ir a + place** (a + el = **al**): *Voy al mercado. Vamos a la playa.*\n\n**ir a + infinitive = going to** — the normal way to talk about the future in Mexico:\n\n| | |\n|---|---|\n| *Voy a comer.* | I'm going to eat. |\n| *¿Qué vas a hacer mañana?* | What are you going to do tomorrow? |\n| *Vamos a tomar un taxi.* | We're going to take a taxi. |\n| *Va a llover.* | It's going to rain. |\n\n**vamos a + infinitive** also means **let's**: *¡Vamos a comer!* · *¡Vámonos!* = Let's go!\n\n**Time words:** hoy · mañana · pasado mañana · esta noche · el fin de semana · la próxima semana / la semana que viene · el próximo año.\n\nSmall talk: *¿Cómo te va?* (How's it going?) — *Bien, ¿y a ti?*",
+    "rules": [
+      {
+        "rule": "ir is irregular: voy, vas, va, vamos, van.",
+        "examples": [
+          "Voy al centro.",
+          "¿Adónde van?"
+        ]
+      },
+      {
+        "rule": "ir a + place; a + el = al.",
+        "examples": [
+          "Voy al centro.",
+          "¿Vas a la fiesta?"
+        ]
+      },
+      {
+        "rule": "ir a + infinitive = going to (near future).",
+        "examples": [
+          "Voy a comer tacos.",
+          "¿Qué vas a hacer?",
+          "Va a llover."
+        ]
+      },
+      {
+        "rule": "vamos a + infinitive can mean 'let's…'.",
+        "examples": [
+          "¡Vamos a comer!",
+          "Vamos a ver."
+        ]
+      },
+      {
+        "rule": "Negative: no before ir.",
+        "examples": [
+          "No voy a ir.",
+          "No vamos a llegar a tiempo."
+        ]
+      }
+    ],
+    "drills": [
+      {
+        "type": "fill",
+        "q": "Yo ___ al mercado. (ir)",
+        "answer": "voy",
+        "why": "yo → voy."
+      },
+      {
+        "type": "fill",
+        "q": "¿Adónde ___ tú? (ir)",
+        "answer": "vas",
+        "why": "tú → vas."
+      },
+      {
+        "type": "fill",
+        "q": "Nosotros ___ a la playa. (ir)",
+        "answer": "vamos",
+        "why": "nosotros → vamos."
+      },
+      {
+        "type": "fill",
+        "q": "Ellos ___ a comer. (ir)",
+        "answer": "van",
+        "why": "ellos → van."
+      },
+      {
+        "type": "fill",
+        "q": "Mañana voy ___ visitar el museo.",
+        "answer": "a",
+        "why": "ir a + infinitive — don't forget the a."
+      },
+      {
+        "type": "choice",
+        "q": "Voy ___ centro.",
+        "options": [
+          "al",
+          "a el",
+          "a la"
+        ],
+        "answer": "al",
+        "why": "a + el → al."
+      },
+      {
+        "type": "choice",
+        "q": "Let's go! (Mexico)",
+        "options": [
+          "¡Vámonos!",
+          "¡Vamos nos!",
+          "¡Voy!"
+        ],
+        "answer": "¡Vámonos!",
+        "why": "vamos + nos → ¡vámonos!"
+      },
+      {
+        "type": "transform",
+        "q": "Como tacos. → going to",
+        "answer": "Voy a comer tacos.",
+        "alts": [
+          "Yo voy a comer tacos."
+        ],
+        "why": "ir a + infinitive."
+      },
+      {
+        "type": "transform",
+        "q": "Tomamos un taxi. → going to",
+        "answer": "Vamos a tomar un taxi.",
+        "why": "vamos a + infinitive."
+      },
+      {
+        "type": "transform",
+        "q": "¿Pagas con tarjeta? → going to",
+        "answer": "¿Vas a pagar con tarjeta?",
+        "why": "vas a + infinitive."
+      },
+      {
+        "type": "translate",
+        "q": "I'm going to buy a ticket.",
+        "answer": "Voy a comprar un boleto.",
+        "alts": [
+          "Yo voy a comprar un boleto."
+        ],
+        "why": "voy a + infinitive; Mexico says boleto."
+      },
+      {
+        "type": "translate",
+        "q": "What are you going to do tomorrow? (informal)",
+        "answer": "¿Qué vas a hacer mañana?",
+        "alts": [
+          "¿Qué vas a hacer tú mañana?",
+          "Mañana, ¿qué vas a hacer?"
+        ],
+        "why": "vas a + hacer."
+      },
+      {
+        "type": "translate",
+        "q": "Let's eat!",
+        "answer": "¡Vamos a comer!",
+        "alts": [
+          "¡A comer!"
+        ],
+        "why": "vamos a = let's."
+      },
+      {
+        "type": "translate",
+        "q": "It's going to rain.",
+        "answer": "Va a llover.",
+        "why": "va a + infinitive."
+      },
+      {
+        "type": "translate",
+        "q": "We're going to Oaxaca next week.",
+        "answer": "Vamos a Oaxaca la próxima semana.",
+        "alts": [
+          "Vamos a ir a Oaxaca la próxima semana.",
+          "La próxima semana vamos a Oaxaca.",
+          "Vamos a Oaxaca la semana que viene.",
+          "La semana que viene vamos a Oaxaca."
+        ],
+        "why": "ir a + place."
+      },
+      {
+        "type": "translate",
+        "q": "I'm not going to go.",
+        "answer": "No voy a ir.",
+        "alts": [
+          "Yo no voy a ir."
+        ],
+        "why": "no before the conjugated verb."
+      },
+      {
+        "type": "translate",
+        "q": "Are you going to the party? (formal)",
+        "answer": "¿Va a ir a la fiesta?",
+        "alts": [
+          "¿Usted va a ir a la fiesta?",
+          "¿Va a la fiesta?",
+          "¿Usted va a la fiesta?"
+        ],
+        "why": "usted → va."
+      }
+    ]
+  },
+  {
+    "id": "g_modals",
+    "title": "Want, can, need + infinitive",
+    "order": 16,
+    "tier": 2,
+    "summary": "quiero / puedo / necesito + verb — the backbone of every request.",
+    "explain": "| | querer (want) | poder (can) | necesitar (need) |\n|---|---|---|---|\n| yo | **quiero** | **puedo** | necesito |\n| tú | quieres | puedes | necesitas |\n| él / ella / usted | quiere | puede | necesita |\n| nosotros | queremos | podemos | necesitamos |\n| ellos / ustedes | quieren | pueden | necesitan |\n\nConjugate the first verb; the second stays in the **infinitive**: *Quiero comer. ¿Puedo pagar con tarjeta? Necesito cambiar dinero.*\n\n**Polite requests:**\n- *¿Puede repetir, por favor?* · *¿Me puede ayudar?* · *¿Puede hablar más despacio?*\n- **Quisiera…** = I'd like (softer than *quiero*): *Quisiera una mesa para dos.*\n- **¿Se puede…?** = Is it allowed? *¿Se puede tomar fotos? ¿Se puede pagar con tarjeta?*\n\nAlso **deber** (should): *Debo llamar a mi mamá.*",
+    "rules": [
+      {
+        "rule": "Conjugate the first verb; the second stays in the infinitive.",
+        "examples": [
+          "Quiero comer.",
+          "Podemos ir mañana.",
+          "Necesitan descansar."
+        ]
+      },
+      {
+        "rule": "querer and poder change their stem (quier-, pued-) except with nosotros.",
+        "examples": [
+          "quiero / queremos",
+          "puedo / podemos"
+        ]
+      },
+      {
+        "rule": "¿Puede…? / ¿Me puede…? = polite request.",
+        "examples": [
+          "¿Puede repetir, por favor?",
+          "¿Me puede ayudar?"
+        ]
+      },
+      {
+        "rule": "¿Se puede…? = is it allowed?",
+        "examples": [
+          "¿Se puede pagar con tarjeta?",
+          "¿Se puede entrar?"
+        ]
+      },
+      {
+        "rule": "Quisiera = I'd like (softer than quiero).",
+        "examples": [
+          "Quisiera una mesa para dos.",
+          "Quisiera ver el menú."
+        ]
+      }
+    ],
+    "drills": [
+      {
+        "type": "fill",
+        "q": "Yo ___ un café. (querer)",
+        "answer": "quiero",
+        "why": "querer → quiero (e → ie)."
+      },
+      {
+        "type": "fill",
+        "q": "¿___ pagar con tarjeta? (yo, poder)",
+        "answer": "Puedo",
+        "why": "poder → puedo (o → ue)."
+      },
+      {
+        "type": "fill",
+        "q": "Nosotros ___ ir al centro. (querer)",
+        "answer": "queremos",
+        "why": "nosotros keeps the e: queremos."
+      },
+      {
+        "type": "fill",
+        "q": "¿Usted ___ hablar más despacio? (poder)",
+        "answer": "puede",
+        "why": "usted → puede."
+      },
+      {
+        "type": "fill",
+        "q": "Ellos ___ cambiar dinero. (necesitar)",
+        "answer": "necesitan",
+        "why": "Regular -ar: necesitan."
+      },
+      {
+        "type": "fill",
+        "q": "Nosotros no ___ entrar. (poder)",
+        "answer": "podemos",
+        "why": "nosotros keeps the o: podemos."
+      },
+      {
+        "type": "choice",
+        "q": "Can you help me? (formal)",
+        "options": [
+          "¿Me puede ayudar?",
+          "¿Me puedes ayudo?",
+          "¿Me poder ayudar?"
+        ],
+        "answer": "¿Me puede ayudar?",
+        "why": "puede + infinitive (ayudar)."
+      },
+      {
+        "type": "choice",
+        "q": "Is it allowed to take photos?",
+        "options": [
+          "¿Se puede tomar fotos?",
+          "¿Puedo se tomar fotos?",
+          "¿Es posible tomo fotos?"
+        ],
+        "answer": "¿Se puede tomar fotos?",
+        "why": "¿Se puede + infinitive? = is it allowed?"
+      },
+      {
+        "type": "transform",
+        "q": "Como tacos. → I want to…",
+        "answer": "Quiero comer tacos.",
+        "alts": [
+          "Yo quiero comer tacos."
+        ],
+        "why": "quiero + infinitive."
+      },
+      {
+        "type": "transform",
+        "q": "Pagamos en efectivo. → we can…",
+        "answer": "Podemos pagar en efectivo.",
+        "why": "podemos + infinitive."
+      },
+      {
+        "type": "translate",
+        "q": "I want to go to the pyramids.",
+        "answer": "Quiero ir a las pirámides.",
+        "alts": [
+          "Yo quiero ir a las pirámides."
+        ],
+        "why": "quiero + ir."
+      },
+      {
+        "type": "translate",
+        "q": "Can you repeat, please? (formal)",
+        "answer": "¿Puede repetir, por favor?",
+        "alts": [
+          "¿Me lo puede repetir, por favor?",
+          "¿Lo puede repetir, por favor?",
+          "¿Puede repetirlo, por favor?"
+        ],
+        "why": "puede + infinitive."
+      },
+      {
+        "type": "translate",
+        "q": "I need to change money.",
+        "answer": "Necesito cambiar dinero.",
+        "alts": [
+          "Tengo que cambiar dinero."
+        ],
+        "why": "necesito + infinitive."
+      },
+      {
+        "type": "translate",
+        "q": "Can I pay by card?",
+        "answer": "¿Puedo pagar con tarjeta?",
+        "alts": [
+          "¿Se puede pagar con tarjeta?",
+          "¿Aceptan tarjeta?"
+        ],
+        "why": "puedo + pagar; con tarjeta = by card."
+      },
+      {
+        "type": "translate",
+        "q": "Do you want to eat something? (informal)",
+        "answer": "¿Quieres comer algo?",
+        "alts": [
+          "¿Tú quieres comer algo?"
+        ],
+        "why": "quieres + infinitive."
+      },
+      {
+        "type": "translate",
+        "q": "We can't go today.",
+        "answer": "No podemos ir hoy.",
+        "alts": [
+          "Hoy no podemos ir."
+        ],
+        "why": "no + podemos + ir."
+      },
+      {
+        "type": "translate",
+        "q": "I'd like a table for two.",
+        "answer": "Quisiera una mesa para dos.",
+        "alts": [
+          "Quiero una mesa para dos.",
+          "Me gustaría una mesa para dos.",
+          "Una mesa para dos, por favor."
+        ],
+        "why": "quisiera = polite I'd like."
+      }
+    ]
+  },
+  {
+    "id": "g_stem_change",
+    "title": "Stem-changing verbs (e→ie, o→ue, e→i)",
+    "order": 17,
+    "tier": 2,
+    "summary": "quiero, puedo, pido — the stem changes everywhere except nosotros.",
+    "explain": "In the present, many verbs change the vowel of the stem when it's stressed — in every form **except nosotros** (a 'boot' shape).\n\n| e → ie | o → ue | e → i (-ir only) |\n|---|---|---|\n| querer: qu**ie**ro | poder: p**ue**do | pedir: p**i**do |\n| pensar: p**ie**nso | volver: v**ue**lvo | repetir: rep**i**to |\n| empezar: emp**ie**zo | dormir: d**ue**rmo | servir: s**i**rvo |\n| entender: ent**ie**ndo | costar: c**ue**sta | seguir: s**i**go |\n| preferir: pref**ie**ro | encontrar: enc**ue**ntro | |\n| cerrar: c**ie**rra | recordar: rec**ue**rdo | |\n| sentir: s**ie**nto | jugar (u → ue): j**ue**go | |\n\nFull pattern — **dormir**: duermo, duermes, duerme, **dormimos**, duermen.\n\n**Travel essentials:** *¿Cuánto cuesta? · No entiendo. · ¿A qué hora cierra? · Vuelvo mañana. · ¿Me repite, por favor?*\n\n*tener* (tengo, tienes) and *venir* (vengo, vienes) are e → ie too, with an irregular yo.",
+    "rules": [
+      {
+        "rule": "e → ie in the stressed syllable.",
+        "examples": [
+          "pensar: pienso, piensas, piensa, pensamos, piensan",
+          "cerrar: cierra"
+        ]
+      },
+      {
+        "rule": "o → ue (and jugar u → ue).",
+        "examples": [
+          "poder: puedo",
+          "dormir: duermo",
+          "costar: cuesta",
+          "jugar: juego"
+        ]
+      },
+      {
+        "rule": "e → i — only -ir verbs.",
+        "examples": [
+          "pedir: pido",
+          "servir: sirve",
+          "repetir: repite"
+        ]
+      },
+      {
+        "rule": "nosotros never changes.",
+        "examples": [
+          "queremos",
+          "podemos",
+          "pedimos",
+          "dormimos"
+        ]
+      }
+    ],
+    "drills": [
+      {
+        "type": "fill",
+        "q": "¿Cuánto ___ el boleto? (costar)",
+        "answer": "cuesta",
+        "why": "o → ue: cuesta."
+      },
+      {
+        "type": "fill",
+        "q": "No ___. (yo, entender)",
+        "answer": "entiendo",
+        "why": "e → ie: entiendo."
+      },
+      {
+        "type": "fill",
+        "q": "¿A qué hora ___ la tienda? (cerrar)",
+        "answer": "cierra",
+        "why": "e → ie: cierra."
+      },
+      {
+        "type": "fill",
+        "q": "Yo ___ la cuenta. (pedir)",
+        "answer": "pido",
+        "why": "e → i: pido."
+      },
+      {
+        "type": "fill",
+        "q": "Nosotros ___ mañana. (volver)",
+        "answer": "volvemos",
+        "why": "nosotros doesn't change."
+      },
+      {
+        "type": "fill",
+        "q": "¿Tú ___ bien en el hotel? (dormir)",
+        "answer": "duermes",
+        "why": "o → ue: duermes."
+      },
+      {
+        "type": "fill",
+        "q": "La película ___ a las ocho. (empezar)",
+        "answer": "empieza",
+        "why": "e → ie: empieza."
+      },
+      {
+        "type": "fill",
+        "q": "Yo ___ que sí. (pensar)",
+        "answer": "pienso",
+        "why": "e → ie: pienso."
+      },
+      {
+        "type": "fill",
+        "q": "¿Qué ___ usted, té o café? (preferir)",
+        "answer": "prefiere",
+        "why": "e → ie: prefiere."
+      },
+      {
+        "type": "choice",
+        "q": "nosotros form of pedir",
+        "options": [
+          "pedimos",
+          "pidimos",
+          "piden"
+        ],
+        "answer": "pedimos",
+        "why": "nosotros never changes the stem."
+      },
+      {
+        "type": "choice",
+        "q": "¿Me ___ la pregunta? (usted, repetir)",
+        "options": [
+          "repite",
+          "repete",
+          "repito"
+        ],
+        "answer": "repite",
+        "why": "e → i; usted → -e."
+      },
+      {
+        "type": "transform",
+        "q": "Puedo ir. → ellos",
+        "answer": "Pueden ir.",
+        "why": "puedo → pueden."
+      },
+      {
+        "type": "transform",
+        "q": "Pensamos ir. → yo",
+        "answer": "Pienso ir.",
+        "why": "nosotros pensamos → yo pienso."
+      },
+      {
+        "type": "translate",
+        "q": "How much do they cost?",
+        "answer": "¿Cuánto cuestan?",
+        "alts": [
+          "¿Cuánto valen?"
+        ],
+        "why": "costar → cuestan (plural)."
+      },
+      {
+        "type": "translate",
+        "q": "I'm coming back tomorrow.",
+        "answer": "Vuelvo mañana.",
+        "alts": [
+          "Regreso mañana.",
+          "Mañana vuelvo.",
+          "Mañana regreso.",
+          "Voy a volver mañana.",
+          "Voy a regresar mañana."
+        ],
+        "why": "volver → vuelvo."
+      },
+      {
+        "type": "translate",
+        "q": "I don't remember.",
+        "answer": "No me acuerdo.",
+        "alts": [
+          "No recuerdo.",
+          "No lo recuerdo."
+        ],
+        "why": "acordarse → me acuerdo (o → ue); the everyday Mexican way."
+      },
+      {
+        "type": "translate",
+        "q": "What time does it start?",
+        "answer": "¿A qué hora empieza?",
+        "alts": [
+          "¿A qué hora comienza?"
+        ],
+        "why": "empezar → empieza."
+      },
+      {
+        "type": "translate",
+        "q": "I prefer the beach.",
+        "answer": "Prefiero la playa.",
+        "alts": [
+          "Yo prefiero la playa."
+        ],
+        "why": "preferir → prefiero."
+      }
+    ]
+  },
+  {
+    "id": "g_irregular_yo",
+    "title": "Irregular yo forms; saber vs conocer",
+    "order": 18,
+    "tier": 2,
+    "summary": "hago, salgo, pongo, traigo, conozco, sé, veo, doy.",
+    "explain": "Some verbs are regular **except in the yo form**:\n\n| -go verbs | -zco verbs | other |\n|---|---|---|\n| hacer → **hago** | conocer → **conozco** | saber → **sé** |\n| poner → **pongo** | traducir → **traduzco** | ver → **veo** |\n| salir → **salgo** | ofrecer → **ofrezco** | dar → **doy** |\n| traer → **traigo** | | estar → **estoy** |\n| tener → **tengo** (tienes…) | | ir → **voy** |\n| venir → **vengo** (vienes…) | | |\n| decir → **digo** (dices…) | | |\n| oír → **oigo** (oyes…) | | |\n\n**saber vs conocer** — both 'know':\n- **saber** = facts, information, how to: *No sé dónde está. Sé nadar.*\n- **conocer** = be familiar with a person or place, or meet: *Conozco a Ana. ¿Conoces Oaxaca? Mucho gusto en conocerte.*\n\nPeople after *conocer* need the personal **a**: *Conozco **a** Luis.*\n\n*¿Qué haces?* = What do you do? / What are you doing?",
+    "rules": [
+      {
+        "rule": "-go verbs: hago, pongo, salgo, traigo, tengo, vengo, digo, oigo.",
+        "examples": [
+          "Salgo a las ocho.",
+          "¿Qué hago?"
+        ]
+      },
+      {
+        "rule": "-cer / -cir → -zco.",
+        "examples": [
+          "conozco",
+          "traduzco",
+          "ofrezco"
+        ]
+      },
+      {
+        "rule": "saber → sé, ver → veo, dar → doy.",
+        "examples": [
+          "No sé.",
+          "Veo el mar.",
+          "Te doy mi número."
+        ]
+      },
+      {
+        "rule": "saber = facts and skills; conocer = people and places.",
+        "examples": [
+          "Sé dónde está.",
+          "Conozco a su hermano.",
+          "¿Conoces Guanajuato?"
+        ],
+        "exceptions": [
+          "People after conocer need 'a': Conozco a Ana."
+        ]
+      }
+    ],
+    "drills": [
+      {
+        "type": "fill",
+        "q": "Yo ___ ejercicio en la mañana. (hacer)",
+        "answer": "hago",
+        "why": "hacer → hago."
+      },
+      {
+        "type": "fill",
+        "q": "Yo ___ del hotel a las nueve. (salir)",
+        "answer": "salgo",
+        "why": "salir → salgo."
+      },
+      {
+        "type": "fill",
+        "q": "No ___. (yo, saber)",
+        "answer": "sé",
+        "why": "saber → sé (with an accent)."
+      },
+      {
+        "type": "fill",
+        "q": "Yo ___ a Ana. (conocer)",
+        "answer": "conozco",
+        "why": "conocer → conozco."
+      },
+      {
+        "type": "fill",
+        "q": "Yo te ___ mi número. (dar)",
+        "answer": "doy",
+        "why": "dar → doy."
+      },
+      {
+        "type": "fill",
+        "q": "Yo ___ de Estados Unidos. (venir)",
+        "answer": "vengo",
+        "why": "venir → vengo."
+      },
+      {
+        "type": "fill",
+        "q": "Yo siempre ___ la verdad. (decir)",
+        "answer": "digo",
+        "why": "decir → digo."
+      },
+      {
+        "type": "fill",
+        "q": "Yo ___ las llaves en la mesa. (poner)",
+        "answer": "pongo",
+        "why": "poner → pongo."
+      },
+      {
+        "type": "fill",
+        "q": "Yo ___ el pastel. (traer)",
+        "answer": "traigo",
+        "why": "traer → traigo."
+      },
+      {
+        "type": "choice",
+        "q": "Do you know where the metro is?",
+        "options": [
+          "¿Sabes dónde está el metro?",
+          "¿Conoces dónde está el metro?"
+        ],
+        "answer": "¿Sabes dónde está el metro?",
+        "why": "A piece of information → saber."
+      },
+      {
+        "type": "choice",
+        "q": "Do you know Oaxaca? (have you been there)",
+        "options": [
+          "¿Conoces Oaxaca?",
+          "¿Sabes Oaxaca?"
+        ],
+        "answer": "¿Conoces Oaxaca?",
+        "why": "Familiar with a place → conocer."
+      },
+      {
+        "type": "choice",
+        "q": "I know how to swim.",
+        "options": [
+          "Sé nadar.",
+          "Conozco nadar.",
+          "Sé a nadar."
+        ],
+        "answer": "Sé nadar.",
+        "why": "Know how to → saber + infinitive."
+      },
+      {
+        "type": "choice",
+        "q": "I know Luis.",
+        "options": [
+          "Conozco a Luis.",
+          "Conozco Luis.",
+          "Sé a Luis."
+        ],
+        "answer": "Conozco a Luis.",
+        "why": "A person → conocer + a."
+      },
+      {
+        "type": "translate",
+        "q": "I don't know the city.",
+        "answer": "No conozco la ciudad.",
+        "alts": [
+          "Yo no conozco la ciudad."
+        ],
+        "why": "A place → conocer."
+      },
+      {
+        "type": "translate",
+        "q": "What are you doing? (informal)",
+        "answer": "¿Qué haces?",
+        "alts": [
+          "¿Qué estás haciendo?",
+          "¿Qué haces tú?"
+        ],
+        "why": "hacer → haces."
+      },
+      {
+        "type": "translate",
+        "q": "I'm leaving at seven.",
+        "answer": "Salgo a las siete.",
+        "alts": [
+          "Me voy a las siete.",
+          "Yo salgo a las siete."
+        ],
+        "why": "salir → salgo."
+      },
+      {
+        "type": "transform",
+        "q": "Hace la reservación. → yo",
+        "answer": "Hago la reservación.",
+        "alts": [
+          "Yo hago la reservación."
+        ],
+        "why": "hace → hago."
+      },
+      {
+        "type": "transform",
+        "q": "Conocen el centro. → yo",
+        "answer": "Conozco el centro.",
+        "why": "conocen → conozco."
+      }
+    ]
+  },
+  {
+    "id": "g_gustar",
+    "title": "Gustar, encantar & doler",
+    "order": 19,
+    "tier": 2,
+    "summary": "me gusta / me gustan — the thing you like is the subject.",
+    "explain": "**gustar** works 'backwards': *Me gusta el café* = coffee pleases me. The **thing** is the subject.\n\n| to whom | pronoun | one thing / an action | several things |\n|---|---|---|---|\n| (a mí) | **me** | gusta el mole | gustan los tacos |\n| (a ti) | **te** | gusta bailar | gustan los mercados |\n| (a él / ella / usted) | **le** | | |\n| (a nosotros) | **nos** | | |\n| (a ellos / ustedes) | **les** | | |\n\n- **encantar** = love (things): *Me encanta México. Me encantan las tortillas.* (For people: *te quiero*.)\n- **doler** = hurt (o → ue): *Me duele la cabeza. Me duelen los pies.* Body parts take *el / la*, not *mi*.\n- **a + person** to clarify or emphasise: *A Ana le gusta el café. A mí me gusta, ¿y a ti?*\n- **Me gustaría** = I'd like (polite): *Me gustaría una mesa afuera.*\n- 'Me too' → *A mí también* · 'Me neither' → *A mí tampoco*.",
+    "rules": [
+      {
+        "rule": "gusta for one thing or an action; gustan for plural things.",
+        "examples": [
+          "Me gusta el pozole.",
+          "Me gusta caminar.",
+          "Me gustan los mercados."
+        ]
+      },
+      {
+        "rule": "The pronoun shows WHO likes it: me, te, le, nos, les.",
+        "examples": [
+          "¿Te gusta?",
+          "Le gusta el mezcal.",
+          "Nos gustan los museos."
+        ]
+      },
+      {
+        "rule": "a + person / pronoun clarifies or emphasises.",
+        "examples": [
+          "A mi esposa le gusta el café.",
+          "A mí también.",
+          "A mí tampoco."
+        ]
+      },
+      {
+        "rule": "encantar (love) and doler (hurt) work the same way.",
+        "examples": [
+          "Me encanta la comida.",
+          "Me duele el estómago.",
+          "Me duelen los pies."
+        ],
+        "exceptions": [
+          "Body parts use el/la: me duele la cabeza (not mi cabeza)."
+        ]
+      },
+      {
+        "rule": "Me gustaría + noun / infinitive = I'd like.",
+        "examples": [
+          "Me gustaría ir a Teotihuacán."
+        ]
+      }
+    ],
+    "drills": [
+      {
+        "type": "choice",
+        "q": "Me ___ el café de olla.",
+        "options": [
+          "gusta",
+          "gustan"
+        ],
+        "answer": "gusta",
+        "why": "One thing → gusta."
+      },
+      {
+        "type": "choice",
+        "q": "Me ___ los tacos.",
+        "options": [
+          "gusta",
+          "gustan"
+        ],
+        "answer": "gustan",
+        "why": "Plural things → gustan."
+      },
+      {
+        "type": "choice",
+        "q": "¿___ gusta el mezcal? (to you, informal)",
+        "options": [
+          "Te",
+          "Tú",
+          "Le"
+        ],
+        "answer": "Te",
+        "why": "To you (tú) → te."
+      },
+      {
+        "type": "choice",
+        "q": "A Ana ___ gustan los museos.",
+        "options": [
+          "le",
+          "la",
+          "se"
+        ],
+        "answer": "le",
+        "why": "To her → le."
+      },
+      {
+        "type": "choice",
+        "q": "—Me gusta el mole. —___ (Me too.)",
+        "options": [
+          "A mí también.",
+          "Yo también.",
+          "Me también."
+        ],
+        "answer": "A mí también.",
+        "why": "With gustar, 'me too' is 'to me too': a mí también."
+      },
+      {
+        "type": "fill",
+        "q": "Nos ___ caminar por el centro. (gustar)",
+        "answer": "gusta",
+        "why": "An action (infinitive) → singular gusta."
+      },
+      {
+        "type": "fill",
+        "q": "Me ___ la cabeza. (doler)",
+        "answer": "duele",
+        "why": "One thing hurts → duele (o → ue)."
+      },
+      {
+        "type": "fill",
+        "q": "Me ___ los pies. (doler)",
+        "answer": "duelen",
+        "why": "Several things hurt → duelen."
+      },
+      {
+        "type": "fill",
+        "q": "Me ___ México. (encantar)",
+        "answer": "encanta",
+        "why": "One thing → encanta."
+      },
+      {
+        "type": "fill",
+        "q": "A mis amigos les ___ las playas. (encantar)",
+        "answer": "encantan",
+        "why": "Plural things → encantan."
+      },
+      {
+        "type": "translate",
+        "q": "I like Mexican food.",
+        "answer": "Me gusta la comida mexicana.",
+        "alts": [
+          "A mí me gusta la comida mexicana."
+        ],
+        "why": "One thing → gusta."
+      },
+      {
+        "type": "translate",
+        "q": "Do you like spicy food? (formal)",
+        "answer": "¿Le gusta la comida picante?",
+        "alts": [
+          "¿A usted le gusta la comida picante?",
+          "¿Le gusta el picante?",
+          "¿Le gusta lo picante?"
+        ],
+        "why": "To you (usted) → le."
+      },
+      {
+        "type": "translate",
+        "q": "My stomach hurts.",
+        "answer": "Me duele el estómago.",
+        "alts": [
+          "Me duele la panza."
+        ],
+        "why": "doler + el, not mi."
+      },
+      {
+        "type": "translate",
+        "q": "We love the markets.",
+        "answer": "Nos encantan los mercados.",
+        "alts": [
+          "A nosotros nos encantan los mercados."
+        ],
+        "why": "Plural things → encantan."
+      },
+      {
+        "type": "translate",
+        "q": "I'd like a table outside.",
+        "answer": "Me gustaría una mesa afuera.",
+        "alts": [
+          "Quisiera una mesa afuera."
+        ],
+        "why": "Me gustaría = I'd like."
+      },
+      {
+        "type": "translate",
+        "q": "Does your head hurt? (informal)",
+        "answer": "¿Te duele la cabeza?",
+        "alts": [
+          "¿A ti te duele la cabeza?"
+        ],
+        "why": "To you → te; la cabeza."
+      },
+      {
+        "type": "transform",
+        "q": "Me gusta el taco. → los tacos",
+        "answer": "Me gustan los tacos.",
+        "why": "Plural subject → gustan."
+      },
+      {
+        "type": "transform",
+        "q": "Me gusta la playa. → a ellos",
+        "answer": "Les gusta la playa.",
+        "alts": [
+          "A ellos les gusta la playa."
+        ],
+        "why": "To them → les."
+      }
+    ]
+  },
+  {
+    "id": "g_possessives",
+    "title": "My, your, this, that (possessives & demonstratives)",
+    "order": 20,
+    "tier": 3,
+    "summary": "mi / tu / su / nuestro and este / ese / aquel — point and own things.",
+    "explain": "**Possessives** go before the noun and agree with the **thing owned**:\n\n| | one thing | several |\n|---|---|---|\n| my | **mi** pasaporte | **mis** maletas |\n| your (tú) | **tu** boleto | **tus** boletos |\n| his / her / its / your (usted) / their | **su** carro | **sus** carros |\n| our | **nuestro** hotel / **nuestra** mesa | **nuestros / nuestras** |\n\n*su* is ambiguous — clarify with *de*: *el carro de ella, el carro de usted*. In service talk *su* usually means *your*: *¿Su nombre?*\nStanding alone: *mío, tuyo, suyo, nuestro* — *Es mío. ¿Es tuyo?*\n\n**Demonstratives**\n\n| | this (near me) | that (near you) | that (over there) |\n|---|---|---|---|\n| masculine | **este** / estos | **ese** / esos | **aquel** / aquellos |\n| feminine | **esta** / estas | **esa** / esas | **aquella** / aquellas |\n| neuter (unknown thing, idea) | **esto** | **eso** | aquello |\n\nPointing at food: *Me da este, por favor. ¿Qué es eso?* · *Eso es todo.* · Watch the accent: **esta** (this) vs **está** (is).",
+    "rules": [
+      {
+        "rule": "mi, tu, su add -s for plural things.",
+        "examples": [
+          "mi maleta → mis maletas",
+          "su boleto → sus boletos"
+        ]
+      },
+      {
+        "rule": "nuestro changes for gender and number.",
+        "examples": [
+          "nuestro hotel",
+          "nuestra mesa",
+          "nuestros amigos"
+        ]
+      },
+      {
+        "rule": "su = his / her / their / your (usted, ustedes); clarify with de.",
+        "examples": [
+          "su carro = el carro de él / de ella / de usted"
+        ]
+      },
+      {
+        "rule": "este = this (near me), ese = that (near you), aquel = that over there.",
+        "examples": [
+          "este taco",
+          "esa salsa",
+          "aquel edificio"
+        ]
+      },
+      {
+        "rule": "esto / eso for unknown things and ideas — never before a noun.",
+        "examples": [
+          "¿Qué es esto?",
+          "Eso es todo.",
+          "¡Eso!"
+        ]
+      },
+      {
+        "rule": "mío / tuyo / suyo stand alone.",
+        "examples": [
+          "Es mío.",
+          "¿Es tuyo?",
+          "Un amigo mío."
+        ]
+      }
+    ],
+    "drills": [
+      {
+        "type": "choice",
+        "q": "___ maletas (my)",
+        "options": [
+          "mis",
+          "mi",
+          "mías"
+        ],
+        "answer": "mis",
+        "why": "Plural thing → mis."
+      },
+      {
+        "type": "choice",
+        "q": "___ casa (our)",
+        "options": [
+          "nuestra",
+          "nuestro",
+          "nuestras"
+        ],
+        "answer": "nuestra",
+        "why": "casa is feminine singular → nuestra."
+      },
+      {
+        "type": "choice",
+        "q": "Señor, ¿es ___ pasaporte? (your, formal)",
+        "options": [
+          "su",
+          "tu",
+          "suyo"
+        ],
+        "answer": "su",
+        "why": "usted → su."
+      },
+      {
+        "type": "choice",
+        "q": "___ taco (this)",
+        "options": [
+          "este",
+          "esta",
+          "esto"
+        ],
+        "answer": "este",
+        "why": "taco is masculine → este."
+      },
+      {
+        "type": "choice",
+        "q": "¿Qué es ___? (this unknown thing)",
+        "options": [
+          "esto",
+          "este",
+          "esta"
+        ],
+        "answer": "esto",
+        "why": "Unknown thing, no noun → esto."
+      },
+      {
+        "type": "choice",
+        "q": "___ montañas (those, far away)",
+        "options": [
+          "aquellas",
+          "aquellos",
+          "aquel"
+        ],
+        "answer": "aquellas",
+        "why": "Feminine plural, far → aquellas."
+      },
+      {
+        "type": "choice",
+        "q": "Mi tío ___ en el mercado.",
+        "options": [
+          "está",
+          "esta"
+        ],
+        "answer": "está",
+        "why": "With an accent = is; without = this."
+      },
+      {
+        "type": "fill",
+        "q": "___ amigos son de Puebla. (my)",
+        "answer": "Mis",
+        "why": "Plural → mis."
+      },
+      {
+        "type": "fill",
+        "q": "___ hijos estudian aquí. (our)",
+        "answer": "Nuestros",
+        "why": "Masculine plural → nuestros."
+      },
+      {
+        "type": "fill",
+        "q": "Me da ___ salsa, por favor. (that one, near you)",
+        "answer": "esa",
+        "why": "salsa is feminine, near you → esa."
+      },
+      {
+        "type": "fill",
+        "q": "¿Cuánto cuestan ___ aretes? (these)",
+        "answer": "estos",
+        "why": "aretes is masculine plural → estos."
+      },
+      {
+        "type": "transform",
+        "q": "mi boleto → plural",
+        "answer": "mis boletos",
+        "why": "mi → mis."
+      },
+      {
+        "type": "transform",
+        "q": "esta cerveza → plural",
+        "answer": "estas cervezas",
+        "why": "esta → estas."
+      },
+      {
+        "type": "translate",
+        "q": "my passport",
+        "answer": "mi pasaporte",
+        "why": "mi + noun."
+      },
+      {
+        "type": "translate",
+        "q": "our hotel",
+        "answer": "nuestro hotel",
+        "why": "hotel is masculine → nuestro."
+      },
+      {
+        "type": "translate",
+        "q": "Is it yours? (informal)",
+        "answer": "¿Es tuyo?",
+        "alts": [
+          "¿Es tuya?",
+          "¿Es tuyo esto?"
+        ],
+        "why": "tuyo stands alone."
+      },
+      {
+        "type": "translate",
+        "q": "That's all.",
+        "answer": "Eso es todo.",
+        "alts": [
+          "Es todo.",
+          "Sería todo."
+        ],
+        "why": "eso for an idea."
+      },
+      {
+        "type": "translate",
+        "q": "This one, please.",
+        "answer": "Este, por favor.",
+        "alts": [
+          "Esta, por favor.",
+          "Esto, por favor."
+        ],
+        "why": "Pointing at a masculine thing → este."
+      }
+    ]
+  },
+  {
+    "id": "g_direct_objects",
+    "title": "Direct object pronouns: lo, la, los, las",
+    "order": 21,
+    "tier": 3,
+    "summary": "Replace 'it / them / him / her': Lo compro. La quiero. Los tengo.",
+    "explain": "Direct object pronouns replace the thing or person that receives the action.\n\n| | pronoun | example |\n|---|---|---|\n| me | **me** | *Me ve.* |\n| you (tú) | **te** | *Te llamo mañana.* |\n| him / it (m.) / you (usted, m.) | **lo** | *¿El boleto? **Lo** compro.* |\n| her / it (f.) / you (usted, f.) | **la** | *¿La cuenta? **La** pago yo.* |\n| us | **nos** | *Nos invita.* |\n| them (m.) / you all | **los** | *¿Los tacos? **Los** pido.* |\n| them (f.) | **las** | *¿Las llaves? **Las** tengo.* |\n\nThe **gender of the noun** decides: *el celular → lo*, *la maleta → la*.\n\n**Position:**\n- right **before** a conjugated verb: *Lo quiero. No la veo.*\n- with an infinitive: before the first verb **or** attached — both are fine: *Lo voy a comprar = Voy a comprarlo.*\n\n**Lo for ideas:** *No lo sé. Lo siento. Lo entiendo.*\n\nMexico: *Ahorita lo hago* — I'll do it in a bit.",
+    "rules": [
+      {
+        "rule": "lo / la / los / las match the noun they replace.",
+        "examples": [
+          "¿El boleto? Lo tengo.",
+          "¿La salsa? La quiero.",
+          "¿Los tacos? Los pido."
+        ]
+      },
+      {
+        "rule": "The pronoun goes right before the conjugated verb.",
+        "examples": [
+          "Lo compro.",
+          "No la veo."
+        ]
+      },
+      {
+        "rule": "With an infinitive: before the first verb or attached — both fine.",
+        "examples": [
+          "Lo voy a comprar. = Voy a comprarlo.",
+          "La quiero ver. = Quiero verla."
+        ]
+      },
+      {
+        "rule": "lo also means 'it' for ideas.",
+        "examples": [
+          "No lo sé.",
+          "Lo siento.",
+          "Lo entiendo."
+        ]
+      }
+    ],
+    "drills": [
+      {
+        "type": "choice",
+        "q": "¿El celular? ___ tengo aquí.",
+        "options": [
+          "Lo",
+          "La",
+          "Le"
+        ],
+        "answer": "Lo",
+        "why": "celular is masculine → lo."
+      },
+      {
+        "type": "choice",
+        "q": "¿La cuenta? ___ pago yo.",
+        "options": [
+          "La",
+          "Lo",
+          "Le"
+        ],
+        "answer": "La",
+        "why": "cuenta is feminine → la."
+      },
+      {
+        "type": "choice",
+        "q": "¿Los boletos? ___ compramos mañana.",
+        "options": [
+          "Los",
+          "Las",
+          "Les"
+        ],
+        "answer": "Los",
+        "why": "Masculine plural → los."
+      },
+      {
+        "type": "choice",
+        "q": "¿Las llaves? No ___ encuentro.",
+        "options": [
+          "las",
+          "los",
+          "les"
+        ],
+        "answer": "las",
+        "why": "Feminine plural → las."
+      },
+      {
+        "type": "choice",
+        "q": "I want to see it (the museum).",
+        "options": [
+          "Quiero verlo.",
+          "Quiero lo ver.",
+          "Lo quiero verlo."
+        ],
+        "answer": "Quiero verlo.",
+        "why": "Attach to the infinitive, or put it first: Lo quiero ver."
+      },
+      {
+        "type": "transform",
+        "q": "Compro el boleto. → use a pronoun",
+        "answer": "Lo compro.",
+        "why": "el boleto → lo, before the verb."
+      },
+      {
+        "type": "transform",
+        "q": "Veo a María. → use a pronoun",
+        "answer": "La veo.",
+        "why": "María → la."
+      },
+      {
+        "type": "transform",
+        "q": "Quiero la cerveza. → use a pronoun",
+        "answer": "La quiero.",
+        "why": "la cerveza → la."
+      },
+      {
+        "type": "transform",
+        "q": "Voy a pedir los tacos. → use a pronoun",
+        "answer": "Los voy a pedir.",
+        "alts": [
+          "Voy a pedirlos."
+        ],
+        "why": "Before ir or attached to the infinitive."
+      },
+      {
+        "type": "transform",
+        "q": "Necesito el pasaporte. → use a pronoun",
+        "answer": "Lo necesito.",
+        "why": "el pasaporte → lo."
+      },
+      {
+        "type": "transform",
+        "q": "Llamo a mis amigos. → use a pronoun",
+        "answer": "Los llamo.",
+        "why": "mis amigos → los."
+      },
+      {
+        "type": "translate",
+        "q": "I don't know.",
+        "answer": "No lo sé.",
+        "alts": [
+          "No sé."
+        ],
+        "why": "lo = it (the fact)."
+      },
+      {
+        "type": "translate",
+        "q": "I'm sorry.",
+        "answer": "Lo siento.",
+        "why": "Literally 'I feel it'."
+      },
+      {
+        "type": "translate",
+        "q": "I'll take it. (the shirt — la camisa)",
+        "answer": "La compro.",
+        "alts": [
+          "Me la llevo.",
+          "La voy a comprar.",
+          "Voy a comprarla."
+        ],
+        "why": "la camisa → la."
+      },
+      {
+        "type": "translate",
+        "q": "See you tomorrow. (informal)",
+        "answer": "Te veo mañana.",
+        "alts": [
+          "Nos vemos mañana."
+        ],
+        "why": "te = you (tú)."
+      },
+      {
+        "type": "translate",
+        "q": "Can you call me? (formal)",
+        "answer": "¿Me puede llamar?",
+        "alts": [
+          "¿Puede llamarme?"
+        ],
+        "why": "me before puede, or attached: llamarme."
+      },
+      {
+        "type": "translate",
+        "q": "Do you have it? (the ticket, formal)",
+        "answer": "¿Lo tiene?",
+        "alts": [
+          "¿Usted lo tiene?"
+        ],
+        "why": "el boleto → lo."
+      }
+    ]
+  },
+  {
+    "id": "g_indirect_objects",
+    "title": "Indirect objects: me da, le doy, se lo",
+    "order": 22,
+    "tier": 3,
+    "summary": "me / te / le / nos / les = to someone — and ¿Me da…? for ordering.",
+    "explain": "Indirect object pronouns say **to / for whom**.\n\n| | pronoun | example |\n|---|---|---|\n| to me | **me** | *¿Me da un café?* |\n| to you (tú) | **te** | *Te mando la foto.* |\n| to him / her / you (usted) | **le** | *Le doy propina.* |\n| to us | **nos** | *¿Nos trae la cuenta?* |\n| to them / you all | **les** | *Les explico.* |\n\n**Ordering in Mexico** — *¿Me da…?* ('Do you give me…?') is THE polite way to ask for things:\n*¿Me da dos de pastor? · ¿Me trae otra cerveza? · ¿Me pasa la sal? · ¿Me cobra?* (= can I pay?)\n\n**Doubling:** *le / les* usually appear even when the person is named: ***Le** doy el dinero **al taxista**.*\n\n**Two pronouns:** indirect first, then direct. **le / les + lo / la → se**:\n*Me lo da.* · *Se lo doy.* · *¿La cuenta? Ahorita **se la** traigo.*\n\nSame position rules as lo/la: *¿Me puede traer…? = ¿Puede traerme…?*",
+    "rules": [
+      {
+        "rule": "me, te, le, nos, les = to / for someone.",
+        "examples": [
+          "Me da un café.",
+          "Le doy las gracias.",
+          "Les mando fotos."
+        ]
+      },
+      {
+        "rule": "¿Me da…? / ¿Me trae…? / ¿Me pasa…? — the polite Mexican way to ask.",
+        "examples": [
+          "¿Me da la cuenta, por favor?",
+          "¿Me trae un agua?"
+        ]
+      },
+      {
+        "rule": "le / les are doubled with a + person.",
+        "examples": [
+          "Le pago al taxista.",
+          "Les escribo a mis papás."
+        ]
+      },
+      {
+        "rule": "Indirect before direct; le / les + lo / la → se.",
+        "examples": [
+          "Me lo da.",
+          "Se lo doy.",
+          "Ahorita se la traigo."
+        ]
+      }
+    ],
+    "drills": [
+      {
+        "type": "choice",
+        "q": "¿___ da un café, por favor? (to me)",
+        "options": [
+          "Me",
+          "Le",
+          "Mi"
+        ],
+        "answer": "Me",
+        "why": "To me → me."
+      },
+      {
+        "type": "choice",
+        "q": "___ doy propina al mesero.",
+        "options": [
+          "Le",
+          "Lo",
+          "La"
+        ],
+        "answer": "Le",
+        "why": "To him → le (indirect)."
+      },
+      {
+        "type": "choice",
+        "q": "___ mando una foto a mis papás.",
+        "options": [
+          "Les",
+          "Los",
+          "Le"
+        ],
+        "answer": "Les",
+        "why": "To them → les."
+      },
+      {
+        "type": "choice",
+        "q": "¿La cuenta? Ahorita ___ la traigo.",
+        "options": [
+          "se",
+          "le",
+          "lo"
+        ],
+        "answer": "se",
+        "why": "le + la → se la."
+      },
+      {
+        "type": "choice",
+        "q": "Can you wrap it for me? (a gift)",
+        "options": [
+          "¿Me lo envuelve?",
+          "¿Lo me envuelve?",
+          "¿Me envuelve lo?"
+        ],
+        "answer": "¿Me lo envuelve?",
+        "why": "Indirect (me) before direct (lo), both before the verb."
+      },
+      {
+        "type": "fill",
+        "q": "¿___ trae otra cerveza, por favor? (to me)",
+        "answer": "Me",
+        "why": "Bring to me → me."
+      },
+      {
+        "type": "fill",
+        "q": "¿___ puede decir dónde está el metro? (to me)",
+        "answer": "Me",
+        "why": "Tell me → me."
+      },
+      {
+        "type": "fill",
+        "q": "___ explico el problema (a usted).",
+        "answer": "Le",
+        "why": "To you (usted) → le."
+      },
+      {
+        "type": "translate",
+        "q": "Can I have the check, please?",
+        "answer": "¿Me da la cuenta, por favor?",
+        "alts": [
+          "¿Me trae la cuenta, por favor?",
+          "La cuenta, por favor.",
+          "¿Me cobra, por favor?"
+        ],
+        "why": "¿Me da…? is the Mexican way."
+      },
+      {
+        "type": "translate",
+        "q": "Can you pass me the salt? (formal)",
+        "answer": "¿Me pasa la sal?",
+        "alts": [
+          "¿Me pasa la sal, por favor?",
+          "¿Me puede pasar la sal?"
+        ],
+        "why": "pasar + me."
+      },
+      {
+        "type": "translate",
+        "q": "I'll send you the photo. (informal)",
+        "answer": "Te mando la foto.",
+        "alts": [
+          "Te envío la foto.",
+          "Te voy a mandar la foto."
+        ],
+        "why": "To you (tú) → te."
+      },
+      {
+        "type": "translate",
+        "q": "Give me two, please. (formal)",
+        "answer": "Me da dos, por favor.",
+        "alts": [
+          "¿Me da dos, por favor?",
+          "Deme dos, por favor."
+        ],
+        "why": "Me da… = give me."
+      },
+      {
+        "type": "translate",
+        "q": "Can you bring us the menu? (formal)",
+        "answer": "¿Nos trae el menú?",
+        "alts": [
+          "¿Nos puede traer el menú?",
+          "¿Nos trae la carta?",
+          "¿Nos trae el menú, por favor?"
+        ],
+        "why": "To us → nos."
+      },
+      {
+        "type": "translate",
+        "q": "Can you give me a discount? (formal)",
+        "answer": "¿Me hace un descuento?",
+        "alts": [
+          "¿Me da un descuento?",
+          "¿Me puede hacer un descuento?",
+          "¿Me lo deja más barato?"
+        ],
+        "why": "hacer un descuento + me."
+      },
+      {
+        "type": "transform",
+        "q": "Doy el dinero al taxista. → add le",
+        "answer": "Le doy el dinero al taxista.",
+        "why": "le doubles 'al taxista'."
+      },
+      {
+        "type": "transform",
+        "q": "Me da el boleto. → replace el boleto",
+        "answer": "Me lo da.",
+        "why": "el boleto → lo; indirect first."
+      },
+      {
+        "type": "transform",
+        "q": "Le doy la llave. → replace la llave",
+        "answer": "Se la doy.",
+        "why": "le + la → se la."
+      }
+    ]
+  },
+  {
+    "id": "g_commands",
+    "title": "Commands for getting around (usted)",
+    "order": 23,
+    "tier": 3,
+    "summary": "Siga derecho, dé vuelta, disculpe, dígame, pásele — understand directions and ask politely.",
+    "explain": "You'll mostly **hear** commands (directions, instructions) and use a few polite ones yourself.\n\n**usted command:** take the yo form, drop -o, swap the vowel: **-ar → -e**, **-er / -ir → -a**.\n\n| infinitive | yo | usted | ustedes | tú |\n|---|---|---|---|---|\n| tomar | tomo | **tome** | tomen | toma |\n| doblar (turn) | doblo | **doble** | doblen | dobla |\n| esperar | espero | **espere** | esperen | espera |\n| seguir | sigo | **siga** | sigan | sigue |\n| venir | vengo | **venga** | vengan | ven |\n| decir | digo | **diga** | digan | di |\n| cruzar | cruzo | **cruce** (z → c) | crucen | cruza |\n| ir | — | **vaya** | vayan | ve |\n| dar | — | **dé** | den | da |\n\n**Pronouns attach** to positive commands (add an accent to keep the stress): *dígame, tráigame la cuenta, espéreme, pásele*. They go **before** negative ones: *No se preocupe.*\n\n**Directions you'll hear:** *Siga derecho* (go straight — derecho = straight!) · *Dé vuelta / Doble a la derecha / a la izquierda* · *Cruce la calle* · *Tome el metro* · *Bájese en Zócalo* · *Está a dos cuadras.*\n\n**Mexican service phrases:** *¡Pásele!* (come in / step right up) · *¡Dígame!* · *¡Disculpe!* · *Con permiso* (excuse me, coming through) · *Espéreme tantito* · *No se preocupe.*\n\nFor your own requests a question is softer: *¿Me puede esperar?*",
+    "rules": [
+      {
+        "rule": "usted command: yo form, drop -o, swap the vowel (-ar → -e, -er/-ir → -a).",
+        "examples": [
+          "hablo → hable",
+          "como → coma",
+          "sigo → siga",
+          "vengo → venga"
+        ],
+        "exceptions": [
+          "ir → vaya, dar → dé, ser → sea, estar → esté"
+        ]
+      },
+      {
+        "rule": "ustedes: add -n.",
+        "examples": [
+          "sigan",
+          "pasen",
+          "esperen"
+        ]
+      },
+      {
+        "rule": "Pronouns attach to positive commands; add an accent to keep the stress.",
+        "examples": [
+          "dígame",
+          "tráigame la cuenta",
+          "pásele"
+        ]
+      },
+      {
+        "rule": "Negative commands: pronoun before the verb.",
+        "examples": [
+          "No se preocupe.",
+          "No me diga."
+        ]
+      },
+      {
+        "rule": "Positive tú command = the él form of the present.",
+        "examples": [
+          "habla",
+          "toma",
+          "sigue"
+        ],
+        "exceptions": [
+          "ven, di, haz, pon, sal, ten, ve"
+        ]
+      }
+    ],
+    "drills": [
+      {
+        "type": "choice",
+        "q": "In 'Siga derecho', derecho means…",
+        "options": [
+          "straight ahead",
+          "right",
+          "left"
+        ],
+        "answer": "straight ahead",
+        "why": "derecho = straight on; a la derecha = to the right."
+      },
+      {
+        "type": "choice",
+        "q": "Go straight. (what you'll hear)",
+        "options": [
+          "Siga derecho.",
+          "Sigue derecha.",
+          "Seguir derecho."
+        ],
+        "answer": "Siga derecho.",
+        "why": "seguir → sigo → siga."
+      },
+      {
+        "type": "choice",
+        "q": "Turn right. (usted)",
+        "options": [
+          "Dé vuelta a la derecha.",
+          "Da vuelta a derecha.",
+          "Doble derecho."
+        ],
+        "answer": "Dé vuelta a la derecha.",
+        "why": "dar vuelta = turn; a la derecha = to the right."
+      },
+      {
+        "type": "choice",
+        "q": "A market vendor waves you in: '¡___, joven!'",
+        "options": [
+          "Pásele",
+          "Pasa le",
+          "Pase le usted"
+        ],
+        "answer": "Pásele",
+        "why": "¡Pásele! = come in / step right up — very Mexican."
+      },
+      {
+        "type": "choice",
+        "q": "Excuse me (getting past someone)",
+        "options": [
+          "Con permiso.",
+          "Discúlpeme lo.",
+          "De nada."
+        ],
+        "answer": "Con permiso.",
+        "why": "Con permiso when you need to squeeze by."
+      },
+      {
+        "type": "fill",
+        "q": "___ la calle. (usted, cruzar)",
+        "answer": "Cruce",
+        "why": "-ar → -e, and z → c before e."
+      },
+      {
+        "type": "fill",
+        "q": "___ el metro. (usted, tomar)",
+        "answer": "Tome",
+        "why": "tomo → tome."
+      },
+      {
+        "type": "fill",
+        "q": "___ un momento, por favor. (usted, esperar)",
+        "answer": "Espere",
+        "why": "espero → espere."
+      },
+      {
+        "type": "fill",
+        "q": "___ en la estación Hidalgo. (usted, bajarse)",
+        "answer": "Bájese",
+        "why": "baje + se; add an accent to keep the stress."
+      },
+      {
+        "type": "transform",
+        "q": "Usted habla más despacio. → command",
+        "answer": "Hable más despacio.",
+        "alts": [
+          "Hable más despacio, por favor."
+        ],
+        "why": "hablo → hable."
+      },
+      {
+        "type": "transform",
+        "q": "Usted me dice. → command",
+        "answer": "Dígame.",
+        "why": "digo → diga + me → dígame."
+      },
+      {
+        "type": "transform",
+        "q": "Usted me trae la cuenta. → command",
+        "answer": "Tráigame la cuenta.",
+        "why": "traigo → traiga + me → tráigame."
+      },
+      {
+        "type": "transform",
+        "q": "Ustedes pasan. → command",
+        "answer": "Pasen.",
+        "why": "ustedes → pase + n."
+      },
+      {
+        "type": "translate",
+        "q": "Excuse me! (to get attention, formal)",
+        "answer": "¡Disculpe!",
+        "alts": [
+          "¡Perdón!",
+          "¡Perdone!"
+        ],
+        "why": "disculpar → disculpe."
+      },
+      {
+        "type": "translate",
+        "q": "Don't worry. (formal)",
+        "answer": "No se preocupe.",
+        "why": "Negative: pronoun before the verb."
+      },
+      {
+        "type": "translate",
+        "q": "Wait for me a moment. (formal)",
+        "answer": "Espéreme un momento.",
+        "alts": [
+          "Espéreme tantito.",
+          "Espéreme un momentito.",
+          "¿Me espera un momento?"
+        ],
+        "why": "espere + me."
+      },
+      {
+        "type": "translate",
+        "q": "Take the first street on the left. (formal)",
+        "answer": "Tome la primera calle a la izquierda.",
+        "alts": [
+          "Tome la primera a la izquierda.",
+          "Agarre la primera calle a la izquierda."
+        ],
+        "why": "tomo → tome."
+      }
+    ]
+  },
+  {
+    "id": "g_reflexive",
+    "title": "Reflexive verbs & daily routine",
+    "order": 24,
+    "tier": 3,
+    "summary": "me levanto, me baño, me voy — the action comes back to you.",
+    "explain": "Reflexive verbs carry a pronoun that matches the subject:\n\n| yo **me** levanto | nosotros **nos** levantamos |\n|---|---|\n| tú **te** levantas | ellos / ustedes **se** levantan |\n| él / ella / usted **se** levanta | |\n\n**Daily routine:** despertarse (*me despierto*) · levantarse · bañarse (Mexico: *bañarse* = shower) · lavarse los dientes · vestirse (*me visto*) · arreglarse · acostarse (*me acuesto*) · dormirse.\n\n**Also:** *llamarse* (Me llamo…) · *sentirse* (Me siento mal) · *quedarse* (Me quedo en un hotel) · *preocuparse* · *acordarse* (No me acuerdo) · *perderse* (Me perdí).\n\n**Meaning changes with se:**\n\n| | | |\n|---|---|---|\n| ir — go | **irse** — leave | *¡Ya me voy!* |\n| dormir — sleep | **dormirse** — fall asleep | *Me dormí en el camión.* |\n| llevar — carry | **llevarse** — take (buy) | *Me lo llevo.* |\n\n**Position:** before the conjugated verb or attached to an infinitive: *Me voy a bañar = Voy a bañarme.*\n\n**Body parts & clothes:** *Me lavo **las** manos* (not *mis*).",
+    "rules": [
+      {
+        "rule": "The pronoun matches the subject: me, te, se, nos, se.",
+        "examples": [
+          "Me llamo Matt.",
+          "¿Cómo te llamas?",
+          "Se llama Ana."
+        ]
+      },
+      {
+        "rule": "Before the conjugated verb, or attached to an infinitive.",
+        "examples": [
+          "Me voy a bañar. = Voy a bañarme."
+        ]
+      },
+      {
+        "rule": "Body parts and clothes use el / la, not 'my'.",
+        "examples": [
+          "Me lavo las manos.",
+          "Me pongo la chamarra."
+        ]
+      },
+      {
+        "rule": "Some verbs change meaning with se.",
+        "examples": [
+          "ir (go) → irse (leave): Ya me voy.",
+          "quedar (meet up) → quedarse (stay): Me quedo aquí.",
+          "llevar → llevarse (take it): Me lo llevo."
+        ],
+        "exceptions": [
+          "Ya voy = I'm coming! — not 'I'm leaving'."
+        ]
+      }
+    ],
+    "drills": [
+      {
+        "type": "fill",
+        "q": "Yo ___ llamo Matt.",
+        "answer": "me",
+        "why": "yo → me."
+      },
+      {
+        "type": "fill",
+        "q": "¿Cómo ___ llamas?",
+        "answer": "te",
+        "why": "tú → te."
+      },
+      {
+        "type": "fill",
+        "q": "Nosotros ___ levantamos temprano.",
+        "answer": "nos",
+        "why": "nosotros → nos."
+      },
+      {
+        "type": "fill",
+        "q": "Ella ___ baña en la mañana.",
+        "answer": "se",
+        "why": "ella → se."
+      },
+      {
+        "type": "fill",
+        "q": "Yo me ___ a las siete. (despertarse)",
+        "answer": "despierto",
+        "why": "e → ie: me despierto."
+      },
+      {
+        "type": "fill",
+        "q": "¿A qué hora te ___? (acostarse)",
+        "answer": "acuestas",
+        "why": "o → ue: te acuestas."
+      },
+      {
+        "type": "fill",
+        "q": "Me ___ mal. (sentirse)",
+        "answer": "siento",
+        "why": "e → ie: me siento."
+      },
+      {
+        "type": "choice",
+        "q": "I'm leaving now.",
+        "options": [
+          "Ya me voy.",
+          "Ya voy.",
+          "Ya me ir."
+        ],
+        "answer": "Ya me voy.",
+        "why": "irse = leave. 'Ya voy' means 'I'm coming!'"
+      },
+      {
+        "type": "choice",
+        "q": "I'm staying at the Hotel Isabel.",
+        "options": [
+          "Me quedo en el Hotel Isabel.",
+          "Quedo en el Hotel Isabel.",
+          "Me quedo al Hotel Isabel."
+        ],
+        "answer": "Me quedo en el Hotel Isabel.",
+        "why": "quedarse en = stay at."
+      },
+      {
+        "type": "choice",
+        "q": "I wash my hands.",
+        "options": [
+          "Me lavo las manos.",
+          "Lavo mis manos.",
+          "Me lavo mis manos."
+        ],
+        "answer": "Me lavo las manos.",
+        "why": "Reflexive + las, not mis."
+      },
+      {
+        "type": "transform",
+        "q": "Me levanto a las seis. → nosotros",
+        "answer": "Nos levantamos a las seis.",
+        "why": "me → nos, -o → -amos."
+      },
+      {
+        "type": "transform",
+        "q": "Te vas mañana. → usted",
+        "answer": "Se va mañana.",
+        "alts": [
+          "Usted se va mañana."
+        ],
+        "why": "te vas → se va."
+      },
+      {
+        "type": "transform",
+        "q": "Me baño. → I'm going to…",
+        "answer": "Me voy a bañar.",
+        "alts": [
+          "Voy a bañarme."
+        ],
+        "why": "Pronoun first or attached."
+      },
+      {
+        "type": "translate",
+        "q": "What's your name? (formal)",
+        "answer": "¿Cómo se llama?",
+        "alts": [
+          "¿Cómo se llama usted?"
+        ],
+        "why": "usted → se llama."
+      },
+      {
+        "type": "translate",
+        "q": "I feel good.",
+        "answer": "Me siento bien.",
+        "alts": [
+          "Me siento muy bien.",
+          "Yo me siento bien."
+        ],
+        "why": "sentirse → me siento."
+      },
+      {
+        "type": "translate",
+        "q": "We're staying three nights.",
+        "answer": "Nos quedamos tres noches.",
+        "alts": [
+          "Nos vamos a quedar tres noches.",
+          "Vamos a quedarnos tres noches."
+        ],
+        "why": "quedarse → nos quedamos."
+      },
+      {
+        "type": "translate",
+        "q": "I'm going to bed.",
+        "answer": "Me voy a dormir.",
+        "alts": [
+          "Me voy a acostar.",
+          "Voy a acostarme.",
+          "Me voy a la cama."
+        ],
+        "why": "irse a dormir = go to bed."
+      }
+    ]
+  },
+  {
+    "id": "g_progressive",
+    "title": "Right now: estar + -ando / -iendo",
+    "order": 25,
+    "tier": 3,
+    "summary": "Estoy comiendo, estamos esperando — actions in progress.",
+    "explain": "**estar + gerund** = happening right now.\n\n| Verb type | Ending | Examples |\n|---|---|---|\n| -ar | **-ando** | hablar → hablando, esperar → esperando |\n| -er / -ir | **-iendo** | comer → comiendo, salir → saliendo |\n| vowel before -er / -ir | **-yendo** | leer → leyendo, traer → trayendo, ir → yendo |\n| stem-changing -ir | e → i, o → u | pedir → pidiendo, decir → diciendo, dormir → durmiendo |\n\n*Estoy comiendo. · ¿Qué estás haciendo? · Están esperando el camión.*\n\nSpanish uses it **less** than English:\n- the simple present often covers 'now': *¿Qué haces?*\n- **never** for the future: *Mañana salgo* (not *estoy saliendo mañana*).\n\n**Mexico:** *andar + gerund* = be going around doing: *Ando buscando un regalo.* · **seguir + gerund** = still / keep doing: *Sigo aprendiendo.*\n\nPronouns: *Lo estoy buscando = Estoy buscándolo.*",
+    "rules": [
+      {
+        "rule": "-ar → -ando; -er / -ir → -iendo.",
+        "examples": [
+          "hablando",
+          "comiendo",
+          "escribiendo"
+        ]
+      },
+      {
+        "rule": "Vowel + -er / -ir → -yendo.",
+        "examples": [
+          "leyendo",
+          "trayendo",
+          "yendo"
+        ]
+      },
+      {
+        "rule": "Stem-changing -ir verbs: e → i, o → u.",
+        "examples": [
+          "pidiendo",
+          "diciendo",
+          "durmiendo"
+        ]
+      },
+      {
+        "rule": "Only for actions in progress — never for the future.",
+        "examples": [
+          "Estoy esperando un Uber.",
+          "Mañana trabajo."
+        ],
+        "exceptions": [
+          "Not 'Estoy trabajando mañana'."
+        ]
+      },
+      {
+        "rule": "seguir + gerund = still; andar + gerund = going around doing.",
+        "examples": [
+          "Sigo aprendiendo.",
+          "Ando buscando una farmacia."
+        ]
+      }
+    ],
+    "drills": [
+      {
+        "type": "fill",
+        "q": "Estoy ___ un taxi. (esperar)",
+        "answer": "esperando",
+        "why": "-ar → -ando."
+      },
+      {
+        "type": "fill",
+        "q": "¿Qué estás ___? (hacer)",
+        "answer": "haciendo",
+        "why": "-er → -iendo."
+      },
+      {
+        "type": "fill",
+        "q": "Estamos ___ tacos. (comer)",
+        "answer": "comiendo",
+        "why": "-er → -iendo."
+      },
+      {
+        "type": "fill",
+        "q": "Ella está ___ un libro. (leer)",
+        "answer": "leyendo",
+        "why": "Vowel before -er → -yendo."
+      },
+      {
+        "type": "fill",
+        "q": "El bebé está ___. (dormir)",
+        "answer": "durmiendo",
+        "why": "o → u in the gerund."
+      },
+      {
+        "type": "fill",
+        "q": "¿Qué está ___ el mesero? (decir)",
+        "answer": "diciendo",
+        "why": "e → i in the gerund."
+      },
+      {
+        "type": "fill",
+        "q": "Están ___ la cuenta. (pedir)",
+        "answer": "pidiendo",
+        "why": "e → i in the gerund."
+      },
+      {
+        "type": "choice",
+        "q": "I'm leaving tomorrow.",
+        "options": [
+          "Me voy mañana.",
+          "Me estoy yendo mañana.",
+          "Estoy salir mañana."
+        ],
+        "answer": "Me voy mañana.",
+        "why": "Future plans use the present or ir a, not the progressive."
+      },
+      {
+        "type": "choice",
+        "q": "I'm still studying.",
+        "options": [
+          "Sigo estudiando.",
+          "Sigo estudiar.",
+          "Estoy sigo estudiando."
+        ],
+        "answer": "Sigo estudiando.",
+        "why": "seguir + gerund = still."
+      },
+      {
+        "type": "transform",
+        "q": "Busco el metro. → right now",
+        "answer": "Estoy buscando el metro.",
+        "why": "estar + -ando."
+      },
+      {
+        "type": "transform",
+        "q": "Trabajamos. → right now",
+        "answer": "Estamos trabajando.",
+        "why": "estamos + -ando."
+      },
+      {
+        "type": "transform",
+        "q": "Lo busco. → right now",
+        "answer": "Lo estoy buscando.",
+        "alts": [
+          "Estoy buscándolo."
+        ],
+        "why": "Pronoun first or attached."
+      },
+      {
+        "type": "translate",
+        "q": "I'm learning Spanish.",
+        "answer": "Estoy aprendiendo español.",
+        "alts": [
+          "Aprendo español.",
+          "Yo estoy aprendiendo español."
+        ],
+        "why": "estar + -iendo."
+      },
+      {
+        "type": "translate",
+        "q": "What are you doing? (informal)",
+        "answer": "¿Qué estás haciendo?",
+        "alts": [
+          "¿Qué haces?"
+        ],
+        "why": "estás + haciendo."
+      },
+      {
+        "type": "translate",
+        "q": "We're waiting for the bus.",
+        "answer": "Estamos esperando el camión.",
+        "alts": [
+          "Estamos esperando el autobús.",
+          "Esperamos el camión."
+        ],
+        "why": "In Mexico City the bus is el camión."
+      },
+      {
+        "type": "translate",
+        "q": "It's raining.",
+        "answer": "Está lloviendo.",
+        "alts": [
+          "Llueve."
+        ],
+        "why": "llover → lloviendo."
+      },
+      {
+        "type": "translate",
+        "q": "I'm looking for a gift. (Mexican style, with andar)",
+        "answer": "Ando buscando un regalo.",
+        "alts": [
+          "Estoy buscando un regalo.",
+          "Busco un regalo."
+        ],
+        "why": "andar + gerund."
+      }
+    ]
+  },
+  {
+    "id": "g_por_para",
+    "title": "Por vs para",
+    "order": 26,
+    "tier": 3,
+    "summary": "para → goal, recipient, purpose; por → cause, through, exchange, means.",
+    "explain": "| **para** → looks ahead to a goal | **por** → looks back at a cause, or moves through |\n|---|---|\n| recipient: *Es **para** ti.* | cause / thanks: *Gracias **por** todo.* |\n| destination: *Salgo **para** Oaxaca.* | through / around: *Caminamos **por** el centro.* |\n| purpose (in order to): *Estudio **para** hablar con la gente.* | exchange: *Pagué 200 pesos **por** el tour.* |\n| deadline: *Lo necesito **para** el lunes.* | means: ***por** teléfono, **por** WhatsApp* |\n| *una mesa **para** dos* | approximate place: *¿Hay un cajero **por** aquí?* |\n| *¿**Para** qué?* — what for? | *¿**Por** qué?* — why? |\n\n**Fixed phrases with por:** por favor · por fin · por ejemplo · por supuesto · por eso · por aquí · por cierto.\n\n**Mexico:** *para* is often *pa'* in speech (*pa' llevar*). Takeout: ***para llevar*** vs ***para comer aquí***. 'In the morning' is usually *en la mañana*.",
+    "rules": [
+      {
+        "rule": "para: purpose, recipient, destination, deadline.",
+        "examples": [
+          "Es para mi esposa.",
+          "Vamos para el aeropuerto.",
+          "para llevar",
+          "para el lunes"
+        ]
+      },
+      {
+        "rule": "para + infinitive = in order to.",
+        "examples": [
+          "Ahorro para viajar."
+        ]
+      },
+      {
+        "rule": "por: cause / thanks, through / around, exchange, means.",
+        "examples": [
+          "Gracias por la ayuda.",
+          "Caminamos por el mercado.",
+          "Te lo dejo en 100 por los dos.",
+          "por WhatsApp"
+        ]
+      },
+      {
+        "rule": "Fixed phrases with por.",
+        "examples": [
+          "por favor",
+          "por fin",
+          "por ejemplo",
+          "por supuesto",
+          "por eso"
+        ]
+      },
+      {
+        "rule": "¿Por qué? asks the reason; ¿Para qué? asks the purpose.",
+        "examples": [
+          "¿Por qué estás aquí? — Por trabajo.",
+          "¿Para qué es esto? — Para la salsa."
+        ]
+      }
+    ],
+    "drills": [
+      {
+        "type": "choice",
+        "q": "Gracias ___ todo.",
+        "options": [
+          "por",
+          "para"
+        ],
+        "answer": "por",
+        "why": "Thanks for (because of) → por."
+      },
+      {
+        "type": "choice",
+        "q": "Una mesa ___ dos, por favor.",
+        "options": [
+          "para",
+          "por"
+        ],
+        "answer": "para",
+        "why": "Intended for two people → para."
+      },
+      {
+        "type": "choice",
+        "q": "¿Es ___ llevar o para comer aquí?",
+        "options": [
+          "para",
+          "por"
+        ],
+        "answer": "para",
+        "why": "para llevar = to go."
+      },
+      {
+        "type": "choice",
+        "q": "Caminamos ___ el centro histórico.",
+        "options": [
+          "por",
+          "para"
+        ],
+        "answer": "por",
+        "why": "Moving around / through → por."
+      },
+      {
+        "type": "choice",
+        "q": "Este regalo es ___ mi mamá.",
+        "options": [
+          "para",
+          "por"
+        ],
+        "answer": "para",
+        "why": "Recipient → para."
+      },
+      {
+        "type": "choice",
+        "q": "Pagué 300 pesos ___ el tour.",
+        "options": [
+          "por",
+          "para"
+        ],
+        "answer": "por",
+        "why": "In exchange for → por."
+      },
+      {
+        "type": "choice",
+        "q": "Estudio español ___ hablar con la gente.",
+        "options": [
+          "para",
+          "por"
+        ],
+        "answer": "para",
+        "why": "In order to → para."
+      },
+      {
+        "type": "choice",
+        "q": "Te mando la dirección ___ WhatsApp.",
+        "options": [
+          "por",
+          "para"
+        ],
+        "answer": "por",
+        "why": "Means of communication → por."
+      },
+      {
+        "type": "choice",
+        "q": "Necesito el reporte ___ el lunes.",
+        "options": [
+          "para",
+          "por"
+        ],
+        "answer": "para",
+        "why": "Deadline → para."
+      },
+      {
+        "type": "choice",
+        "q": "¿Hay un cajero ___ aquí?",
+        "options": [
+          "por",
+          "para"
+        ],
+        "answer": "por",
+        "why": "Somewhere around here → por aquí."
+      },
+      {
+        "type": "fill",
+        "q": "Salimos ___ Cancún mañana. (heading to)",
+        "answer": "para",
+        "why": "Destination → para."
+      },
+      {
+        "type": "translate",
+        "q": "To go, please. (takeout)",
+        "answer": "Para llevar, por favor.",
+        "alts": [
+          "Para llevar."
+        ],
+        "why": "para llevar = to go."
+      },
+      {
+        "type": "translate",
+        "q": "Thanks for the help.",
+        "answer": "Gracias por la ayuda.",
+        "alts": [
+          "Gracias por su ayuda.",
+          "Gracias por tu ayuda."
+        ],
+        "why": "Thanks for → por."
+      },
+      {
+        "type": "translate",
+        "q": "of course",
+        "answer": "por supuesto",
+        "alts": [
+          "claro",
+          "claro que sí"
+        ],
+        "why": "Fixed phrase with por."
+      },
+      {
+        "type": "translate",
+        "q": "It's for you. (informal)",
+        "answer": "Es para ti.",
+        "why": "Recipient → para; ti has no accent."
+      },
+      {
+        "type": "translate",
+        "q": "I'm here for work.",
+        "answer": "Estoy aquí por trabajo.",
+        "alts": [
+          "Vine por trabajo.",
+          "Estoy aquí por el trabajo."
+        ],
+        "why": "Reason → por."
+      },
+      {
+        "type": "translate",
+        "q": "What for?",
+        "answer": "¿Para qué?",
+        "why": "Purpose → para qué."
+      }
+    ]
+  },
+  {
+    "id": "g_preterite_regular",
+    "title": "Past tense (preterite): regular verbs",
+    "order": 27,
+    "tier": 4,
+    "summary": "hablé, comí, viví — what you did yesterday.",
+    "explain": "The **preterite** tells completed actions: yesterday, last week, once.\n\n| | -ar (**hablar**) | -er / -ir (**comer**, **vivir**) |\n|---|---|---|\n| yo | habl**é** | com**í** |\n| tú | habl**aste** | com**iste** |\n| él / ella / usted | habl**ó** | com**ió** |\n| nosotros | habl**amos** | com**imos** |\n| ellos / ustedes | habl**aron** | com**ieron** |\n\n**Accents matter:** *hablo* (I speak) vs *habló* (he spoke).\n\n**Spelling in the yo form:** -car → **-qué** (*busqué*), -gar → **-gué** (*llegué, pagué*), -zar → **-cé** (*empecé*).\n\n**Vowel stems:** *leer → leyó, leyeron · creer → creyó*.\n\n**Stem changes:** -ar / -er verbs don't change (*pensé, volví*). -ir stem-changers change only in él / ellos: *pidió, pidieron · durmió, durmieron*.\n\n**Time words:** ayer · anoche · antier (Mexico) · la semana pasada · el año pasado · **hace** dos días (two days ago).\n\n*nosotros* -ar / -ir looks like the present (*hablamos, vivimos*) — context tells you.",
+    "rules": [
+      {
+        "rule": "-ar: -é, -aste, -ó, -amos, -aron.",
+        "examples": [
+          "llegué, llegaste, llegó, llegamos, llegaron"
+        ]
+      },
+      {
+        "rule": "-er / -ir: -í, -iste, -ió, -imos, -ieron.",
+        "examples": [
+          "comí, comiste, comió, comimos, comieron"
+        ]
+      },
+      {
+        "rule": "yo: -car → -qué, -gar → -gué, -zar → -cé.",
+        "examples": [
+          "busqué",
+          "pagué",
+          "llegué",
+          "empecé"
+        ]
+      },
+      {
+        "rule": "The accent changes the meaning.",
+        "examples": [
+          "hablo (I speak) / habló (he spoke)",
+          "tomo / tomó"
+        ]
+      },
+      {
+        "rule": "-ir stem-changers change only in él / ellos.",
+        "examples": [
+          "pidió, pidieron",
+          "durmió, durmieron"
+        ]
+      },
+      {
+        "rule": "hace + time = ago.",
+        "examples": [
+          "Llegué hace dos días."
+        ]
+      }
+    ],
+    "drills": [
+      {
+        "type": "fill",
+        "q": "Ayer yo ___ tacos al pastor. (comer)",
+        "answer": "comí",
+        "why": "-er, yo → -í."
+      },
+      {
+        "type": "fill",
+        "q": "Anoche nosotros ___ mezcal. (tomar)",
+        "answer": "tomamos",
+        "why": "-ar, nosotros → -amos."
+      },
+      {
+        "type": "fill",
+        "q": "¿A qué hora ___ tú? (llegar)",
+        "answer": "llegaste",
+        "why": "-ar, tú → -aste."
+      },
+      {
+        "type": "fill",
+        "q": "Ella me ___ un mensaje. (escribir)",
+        "answer": "escribió",
+        "why": "-ir, ella → -ió."
+      },
+      {
+        "type": "fill",
+        "q": "Yo ___ la cuenta. (pagar)",
+        "answer": "pagué",
+        "why": "-gar → -gué in the yo form."
+      },
+      {
+        "type": "fill",
+        "q": "Ellos se ___ en un hotel en Coyoacán. (quedarse)",
+        "answer": "quedaron",
+        "why": "-ar, ellos → -aron."
+      },
+      {
+        "type": "fill",
+        "q": "Yo ___ mi celular por todas partes. (buscar)",
+        "answer": "busqué",
+        "why": "-car → -qué in the yo form."
+      },
+      {
+        "type": "fill",
+        "q": "¿Usted ___ el pozole? (probar)",
+        "answer": "probó",
+        "why": "-ar, usted → -ó."
+      },
+      {
+        "type": "fill",
+        "q": "El camión ___ a las ocho. (salir)",
+        "answer": "salió",
+        "why": "-ir, él → -ió."
+      },
+      {
+        "type": "choice",
+        "q": "I spoke with the receptionist.",
+        "options": [
+          "Hablé con la recepcionista.",
+          "Hablo con la recepcionista.",
+          "Habló con la recepcionista."
+        ],
+        "answer": "Hablé con la recepcionista.",
+        "why": "yo, past → -é."
+      },
+      {
+        "type": "choice",
+        "q": "She asked for the bill.",
+        "options": [
+          "Pidió la cuenta.",
+          "Pedió la cuenta.",
+          "Pido la cuenta."
+        ],
+        "answer": "Pidió la cuenta.",
+        "why": "-ir stem-changer: e → i in the él form."
+      },
+      {
+        "type": "transform",
+        "q": "Compro un boleto. → yesterday",
+        "answer": "Ayer compré un boleto.",
+        "alts": [
+          "Compré un boleto ayer.",
+          "Compré un boleto."
+        ],
+        "why": "compro → compré."
+      },
+      {
+        "type": "transform",
+        "q": "Comemos en el mercado. → yesterday",
+        "answer": "Ayer comimos en el mercado.",
+        "alts": [
+          "Comimos en el mercado ayer.",
+          "Comimos en el mercado."
+        ],
+        "why": "comemos → comimos."
+      },
+      {
+        "type": "transform",
+        "q": "Llego a las diez. → past",
+        "answer": "Llegué a las diez.",
+        "why": "-gar → -gué."
+      },
+      {
+        "type": "translate",
+        "q": "I arrived two days ago.",
+        "answer": "Llegué hace dos días.",
+        "alts": [
+          "Yo llegué hace dos días.",
+          "Hace dos días llegué."
+        ],
+        "why": "hace + time = ago."
+      },
+      {
+        "type": "translate",
+        "q": "Did you sleep well? (informal)",
+        "answer": "¿Dormiste bien?",
+        "alts": [
+          "¿Tú dormiste bien?"
+        ],
+        "why": "dormir → dormiste."
+      },
+      {
+        "type": "translate",
+        "q": "We visited the market.",
+        "answer": "Visitamos el mercado.",
+        "alts": [
+          "Fuimos al mercado."
+        ],
+        "why": "visitar → visitamos."
+      },
+      {
+        "type": "translate",
+        "q": "They didn't like it.",
+        "answer": "No les gustó.",
+        "alts": [
+          "A ellos no les gustó.",
+          "No les gustó a ellos."
+        ],
+        "why": "One thing → gustó."
+      }
+    ]
+  },
+  {
+    "id": "g_preterite_irregular",
+    "title": "Past tense: irregular verbs (fui, tuve, hice…)",
+    "order": 28,
+    "tier": 4,
+    "summary": "fui, tuve, estuve, hice, pude, dije — the past forms you'll use most.",
+    "explain": "| | ir / ser | tener | estar | hacer | poder | decir |\n|---|---|---|---|---|---|---|\n| yo | **fui** | **tuve** | **estuve** | **hice** | **pude** | **dije** |\n| tú | fuiste | tuviste | estuviste | hiciste | pudiste | dijiste |\n| él / ella / usted | **fue** | tuvo | estuvo | **hizo** | pudo | dijo |\n| nosotros | fuimos | tuvimos | estuvimos | hicimos | pudimos | dijimos |\n| ellos / ustedes | fueron | tuvieron | estuvieron | hicieron | pudieron | **dijeron** |\n\n**More:** venir → vine · querer → quise · poner → puse · saber → supe · traer → traje (**trajeron**) · dar → di, dio · ver → vi, vio.\n\n- **No accents** on these: *fui, fue, hice, tuvo, vi, di*.\n- **ir** and **ser** share forms: *Fui al Zócalo* (I went) · *Fue increíble* (It was amazing).\n- j-stems take **-eron**: *dijeron, trajeron*.\n\n**Small talk:** *¿Cómo te fue?* (How did it go?) — *Me fue muy bien.*",
+    "rules": [
+      {
+        "rule": "ir and ser share: fui, fuiste, fue, fuimos, fueron.",
+        "examples": [
+          "Fui a Teotihuacán. (went)",
+          "Fue increíble. (was)"
+        ]
+      },
+      {
+        "rule": "Special stems + -e, -iste, -o, -imos, -ieron — no accents.",
+        "examples": [
+          "tuve, estuve, pude, puse, supe, quise, vine, hice"
+        ]
+      },
+      {
+        "rule": "hacer → hizo (z) in the él form.",
+        "examples": [
+          "¿Qué hizo usted ayer?"
+        ]
+      },
+      {
+        "rule": "j-stems drop the i in ellos: -eron.",
+        "examples": [
+          "dijeron",
+          "trajeron"
+        ]
+      },
+      {
+        "rule": "dar and ver: di / dio, vi / vio — no accents.",
+        "examples": [
+          "Le di propina.",
+          "Vi las pirámides."
+        ]
+      },
+      {
+        "rule": "¿Cómo te fue? / ¿Cómo le fue? = How did it go?",
+        "examples": [
+          "Me fue muy bien."
+        ]
+      }
+    ],
+    "drills": [
+      {
+        "type": "fill",
+        "q": "Ayer ___ al Zócalo. (yo, ir)",
+        "answer": "fui",
+        "why": "ir → fui."
+      },
+      {
+        "type": "fill",
+        "q": "¿Qué ___ ayer? (tú, hacer)",
+        "answer": "hiciste",
+        "why": "hacer → hiciste."
+      },
+      {
+        "type": "fill",
+        "q": "___ un problema con el carro. (yo, tener)",
+        "answer": "Tuve",
+        "why": "tener → tuve."
+      },
+      {
+        "type": "fill",
+        "q": "Nosotros ___ en Oaxaca tres días. (estar)",
+        "answer": "estuvimos",
+        "why": "estar → estuvimos."
+      },
+      {
+        "type": "fill",
+        "q": "No ___ dormir. (yo, poder)",
+        "answer": "pude",
+        "why": "poder → pude."
+      },
+      {
+        "type": "fill",
+        "q": "El taxista me ___ que no. (decir)",
+        "answer": "dijo",
+        "why": "decir → dijo."
+      },
+      {
+        "type": "fill",
+        "q": "¿Qué ___ usted ayer? (hacer)",
+        "answer": "hizo",
+        "why": "hacer → hizo (z, not c)."
+      },
+      {
+        "type": "fill",
+        "q": "Ellos ___ a la fiesta. (venir)",
+        "answer": "vinieron",
+        "why": "venir → vinieron."
+      },
+      {
+        "type": "fill",
+        "q": "El mesero nos ___ la cuenta. (traer)",
+        "answer": "trajo",
+        "why": "traer → trajo."
+      },
+      {
+        "type": "choice",
+        "q": "It was amazing.",
+        "options": [
+          "Fue increíble.",
+          "Fui increíble.",
+          "Fueron increíble."
+        ],
+        "answer": "Fue increíble.",
+        "why": "ser, él form → fue."
+      },
+      {
+        "type": "choice",
+        "q": "They said yes.",
+        "options": [
+          "Dijeron que sí.",
+          "Dijieron que sí.",
+          "Decieron que sí."
+        ],
+        "answer": "Dijeron que sí.",
+        "why": "j-stem → -eron, no i."
+      },
+      {
+        "type": "choice",
+        "q": "I saw the pyramids.",
+        "options": [
+          "Vi las pirámides.",
+          "Ví las pirámides.",
+          "Veí las pirámides."
+        ],
+        "answer": "Vi las pirámides.",
+        "why": "vi has no accent."
+      },
+      {
+        "type": "transform",
+        "q": "Voy al mercado. → yesterday",
+        "answer": "Ayer fui al mercado.",
+        "alts": [
+          "Fui al mercado ayer.",
+          "Fui al mercado."
+        ],
+        "why": "voy → fui."
+      },
+      {
+        "type": "transform",
+        "q": "Tenemos que esperar. → past",
+        "answer": "Tuvimos que esperar.",
+        "why": "tenemos → tuvimos."
+      },
+      {
+        "type": "translate",
+        "q": "How did it go? (informal)",
+        "answer": "¿Cómo te fue?",
+        "why": "ir → fue, with te."
+      },
+      {
+        "type": "translate",
+        "q": "It went very well for me.",
+        "answer": "Me fue muy bien.",
+        "why": "me + fue + bien."
+      },
+      {
+        "type": "translate",
+        "q": "We went to Teotihuacán.",
+        "answer": "Fuimos a Teotihuacán.",
+        "alts": [
+          "Nosotros fuimos a Teotihuacán."
+        ],
+        "why": "ir → fuimos."
+      },
+      {
+        "type": "translate",
+        "q": "I gave him a tip.",
+        "answer": "Le di propina.",
+        "alts": [
+          "Le di una propina."
+        ],
+        "why": "dar → di; to him → le."
+      }
+    ]
+  },
+  {
+    "id": "g_imperfect",
+    "title": "Imperfect vs preterite (the basics)",
+    "order": 29,
+    "tier": 4,
+    "summary": "Imperfect sets the scene (was, used to); preterite tells what happened.",
+    "explain": "The **imperfect** describes the background: what was going on, how things were, what you used to do.\n\n| | -ar (**estar**) | -er / -ir (**tener**, **vivir**) |\n|---|---|---|\n| yo | estaba | tenía |\n| tú | estabas | tenías |\n| él / ella / usted | estaba | tenía |\n| nosotros | estábamos | teníamos |\n| ellos / ustedes | estaban | tenían |\n\nOnly three irregulars: **ser** → era, eras, era, éramos, eran · **ir** → iba, ibas, iba, íbamos, iban · **ver** → veía. And *hay → había*.\n\n| Imperfect = the scene | Preterite = the event |\n|---|---|\n| *Eran las diez y llovía…* | *…cuando llegó el taxi.* |\n| *Estaba cansado…* | *…y me fui a dormir.* |\n| *De niño comía muchos dulces.* (habit) | *Ayer comí mucho.* (once) |\n| *Había mucha gente.* | *Vimos el desfile.* |\n\n- **Time and age** in the past → always imperfect: *Eran las tres. Tenía diez años.*\n- A **finished block** of time → preterite: *Estuve dos horas en el museo.*\n- Mexico loves *estuvo* for judging an event: *¡Estuvo padrísimo!* (It was awesome!)",
+    "rules": [
+      {
+        "rule": "-ar → -aba; -er / -ir → -ía.",
+        "examples": [
+          "caminaba",
+          "comía",
+          "vivía"
+        ]
+      },
+      {
+        "rule": "Only ser (era), ir (iba) and ver (veía) are irregular.",
+        "examples": [
+          "Era muy temprano.",
+          "Iba al metro."
+        ]
+      },
+      {
+        "rule": "Imperfect sets the scene: time, weather, age, feelings, what was going on.",
+        "examples": [
+          "Eran las ocho.",
+          "Hacía calor.",
+          "Estaba cansado."
+        ]
+      },
+      {
+        "rule": "Preterite tells what happened.",
+        "examples": [
+          "Llegó el camión.",
+          "Comimos tacos."
+        ]
+      },
+      {
+        "rule": "Imperfect (background) + cuando + preterite (interruption).",
+        "examples": [
+          "Caminaba por el centro cuando empezó a llover."
+        ]
+      },
+      {
+        "rule": "Habits — 'used to' → imperfect.",
+        "examples": [
+          "De niño jugaba fútbol."
+        ]
+      }
+    ],
+    "drills": [
+      {
+        "type": "fill",
+        "q": "Cuando ___ niño, vivía en Texas. (ser)",
+        "answer": "era",
+        "why": "Age / life stage → imperfect: era."
+      },
+      {
+        "type": "fill",
+        "q": "___ las diez de la noche. (ser)",
+        "answer": "Eran",
+        "why": "Time in the past → imperfect; plural hours → eran."
+      },
+      {
+        "type": "fill",
+        "q": "___ mucha gente en el metro. (haber)",
+        "answer": "Había",
+        "why": "Description → había."
+      },
+      {
+        "type": "fill",
+        "q": "Yo ___ muy cansado. (estar)",
+        "answer": "estaba",
+        "why": "A feeling in the background → estaba."
+      },
+      {
+        "type": "fill",
+        "q": "Nosotros ___ a la playa cada verano. (ir)",
+        "answer": "íbamos",
+        "why": "A habit → imperfect of ir."
+      },
+      {
+        "type": "fill",
+        "q": "Hacía frío y ___. (llover)",
+        "answer": "llovía",
+        "why": "Weather as background → llovía."
+      },
+      {
+        "type": "choice",
+        "q": "Caminaba por el centro cuando ___ a llover.",
+        "options": [
+          "empezó",
+          "empezaba"
+        ],
+        "answer": "empezó",
+        "why": "The interruption → preterite."
+      },
+      {
+        "type": "choice",
+        "q": "Yesterday I ate at a taquería.",
+        "options": [
+          "Ayer comí en una taquería.",
+          "Ayer comía en una taquería."
+        ],
+        "answer": "Ayer comí en una taquería.",
+        "why": "One completed event → preterite."
+      },
+      {
+        "type": "choice",
+        "q": "When I was a kid, I ate a lot of candy.",
+        "options": [
+          "Cuando era niño, comía muchos dulces.",
+          "Cuando fui niño, comí muchos dulces."
+        ],
+        "answer": "Cuando era niño, comía muchos dulces.",
+        "why": "Childhood habits → imperfect."
+      },
+      {
+        "type": "choice",
+        "q": "I was 20 years old.",
+        "options": [
+          "Tenía veinte años.",
+          "Tuve veinte años."
+        ],
+        "answer": "Tenía veinte años.",
+        "why": "Age in the past → imperfect."
+      },
+      {
+        "type": "choice",
+        "q": "We spent two hours in the museum.",
+        "options": [
+          "Estuvimos dos horas en el museo.",
+          "Estábamos dos horas en el museo."
+        ],
+        "answer": "Estuvimos dos horas en el museo.",
+        "why": "A finished, measured block of time → preterite."
+      },
+      {
+        "type": "transform",
+        "q": "Estoy cansado. → past (background)",
+        "answer": "Estaba cansado.",
+        "why": "estoy → estaba."
+      },
+      {
+        "type": "transform",
+        "q": "Hay mucha gente. → past (description)",
+        "answer": "Había mucha gente.",
+        "why": "hay → había."
+      },
+      {
+        "type": "translate",
+        "q": "It was very hot.",
+        "answer": "Hacía mucho calor.",
+        "alts": [
+          "Hacía un calor tremendo."
+        ],
+        "why": "Weather background → hacía."
+      },
+      {
+        "type": "translate",
+        "q": "It was three in the afternoon.",
+        "answer": "Eran las tres de la tarde.",
+        "why": "Time → eran."
+      },
+      {
+        "type": "translate",
+        "q": "I was waiting for the bus when you called me. (informal)",
+        "answer": "Estaba esperando el camión cuando me llamaste.",
+        "alts": [
+          "Esperaba el camión cuando me llamaste.",
+          "Estaba esperando el autobús cuando me llamaste.",
+          "Esperaba el autobús cuando me llamaste."
+        ],
+        "why": "Background (imperfect) + interruption (preterite)."
+      },
+      {
+        "type": "translate",
+        "q": "The party was great! (Mexico)",
+        "answer": "¡La fiesta estuvo padrísima!",
+        "alts": [
+          "¡La fiesta estuvo padre!",
+          "¡La fiesta estuvo muy buena!",
+          "¡La fiesta fue increíble!",
+          "¡La fiesta estuvo increíble!"
+        ],
+        "why": "Judging a finished event → estuvo."
+      }
+    ]
+  },
+  {
+    "id": "g_comparisons",
+    "title": "Comparisons: más… que, tan… como, mejor",
+    "order": 30,
+    "tier": 4,
+    "summary": "Compare prices, places and tacos: more, less, as… as, best.",
+    "explain": "| Pattern | Example |\n|---|---|\n| **más** + adj / noun + **que** | *Oaxaca es más tranquilo que la capital.* |\n| **menos** + adj / noun + **que** | *El metro es menos caro que el taxi.* |\n| **tan** + adj + **como** | *Es tan bonito como Cancún.* |\n| **tanto / tanta / tantos / tantas** + noun + **como** | *No tengo tanto dinero como tú.* |\n| verb + **tanto como** | *Como tanto como tú.* |\n\n**Irregular:** bueno → **mejor** · malo → **peor** · (age) older → **mayor**, younger → **menor**. For size: *más grande, más chico*.\n\n**Superlative:** *el / la / los / las + más + adj (+ de)*: *el mercado más grande **de** la ciudad · el mejor taco **de** mi vida*.\n\n**With numbers** → **más de**: *más de cien pesos*.\n\n**-ísimo** = super: *riquísimo, carísimo, padrísimo, muchísimo*.\n\nMexico: **Mejor…** also means 'rather / better to': *Mejor vamos mañana.*",
+    "rules": [
+      {
+        "rule": "más / menos + adjective + que.",
+        "examples": [
+          "más barato que",
+          "menos picante que"
+        ]
+      },
+      {
+        "rule": "tan + adjective + como (as… as).",
+        "examples": [
+          "tan grande como",
+          "tan rico como"
+        ]
+      },
+      {
+        "rule": "Irregular: mejor, peor, mayor, menor.",
+        "examples": [
+          "Este taco es mejor.",
+          "Mi hermano es mayor que yo."
+        ],
+        "exceptions": [
+          "Don't say más bueno or más mejor."
+        ]
+      },
+      {
+        "rule": "Superlative: el / la más … de.",
+        "examples": [
+          "la ciudad más grande de México",
+          "el mejor restaurante de la colonia"
+        ]
+      },
+      {
+        "rule": "más de before numbers.",
+        "examples": [
+          "más de cien pesos"
+        ]
+      },
+      {
+        "rule": "-ísimo = extremely.",
+        "examples": [
+          "riquísimo",
+          "carísimo",
+          "muchísimo"
+        ]
+      }
+    ],
+    "drills": [
+      {
+        "type": "choice",
+        "q": "Este hotel es ___ caro que el otro.",
+        "options": [
+          "más",
+          "tan",
+          "mucho"
+        ],
+        "answer": "más",
+        "why": "more … than → más … que."
+      },
+      {
+        "type": "choice",
+        "q": "Oaxaca es tan bonito ___ Guanajuato.",
+        "options": [
+          "como",
+          "que",
+          "de"
+        ],
+        "answer": "como",
+        "why": "tan … como."
+      },
+      {
+        "type": "choice",
+        "q": "Estos tacos son ___ que los de ayer. (better)",
+        "options": [
+          "mejores",
+          "más buenos",
+          "mejor"
+        ],
+        "answer": "mejores",
+        "why": "mejor agrees in number: tacos → mejores."
+      },
+      {
+        "type": "choice",
+        "q": "Cuesta ___ 500 pesos.",
+        "options": [
+          "más de",
+          "más que"
+        ],
+        "answer": "más de",
+        "why": "Before a number → más de."
+      },
+      {
+        "type": "choice",
+        "q": "Es la ciudad más grande ___ México.",
+        "options": [
+          "de",
+          "que",
+          "como"
+        ],
+        "answer": "de",
+        "why": "Superlative + de."
+      },
+      {
+        "type": "choice",
+        "q": "My brother is younger than me.",
+        "options": [
+          "Mi hermano es menor que yo.",
+          "Mi hermano es menor que mí.",
+          "Mi hermano es más menor que yo."
+        ],
+        "answer": "Mi hermano es menor que yo.",
+        "why": "menor already means 'younger'; que + yo."
+      },
+      {
+        "type": "fill",
+        "q": "Mi hermana es ___ que yo. (older)",
+        "answer": "mayor",
+        "why": "Older → mayor."
+      },
+      {
+        "type": "fill",
+        "q": "La salsa verde es ___ picante que la roja. (less)",
+        "answer": "menos",
+        "why": "less … than → menos … que."
+      },
+      {
+        "type": "fill",
+        "q": "Este mezcal es ___ que el otro. (worse)",
+        "answer": "peor",
+        "why": "malo → peor."
+      },
+      {
+        "type": "fill",
+        "q": "¡La comida está ___! (rica → super tasty)",
+        "answer": "riquísima",
+        "why": "rica → riquísima (c → qu)."
+      },
+      {
+        "type": "transform",
+        "q": "El metro es barato. El taxi es caro. → compare the metro",
+        "answer": "El metro es más barato que el taxi.",
+        "alts": [
+          "El metro es menos caro que el taxi."
+        ],
+        "why": "más + adjective + que."
+      },
+      {
+        "type": "transform",
+        "q": "Ana es alta. Luis es alto. → same height",
+        "answer": "Ana es tan alta como Luis.",
+        "alts": [
+          "Luis es tan alto como Ana."
+        ],
+        "why": "tan + adjective + como."
+      },
+      {
+        "type": "translate",
+        "q": "the best taco in the city",
+        "answer": "el mejor taco de la ciudad",
+        "why": "Superlative: el mejor … de."
+      },
+      {
+        "type": "translate",
+        "q": "It's more expensive than in Texas.",
+        "answer": "Es más caro que en Texas.",
+        "alts": [
+          "Está más caro que en Texas."
+        ],
+        "why": "más … que."
+      },
+      {
+        "type": "translate",
+        "q": "I don't have as much money as you. (informal)",
+        "answer": "No tengo tanto dinero como tú.",
+        "why": "tanto + noun + como."
+      },
+      {
+        "type": "translate",
+        "q": "It's super expensive!",
+        "answer": "¡Está carísimo!",
+        "alts": [
+          "¡Es carísimo!",
+          "¡Está muy caro!"
+        ],
+        "why": "caro → carísimo."
+      },
+      {
+        "type": "translate",
+        "q": "Better tomorrow. (Let's do it tomorrow instead.)",
+        "answer": "Mejor mañana.",
+        "alts": [
+          "Mejor vamos mañana."
+        ],
+        "why": "Mejor = rather / better."
+      }
+    ]
+  },
+  {
+    "id": "g_acabar_volver_soler",
+    "title": "Acabar de, volver a, soler & friends",
+    "order": 31,
+    "tier": 4,
+    "summary": "I just…, …again, I usually… — handy verb + infinitive frames.",
+    "explain": "| Frame | Meaning | Example |\n|---|---|---|\n| **acabar de** + inf | have just (done) | *Acabo de llegar.* — I just arrived. |\n| **volver a** + inf | do again | *¿Me lo puede volver a explicar?* |\n| **soler** + inf (o → ue) | usually do | *Suelo desayunar a las ocho.* |\n| **empezar a** + inf | start to | *Empezó a llover.* |\n| **dejar de** + inf | stop doing | *Dejé de fumar.* |\n| **tratar de** + inf | try to | *Trato de hablar español.* |\n| **pensar** + inf | plan to | *Pienso ir a Puebla.* |\n\n- *acabar de* in the present = 'just': *Acabamos de comer.* (*Acabé de comer* = I finished eating.)\n- *soler*: suelo, sueles, suele, solemos, suelen. In everyday Mexican speech *normalmente* or *casi siempre* is just as common.\n- *volver a* is great for promises: *¡No vuelvo a tomar mezcal!* (Never again!)",
+    "rules": [
+      {
+        "rule": "acabar de + infinitive = have just done.",
+        "examples": [
+          "Acabo de llegar.",
+          "Acabamos de comer."
+        ]
+      },
+      {
+        "rule": "volver a + infinitive = do again.",
+        "examples": [
+          "¿Me lo vuelve a explicar?",
+          "Vuelvo a llamar más tarde."
+        ]
+      },
+      {
+        "rule": "soler + infinitive = usually (o → ue).",
+        "examples": [
+          "Suelo tomar café en la mañana.",
+          "¿Qué sueles comer?"
+        ]
+      },
+      {
+        "rule": "More frames: empezar a, dejar de, tratar de, pensar + infinitive.",
+        "examples": [
+          "Empezó a llover.",
+          "Dejé de fumar.",
+          "Trato de entender."
+        ]
+      }
+    ],
+    "drills": [
+      {
+        "type": "fill",
+        "q": "Acabo ___ llegar a México.",
+        "answer": "de",
+        "why": "acabar de + infinitive."
+      },
+      {
+        "type": "fill",
+        "q": "¿Puede volver ___ decirlo?",
+        "answer": "a",
+        "why": "volver a + infinitive."
+      },
+      {
+        "type": "fill",
+        "q": "Yo ___ desayunar a las ocho. (soler)",
+        "answer": "suelo",
+        "why": "soler → suelo (o → ue)."
+      },
+      {
+        "type": "fill",
+        "q": "Nosotros ___ de comer. (acabar)",
+        "answer": "acabamos",
+        "why": "acabar → acabamos."
+      },
+      {
+        "type": "fill",
+        "q": "Empezó ___ llover.",
+        "answer": "a",
+        "why": "empezar a + infinitive."
+      },
+      {
+        "type": "fill",
+        "q": "Trato ___ hablar español todos los días.",
+        "answer": "de",
+        "why": "tratar de + infinitive."
+      },
+      {
+        "type": "choice",
+        "q": "I just ate.",
+        "options": [
+          "Acabo de comer.",
+          "Acabo comer.",
+          "Acabé de comer."
+        ],
+        "answer": "Acabo de comer.",
+        "why": "Present acabar de = just. Acabé de comer = I finished eating."
+      },
+      {
+        "type": "choice",
+        "q": "Can you say it again?",
+        "options": [
+          "¿Lo puede volver a decir?",
+          "¿Lo puede volver decir?",
+          "¿Lo puede decir volver?"
+        ],
+        "answer": "¿Lo puede volver a decir?",
+        "why": "volver a + infinitive — keep the a."
+      },
+      {
+        "type": "choice",
+        "q": "I usually walk.",
+        "options": [
+          "Suelo caminar.",
+          "Soleo caminar.",
+          "Suelo camino."
+        ],
+        "answer": "Suelo caminar.",
+        "why": "soler → suelo + infinitive."
+      },
+      {
+        "type": "transform",
+        "q": "Llamo otra vez. → volver a",
+        "answer": "Vuelvo a llamar.",
+        "why": "volver a + infinitive."
+      },
+      {
+        "type": "transform",
+        "q": "Normalmente como en casa. → soler",
+        "answer": "Suelo comer en casa.",
+        "why": "suelo + infinitive."
+      },
+      {
+        "type": "translate",
+        "q": "We just arrived.",
+        "answer": "Acabamos de llegar.",
+        "alts": [
+          "Nosotros acabamos de llegar.",
+          "Ya llegamos."
+        ],
+        "why": "acabar de = just."
+      },
+      {
+        "type": "translate",
+        "q": "I'm trying to learn Spanish.",
+        "answer": "Trato de aprender español.",
+        "alts": [
+          "Estoy tratando de aprender español.",
+          "Intento aprender español."
+        ],
+        "why": "tratar de + infinitive."
+      },
+      {
+        "type": "translate",
+        "q": "It started to rain.",
+        "answer": "Empezó a llover.",
+        "alts": [
+          "Comenzó a llover."
+        ],
+        "why": "empezar a + infinitive."
+      },
+      {
+        "type": "translate",
+        "q": "I'm planning to go to Puebla.",
+        "answer": "Pienso ir a Puebla.",
+        "alts": [
+          "Voy a ir a Puebla."
+        ],
+        "why": "pensar + infinitive = plan to."
+      },
+      {
+        "type": "translate",
+        "q": "I'm never drinking mezcal again!",
+        "answer": "¡No vuelvo a tomar mezcal!",
+        "alts": [
+          "¡Nunca vuelvo a tomar mezcal!",
+          "¡Nunca más tomo mezcal!"
+        ],
+        "why": "no volver a = never again."
+      }
+    ]
+  },
+  {
+    "id": "g_subjunctive_taste",
+    "title": "A taste of the subjunctive: ojalá, quiero que, para que",
+    "order": 32,
+    "tier": 4,
+    "summary": "Wishes and fixed phrases: Ojalá que no llueva. ¡Que te vaya bien!",
+    "explain": "The **subjunctive** is a mood for wishes, requests and purposes. You don't need all of it now — just a few frames you'll hear every day.\n\n**Form** (same as usted commands): yo form, drop -o, swap the vowel — -ar → **-e**, -er / -ir → **-a**.\n\n| | hablar | comer | tener | ir | ser | estar |\n|---|---|---|---|---|---|---|\n| yo / él / usted | hable | coma | tenga | vaya | sea | esté |\n| tú | hables | comas | tengas | vayas | seas | estés |\n| ellos / ustedes | hablen | coman | tengan | vayan | sean | estén |\n\n| Frame | Meaning | Example |\n|---|---|---|\n| **ojalá (que)** + subj. | hopefully / I hope | *Ojalá que no llueva.* |\n| **quiero que** + subj. | I want (someone) to | *Quiero que vengas.* |\n| **espero que** + subj. | I hope that | *Espero que te guste.* |\n| **para que** + subj. | so that | *Te doy mi número para que me llames.* |\n| **cuando** + subj. (future) | when (it happens) | *Cuando llegues, me avisas.* |\n\n**Same person → infinitive:** *Quiero ir.* **Different person → que + subjunctive:** *Quiero que vayas.*\n\n**Ready-made:** *¡Que te vaya bien! / ¡Que le vaya bien!* (have a good one) · *¡Que descanses!* · *¡Que te mejores!* · *¡Que lo disfrutes!* · *Como quieras* · *Cuando quieras* · *Lo que sea.*",
+    "rules": [
+      {
+        "rule": "Form: from yo, drop -o, swap the vowel (like usted commands).",
+        "examples": [
+          "hablo → hable",
+          "como → coma",
+          "tengo → tenga"
+        ],
+        "exceptions": [
+          "ser → sea, ir → vaya, estar → esté, saber → sepa, haber → haya"
+        ]
+      },
+      {
+        "rule": "ojalá (que) + subjunctive.",
+        "examples": [
+          "Ojalá que haga buen tiempo.",
+          "Ojalá no llueva."
+        ]
+      },
+      {
+        "rule": "quiero que / espero que + a different subject.",
+        "examples": [
+          "Quiero que vengas.",
+          "Espero que te guste."
+        ],
+        "exceptions": [
+          "Same person → infinitive: Quiero ir."
+        ]
+      },
+      {
+        "rule": "para que + subjunctive = so that.",
+        "examples": [
+          "Te doy mi número para que me llames."
+        ]
+      },
+      {
+        "rule": "Fixed goodbyes and wishes.",
+        "examples": [
+          "¡Que te vaya bien!",
+          "¡Que le vaya bien!",
+          "¡Que descanses!"
+        ]
+      }
+    ],
+    "drills": [
+      {
+        "type": "choice",
+        "q": "Ojalá que no ___. (llover)",
+        "options": [
+          "llueva",
+          "llueve",
+          "llover"
+        ],
+        "answer": "llueva",
+        "why": "ojalá + subjunctive."
+      },
+      {
+        "type": "choice",
+        "q": "Quiero que ___ a mi casa. (tú, venir)",
+        "options": [
+          "vengas",
+          "vienes",
+          "venir"
+        ],
+        "answer": "vengas",
+        "why": "Different subject after quiero que → subjunctive."
+      },
+      {
+        "type": "choice",
+        "q": "Espero que te ___ el regalo. (gustar)",
+        "options": [
+          "guste",
+          "gusta",
+          "gustar"
+        ],
+        "answer": "guste",
+        "why": "espero que + subjunctive."
+      },
+      {
+        "type": "choice",
+        "q": "I want to go.",
+        "options": [
+          "Quiero ir.",
+          "Quiero que vaya.",
+          "Quiero que voy."
+        ],
+        "answer": "Quiero ir.",
+        "why": "Same subject → infinitive."
+      },
+      {
+        "type": "choice",
+        "q": "Have a good one! (to a taxi driver, formal)",
+        "options": [
+          "¡Que le vaya bien!",
+          "¡Que te vas bien!",
+          "¡Que le va bien!"
+        ],
+        "answer": "¡Que le vaya bien!",
+        "why": "Fixed wish: que + le + vaya."
+      },
+      {
+        "type": "fill",
+        "q": "Te doy mi número para que me ___. (llamar)",
+        "answer": "llames",
+        "why": "para que + subjunctive: llames."
+      },
+      {
+        "type": "fill",
+        "q": "Ojalá que ___ buen tiempo mañana. (hacer)",
+        "answer": "haga",
+        "why": "hago → haga."
+      },
+      {
+        "type": "fill",
+        "q": "Espero que ___ bien. (tú, estar)",
+        "answer": "estés",
+        "why": "estar → estés."
+      },
+      {
+        "type": "fill",
+        "q": "Quiero que ustedes ___ los tacos de aquí. (probar)",
+        "answer": "prueben",
+        "why": "pruebo → prueben (o → ue)."
+      },
+      {
+        "type": "transform",
+        "q": "Vienes. → Quiero que…",
+        "answer": "Quiero que vengas.",
+        "why": "vengo → venga → vengas."
+      },
+      {
+        "type": "transform",
+        "q": "Tienes un buen viaje. → Espero que…",
+        "answer": "Espero que tengas un buen viaje.",
+        "why": "tengo → tenga → tengas."
+      },
+      {
+        "type": "translate",
+        "q": "I hope you like it. (informal)",
+        "answer": "Espero que te guste.",
+        "alts": [
+          "Ojalá que te guste.",
+          "Ojalá te guste."
+        ],
+        "why": "espero que + subjunctive."
+      },
+      {
+        "type": "translate",
+        "q": "Have a good one! (informal)",
+        "answer": "¡Que te vaya bien!",
+        "why": "Fixed wish with te."
+      },
+      {
+        "type": "translate",
+        "q": "Get some rest! (informal)",
+        "answer": "¡Que descanses!",
+        "why": "Fixed wish: que + descanses."
+      },
+      {
+        "type": "translate",
+        "q": "Hopefully it doesn't rain.",
+        "answer": "Ojalá que no llueva.",
+        "alts": [
+          "Ojalá no llueva."
+        ],
+        "why": "ojalá + subjunctive."
+      },
+      {
+        "type": "translate",
+        "q": "Whenever you want. (informal)",
+        "answer": "Cuando quieras.",
+        "why": "Fixed phrase: cuando + subjunctive."
+      },
+      {
+        "type": "translate",
+        "q": "Get well soon! (formal)",
+        "answer": "¡Que se mejore!",
+        "alts": [
+          "¡Que se mejore pronto!"
+        ],
+        "why": "Fixed wish with usted."
+      }
+    ]
+  }
+]

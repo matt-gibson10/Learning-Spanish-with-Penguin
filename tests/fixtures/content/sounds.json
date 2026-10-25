@@ -1,0 +1,156 @@
+[
+  {
+    "id": "s_sinalefa",
+    "name": "Vowel linking (sinalefa)",
+    "summary": "Vowels at word edges melt into one syllable.",
+    "explain": "When one word ends in a vowel and the next starts with one, Spanish speakers glide them together into a single syllable. 'lo que es' comes out as 'lo kes', 'va a ir' as 'vair'. Words seem to vanish: they're still there, just merged. Reading the written form while listening helps you map the blur back onto words.",
+    "mexico": "Very strong in fast Mexican speech, especially with que, de, la, lo.",
+    "examples": [
+      {
+        "written": "lo que es",
+        "sounds": "lo kes",
+        "en": "what it is",
+        "slow": "lo que es",
+        "fast": "lo kes"
+      },
+      {
+        "written": "de usted",
+        "sounds": "dusted",
+        "en": "of you",
+        "slow": "de usted",
+        "fast": "dusted"
+      },
+      {
+        "written": "va a ir",
+        "sounds": "vair",
+        "en": "is going to go",
+        "slow": "va a ir",
+        "fast": "vair"
+      }
+    ],
+    "drills": [
+      {
+        "type": "hear_pick",
+        "say": "lo kes",
+        "options": [
+          "lo que es",
+          "lo que hay",
+          "el queso"
+        ],
+        "answer": "lo que es"
+      },
+      {
+        "type": "hear_type",
+        "say": "vair",
+        "answer": "va a ir"
+      },
+      {
+        "type": "hear_pick",
+        "say": "dusted",
+        "options": [
+          "de usted",
+          "deuda",
+          "dos de"
+        ],
+        "answer": "de usted"
+      }
+    ]
+  },
+  {
+    "id": "s_apocope",
+    "name": "Clipped words (pa', porfa)",
+    "summary": "Common words lose their ends: para → pa', por favor → porfa.",
+    "explain": "Very frequent words get chopped in casual speech. 'para' is almost always 'pa'' when people talk fast, 'por favor' becomes 'porfa', 'está' becomes ''tá'. If you hear a short 'pa' before a noun or verb, think 'para'.",
+    "mexico": "pa'l (para el), pa' que, porfa and 'ta bien (está bien) are everywhere in Mexico.",
+    "examples": [
+      {
+        "written": "para que",
+        "sounds": "pa' que",
+        "en": "so that",
+        "slow": "para que",
+        "fast": "pa' que"
+      },
+      {
+        "written": "está bien",
+        "sounds": "ta bien",
+        "en": "it's fine",
+        "slow": "está bien",
+        "fast": "ta bien"
+      },
+      {
+        "written": "por favor",
+        "sounds": "porfa",
+        "en": "please",
+        "slow": "por favor",
+        "fast": "porfa"
+      }
+    ],
+    "drills": [
+      {
+        "type": "hear_pick",
+        "say": "pa' que",
+        "options": [
+          "para que",
+          "por qué",
+          "pague"
+        ],
+        "answer": "para que"
+      },
+      {
+        "type": "hear_type",
+        "say": "ta bien",
+        "answer": "está bien"
+      },
+      {
+        "type": "hear_pick",
+        "say": "porfa",
+        "options": [
+          "por favor",
+          "por fin",
+          "perfecto"
+        ],
+        "answer": "por favor"
+      }
+    ]
+  },
+  {
+    "id": "s_aspiration",
+    "name": "Dropped d (cansao, to'o)",
+    "summary": "A d between vowels softens or disappears.",
+    "explain": "Between vowels, Spanish d is soft, and in fast speech it can disappear completely, especially in -ado endings and in 'todo' and 'nada'. 'Cansado' sounds like 'cansao', 'todo' like 'to'o'. When a word seems to have a gap in the middle, try putting a d back in.",
+    "mexico": "Less extreme than in the Caribbean, but common in to'o, na'a and -ado in casual Mexican speech.",
+    "examples": [
+      {
+        "written": "todo bien",
+        "sounds": "to'o bien",
+        "en": "all good",
+        "slow": "todo bien",
+        "fast": "to'o bien"
+      },
+      {
+        "written": "cansado",
+        "sounds": "cansao",
+        "en": "tired",
+        "slow": "cansado",
+        "fast": "cansao"
+      }
+    ],
+    "drills": [
+      {
+        "type": "hear_pick",
+        "say": "to'o bien",
+        "options": [
+          "todo bien",
+          "toro bien",
+          "tú bien"
+        ],
+        "answer": "todo bien"
+      },
+      {
+        "type": "hear_type",
+        "say": "cansao",
+        "answer": "cansado"
+      }
+    ]
+  }
+]

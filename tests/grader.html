@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grader tests</title>
+<style>
+  body { font: 14px/1.4 system-ui, sans-serif; margin: 16px; background: #fff; color: #222; }
+  .pass, .fail { padding: 6px 8px; margin: 4px 0; border-radius: 6px; }
+  .pass { background: #e8f6ec; } .fail { background: #fde8e8; }
+  small { color: #555; }
+</style>
+</head>
+<body>
+<h1>Grader tests</h1>
+<div id="out">running…</div>
+<script src="../web/data/course.js"></script>
+<script src="../web/js/grader.js"></script>
+<script>window.__deferRender = true;</script>
+<script src="grader.test.js"></script>
+<script src="grader.content.test.js"></script>
+<script>window.__renderGraderResults && window.__renderGraderResults();</script>
+</body>
+</html>

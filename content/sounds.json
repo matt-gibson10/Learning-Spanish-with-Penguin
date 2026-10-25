@@ -1,0 +1,2931 @@
+[
+  {
+    "id": "s_sinalefa",
+    "name": "Vowel linking (sinalefa)",
+    "summary": "When one word ends in a vowel and the next starts with one, they glide together into one syllable: lo que es → lo kes.",
+    "explain": "Spanish hates a gap between vowels. \"Lo que es\" doesn't sound like three words: \"que\" and \"es\" melt into one syllable, \"kes\". The same happens in \"¿dónde está?\" (dondestá), \"mi amigo\" (miamigo), \"todo el día\" (todoel día). The weaker vowel (i, u, or an unstressed e/o) shrinks into a glide, so two syllables become one. Because h is silent, words starting with h link too (de hecho → deecho). When you hear a strange long word you don't know, try splitting it at a vowel: it is usually two or three words you do know.",
+    "mexico": "Mexicans link constantly, and in fast speech an unstressed e or o next to another vowel turns into an i or u glide: \"¿qué onda?\" → \"kionda\", \"¿qué hubo?\" → \"quiubo\", \"se me olvidó\" → \"semolvidó\". In rural or very casual speech this goes further (peor → pior, teatro → tiatro), which is marked as rustic.",
+    "examples": [
+      {
+        "written": "lo que es",
+        "sounds": "lo kes",
+        "en": "what it is",
+        "slow": "lo que es",
+        "fast": "lo kes"
+      },
+      {
+        "written": "¿Qué onda?",
+        "sounds": "¿kion-da?",
+        "en": "What's up?",
+        "slow": "¿Qué onda?",
+        "fast": "¿kionda?"
+      },
+      {
+        "written": "¿Dónde está?",
+        "sounds": "¿don-des-tá?",
+        "en": "Where is it?",
+        "slow": "¿Dónde está?",
+        "fast": "¿dondestá?"
+      },
+      {
+        "written": "¿Cómo estás?",
+        "sounds": "¿co-mo es-tás? → ¿co-moes-tás?",
+        "en": "How are you?",
+        "slow": "¿Cómo estás?",
+        "fast": "¿comoestás?"
+      },
+      {
+        "written": "mi amigo",
+        "sounds": "mia-mi-go",
+        "en": "my friend",
+        "slow": "mi amigo",
+        "fast": "miamigo"
+      },
+      {
+        "written": "todo el día",
+        "sounds": "to-doel-dí-a",
+        "en": "all day",
+        "slow": "todo el día",
+        "fast": "todoel día"
+      },
+      {
+        "written": "me encanta",
+        "sounds": "men-can-ta",
+        "en": "I love it",
+        "slow": "me encanta",
+        "fast": "mencanta"
+      },
+      {
+        "written": "la otra",
+        "sounds": "lao-tra",
+        "en": "the other one",
+        "slow": "la otra",
+        "fast": "laotra"
+      },
+      {
+        "written": "¿Qué hora es?",
+        "sounds": "¿qué o-raes?",
+        "en": "What time is it?",
+        "slow": "¿Qué hora es?",
+        "fast": "¿qué oraes?"
+      },
+      {
+        "written": "casi a la una",
+        "sounds": "ca-sia-lau-na",
+        "en": "almost one o'clock",
+        "slow": "casi a la una",
+        "fast": "casialauna"
+      }
+    ],
+    "drills": [
+      {
+        "type": "hear_pick",
+        "say": "lo kes",
+        "options": [
+          "lo que es",
+          "el queso",
+          "lo que hay"
+        ],
+        "answer": "lo que es"
+      },
+      {
+        "type": "hear_pick",
+        "say": "¿kionda?",
+        "options": [
+          "¿Qué onda?",
+          "¿Quién da?",
+          "¿Qué hora?"
+        ],
+        "answer": "¿Qué onda?"
+      },
+      {
+        "type": "hear_pick",
+        "say": "¿dondestá el baño?",
+        "options": [
+          "¿Dónde está el baño?",
+          "¿De dónde es el baño?",
+          "¿Dónde estaba el baño?"
+        ],
+        "answer": "¿Dónde está el baño?"
+      },
+      {
+        "type": "hear_pick",
+        "say": "mencanta",
+        "options": [
+          "me encanta",
+          "me canta",
+          "encanta"
+        ],
+        "answer": "me encanta"
+      },
+      {
+        "type": "hear_pick",
+        "say": "laotra",
+        "options": [
+          "la otra",
+          "la hora",
+          "lo otro"
+        ],
+        "answer": "la otra"
+      },
+      {
+        "type": "hear_pick",
+        "say": "¿qué oraes?",
+        "options": [
+          "¿Qué hora es?",
+          "¿Qué hora era?",
+          "¿A qué hora?"
+        ],
+        "answer": "¿Qué hora es?"
+      },
+      {
+        "type": "hear_type",
+        "say": "¿comoestás?",
+        "answer": "¿Cómo estás?"
+      },
+      {
+        "type": "hear_type",
+        "say": "miamigo",
+        "answer": "mi amigo"
+      },
+      {
+        "type": "hear_type",
+        "say": "todoel día",
+        "answer": "todo el día"
+      },
+      {
+        "type": "hear_type",
+        "say": "casialauna",
+        "answer": "casi a la una"
+      },
+      {
+        "type": "hear_type",
+        "say": "deecho",
+        "answer": "de hecho"
+      }
+    ]
+  },
+  {
+    "id": "s_linking",
+    "name": "Consonant + vowel linking",
+    "summary": "A final consonant jumps forward to start the next word: los otros → lo-so-tros, el agua → e-la-gua.",
+    "explain": "Spanish syllables like to begin with a consonant. So when a word ends in a consonant and the next one starts with a vowel, the consonant moves across the gap: \"los otros\" is said \"lo-so-tros\", \"el agua\" is \"e-la-gua\", \"es un amigo\" is \"e-su-na-mi-go\". You never hear a break where the space is written. So if you hear \"sotros\", think \"…s otros\"; if you hear \"lagua\", think \"el agua\". Related habit: n before p, b, v or m sounds like m (\"un peso\" → \"um peso\", \"con permiso\" → \"com permiso\").",
+    "mexico": "Highland Mexicans keep their final s strong, so s-linking is very audible: \"lo-sa-mi-gos\" (los amigos), \"ma-so-me-nos\" (más o menos), \"va-mo-sa-ver\" (vamos a ver). Natives often misspell \"a ver\" as \"haber\" because the linked forms sound identical.",
+    "examples": [
+      {
+        "written": "los otros",
+        "sounds": "lo-so-tros",
+        "en": "the others",
+        "slow": "los otros",
+        "fast": "losotros"
+      },
+      {
+        "written": "el agua",
+        "sounds": "e-la-gua",
+        "en": "the water",
+        "slow": "el agua",
+        "fast": "elagua"
+      },
+      {
+        "written": "es un amigo",
+        "sounds": "e-su-na-mi-go",
+        "en": "he's a friend",
+        "slow": "es un amigo",
+        "fast": "esunamigo"
+      },
+      {
+        "written": "más o menos",
+        "sounds": "ma-so-me-nos",
+        "en": "so-so",
+        "slow": "más o menos",
+        "fast": "masomenos"
+      },
+      {
+        "written": "vamos a ver",
+        "sounds": "va-mo-sa-ver",
+        "en": "let's see",
+        "slow": "vamos a ver",
+        "fast": "vamosaver"
+      },
+      {
+        "written": "las once",
+        "sounds": "la-son-ce",
+        "en": "eleven o'clock",
+        "slow": "las once",
+        "fast": "lasonce"
+      },
+      {
+        "written": "un hotel",
+        "sounds": "u-no-tel",
+        "en": "a hotel",
+        "slow": "un hotel",
+        "fast": "unotel"
+      },
+      {
+        "written": "por aquí",
+        "sounds": "po-ra-quí",
+        "en": "this way",
+        "slow": "por aquí",
+        "fast": "poraquí"
+      },
+      {
+        "written": "un peso",
+        "sounds": "um pe-so",
+        "en": "one peso",
+        "slow": "un peso",
+        "fast": "um peso"
+      },
+      {
+        "written": "con permiso",
+        "sounds": "com per-mi-so",
+        "en": "excuse me",
+        "slow": "con permiso",
+        "fast": "com permiso"
+      }
+    ],
+    "drills": [
+      {
+        "type": "hear_pick",
+        "say": "losotros",
+        "options": [
+          "los otros",
+          "nosotros",
+          "los ojos"
+        ],
+        "answer": "los otros"
+      },
+      {
+        "type": "hear_pick",
+        "say": "elagua",
+        "options": [
+          "el agua",
+          "la agua",
+          "el lago"
+        ],
+        "answer": "el agua"
+      },
+      {
+        "type": "hear_pick",
+        "say": "lasonce",
+        "options": [
+          "las once",
+          "las doce",
+          "la once"
+        ],
+        "answer": "las once"
+      },
+      {
+        "type": "hear_pick",
+        "say": "unotel",
+        "options": [
+          "un hotel",
+          "un motel",
+          "en el hotel"
+        ],
+        "answer": "un hotel"
+      },
+      {
+        "type": "hear_pick",
+        "say": "masomenos",
+        "options": [
+          "más o menos",
+          "por lo menos",
+          "más menos"
+        ],
+        "answer": "más o menos"
+      },
+      {
+        "type": "hear_pick",
+        "say": "um peso",
+        "options": [
+          "un peso",
+          "un beso",
+          "en peso"
+        ],
+        "answer": "un peso"
+      },
+      {
+        "type": "hear_type",
+        "say": "esunamigo",
+        "answer": "es un amigo"
+      },
+      {
+        "type": "hear_type",
+        "say": "poraquí",
+        "answer": "por aquí"
+      },
+      {
+        "type": "hear_type",
+        "say": "vamosaver",
+        "answer": "vamos a ver"
+      },
+      {
+        "type": "hear_type",
+        "say": "com permiso",
+        "answer": "con permiso"
+      },
+      {
+        "type": "hear_type",
+        "say": "losamigos",
+        "answer": "los amigos"
+      }
+    ]
+  },
+  {
+    "id": "s_syllable_timing",
+    "name": "Rhythm: Spanish is syllable-timed",
+    "summary": "Every syllable gets about the same time, so Spanish sounds fast — but the vowels stay clear, and stress changes meaning.",
+    "explain": "English is stress-timed: we rush through small syllables and lean on stressed ones (\"I'm gonna GO to the STORE\"). Spanish gives each syllable roughly equal length, like a drum roll: \"vo-ya-ir-al-cen-tro-ma-ña-na\". That's why it feels fast: many syllables per second and no \"uh\" vowels to rest on. The good news is that the five vowels (a, e, i, o, u) stay clean, so if you catch the vowels you can usually rebuild the word. Stress shows as a small lift in pitch and length, and it changes meaning: papa (potato) vs papá (dad), esta (this) vs está (is), hablo (I speak) vs habló (he spoke). Listen for where the lift lands.",
+    "mexico": "Central Mexico is mostly syllable-timed but is the exception where some unstressed vowels shrink next to s (see s_vowel_devoicing). Mexicans also stretch the last stressed syllable of a phrase, which gives the sing-song feel (see s_markers).",
+    "examples": [
+      {
+        "written": "Voy a ir al centro mañana.",
+        "sounds": "vo-ya-ir-al-cen-tro-ma-ña-na",
+        "en": "I'm going downtown tomorrow.",
+        "slow": "Voy a ir al centro mañana.",
+        "fast": "voyair al centro mañana"
+      },
+      {
+        "written": "papa / papá",
+        "sounds": "PA-pa / pa-PÁ",
+        "en": "potato / dad",
+        "slow": "papa / papá",
+        "fast": "papa, papá"
+      },
+      {
+        "written": "esta / está",
+        "sounds": "ES-ta / es-TÁ",
+        "en": "this / is",
+        "slow": "esta / está",
+        "fast": "esta, está"
+      },
+      {
+        "written": "hablo / habló",
+        "sounds": "HA-blo / ha-BLÓ",
+        "en": "I speak / he spoke",
+        "slow": "hablo / habló",
+        "fast": "hablo, habló"
+      },
+      {
+        "written": "término / termino / terminó",
+        "sounds": "TÉR-mi-no / ter-MI-no / ter-mi-NÓ",
+        "en": "term / I finish / he finished",
+        "slow": "término / termino / terminó",
+        "fast": "término, termino, terminó"
+      },
+      {
+        "written": "¿Qué quieres comer?",
+        "sounds": "qué-quie-res-co-mer",
+        "en": "What do you want to eat?",
+        "slow": "¿Qué quieres comer?",
+        "fast": "¿qué quieres comer?"
+      },
+      {
+        "written": "No sé qué pasó.",
+        "sounds": "no-sé-qué-pa-só",
+        "en": "I don't know what happened.",
+        "slow": "No sé qué pasó.",
+        "fast": "nosé qué pasó"
+      },
+      {
+        "written": "llego / llegó",
+        "sounds": "YE-go / ye-GÓ",
+        "en": "I arrive / he arrived",
+        "slow": "llego / llegó",
+        "fast": "llego, llegó"
+      }
+    ],
+    "drills": [
+      {
+        "type": "hear_pick",
+        "say": "papá",
+        "options": [
+          "papá",
+          "papa",
+          "pepa"
+        ],
+        "answer": "papá"
+      },
+      {
+        "type": "hear_pick",
+        "say": "está",
+        "options": [
+          "está",
+          "esta",
+          "estar"
+        ],
+        "answer": "está"
+      },
+      {
+        "type": "hear_pick",
+        "say": "habló",
+        "options": [
+          "habló",
+          "hablo",
+          "hablé"
+        ],
+        "answer": "habló"
+      },
+      {
+        "type": "hear_pick",
+        "say": "terminó",
+        "options": [
+          "terminó",
+          "termino",
+          "término"
+        ],
+        "answer": "terminó"
+      },
+      {
+        "type": "hear_pick",
+        "say": "llegó",
+        "options": [
+          "llegó",
+          "llego",
+          "llegue"
+        ],
+        "answer": "llegó"
+      },
+      {
+        "type": "hear_pick",
+        "say": "tomé",
+        "options": [
+          "tomé",
+          "tome",
+          "tomo"
+        ],
+        "answer": "tomé"
+      },
+      {
+        "type": "hear_pick",
+        "say": "ánimo",
+        "options": [
+          "ánimo",
+          "animo",
+          "animó"
+        ],
+        "answer": "ánimo"
+      },
+      {
+        "type": "hear_type",
+        "say": "voyair al centro mañana",
+        "answer": "Voy a ir al centro mañana."
+      },
+      {
+        "type": "hear_type",
+        "say": "¿qué quieres comer?",
+        "answer": "¿Qué quieres comer?"
+      },
+      {
+        "type": "hear_type",
+        "say": "nosé qué pasó",
+        "answer": "No sé qué pasó."
+      }
+    ]
+  },
+  {
+    "id": "s_fusion",
+    "name": "Same vowels merge: va a → va",
+    "summary": "Two identical vowels across a word boundary are usually said once: va a llover → va llover, lo olvidé → lolvidé.",
+    "explain": "When a word ends with the same vowel the next word starts with, Spanish usually says it once (maybe a touch longer). \"Va a llover\" sounds like \"va llover\", \"¿qué va a querer?\" like \"¿qué va querer?\", \"me espera\" like \"mespera\", \"lo olvidé\" like \"lolvidé\". This is why the little word \"a\" seems to vanish after va, voy and vamos. Silent h counts as nothing, so \"mi hijo\" → \"mijo\". The trick: if a sentence sounds like it's missing an \"a\" or \"de\", it was merged, not dropped.",
+    "mexico": "Universal in Mexico. \"Va a\" → \"va\" is so common that people text \"va ser\" for \"va a ser\". \"Mijo/mija\" (mi hijo/mi hija) became words of their own, used affectionately with anyone younger. \"Del\" and \"al\" are the written versions of the same merge.",
+    "examples": [
+      {
+        "written": "Va a llover.",
+        "sounds": "va-llo-ver",
+        "en": "It's going to rain.",
+        "slow": "Va a llover.",
+        "fast": "va llover"
+      },
+      {
+        "written": "¿Qué va a querer?",
+        "sounds": "¿qué va que-rer?",
+        "en": "What will you have?",
+        "slow": "¿Qué va a querer?",
+        "fast": "¿qué va querer?"
+      },
+      {
+        "written": "me espera",
+        "sounds": "mes-pe-ra",
+        "en": "waits for me",
+        "slow": "me espera",
+        "fast": "mespera"
+      },
+      {
+        "written": "lo olvidé",
+        "sounds": "lol-vi-dé",
+        "en": "I forgot it",
+        "slow": "lo olvidé",
+        "fast": "lolvidé"
+      },
+      {
+        "written": "para allá",
+        "sounds": "pa-ra-llá",
+        "en": "over that way",
+        "slow": "para allá",
+        "fast": "parallá"
+      },
+      {
+        "written": "mi hijo",
+        "sounds": "mi-jo",
+        "en": "my son",
+        "slow": "mi hijo",
+        "fast": "mijo"
+      },
+      {
+        "written": "ni idea",
+        "sounds": "ni-dea",
+        "en": "no idea",
+        "slow": "ni idea",
+        "fast": "nidea"
+      },
+      {
+        "written": "va a ser",
+        "sounds": "va ser",
+        "en": "it's going to be",
+        "slow": "va a ser",
+        "fast": "va ser"
+      },
+      {
+        "written": "casi igual",
+        "sounds": "ca-si-gual",
+        "en": "almost the same",
+        "slow": "casi igual",
+        "fast": "casigual"
+      },
+      {
+        "written": "de el centro → del centro",
+        "sounds": "del cen-tro",
+        "en": "from downtown",
+        "slow": "de el centro → del centro",
+        "fast": "del centro"
+      }
+    ],
+    "drills": [
+      {
+        "type": "hear_pick",
+        "say": "va llover",
+        "options": [
+          "Va a llover.",
+          "Ya llovió.",
+          "Vas a llorar."
+        ],
+        "answer": "Va a llover."
+      },
+      {
+        "type": "hear_pick",
+        "say": "¿qué va querer?",
+        "options": [
+          "¿Qué va a querer?",
+          "¿Qué quiere?",
+          "¿Qué vas a beber?"
+        ],
+        "answer": "¿Qué va a querer?"
+      },
+      {
+        "type": "hear_pick",
+        "say": "lolvidé",
+        "options": [
+          "lo olvidé",
+          "la olvidé",
+          "lo pedí"
+        ],
+        "answer": "lo olvidé"
+      },
+      {
+        "type": "hear_pick",
+        "say": "mespera",
+        "options": [
+          "me espera",
+          "espera",
+          "me esperas"
+        ],
+        "answer": "me espera"
+      },
+      {
+        "type": "hear_pick",
+        "say": "nidea",
+        "options": [
+          "ni idea",
+          "una idea",
+          "ni modo"
+        ],
+        "answer": "ni idea"
+      },
+      {
+        "type": "hear_pick",
+        "say": "mijo",
+        "options": [
+          "mi hijo",
+          "mi hija",
+          "mi jefe"
+        ],
+        "answer": "mi hijo"
+      },
+      {
+        "type": "hear_type",
+        "say": "va ser difícil",
+        "answer": "va a ser difícil"
+      },
+      {
+        "type": "hear_type",
+        "say": "parallá",
+        "answer": "para allá"
+      },
+      {
+        "type": "hear_type",
+        "say": "casigual",
+        "answer": "casi igual"
+      },
+      {
+        "type": "hear_type",
+        "say": "va llegar tarde",
+        "answer": "va a llegar tarde"
+      }
+    ]
+  },
+  {
+    "id": "s_aphaeresis",
+    "name": "Dropped first syllable: está → 'tá, estoy → 'toy",
+    "summary": "Everyday words lose their unstressed first syllable: está → 'tá, estoy → 'toy, entonces → 'tons, ahorita → orita.",
+    "explain": "In casual speech the unstressed \"es-\" at the start of estar simply disappears: \"está bien\" → \"'tá bien\", \"estoy aquí\" → \"'toy aquí\", \"¿estás listo?\" → \"¿'tás listo?\", \"estaba\" → \"'taba\". Other everyday words lose their front too: \"entonces\" → \"'tonces/'tons\", \"ahora\" → \"'ora\", \"ahorita\" → \"orita\", \"espérame\" → \"'pérame\", \"hasta luego\" → \"'ta luego\". So if you hear \"tá\", \"toy\", \"tamos\", \"taba\" — it's estar.",
+    "mexico": "Very common across Mexico in relaxed speech: \"orita\", \"'tá bien\", \"'pérame tantito\" are everyday. In careful speech (news, a hotel front desk, a police officer) you'll hear the full forms, so learn both.",
+    "examples": [
+      {
+        "written": "Está bien.",
+        "sounds": "'tá bien",
+        "en": "It's fine.",
+        "slow": "Está bien.",
+        "fast": "tá bien"
+      },
+      {
+        "written": "Estoy cansado.",
+        "sounds": "'toy can-sa-do",
+        "en": "I'm tired.",
+        "slow": "Estoy cansado.",
+        "fast": "toy cansado"
+      },
+      {
+        "written": "¿Estás listo?",
+        "sounds": "¿'tás lis-to?",
+        "en": "Are you ready?",
+        "slow": "¿Estás listo?",
+        "fast": "¿tás listo?"
+      },
+      {
+        "written": "Estamos aquí.",
+        "sounds": "'ta-mos a-quí",
+        "en": "We're here.",
+        "slow": "Estamos aquí.",
+        "fast": "tamos aquí"
+      },
+      {
+        "written": "Estaba cerrado.",
+        "sounds": "'ta-ba ce-rra-do",
+        "en": "It was closed.",
+        "slow": "Estaba cerrado.",
+        "fast": "taba cerrado"
+      },
+      {
+        "written": "entonces",
+        "sounds": "'ton-ces / 'tons",
+        "en": "so, then",
+        "slow": "entonces",
+        "fast": "tonses"
+      },
+      {
+        "written": "ahorita",
+        "sounds": "o-ri-ta",
+        "en": "right now / in a bit",
+        "slow": "ahorita",
+        "fast": "orita"
+      },
+      {
+        "written": "¡Ahora sí!",
+        "sounds": "¡'o-ra sí!",
+        "en": "Now we're talking!",
+        "slow": "¡Ahora sí!",
+        "fast": "¡ora sí!"
+      },
+      {
+        "written": "Espérame.",
+        "sounds": "'pé-ra-me",
+        "en": "Wait for me.",
+        "slow": "Espérame.",
+        "fast": "pérame"
+      },
+      {
+        "written": "Hasta luego.",
+        "sounds": "'ta lue-go",
+        "en": "See you later.",
+        "slow": "Hasta luego.",
+        "fast": "ta luego"
+      },
+      {
+        "written": "Estados Unidos",
+        "sounds": "'ta-dos u-ni-dos",
+        "en": "the United States",
+        "slow": "Estados Unidos",
+        "fast": "tados Unidos"
+      }
+    ],
+    "drills": [
+      {
+        "type": "hear_pick",
+        "say": "tá bien",
+        "options": [
+          "Está bien.",
+          "Te va bien.",
+          "Todo bien."
+        ],
+        "answer": "Está bien."
+      },
+      {
+        "type": "hear_pick",
+        "say": "toy cansado",
+        "options": [
+          "Estoy cansado.",
+          "Soy cansado.",
+          "Estuve cansado."
+        ],
+        "answer": "Estoy cansado."
+      },
+      {
+        "type": "hear_pick",
+        "say": "tonses, ¿qué?",
+        "options": [
+          "Entonces, ¿qué?",
+          "¿Y tú qué?",
+          "¿Todos qué?"
+        ],
+        "answer": "Entonces, ¿qué?"
+      },
+      {
+        "type": "hear_pick",
+        "say": "orita vengo",
+        "options": [
+          "Ahorita vengo.",
+          "Otra vez vengo.",
+          "Ahí te vengo."
+        ],
+        "answer": "Ahorita vengo."
+      },
+      {
+        "type": "hear_pick",
+        "say": "tamos aquí",
+        "options": [
+          "Estamos aquí.",
+          "Tomamos aquí.",
+          "Estábamos aquí."
+        ],
+        "answer": "Estamos aquí."
+      },
+      {
+        "type": "hear_pick",
+        "say": "pérame tantito",
+        "options": [
+          "Espérame tantito.",
+          "Perdóname tantito.",
+          "Espera tanto."
+        ],
+        "answer": "Espérame tantito."
+      },
+      {
+        "type": "hear_type",
+        "say": "taba cerrado",
+        "answer": "Estaba cerrado."
+      },
+      {
+        "type": "hear_type",
+        "say": "¿tás listo?",
+        "answer": "¿Estás listo?"
+      },
+      {
+        "type": "hear_type",
+        "say": "ta luego",
+        "answer": "Hasta luego."
+      },
+      {
+        "type": "hear_type",
+        "say": "¡ora sí!",
+        "answer": "¡Ahora sí!"
+      },
+      {
+        "type": "hear_type",
+        "say": "tá rico",
+        "answer": "Está rico."
+      }
+    ]
+  },
+  {
+    "id": "s_apocope",
+    "name": "para → pa' (and pa'l, pa' que, pa'cá)",
+    "summary": "\"Para\" shrinks to \"pa'\" and glues on to what follows: pa' llevar, pa'l centro, pa' que, pa'cá.",
+    "explain": "The single most common shortcut in spoken Spanish. \"Para\" loses its last syllable: \"para mí\" → \"pa' mí\", \"para que\" → \"pa' que\", \"para llevar\" → \"pa' llevar\". Before \"el\" it fuses into \"pa'l\" (\"para el centro\" → \"pa'l centro\"), and before acá/allá into \"pa'cá\", \"pa'llá\". If you hear a little \"pa\" in front of a word, think \"para\". Careful: \"¿pa' qué?\" (what for?) is not \"¿por qué?\" (why?).",
+    "mexico": "Everywhere in casual Mexican speech, including from waiters (\"¿pa' llevar?\") and in songs. Writing \"pa'\" is informal (texts, lyrics); in writing use \"para\".",
+    "examples": [
+      {
+        "written": "para llevar",
+        "sounds": "pa' lle-var",
+        "en": "to go",
+        "slow": "para llevar",
+        "fast": "pa' llevar"
+      },
+      {
+        "written": "para mí",
+        "sounds": "pa' mí",
+        "en": "for me",
+        "slow": "para mí",
+        "fast": "pa' mí"
+      },
+      {
+        "written": "para que veas",
+        "sounds": "pa' que ve-as",
+        "en": "so you see",
+        "slow": "para que veas",
+        "fast": "pa' que veas"
+      },
+      {
+        "written": "para el centro",
+        "sounds": "pa'l cen-tro",
+        "en": "to downtown",
+        "slow": "para el centro",
+        "fast": "pal centro"
+      },
+      {
+        "written": "¿Para qué?",
+        "sounds": "¿pa' qué?",
+        "en": "What for?",
+        "slow": "¿Para qué?",
+        "fast": "¿pa' qué?"
+      },
+      {
+        "written": "para acá",
+        "sounds": "pa'-cá",
+        "en": "over here",
+        "slow": "para acá",
+        "fast": "pacá"
+      },
+      {
+        "written": "para allá",
+        "sounds": "pa'-llá",
+        "en": "over there",
+        "slow": "para allá",
+        "fast": "payá"
+      },
+      {
+        "written": "para nada",
+        "sounds": "pa' na-da",
+        "en": "not at all",
+        "slow": "para nada",
+        "fast": "pa' nada"
+      },
+      {
+        "written": "¿Para dónde vas?",
+        "sounds": "¿pa' dón-de vas?",
+        "en": "Where are you headed?",
+        "slow": "¿Para dónde vas?",
+        "fast": "¿pa' dónde vas?"
+      },
+      {
+        "written": "para la playa",
+        "sounds": "pa' la pla-ya",
+        "en": "to the beach",
+        "slow": "para la playa",
+        "fast": "pa' la playa"
+      }
+    ],
+    "drills": [
+      {
+        "type": "hear_pick",
+        "say": "¿pa' llevar?",
+        "options": [
+          "¿Para llevar?",
+          "¿Puedo llevar?",
+          "¿Para lavar?"
+        ],
+        "answer": "¿Para llevar?"
+      },
+      {
+        "type": "hear_pick",
+        "say": "pal centro",
+        "options": [
+          "para el centro",
+          "por el centro",
+          "al centro"
+        ],
+        "answer": "para el centro"
+      },
+      {
+        "type": "hear_pick",
+        "say": "¿pa' qué?",
+        "options": [
+          "¿Para qué?",
+          "¿Por qué?",
+          "¿Y qué?"
+        ],
+        "answer": "¿Para qué?"
+      },
+      {
+        "type": "hear_pick",
+        "say": "pacá",
+        "options": [
+          "para acá",
+          "por acá",
+          "pasa acá"
+        ],
+        "answer": "para acá"
+      },
+      {
+        "type": "hear_pick",
+        "say": "pa' mí, lo mismo",
+        "options": [
+          "Para mí, lo mismo.",
+          "Por mí, lo mismo.",
+          "A mí, lo mismo."
+        ],
+        "answer": "Para mí, lo mismo."
+      },
+      {
+        "type": "hear_type",
+        "say": "payá",
+        "answer": "para allá"
+      },
+      {
+        "type": "hear_type",
+        "say": "pa' que veas",
+        "answer": "para que veas"
+      },
+      {
+        "type": "hear_type",
+        "say": "pa' nada",
+        "answer": "para nada"
+      },
+      {
+        "type": "hear_type",
+        "say": "¿pa' dónde vas?",
+        "answer": "¿Para dónde vas?"
+      },
+      {
+        "type": "hear_type",
+        "say": "pal hotel",
+        "answer": "para el hotel"
+      }
+    ]
+  },
+  {
+    "id": "s_markers",
+    "name": "Mexican melody & discourse markers",
+    "summary": "The sing-song rise-fall at the end of phrases, plus the little words — este, o sea, pues, ¿no?, ¿verdad?, órale, ¿mande? — that carry a conversation.",
+    "explain": "Mexican Spanish has a recognisable tune: phrases often rise on the last stressed syllable and then fall or hang (\"¡qué bo-NI-i-to!\"), and yes/no questions without a question word rise at the end (\"¿Tienes hambre?\"). On top of that, a large share of what you hear is small talk-glue with little meaning: \"este…\" = um, \"o sea\" = I mean, \"pues\" = well/so, \"¿no?\" / \"¿verdad?\" = right?, \"bueno\" = OK/new topic, \"órale / ándale / sale / va\" = reactions. Treat them like punctuation and skip ahead to the content. \"¿Mande?\" means \"Sorry? / Yes?\" and is polite, not bossy.",
+    "mexico": "The circumflex rise-fall contour is a hallmark of Mexico City and the central plateau; Guadalajara and the north sound flatter at the end. \"Este\" (long and flat: \"esteee\") is the Mexican filler — Spaniards say \"eh\" or \"pues\". On the phone Mexicans answer \"¿Bueno?\". \"¿Sale?\" / \"Va\" are Mexico City for \"deal? / OK\".",
+    "examples": [
+      {
+        "written": "Este… no sé.",
+        "sounds": "es-teee… no sé",
+        "en": "Um… I don't know.",
+        "slow": "Este… no sé.",
+        "fast": "esteee… no sé"
+      },
+      {
+        "written": "O sea, no.",
+        "sounds": "o-sea, no",
+        "en": "I mean, no.",
+        "slow": "O sea, no.",
+        "fast": "osea, no"
+      },
+      {
+        "written": "Pues sí.",
+        "sounds": "ps sí",
+        "en": "Well, yes.",
+        "slow": "Pues sí.",
+        "fast": "pos sí"
+      },
+      {
+        "written": "Hace calor, ¿verdad?",
+        "sounds": "a-ce ca-lor, ¿ver-dá?",
+        "en": "It's hot, right?",
+        "slow": "Hace calor, ¿verdad?",
+        "fast": "ase calor, ¿verdá?"
+      },
+      {
+        "written": "¿Mande?",
+        "sounds": "¿MAN-de? (rising)",
+        "en": "Sorry? / Yes?",
+        "slow": "¿Mande?",
+        "fast": "¿mande?"
+      },
+      {
+        "written": "¿Bueno?",
+        "sounds": "¿we-no? (on the phone)",
+        "en": "Hello?",
+        "slow": "¿Bueno?",
+        "fast": "¿weno?"
+      },
+      {
+        "written": "¡Órale!",
+        "sounds": "¡Ó-ra-le!",
+        "en": "Wow! / OK! / Come on!",
+        "slow": "¡Órale!",
+        "fast": "¡órale!"
+      },
+      {
+        "written": "Ándale pues.",
+        "sounds": "ÁN-da-le ps",
+        "en": "Alright then.",
+        "slow": "Ándale pues.",
+        "fast": "ándale pos"
+      },
+      {
+        "written": "Nos vemos a las ocho, ¿sale?",
+        "sounds": "…¿sa-le?",
+        "en": "See you at eight, OK?",
+        "slow": "Nos vemos a las ocho, ¿sale?",
+        "fast": "nos vemos a las ocho, ¿sale?"
+      },
+      {
+        "written": "Está bonito, ¿no?",
+        "sounds": "'tá bo-ni-to, ¿no?",
+        "en": "It's nice, isn't it?",
+        "slow": "Está bonito, ¿no?",
+        "fast": "tá bonito, ¿no?"
+      },
+      {
+        "written": "Bueno, ya me voy.",
+        "sounds": "we-no, ya me voy",
+        "en": "Well, I'm off.",
+        "slow": "Bueno, ya me voy.",
+        "fast": "weno, ya me voy"
+      }
+    ],
+    "drills": [
+      {
+        "type": "hear_pick",
+        "say": "¿mande?",
+        "options": [
+          "¿Mande?",
+          "¿Manda?",
+          "¿Mantel?"
+        ],
+        "answer": "¿Mande?"
+      },
+      {
+        "type": "hear_pick",
+        "say": "esteee… no me acuerdo",
+        "options": [
+          "Este… no me acuerdo.",
+          "Esto no me acuerdo.",
+          "Este no me queda."
+        ],
+        "answer": "Este… no me acuerdo."
+      },
+      {
+        "type": "hear_pick",
+        "say": "pos sí",
+        "options": [
+          "Pues sí.",
+          "Pues no.",
+          "Eso sí."
+        ],
+        "answer": "Pues sí."
+      },
+      {
+        "type": "hear_pick",
+        "say": "osea, no",
+        "options": [
+          "O sea, no.",
+          "Oye, no.",
+          "Ojalá no."
+        ],
+        "answer": "O sea, no."
+      },
+      {
+        "type": "hear_pick",
+        "say": "ándale pos",
+        "options": [
+          "Ándale pues.",
+          "Ándale, pasa.",
+          "Anda, pues."
+        ],
+        "answer": "Ándale pues."
+      },
+      {
+        "type": "hear_pick",
+        "say": "¿weno?",
+        "options": [
+          "¿Bueno?",
+          "¿Huevo?",
+          "¿Nuevo?"
+        ],
+        "answer": "¿Bueno?"
+      },
+      {
+        "type": "hear_pick",
+        "say": "¿sale?",
+        "options": [
+          "¿Sale?",
+          "¿Vale?",
+          "¿Salen?"
+        ],
+        "answer": "¿Sale?"
+      },
+      {
+        "type": "hear_type",
+        "say": "¿verdá?",
+        "answer": "¿verdad?"
+      },
+      {
+        "type": "hear_type",
+        "say": "¡órale!",
+        "answer": "¡Órale!"
+      },
+      {
+        "type": "hear_type",
+        "say": "¿cómo ves?",
+        "answer": "¿Cómo ves?"
+      },
+      {
+        "type": "hear_type",
+        "say": "ni modo",
+        "answer": "ni modo"
+      }
+    ]
+  },
+  {
+    "id": "s_clitics",
+    "name": "Little pronouns glue onto the verb",
+    "summary": "me, te, se, lo, la, le, nos are never stressed and run into the verb: te lo dije → telodije, se me olvidó → semolvidó.",
+    "explain": "Object pronouns have no stress of their own, so they fuse with the verb as if they were one long word: \"me lo llevo\" → \"melollevo\", \"¿se lo traigo?\" → \"selotraigo\", \"te lo dije\" → \"telodije\". That's also why commands write them as one word (dámelo, dímelo). When the pronoun ends in a vowel and the verb begins with one, they merge as well: \"me encanta\" → \"mencanta\", \"te espero\" → \"tespero\", \"lo hice\" → \"loice\". Learn \"se me\", \"te lo\", \"me la\", \"se lo\" as sound-blocks.",
+    "mexico": "Mexicans add -le to lots of commands and exclamations (ándale, pásele, córrele, híjole, órale) — a sound habit more than a real pronoun. Listen for \"pásele\" = come in, \"ándale\" = go on.",
+    "examples": [
+      {
+        "written": "Me lo llevo.",
+        "sounds": "me-lo-lle-vo",
+        "en": "I'll take it.",
+        "slow": "Me lo llevo.",
+        "fast": "melollevo"
+      },
+      {
+        "written": "Te lo dije.",
+        "sounds": "te-lo-di-je",
+        "en": "I told you so.",
+        "slow": "Te lo dije.",
+        "fast": "telodije"
+      },
+      {
+        "written": "Se me olvidó.",
+        "sounds": "se-mol-vi-dó",
+        "en": "I forgot.",
+        "slow": "Se me olvidó.",
+        "fast": "semolvidó"
+      },
+      {
+        "written": "¿Se lo traigo?",
+        "sounds": "¿se-lo-trai-go?",
+        "en": "Shall I bring it to you?",
+        "slow": "¿Se lo traigo?",
+        "fast": "¿selotraigo?"
+      },
+      {
+        "written": "Me encanta.",
+        "sounds": "men-can-ta",
+        "en": "I love it.",
+        "slow": "Me encanta.",
+        "fast": "mencanta"
+      },
+      {
+        "written": "Te espero.",
+        "sounds": "tes-pe-ro",
+        "en": "I'll wait for you.",
+        "slow": "Te espero.",
+        "fast": "tespero"
+      },
+      {
+        "written": "Lo hice yo.",
+        "sounds": "loi-ce-yo",
+        "en": "I did it.",
+        "slow": "Lo hice yo.",
+        "fast": "loice yo"
+      },
+      {
+        "written": "¿Me lo da?",
+        "sounds": "¿me-lo-da?",
+        "en": "Can you give it to me?",
+        "slow": "¿Me lo da?",
+        "fast": "¿melodá?"
+      },
+      {
+        "written": "No se lo digas.",
+        "sounds": "no-se-lo-di-gas",
+        "en": "Don't tell him.",
+        "slow": "No se lo digas.",
+        "fast": "noselodigas"
+      },
+      {
+        "written": "Pásele.",
+        "sounds": "pá-se-le",
+        "en": "Come in.",
+        "slow": "Pásele.",
+        "fast": "pásele"
+      }
+    ],
+    "drills": [
+      {
+        "type": "hear_pick",
+        "say": "melollevo",
+        "options": [
+          "Me lo llevo.",
+          "Me llevo.",
+          "Me lo llevó."
+        ],
+        "answer": "Me lo llevo."
+      },
+      {
+        "type": "hear_pick",
+        "say": "semolvidó",
+        "options": [
+          "Se me olvidó.",
+          "Se olvidó.",
+          "Se me olvida."
+        ],
+        "answer": "Se me olvidó."
+      },
+      {
+        "type": "hear_pick",
+        "say": "telodije",
+        "options": [
+          "Te lo dije.",
+          "Te dije.",
+          "Te lo digo."
+        ],
+        "answer": "Te lo dije."
+      },
+      {
+        "type": "hear_pick",
+        "say": "tespero",
+        "options": [
+          "Te espero.",
+          "Espero.",
+          "Te esperé."
+        ],
+        "answer": "Te espero."
+      },
+      {
+        "type": "hear_pick",
+        "say": "¿selotraigo?",
+        "options": [
+          "¿Se lo traigo?",
+          "¿Le traigo?",
+          "¿Lo traigo?"
+        ],
+        "answer": "¿Se lo traigo?"
+      },
+      {
+        "type": "hear_type",
+        "say": "loice yo",
+        "answer": "Lo hice yo."
+      },
+      {
+        "type": "hear_type",
+        "say": "¿melodá?",
+        "answer": "¿Me lo da?"
+      },
+      {
+        "type": "hear_type",
+        "say": "mencanta",
+        "answer": "Me encanta."
+      },
+      {
+        "type": "hear_type",
+        "say": "noselodigas",
+        "answer": "No se lo digas."
+      },
+      {
+        "type": "hear_type",
+        "say": "selacabó",
+        "answer": "Se le acabó."
+      }
+    ]
+  },
+  {
+    "id": "s_d_loss",
+    "name": "Soft or missing d: todo → to'o, verdad → verdá",
+    "summary": "d between vowels softens to a light 'th' or disappears; a final d is usually dropped.",
+    "explain": "Spanish d between vowels is never a hard English d: it's soft, like the 'th' in \"this\", and in fast casual speech it can vanish: \"todo\" → \"to'o\", \"nada\" → \"na'a\", \"cansado\" → \"cansa'o\", \"puedes\" → \"pue's\". At the very end of a word d is almost always dropped: \"verdad\" → \"verdá\", \"usted\" → \"usté\", \"ciudad\" → \"ciudá\", \"salud\" → \"salú\". So \"to'o\" and \"na'a\" are everyday pronunciations, not mistakes.",
+    "mexico": "Final -d loss (verdá, usté, ciudá) is normal in Mexico. Loss inside words is more variable than in Spain or the Caribbean: \"to'o\", \"na'a\", \"pue's\" are common in relaxed speech, but a full \"-ao\" (cansao, pasao) sounds more Caribbean or Spanish, or very casual; many Mexicans keep at least a faint d in -ado, especially when speaking carefully.",
+    "examples": [
+      {
+        "written": "Todo bien.",
+        "sounds": "to'o bien",
+        "en": "All good.",
+        "slow": "Todo bien.",
+        "fast": "to'o bien"
+      },
+      {
+        "written": "De nada.",
+        "sounds": "de na'a",
+        "en": "You're welcome.",
+        "slow": "De nada.",
+        "fast": "de na'a"
+      },
+      {
+        "written": "¿Verdad?",
+        "sounds": "¿ver-dá?",
+        "en": "Right?",
+        "slow": "¿Verdad?",
+        "fast": "¿verdá?"
+      },
+      {
+        "written": "usted",
+        "sounds": "us-té",
+        "en": "you (formal)",
+        "slow": "usted",
+        "fast": "usté"
+      },
+      {
+        "written": "la ciudad",
+        "sounds": "la ciu-dá",
+        "en": "the city",
+        "slow": "la ciudad",
+        "fast": "la ciudá"
+      },
+      {
+        "written": "cansado",
+        "sounds": "can-sa'o",
+        "en": "tired",
+        "slow": "cansado",
+        "fast": "cansao"
+      },
+      {
+        "written": "¿Me puedes ayudar?",
+        "sounds": "¿me pue's a-yu-dar?",
+        "en": "Can you help me?",
+        "slow": "¿Me puedes ayudar?",
+        "fast": "¿me pues ayudar?"
+      },
+      {
+        "written": "todavía",
+        "sounds": "to-a-ví-a",
+        "en": "still, yet",
+        "slow": "todavía",
+        "fast": "toavía"
+      },
+      {
+        "written": "¡Salud!",
+        "sounds": "¡sa-lú!",
+        "en": "Cheers!",
+        "slow": "¡Salud!",
+        "fast": "¡salú!"
+      },
+      {
+        "written": "al lado",
+        "sounds": "al la'o",
+        "en": "next door",
+        "slow": "al lado",
+        "fast": "al lao"
+      },
+      {
+        "written": "¡Cuidado!",
+        "sounds": "¡cui-da'o!",
+        "en": "Careful!",
+        "slow": "¡Cuidado!",
+        "fast": "¡cuidao!"
+      }
+    ],
+    "drills": [
+      {
+        "type": "hear_pick",
+        "say": "to'o bien",
+        "options": [
+          "Todo bien.",
+          "Toma bien.",
+          "Tan bien."
+        ],
+        "answer": "Todo bien."
+      },
+      {
+        "type": "hear_pick",
+        "say": "de na'a",
+        "options": [
+          "De nada.",
+          "De nata.",
+          "De día."
+        ],
+        "answer": "De nada."
+      },
+      {
+        "type": "hear_pick",
+        "say": "¿verdá?",
+        "options": [
+          "¿Verdad?",
+          "¿Verde?",
+          "¿Verás?"
+        ],
+        "answer": "¿Verdad?"
+      },
+      {
+        "type": "hear_pick",
+        "say": "usté",
+        "options": [
+          "usted",
+          "este",
+          "ustedes"
+        ],
+        "answer": "usted"
+      },
+      {
+        "type": "hear_pick",
+        "say": "la ciudá",
+        "options": [
+          "la ciudad",
+          "la ciudadana",
+          "las ciudades"
+        ],
+        "answer": "la ciudad"
+      },
+      {
+        "type": "hear_pick",
+        "say": "¡cuidao!",
+        "options": [
+          "¡Cuidado!",
+          "¡Cuida!",
+          "¡Cuídalo!"
+        ],
+        "answer": "¡Cuidado!"
+      },
+      {
+        "type": "hear_type",
+        "say": "toavía no",
+        "answer": "todavía no"
+      },
+      {
+        "type": "hear_type",
+        "say": "na'a más",
+        "answer": "nada más"
+      },
+      {
+        "type": "hear_type",
+        "say": "¿me pues ayudar?",
+        "answer": "¿Me puedes ayudar?"
+      },
+      {
+        "type": "hear_type",
+        "say": "al lao",
+        "answer": "al lado"
+      },
+      {
+        "type": "hear_type",
+        "say": "¡salú!",
+        "answer": "¡Salud!"
+      }
+    ]
+  },
+  {
+    "id": "s_vowel_devoicing",
+    "name": "Shrinking vowels next to s (central Mexico): pues → ps",
+    "summary": "In central Mexico unstressed vowels squeezed next to s can fade to a whisper: pues → ps, entonces → 'tons, gracias → gras's.",
+    "explain": "Here Mexico City is the odd one out. On the central plateau an unstressed vowel between voiceless consonants — especially next to s — often loses its voice: you hear the consonants and almost no vowel. \"Pues\" becomes \"ps\", \"entonces\" → \"'tons\", \"gracias\" → \"gras's\" (the final -ias nearly gone), \"buenas noches\" → \"buenas noch's\", \"pescado\" → \"p'scado\", \"necesito\" → \"nes'sito\". Because the s stays strong, chilango speech sounds hissy. When a word seems to be missing a vowel, fill in the e or a the spelling has.",
+    "mexico": "Strongest in Mexico City, Puebla, Toluca, Hidalgo and the central highlands; much weaker on the coasts, where the s weakens instead (see s_s_aspiration). It's gradient and variable: the same person says a full \"pues\" when emphatic. The vowel e is affected most. TTS voices can't really whisper vowels, so the drills use the closest readable forms (e.g. \"pos\").",
+    "examples": [
+      {
+        "written": "pues",
+        "sounds": "ps",
+        "en": "well, so",
+        "slow": "pues",
+        "fast": "pos"
+      },
+      {
+        "written": "entonces",
+        "sounds": "'ton-s(es)",
+        "en": "so, then",
+        "slow": "entonces",
+        "fast": "tonses"
+      },
+      {
+        "written": "gracias",
+        "sounds": "gra-s's",
+        "en": "thanks",
+        "slow": "gracias",
+        "fast": "grasias"
+      },
+      {
+        "written": "buenas noches",
+        "sounds": "bue-nas no-ch's",
+        "en": "good night",
+        "slow": "buenas noches",
+        "fast": "buenas noches"
+      },
+      {
+        "written": "necesito",
+        "sounds": "nes'-si-to",
+        "en": "I need",
+        "slow": "necesito",
+        "fast": "nessito"
+      },
+      {
+        "written": "pescado",
+        "sounds": "p's-ca-do",
+        "en": "fish",
+        "slow": "pescado",
+        "fast": "pscado"
+      },
+      {
+        "written": "a veces",
+        "sounds": "a ve-c's",
+        "en": "sometimes",
+        "slow": "a veces",
+        "fast": "a veses"
+      },
+      {
+        "written": "dos pesos",
+        "sounds": "dos pe-s's",
+        "en": "two pesos",
+        "slow": "dos pesos",
+        "fast": "dos pesos"
+      },
+      {
+        "written": "¿Qué pasó?",
+        "sounds": "¿qué p'só?",
+        "en": "What happened?",
+        "slow": "¿Qué pasó?",
+        "fast": "¿qué psó?"
+      },
+      {
+        "written": "presidente",
+        "sounds": "pres'-den-te",
+        "en": "president",
+        "slow": "presidente",
+        "fast": "presdente"
+      }
+    ],
+    "drills": [
+      {
+        "type": "hear_pick",
+        "say": "pos sí",
+        "options": [
+          "Pues sí.",
+          "Pues no.",
+          "Eso sí."
+        ],
+        "answer": "Pues sí."
+      },
+      {
+        "type": "hear_pick",
+        "say": "tonses, ¿qué?",
+        "options": [
+          "Entonces, ¿qué?",
+          "¿Y tú qué?",
+          "¿Tantos qué?"
+        ],
+        "answer": "Entonces, ¿qué?"
+      },
+      {
+        "type": "hear_pick",
+        "say": "nessito ayuda",
+        "options": [
+          "Necesito ayuda.",
+          "No necesito ayuda.",
+          "Necesita ayuda."
+        ],
+        "answer": "Necesito ayuda."
+      },
+      {
+        "type": "hear_pick",
+        "say": "pscado frito",
+        "options": [
+          "pescado frito",
+          "pasado frito",
+          "pescar frito"
+        ],
+        "answer": "pescado frito"
+      },
+      {
+        "type": "hear_pick",
+        "say": "¿qué psó?",
+        "options": [
+          "¿Qué pasó?",
+          "¿Qué piso?",
+          "¿Qué paso?"
+        ],
+        "answer": "¿Qué pasó?"
+      },
+      {
+        "type": "hear_type",
+        "say": "tons ya",
+        "answer": "entonces ya"
+      },
+      {
+        "type": "hear_type",
+        "say": "pos no sé",
+        "answer": "pues no sé"
+      },
+      {
+        "type": "hear_type",
+        "say": "buenas noches",
+        "answer": "buenas noches"
+      },
+      {
+        "type": "hear_type",
+        "say": "nessito un taxi",
+        "answer": "necesito un taxi"
+      },
+      {
+        "type": "hear_type",
+        "say": "muchas grasias",
+        "answer": "muchas gracias"
+      }
+    ]
+  },
+  {
+    "id": "s_soft_consonants",
+    "name": "Soft b, d, g: bueno → weno, agua → awa",
+    "summary": "b/v, d and g are only hard after a pause or m/n; between vowels they soften, and before ue they sound almost like w.",
+    "explain": "Spanish b, d and g each have two versions. After a pause or after m/n (and d after l) they're hard like English. Everywhere else, especially between vowels, the lips or tongue don't fully close, so they come out soft and breathy: \"la boca\" has a humming b, \"el gato\" a gargly g. Before \"ue\" and \"ua\" they nearly turn into w: \"bueno\" → \"weno\", \"agua\" → \"awa\", \"Guadalajara\" → \"Wadalajara\", \"güey\" → \"wey\". So \"huevo\", \"bueno\" and \"güero\" all start with a w-sound. Listen for the vowel shape, not the consonant.",
+    "mexico": "Standard in Mexico and a big part of why the speech sounds smooth. \"Weno\", \"awa\", \"wey\", \"wero\" are how these words are heard; in texts people even write \"wey\" and \"weno\". Note the classic joke pair \"bueno / huevo\": both start with w.",
+    "examples": [
+      {
+        "written": "bueno",
+        "sounds": "we-no",
+        "en": "good / well",
+        "slow": "bueno",
+        "fast": "weno"
+      },
+      {
+        "written": "agua",
+        "sounds": "a-wa",
+        "en": "water",
+        "slow": "agua",
+        "fast": "awa"
+      },
+      {
+        "written": "Guadalajara",
+        "sounds": "wa-da-la-ja-ra",
+        "en": "Guadalajara",
+        "slow": "Guadalajara",
+        "fast": "Wadalajara"
+      },
+      {
+        "written": "güey",
+        "sounds": "wey",
+        "en": "dude",
+        "slow": "güey",
+        "fast": "wey"
+      },
+      {
+        "written": "huevos",
+        "sounds": "we-vos",
+        "en": "eggs",
+        "slow": "huevos",
+        "fast": "webos"
+      },
+      {
+        "written": "güero",
+        "sounds": "we-ro",
+        "en": "blond / light-skinned",
+        "slow": "güero",
+        "fast": "wero"
+      },
+      {
+        "written": "aguacate",
+        "sounds": "a-wa-ca-te",
+        "en": "avocado",
+        "slow": "aguacate",
+        "fast": "awacate"
+      },
+      {
+        "written": "abuela",
+        "sounds": "a-we-la",
+        "en": "grandmother",
+        "slow": "abuela",
+        "fast": "awela"
+      },
+      {
+        "written": "igualmente",
+        "sounds": "i-wal-men-te",
+        "en": "likewise",
+        "slow": "igualmente",
+        "fast": "iwalmente"
+      },
+      {
+        "written": "buenas noches",
+        "sounds": "we-nas no-ches",
+        "en": "good night",
+        "slow": "buenas noches",
+        "fast": "wenas noches"
+      }
+    ],
+    "drills": [
+      {
+        "type": "hear_pick",
+        "say": "weno",
+        "options": [
+          "bueno",
+          "nuevo",
+          "huevo"
+        ],
+        "answer": "bueno"
+      },
+      {
+        "type": "hear_pick",
+        "say": "webo",
+        "options": [
+          "huevo",
+          "bueno",
+          "nuevo"
+        ],
+        "answer": "huevo"
+      },
+      {
+        "type": "hear_pick",
+        "say": "awa",
+        "options": [
+          "agua",
+          "haba",
+          "aguas"
+        ],
+        "answer": "agua"
+      },
+      {
+        "type": "hear_pick",
+        "say": "wero",
+        "options": [
+          "güero",
+          "guerra",
+          "cuero"
+        ],
+        "answer": "güero"
+      },
+      {
+        "type": "hear_pick",
+        "say": "Wadalajara",
+        "options": [
+          "Guadalajara",
+          "Guanajuato",
+          "Guatemala"
+        ],
+        "answer": "Guadalajara"
+      },
+      {
+        "type": "hear_pick",
+        "say": "awacate",
+        "options": [
+          "aguacate",
+          "abogado",
+          "agua caliente"
+        ],
+        "answer": "aguacate"
+      },
+      {
+        "type": "hear_type",
+        "say": "wenas noches",
+        "answer": "buenas noches"
+      },
+      {
+        "type": "hear_type",
+        "say": "iwalmente",
+        "answer": "igualmente"
+      },
+      {
+        "type": "hear_type",
+        "say": "mi awela",
+        "answer": "mi abuela"
+      },
+      {
+        "type": "hear_type",
+        "say": "un awa, porfa",
+        "answer": "un agua, por favor"
+      }
+    ]
+  },
+  {
+    "id": "s_numbers",
+    "name": "Numbers and prices at speed",
+    "summary": "Prices and times come fast and linked: ochentaicinco, dosientos sincuenta, alasocho. Learn the shapes.",
+    "explain": "Numbers are where travellers get lost: they're long, linked and said fast. The \"y\" in numbers merges: \"treinta y cinco\" → \"treintaicinco\", \"ochenta y ocho\" → \"ochentaiocho\". Teens end in -ce (once, doce, trece, catorce, quince); tens end in -enta (treinta, cuarenta…): listen for that ending. Hundreds have -cientos (doscientos, trescientos), except quinientos (500), setecientos (700), novecientos (900). Prices drop \"pesos con\": \"dos cincuenta\" = 2.50, \"son ciento veinte\" = 120. Times: \"a las ocho y media\", \"un cuarto para las cinco\".",
+    "mexico": "Mexicans tell time with \"para\": \"un cuarto para las ocho\" (7:45), \"veinte para las nueve\" (8:40). Slang for pesos is \"varos\" (\"cien varos\"). Vendors round and say just the number: \"son sesenta\". Big notes are 500 (quinientos) and 1000 (mil) — small stalls may not have change.",
+    "examples": [
+      {
+        "written": "treinta y cinco",
+        "sounds": "trein-tai-cin-co",
+        "en": "35",
+        "slow": "treinta y cinco",
+        "fast": "treintaicinco"
+      },
+      {
+        "written": "ochenta y ocho",
+        "sounds": "o-chen-tai-o-cho",
+        "en": "88",
+        "slow": "ochenta y ocho",
+        "fast": "ochentaiocho"
+      },
+      {
+        "written": "ciento veinte pesos",
+        "sounds": "cien-to-vein-te pe-sos",
+        "en": "120 pesos",
+        "slow": "ciento veinte pesos",
+        "fast": "cientoveinte pesos"
+      },
+      {
+        "written": "dos cincuenta",
+        "sounds": "dos sin-cuen-ta",
+        "en": "2.50",
+        "slow": "dos cincuenta",
+        "fast": "dos sincuenta"
+      },
+      {
+        "written": "quince / cincuenta",
+        "sounds": "QUIN-ce / cin-CUEN-ta",
+        "en": "15 / 50",
+        "slow": "quince / cincuenta",
+        "fast": "quince, cincuenta"
+      },
+      {
+        "written": "a las ocho y media",
+        "sounds": "a-la-so-choi-me-dia",
+        "en": "at 8:30",
+        "slow": "a las ocho y media",
+        "fast": "alasocho y media"
+      },
+      {
+        "written": "un cuarto para las cinco",
+        "sounds": "un cuar-to pa' las cin-co",
+        "en": "4:45",
+        "slow": "un cuarto para las cinco",
+        "fast": "un cuarto pa' las cinco"
+      },
+      {
+        "written": "veinte para las nueve",
+        "sounds": "vein-te pa' las nue-ve",
+        "en": "8:40",
+        "slow": "veinte para las nueve",
+        "fast": "veinte pa' las nueve"
+      },
+      {
+        "written": "cien varos",
+        "sounds": "sien va-ros",
+        "en": "100 pesos (slang)",
+        "slow": "cien varos",
+        "fast": "sien varos"
+      },
+      {
+        "written": "mil doscientos",
+        "sounds": "mil do-sien-tos",
+        "en": "1,200",
+        "slow": "mil doscientos",
+        "fast": "mil dosientos"
+      }
+    ],
+    "drills": [
+      {
+        "type": "hear_pick",
+        "say": "son treintaicinco pesos",
+        "options": [
+          "35 pesos",
+          "25 pesos",
+          "45 pesos",
+          "53 pesos"
+        ],
+        "answer": "35 pesos"
+      },
+      {
+        "type": "hear_pick",
+        "say": "son ochentaiocho",
+        "options": [
+          "88",
+          "68",
+          "18"
+        ],
+        "answer": "88"
+      },
+      {
+        "type": "hear_pick",
+        "say": "dosientos sincuenta",
+        "options": [
+          "250",
+          "215",
+          "205"
+        ],
+        "answer": "250"
+      },
+      {
+        "type": "hear_pick",
+        "say": "son quince pesos",
+        "options": [
+          "15 pesos",
+          "50 pesos",
+          "5 pesos"
+        ],
+        "answer": "15 pesos"
+      },
+      {
+        "type": "hear_pick",
+        "say": "un cuarto pa' las cinco",
+        "options": [
+          "4:45",
+          "5:15",
+          "5:45"
+        ],
+        "answer": "4:45"
+      },
+      {
+        "type": "hear_pick",
+        "say": "alasocho y media",
+        "options": [
+          "8:30",
+          "8:15",
+          "7:30"
+        ],
+        "answer": "8:30"
+      },
+      {
+        "type": "hear_pick",
+        "say": "setesientos",
+        "options": [
+          "700",
+          "600",
+          "70"
+        ],
+        "answer": "700"
+      },
+      {
+        "type": "hear_pick",
+        "say": "veinte pa' las nueve",
+        "options": [
+          "8:40",
+          "9:20",
+          "8:20"
+        ],
+        "answer": "8:40"
+      },
+      {
+        "type": "hear_type",
+        "say": "treintaidós",
+        "answer": "treinta y dos"
+      },
+      {
+        "type": "hear_type",
+        "say": "dos sincuenta",
+        "answer": "dos cincuenta"
+      },
+      {
+        "type": "hear_type",
+        "say": "sien pesos",
+        "answer": "cien pesos"
+      },
+      {
+        "type": "hear_type",
+        "say": "quinientos",
+        "answer": "quinientos"
+      }
+    ]
+  },
+  {
+    "id": "s_seseo",
+    "name": "c, z and s all sound like s",
+    "summary": "In Mexico (and all of Latin America) ce, ci and z are pronounced s — there is no 'th' lisp.",
+    "explain": "Spelling has three letters for one sound. \"Casa\" (house) and \"caza\" (hunt) sound identical, as do \"ciento\" (hundred) and \"siento\" (I feel), \"cocer\" (cook) and \"coser\" (sew). So \"gracias\" is \"grasias\", \"cerveza\" is \"servesa\", \"cebolla\" is \"sebolla\", \"diez\" is \"dies\". When you write what you hear, an s-sound might be spelled c (before e/i), z or s — you have to know the word. Before a, o, u the letter c is a k: casa, cosa, cuna.",
+    "mexico": "Mexico has seseo everywhere. The Madrid \"th\" sounds foreign to Mexicans; don't imitate it. Highland Mexican s is crisp and strong.",
+    "examples": [
+      {
+        "written": "gracias",
+        "sounds": "gra-sias",
+        "en": "thanks",
+        "slow": "gracias",
+        "fast": "grasias"
+      },
+      {
+        "written": "cerveza",
+        "sounds": "ser-ve-sa",
+        "en": "beer",
+        "slow": "cerveza",
+        "fast": "servesa"
+      },
+      {
+        "written": "cebolla",
+        "sounds": "se-bo-lla",
+        "en": "onion",
+        "slow": "cebolla",
+        "fast": "sebolla"
+      },
+      {
+        "written": "diez",
+        "sounds": "dies",
+        "en": "ten",
+        "slow": "diez",
+        "fast": "dies"
+      },
+      {
+        "written": "zapatos",
+        "sounds": "sa-pa-tos",
+        "en": "shoes",
+        "slow": "zapatos",
+        "fast": "sapatos"
+      },
+      {
+        "written": "cien",
+        "sounds": "sien",
+        "en": "one hundred",
+        "slow": "cien",
+        "fast": "sien"
+      },
+      {
+        "written": "necesito",
+        "sounds": "ne-se-si-to",
+        "en": "I need",
+        "slow": "necesito",
+        "fast": "nesesito"
+      },
+      {
+        "written": "la cocina",
+        "sounds": "la co-si-na",
+        "en": "the kitchen",
+        "slow": "la cocina",
+        "fast": "la cosina"
+      },
+      {
+        "written": "la plaza",
+        "sounds": "la pla-sa",
+        "en": "the square",
+        "slow": "la plaza",
+        "fast": "la plasa"
+      },
+      {
+        "written": "la ciudad",
+        "sounds": "la siu-dá",
+        "en": "the city",
+        "slow": "la ciudad",
+        "fast": "la siudá"
+      }
+    ],
+    "drills": [
+      {
+        "type": "hear_pick",
+        "say": "sien pesos",
+        "options": [
+          "cien pesos",
+          "seis pesos",
+          "siete pesos"
+        ],
+        "answer": "cien pesos"
+      },
+      {
+        "type": "hear_pick",
+        "say": "servesa fría",
+        "options": [
+          "cerveza fría",
+          "cereza fría",
+          "cerveza fina"
+        ],
+        "answer": "cerveza fría"
+      },
+      {
+        "type": "hear_pick",
+        "say": "dies minutos",
+        "options": [
+          "diez minutos",
+          "dos minutos",
+          "seis minutos"
+        ],
+        "answer": "diez minutos"
+      },
+      {
+        "type": "hear_pick",
+        "say": "la plasa",
+        "options": [
+          "la plaza",
+          "la playa",
+          "la placa"
+        ],
+        "answer": "la plaza"
+      },
+      {
+        "type": "hear_type",
+        "say": "grasias",
+        "answer": "gracias"
+      },
+      {
+        "type": "hear_type",
+        "say": "sebolla",
+        "answer": "cebolla"
+      },
+      {
+        "type": "hear_type",
+        "say": "nesesito",
+        "answer": "necesito"
+      },
+      {
+        "type": "hear_type",
+        "say": "la cosina",
+        "answer": "la cocina"
+      },
+      {
+        "type": "hear_type",
+        "say": "sapatos",
+        "answer": "zapatos"
+      },
+      {
+        "type": "hear_type",
+        "say": "una servesa",
+        "answer": "una cerveza"
+      }
+    ]
+  },
+  {
+    "id": "s_same_letters",
+    "name": "Silent h, b = v, ll = y",
+    "summary": "h is always silent, b and v are the same sound, and ll sounds like y.",
+    "explain": "Three more spelling traps when matching sound to writing. H is never pronounced: \"hola\" = \"ola\", \"hay\" = \"ay\", \"hora\" = \"ora\", \"hacer\" = \"aser\" — which is why \"a ver\" and \"haber\" sound identical. B and V are the same sound: \"vamos\" starts with a b, and Mexicans spell aloud \"b grande\" vs \"v chica\". LL and Y sound the same: \"calle\" = \"caye\", \"pollo\" = \"poyo\", \"me llamo\" = \"me yamo\". Words starting hie- / hue- start with a y / w sound: hielo = \"yelo\", huevo = \"webo\".",
+    "mexico": "Mexican y/ll is a firm y, a bit stronger than English y (after n or l it's almost \"dy\": \"con yelo\"). It's never the Argentine \"sh\". J and g (before e/i) are a soft, breathy h — gentler than Spain's.",
+    "examples": [
+      {
+        "written": "hola",
+        "sounds": "o-la",
+        "en": "hello",
+        "slow": "hola",
+        "fast": "ola"
+      },
+      {
+        "written": "¿Hay wifi?",
+        "sounds": "¿ay wai-fai?",
+        "en": "Is there wifi?",
+        "slow": "¿Hay wifi?",
+        "fast": "¿ay waifai?"
+      },
+      {
+        "written": "¿Qué hora es?",
+        "sounds": "¿qué o-ra es?",
+        "en": "What time is it?",
+        "slow": "¿Qué hora es?",
+        "fast": "¿qué ora es?"
+      },
+      {
+        "written": "a ver / haber",
+        "sounds": "a-ver",
+        "en": "let's see / to have",
+        "slow": "a ver / haber",
+        "fast": "aver"
+      },
+      {
+        "written": "vamos",
+        "sounds": "ba-mos",
+        "en": "let's go",
+        "slow": "vamos",
+        "fast": "bamos"
+      },
+      {
+        "written": "la calle",
+        "sounds": "la ca-ye",
+        "en": "the street",
+        "slow": "la calle",
+        "fast": "la caye"
+      },
+      {
+        "written": "pollo",
+        "sounds": "po-yo",
+        "en": "chicken",
+        "slow": "pollo",
+        "fast": "poyo"
+      },
+      {
+        "written": "me llamo",
+        "sounds": "me ya-mo",
+        "en": "my name is",
+        "slow": "me llamo",
+        "fast": "me yamo"
+      },
+      {
+        "written": "llueve",
+        "sounds": "yue-ve",
+        "en": "it's raining",
+        "slow": "llueve",
+        "fast": "yueve"
+      },
+      {
+        "written": "sin hielo",
+        "sounds": "sin ye-lo",
+        "en": "without ice",
+        "slow": "sin hielo",
+        "fast": "sin yelo"
+      }
+    ],
+    "drills": [
+      {
+        "type": "hear_pick",
+        "say": "¿ay waifai?",
+        "options": [
+          "¿Hay wifi?",
+          "¿Ahí wifi?",
+          "¿Y wifi?"
+        ],
+        "answer": "¿Hay wifi?"
+      },
+      {
+        "type": "hear_pick",
+        "say": "la caye",
+        "options": [
+          "la calle",
+          "la cae",
+          "la clave"
+        ],
+        "answer": "la calle"
+      },
+      {
+        "type": "hear_pick",
+        "say": "poyo",
+        "options": [
+          "pollo",
+          "polvo",
+          "bollo"
+        ],
+        "answer": "pollo"
+      },
+      {
+        "type": "hear_pick",
+        "say": "me yamo Ana",
+        "options": [
+          "Me llamo Ana.",
+          "Me llama Ana.",
+          "Mi amor, Ana."
+        ],
+        "answer": "Me llamo Ana."
+      },
+      {
+        "type": "hear_pick",
+        "say": "la yave",
+        "options": [
+          "la llave",
+          "la clave",
+          "la nave"
+        ],
+        "answer": "la llave"
+      },
+      {
+        "type": "hear_type",
+        "say": "ase calor",
+        "answer": "hace calor"
+      },
+      {
+        "type": "hear_type",
+        "say": "¿qué ora es?",
+        "answer": "¿Qué hora es?"
+      },
+      {
+        "type": "hear_type",
+        "say": "yueve mucho",
+        "answer": "llueve mucho"
+      },
+      {
+        "type": "hear_type",
+        "say": "sin yelo",
+        "answer": "sin hielo"
+      },
+      {
+        "type": "hear_type",
+        "say": "bamos",
+        "answer": "vamos"
+      },
+      {
+        "type": "hear_type",
+        "say": "aora",
+        "answer": "ahora"
+      }
+    ]
+  },
+  {
+    "id": "s_clipping",
+    "name": "Clipped words: porfa, profe, depa, refri",
+    "summary": "Long everyday words get chopped: por favor → porfa, profesor → profe, departamento → depa, refrigerador → refri.",
+    "explain": "Like English \"fridge\", \"phone\" and \"info\", Spanish clips long everyday words: \"porfa\" (por favor), \"profe\" (teacher), \"compa\" (buddy, from compadre), \"bici\" (bicycle), \"refri\" (fridge), \"depa\" (apartment), \"cel\" (cell phone), \"tele\" (TV), \"peli\" (movie), \"finde\" (weekend). Greetings shrink too: \"buenos días / buenas tardes\" → \"¡buenas!\", \"buen provecho\" → \"¡provecho!\". They're informal but extremely common, so recognise them even if you don't use them.",
+    "mexico": "Mexico-flavoured clippings: \"depa\" (departamento), \"refri\", \"compa\", \"seño\" (señora/señorita, said to women at stalls), \"prepa\" (preparatoria = high school), \"cel\", \"porfis\" (cute porfa). \"Un momento\" becomes the diminutive \"un momentito\" instead of shrinking.",
+    "examples": [
+      {
+        "written": "por favor",
+        "sounds": "por-fa",
+        "en": "please",
+        "slow": "por favor",
+        "fast": "porfa"
+      },
+      {
+        "written": "profesor",
+        "sounds": "pro-fe",
+        "en": "teacher",
+        "slow": "profesor",
+        "fast": "profe"
+      },
+      {
+        "written": "departamento",
+        "sounds": "de-pa",
+        "en": "apartment",
+        "slow": "departamento",
+        "fast": "depa"
+      },
+      {
+        "written": "refrigerador",
+        "sounds": "re-fri",
+        "en": "fridge",
+        "slow": "refrigerador",
+        "fast": "refri"
+      },
+      {
+        "written": "celular",
+        "sounds": "cel",
+        "en": "cell phone",
+        "slow": "celular",
+        "fast": "cel"
+      },
+      {
+        "written": "compadre",
+        "sounds": "com-pa",
+        "en": "buddy",
+        "slow": "compadre",
+        "fast": "compa"
+      },
+      {
+        "written": "película",
+        "sounds": "pe-li",
+        "en": "movie",
+        "slow": "película",
+        "fast": "peli"
+      },
+      {
+        "written": "fin de semana",
+        "sounds": "fin-de",
+        "en": "weekend",
+        "slow": "fin de semana",
+        "fast": "finde"
+      },
+      {
+        "written": "buenas tardes",
+        "sounds": "¡bue-nas!",
+        "en": "good afternoon",
+        "slow": "buenas tardes",
+        "fast": "¡buenas!"
+      },
+      {
+        "written": "señora",
+        "sounds": "se-ño",
+        "en": "ma'am",
+        "slow": "señora",
+        "fast": "seño"
+      },
+      {
+        "written": "preparatoria",
+        "sounds": "pre-pa",
+        "en": "high school",
+        "slow": "preparatoria",
+        "fast": "prepa"
+      },
+      {
+        "written": "buen provecho",
+        "sounds": "¡pro-ve-cho!",
+        "en": "enjoy your meal",
+        "slow": "buen provecho",
+        "fast": "¡provecho!"
+      }
+    ],
+    "drills": [
+      {
+        "type": "hear_pick",
+        "say": "porfa",
+        "options": [
+          "por favor",
+          "por fin",
+          "perfecto"
+        ],
+        "answer": "por favor"
+      },
+      {
+        "type": "hear_pick",
+        "say": "mi depa",
+        "options": [
+          "mi departamento",
+          "mi deporte",
+          "mi despacho"
+        ],
+        "answer": "mi departamento"
+      },
+      {
+        "type": "hear_pick",
+        "say": "el refri",
+        "options": [
+          "el refrigerador",
+          "el refresco",
+          "el refrán"
+        ],
+        "answer": "el refrigerador"
+      },
+      {
+        "type": "hear_pick",
+        "say": "la peli",
+        "options": [
+          "la película",
+          "la pelea",
+          "el pelo"
+        ],
+        "answer": "la película"
+      },
+      {
+        "type": "hear_pick",
+        "say": "el finde",
+        "options": [
+          "el fin de semana",
+          "el final",
+          "la fiesta"
+        ],
+        "answer": "el fin de semana"
+      },
+      {
+        "type": "hear_type",
+        "say": "porfa",
+        "answer": "por favor"
+      },
+      {
+        "type": "hear_type",
+        "say": "el profe",
+        "answer": "el profesor"
+      },
+      {
+        "type": "hear_type",
+        "say": "mi cel",
+        "answer": "mi celular"
+      },
+      {
+        "type": "hear_type",
+        "say": "seño",
+        "answer": "señora"
+      },
+      {
+        "type": "hear_type",
+        "say": "la prepa",
+        "answer": "la preparatoria"
+      }
+    ]
+  },
+  {
+    "id": "s_r_sounds",
+    "name": "Tap r vs trilled rr: pero / perro, caro / carro",
+    "summary": "A single r between vowels is a quick tap (like American 'butter'); rr and word-initial r are a trill. The difference changes meaning.",
+    "explain": "\"Pero\" (but) has a tap: the tongue flicks once, like the tt in American \"better\". \"Perro\" (dog) has a trill: several rapid flicks. Same with \"caro\" (expensive) vs \"carro\" (car), \"cero\" (zero) vs \"cerro\" (hill), \"ahora\" (now) vs \"ahorra\" (saves). An r at the start of a word or after n, l, s is also trilled: \"Roma\", \"honra\", \"alrededor\". In fast speech the tap can be very light, so \"para\" can sound almost like \"pa(d)a\".",
+    "mexico": "Many Mexico City speakers hiss a final r, especially before a pause: \"señor\" ends almost like \"señorsh\", \"por favor\" like \"por favorsh\". It's a regional quirk; the word is the same. Mexican \"carro\" (car) makes the caro/carro pair especially useful.",
+    "examples": [
+      {
+        "written": "pero / perro",
+        "sounds": "pe-ro / pe-rro",
+        "en": "but / dog",
+        "slow": "pero / perro",
+        "fast": "pero, perro"
+      },
+      {
+        "written": "caro / carro",
+        "sounds": "ca-ro / ca-rro",
+        "en": "expensive / car",
+        "slow": "caro / carro",
+        "fast": "caro, carro"
+      },
+      {
+        "written": "cero / cerro",
+        "sounds": "ce-ro / ce-rro",
+        "en": "zero / hill",
+        "slow": "cero / cerro",
+        "fast": "cero, cerro"
+      },
+      {
+        "written": "ahora / ahorra",
+        "sounds": "a-o-ra / a-o-rra",
+        "en": "now / saves",
+        "slow": "ahora / ahorra",
+        "fast": "ahora, ahorra"
+      },
+      {
+        "written": "coro / corro",
+        "sounds": "co-ro / co-rro",
+        "en": "choir / I run",
+        "slow": "coro / corro",
+        "fast": "coro, corro"
+      },
+      {
+        "written": "la Roma",
+        "sounds": "la rro-ma",
+        "en": "Roma (CDMX neighbourhood)",
+        "slow": "la Roma",
+        "fast": "la Roma"
+      },
+      {
+        "written": "señor",
+        "sounds": "se-ñor(sh)",
+        "en": "sir",
+        "slow": "señor",
+        "fast": "señor"
+      },
+      {
+        "written": "por favor",
+        "sounds": "por fa-vor(sh)",
+        "en": "please",
+        "slow": "por favor",
+        "fast": "por favor"
+      }
+    ],
+    "drills": [
+      {
+        "type": "hear_pick",
+        "say": "perro",
+        "options": [
+          "perro",
+          "pero",
+          "pelo"
+        ],
+        "answer": "perro"
+      },
+      {
+        "type": "hear_pick",
+        "say": "pero",
+        "options": [
+          "pero",
+          "perro",
+          "peso"
+        ],
+        "answer": "pero"
+      },
+      {
+        "type": "hear_pick",
+        "say": "caro",
+        "options": [
+          "caro",
+          "carro",
+          "claro"
+        ],
+        "answer": "caro"
+      },
+      {
+        "type": "hear_pick",
+        "say": "carro",
+        "options": [
+          "carro",
+          "caro",
+          "barro"
+        ],
+        "answer": "carro"
+      },
+      {
+        "type": "hear_pick",
+        "say": "cerro",
+        "options": [
+          "cerro",
+          "cero",
+          "cierro"
+        ],
+        "answer": "cerro"
+      },
+      {
+        "type": "hear_pick",
+        "say": "ahorra",
+        "options": [
+          "ahorra",
+          "ahora",
+          "aurora"
+        ],
+        "answer": "ahorra"
+      },
+      {
+        "type": "hear_pick",
+        "say": "coro",
+        "options": [
+          "coro",
+          "corro",
+          "toro"
+        ],
+        "answer": "coro"
+      },
+      {
+        "type": "hear_type",
+        "say": "un carro rojo",
+        "answer": "un carro rojo"
+      },
+      {
+        "type": "hear_type",
+        "say": "es muy caro",
+        "answer": "es muy caro"
+      },
+      {
+        "type": "hear_type",
+        "say": "pero no quiero",
+        "answer": "pero no quiero"
+      }
+    ]
+  },
+  {
+    "id": "s_x_tl",
+    "name": "Mexican names: x and tl",
+    "summary": "In Mexican words x is usually j (México, Oaxaca), sometimes sh (Xcaret) or s (Xochimilco); tl is one sound-block (Tlaxcala).",
+    "explain": "Many Mexican place names come from Nahuatl and Maya and keep old spellings. The x in México, Oaxaca, Xalapa and Texas is the Spanish j (a breathy h): \"Méjico\", \"Oajaca\", \"Jalapa\". In Maya names in Yucatán and Quintana Roo, x is \"sh\": Xcaret = \"shcaret\", Uxmal = \"ushmal\". In Xochimilco and Xóchitl it's an s: \"Sochimilco\". The cluster tl stays together and starts a syllable: \"Tlal-pan\", \"Tlax-ca-la\", \"Po-po-ca-té-petl\". In ordinary words x is ks or just s: \"taxi\" (taksi), \"extrañar\" (estrañar), \"explicar\" (esplicar).",
+    "mexico": "Mexicans spell México with x as a point of identity. Saying Oaxaca with a \"ks\" is the classic tourist giveaway — it's \"wa-HA-ka\". Before a consonant x is usually just s: \"texto\" → \"testo\", \"explicar\" → \"esplicar\".",
+    "examples": [
+      {
+        "written": "México",
+        "sounds": "mé-ji-co",
+        "en": "Mexico",
+        "slow": "México",
+        "fast": "Méjico"
+      },
+      {
+        "written": "Oaxaca",
+        "sounds": "oa-ja-ca",
+        "en": "Oaxaca",
+        "slow": "Oaxaca",
+        "fast": "Oajaca"
+      },
+      {
+        "written": "Xalapa",
+        "sounds": "ja-la-pa",
+        "en": "Xalapa (Veracruz capital)",
+        "slow": "Xalapa",
+        "fast": "Jalapa"
+      },
+      {
+        "written": "Xochimilco",
+        "sounds": "so-chi-mil-co",
+        "en": "Xochimilco (canals in CDMX)",
+        "slow": "Xochimilco",
+        "fast": "Sochimilco"
+      },
+      {
+        "written": "Xcaret",
+        "sounds": "sh-ca-ret",
+        "en": "Xcaret (park near Playa del Carmen)",
+        "slow": "Xcaret",
+        "fast": "Shcaret"
+      },
+      {
+        "written": "Uxmal",
+        "sounds": "ush-mal",
+        "en": "Uxmal (Maya ruins)",
+        "slow": "Uxmal",
+        "fast": "Ushmal"
+      },
+      {
+        "written": "Tlaxcala",
+        "sounds": "tlas-ca-la",
+        "en": "Tlaxcala",
+        "slow": "Tlaxcala",
+        "fast": "Tlascala"
+      },
+      {
+        "written": "Texcoco",
+        "sounds": "tes-co-co",
+        "en": "Texcoco",
+        "slow": "Texcoco",
+        "fast": "Tescoco"
+      },
+      {
+        "written": "te extraño",
+        "sounds": "tes-tra-ño",
+        "en": "I miss you",
+        "slow": "te extraño",
+        "fast": "testraño"
+      },
+      {
+        "written": "taxi",
+        "sounds": "tak-si",
+        "en": "taxi",
+        "slow": "taxi",
+        "fast": "taksi"
+      }
+    ],
+    "drills": [
+      {
+        "type": "hear_pick",
+        "say": "Oajaca",
+        "options": [
+          "Oaxaca",
+          "Ocosingo",
+          "Orizaba"
+        ],
+        "answer": "Oaxaca"
+      },
+      {
+        "type": "hear_pick",
+        "say": "Méjico",
+        "options": [
+          "México",
+          "Mexicali",
+          "Michoacán"
+        ],
+        "answer": "México"
+      },
+      {
+        "type": "hear_pick",
+        "say": "Sochimilco",
+        "options": [
+          "Xochimilco",
+          "Xilitla",
+          "Chimalhuacán"
+        ],
+        "answer": "Xochimilco"
+      },
+      {
+        "type": "hear_pick",
+        "say": "Shcaret",
+        "options": [
+          "Xcaret",
+          "Escárcega",
+          "Cancún"
+        ],
+        "answer": "Xcaret"
+      },
+      {
+        "type": "hear_pick",
+        "say": "Jalapa",
+        "options": [
+          "Xalapa",
+          "Jalisco",
+          "Japón"
+        ],
+        "answer": "Xalapa"
+      },
+      {
+        "type": "hear_pick",
+        "say": "Ushmal",
+        "options": [
+          "Uxmal",
+          "Usumacinta",
+          "Mazatlán"
+        ],
+        "answer": "Uxmal"
+      },
+      {
+        "type": "hear_type",
+        "say": "Méjico",
+        "answer": "México"
+      },
+      {
+        "type": "hear_type",
+        "say": "Oajaca",
+        "answer": "Oaxaca"
+      },
+      {
+        "type": "hear_type",
+        "say": "te estraño",
+        "answer": "te extraño"
+      },
+      {
+        "type": "hear_type",
+        "say": "Tlascala",
+        "answer": "Tlaxcala"
+      }
+    ]
+  },
+  {
+    "id": "s_s_aspiration",
+    "name": "Coastal Mexico: s becomes h or disappears",
+    "summary": "On the Gulf and Pacific coasts, s at the end of a syllable turns into a breathy h or vanishes: los dos → loh doh, ¿qué es esto? → ¿qué eh ehto?",
+    "explain": "In much of the Spanish-speaking world (the Caribbean, southern Spain, coastal Latin America) an s before a consonant or at the end of a word weakens to an h-like breath or disappears. \"Mismo\" sounds like \"mihmo\", \"estamos\" like \"ehtamo\", \"las casas\" like \"lah casa\". The plural is then carried by the article or by context. If a word seems to be missing its s, put it back. (Respellings here use ' for the lost s, since a Spanish h is silent.)",
+    "mexico": "Common in Veracruz and Tabasco, along the Guerrero and Oaxaca coasts, and on parts of the Pacific northwest coast. Mexico City and the highlands keep a strong s (they shrink vowels instead — see s_vowel_devoicing). Yucatán mostly keeps its s but has its own Maya-influenced features. Central Mexicans sometimes imitate it to sound \"costeño\".",
+    "examples": [
+      {
+        "written": "los dos",
+        "sounds": "loh doh",
+        "en": "the two",
+        "slow": "los dos",
+        "fast": "lo' do'"
+      },
+      {
+        "written": "mismo",
+        "sounds": "mih-mo",
+        "en": "same",
+        "slow": "mismo",
+        "fast": "mi'mo"
+      },
+      {
+        "written": "estamos",
+        "sounds": "eh-ta-mo",
+        "en": "we are",
+        "slow": "estamos",
+        "fast": "e'tamo'"
+      },
+      {
+        "written": "¿Qué es esto?",
+        "sounds": "¿qué eh eh-to?",
+        "en": "What's this?",
+        "slow": "¿Qué es esto?",
+        "fast": "¿qué e' e'to?"
+      },
+      {
+        "written": "las casas",
+        "sounds": "lah ca-sa",
+        "en": "the houses",
+        "slow": "las casas",
+        "fast": "la' casa'"
+      },
+      {
+        "written": "buenos días",
+        "sounds": "bue-no' dí-a'",
+        "en": "good morning",
+        "slow": "buenos días",
+        "fast": "bueno' día'"
+      },
+      {
+        "written": "vamos a la playa",
+        "sounds": "va-mo' a la pla-ya",
+        "en": "let's go to the beach",
+        "slow": "vamos a la playa",
+        "fast": "vamo' a la playa"
+      },
+      {
+        "written": "después",
+        "sounds": "deh-pué",
+        "en": "afterwards",
+        "slow": "después",
+        "fast": "de'pué'"
+      },
+      {
+        "written": "está bueno",
+        "sounds": "eh-tá bue-no",
+        "en": "it's good",
+        "slow": "está bueno",
+        "fast": "e'tá bueno"
+      }
+    ],
+    "drills": [
+      {
+        "type": "hear_pick",
+        "say": "lo' do'",
+        "options": [
+          "los dos",
+          "lo doy",
+          "el dos"
+        ],
+        "answer": "los dos"
+      },
+      {
+        "type": "hear_pick",
+        "say": "¿qué e' e'to?",
+        "options": [
+          "¿Qué es esto?",
+          "¿Qué hay?",
+          "¿Quién es?"
+        ],
+        "answer": "¿Qué es esto?"
+      },
+      {
+        "type": "hear_pick",
+        "say": "e'tamo' aquí",
+        "options": [
+          "Estamos aquí.",
+          "Tomamos aquí.",
+          "Está mal aquí."
+        ],
+        "answer": "Estamos aquí."
+      },
+      {
+        "type": "hear_pick",
+        "say": "de'pué'",
+        "options": [
+          "después",
+          "de pie",
+          "despierta"
+        ],
+        "answer": "después"
+      },
+      {
+        "type": "hear_pick",
+        "say": "lo mi'mo",
+        "options": [
+          "lo mismo",
+          "lo mío",
+          "el mimo"
+        ],
+        "answer": "lo mismo"
+      },
+      {
+        "type": "hear_pick",
+        "say": "vamo' a la playa",
+        "options": [
+          "Vamos a la playa.",
+          "Vamos allá.",
+          "Vaya playa."
+        ],
+        "answer": "Vamos a la playa."
+      },
+      {
+        "type": "hear_type",
+        "say": "bueno' día'",
+        "answer": "buenos días"
+      },
+      {
+        "type": "hear_type",
+        "say": "la' casa'",
+        "answer": "las casas"
+      },
+      {
+        "type": "hear_type",
+        "say": "¿qué e' e'to?",
+        "answer": "¿Qué es esto?"
+      },
+      {
+        "type": "hear_type",
+        "say": "e'tá bueno",
+        "answer": "Está bueno."
+      }
+    ]
+  }
+]

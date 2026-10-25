@@ -1,0 +1,5163 @@
+[
+  {
+    "id": "rd_el_aeropuerto",
+    "tier": 1,
+    "after_grammar": "g_present_ar",
+    "title": "En el aeropuerto",
+    "title_en": "At the airport",
+    "topic": "travel",
+    "level_note": "present tense, ~70 words",
+    "sentences": [
+      {
+        "es": "Matt llega a la Ciudad de México en la noche.",
+        "en": "Matt arrives in Mexico City at night.",
+        "gist": "He lands in Mexico City late.",
+        "words": [
+          {
+            "es": "llega",
+            "en": "arrives (llegar)"
+          },
+          {
+            "es": "en la noche",
+            "en": "at night (Mexico; Spain says 'por la noche')"
+          }
+        ]
+      },
+      {
+        "es": "El aeropuerto es muy grande y hay mucha gente.",
+        "en": "The airport is very big and there are a lot of people.",
+        "gist": "It's huge and crowded.",
+        "words": [
+          {
+            "es": "hay",
+            "en": "there is / there are"
+          },
+          {
+            "es": "gente",
+            "en": "people (singular in Spanish: la gente)"
+          }
+        ]
+      },
+      {
+        "es": "Primero, Matt pasa por migración y enseña su pasaporte.",
+        "en": "First, Matt goes through immigration and shows his passport.",
+        "gist": "Passport control comes first.",
+        "words": [
+          {
+            "es": "pasa por",
+            "en": "goes through (pasar)"
+          },
+          {
+            "es": "migración",
+            "en": "immigration"
+          },
+          {
+            "es": "enseña",
+            "en": "shows (enseñar; also 'teaches')"
+          }
+        ]
+      },
+      {
+        "es": "—¿Viene de vacaciones? —pregunta la agente.",
+        "en": "\"Are you here on vacation?\" the officer asks.",
+        "gist": "The officer asks why he's visiting.",
+        "words": [
+          {
+            "es": "viene",
+            "en": "are you coming (venir, usted form)"
+          },
+          {
+            "es": "de vacaciones",
+            "en": "on vacation"
+          },
+          {
+            "es": "agente",
+            "en": "officer"
+          }
+        ]
+      },
+      {
+        "es": "—Sí, de vacaciones —contesta Matt.",
+        "en": "\"Yes, on vacation,\" Matt answers.",
+        "gist": "He says he's a tourist.",
+        "words": [
+          {
+            "es": "contesta",
+            "en": "answers (contestar)"
+          }
+        ]
+      },
+      {
+        "es": "Después, Matt busca su maleta.",
+        "en": "Afterwards, Matt looks for his suitcase.",
+        "gist": "Now he has to find his bag.",
+        "words": [
+          {
+            "es": "busca",
+            "en": "looks for (buscar; no 'for' needed)"
+          },
+          {
+            "es": "maleta",
+            "en": "suitcase"
+          }
+        ]
+      },
+      {
+        "es": "La maleta tarda mucho, pero por fin llega.",
+        "en": "The suitcase takes a long time, but it finally arrives.",
+        "gist": "Long wait, but the bag shows up.",
+        "words": [
+          {
+            "es": "tarda",
+            "en": "takes a long time (tardar)"
+          },
+          {
+            "es": "por fin",
+            "en": "finally"
+          }
+        ]
+      },
+      {
+        "es": "Luego, Matt cambia dinero y compra un chip para su celular.",
+        "en": "Then Matt changes some money and buys a SIM card for his phone.",
+        "gist": "He gets pesos and a Mexican SIM.",
+        "words": [
+          {
+            "es": "cambia",
+            "en": "changes, exchanges (cambiar)"
+          },
+          {
+            "es": "chip",
+            "en": "SIM card (Mexico)"
+          },
+          {
+            "es": "celular",
+            "en": "cell phone"
+          }
+        ],
+        "natural": "Luego, Matt cambia dinero y compra un chip pa' su celular."
+      },
+      {
+        "es": "Está cansado, pero está muy contento.",
+        "en": "He's tired, but he's very happy.",
+        "gist": "Tired but glad to be there.",
+        "words": [
+          {
+            "es": "cansado",
+            "en": "tired"
+          },
+          {
+            "es": "contento",
+            "en": "happy, pleased"
+          }
+        ],
+        "natural": "'Tá cansado, pero 'tá muy contento."
+      }
+    ]
+  },
+  {
+    "id": "rd_el_uber",
+    "tier": 1,
+    "after_grammar": "g_present_ar",
+    "title": "El Uber",
+    "title_en": "The Uber ride",
+    "topic": "transport",
+    "level_note": "present tense, ~70 words",
+    "sentences": [
+      {
+        "es": "Matt necesita ir a su hotel en la colonia Roma.",
+        "en": "Matt needs to go to his hotel in the Roma neighborhood.",
+        "gist": "He has to get to his hotel.",
+        "words": [
+          {
+            "es": "necesita",
+            "en": "needs (necesitar)"
+          },
+          {
+            "es": "colonia",
+            "en": "neighborhood (Mexico)"
+          }
+        ]
+      },
+      {
+        "es": "Pide un Uber con su celular.",
+        "en": "He orders an Uber on his phone.",
+        "gist": "He calls a ride with an app.",
+        "words": [
+          {
+            "es": "pide",
+            "en": "orders, asks for (pedir)"
+          }
+        ]
+      },
+      {
+        "es": "En cinco minutos llega un carro blanco.",
+        "en": "In five minutes a white car arrives.",
+        "gist": "The car comes quickly.",
+        "words": [
+          {
+            "es": "carro",
+            "en": "car (Mexico; Spain says 'coche')"
+          },
+          {
+            "es": "blanco",
+            "en": "white"
+          }
+        ]
+      },
+      {
+        "es": "—¿Matt? —pregunta el chofer. —Sí, soy yo.",
+        "en": "\"Matt?\" the driver asks. \"Yes, that's me.\"",
+        "gist": "The driver checks it's the right passenger.",
+        "words": [
+          {
+            "es": "chofer",
+            "en": "driver (Mexico)"
+          },
+          {
+            "es": "soy yo",
+            "en": "it's me"
+          }
+        ]
+      },
+      {
+        "es": "El chofer se llama Javier y es muy amable.",
+        "en": "The driver's name is Javier and he's very friendly.",
+        "gist": "The driver is nice.",
+        "words": [
+          {
+            "es": "se llama",
+            "en": "his name is (llamarse)"
+          },
+          {
+            "es": "amable",
+            "en": "kind, friendly"
+          }
+        ]
+      },
+      {
+        "es": "Hay mucho tráfico, como siempre.",
+        "en": "There's a lot of traffic, as always.",
+        "gist": "Traffic is bad — that's normal here.",
+        "words": [
+          {
+            "es": "tráfico",
+            "en": "traffic"
+          },
+          {
+            "es": "como siempre",
+            "en": "as always"
+          }
+        ]
+      },
+      {
+        "es": "Javier pone música y platica con Matt de fútbol.",
+        "en": "Javier puts on some music and chats with Matt about soccer.",
+        "gist": "They chat on the way.",
+        "words": [
+          {
+            "es": "pone",
+            "en": "puts on (poner)"
+          },
+          {
+            "es": "platica",
+            "en": "chats (platicar, Mexico)"
+          },
+          {
+            "es": "fútbol",
+            "en": "soccer"
+          }
+        ]
+      },
+      {
+        "es": "Después de cuarenta minutos, llegan al hotel.",
+        "en": "After forty minutes, they arrive at the hotel.",
+        "gist": "It's a long ride, but they make it.",
+        "words": [
+          {
+            "es": "después de",
+            "en": "after"
+          },
+          {
+            "es": "llegan al",
+            "en": "arrive at the (llegar; al = a + el)"
+          }
+        ]
+      },
+      {
+        "es": "Matt paga con la app y le da las gracias a Javier.",
+        "en": "Matt pays through the app and thanks Javier.",
+        "gist": "He pays and says thank you.",
+        "words": [
+          {
+            "es": "paga",
+            "en": "pays (pagar)"
+          },
+          {
+            "es": "le da las gracias",
+            "en": "thanks him (dar las gracias)"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "rd_la_taqueria",
+    "tier": 1,
+    "after_grammar": "g_present_er_ir",
+    "title": "En la taquería",
+    "title_en": "At the taquería",
+    "topic": "restaurant",
+    "level_note": "present tense, ~80 words",
+    "sentences": [
+      {
+        "es": "Son las diez de la noche y Matt tiene hambre.",
+        "en": "It's ten at night and Matt is hungry.",
+        "gist": "Late night, he wants food.",
+        "words": [
+          {
+            "es": "son las diez",
+            "en": "it's ten o'clock"
+          },
+          {
+            "es": "tiene hambre",
+            "en": "is hungry (tener hambre, lit. 'has hunger')"
+          }
+        ]
+      },
+      {
+        "es": "En la esquina hay una taquería con mucha gente.",
+        "en": "On the corner there's a taquería with lots of people.",
+        "gist": "A busy taco place is close by.",
+        "words": [
+          {
+            "es": "esquina",
+            "en": "corner"
+          },
+          {
+            "es": "taquería",
+            "en": "taco shop or stand"
+          }
+        ]
+      },
+      {
+        "es": "El taquero corta la carne al pastor del trompo.",
+        "en": "The taquero cuts the al pastor meat off the spit.",
+        "gist": "The cook slices the pork for the tacos.",
+        "words": [
+          {
+            "es": "taquero",
+            "en": "taco cook"
+          },
+          {
+            "es": "corta",
+            "en": "cuts (cortar)"
+          },
+          {
+            "es": "trompo",
+            "en": "vertical spit for al pastor"
+          }
+        ]
+      },
+      {
+        "es": "—¿Qué le damos, joven? —pregunta el taquero.",
+        "en": "\"What can we get you, young man?\" the taquero asks.",
+        "gist": "The cook takes his order.",
+        "words": [
+          {
+            "es": "¿qué le damos?",
+            "en": "what can we get you? (lit. what do we give you)"
+          },
+          {
+            "es": "joven",
+            "en": "young man (polite way to address a man)"
+          }
+        ]
+      },
+      {
+        "es": "—Cuatro de pastor con todo, por favor.",
+        "en": "\"Four al pastor with everything, please.\"",
+        "gist": "He orders four tacos, fully loaded.",
+        "words": [
+          {
+            "es": "de pastor",
+            "en": "(tacos) al pastor"
+          },
+          {
+            "es": "con todo",
+            "en": "with everything (onion, cilantro, pineapple)"
+          }
+        ],
+        "natural": "Cuatro de pastor con to'o, porfa."
+      },
+      {
+        "es": "Matt le pone salsa verde y un poco de limón.",
+        "en": "Matt adds green salsa and a little lime.",
+        "gist": "He dresses his tacos.",
+        "words": [
+          {
+            "es": "le pone",
+            "en": "puts on it (poner)"
+          },
+          {
+            "es": "limón",
+            "en": "lime (in Mexico)"
+          }
+        ]
+      },
+      {
+        "es": "La salsa pica mucho, pero los tacos están deliciosos.",
+        "en": "The salsa is really spicy, but the tacos are delicious.",
+        "gist": "Hot, but very good.",
+        "words": [
+          {
+            "es": "pica",
+            "en": "is spicy (picar)"
+          },
+          {
+            "es": "están deliciosos",
+            "en": "are (tasting) delicious"
+          }
+        ]
+      },
+      {
+        "es": "También toma un agua de horchata bien fría.",
+        "en": "He also has a nice cold horchata.",
+        "gist": "He gets a cold drink too.",
+        "words": [
+          {
+            "es": "toma",
+            "en": "drinks (tomar; Mexico's usual 'to drink')"
+          },
+          {
+            "es": "agua de horchata",
+            "en": "sweet rice-and-cinnamon drink"
+          },
+          {
+            "es": "bien fría",
+            "en": "really cold"
+          }
+        ]
+      },
+      {
+        "es": "—¿Cuánto le debo? —Son ochenta pesos, joven.",
+        "en": "\"How much do I owe you?\" \"That's eighty pesos, young man.\"",
+        "gist": "He pays — and it's cheap.",
+        "words": [
+          {
+            "es": "¿cuánto le debo?",
+            "en": "how much do I owe you? (deber)"
+          },
+          {
+            "es": "son",
+            "en": "that's, it comes to (ser)"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "rd_el_oxxo",
+    "tier": 1,
+    "after_grammar": "g_present_er_ir",
+    "title": "En el OXXO",
+    "title_en": "At the OXXO",
+    "topic": "shopping",
+    "level_note": "present tense, ~70 words",
+    "sentences": [
+      {
+        "es": "Hay un OXXO en casi todas las esquinas de México.",
+        "en": "There's an OXXO on almost every corner in Mexico.",
+        "gist": "These corner stores are everywhere.",
+        "words": [
+          {
+            "es": "casi",
+            "en": "almost"
+          },
+          {
+            "es": "esquinas",
+            "en": "corners"
+          }
+        ]
+      },
+      {
+        "es": "Matt entra porque tiene sed.",
+        "en": "Matt goes in because he's thirsty.",
+        "gist": "He needs a drink.",
+        "words": [
+          {
+            "es": "entra",
+            "en": "goes in (entrar)"
+          },
+          {
+            "es": "tiene sed",
+            "en": "is thirsty (tener sed)"
+          }
+        ]
+      },
+      {
+        "es": "Abre el refri y saca una botella de agua.",
+        "en": "He opens the fridge and takes out a bottle of water.",
+        "gist": "He grabs water from the cooler.",
+        "words": [
+          {
+            "es": "abre",
+            "en": "opens (abrir)"
+          },
+          {
+            "es": "refri",
+            "en": "fridge (short for refrigerador)"
+          },
+          {
+            "es": "saca",
+            "en": "takes out (sacar)"
+          }
+        ]
+      },
+      {
+        "es": "También agarra unas papitas y un pan dulce.",
+        "en": "He also grabs some chips and a sweet roll.",
+        "gist": "He picks up snacks too.",
+        "words": [
+          {
+            "es": "agarra",
+            "en": "grabs (agarrar, very common in Mexico)"
+          },
+          {
+            "es": "papitas",
+            "en": "(potato) chips"
+          },
+          {
+            "es": "pan dulce",
+            "en": "sweet bread, pastry"
+          }
+        ]
+      },
+      {
+        "es": "En la caja, la cajera pregunta: —¿Es todo?",
+        "en": "At the register, the cashier asks: \"Is that everything?\"",
+        "gist": "At checkout she asks if he's done.",
+        "words": [
+          {
+            "es": "caja",
+            "en": "register, checkout"
+          },
+          {
+            "es": "cajera",
+            "en": "cashier"
+          },
+          {
+            "es": "¿es todo?",
+            "en": "is that all?"
+          }
+        ],
+        "natural": "En la caja, la cajera pregunta: ¿Es to'o?"
+      },
+      {
+        "es": "—Sí, es todo. ¿Puedo pagar con tarjeta?",
+        "en": "\"Yes, that's all. Can I pay by card?\"",
+        "gist": "He asks to pay with his card.",
+        "words": [
+          {
+            "es": "puedo",
+            "en": "can I (poder)"
+          },
+          {
+            "es": "con tarjeta",
+            "en": "by card"
+          }
+        ],
+        "natural": "Sí, es to'o. ¿Puedo pagar con tarjeta?"
+      },
+      {
+        "es": "—Claro. Son sesenta y cinco pesos.",
+        "en": "\"Sure. That's sixty-five pesos.\"",
+        "gist": "She tells him the total.",
+        "words": [
+          {
+            "es": "claro",
+            "en": "sure, of course"
+          },
+          {
+            "es": "sesenta y cinco",
+            "en": "sixty-five"
+          }
+        ]
+      },
+      {
+        "es": "Luego la cajera pregunta: —¿Gusta redondear?",
+        "en": "Then the cashier asks: \"Would you like to round up?\"",
+        "gist": "She offers to round up the total and donate the change.",
+        "words": [
+          {
+            "es": "¿gusta…?",
+            "en": "would you like…? (polite, Mexico)"
+          },
+          {
+            "es": "redondear",
+            "en": "to round up (the extra goes to charity)"
+          }
+        ]
+      },
+      {
+        "es": "Matt no entiende, pero dice que sí y sonríe.",
+        "en": "Matt doesn't understand, but he says yes and smiles.",
+        "gist": "He agrees without knowing what it is.",
+        "words": [
+          {
+            "es": "entiende",
+            "en": "understands (entender)"
+          },
+          {
+            "es": "dice que sí",
+            "en": "says yes (decir)"
+          },
+          {
+            "es": "sonríe",
+            "en": "smiles (sonreír)"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "rd_el_hotel",
+    "tier": 1,
+    "after_grammar": "g_present_er_ir",
+    "title": "En el hotel",
+    "title_en": "Checking in",
+    "topic": "hotel",
+    "level_note": "present tense, ~80 words",
+    "sentences": [
+      {
+        "es": "Matt entra al hotel con su maleta.",
+        "en": "Matt walks into the hotel with his suitcase.",
+        "gist": "He arrives at the hotel.",
+        "words": [
+          {
+            "es": "entra al",
+            "en": "goes into the (entrar; al = a + el)"
+          },
+          {
+            "es": "maleta",
+            "en": "suitcase"
+          }
+        ]
+      },
+      {
+        "es": "—Buenas noches. Tengo una reservación a nombre de Matt.",
+        "en": "\"Good evening. I have a reservation under the name Matt.\"",
+        "gist": "He says he has a booking.",
+        "words": [
+          {
+            "es": "tengo",
+            "en": "I have (tener)"
+          },
+          {
+            "es": "reservación",
+            "en": "reservation (Mexico; Spain says 'reserva')"
+          },
+          {
+            "es": "a nombre de",
+            "en": "under the name of"
+          }
+        ]
+      },
+      {
+        "es": "La recepcionista busca en la computadora.",
+        "en": "The receptionist looks on the computer.",
+        "gist": "She checks the system.",
+        "words": [
+          {
+            "es": "busca",
+            "en": "looks, searches (buscar)"
+          },
+          {
+            "es": "computadora",
+            "en": "computer (Mexico)"
+          }
+        ]
+      },
+      {
+        "es": "—Sí, aquí está. Son tres noches, ¿verdad?",
+        "en": "\"Yes, here it is. It's three nights, right?\"",
+        "gist": "She finds it and confirms the dates.",
+        "words": [
+          {
+            "es": "aquí está",
+            "en": "here it is"
+          },
+          {
+            "es": "¿verdad?",
+            "en": "right?"
+          }
+        ],
+        "natural": "Sí, aquí 'tá. Son tres noches, ¿verdá?"
+      },
+      {
+        "es": "—¿Me permite su pasaporte y una tarjeta, por favor?",
+        "en": "\"May I have your passport and a card, please?\"",
+        "gist": "She asks for ID and a card.",
+        "words": [
+          {
+            "es": "¿me permite…?",
+            "en": "may I have / may I see…? (permitir; very polite)"
+          },
+          {
+            "es": "tarjeta",
+            "en": "(credit) card"
+          }
+        ]
+      },
+      {
+        "es": "Después, le da una llave y la contraseña del wifi.",
+        "en": "Then she gives him a key and the wifi password.",
+        "gist": "He gets his key and the wifi.",
+        "words": [
+          {
+            "es": "le da",
+            "en": "gives him (dar)"
+          },
+          {
+            "es": "llave",
+            "en": "key"
+          },
+          {
+            "es": "contraseña",
+            "en": "password"
+          }
+        ]
+      },
+      {
+        "es": "—Su cuarto está en el cuarto piso.",
+        "en": "\"Your room is on the fourth floor.\"",
+        "gist": "Fun fact: 'cuarto' means both room and fourth.",
+        "words": [
+          {
+            "es": "cuarto",
+            "en": "room (Mexico) … and also 'fourth'"
+          },
+          {
+            "es": "piso",
+            "en": "floor"
+          }
+        ]
+      },
+      {
+        "es": "—El desayuno es de siete a diez, en el restaurante.",
+        "en": "\"Breakfast is from seven to ten, in the restaurant.\"",
+        "gist": "She tells him breakfast times.",
+        "words": [
+          {
+            "es": "desayuno",
+            "en": "breakfast"
+          },
+          {
+            "es": "de siete a diez",
+            "en": "from seven to ten"
+          }
+        ]
+      },
+      {
+        "es": "Matt sube al cuarto, abre la ventana y escucha la ciudad.",
+        "en": "Matt goes up to the room, opens the window and listens to the city.",
+        "gist": "He settles in and takes in the city.",
+        "words": [
+          {
+            "es": "sube",
+            "en": "goes up (subir)"
+          },
+          {
+            "es": "ventana",
+            "en": "window"
+          },
+          {
+            "es": "escucha",
+            "en": "listens to (escuchar)"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "rd_el_cafe",
+    "tier": 1,
+    "after_grammar": "g_present_er_ir",
+    "title": "Una mañana en el café",
+    "title_en": "A morning at the café",
+    "topic": "drink",
+    "level_note": "present tense, ~90 words",
+    "sentences": [
+      {
+        "es": "Es domingo y Matt sale temprano a caminar.",
+        "en": "It's Sunday and Matt goes out early for a walk.",
+        "gist": "A slow Sunday morning begins.",
+        "words": [
+          {
+            "es": "sale",
+            "en": "goes out (salir)"
+          },
+          {
+            "es": "temprano",
+            "en": "early"
+          },
+          {
+            "es": "a caminar",
+            "en": "for a walk"
+          }
+        ]
+      },
+      {
+        "es": "En la calle hay un café pequeño con mesas afuera.",
+        "en": "On the street there's a small café with tables outside.",
+        "gist": "He finds a little café.",
+        "words": [
+          {
+            "es": "pequeño",
+            "en": "small"
+          },
+          {
+            "es": "mesas",
+            "en": "tables"
+          },
+          {
+            "es": "afuera",
+            "en": "outside"
+          }
+        ]
+      },
+      {
+        "es": "Matt se sienta y pide un café de olla.",
+        "en": "Matt sits down and orders a café de olla.",
+        "gist": "He orders a traditional coffee.",
+        "words": [
+          {
+            "es": "se sienta",
+            "en": "sits down (sentarse)"
+          },
+          {
+            "es": "pide",
+            "en": "orders (pedir)"
+          },
+          {
+            "es": "café de olla",
+            "en": "traditional pot-brewed coffee"
+          }
+        ]
+      },
+      {
+        "es": "El café de olla lleva canela y piloncillo.",
+        "en": "Café de olla has cinnamon and piloncillo in it.",
+        "gist": "It's sweet and spiced.",
+        "words": [
+          {
+            "es": "lleva",
+            "en": "has, contains (llevar, for recipes)"
+          },
+          {
+            "es": "canela",
+            "en": "cinnamon"
+          },
+          {
+            "es": "piloncillo",
+            "en": "unrefined cane sugar"
+          }
+        ]
+      },
+      {
+        "es": "También pide un pan dulce: una concha de chocolate.",
+        "en": "He also orders a pastry: a chocolate concha.",
+        "gist": "He gets a sweet roll too.",
+        "words": [
+          {
+            "es": "pan dulce",
+            "en": "sweet bread, pastry"
+          },
+          {
+            "es": "concha",
+            "en": "shell-shaped sweet roll"
+          }
+        ]
+      },
+      {
+        "es": "La mesera es muy simpática y le pregunta si es su primera vez en México.",
+        "en": "The waitress is very nice and asks him if it's his first time in Mexico.",
+        "gist": "A friendly waitress makes small talk.",
+        "words": [
+          {
+            "es": "mesera",
+            "en": "waitress"
+          },
+          {
+            "es": "simpática",
+            "en": "nice, friendly"
+          },
+          {
+            "es": "si",
+            "en": "if"
+          },
+          {
+            "es": "primera vez",
+            "en": "first time"
+          }
+        ]
+      },
+      {
+        "es": "—Sí, es mi primera vez. ¡Todo es nuevo para mí!",
+        "en": "\"Yes, it's my first time. Everything is new to me!\"",
+        "gist": "He's new here and loving it.",
+        "words": [
+          {
+            "es": "todo",
+            "en": "everything"
+          },
+          {
+            "es": "para mí",
+            "en": "for me, to me"
+          }
+        ],
+        "natural": "Sí, es mi primera vez. ¡To'o es nuevo pa' mí!"
+      },
+      {
+        "es": "Matt lee las noticias en su celular y toma su café despacio.",
+        "en": "Matt reads the news on his phone and drinks his coffee slowly.",
+        "gist": "He takes his time.",
+        "words": [
+          {
+            "es": "lee",
+            "en": "reads (leer)"
+          },
+          {
+            "es": "noticias",
+            "en": "news"
+          },
+          {
+            "es": "despacio",
+            "en": "slowly"
+          }
+        ]
+      },
+      {
+        "es": "Cuando termina, deja una propina del diez por ciento.",
+        "en": "When he finishes, he leaves a ten percent tip.",
+        "gist": "He tips the usual amount.",
+        "words": [
+          {
+            "es": "termina",
+            "en": "finishes (terminar)"
+          },
+          {
+            "es": "deja",
+            "en": "leaves (dejar)"
+          },
+          {
+            "es": "propina",
+            "en": "tip"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "rd_donde_esta_el_zocalo",
+    "tier": 1,
+    "after_grammar": "g_questions",
+    "title": "¿Dónde está el Zócalo?",
+    "title_en": "Where is the Zócalo?",
+    "topic": "directions",
+    "level_note": "present tense, questions, ~80 words",
+    "sentences": [
+      {
+        "es": "Matt está en el Centro Histórico y busca el Zócalo.",
+        "en": "Matt is in the historic downtown and he's looking for the Zócalo.",
+        "gist": "He's trying to find the main square.",
+        "words": [
+          {
+            "es": "Centro Histórico",
+            "en": "historic downtown"
+          },
+          {
+            "es": "busca",
+            "en": "is looking for (buscar)"
+          },
+          {
+            "es": "Zócalo",
+            "en": "Mexico City's main square"
+          }
+        ]
+      },
+      {
+        "es": "Tiene un mapa en el celular, pero no tiene batería.",
+        "en": "He has a map on his phone, but the battery is dead.",
+        "gist": "His phone can't help him.",
+        "words": [
+          {
+            "es": "tiene",
+            "en": "has (tener)"
+          },
+          {
+            "es": "no tiene batería",
+            "en": "has no battery, is dead"
+          }
+        ]
+      },
+      {
+        "es": "Entonces le pregunta a una señora: —Disculpe, ¿dónde está el Zócalo?",
+        "en": "So he asks a lady: \"Excuse me, where's the Zócalo?\"",
+        "gist": "He asks someone on the street.",
+        "words": [
+          {
+            "es": "entonces",
+            "en": "so, then"
+          },
+          {
+            "es": "le pregunta",
+            "en": "asks her (preguntar)"
+          },
+          {
+            "es": "disculpe",
+            "en": "excuse me (polite)"
+          }
+        ],
+        "natural": "Entonces le pregunta a una señora: Disculpe, ¿dónde 'tá el Zócalo?"
+      },
+      {
+        "es": "—Está muy cerca, joven. Se va derecho por la calle Madero.",
+        "en": "\"It's very close, young man. You go straight down Madero Street.\"",
+        "gist": "It's close: just go straight.",
+        "words": [
+          {
+            "es": "cerca",
+            "en": "close, near"
+          },
+          {
+            "es": "se va derecho",
+            "en": "you go straight (irse)"
+          },
+          {
+            "es": "derecho",
+            "en": "straight (careful: derecha = right!)"
+          }
+        ],
+        "natural": "'Tá muy cerca, joven. Se va derecho por la calle Madero."
+      },
+      {
+        "es": "—¿Derecho? ¿No doy vuelta a la izquierda?",
+        "en": "\"Straight? I don't turn left?\"",
+        "gist": "He double-checks.",
+        "words": [
+          {
+            "es": "doy vuelta",
+            "en": "I turn (dar vuelta, Mexico)"
+          },
+          {
+            "es": "izquierda",
+            "en": "left"
+          }
+        ]
+      },
+      {
+        "es": "—No, no. Todo derecho, unas cinco cuadras.",
+        "en": "\"No, no. Straight ahead, about five blocks.\"",
+        "gist": "Just keep going straight.",
+        "words": [
+          {
+            "es": "todo derecho",
+            "en": "straight ahead"
+          },
+          {
+            "es": "unas",
+            "en": "about, some"
+          },
+          {
+            "es": "cuadras",
+            "en": "(city) blocks"
+          }
+        ],
+        "natural": "No, no. To'o derecho, unas cinco cuadras."
+      },
+      {
+        "es": "—Al final, a su izquierda, está la catedral.",
+        "en": "\"At the end, on your left, is the cathedral.\"",
+        "gist": "The cathedral is the landmark to look for.",
+        "words": [
+          {
+            "es": "al final",
+            "en": "at the end"
+          },
+          {
+            "es": "a su izquierda",
+            "en": "on your left"
+          }
+        ]
+      },
+      {
+        "es": "Matt le da las gracias y camina por Madero.",
+        "en": "Matt thanks her and walks down Madero.",
+        "gist": "He follows her directions.",
+        "words": [
+          {
+            "es": "le da las gracias",
+            "en": "thanks her (dar las gracias)"
+          },
+          {
+            "es": "camina",
+            "en": "walks (caminar)"
+          }
+        ]
+      },
+      {
+        "es": "Diez minutos después, ve una bandera enorme: ¡es el Zócalo!",
+        "en": "Ten minutes later he sees a huge flag: it's the Zócalo!",
+        "gist": "He finds it.",
+        "words": [
+          {
+            "es": "ve",
+            "en": "sees (ver)"
+          },
+          {
+            "es": "bandera",
+            "en": "flag"
+          },
+          {
+            "es": "enorme",
+            "en": "huge"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "rd_bueno",
+    "tier": 1,
+    "after_grammar": "g_questions",
+    "title": "¿Bueno?",
+    "title_en": "Hello?",
+    "topic": "communication",
+    "level_note": "present tense, questions, ~60 words",
+    "sentences": [
+      {
+        "es": "Suena el celular de Matt.",
+        "en": "Matt's phone rings.",
+        "gist": "Someone is calling him.",
+        "words": [
+          {
+            "es": "suena",
+            "en": "rings, sounds (sonar)"
+          }
+        ]
+      },
+      {
+        "es": "Es un número de México que no conoce.",
+        "en": "It's a Mexican number he doesn't recognize.",
+        "gist": "He doesn't know who it is.",
+        "words": [
+          {
+            "es": "número",
+            "en": "(phone) number"
+          },
+          {
+            "es": "conoce",
+            "en": "knows, recognizes (conocer)"
+          }
+        ]
+      },
+      {
+        "es": "Matt contesta: —¿Bueno?",
+        "en": "Matt answers: \"Hello?\"",
+        "gist": "In Mexico you answer the phone with '¿Bueno?'.",
+        "words": [
+          {
+            "es": "contesta",
+            "en": "answers (contestar)"
+          },
+          {
+            "es": "¿bueno?",
+            "en": "hello? (on the phone, Mexico)"
+          }
+        ]
+      },
+      {
+        "es": "—Hola, ¿hablo con Matt? Soy Lupita, la amiga de Diego.",
+        "en": "\"Hi, is this Matt? I'm Lupita, Diego's friend.\"",
+        "gist": "A friend of a friend is calling.",
+        "words": [
+          {
+            "es": "¿hablo con…?",
+            "en": "am I speaking with…?, is this…?"
+          },
+          {
+            "es": "soy",
+            "en": "I'm (ser)"
+          }
+        ]
+      },
+      {
+        "es": "—¡Ah, hola, Lupita! ¿Qué tal?",
+        "en": "\"Oh, hi, Lupita! How's it going?\"",
+        "gist": "He knows who she is.",
+        "words": [
+          {
+            "es": "¿qué tal?",
+            "en": "how's it going?"
+          }
+        ]
+      },
+      {
+        "es": "—Bien, gracias. Oye, ¿estás libre el sábado?",
+        "en": "\"Good, thanks. Hey, are you free on Saturday?\"",
+        "gist": "She wants to make plans.",
+        "words": [
+          {
+            "es": "oye",
+            "en": "hey, listen (oír)"
+          },
+          {
+            "es": "libre",
+            "en": "free"
+          }
+        ],
+        "natural": "Bien, gracias. Oye, ¿'tás libre el sábado?"
+      },
+      {
+        "es": "—Mi familia hace una cena en la casa. ¿Quieres venir?",
+        "en": "\"My family is having a dinner at home. Do you want to come?\"",
+        "gist": "She invites him to a family dinner.",
+        "words": [
+          {
+            "es": "hace",
+            "en": "is having, is making (hacer)"
+          },
+          {
+            "es": "cena",
+            "en": "dinner"
+          },
+          {
+            "es": "¿quieres venir?",
+            "en": "do you want to come? (querer, venir)"
+          }
+        ]
+      },
+      {
+        "es": "—¡Claro que sí! ¿A qué hora?",
+        "en": "\"Of course! What time?\"",
+        "gist": "He says yes.",
+        "words": [
+          {
+            "es": "claro que sí",
+            "en": "of course, definitely"
+          },
+          {
+            "es": "¿a qué hora?",
+            "en": "(at) what time?"
+          }
+        ]
+      },
+      {
+        "es": "—A las ocho. Te mando la dirección por WhatsApp.",
+        "en": "\"At eight. I'll send you the address on WhatsApp.\"",
+        "gist": "She'll text him the details.",
+        "words": [
+          {
+            "es": "te mando",
+            "en": "I'll send you (mandar; present used for the near future)"
+          },
+          {
+            "es": "dirección",
+            "en": "address"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "rd_viaje_a_puebla",
+    "tier": 2,
+    "after_grammar": "g_ir_a",
+    "title": "Un viaje a Puebla",
+    "title_en": "A day trip to Puebla",
+    "topic": "travel",
+    "level_note": "present + ir a, ~100 words",
+    "sentences": [
+      {
+        "es": "Matt y Lupita van a hacer un viaje de un día.",
+        "en": "Matt and Lupita are going to take a day trip.",
+        "gist": "They're planning a day out of the city.",
+        "words": [
+          {
+            "es": "van a hacer",
+            "en": "are going to do/take (ir a + infinitive)"
+          },
+          {
+            "es": "viaje de un día",
+            "en": "day trip"
+          }
+        ]
+      },
+      {
+        "es": "—¿Adónde vamos? —pregunta Matt.",
+        "en": "\"Where are we going?\" Matt asks.",
+        "gist": "He asks where.",
+        "words": [
+          {
+            "es": "¿adónde?",
+            "en": "where (to)?"
+          },
+          {
+            "es": "vamos",
+            "en": "we go, we're going (ir)"
+          }
+        ]
+      },
+      {
+        "es": "—Vamos a ir a Puebla. Está a dos horas en camión.",
+        "en": "\"We're going to go to Puebla. It's two hours away by bus.\"",
+        "gist": "Puebla, a short bus ride away.",
+        "words": [
+          {
+            "es": "vamos a ir",
+            "en": "we're going to go"
+          },
+          {
+            "es": "está a dos horas",
+            "en": "it's two hours away"
+          },
+          {
+            "es": "camión",
+            "en": "bus (Mexico)"
+          }
+        ],
+        "natural": "Vamos a ir a Puebla. 'Tá a dos horas en camión."
+      },
+      {
+        "es": "—Me gusta la idea. ¿Qué hay en Puebla?",
+        "en": "\"I like that idea. What is there in Puebla?\"",
+        "gist": "He's in, and curious.",
+        "words": [
+          {
+            "es": "me gusta",
+            "en": "I like (gustar, lit. 'it pleases me')"
+          },
+          {
+            "es": "¿qué hay?",
+            "en": "what is there?"
+          }
+        ]
+      },
+      {
+        "es": "—Hay iglesias muy bonitas, talavera y, sobre todo, mucha comida rica.",
+        "en": "\"There are beautiful churches, talavera pottery and, above all, lots of delicious food.\"",
+        "gist": "Puebla is famous for churches, ceramics and food.",
+        "words": [
+          {
+            "es": "iglesias",
+            "en": "churches"
+          },
+          {
+            "es": "talavera",
+            "en": "hand-painted ceramics"
+          },
+          {
+            "es": "sobre todo",
+            "en": "above all"
+          },
+          {
+            "es": "rica",
+            "en": "delicious (rico, about food)"
+          }
+        ],
+        "natural": "Hay iglesias muy bonitas, talavera y, sobre to'o, mucha comida rica."
+      },
+      {
+        "es": "—¡Tienes que probar el mole poblano!",
+        "en": "\"You have to try mole poblano!\"",
+        "gist": "Mole is the must-eat dish.",
+        "words": [
+          {
+            "es": "tienes que",
+            "en": "you have to (tener que)"
+          },
+          {
+            "es": "probar",
+            "en": "to try, to taste"
+          },
+          {
+            "es": "mole poblano",
+            "en": "Puebla's chile-and-chocolate sauce"
+          }
+        ]
+      },
+      {
+        "es": "Deciden salir temprano, a las siete de la mañana.",
+        "en": "They decide to leave early, at seven in the morning.",
+        "gist": "An early start.",
+        "words": [
+          {
+            "es": "deciden",
+            "en": "decide (decidir)"
+          },
+          {
+            "es": "salir",
+            "en": "to leave"
+          }
+        ]
+      },
+      {
+        "es": "—Entonces me voy a levantar a las cinco y media —dice Matt.",
+        "en": "\"Then I'm going to get up at five thirty,\" Matt says.",
+        "gist": "He'll have to wake up very early.",
+        "words": [
+          {
+            "es": "me voy a levantar",
+            "en": "I'm going to get up (levantarse)"
+          },
+          {
+            "es": "y media",
+            "en": "thirty, half past"
+          }
+        ],
+        "natural": "Entonces me voya levantar a las cinco y media."
+      },
+      {
+        "es": "—Sí, y vamos a comprar los boletos en línea esta noche.",
+        "en": "\"Yes, and we're going to buy the tickets online tonight.\"",
+        "gist": "They'll book tickets tonight.",
+        "words": [
+          {
+            "es": "boletos",
+            "en": "tickets (Mexico; Spain says 'billetes')"
+          },
+          {
+            "es": "en línea",
+            "en": "online"
+          },
+          {
+            "es": "esta noche",
+            "en": "tonight"
+          }
+        ]
+      },
+      {
+        "es": "—El camión sale de la TAPO, la terminal de oriente.",
+        "en": "\"The bus leaves from TAPO, the eastern bus station.\"",
+        "gist": "She tells him which station.",
+        "words": [
+          {
+            "es": "sale de",
+            "en": "leaves from (salir)"
+          },
+          {
+            "es": "terminal",
+            "en": "bus station"
+          },
+          {
+            "es": "oriente",
+            "en": "east"
+          }
+        ]
+      },
+      {
+        "es": "Matt está muy emocionado: le encanta conocer lugares nuevos.",
+        "en": "Matt is really excited: he loves seeing new places.",
+        "gist": "He can't wait.",
+        "words": [
+          {
+            "es": "emocionado",
+            "en": "excited"
+          },
+          {
+            "es": "le encanta",
+            "en": "he loves (encantar)"
+          },
+          {
+            "es": "conocer",
+            "en": "to get to know, to visit (a place)"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "rd_el_metro",
+    "tier": 2,
+    "after_grammar": "g_modals",
+    "title": "El metro en hora pico",
+    "title_en": "The metro at rush hour",
+    "topic": "transport",
+    "level_note": "present + querer/poder/tener que, ~130 words",
+    "sentences": [
+      {
+        "es": "Son las ocho de la mañana y Matt quiere ir al Museo de Antropología.",
+        "en": "It's eight in the morning and Matt wants to go to the Anthropology Museum.",
+        "gist": "He has a museum to get to.",
+        "words": [
+          {
+            "es": "quiere",
+            "en": "wants (querer)"
+          },
+          {
+            "es": "ir al",
+            "en": "to go to the"
+          }
+        ]
+      },
+      {
+        "es": "Puede tomar un Uber, pero hay mucho tráfico, así que decide tomar el metro.",
+        "en": "He could take an Uber, but there's a lot of traffic, so he decides to take the metro.",
+        "gist": "Traffic is bad, so: metro.",
+        "words": [
+          {
+            "es": "puede",
+            "en": "can, could (poder)"
+          },
+          {
+            "es": "así que",
+            "en": "so"
+          },
+          {
+            "es": "decide",
+            "en": "decides (decidir)"
+          }
+        ]
+      },
+      {
+        "es": "En la taquilla, compra una tarjeta y le recarga cien pesos.",
+        "en": "At the ticket window, he buys a card and tops it up with a hundred pesos.",
+        "gist": "He gets a metro card.",
+        "words": [
+          {
+            "es": "taquilla",
+            "en": "ticket window"
+          },
+          {
+            "es": "tarjeta",
+            "en": "(metro) card"
+          },
+          {
+            "es": "le recarga",
+            "en": "tops it up (recargar)"
+          }
+        ]
+      },
+      {
+        "es": "Cada viaje cuesta solo cinco pesos.",
+        "en": "Each ride costs only five pesos.",
+        "gist": "The metro is very cheap.",
+        "words": [
+          {
+            "es": "cada",
+            "en": "each"
+          },
+          {
+            "es": "viaje",
+            "en": "trip, ride"
+          },
+          {
+            "es": "cuesta",
+            "en": "costs (costar)"
+          }
+        ]
+      },
+      {
+        "es": "Pero a esta hora, el andén está lleno de gente.",
+        "en": "But at this hour, the platform is packed with people.",
+        "gist": "Rush hour: it's packed.",
+        "words": [
+          {
+            "es": "a esta hora",
+            "en": "at this time"
+          },
+          {
+            "es": "andén",
+            "en": "platform"
+          },
+          {
+            "es": "lleno de",
+            "en": "full of"
+          }
+        ]
+      },
+      {
+        "es": "Llega el tren y todos empujan para subir.",
+        "en": "The train arrives and everyone pushes to get on.",
+        "gist": "People shove their way in.",
+        "words": [
+          {
+            "es": "empujan",
+            "en": "push (empujar)"
+          },
+          {
+            "es": "subir",
+            "en": "to get on (also 'to go up')"
+          }
+        ]
+      },
+      {
+        "es": "Un señor le explica a Matt: —A esta hora, los primeros vagones son solo para mujeres y niños.",
+        "en": "A man explains to Matt: \"At this time of day, the first cars are only for women and children.\"",
+        "gist": "The front cars are reserved at rush hour.",
+        "words": [
+          {
+            "es": "le explica",
+            "en": "explains to him (explicar)"
+          },
+          {
+            "es": "vagones",
+            "en": "(train) cars"
+          },
+          {
+            "es": "solo",
+            "en": "only"
+          }
+        ]
+      },
+      {
+        "es": "Matt camina hacia la parte de atrás del andén y espera el siguiente tren.",
+        "en": "Matt walks toward the back of the platform and waits for the next train.",
+        "gist": "He moves down and waits.",
+        "words": [
+          {
+            "es": "hacia",
+            "en": "toward"
+          },
+          {
+            "es": "la parte de atrás",
+            "en": "the back part"
+          },
+          {
+            "es": "espera",
+            "en": "waits for (esperar)"
+          },
+          {
+            "es": "siguiente",
+            "en": "next"
+          }
+        ]
+      },
+      {
+        "es": "Adentro, un vendedor grita: —¡Chicles, chicles, a diez pesos!",
+        "en": "Inside, a vendor shouts: \"Gum, gum, ten pesos!\"",
+        "gist": "Vendors sell things on the train.",
+        "words": [
+          {
+            "es": "adentro",
+            "en": "inside"
+          },
+          {
+            "es": "vendedor",
+            "en": "vendor, seller"
+          },
+          {
+            "es": "grita",
+            "en": "shouts (gritar)"
+          },
+          {
+            "es": "chicles",
+            "en": "(chewing) gum"
+          }
+        ]
+      },
+      {
+        "es": "Matt tiene que cambiar de línea una vez.",
+        "en": "Matt has to change lines once.",
+        "gist": "One transfer.",
+        "words": [
+          {
+            "es": "tiene que",
+            "en": "has to (tener que)"
+          },
+          {
+            "es": "cambiar de línea",
+            "en": "to change lines"
+          },
+          {
+            "es": "una vez",
+            "en": "once"
+          }
+        ]
+      },
+      {
+        "es": "Cuando por fin sale a la calle, piensa: “¡Puedo sobrevivir al metro de la Ciudad de México!”",
+        "en": "When he finally comes out onto the street, he thinks: \"I can survive the Mexico City metro!\"",
+        "gist": "He made it, and he's proud.",
+        "words": [
+          {
+            "es": "por fin",
+            "en": "finally"
+          },
+          {
+            "es": "sale",
+            "en": "comes out (salir)"
+          },
+          {
+            "es": "piensa",
+            "en": "thinks (pensar)"
+          },
+          {
+            "es": "sobrevivir",
+            "en": "to survive"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "rd_mercado_coyoacan",
+    "tier": 2,
+    "after_grammar": "g_stem_change",
+    "title": "El mercado de Coyoacán",
+    "title_en": "The Coyoacán market",
+    "topic": "shopping",
+    "level_note": "present (stem-changing verbs), dialogue, ~100 words",
+    "sentences": [
+      {
+        "es": "Los domingos, Matt y Lupita van al mercado de Coyoacán.",
+        "en": "On Sundays, Matt and Lupita go to the Coyoacán market.",
+        "gist": "A Sunday market outing.",
+        "words": [
+          {
+            "es": "los domingos",
+            "en": "on Sundays"
+          },
+          {
+            "es": "van al",
+            "en": "go to the (ir)"
+          }
+        ]
+      },
+      {
+        "es": "El mercado huele a fruta, a flores y a comida.",
+        "en": "The market smells of fruit, flowers and food.",
+        "gist": "It smells wonderful.",
+        "words": [
+          {
+            "es": "huele a",
+            "en": "smells of, smells like (oler — irregular: huele)"
+          }
+        ]
+      },
+      {
+        "es": "Primero se sientan a comer tostadas, porque el mercado es famoso por ellas.",
+        "en": "First they sit down to eat tostadas, because the market is famous for them.",
+        "gist": "They start with the market's famous dish.",
+        "words": [
+          {
+            "es": "se sientan",
+            "en": "they sit down (sentarse)"
+          },
+          {
+            "es": "tostadas",
+            "en": "crispy fried tortillas with toppings"
+          },
+          {
+            "es": "famoso por",
+            "en": "famous for"
+          }
+        ]
+      },
+      {
+        "es": "—Yo quiero una de tinga y una de camarón —dice Lupita.",
+        "en": "\"I want one tinga and one shrimp,\" says Lupita.",
+        "gist": "Lupita orders.",
+        "words": [
+          {
+            "es": "quiero",
+            "en": "I want (querer)"
+          },
+          {
+            "es": "tinga",
+            "en": "shredded chicken in chipotle sauce"
+          },
+          {
+            "es": "camarón",
+            "en": "shrimp"
+          }
+        ]
+      },
+      {
+        "es": "—¿La salsa pica? —pregunta Matt.",
+        "en": "\"Is the salsa spicy?\" Matt asks.",
+        "gist": "He's worried about the heat.",
+        "words": [
+          {
+            "es": "pica",
+            "en": "is spicy (picar)"
+          }
+        ]
+      },
+      {
+        "es": "—No, joven, no pica nada —dice la señora.",
+        "en": "\"No, young man, it's not spicy at all,\" says the lady.",
+        "gist": "She says it's mild.",
+        "words": [
+          {
+            "es": "no pica nada",
+            "en": "it's not spicy at all"
+          },
+          {
+            "es": "señora",
+            "en": "lady (here, the cook)"
+          }
+        ]
+      },
+      {
+        "es": "Matt prueba la salsa y empieza a llorar.",
+        "en": "Matt tries the salsa and starts to cry.",
+        "gist": "It's very spicy.",
+        "words": [
+          {
+            "es": "prueba",
+            "en": "tries, tastes (probar)"
+          },
+          {
+            "es": "empieza a",
+            "en": "starts to (empezar)"
+          },
+          {
+            "es": "llorar",
+            "en": "to cry"
+          }
+        ]
+      },
+      {
+        "es": "Lupita se ríe: —En México, “no pica” significa “pica un poquito”.",
+        "en": "Lupita laughs: \"In Mexico, 'it's not spicy' means 'it's a little spicy.'\"",
+        "gist": "Never trust 'no pica'.",
+        "words": [
+          {
+            "es": "se ríe",
+            "en": "laughs (reírse)"
+          },
+          {
+            "es": "significa",
+            "en": "means (significar)"
+          },
+          {
+            "es": "un poquito",
+            "en": "a little bit"
+          }
+        ]
+      },
+      {
+        "es": "Después, caminan por los puestos de artesanías.",
+        "en": "Afterwards, they walk through the handicraft stalls.",
+        "gist": "Time for souvenirs.",
+        "words": [
+          {
+            "es": "puestos",
+            "en": "stalls"
+          },
+          {
+            "es": "artesanías",
+            "en": "handicrafts"
+          }
+        ]
+      },
+      {
+        "es": "Matt encuentra un alebrije de muchos colores y pregunta el precio.",
+        "en": "Matt finds a very colorful alebrije and asks the price.",
+        "gist": "He finds something he likes.",
+        "words": [
+          {
+            "es": "encuentra",
+            "en": "finds (encontrar)"
+          },
+          {
+            "es": "alebrije",
+            "en": "brightly painted fantasy creature"
+          },
+          {
+            "es": "precio",
+            "en": "price"
+          }
+        ]
+      },
+      {
+        "es": "—Cuesta cuatrocientos, pero se lo dejo en trescientos cincuenta.",
+        "en": "\"It's four hundred, but I'll let you have it for three hundred fifty.\"",
+        "gist": "The seller offers a small discount.",
+        "words": [
+          {
+            "es": "cuesta",
+            "en": "costs (costar)"
+          },
+          {
+            "es": "se lo dejo en",
+            "en": "I'll let you have it for (dejar; bargaining phrase)"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "rd_lucha_libre",
+    "tier": 2,
+    "after_grammar": "g_irregular_yo",
+    "title": "Noche de lucha libre",
+    "title_en": "Lucha libre night",
+    "topic": "leisure",
+    "level_note": "present (irregular yo forms), dialogue, ~110 words",
+    "sentences": [
+      {
+        "es": "Los viernes hay lucha libre en la Arena México.",
+        "en": "On Fridays there's lucha libre at Arena México.",
+        "gist": "Friday is wrestling night.",
+        "words": [
+          {
+            "es": "los viernes",
+            "en": "on Fridays"
+          },
+          {
+            "es": "lucha libre",
+            "en": "Mexican pro wrestling"
+          }
+        ]
+      },
+      {
+        "es": "Matt va con Diego y sus primos.",
+        "en": "Matt goes with Diego and his cousins.",
+        "gist": "He goes with a group.",
+        "words": [
+          {
+            "es": "va",
+            "en": "goes (ir)"
+          },
+          {
+            "es": "primos",
+            "en": "cousins"
+          }
+        ]
+      },
+      {
+        "es": "Afuera de la arena venden máscaras de todos los colores.",
+        "en": "Outside the arena they sell masks in every color.",
+        "gist": "Masks are for sale everywhere.",
+        "words": [
+          {
+            "es": "afuera de",
+            "en": "outside (of)"
+          },
+          {
+            "es": "venden",
+            "en": "they sell (vender)"
+          },
+          {
+            "es": "máscaras",
+            "en": "masks"
+          }
+        ]
+      },
+      {
+        "es": "—Yo conozco a todos los luchadores —dice Diego, muy orgulloso.",
+        "en": "\"I know all the wrestlers,\" says Diego, very proud.",
+        "gist": "Diego is a big fan.",
+        "words": [
+          {
+            "es": "conozco",
+            "en": "I know (conocer; people, places)"
+          },
+          {
+            "es": "luchadores",
+            "en": "wrestlers"
+          },
+          {
+            "es": "orgulloso",
+            "en": "proud"
+          }
+        ]
+      },
+      {
+        "es": "Matt compra una máscara azul y se la pone.",
+        "en": "Matt buys a blue mask and puts it on.",
+        "gist": "He joins in.",
+        "words": [
+          {
+            "es": "se la pone",
+            "en": "puts it on (ponerse)"
+          }
+        ]
+      },
+      {
+        "es": "Diego le explica: —Los técnicos son los buenos y los rudos son los malos.",
+        "en": "Diego explains to him: \"The técnicos are the good guys and the rudos are the bad guys.\"",
+        "gist": "There are heroes and villains.",
+        "words": [
+          {
+            "es": "técnicos",
+            "en": "good-guy wrestlers"
+          },
+          {
+            "es": "rudos",
+            "en": "bad-guy ('rough') wrestlers"
+          },
+          {
+            "es": "los buenos",
+            "en": "the good guys"
+          },
+          {
+            "es": "los malos",
+            "en": "the bad guys"
+          }
+        ]
+      },
+      {
+        "es": "—Yo siempre le voy a los rudos —dice un primo.",
+        "en": "\"I always root for the rudos,\" says one of the cousins.",
+        "gist": "One cousin likes the villains.",
+        "words": [
+          {
+            "es": "le voy a",
+            "en": "I root for, I support (irle a, Mexico)"
+          }
+        ],
+        "natural": "Yo siempre le voya los rudos."
+      },
+      {
+        "es": "La gente grita, silba y aplaude.",
+        "en": "The crowd shouts, whistles and claps.",
+        "gist": "It's loud.",
+        "words": [
+          {
+            "es": "la gente",
+            "en": "the people, the crowd (takes a singular verb)"
+          },
+          {
+            "es": "silba",
+            "en": "whistles (silbar)"
+          },
+          {
+            "es": "aplaude",
+            "en": "claps (aplaudir)"
+          }
+        ]
+      },
+      {
+        "es": "Un luchador salta desde las cuerdas y cae sobre otro.",
+        "en": "A wrestler jumps off the ropes and lands on another one.",
+        "gist": "Big acrobatic moves.",
+        "words": [
+          {
+            "es": "salta",
+            "en": "jumps (saltar)"
+          },
+          {
+            "es": "cuerdas",
+            "en": "ropes"
+          },
+          {
+            "es": "cae",
+            "en": "falls, lands (caer)"
+          }
+        ]
+      },
+      {
+        "es": "Matt no sabe las reglas, pero grita como todos.",
+        "en": "Matt doesn't know the rules, but he shouts like everyone else.",
+        "gist": "He doesn't get it, but he loves it.",
+        "words": [
+          {
+            "es": "sabe",
+            "en": "knows (saber; facts)"
+          },
+          {
+            "es": "reglas",
+            "en": "rules"
+          },
+          {
+            "es": "como todos",
+            "en": "like everyone"
+          }
+        ]
+      },
+      {
+        "es": "Al final, Matt dice: —El próximo viernes, yo traigo a mis amigos.",
+        "en": "At the end, Matt says: \"Next Friday, I'm bringing my friends.\"",
+        "gist": "He wants to come back.",
+        "words": [
+          {
+            "es": "al final",
+            "en": "at the end"
+          },
+          {
+            "es": "próximo",
+            "en": "next"
+          },
+          {
+            "es": "traigo",
+            "en": "I bring (traer)"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "rd_la_farmacia",
+    "tier": 2,
+    "after_grammar": "g_gustar",
+    "title": "En la farmacia",
+    "title_en": "At the pharmacy",
+    "topic": "health",
+    "level_note": "present + doler/gustar, dialogue, ~100 words",
+    "sentences": [
+      {
+        "es": "Matt se despierta con dolor de estómago.",
+        "en": "Matt wakes up with a stomachache.",
+        "gist": "He feels sick.",
+        "words": [
+          {
+            "es": "se despierta",
+            "en": "wakes up (despertarse)"
+          },
+          {
+            "es": "dolor de estómago",
+            "en": "stomachache"
+          }
+        ]
+      },
+      {
+        "es": "Cree que es por los tacos de la calle.",
+        "en": "He thinks it's because of the street tacos.",
+        "gist": "He blames the tacos.",
+        "words": [
+          {
+            "es": "cree",
+            "en": "thinks, believes (creer)"
+          },
+          {
+            "es": "por",
+            "en": "because of"
+          }
+        ]
+      },
+      {
+        "es": "Va a la farmacia de la esquina.",
+        "en": "He goes to the pharmacy on the corner.",
+        "gist": "He looks for help nearby.",
+        "words": [
+          {
+            "es": "va a",
+            "en": "goes to (ir)"
+          },
+          {
+            "es": "esquina",
+            "en": "corner"
+          }
+        ]
+      },
+      {
+        "es": "—Buenos días. ¿En qué le puedo ayudar? —pregunta el farmacéutico.",
+        "en": "\"Good morning. How can I help you?\" asks the pharmacist.",
+        "gist": "The pharmacist greets him.",
+        "words": [
+          {
+            "es": "¿en qué le puedo ayudar?",
+            "en": "how can I help you? (poder, ayudar)"
+          },
+          {
+            "es": "farmacéutico",
+            "en": "pharmacist"
+          }
+        ]
+      },
+      {
+        "es": "—Me duele mucho el estómago y tengo un poco de fiebre.",
+        "en": "\"My stomach hurts a lot and I have a bit of a fever.\"",
+        "gist": "He describes his symptoms.",
+        "words": [
+          {
+            "es": "me duele",
+            "en": "it hurts me (doler; works like gustar)"
+          },
+          {
+            "es": "fiebre",
+            "en": "fever"
+          }
+        ]
+      },
+      {
+        "es": "—¿Le duele también la cabeza?",
+        "en": "\"Does your head hurt too?\"",
+        "gist": "The pharmacist asks about headaches.",
+        "words": [
+          {
+            "es": "le duele",
+            "en": "does it hurt you (doler)"
+          },
+          {
+            "es": "cabeza",
+            "en": "head"
+          }
+        ]
+      },
+      {
+        "es": "—No, la cabeza no. Solo el estómago.",
+        "en": "\"No, not my head. Just my stomach.\"",
+        "gist": "Only his stomach hurts.",
+        "words": [
+          {
+            "es": "solo",
+            "en": "only, just"
+          }
+        ]
+      },
+      {
+        "es": "—Le recomiendo este suero y estas pastillas.",
+        "en": "\"I recommend this electrolyte drink and these pills.\"",
+        "gist": "He gets a rehydration drink and some pills.",
+        "words": [
+          {
+            "es": "recomiendo",
+            "en": "I recommend (recomendar)"
+          },
+          {
+            "es": "suero",
+            "en": "oral rehydration drink"
+          },
+          {
+            "es": "pastillas",
+            "en": "pills, tablets"
+          }
+        ]
+      },
+      {
+        "es": "—Se toma una pastilla cada ocho horas, con comida.",
+        "en": "\"You take one pill every eight hours, with food.\"",
+        "gist": "Instructions for the pills.",
+        "words": [
+          {
+            "es": "se toma",
+            "en": "you take, one takes (tomar; impersonal 'se')"
+          },
+          {
+            "es": "cada",
+            "en": "every"
+          }
+        ]
+      },
+      {
+        "es": "—Y si no se siente mejor en dos días, tiene que ir al médico.",
+        "en": "\"And if you don't feel better in two days, you need to see a doctor.\"",
+        "gist": "See a doctor if it doesn't improve.",
+        "words": [
+          {
+            "es": "se siente",
+            "en": "you feel (sentirse)"
+          },
+          {
+            "es": "mejor",
+            "en": "better"
+          },
+          {
+            "es": "médico",
+            "en": "doctor"
+          }
+        ]
+      },
+      {
+        "es": "Junto a muchas farmacias hay un consultorio, y la consulta cuesta muy poco.",
+        "en": "Next to many pharmacies there's a doctor's office, and a visit costs very little.",
+        "gist": "In Mexico a cheap doctor is often right next to the pharmacy.",
+        "words": [
+          {
+            "es": "junto a",
+            "en": "next to"
+          },
+          {
+            "es": "consultorio",
+            "en": "doctor's office"
+          },
+          {
+            "es": "consulta",
+            "en": "doctor's visit"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "rd_cena_con_la_familia",
+    "tier": 2,
+    "after_grammar": "g_possessives",
+    "title": "Cena con la familia de Lupita",
+    "title_en": "Dinner with Lupita's family",
+    "topic": "family",
+    "level_note": "present + gustar + possessives, dialogue, ~120 words",
+    "sentences": [
+      {
+        "es": "El sábado en la noche, Matt va a cenar a casa de Lupita.",
+        "en": "On Saturday night, Matt goes to Lupita's house for dinner.",
+        "gist": "He's invited to dinner.",
+        "words": [
+          {
+            "es": "cenar",
+            "en": "to have dinner"
+          },
+          {
+            "es": "a casa de Lupita",
+            "en": "to Lupita's house"
+          }
+        ]
+      },
+      {
+        "es": "Lleva flores para su mamá y un pastel de tres leches.",
+        "en": "He brings flowers for her mom and a tres leches cake.",
+        "gist": "He doesn't arrive empty-handed.",
+        "words": [
+          {
+            "es": "lleva",
+            "en": "brings, takes (llevar)"
+          },
+          {
+            "es": "su mamá",
+            "en": "her mom"
+          },
+          {
+            "es": "pastel",
+            "en": "cake"
+          }
+        ]
+      },
+      {
+        "es": "—¡Pásale, pásale! Estás en tu casa —dice la mamá de Lupita.",
+        "en": "\"Come in, come in! Make yourself at home,\" says Lupita's mom.",
+        "gist": "A warm welcome.",
+        "words": [
+          {
+            "es": "pásale",
+            "en": "come in (Mexico)"
+          },
+          {
+            "es": "estás en tu casa",
+            "en": "make yourself at home (lit. you're in your house)"
+          }
+        ],
+        "natural": "¡Pásale, pásale! 'Tás en tu casa."
+      },
+      {
+        "es": "Lupita le presenta a toda su familia: sus papás, su hermano Toño y su abuela.",
+        "en": "Lupita introduces him to her whole family: her parents, her brother Toño and her grandmother.",
+        "gist": "He meets everyone.",
+        "words": [
+          {
+            "es": "le presenta",
+            "en": "introduces to him (presentar)"
+          },
+          {
+            "es": "papás",
+            "en": "parents (Mexico)"
+          },
+          {
+            "es": "abuela",
+            "en": "grandmother"
+          }
+        ]
+      },
+      {
+        "es": "Su abuela tiene noventa años y todavía cocina todos los días.",
+        "en": "Her grandmother is ninety and still cooks every day.",
+        "gist": "Grandma is old but still the cook.",
+        "words": [
+          {
+            "es": "tiene noventa años",
+            "en": "is ninety (lit. has ninety years)"
+          },
+          {
+            "es": "todavía",
+            "en": "still"
+          },
+          {
+            "es": "cocina",
+            "en": "cooks (cocinar)"
+          }
+        ]
+      },
+      {
+        "es": "Hoy prepara pozole, la especialidad de la casa.",
+        "en": "Today she's making pozole, the house specialty.",
+        "gist": "She's cooking her famous dish.",
+        "words": [
+          {
+            "es": "prepara",
+            "en": "makes, prepares (preparar)"
+          },
+          {
+            "es": "pozole",
+            "en": "hominy soup with pork"
+          }
+        ]
+      },
+      {
+        "es": "—¿Te gusta el pozole, mijo? —le pregunta la abuela.",
+        "en": "\"Do you like pozole, dear?\" the grandmother asks him.",
+        "gist": "Grandma wants to know if he likes it.",
+        "words": [
+          {
+            "es": "¿te gusta?",
+            "en": "do you like it? (gustar)"
+          },
+          {
+            "es": "mijo",
+            "en": "dear, sweetie (from 'mi hijo', my son)"
+          }
+        ]
+      },
+      {
+        "es": "—¡Me encanta! Este pozole está buenísimo.",
+        "en": "\"I love it! This pozole is amazing.\"",
+        "gist": "He loves it.",
+        "words": [
+          {
+            "es": "me encanta",
+            "en": "I love it (encantar)"
+          },
+          {
+            "es": "buenísimo",
+            "en": "really, really good"
+          }
+        ]
+      },
+      {
+        "es": "Toño le pregunta a Matt si le gusta el fútbol y cuál es su equipo.",
+        "en": "Toño asks Matt if he likes soccer and which team he supports.",
+        "gist": "Talk turns to soccer.",
+        "words": [
+          {
+            "es": "si le gusta",
+            "en": "if he likes (gustar)"
+          },
+          {
+            "es": "cuál",
+            "en": "which"
+          },
+          {
+            "es": "equipo",
+            "en": "team"
+          }
+        ]
+      },
+      {
+        "es": "—Mi equipo es el América —dice Toño—, pero mi papá le va a los Pumas.",
+        "en": "\"My team is América,\" says Toño, \"but my dad roots for Pumas.\"",
+        "gist": "Father and son support rival teams.",
+        "words": [
+          {
+            "es": "mi equipo",
+            "en": "my team"
+          },
+          {
+            "es": "le va a",
+            "en": "roots for (irle a, Mexico)"
+          }
+        ]
+      },
+      {
+        "es": "Todos se ríen, y la cena dura hasta la medianoche.",
+        "en": "Everyone laughs, and dinner goes on until midnight.",
+        "gist": "A long, happy evening.",
+        "words": [
+          {
+            "es": "se ríen",
+            "en": "laugh (reírse)"
+          },
+          {
+            "es": "dura",
+            "en": "lasts (durar)"
+          },
+          {
+            "es": "medianoche",
+            "en": "midnight"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "rd_la_ofrenda",
+    "tier": 2,
+    "after_grammar": "g_reflexive",
+    "title": "La ofrenda",
+    "title_en": "Building the ofrenda",
+    "topic": "home",
+    "level_note": "present + ir a + reflexive verbs, ~150 words",
+    "sentences": [
+      {
+        "es": "Es el 31 de octubre, y en casa de Lupita todos se preparan para el Día de Muertos.",
+        "en": "It's October 31st, and at Lupita's house everyone is getting ready for the Day of the Dead.",
+        "gist": "The family prepares for the holiday.",
+        "words": [
+          {
+            "es": "se preparan",
+            "en": "get ready (prepararse)"
+          },
+          {
+            "es": "Día de Muertos",
+            "en": "Day of the Dead (Nov 1–2)"
+          }
+        ]
+      },
+      {
+        "es": "Van a poner una ofrenda en la sala para recordar al abuelo Chuy y a la tía Rosa.",
+        "en": "They're going to set up an ofrenda in the living room to remember Grandpa Chuy and Aunt Rosa.",
+        "gist": "The altar honors family members who have died.",
+        "words": [
+          {
+            "es": "van a poner",
+            "en": "are going to set up (ir a + poner)"
+          },
+          {
+            "es": "ofrenda",
+            "en": "altar of offerings for the dead"
+          },
+          {
+            "es": "sala",
+            "en": "living room"
+          },
+          {
+            "es": "recordar",
+            "en": "to remember"
+          }
+        ]
+      },
+      {
+        "es": "Primero ponen una mesa con tres niveles y la cubren con un mantel blanco.",
+        "en": "First they set up a table with three levels and cover it with a white tablecloth.",
+        "gist": "They build the base of the altar.",
+        "words": [
+          {
+            "es": "niveles",
+            "en": "levels, tiers"
+          },
+          {
+            "es": "la cubren",
+            "en": "cover it (cubrir)"
+          },
+          {
+            "es": "mantel",
+            "en": "tablecloth"
+          }
+        ]
+      },
+      {
+        "es": "Lupita se encarga de las flores de cempasúchil.",
+        "en": "Lupita is in charge of the cempasúchil flowers.",
+        "gist": "Lupita does the marigolds.",
+        "words": [
+          {
+            "es": "se encarga de",
+            "en": "takes care of, is in charge of (encargarse)"
+          },
+          {
+            "es": "cempasúchil",
+            "en": "Mexican marigold"
+          }
+        ]
+      },
+      {
+        "es": "—Su color y su olor guían a las almas hasta la casa —explica.",
+        "en": "\"Their color and their smell guide the souls to the house,\" she explains.",
+        "gist": "The flowers show the dead the way home.",
+        "words": [
+          {
+            "es": "olor",
+            "en": "smell"
+          },
+          {
+            "es": "guían",
+            "en": "guide (guiar)"
+          },
+          {
+            "es": "almas",
+            "en": "souls"
+          }
+        ]
+      },
+      {
+        "es": "Toño pone las fotos del abuelo y de la tía, y unas velas.",
+        "en": "Toño puts out the photos of Grandpa and of the aunt, and some candles.",
+        "gist": "Photos and candles go on the altar.",
+        "words": [
+          {
+            "es": "fotos",
+            "en": "photos (la foto)"
+          },
+          {
+            "es": "velas",
+            "en": "candles"
+          }
+        ]
+      },
+      {
+        "es": "La abuela pone pan de muerto, mole y una cerveza: la favorita del abuelo.",
+        "en": "Grandma puts out pan de muerto, mole and a beer — Grandpa's favorite.",
+        "gist": "They offer the food and drink the dead loved.",
+        "words": [
+          {
+            "es": "pan de muerto",
+            "en": "sweet bread made for Day of the Dead"
+          },
+          {
+            "es": "favorita",
+            "en": "favorite"
+          }
+        ]
+      },
+      {
+        "es": "También hay un vaso de agua, porque las almas llegan con sed después de un viaje largo.",
+        "en": "There's also a glass of water, because the souls arrive thirsty after a long journey.",
+        "gist": "Water is for the thirsty travellers from the other side.",
+        "words": [
+          {
+            "es": "vaso",
+            "en": "(drinking) glass"
+          },
+          {
+            "es": "con sed",
+            "en": "thirsty"
+          },
+          {
+            "es": "viaje",
+            "en": "journey, trip"
+          }
+        ]
+      },
+      {
+        "es": "Matt y Toño cuelgan papel picado de colores arriba de la ofrenda.",
+        "en": "Matt and Toño hang colorful papel picado above the ofrenda.",
+        "gist": "Matt helps decorate.",
+        "words": [
+          {
+            "es": "cuelgan",
+            "en": "hang (colgar)"
+          },
+          {
+            "es": "papel picado",
+            "en": "cut-paper banners"
+          },
+          {
+            "es": "arriba de",
+            "en": "above"
+          }
+        ]
+      },
+      {
+        "es": "Al final, la abuela prende el copal y se sienta frente a la ofrenda.",
+        "en": "At the end, Grandma lights the copal and sits down in front of the ofrenda.",
+        "gist": "Grandma finishes it with incense.",
+        "words": [
+          {
+            "es": "prende",
+            "en": "lights (prender, Mexico)"
+          },
+          {
+            "es": "copal",
+            "en": "tree-resin incense"
+          },
+          {
+            "es": "se sienta",
+            "en": "sits down (sentarse)"
+          },
+          {
+            "es": "frente a",
+            "en": "in front of"
+          }
+        ]
+      },
+      {
+        "es": "—Mañana y pasado mañana nos visitan nuestros muertos —dice, contenta.",
+        "en": "\"Tomorrow and the day after, our dead come to visit us,\" she says happily.",
+        "gist": "November 1 and 2 are when the dead return — a happy time.",
+        "words": [
+          {
+            "es": "pasado mañana",
+            "en": "the day after tomorrow"
+          },
+          {
+            "es": "nos visitan",
+            "en": "visit us (visitar)"
+          },
+          {
+            "es": "nuestros muertos",
+            "en": "our dead (loved ones)"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "rd_perdido_en_la_condesa",
+    "tier": 3,
+    "after_grammar": "g_preterite_regular",
+    "title": "Perdido en la Condesa",
+    "title_en": "Lost in Condesa",
+    "topic": "directions",
+    "level_note": "preterite + imperfect, dialogue, ~140 words",
+    "sentences": [
+      {
+        "es": "El martes, Matt salió solo a caminar por la colonia Condesa.",
+        "en": "On Tuesday, Matt went out alone for a walk around the Condesa neighborhood.",
+        "gist": "He went exploring on his own.",
+        "words": [
+          {
+            "es": "salió",
+            "en": "went out (salir)"
+          },
+          {
+            "es": "solo",
+            "en": "alone"
+          },
+          {
+            "es": "colonia",
+            "en": "neighborhood"
+          }
+        ]
+      },
+      {
+        "es": "Caminó mucho y no miró el mapa ni una vez.",
+        "en": "He walked a lot and didn't look at the map even once.",
+        "gist": "He wandered without checking where he was.",
+        "words": [
+          {
+            "es": "caminó",
+            "en": "walked (caminar)"
+          },
+          {
+            "es": "miró",
+            "en": "looked at (mirar)"
+          },
+          {
+            "es": "ni una vez",
+            "en": "not even once"
+          }
+        ]
+      },
+      {
+        "es": "De repente, se dio cuenta de que no sabía dónde estaba.",
+        "en": "Suddenly, he realized he didn't know where he was.",
+        "gist": "He was lost.",
+        "words": [
+          {
+            "es": "de repente",
+            "en": "suddenly"
+          },
+          {
+            "es": "se dio cuenta",
+            "en": "realized (darse cuenta)"
+          },
+          {
+            "es": "sabía",
+            "en": "knew (saber)"
+          },
+          {
+            "es": "estaba",
+            "en": "was (estar)"
+          }
+        ]
+      },
+      {
+        "es": "Su celular no tenía señal, y además empezó a llover.",
+        "en": "His phone had no signal, and on top of that it started to rain.",
+        "gist": "No phone, and now rain.",
+        "words": [
+          {
+            "es": "señal",
+            "en": "signal"
+          },
+          {
+            "es": "además",
+            "en": "besides, on top of that"
+          },
+          {
+            "es": "empezó a",
+            "en": "started to (empezar)"
+          },
+          {
+            "es": "llover",
+            "en": "to rain"
+          }
+        ]
+      },
+      {
+        "es": "Se acercó a una señora que paseaba a su perro.",
+        "en": "He went up to a lady who was walking her dog.",
+        "gist": "He asked a stranger for help.",
+        "words": [
+          {
+            "es": "se acercó a",
+            "en": "went up to, approached (acercarse)"
+          },
+          {
+            "es": "paseaba",
+            "en": "was walking (pasear, a dog)"
+          }
+        ]
+      },
+      {
+        "es": "—Disculpe, ¿sabe dónde está la estación Chapultepec?",
+        "en": "\"Excuse me, do you know where Chapultepec station is?\"",
+        "gist": "He asks for the metro.",
+        "words": [
+          {
+            "es": "disculpe",
+            "en": "excuse me (polite)"
+          },
+          {
+            "es": "¿sabe…?",
+            "en": "do you know…? (saber)"
+          },
+          {
+            "es": "estación",
+            "en": "(metro) station"
+          }
+        ]
+      },
+      {
+        "es": "—¿Mande? —contestó la señora. Con la lluvia no escuchó bien.",
+        "en": "\"Sorry?\" the lady answered. With the rain, she hadn't heard well.",
+        "gist": "She didn't catch it.",
+        "words": [
+          {
+            "es": "¿mande?",
+            "en": "sorry?, pardon? (polite, Mexico)"
+          },
+          {
+            "es": "contestó",
+            "en": "answered (contestar)"
+          },
+          {
+            "es": "escuchó",
+            "en": "heard (escuchar)"
+          },
+          {
+            "es": "lluvia",
+            "en": "rain"
+          }
+        ]
+      },
+      {
+        "es": "Matt repitió la pregunta más despacio.",
+        "en": "Matt repeated the question more slowly.",
+        "gist": "He asked again.",
+        "words": [
+          {
+            "es": "repitió",
+            "en": "repeated (repetir)"
+          },
+          {
+            "es": "despacio",
+            "en": "slowly"
+          }
+        ]
+      },
+      {
+        "es": "—Ah, pues está un poco lejos, joven. Este… ¿sabe qué? Yo voy para allá. Lo acompaño.",
+        "en": "\"Oh, well, it's a bit far, young man. Um… you know what? I'm going that way. I'll walk with you.\"",
+        "gist": "She offers to walk him there.",
+        "words": [
+          {
+            "es": "pues",
+            "en": "well"
+          },
+          {
+            "es": "este…",
+            "en": "um… (filler)"
+          },
+          {
+            "es": "para allá",
+            "en": "that way, over there"
+          },
+          {
+            "es": "lo acompaño",
+            "en": "I'll go with you (acompañar)"
+          }
+        ],
+        "natural": "Ah, pos 'tá un poco lejos, joven. Este… ¿sabe qué? Yo voy pa'llá. Lo acompaño."
+      },
+      {
+        "es": "La señora abrió su paraguas y caminaron juntos diez cuadras.",
+        "en": "The lady opened her umbrella and they walked ten blocks together.",
+        "gist": "They walked there together.",
+        "words": [
+          {
+            "es": "abrió",
+            "en": "opened (abrir)"
+          },
+          {
+            "es": "paraguas",
+            "en": "umbrella"
+          },
+          {
+            "es": "caminaron",
+            "en": "walked (caminar)"
+          },
+          {
+            "es": "juntos",
+            "en": "together"
+          }
+        ]
+      },
+      {
+        "es": "En el camino, le preguntó de dónde era y le recomendó unos tacos buenísimos.",
+        "en": "On the way, she asked him where he was from and recommended some amazing tacos.",
+        "gist": "They chatted, and she gave him a food tip.",
+        "words": [
+          {
+            "es": "en el camino",
+            "en": "on the way"
+          },
+          {
+            "es": "era",
+            "en": "was (ser; 'where he was from')"
+          },
+          {
+            "es": "recomendó",
+            "en": "recommended (recomendar)"
+          }
+        ]
+      },
+      {
+        "es": "Cuando llegaron a la estación, Matt le dio las gracias mil veces.",
+        "en": "When they got to the station, Matt thanked her a thousand times.",
+        "gist": "He was very grateful.",
+        "words": [
+          {
+            "es": "llegaron",
+            "en": "arrived (llegar)"
+          },
+          {
+            "es": "le dio las gracias",
+            "en": "thanked her (dar las gracias)"
+          },
+          {
+            "es": "mil veces",
+            "en": "a thousand times"
+          }
+        ]
+      },
+      {
+        "es": "—No hay de qué, joven. ¡Para eso estamos!",
+        "en": "\"Don't mention it, young man. That's what we're here for!\"",
+        "gist": "She was happy to help.",
+        "words": [
+          {
+            "es": "no hay de qué",
+            "en": "don't mention it, you're welcome"
+          },
+          {
+            "es": "para eso estamos",
+            "en": "that's what we're here for"
+          }
+        ],
+        "natural": "No hay de qué, joven. ¡Pa' eso 'stamos!"
+      }
+    ]
+  },
+  {
+    "id": "rd_problema_con_el_cuarto",
+    "tier": 3,
+    "after_grammar": "g_preterite_irregular",
+    "title": "Un problema con el cuarto",
+    "title_en": "A problem with the room",
+    "topic": "hotel",
+    "level_note": "preterite (incl. irregular) + imperfect, dialogue, ~130 words",
+    "sentences": [
+      {
+        "es": "Anoche Matt llegó al hotel muy cansado.",
+        "en": "Last night Matt got back to the hotel very tired.",
+        "gist": "He came back exhausted.",
+        "words": [
+          {
+            "es": "anoche",
+            "en": "last night"
+          },
+          {
+            "es": "llegó",
+            "en": "arrived (llegar)"
+          }
+        ]
+      },
+      {
+        "es": "Se metió a bañar, pero no había agua caliente.",
+        "en": "He got in the shower, but there was no hot water.",
+        "gist": "Cold shower.",
+        "words": [
+          {
+            "es": "se metió a bañar",
+            "en": "got in the shower (meterse a bañar, Mexico)"
+          },
+          {
+            "es": "había",
+            "en": "there was (haber)"
+          },
+          {
+            "es": "caliente",
+            "en": "hot"
+          }
+        ]
+      },
+      {
+        "es": "Además, la ventana no cerraba bien y el ruido de la calle no lo dejó dormir.",
+        "en": "Also, the window didn't close properly and the street noise kept him awake.",
+        "gist": "Noise, and he couldn't sleep.",
+        "words": [
+          {
+            "es": "además",
+            "en": "also, on top of that"
+          },
+          {
+            "es": "no cerraba",
+            "en": "wouldn't close (cerrar)"
+          },
+          {
+            "es": "ruido",
+            "en": "noise"
+          },
+          {
+            "es": "no lo dejó dormir",
+            "en": "didn't let him sleep (dejar)"
+          }
+        ]
+      },
+      {
+        "es": "En la mañana fue a la recepción.",
+        "en": "In the morning he went to the front desk.",
+        "gist": "He went to complain.",
+        "words": [
+          {
+            "es": "fue",
+            "en": "went (ir; same form as 'was' from ser)"
+          },
+          {
+            "es": "recepción",
+            "en": "front desk"
+          }
+        ]
+      },
+      {
+        "es": "—Buenos días. Este… tuve unos problemas con mi cuarto anoche.",
+        "en": "\"Good morning. Um… I had a few problems with my room last night.\"",
+        "gist": "He politely raises the problem.",
+        "words": [
+          {
+            "es": "este…",
+            "en": "um… (filler)"
+          },
+          {
+            "es": "tuve",
+            "en": "I had (tener)"
+          }
+        ]
+      },
+      {
+        "es": "—¿Mande? ¿Qué pasó, joven? —preguntó el recepcionista.",
+        "en": "\"Sorry? What happened, young man?\" asked the receptionist.",
+        "gist": "The receptionist asks what went wrong.",
+        "words": [
+          {
+            "es": "¿mande?",
+            "en": "sorry? / yes? (polite, Mexico)"
+          },
+          {
+            "es": "¿qué pasó?",
+            "en": "what happened? (pasar)"
+          }
+        ]
+      },
+      {
+        "es": "Matt le explicó todo: el agua fría, la ventana y el ruido.",
+        "en": "Matt explained everything to him: the cold water, the window and the noise.",
+        "gist": "He lists the problems.",
+        "words": [
+          {
+            "es": "le explicó",
+            "en": "explained to him (explicar)"
+          },
+          {
+            "es": "fría",
+            "en": "cold"
+          }
+        ]
+      },
+      {
+        "es": "—Ay, discúlpenos. Es que ayer hubo un problema con el bóiler.",
+        "en": "\"Oh, we're so sorry. The thing is, there was a problem with the water heater yesterday.\"",
+        "gist": "The hotel apologizes and explains.",
+        "words": [
+          {
+            "es": "discúlpenos",
+            "en": "forgive us, we're sorry (disculpar)"
+          },
+          {
+            "es": "es que",
+            "en": "the thing is"
+          },
+          {
+            "es": "hubo",
+            "en": "there was (haber)"
+          },
+          {
+            "es": "bóiler",
+            "en": "water heater (Mexico)"
+          }
+        ]
+      },
+      {
+        "es": "—Ahorita le cambiamos de cuarto, ¿sí?",
+        "en": "\"We'll move you to another room right away, OK?\"",
+        "gist": "They promise a new room soon.",
+        "words": [
+          {
+            "es": "ahorita",
+            "en": "right now… or 'in a bit' (Mexico; it can stretch!)"
+          },
+          {
+            "es": "le cambiamos de cuarto",
+            "en": "we'll move you to another room (cambiar)"
+          }
+        ]
+      },
+      {
+        "es": "Matt esperó… y esperó. Ese “ahorita” duró casi una hora.",
+        "en": "Matt waited… and waited. That \"right away\" lasted almost an hour.",
+        "gist": "'Ahorita' turned out to be a long time.",
+        "words": [
+          {
+            "es": "esperó",
+            "en": "waited (esperar)"
+          },
+          {
+            "es": "duró",
+            "en": "lasted (durar)"
+          },
+          {
+            "es": "casi",
+            "en": "almost"
+          }
+        ]
+      },
+      {
+        "es": "Por fin, el recepcionista vino con una llave nueva.",
+        "en": "Finally, the receptionist came with a new key.",
+        "gist": "The new room was ready.",
+        "words": [
+          {
+            "es": "por fin",
+            "en": "finally"
+          },
+          {
+            "es": "vino",
+            "en": "came (venir)"
+          }
+        ]
+      },
+      {
+        "es": "El cuarto nuevo estaba en el último piso, tenía vista a la ciudad y era muy tranquilo.",
+        "en": "The new room was on the top floor, had a view of the city and was very quiet.",
+        "gist": "The new room was much better.",
+        "words": [
+          {
+            "es": "último piso",
+            "en": "top floor"
+          },
+          {
+            "es": "tenía",
+            "en": "had (tener)"
+          },
+          {
+            "es": "vista",
+            "en": "view"
+          },
+          {
+            "es": "tranquilo",
+            "en": "quiet, calm"
+          }
+        ]
+      },
+      {
+        "es": "—¡Órale! —dijo Matt—. Valió la pena esperar.",
+        "en": "\"Wow!\" said Matt. \"It was worth the wait.\"",
+        "gist": "Happy ending.",
+        "words": [
+          {
+            "es": "¡órale!",
+            "en": "wow! / all right! (Mexico)"
+          },
+          {
+            "es": "dijo",
+            "en": "said (decir)"
+          },
+          {
+            "es": "valió la pena",
+            "en": "it was worth it (valer la pena)"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "rd_fin_de_semana_en_oaxaca",
+    "tier": 3,
+    "after_grammar": "g_preterite_irregular",
+    "title": "Un fin de semana en Oaxaca",
+    "title_en": "A weekend in Oaxaca",
+    "topic": "travel",
+    "level_note": "preterite + imperfect, dialogue, ~130 words",
+    "sentences": [
+      {
+        "es": "El fin de semana pasado, Matt y Diego fueron a Oaxaca.",
+        "en": "Last weekend, Matt and Diego went to Oaxaca.",
+        "gist": "A weekend trip south.",
+        "words": [
+          {
+            "es": "fin de semana pasado",
+            "en": "last weekend"
+          },
+          {
+            "es": "fueron",
+            "en": "went (ir)"
+          }
+        ]
+      },
+      {
+        "es": "Tomaron un camión de noche y llegaron a las seis de la mañana.",
+        "en": "They took an overnight bus and arrived at six in the morning.",
+        "gist": "They travelled overnight.",
+        "words": [
+          {
+            "es": "tomaron",
+            "en": "took (tomar)"
+          },
+          {
+            "es": "camión de noche",
+            "en": "overnight bus"
+          },
+          {
+            "es": "llegaron",
+            "en": "arrived (llegar)"
+          }
+        ]
+      },
+      {
+        "es": "Hacía frío, pero el amanecer estaba precioso.",
+        "en": "It was cold, but the sunrise was gorgeous.",
+        "gist": "A chilly, beautiful morning.",
+        "words": [
+          {
+            "es": "hacía frío",
+            "en": "it was cold (hacer, for weather)"
+          },
+          {
+            "es": "amanecer",
+            "en": "sunrise, dawn"
+          },
+          {
+            "es": "precioso",
+            "en": "gorgeous"
+          }
+        ]
+      },
+      {
+        "es": "Primero desayunaron chocolate caliente con pan de yema en un mercado.",
+        "en": "First they had hot chocolate with egg-yolk bread for breakfast at a market.",
+        "gist": "A classic Oaxacan breakfast.",
+        "words": [
+          {
+            "es": "desayunaron",
+            "en": "had breakfast (desayunar)"
+          },
+          {
+            "es": "pan de yema",
+            "en": "egg-yolk bread"
+          }
+        ]
+      },
+      {
+        "es": "Después fueron a Monte Albán, una antigua ciudad zapoteca.",
+        "en": "Then they went to Monte Albán, an ancient Zapotec city.",
+        "gist": "They visited famous ruins.",
+        "words": [
+          {
+            "es": "antigua",
+            "en": "ancient (before the noun: 'former, ancient')"
+          },
+          {
+            "es": "zapoteca",
+            "en": "Zapotec (Indigenous people of Oaxaca)"
+          }
+        ]
+      },
+      {
+        "es": "—Esta ciudad tiene más de dos mil años —les dijo el guía.",
+        "en": "\"This city is more than two thousand years old,\" the guide told them.",
+        "gist": "It's very old.",
+        "words": [
+          {
+            "es": "tiene más de dos mil años",
+            "en": "is more than two thousand years old"
+          },
+          {
+            "es": "les dijo",
+            "en": "told them (decir)"
+          },
+          {
+            "es": "guía",
+            "en": "guide"
+          }
+        ]
+      },
+      {
+        "es": "En la tarde, Diego le dijo a Matt: —Tienes que probar los chapulines.",
+        "en": "In the afternoon, Diego told Matt: \"You have to try the chapulines.\"",
+        "gist": "Diego dares him to try a local snack.",
+        "words": [
+          {
+            "es": "en la tarde",
+            "en": "in the afternoon"
+          },
+          {
+            "es": "le dijo",
+            "en": "told him (decir)"
+          },
+          {
+            "es": "chapulines",
+            "en": "toasted grasshoppers"
+          }
+        ]
+      },
+      {
+        "es": "—¿Chapulines? ¿Insectos? ¡No manches! —contestó Matt.",
+        "en": "\"Chapulines? Insects? No way!\" Matt answered.",
+        "gist": "He's not keen.",
+        "words": [
+          {
+            "es": "¡no manches!",
+            "en": "no way! / you're kidding! (Mexico, informal)"
+          },
+          {
+            "es": "contestó",
+            "en": "answered (contestar)"
+          }
+        ]
+      },
+      {
+        "es": "Pero los probó y, la verdad, estaban muy buenos: crujientes, con limón y chile.",
+        "en": "But he tried them, and honestly, they were really good: crunchy, with lime and chile.",
+        "gist": "He tried them and liked them.",
+        "words": [
+          {
+            "es": "los probó",
+            "en": "tried them (probar)"
+          },
+          {
+            "es": "la verdad",
+            "en": "honestly (lit. the truth)"
+          },
+          {
+            "es": "crujientes",
+            "en": "crunchy"
+          }
+        ]
+      },
+      {
+        "es": "En la noche cenaron una tlayuda enorme y tomaron un mezcal.",
+        "en": "At night they had a huge tlayuda for dinner and drank a mezcal.",
+        "gist": "A big Oaxacan dinner.",
+        "words": [
+          {
+            "es": "cenaron",
+            "en": "had dinner (cenar)"
+          },
+          {
+            "es": "tlayuda",
+            "en": "large crispy tortilla with toppings"
+          },
+          {
+            "es": "tomaron",
+            "en": "drank (tomar)"
+          }
+        ]
+      },
+      {
+        "es": "—Pues, ¿qué te pareció Oaxaca? —le preguntó Diego en el camión de regreso.",
+        "en": "\"So, what did you think of Oaxaca?\" Diego asked him on the bus back.",
+        "gist": "Diego asks how he liked it.",
+        "words": [
+          {
+            "es": "pues",
+            "en": "so, well"
+          },
+          {
+            "es": "¿qué te pareció?",
+            "en": "what did you think of it? (parecer)"
+          },
+          {
+            "es": "de regreso",
+            "en": "on the way back"
+          }
+        ],
+        "natural": "Pos, ¿qué te pareció Oaxaca? le preguntó Diego en el camión de regreso."
+      },
+      {
+        "es": "—Fue el mejor fin de semana del viaje. ¡Quiero volver!",
+        "en": "\"It was the best weekend of the trip. I want to go back!\"",
+        "gist": "He loved it.",
+        "words": [
+          {
+            "es": "fue",
+            "en": "it was (ser)"
+          },
+          {
+            "es": "el mejor",
+            "en": "the best"
+          },
+          {
+            "es": "volver",
+            "en": "to go back, return"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "rd_el_partido",
+    "tier": 3,
+    "after_grammar": "g_imperfect",
+    "title": "El partido",
+    "title_en": "The match",
+    "topic": "leisure",
+    "level_note": "preterite vs imperfect, dialogue, ~150 words",
+    "sentences": [
+      {
+        "es": "El domingo, Matt fue al estadio de Ciudad Universitaria con Toño y su papá, don Beto.",
+        "en": "On Sunday, Matt went to the stadium at Ciudad Universitaria with Toño and his dad, don Beto.",
+        "gist": "Off to a soccer game.",
+        "words": [
+          {
+            "es": "fue",
+            "en": "went (ir)"
+          },
+          {
+            "es": "estadio",
+            "en": "stadium"
+          },
+          {
+            "es": "don",
+            "en": "respectful title used with a first name"
+          }
+        ]
+      },
+      {
+        "es": "Jugaban los Pumas contra el América: el clásico capitalino.",
+        "en": "Pumas were playing América: the Mexico City derby.",
+        "gist": "A big rivalry game.",
+        "words": [
+          {
+            "es": "jugaban",
+            "en": "were playing (jugar)"
+          },
+          {
+            "es": "contra",
+            "en": "against"
+          },
+          {
+            "es": "clásico capitalino",
+            "en": "Mexico City derby"
+          }
+        ]
+      },
+      {
+        "es": "Don Beto llevaba su playera de los Pumas, y Toño llevaba la del América.",
+        "en": "Don Beto was wearing his Pumas jersey, and Toño was wearing his América one.",
+        "gist": "Father and son wore rival shirts.",
+        "words": [
+          {
+            "es": "llevaba",
+            "en": "was wearing (llevar)"
+          },
+          {
+            "es": "playera",
+            "en": "T-shirt, jersey (Mexico)"
+          },
+          {
+            "es": "la del",
+            "en": "the one of"
+          }
+        ]
+      },
+      {
+        "es": "El estadio estaba lleno y la gente cantaba sin parar.",
+        "en": "The stadium was full and people were singing nonstop.",
+        "gist": "Packed and loud.",
+        "words": [
+          {
+            "es": "lleno",
+            "en": "full"
+          },
+          {
+            "es": "cantaba",
+            "en": "was singing (cantar)"
+          },
+          {
+            "es": "sin parar",
+            "en": "nonstop"
+          }
+        ]
+      },
+      {
+        "es": "Hacía sol, y vendían refrescos, cacahuates y papas con chile y limón.",
+        "en": "It was sunny, and they were selling sodas, peanuts and chips with chile and lime.",
+        "gist": "Sun and snacks.",
+        "words": [
+          {
+            "es": "hacía sol",
+            "en": "it was sunny"
+          },
+          {
+            "es": "vendían",
+            "en": "they were selling (vender)"
+          },
+          {
+            "es": "refrescos",
+            "en": "sodas"
+          },
+          {
+            "es": "cacahuates",
+            "en": "peanuts (Mexico)"
+          }
+        ]
+      },
+      {
+        "es": "En el minuto veinte, el América metió un gol.",
+        "en": "In the twentieth minute, América scored a goal.",
+        "gist": "América scored first.",
+        "words": [
+          {
+            "es": "metió un gol",
+            "en": "scored a goal (meter)"
+          }
+        ]
+      },
+      {
+        "es": "—¡Goooool! —gritó Toño, y su papá lo miró muy serio.",
+        "en": "\"Goooal!\" shouted Toño, and his dad gave him a very serious look.",
+        "gist": "Toño celebrated; his dad didn't.",
+        "words": [
+          {
+            "es": "gritó",
+            "en": "shouted (gritar)"
+          },
+          {
+            "es": "lo miró",
+            "en": "looked at him (mirar)"
+          },
+          {
+            "es": "serio",
+            "en": "serious"
+          }
+        ]
+      },
+      {
+        "es": "—Ahorita empatamos, ya vas a ver —dijo don Beto.",
+        "en": "\"We'll tie it up any minute now, you'll see,\" said don Beto.",
+        "gist": "Dad is sure Pumas will equalize.",
+        "words": [
+          {
+            "es": "ahorita",
+            "en": "any minute now (Mexico)"
+          },
+          {
+            "es": "empatamos",
+            "en": "we tie (empatar)"
+          },
+          {
+            "es": "ya vas a ver",
+            "en": "you'll see"
+          }
+        ],
+        "natural": "Ahorita empatamos, ya vasa ver, dijo don Beto."
+      },
+      {
+        "es": "Durante el segundo tiempo, los Pumas atacaban y atacaban, pero no anotaban.",
+        "en": "During the second half, Pumas kept attacking and attacking, but they weren't scoring.",
+        "gist": "Pumas pushed but couldn't score.",
+        "words": [
+          {
+            "es": "segundo tiempo",
+            "en": "second half"
+          },
+          {
+            "es": "atacaban",
+            "en": "kept attacking (atacar)"
+          },
+          {
+            "es": "anotaban",
+            "en": "were scoring (anotar)"
+          }
+        ]
+      },
+      {
+        "es": "Por fin, en el minuto noventa, un delantero de los Pumas anotó de cabeza.",
+        "en": "Finally, in the ninetieth minute, a Pumas striker scored with a header.",
+        "gist": "A last-minute equalizer.",
+        "words": [
+          {
+            "es": "por fin",
+            "en": "finally"
+          },
+          {
+            "es": "delantero",
+            "en": "forward, striker"
+          },
+          {
+            "es": "anotó",
+            "en": "scored (anotar)"
+          },
+          {
+            "es": "de cabeza",
+            "en": "with a header"
+          }
+        ]
+      },
+      {
+        "es": "Don Beto saltó, abrazó a Matt y gritó: —¡Órale! ¡Te lo dije!",
+        "en": "Don Beto jumped up, hugged Matt and shouted: \"Yes! I told you!\"",
+        "gist": "Dad was thrilled.",
+        "words": [
+          {
+            "es": "saltó",
+            "en": "jumped (saltar)"
+          },
+          {
+            "es": "abrazó",
+            "en": "hugged (abrazar)"
+          },
+          {
+            "es": "¡órale!",
+            "en": "yes! / all right!"
+          },
+          {
+            "es": "te lo dije",
+            "en": "I told you so (decir)"
+          }
+        ]
+      },
+      {
+        "es": "—¡No manches, qué partidazo! —dijo Matt.",
+        "en": "\"No way, what a game!\" said Matt.",
+        "gist": "Matt loved it.",
+        "words": [
+          {
+            "es": "¡no manches!",
+            "en": "no way! (Mexico, informal)"
+          },
+          {
+            "es": "partidazo",
+            "en": "great game (-azo = big, great)"
+          }
+        ]
+      },
+      {
+        "es": "Al final quedaron uno a uno, y todos regresaron a casa contentos… bueno, más o menos.",
+        "en": "In the end it finished one all, and everyone went home happy… well, more or less.",
+        "gist": "A tie: nobody really won.",
+        "words": [
+          {
+            "es": "quedaron",
+            "en": "ended up (quedar)"
+          },
+          {
+            "es": "uno a uno",
+            "en": "one all"
+          },
+          {
+            "es": "regresaron",
+            "en": "went back (regresar)"
+          },
+          {
+            "es": "más o menos",
+            "en": "more or less"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "rd_noche_en_el_panteon",
+    "tier": 3,
+    "after_grammar": "g_imperfect",
+    "title": "Noche en el panteón",
+    "title_en": "A night in the cemetery",
+    "topic": "places",
+    "level_note": "preterite vs imperfect, dialogue, ~160 words",
+    "sentences": [
+      {
+        "es": "La noche del primero de noviembre, Matt fue al panteón con la familia de Lupita.",
+        "en": "On the night of November 1st, Matt went to the cemetery with Lupita's family.",
+        "gist": "A Day of the Dead night visit to the graves.",
+        "words": [
+          {
+            "es": "primero de noviembre",
+            "en": "November 1st"
+          },
+          {
+            "es": "panteón",
+            "en": "cemetery (Mexico)"
+          },
+          {
+            "es": "fue",
+            "en": "went (ir)"
+          }
+        ]
+      },
+      {
+        "es": "El panteón estaba en el pueblo de la abuela, a una hora de la ciudad.",
+        "en": "The cemetery was in Grandma's hometown, an hour from the city.",
+        "gist": "They drove out to Grandma's town.",
+        "words": [
+          {
+            "es": "estaba",
+            "en": "was (estar, location)"
+          },
+          {
+            "es": "pueblo",
+            "en": "town, village"
+          },
+          {
+            "es": "a una hora de",
+            "en": "an hour from"
+          }
+        ]
+      },
+      {
+        "es": "Cuando llegaron, ya había mucha gente.",
+        "en": "When they arrived, there were already a lot of people.",
+        "gist": "It was already busy.",
+        "words": [
+          {
+            "es": "llegaron",
+            "en": "arrived (llegar)"
+          },
+          {
+            "es": "ya",
+            "en": "already"
+          },
+          {
+            "es": "había",
+            "en": "there was / there were (haber)"
+          }
+        ]
+      },
+      {
+        "es": "Las tumbas estaban cubiertas de cempasúchil, y miles de velas iluminaban la noche.",
+        "en": "The graves were covered in marigolds, and thousands of candles lit up the night.",
+        "gist": "Flowers and candlelight everywhere.",
+        "words": [
+          {
+            "es": "tumbas",
+            "en": "graves"
+          },
+          {
+            "es": "cubiertas de",
+            "en": "covered in"
+          },
+          {
+            "es": "miles de",
+            "en": "thousands of"
+          },
+          {
+            "es": "iluminaban",
+            "en": "lit up (iluminar)"
+          }
+        ]
+      },
+      {
+        "es": "Unas familias comían tamales, otras cantaban, y unos señores tocaban la guitarra.",
+        "en": "Some families were eating tamales, others were singing, and some men were playing the guitar.",
+        "gist": "It felt like a party.",
+        "words": [
+          {
+            "es": "comían",
+            "en": "were eating (comer)"
+          },
+          {
+            "es": "cantaban",
+            "en": "were singing (cantar)"
+          },
+          {
+            "es": "tocaban",
+            "en": "were playing (tocar, an instrument)"
+          }
+        ]
+      },
+      {
+        "es": "Matt pensaba que iba a ser un lugar triste, pero no era así.",
+        "en": "Matt had thought it would be a sad place, but it wasn't like that.",
+        "gist": "Not sad at all.",
+        "words": [
+          {
+            "es": "pensaba",
+            "en": "thought (pensar)"
+          },
+          {
+            "es": "iba a ser",
+            "en": "was going to be (ir a)"
+          },
+          {
+            "es": "así",
+            "en": "like that"
+          }
+        ]
+      },
+      {
+        "es": "La familia limpió la tumba del abuelo y la decoró con flores.",
+        "en": "The family cleaned Grandpa's grave and decorated it with flowers.",
+        "gist": "They cared for Grandpa's grave.",
+        "words": [
+          {
+            "es": "limpió",
+            "en": "cleaned (limpiar)"
+          },
+          {
+            "es": "la decoró",
+            "en": "decorated it (decorar)"
+          }
+        ]
+      },
+      {
+        "es": "La abuela le contaba historias del abuelo mientras prendía las velas.",
+        "en": "Grandma told him stories about Grandpa while she lit the candles.",
+        "gist": "Grandma shared memories.",
+        "words": [
+          {
+            "es": "le contaba",
+            "en": "was telling him (contar)"
+          },
+          {
+            "es": "historias",
+            "en": "stories"
+          },
+          {
+            "es": "mientras",
+            "en": "while"
+          },
+          {
+            "es": "prendía",
+            "en": "was lighting (prender)"
+          }
+        ]
+      },
+      {
+        "es": "—Tu abuelo era muy bromista, ¿verdad? —le preguntó Matt a Lupita.",
+        "en": "\"Your grandpa was a real joker, wasn't he?\" Matt asked Lupita.",
+        "gist": "Matt picks up on Grandpa's personality.",
+        "words": [
+          {
+            "es": "era",
+            "en": "was (ser, describing someone)"
+          },
+          {
+            "es": "bromista",
+            "en": "joker, prankster"
+          },
+          {
+            "es": "¿verdad?",
+            "en": "right?, wasn't he?"
+          }
+        ]
+      },
+      {
+        "es": "—Uy, sí. Siempre contaba chistes, hasta en los velorios —dijo Lupita, riéndose.",
+        "en": "\"Oh, yes. He was always telling jokes, even at wakes,\" said Lupita, laughing.",
+        "gist": "He was funny even at funerals.",
+        "words": [
+          {
+            "es": "contaba chistes",
+            "en": "used to tell jokes (contar)"
+          },
+          {
+            "es": "hasta",
+            "en": "even"
+          },
+          {
+            "es": "velorios",
+            "en": "wakes"
+          },
+          {
+            "es": "riéndose",
+            "en": "laughing (reírse)"
+          }
+        ]
+      },
+      {
+        "es": "A las dos de la mañana hacía mucho frío.",
+        "en": "At two in the morning it was very cold.",
+        "gist": "The night got cold.",
+        "words": [
+          {
+            "es": "hacía mucho frío",
+            "en": "it was very cold (hacer, for weather)"
+          }
+        ]
+      },
+      {
+        "es": "Una señora de la tumba de al lado les ofreció: —¿Gustan un ponchecito?",
+        "en": "A lady at the next grave offered them: \"Would you like a little hot punch?\"",
+        "gist": "A neighbor shared a hot drink.",
+        "words": [
+          {
+            "es": "de al lado",
+            "en": "next door, next to them"
+          },
+          {
+            "es": "ofreció",
+            "en": "offered (ofrecer)"
+          },
+          {
+            "es": "¿gustan…?",
+            "en": "would you (all) like…? (polite)"
+          },
+          {
+            "es": "ponche",
+            "en": "hot fruit punch"
+          }
+        ]
+      },
+      {
+        "es": "Esa noche, Matt entendió que el Día de Muertos no es para llorar, sino para recordar.",
+        "en": "That night, Matt understood that the Day of the Dead isn't for crying, but for remembering.",
+        "gist": "The holiday is about remembering, not mourning.",
+        "words": [
+          {
+            "es": "entendió",
+            "en": "understood (entender)"
+          },
+          {
+            "es": "sino",
+            "en": "but rather (after 'no')"
+          },
+          {
+            "es": "recordar",
+            "en": "to remember"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "rd_historia_dia_de_muertos",
+    "tier": 4,
+    "after_grammar": "g_imperfect",
+    "title": "La historia del Día de Muertos",
+    "title_en": "The history of the Day of the Dead",
+    "topic": "abstract",
+    "level_note": "mixed tenses, short history piece, ~240 words",
+    "sentences": [
+      {
+        "es": "El Día de Muertos se celebra en México el 1 y el 2 de noviembre.",
+        "en": "The Day of the Dead is celebrated in Mexico on November 1 and 2.",
+        "gist": "When the holiday happens.",
+        "words": [
+          {
+            "es": "se celebra",
+            "en": "is celebrated (celebrar; passive 'se')"
+          }
+        ]
+      },
+      {
+        "es": "Sus raíces son muy antiguas: vienen de los pueblos indígenas, como los mexicas, también llamados aztecas.",
+        "en": "Its roots are very old: they come from the Indigenous peoples, like the Mexica, also called the Aztecs.",
+        "gist": "It started long before the Spanish arrived.",
+        "words": [
+          {
+            "es": "raíces",
+            "en": "roots (la raíz)"
+          },
+          {
+            "es": "pueblos indígenas",
+            "en": "Indigenous peoples"
+          },
+          {
+            "es": "mexicas",
+            "en": "the Mexica (what the Aztecs called themselves)"
+          }
+        ]
+      },
+      {
+        "es": "Para los mexicas, la muerte no era el final, sino parte de un ciclo.",
+        "en": "For the Mexica, death wasn't the end, but part of a cycle.",
+        "gist": "Death was seen as part of life.",
+        "words": [
+          {
+            "es": "muerte",
+            "en": "death"
+          },
+          {
+            "es": "sino",
+            "en": "but rather (after 'no')"
+          },
+          {
+            "es": "ciclo",
+            "en": "cycle"
+          }
+        ]
+      },
+      {
+        "es": "Creían que las almas viajaban al Mictlán, el mundo de los muertos, y que el viaje duraba cuatro años.",
+        "en": "They believed that souls travelled to Mictlán, the world of the dead, and that the journey took four years.",
+        "gist": "The dead made a long journey to the underworld.",
+        "words": [
+          {
+            "es": "creían",
+            "en": "they believed (creer)"
+          },
+          {
+            "es": "almas",
+            "en": "souls"
+          },
+          {
+            "es": "viajaban",
+            "en": "travelled (viajar)"
+          },
+          {
+            "es": "duraba",
+            "en": "lasted (durar)"
+          }
+        ]
+      },
+      {
+        "es": "Cada año celebraban fiestas para honrar a sus muertos con comida, flores y música.",
+        "en": "Every year they held festivals to honor their dead with food, flowers and music.",
+        "gist": "They honored the dead with celebrations.",
+        "words": [
+          {
+            "es": "celebraban",
+            "en": "used to celebrate (celebrar)"
+          },
+          {
+            "es": "honrar",
+            "en": "to honor"
+          },
+          {
+            "es": "muertos",
+            "en": "the dead"
+          }
+        ]
+      },
+      {
+        "es": "Cuando llegaron los españoles en el siglo XVI, trajeron las fiestas católicas de Todos los Santos y de los Fieles Difuntos.",
+        "en": "When the Spanish arrived in the 16th century, they brought the Catholic feasts of All Saints' Day and All Souls' Day.",
+        "gist": "The Spanish brought their own days for the dead.",
+        "words": [
+          {
+            "es": "siglo XVI",
+            "en": "16th century (read 'dieciséis')"
+          },
+          {
+            "es": "trajeron",
+            "en": "brought (traer)"
+          },
+          {
+            "es": "Todos los Santos",
+            "en": "All Saints' Day (Nov 1)"
+          },
+          {
+            "es": "Fieles Difuntos",
+            "en": "All Souls' Day (Nov 2)"
+          }
+        ]
+      },
+      {
+        "es": "Las dos tradiciones se mezclaron, y por eso hoy hay cruces y veladoras junto a calaveras y cempasúchil.",
+        "en": "The two traditions blended, and that's why today there are crosses and candles next to skulls and marigolds.",
+        "gist": "Today's holiday is a mix of both.",
+        "words": [
+          {
+            "es": "se mezclaron",
+            "en": "mixed, blended (mezclarse)"
+          },
+          {
+            "es": "por eso",
+            "en": "that's why"
+          },
+          {
+            "es": "veladoras",
+            "en": "candles in glass jars"
+          },
+          {
+            "es": "calaveras",
+            "en": "skulls"
+          }
+        ]
+      },
+      {
+        "es": "Una de las imágenes más famosas de esta fiesta es la Catrina.",
+        "en": "One of the most famous images of this holiday is La Catrina.",
+        "gist": "Enter La Catrina.",
+        "words": [
+          {
+            "es": "imágenes",
+            "en": "images"
+          },
+          {
+            "es": "más famosas",
+            "en": "most famous"
+          },
+          {
+            "es": "fiesta",
+            "en": "holiday, celebration"
+          }
+        ]
+      },
+      {
+        "es": "La creó el grabador José Guadalupe Posada a principios del siglo XX.",
+        "en": "The engraver José Guadalupe Posada created it in the early 20th century.",
+        "gist": "An artist named Posada drew her about a century ago.",
+        "words": [
+          {
+            "es": "la creó",
+            "en": "created it/her (crear)"
+          },
+          {
+            "es": "grabador",
+            "en": "engraver, printmaker"
+          },
+          {
+            "es": "a principios de",
+            "en": "at the beginning of"
+          },
+          {
+            "es": "siglo XX",
+            "en": "20th century"
+          }
+        ]
+      },
+      {
+        "es": "Al principio se llamaba “La Calavera Garbancera” y se burlaba de los mexicanos que querían parecer europeos.",
+        "en": "At first it was called \"La Calavera Garbancera,\" and it made fun of Mexicans who wanted to look European.",
+        "gist": "She started as a joke about people pretending to be something they weren't.",
+        "words": [
+          {
+            "es": "al principio",
+            "en": "at first"
+          },
+          {
+            "es": "se llamaba",
+            "en": "was called (llamarse)"
+          },
+          {
+            "es": "se burlaba de",
+            "en": "made fun of (burlarse)"
+          },
+          {
+            "es": "parecer",
+            "en": "to look like, seem"
+          }
+        ]
+      },
+      {
+        "es": "Años después, el pintor Diego Rivera le dio el nombre de “Catrina” y la pintó en un mural famoso.",
+        "en": "Years later, the painter Diego Rivera gave her the name \"Catrina\" and painted her in a famous mural.",
+        "gist": "Diego Rivera named her and made her famous.",
+        "words": [
+          {
+            "es": "pintor",
+            "en": "painter"
+          },
+          {
+            "es": "le dio el nombre",
+            "en": "gave her the name (dar)"
+          },
+          {
+            "es": "la pintó",
+            "en": "painted her (pintar)"
+          }
+        ]
+      },
+      {
+        "es": "Su mensaje sigue siendo el mismo: ricos o pobres, al final todos somos calaveras.",
+        "en": "Her message is still the same: rich or poor, in the end we're all skeletons.",
+        "gist": "Death treats everyone equally.",
+        "words": [
+          {
+            "es": "mensaje",
+            "en": "message"
+          },
+          {
+            "es": "sigue siendo",
+            "en": "is still (seguir + -ndo)"
+          },
+          {
+            "es": "el mismo",
+            "en": "the same"
+          }
+        ]
+      },
+      {
+        "es": "En 2008, la UNESCO reconoció esta tradición como Patrimonio Cultural Inmaterial de la Humanidad.",
+        "en": "In 2008, UNESCO recognized this tradition as Intangible Cultural Heritage of Humanity.",
+        "gist": "The world officially values it.",
+        "words": [
+          {
+            "es": "reconoció",
+            "en": "recognized (reconocer)"
+          },
+          {
+            "es": "patrimonio",
+            "en": "heritage"
+          },
+          {
+            "es": "inmaterial",
+            "en": "intangible"
+          }
+        ]
+      },
+      {
+        "es": "Desde 2016, la Ciudad de México también tiene un gran desfile, inspirado en una película de James Bond.",
+        "en": "Since 2016, Mexico City has also had a big parade, inspired by a James Bond movie.",
+        "gist": "The famous parade is actually new.",
+        "words": [
+          {
+            "es": "desde",
+            "en": "since"
+          },
+          {
+            "es": "desfile",
+            "en": "parade"
+          },
+          {
+            "es": "inspirado en",
+            "en": "inspired by"
+          },
+          {
+            "es": "película",
+            "en": "movie"
+          }
+        ]
+      },
+      {
+        "es": "Cada región lo celebra a su manera, pero la idea es la misma: que nadie olvide a sus muertos.",
+        "en": "Each region celebrates it in its own way, but the idea is the same: that no one forgets their dead.",
+        "gist": "The point is remembering.",
+        "words": [
+          {
+            "es": "a su manera",
+            "en": "in its own way"
+          },
+          {
+            "es": "la misma",
+            "en": "the same"
+          },
+          {
+            "es": "que nadie olvide",
+            "en": "that no one forget (olvidar, subjunctive)"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "rd_la_llorona",
+    "tier": 4,
+    "after_grammar": "g_comparisons",
+    "title": "La Llorona",
+    "title_en": "The Weeping Woman",
+    "topic": "abstract",
+    "level_note": "mixed tenses, a legend retold simply, ~210 words",
+    "sentences": [
+      {
+        "es": "En México todos conocen la leyenda de La Llorona.",
+        "en": "In Mexico everyone knows the legend of La Llorona.",
+        "gist": "A legend every Mexican knows.",
+        "words": [
+          {
+            "es": "conocen",
+            "en": "know (conocer)"
+          },
+          {
+            "es": "leyenda",
+            "en": "legend"
+          },
+          {
+            "es": "llorona",
+            "en": "weeping woman (from llorar, to cry)"
+          }
+        ]
+      },
+      {
+        "es": "Hay muchas versiones, pero esta es una de las más conocidas.",
+        "en": "There are many versions, but this is one of the best known.",
+        "gist": "Here's the usual version.",
+        "words": [
+          {
+            "es": "versiones",
+            "en": "versions"
+          },
+          {
+            "es": "las más conocidas",
+            "en": "the best known"
+          }
+        ]
+      },
+      {
+        "es": "Hace muchos años, en un pueblo junto a un río, vivía una mujer llamada María.",
+        "en": "Many years ago, in a village by a river, there lived a woman named María.",
+        "gist": "The story starts with a woman by a river.",
+        "words": [
+          {
+            "es": "hace muchos años",
+            "en": "many years ago"
+          },
+          {
+            "es": "junto a",
+            "en": "next to, by"
+          },
+          {
+            "es": "vivía",
+            "en": "lived (vivir)"
+          },
+          {
+            "es": "llamada",
+            "en": "named"
+          }
+        ]
+      },
+      {
+        "es": "Era más hermosa que todas las mujeres del pueblo, y lo sabía.",
+        "en": "She was more beautiful than all the women in the village, and she knew it.",
+        "gist": "She was beautiful and proud.",
+        "words": [
+          {
+            "es": "era",
+            "en": "was (ser)"
+          },
+          {
+            "es": "más hermosa que",
+            "en": "more beautiful than"
+          },
+          {
+            "es": "lo sabía",
+            "en": "she knew it (saber)"
+          }
+        ]
+      },
+      {
+        "es": "Un día llegó un hombre rico, se enamoró de ella y se casaron.",
+        "en": "One day a rich man arrived, fell in love with her, and they got married.",
+        "gist": "She married a rich man.",
+        "words": [
+          {
+            "es": "llegó",
+            "en": "arrived (llegar)"
+          },
+          {
+            "es": "se enamoró de",
+            "en": "fell in love with (enamorarse)"
+          },
+          {
+            "es": "se casaron",
+            "en": "got married (casarse)"
+          }
+        ]
+      },
+      {
+        "es": "Tuvieron dos hijos, y al principio eran muy felices.",
+        "en": "They had two children, and at first they were very happy.",
+        "gist": "At first, a happy family.",
+        "words": [
+          {
+            "es": "tuvieron",
+            "en": "had (tener)"
+          },
+          {
+            "es": "hijos",
+            "en": "children, sons"
+          },
+          {
+            "es": "al principio",
+            "en": "at first"
+          },
+          {
+            "es": "felices",
+            "en": "happy"
+          }
+        ]
+      },
+      {
+        "es": "Pero con el tiempo, el hombre salía cada vez más y ya no le hacía caso a María.",
+        "en": "But over time, the man went out more and more and stopped paying attention to María.",
+        "gist": "Her husband began to ignore her.",
+        "words": [
+          {
+            "es": "con el tiempo",
+            "en": "over time"
+          },
+          {
+            "es": "cada vez más",
+            "en": "more and more"
+          },
+          {
+            "es": "ya no le hacía caso",
+            "en": "no longer paid attention to her (hacerle caso a)"
+          }
+        ]
+      },
+      {
+        "es": "Una tarde, María lo vio en el camino con otra mujer, más joven y más rica que ella.",
+        "en": "One afternoon, María saw him on the road with another woman, younger and richer than she was.",
+        "gist": "She caught him with someone else.",
+        "words": [
+          {
+            "es": "lo vio",
+            "en": "saw him (ver)"
+          },
+          {
+            "es": "camino",
+            "en": "road, path"
+          },
+          {
+            "es": "más joven",
+            "en": "younger"
+          },
+          {
+            "es": "más rica que ella",
+            "en": "richer than her"
+          }
+        ]
+      },
+      {
+        "es": "Loca de celos y de dolor, llevó a sus hijos al río y los ahogó.",
+        "en": "Mad with jealousy and pain, she took her children to the river and drowned them.",
+        "gist": "In her rage, she did something terrible.",
+        "words": [
+          {
+            "es": "loca de",
+            "en": "mad with"
+          },
+          {
+            "es": "celos",
+            "en": "jealousy"
+          },
+          {
+            "es": "llevó",
+            "en": "took (llevar)"
+          },
+          {
+            "es": "los ahogó",
+            "en": "drowned them (ahogar)"
+          }
+        ]
+      },
+      {
+        "es": "Cuando entendió lo que había hecho, ya era demasiado tarde.",
+        "en": "When she understood what she had done, it was already too late.",
+        "gist": "She regretted it at once.",
+        "words": [
+          {
+            "es": "entendió",
+            "en": "understood (entender)"
+          },
+          {
+            "es": "lo que",
+            "en": "what"
+          },
+          {
+            "es": "había hecho",
+            "en": "had done (hacer)"
+          },
+          {
+            "es": "demasiado",
+            "en": "too"
+          }
+        ],
+        "natural": "Cuando entendió lo kabía hecho, ya era demasiado tarde."
+      },
+      {
+        "es": "María murió en la orilla del río, llorando por sus hijos.",
+        "en": "María died on the riverbank, weeping for her children.",
+        "gist": "She died of grief.",
+        "words": [
+          {
+            "es": "murió",
+            "en": "died (morir)"
+          },
+          {
+            "es": "orilla",
+            "en": "bank, shore"
+          },
+          {
+            "es": "llorando",
+            "en": "crying (llorar)"
+          }
+        ]
+      },
+      {
+        "es": "Desde entonces, su alma camina de noche cerca del agua, vestida de blanco.",
+        "en": "Since then, her soul has walked at night near the water, dressed in white.",
+        "gist": "Now her ghost wanders.",
+        "words": [
+          {
+            "es": "desde entonces",
+            "en": "since then"
+          },
+          {
+            "es": "alma",
+            "en": "soul"
+          },
+          {
+            "es": "vestida de blanco",
+            "en": "dressed in white"
+          }
+        ]
+      },
+      {
+        "es": "Dicen que grita “¡Ay, mis hijos!” y que nunca los va a encontrar.",
+        "en": "They say she cries out \"Oh, my children!\" and that she will never find them.",
+        "gist": "Her famous cry.",
+        "words": [
+          {
+            "es": "dicen que",
+            "en": "they say that"
+          },
+          {
+            "es": "grita",
+            "en": "cries out, screams (gritar)"
+          },
+          {
+            "es": "encontrar",
+            "en": "to find"
+          }
+        ]
+      },
+      {
+        "es": "Las abuelas les cuentan esta historia a los niños para que no salgan solos de noche.",
+        "en": "Grandmothers tell this story to children so that they don't go out alone at night.",
+        "gist": "It's a warning tale for kids.",
+        "words": [
+          {
+            "es": "les cuentan",
+            "en": "tell them (contar)"
+          },
+          {
+            "es": "para que no salgan",
+            "en": "so that they don't go out (salir, subjunctive)"
+          }
+        ]
+      },
+      {
+        "es": "Algunos historiadores dicen que la leyenda es aún más vieja que la Conquista: los mexicas ya hablaban de una mujer que lloraba de noche por sus hijos.",
+        "en": "Some historians say the legend is even older than the Conquest: the Mexica already spoke of a woman who wept at night for her children.",
+        "gist": "The legend may go back to Aztec times.",
+        "words": [
+          {
+            "es": "historiadores",
+            "en": "historians"
+          },
+          {
+            "es": "aún más vieja que",
+            "en": "even older than"
+          },
+          {
+            "es": "la Conquista",
+            "en": "the Spanish Conquest"
+          },
+          {
+            "es": "lloraba",
+            "en": "wept (llorar)"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "rd_alerta_sismica",
+    "tier": 4,
+    "after_grammar": "g_acabar_volver_soler",
+    "title": "Suena la alerta sísmica",
+    "title_en": "The earthquake alarm goes off",
+    "topic": "emergency",
+    "level_note": "mixed tenses, news-style report, ~220 words",
+    "sentences": [
+      {
+        "es": "Esta mañana, poco después de las diez, sonó la alerta sísmica en la Ciudad de México.",
+        "en": "This morning, shortly after ten, the earthquake alarm went off in Mexico City.",
+        "gist": "The quake warning sounded this morning.",
+        "words": [
+          {
+            "es": "poco después de",
+            "en": "shortly after"
+          },
+          {
+            "es": "sonó",
+            "en": "sounded, went off (sonar)"
+          },
+          {
+            "es": "alerta sísmica",
+            "en": "earthquake early-warning alarm"
+          }
+        ]
+      },
+      {
+        "es": "Casi un minuto después, la ciudad empezó a moverse.",
+        "en": "Almost a minute later, the city started to shake.",
+        "gist": "The shaking came a minute after the alarm.",
+        "words": [
+          {
+            "es": "casi",
+            "en": "almost"
+          },
+          {
+            "es": "empezó a",
+            "en": "started to (empezar)"
+          },
+          {
+            "es": "moverse",
+            "en": "to move, shake"
+          }
+        ]
+      },
+      {
+        "es": "Según el Servicio Sismológico Nacional, el sismo fue de magnitud 6.4 y su epicentro estaba en la costa de Guerrero.",
+        "en": "According to the National Seismological Service, the quake was magnitude 6.4 and its epicenter was on the coast of Guerrero.",
+        "gist": "A strong quake, centered far away on the coast.",
+        "words": [
+          {
+            "es": "según",
+            "en": "according to"
+          },
+          {
+            "es": "sismo",
+            "en": "earthquake"
+          },
+          {
+            "es": "fue de magnitud",
+            "en": "was of magnitude (ser)"
+          },
+          {
+            "es": "costa",
+            "en": "coast"
+          }
+        ]
+      },
+      {
+        "es": "Como el epicentro estaba lejos, la gente tuvo casi un minuto para reaccionar.",
+        "en": "Because the epicenter was far away, people had almost a minute to react.",
+        "gist": "Distance gave people time.",
+        "words": [
+          {
+            "es": "como",
+            "en": "since, because (at the start of a sentence)"
+          },
+          {
+            "es": "lejos",
+            "en": "far"
+          },
+          {
+            "es": "tuvo",
+            "en": "had (tener)"
+          },
+          {
+            "es": "reaccionar",
+            "en": "to react"
+          }
+        ]
+      },
+      {
+        "es": "La alerta funciona así: unos sensores en la costa detectan el sismo y mandan una señal de radio a la ciudad.",
+        "en": "The alert works like this: sensors on the coast detect the quake and send a radio signal to the city.",
+        "gist": "How the warning system works.",
+        "words": [
+          {
+            "es": "funciona",
+            "en": "works (funcionar)"
+          },
+          {
+            "es": "así",
+            "en": "like this"
+          },
+          {
+            "es": "detectan",
+            "en": "detect (detectar)"
+          },
+          {
+            "es": "señal",
+            "en": "signal"
+          }
+        ]
+      },
+      {
+        "es": "La señal viaja mucho más rápido que las ondas del sismo.",
+        "en": "The signal travels much faster than the earthquake's waves.",
+        "gist": "The warning outruns the quake.",
+        "words": [
+          {
+            "es": "viaja",
+            "en": "travels (viajar)"
+          },
+          {
+            "es": "más rápido que",
+            "en": "faster than"
+          },
+          {
+            "es": "ondas",
+            "en": "waves"
+          }
+        ]
+      },
+      {
+        "es": "Por eso, la alarma suele sonar antes de que se sienta el movimiento.",
+        "en": "That's why the alarm usually goes off before the shaking is felt.",
+        "gist": "You usually get a warning first.",
+        "words": [
+          {
+            "es": "por eso",
+            "en": "that's why"
+          },
+          {
+            "es": "suele sonar",
+            "en": "usually sounds (soler + infinitive)"
+          },
+          {
+            "es": "antes de que se sienta",
+            "en": "before … is felt (sentir, subjunctive)"
+          }
+        ]
+      },
+      {
+        "es": "El sistema funciona desde 1991, unos años después del terrible terremoto de 1985.",
+        "en": "The system has been running since 1991, a few years after the terrible 1985 earthquake.",
+        "gist": "It was built after a deadly quake.",
+        "words": [
+          {
+            "es": "funciona desde",
+            "en": "has been working since (present tense + desde)"
+          },
+          {
+            "es": "terremoto",
+            "en": "(big) earthquake"
+          }
+        ]
+      },
+      {
+        "es": "Miles de personas salieron de oficinas y escuelas, y esperaron en la calle con calma.",
+        "en": "Thousands of people left offices and schools and waited calmly in the street.",
+        "gist": "People evacuated calmly.",
+        "words": [
+          {
+            "es": "miles de",
+            "en": "thousands of"
+          },
+          {
+            "es": "salieron",
+            "en": "left, went out (salir)"
+          },
+          {
+            "es": "esperaron",
+            "en": "waited (esperar)"
+          },
+          {
+            "es": "con calma",
+            "en": "calmly"
+          }
+        ]
+      },
+      {
+        "es": "En los altavoces se escuchaba la voz de siempre: “Alerta sísmica, alerta sísmica”.",
+        "en": "On the loudspeakers you could hear the usual voice: \"Earthquake alert, earthquake alert.\"",
+        "gist": "The familiar warning played across the city.",
+        "words": [
+          {
+            "es": "altavoces",
+            "en": "loudspeakers"
+          },
+          {
+            "es": "se escuchaba",
+            "en": "could be heard (escuchar)"
+          },
+          {
+            "es": "de siempre",
+            "en": "usual, same as always"
+          }
+        ]
+      },
+      {
+        "es": "—Acababa de entrar a una junta cuando sonó —contó Andrea, una oficinista de la colonia Juárez.",
+        "en": "\"I had just gone into a meeting when it went off,\" said Andrea, an office worker in the Juárez neighborhood.",
+        "gist": "A witness describes the moment.",
+        "words": [
+          {
+            "es": "acababa de entrar",
+            "en": "had just gone in (acabar de + infinitive)"
+          },
+          {
+            "es": "junta",
+            "en": "meeting (Mexico)"
+          },
+          {
+            "es": "contó",
+            "en": "told, recounted (contar)"
+          },
+          {
+            "es": "oficinista",
+            "en": "office worker"
+          }
+        ]
+      },
+      {
+        "es": "—Bajamos por las escaleras, como en los simulacros: no corro, no grito, no empujo.",
+        "en": "\"We went down the stairs, like in the drills: don't run, don't shout, don't push.\"",
+        "gist": "They followed the official safety rule.",
+        "words": [
+          {
+            "es": "bajamos",
+            "en": "we went down (bajar)"
+          },
+          {
+            "es": "escaleras",
+            "en": "stairs"
+          },
+          {
+            "es": "simulacros",
+            "en": "(earthquake) drills"
+          },
+          {
+            "es": "no corro, no grito, no empujo",
+            "en": "the official motto: I don't run, shout or push"
+          }
+        ]
+      },
+      {
+        "es": "Hasta ahora, las autoridades no reportan daños graves ni personas heridas.",
+        "en": "So far, the authorities are not reporting serious damage or injuries.",
+        "gist": "No major damage.",
+        "words": [
+          {
+            "es": "hasta ahora",
+            "en": "so far"
+          },
+          {
+            "es": "daños",
+            "en": "damage"
+          },
+          {
+            "es": "graves",
+            "en": "serious"
+          },
+          {
+            "es": "heridas",
+            "en": "injured"
+          }
+        ]
+      },
+      {
+        "es": "Protección Civil recuerda que no hay que usar los elevadores y que hay que alejarse de las ventanas.",
+        "en": "Civil Protection reminds people not to use elevators and to stay away from windows.",
+        "gist": "Official safety advice.",
+        "words": [
+          {
+            "es": "recuerda",
+            "en": "reminds (recordar)"
+          },
+          {
+            "es": "no hay que",
+            "en": "you mustn't, one shouldn't"
+          },
+          {
+            "es": "alejarse de",
+            "en": "to move away from"
+          }
+        ]
+      },
+      {
+        "es": "Los capitalinos ya están acostumbrados, pero cada vez que suena la alerta, el corazón vuelve a latir rápido.",
+        "en": "Mexico City residents are used to it by now, but every time the alert goes off, their hearts start racing again.",
+        "gist": "People are used to it, but it still scares them.",
+        "words": [
+          {
+            "es": "capitalinos",
+            "en": "Mexico City residents"
+          },
+          {
+            "es": "acostumbrados",
+            "en": "used to it"
+          },
+          {
+            "es": "cada vez que",
+            "en": "every time"
+          },
+          {
+            "es": "vuelve a latir",
+            "en": "beats … again (volver a + infinitive)"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "rd_carta_de_lupita",
+    "tier": 4,
+    "after_grammar": "g_subjunctive_taste",
+    "title": "Una carta de Lupita",
+    "title_en": "A letter from Lupita",
+    "topic": "communication",
+    "level_note": "mixed tenses, subjunctive in fixed phrases, ~170 words",
+    "sentences": [
+      {
+        "es": "Querido Matt: ¡Espero que estés muy bien!",
+        "en": "Dear Matt: I hope you're doing really well!",
+        "gist": "A warm opening.",
+        "words": [
+          {
+            "es": "querido",
+            "en": "dear"
+          },
+          {
+            "es": "espero que estés",
+            "en": "I hope you are (estar, subjunctive)"
+          }
+        ]
+      },
+      {
+        "es": "Aquí en la casa todos te mandan saludos, sobre todo mi abuela.",
+        "en": "Here at home everyone says hi, especially my grandma.",
+        "gist": "The family sends love.",
+        "words": [
+          {
+            "es": "te mandan saludos",
+            "en": "send you their greetings (mandar)"
+          },
+          {
+            "es": "sobre todo",
+            "en": "especially"
+          }
+        ]
+      },
+      {
+        "es": "Desde que te fuiste, cada domingo pregunta: “¿Y Matt? ¿Estará comiendo bien?”",
+        "en": "Since you left, every Sunday she asks: \"And Matt? I wonder if he's eating well?\"",
+        "gist": "Grandma worries about him, like a true grandma.",
+        "words": [
+          {
+            "es": "desde que",
+            "en": "since"
+          },
+          {
+            "es": "te fuiste",
+            "en": "you left (irse)"
+          },
+          {
+            "es": "¿estará comiendo?",
+            "en": "I wonder if he's eating (future of probability)"
+          }
+        ]
+      },
+      {
+        "es": "Te cuento que Toño por fin consiguió trabajo en un banco.",
+        "en": "Guess what: Toño finally got a job at a bank.",
+        "gist": "News about her brother.",
+        "words": [
+          {
+            "es": "te cuento que",
+            "en": "let me tell you, guess what (contar)"
+          },
+          {
+            "es": "consiguió",
+            "en": "got (conseguir)"
+          },
+          {
+            "es": "trabajo",
+            "en": "job, work"
+          }
+        ]
+      },
+      {
+        "es": "Ahora se levanta a las seis y se pone corbata todos los días. ¡No lo reconocerías!",
+        "en": "Now he gets up at six and wears a tie every day. You wouldn't recognize him!",
+        "gist": "Toño has become very serious.",
+        "words": [
+          {
+            "es": "se levanta",
+            "en": "gets up (levantarse)"
+          },
+          {
+            "es": "se pone corbata",
+            "en": "puts on a tie (ponerse)"
+          },
+          {
+            "es": "reconocerías",
+            "en": "you would recognize (reconocer, conditional)"
+          }
+        ]
+      },
+      {
+        "es": "Mi papá todavía habla del gol de los Pumas en el minuto noventa.",
+        "en": "My dad still talks about Pumas' goal in the ninetieth minute.",
+        "gist": "Dad hasn't forgotten the match.",
+        "words": [
+          {
+            "es": "todavía",
+            "en": "still"
+          },
+          {
+            "es": "habla de",
+            "en": "talks about (hablar)"
+          }
+        ]
+      },
+      {
+        "es": "Yo me acordé mucho de ti cuando volví a Puebla el mes pasado.",
+        "en": "I thought about you a lot when I went back to Puebla last month.",
+        "gist": "She remembered their trip.",
+        "words": [
+          {
+            "es": "me acordé mucho de ti",
+            "en": "I thought about you a lot (acordarse de)"
+          },
+          {
+            "es": "volví a",
+            "en": "went back to (volver)"
+          },
+          {
+            "es": "el mes pasado",
+            "en": "last month"
+          }
+        ]
+      },
+      {
+        "es": "Comí mole en el mismo restaurante, y la mesera me preguntó por ti.",
+        "en": "I had mole at the same restaurant, and the waitress asked me about you.",
+        "gist": "Even the waitress remembers him.",
+        "words": [
+          {
+            "es": "comí",
+            "en": "I ate (comer)"
+          },
+          {
+            "es": "el mismo",
+            "en": "the same"
+          },
+          {
+            "es": "me preguntó por ti",
+            "en": "asked me about you (preguntar por)"
+          }
+        ]
+      },
+      {
+        "es": "¿Y tú? ¿Sigues practicando español?",
+        "en": "And you? Are you still practicing Spanish?",
+        "gist": "She asks about his Spanish.",
+        "words": [
+          {
+            "es": "¿sigues practicando?",
+            "en": "are you still practicing? (seguir + -ndo)"
+          }
+        ]
+      },
+      {
+        "es": "Tu último mensaje de WhatsApp estaba casi perfecto. ¡Ya escribes como chilango!",
+        "en": "Your last WhatsApp message was almost perfect. You write like a real chilango now!",
+        "gist": "His Spanish has improved a lot.",
+        "words": [
+          {
+            "es": "último",
+            "en": "last, latest"
+          },
+          {
+            "es": "casi",
+            "en": "almost"
+          },
+          {
+            "es": "ya escribes",
+            "en": "you now write (escribir)"
+          },
+          {
+            "es": "chilango",
+            "en": "person from Mexico City (informal)"
+          }
+        ]
+      },
+      {
+        "es": "Oye, el año que viene mi hermano se casa, y queremos que vengas a la boda.",
+        "en": "Hey, next year my brother is getting married, and we want you to come to the wedding.",
+        "gist": "He's invited to Toño's wedding.",
+        "words": [
+          {
+            "es": "el año que viene",
+            "en": "next year"
+          },
+          {
+            "es": "se casa",
+            "en": "is getting married (casarse)"
+          },
+          {
+            "es": "queremos que vengas",
+            "en": "we want you to come (venir, subjunctive)"
+          },
+          {
+            "es": "boda",
+            "en": "wedding"
+          }
+        ]
+      },
+      {
+        "es": "Va a ser en diciembre, en el pueblo de mi abuela.",
+        "en": "It's going to be in December, in my grandma's hometown.",
+        "gist": "When and where.",
+        "words": [
+          {
+            "es": "va a ser",
+            "en": "it's going to be (ir a + ser)"
+          },
+          {
+            "es": "pueblo",
+            "en": "town, village"
+          }
+        ]
+      },
+      {
+        "es": "Ojalá que puedas venir; aquí siempre tienes casa.",
+        "en": "I really hope you can come; you'll always have a home here.",
+        "gist": "She hopes he'll come back.",
+        "words": [
+          {
+            "es": "ojalá que puedas",
+            "en": "I hope you can (poder, subjunctive)"
+          },
+          {
+            "es": "tienes casa",
+            "en": "you have a home, a place to stay"
+          }
+        ]
+      },
+      {
+        "es": "Bueno, te dejo porque ya me voy a trabajar.",
+        "en": "Well, I'll let you go, because I'm heading off to work.",
+        "gist": "She wraps up the letter.",
+        "words": [
+          {
+            "es": "te dejo",
+            "en": "I'll let you go (dejar; common sign-off)"
+          },
+          {
+            "es": "ya me voy",
+            "en": "I'm leaving now (irse)"
+          }
+        ],
+        "natural": "Bueno, te dejo porque ya me voya trabajar."
+      },
+      {
+        "es": "Un abrazo muy fuerte, y que te vaya muy bien. Tu amiga, Lupita.",
+        "en": "A big hug, and all the best. Your friend, Lupita.",
+        "gist": "Warm goodbye.",
+        "words": [
+          {
+            "es": "un abrazo",
+            "en": "a hug (a warm sign-off)"
+          },
+          {
+            "es": "que te vaya muy bien",
+            "en": "all the best, take care (lit. may it go well for you; ir, subjunctive)"
+          }
+        ]
+      }
+    ]
+  }
+]

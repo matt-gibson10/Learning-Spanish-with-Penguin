@@ -1,0 +1,114 @@
+[
+  {
+    "id": "st_first_night",
+    "tier": 1,
+    "after_grammar": "g_present_ar",
+    "title": "My first night in Mexico City",
+    "goal_en": "Write 5–8 sentences: you land, take a taxi to the hotel, check in, and go find tacos.",
+    "beats": [
+      {
+        "en": "You land at the airport.",
+        "hint_es": "Llego al aeropuerto…",
+        "targets": [
+          "llego",
+          "aeropuerto"
+        ]
+      },
+      {
+        "en": "You take a taxi to the hotel.",
+        "hint_es": "Tomo un taxi…",
+        "targets": [
+          "taxi",
+          "hotel"
+        ]
+      },
+      {
+        "en": "You say good evening at reception and that you have a reservation.",
+        "hint_es": "Buenas noches, tengo…",
+        "targets": [
+          "buenas noches",
+          "tengo",
+          "reservación"
+        ]
+      },
+      {
+        "en": "You ask where there are good tacos.",
+        "hint_es": "¿Dónde hay…?",
+        "targets": [
+          "dónde",
+          "tacos"
+        ]
+      },
+      {
+        "en": "You order three tacos and pay.",
+        "hint_es": "Me da… / Quiero…",
+        "targets": [
+          "tres",
+          "tacos",
+          "pago"
+        ]
+      }
+    ],
+    "vocab_focus": [
+      "aeropuerto",
+      "taxi",
+      "hotel",
+      "cuarto",
+      "llave"
+    ],
+    "grammar_focus": [
+      "g_present_ar"
+    ],
+    "model_es": "Llego al aeropuerto a las nueve. Tomo un taxi al hotel. En la recepción digo: «Buenas noches, tengo una reservación». Después pregunto: «¿Dónde hay tacos buenos?». Voy a una taquería y pido tres tacos al pastor. Pago con tarjeta. ¡Qué rico!",
+    "model_en": "I land at the airport at nine. I take a taxi to the hotel. At reception I say: 'Good evening, I have a reservation.' Then I ask: 'Where are there good tacos?' I go to a taquería and order three al pastor tacos. I pay by card. Delicious!"
+  },
+  {
+    "id": "st_market",
+    "tier": 1,
+    "after_grammar": "g_agreement",
+    "title": "A morning at the market",
+    "goal_en": "Write 4–6 sentences about buying fruit at a market: greet, ask prices, describe what you buy, pay.",
+    "beats": [
+      {
+        "en": "You greet the vendor.",
+        "hint_es": "Buenos días…",
+        "targets": [
+          "buenos días"
+        ]
+      },
+      {
+        "en": "You ask how much the mangoes cost.",
+        "hint_es": "¿Cuánto cuestan…?",
+        "targets": [
+          "cuánto",
+          "mangos"
+        ]
+      },
+      {
+        "en": "You say they're very pretty and big.",
+        "hint_es": "Están muy…",
+        "targets": [
+          "bonitos",
+          "grandes"
+        ]
+      },
+      {
+        "en": "You pay and say thanks.",
+        "hint_es": "Gracias…",
+        "targets": [
+          "gracias"
+        ]
+      }
+    ],
+    "vocab_focus": [
+      "mercado",
+      "mango",
+      "cuánto"
+    ],
+    "grammar_focus": [
+      "g_agreement"
+    ],
+    "model_es": "Buenos días, señora. ¿Cuánto cuestan los mangos? Están muy bonitos y grandes. Me da un kilo, por favor. Aquí tiene. ¡Muchas gracias!",
+    "model_en": "Good morning, ma'am. How much are the mangoes? They're very pretty and big. I'll have a kilo, please. Here you go. Thank you very much!"
+  }
+]
