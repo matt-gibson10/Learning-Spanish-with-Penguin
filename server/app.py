@@ -24,7 +24,7 @@ from pydantic import BaseModel
 
 ROOT = Path(__file__).resolve().parent.parent
 WEB = ROOT / "web"
-DATA = ROOT / "data"
+DATA = Path(os.environ.get("SPANISH_DATA_DIR") or (ROOT / "data"))   # override for tests
 DB_PATH = DATA / "progress.db"
 
 COACH_MODEL = os.environ.get("COACH_MODEL", "claude-opus-5-5")

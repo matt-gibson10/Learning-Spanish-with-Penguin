@@ -127,13 +127,21 @@
   // Main card: hear it -> recall the meaning. Typed production mostly for survival words and phrases.
   const SURVIVAL_TOPICS = new Set(["courtesy", "restaurant", "food", "drink", "hotel", "directions", "transport", "money", "emergency", "shopping", "travel"]);
   const isSurvival = (it) => (it.cat === "chunk" && (it.rank || 9999) <= 300) || (SURVIVAL_TOPICS.has(it.topic) && (it.rank || 9999) <= 1500);
+  const RECOG_DIRS = new Set(["hear", "read", "hearpick"]);
   function reviewExercise(it, card) {
     const seen = card.seen || 0;
-    const dirs = isSurvival(it) ? ["hear", "produce", "read", "hear", "listen", "cloze"] : ["hear", "read", "hear", "cloze", "hear", "listen"];
-    let dir = seen === 0 ? "hear" : dirs[seen % dirs.length];
+    let dir;
+    if (!Store.canProduce(it.id)) {
+      // new / not yet graduated: recognition and listening only (never typed Spanish)
+      dir = ["hear", "hearpick", "read"][seen % 3];
+    } else {
+      const dirs = isSurvival(it) ? ["hear", "produce", "read", "hear", "listen", "cloze"] : ["hear", "read", "hear", "cloze", "hear", "listen"];
+      dir = dirs[seen % dirs.length];
+    }
     if (dir === "cloze" && !App.clozeOf(it)) dir = "hear";
     let ex;
-    if (dir === "hear") ex = App.makeExercise(it, "hear-flash");
+    if (dir === "hearpick") ex = App.makeExercise(it, (it.natural || []).length && card.reps >= 1 ? "listen-natural-meaning" : "listen-meaning");
+    else if (dir === "hear") ex = App.makeExercise(it, "hear-flash");
     else if (dir === "read") ex = App.makeExercise(it, "recognise-flash");
     else if (dir === "produce") ex = App.makeExercise(it, "produce-type");
     else if (dir === "listen") ex = App.makeExercise(it, card.reps >= 2 && (it.natural || []).length ? "listen-natural" : "listen-type");
@@ -178,13 +186,13 @@
       const el = App.exercise(ex, {
         rate: true,
         onDone: (res, rating) => {
-          Store.rate(id, rating || "good");
+          Store.rate(id, rating || "good", { recognition: RECOG_DIRS.has(ex.dir) });
           reps[id] = (reps[id] || 0) + 1;
           if (rating === "again" && reps[id] < 3) again.push(id); else { n++; if (rating !== "hard" && rating !== "again") good++; }
           next();
         },
       });
-      el.appendChild(h("p.dir-label", { hear: "Listen → meaning", read: "Read → meaning", produce: "Say it in Spanish", listen: "Listen → write", cloze: "In context" }[ex.dir] || ""));
+      el.appendChild(h("p.dir-label", { hearpick: "Listen → meaning", hear: "Listen → meaning", read: "Read → meaning", produce: "Say it in Spanish", listen: "Listen → write", cloze: "In context" }[ex.dir] || ""));
       host.appendChild(el);
     }
     function finish() {

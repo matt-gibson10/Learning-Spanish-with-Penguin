@@ -213,6 +213,7 @@
     const prompt = h("div.ex-prompt");
     if (typeof ex.prompt === "string") prompt.innerHTML = ex.prompt; else if (ex.prompt) prompt.appendChild(ex.prompt);
     root.appendChild(prompt);
+    if (ex.help) root.appendChild(ex.help);
     if (ex.audio && ex.noAudioRow) {
       if (ex.autoplay !== false && Store.state.settings.autoplay !== false) setTimeout(() => { if (root.isConnected) App.say(ex.audio.text, ex.audio.speed || "careful", ex.audio.item); }, 250);
     } else if (ex.audio) {
@@ -452,6 +453,16 @@
         return { mode: "choice", title: "What does it mean?", prompt: big(), options: opts, answers: [shortEn(it.en)], display: it.en,
           audio: { text: it.es, speed: "careful", item: it }, optLang: "en", lang: "en" };
       }
+      case "listen-meaning":
+      case "listen-natural-meaning": {
+        const fast = type === "listen-natural-meaning";
+        const nat = fast && Array.isArray(it.natural) && it.natural.length ? it.natural[0] : it.es;
+        const opts = App.shuffle([shortEn(it.en)].concat(distractors(it, 3, (x) => shortEn(x.en))));
+        return { mode: "choice", title: fast ? "Fast speech — what does it mean?" : "Listen — what does it mean?", prompt: h("div.listen-icon", fast ? "⚡🔊" : "🔊"),
+          options: opts, answers: [shortEn(it.en)], display: `${disp} — ${it.en}`, optLang: "en", lang: "en",
+          audio: { text: nat, speed: fast ? "natural" : "careful", item: fast ? null : it, slowText: it.es },
+          why: fast && nat !== it.es ? `Said fast, *${it.es}* can sound like *${nat}*.` : null };
+      }
       case "produce-choice": {
         const opts = App.shuffle([disp].concat(distractors(it, 3, (x) => App.withArticle(x))));
         return { mode: "choice", title: "How do you say it in Spanish?", prompt: h("div.prompt-en", it.en), options: opts, answers: [disp], display: disp, optLang: "es" };
@@ -502,6 +513,50 @@
     }
   };
 
+  // ------------------------------------------------------------------ word help for words not learned yet
+  const SKIP_POS = new Set(["det", "prep", "conj", "pron"]);
+  /** Spanish words in `texts` whose lemma the learner hasn't learned -> [{form, item}] (deduped by lemma). */
+  App.unknownWords = function (texts, opts) {
+    opts = opts || {};
+    const seen = new Set(), out = [];
+    const all = (Array.isArray(texts) ? texts : [texts]).filter(Boolean).join(" ");
+    // words inside phrases already learned count as known ("buenas tardes" covers buenas + tardes)
+    const chunkWords = new Set();
+    for (const id of Object.keys(Store.state.learned)) {
+      const it = App.item(id);
+      if (it && it.cat === "chunk") Grader.tokenize(it.es).forEach((t) => chunkWords.add(t.f));
+    }
+    for (const t of Grader.tokenize(all)) {
+      if (/^\d+$/.test(t.n) || chunkWords.has(t.f)) continue;
+      const entries = Grader.lookup(t.n);
+      if (!entries.length) continue;
+      const lemmas = Array.from(new Set(entries.map((e) => e.lemma)));
+      const items = lemmas.map((id) => App.item(id)).filter(Boolean);
+      if (!items.length) continue;
+      if (items.some((x) => Store.isLearned(x.id) || (opts.except && opts.except.has(x.id)))) continue;
+      const it = items.slice().sort((a, b) => (a.rank || 9999) - (b.rank || 9999))[0];
+      if (SKIP_POS.has(it.pos) && (it.rank || 9999) <= 150) continue;      // very common function words
+      if (seen.has(it.id)) continue;
+      seen.add(it.id);
+      const same = items.filter((x) => x !== it && App.fold(x.es) === App.fold(it.es));
+      out.push({ form: t.raw.toLowerCase(), item: it, also: same.map((x) => App.shortEn(x.en)) });
+    }
+    return out;
+  };
+  /** "Word help" row: chips es — en for words not learned yet (tap = hear it). null when there are none. */
+  App.wordHelp = function (texts, opts) {
+    const words = App.unknownWords(texts, opts);
+    if (!words.length) return null;
+    const row = h("div.word-help", h("span.fb-label", "Word help"));
+    words.slice(0, 8).forEach(({ form, item, also }) => {
+      const lemma = App.fold(form) !== App.fold(item.es) ? ` (${item.es})` : "";
+      const gloss = [App.shortEn(item.en)].concat(also || []).slice(0, 2).join(" / ");
+      row.appendChild(h("button.chip.help-chip", { type: "button", lang: "es", title: "tap to hear it", onclick: () => App.say(form, "careful") },
+        h("strong", form), h("span.help-en", ` — ${gloss}${lemma}`)));
+    });
+    return row;
+  };
+
   /** Sentence-building exercise from an item's example. */
   App.buildExercise = function (it, others) {
     const sentence = it.ex_es;
@@ -509,6 +564,6 @@
     const pool = (others || []).flatMap((o) => (o.ex_es || "").replace(/[¿?¡!.,;:«»"“”…]/g, " ").split(/\s+/)).filter((w) => w && !words.some((x) => App.fold(x) === App.fold(w)));
     const distract = App.shuffle(Array.from(new Set(pool))).slice(0, words.length > 6 ? 1 : 2);
     return { mode: "tiles", title: "Build the sentence", prompt: h("div.prompt-en", it.ex_en), tiles: words, distractors: distract,
-      answers: [sentence], display: sentence };
+      answers: [sentence], display: sentence, help: App.wordHelp(sentence) };
   };
 })();

@@ -109,6 +109,8 @@
     const ta = h("textarea.answer-input", { rows: 3, lang: "es", placeholder: "Responde en español…", "aria-label": "your answer", spellcheck: "false" });
     ta.value = Store.state.drafts[draftKey] || "";
     ta.addEventListener("input", App.debounce(() => { Store.state.drafts[draftKey] = ta.value; Store.save(); }, 500));
+    const help = App.wordHelp((p.targets || []).join(" "));
+    if (help) card.appendChild(help);
     card.appendChild(ta);
     card.appendChild(App.accentBar(ta));
     const hints = h("details.hints", h("summary", "Hints"),
@@ -170,6 +172,7 @@
     opts = opts || {};
     const card = h("div.card.story-card");
     card.appendChild(h("h2", s.title));
+    if (s.source) card.appendChild(h("p.muted.story-source", "📖 " + s.source));
     card.appendChild(h("p.goal", { html: "🎯 " + App.inline(s.goal_en || "") }));
     const focus = [];
     if ((s.vocab_focus || []).length) focus.push(h("span", "Words: ", h("span", { lang: "es" }, s.vocab_focus.join(", "))));
@@ -215,7 +218,7 @@
           fb.innerHTML = "";
           fb.appendChild(freeFeedback(Grader.gradeFree(ta.value, spec), spec));
         } }, "Check");
-        box.append(ta, h("div.answer-row", check, micInto(ta), hint), fb);
+        box.append(App.wordHelp([(b.targets || []).join(" "), b.hint_es || ""]) || "", ta, h("div.answer-row", check, micInto(ta), hint), fb);
         area.appendChild(box);
       });
       area.appendChild(App.accentBar(() => lastTa || area.querySelector("textarea")));
@@ -233,7 +236,7 @@
         fb.innerHTML = "";
         fb.appendChild(freeFeedback(Grader.gradeFree(ta.value, spec), spec));
       } }, "Check my story");
-      area.append(beatsList, ta, App.accentBar(ta), h("div.answer-row", check, micInto(ta)), fb);
+      area.append(beatsList, App.wordHelp((s.beats || []).flatMap((b) => (b.targets || []).concat(b.hint_es || []))) || "", ta, App.accentBar(ta), h("div.answer-row", check, micInto(ta)), fb);
     }
 
     // end: reveal model, coach, done
@@ -306,7 +309,7 @@
       const d = Store.state.drafts[s.id];
       const started = d && ((d.beats || []).some(Boolean) || d.all);
       grid.appendChild(h("a.card.story-tile", { href: `#/story/${s.id}`, class: st ? "done" : "" },
-        h("h3", s.title), h("p", s.goal_en),
+        h("h3", s.title), s.source ? h("small.muted.story-source", s.source) : null, h("p", s.goal_en),
         h("small", st ? "✓ done" : started ? "draft saved" : unlocked(s) ? `tier ${s.tier || 1}` : `after: ${(App.grammar(s.after_grammar) || {}).title || ""}`)));
     });
     if (!App.course.stories.length) page.appendChild(h("p", "No stories yet."));

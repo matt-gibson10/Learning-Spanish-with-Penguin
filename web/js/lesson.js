@@ -4,7 +4,7 @@
   "use strict";
   const App = window.App, h = App.h;
 
-  const STEP_LABEL = { learn: "New words", sounds: "How it really sounds", grammar: "Grammar", drill: "Practice", build: "Build sentences",
+  const STEP_LABEL = { learn: "Learn & check", sounds: "How it really sounds", grammar: "Grammar", drill: "Practice", build: "Build sentences",
     prompt: "Say something", story: "Your story", read: "Read a story" };
   App.STEP_LABEL = STEP_LABEL;
 
@@ -37,24 +37,153 @@
     nextEx();
   };
 
-  // ------------------------------------------------------------------ step views
-  /** Learn: one card per item, Next button. */
-  function learnStep(step, ctx) {
-    const items = step.items.map(App.item).filter(Boolean);
-    let i = 0;
-    function show() {
+  // ------------------------------------------------------------------ learn <-> check rounds
+  const GROUP = 4;
+  const EASY = new Set(["recognise-choice", "listen-meaning", "listen-natural-meaning"]);     // see/hear Spanish -> meaning
+  const TYPED = new Set(["produce-type", "listen-type", "cloze", "listen-natural"]);
+  function groupsOf(items) {
+    const g = [];
+    for (let k = 0; k < items.length; k += GROUP) g.push(items.slice(k, k + GROUP));
+    if (g.length > 1 && g[g.length - 1].length < 2) g[g.length - 2].push(...g.pop());
+    return g;
+  }
+  const typedFor = (it, k) => {
+    const opts = ["produce-type", App.clozeOf(it) ? "cloze" : "produce-type", "listen-type"];
+    return opts[k % opts.length];
+  };
+
+  /**
+   * The lesson's core flow. For each group of ~4 items: learn cards, then a quick check on just those
+   * (see Spanish -> meaning, then hear it -> meaning). Then one mixed round on all items:
+   * pick the Spanish (en -> es), fast-speech listening for items with `natural`, and typed Spanish —
+   * typed only for items already recognised correctly (this lesson or before) and not missed this lesson.
+   * opts: {learn (show cards; false = practice only), onDone}
+   */
+  App.learnFlow = function (items, ctx, opts) {
+    opts = opts || {};
+    const struggled = new Set();
+    const okHere = new Set();
+    const rounds = [];
+    const groups = opts.learn === false ? [items] : groupsOf(items);
+    groups.forEach((g) => {
+      const a = items.indexOf(g[0]) + 1, b = items.indexOf(g[g.length - 1]) + 1;
+      const lab = g.length > 1 ? `${a}–${b}` : `${a}`;
+      if (opts.learn !== false) rounds.push({ label: `New words ${lab}`, kind: "learn", build: () => g.map((it) => ({ kind: "card", item: it })) });
+      rounds.push({ label: opts.learn === false ? "Warm-up: what do they mean?" : `Quick check ${lab}`, kind: "check", build: () =>
+        App.shuffle(g).map((it) => ({ kind: "ex", item: it, type: "recognise-choice" }))
+          .concat(App.shuffle(g).map((it) => ({ kind: "ex", item: it, type: "listen-meaning" }))) });
+    });
+    rounds.push({ label: "Mix it up — all the new words", kind: "mix", build: () => {
+      const pick = App.shuffle(items).map((it) => ({ kind: "ex", item: it, type: it.pos === "noun" && it.gender && it.gender !== "mf" && Math.random() < 0.3 ? "gender" : "produce-choice" }));
+      const fast = App.shuffle(items.filter((it) => (it.natural || []).length && !struggled.has(it.id))).slice(0, 3)
+        .map((it) => ({ kind: "ex", item: it, type: "listen-natural-meaning" }));
+      const typed = App.shuffle(items.filter((it) => !struggled.has(it.id) && (okHere.has(it.id) || Store.recognised(it.id) > 0)))
+        .map((it, k) => ({ kind: "ex", item: it, type: typedFor(it, k), typed: true }));
+      return pick.concat(fast, typed);
+    } });
+
+    let r = -1, queue = [], roundTotal = 0, roundDone = 0;
+    const shown = [];      // card tasks shown in this round (for Back)
+    const missedIds = new Set();
+    function startRound() {
+      r++;
+      if (r >= rounds.length) return finish();
+      queue = rounds[r].build();
+      if (!queue.length) return startRound();
+      roundTotal = queue.length; roundDone = 0; shown.length = 0;
+      next();
+    }
+    function progress() { ctx.progress((r + Math.min(1, roundDone / Math.max(1, roundTotal))) / rounds.length); }
+    function header(extra) {
+      const rd = rounds[r];
+      return h("div.round-head", { class: "round-" + rd.kind },
+        h("span.round-label", rd.label), h("span.ex-counter", extra || `${Math.min(roundDone + 1, roundTotal)} / ${roundTotal}`));
+    }
+    function next() {
       ctx.body.innerHTML = "";
-      const it = items[i];
-      ctx.progress(i / items.length);
-      ctx.body.appendChild(h("p.ex-counter", `New ${i + 1} / ${items.length}`));
+      progress();
+      if (!queue.length) return startRound();
+      const t = queue.shift();
+      if (t.kind === "card") return showCard(t);
+      if (t.kind === "flash") return showRefresher(t);
+      return showExercise(t);
+    }
+    function showCard(t) {
+      const it = t.item;
+      Store.learn([it.id]);
+      ctx.body.appendChild(header());
       ctx.body.appendChild(App.itemCard(it));
       if (Store.state.settings.autoplay !== false) setTimeout(() => App.say(it.es, "careful", it), 200);
-      ctx.setNext(i < items.length - 1 ? "Next word →" : "Practice these →", () => {
-        if (i < items.length - 1) { i++; show(); } else { Store.learn(items.map((x) => x.id)); ctx.next(); }
-      }, i > 0 ? () => { i--; show(); } : null);
+      const last = !queue.length;
+      ctx.setNext(last ? "Check these →" : "Next word →", () => { shown.push(t); roundDone++; next(); },
+        shown.length ? () => { queue.unshift(t); queue.unshift(shown.pop()); roundDone = Math.max(0, roundDone - 1); next(); } : null);
     }
-    if (!items.length) return ctx.next();
-    show();
+    function showRefresher(t) {
+      // missed an easy one: re-show the card briefly before it comes back later
+      const it = t.item;
+      ctx.body.appendChild(header("Quick refresher"));
+      const card = h("div.card.refresher", App.wordBig(it), h("p.gloss", it.en),
+        h("div.audio-row", App.playBtn(it.es, "careful", { item: it }), App.playBtn(it.es, "slow", { item: it })),
+        it.ex_es ? h("p.example", { lang: "es" }, it.ex_es, it.ex_en ? h("span.en", it.ex_en) : null) : null);
+      ctx.body.appendChild(card);
+      App.say(it.es, "careful", it);
+      ctx.setNext("Got it →", () => next());
+    }
+    function showExercise(t) {
+      ctx.clearNext();
+      const it = t.item;
+      const ex = App.makeExercise(it, t.type);
+      if (t.retry) ex.title = "Once more: " + (ex.title || "");
+      ctx.body.appendChild(header());
+      const el = App.exercise(ex, {
+        nextLabel: queue.length ? "Next →" : (r < rounds.length - 1 ? "Continue →" : "Finish →"),
+        onDone: (res) => {
+          const ok = res.outcome !== "miss";
+          if (ok && EASY.has(t.type)) { okHere.add(it.id); Store.markRecognised(it.id); }
+          if (!ok) {
+            missedIds.add(it.id);
+            if (!TYPED.has(t.type)) struggled.add(it.id);       // missed an easy one -> no typing for it this lesson
+            if (!t.retry) {
+              queue.unshift({ kind: "flash", item: it });
+              // try again later in this round (an easier version if it was typed)
+              const again = { kind: "ex", item: it, type: TYPED.has(t.type) ? "produce-choice" : t.type, retry: true };
+              queue.push(again);
+              roundTotal++;
+            }
+          }
+          roundDone++;
+          next();
+        },
+      });
+      if (t.retry) el.classList.add("retry");
+      ctx.body.appendChild(el);
+    }
+    function finish() {
+      missedIds.forEach((id) => Store.rate(id, "again", { practice: true }));
+      if (opts.onDone) opts.onDone();
+    }
+    if (!items.length) return opts.onDone && opts.onDone();
+    startRound();
+  };
+
+  /** learn step = the interleaved learn/check flow; it also covers the lesson's drill step on the same items. */
+  function learnStep(step, ctx) {
+    const items = step.items.map(App.item).filter(Boolean);
+    App.learnFlow(items, ctx, { onDone: () => {
+      const l = Store.state.lessons[ctx.lessonId] || (Store.state.lessons[ctx.lessonId] = { step: 0, done: 0 });
+      l.flow = (l.flow || []).concat([step.items.join(",")]);
+      Store.save();
+      ctx.next();
+    } });
+  }
+  /** A drill step: skipped when the learn flow already practised these items; otherwise (old saved progress, or a
+   * lesson without a learn step) practice rounds without cards. */
+  function drillStep(step, ctx) {
+    const items = step.items.map(App.item).filter(Boolean);
+    const flows = (Store.state.lessons[ctx.lessonId] || {}).flow || [];
+    if (!items.length || flows.includes(step.items.join(","))) return ctx.next();
+    Store.learn(items.map((x) => x.id));
+    App.learnFlow(items, ctx, { learn: false, onDone: () => ctx.next() });
   }
 
   /** A connected-speech rule: explainer + examples, then its drills. */
@@ -141,7 +270,8 @@
       q.innerHTML = App.esc(d.q).replace(/___/g, '<span class="blank">_____</span>');
       const title = { choice: "Pick the right form", fill: "Fill the gap", transform: "Change it", translate: "Say it in Spanish" }[d.type] || "Grammar";
       if (d.type === "choice") return { mode: "choice", title, prompt: q, options: App.shuffle(d.options || [d.answer]), answers: accepted, display: d.answer, why: d.why, optLang: "es" };
-      return { mode: "type", title, prompt: q, answers: accepted, display: d.answer, why: d.why, lang: "es" };
+      const help = d.type === "translate" || d.type === "fill" ? App.wordHelp(d.answer) : null;
+      return { mode: "type", title, prompt: q, answers: accepted, display: d.answer, why: d.why, lang: "es", help };
     });
   };
   function grammarStep(step, ctx) {
@@ -166,40 +296,20 @@
     });
   }
 
-  /** Mixed drill on the items just learned. */
+  /** Mixed one-off drill (used outside lessons): easy formats only for items not yet recognised. */
   App.drillExercises = function (items) {
-    const types = ["recognise-choice", "listen-choice", "produce-choice", "produce-type", "cloze", "listen-type"];
-    const out = [];
-    App.shuffle(items).forEach((it, i) => {
-      let t = types[i % types.length];
-      if (it.pos === "noun" && it.gender && i % 3 === 1) t = "gender";
-      if (t === "cloze" && !App.clozeOf(it)) t = "produce-type";
-      if (i % 5 === 4 && Array.isArray(it.natural) && it.natural.length) t = "listen-natural";
-      const ex = App.makeExercise(it, t);
-      ex.item = it;
-      out.push(ex);
+    return App.shuffle(items).map((it, i) => {
+      const t = Store.recognised(it.id) ? ["produce-choice", "listen-meaning", "produce-type"][i % 3] : ["recognise-choice", "listen-meaning"][i % 2];
+      return Object.assign(App.makeExercise(it, t), { item: it });
     });
-    return out;
   };
-  function drillStep(step, ctx) {
-    const items = step.items.map(App.item).filter(Boolean);
-    if (!items.length) return ctx.next();
-    Store.learn(items.map((x) => x.id));
-    const missed = new Set();
-    ctx.clearNext();
-    App.runExercises(ctx.body, App.drillExercises(items), {
-      onAnswer: (ex, res) => { if (res.outcome === "miss" && ex.item) missed.add(ex.item.id); },
-      onProgress: (f) => ctx.progress(f),
-      onFinish: () => {
-        missed.forEach((id) => Store.rate(id, "again", { practice: true }));
-        ctx.next();
-      },
-    });
-  }
 
   function buildStep(step, ctx) {
-    const items = step.items.map(App.item).filter((x) => x && x.ex_es);
-    if (!items.length) return ctx.next();
+    const all = step.items.map(App.item).filter((x) => x && x.ex_es);
+    if (!all.length) return ctx.next();
+    // prefer example sentences whose words are all learned (fewest unknown words first)
+    const items = all.map((x) => ({ x, n: App.unknownWords(x.ex_es).length }))
+      .sort((a, b) => a.n - b.n).map((o) => o.x).slice(0, Math.min(4, all.length));
     let i = 0;
     ctx.clearNext();
     function show() {
@@ -214,7 +324,7 @@
       // optional: type it too
       const typeBtn = h("button.btn.btn-ghost.type-too", { type: "button", onclick: () => {
         typeBtn.remove();
-        const tx = { mode: "type", title: "Now type it (optional)", prompt: h("div.prompt-en", it.ex_en), answers: [it.ex_es], display: it.ex_es, lang: "es" };
+        const tx = { mode: "type", title: "Now type it (optional)", prompt: h("div.prompt-en", it.ex_en), answers: [it.ex_es], display: it.ex_es, lang: "es", help: App.wordHelp(it.ex_es) };
         const tel = App.exercise(tx, { nextLabel: i < items.length - 1 ? "Next sentence →" : "Continue →", onDone: () => { i++; show(); } });
         ctx.body.innerHTML = "";
         ctx.body.appendChild(tel);
@@ -259,14 +369,25 @@
     if (!lesson) { main.appendChild(h("div.page", h("h1.page-title", "Lesson not found"), h("a.btn.btn-primary", { href: "#/course" }, "Back to the course"))); return; }
     const steps = lesson.steps || [];
     const ls = Store.lessonState(lesson.id);
-    let idx = params[1] != null ? Math.max(0, Math.min(steps.length - 1, +params[1] || 0)) : (ls.done ? 0 : Math.min(ls.step || 0, steps.length - 1));
+    const firstOpen = () => { const st = Store.lessonState(lesson.id); return st.done ? steps.length : Math.min(st.step || 0, steps.length - 1); };
+    let idx = params[1] != null ? Math.max(0, Math.min(steps.length - 1, +params[1] || 0)) : (ls.done ? 0 : firstOpen());
+    if (idx > firstOpen()) { idx = firstOpen(); history.replaceState(null, "", `#/lesson/${lesson.id}/${idx}`); }
     const page = h("div.page.lesson-page");
     const crumbs = h("nav.crumbs", { "aria-label": "breadcrumb" }, h("a", { href: "#/course" }, "Course"), h("span", lesson.unit.title), h("span", lesson.title));
     const bar = h("div.progress-bar", { role: "progressbar", "aria-valuemin": 0, "aria-valuemax": 100 }, h("div.fill", { style: { width: "0%" } }));
     const head = h("div.lesson-head", h("h1.page-title", lesson.title), h("p.step-label"));
     const stepDots = h("ol.step-dots");
-    steps.forEach((s, k) => stepDots.appendChild(h("li", { class: k < idx ? "done" : k === idx ? "current" : "", title: STEP_LABEL[s.type] },
-      h("a", { href: `#/lesson/${lesson.id}/${k}`, "aria-label": `step ${k + 1}: ${STEP_LABEL[s.type]}` }, String(k + 1)))));
+    function renderDots() {
+      stepDots.innerHTML = "";
+      const open = firstOpen();
+      steps.forEach((s, k) => {
+        const reachable = k <= open;
+        const cls = (k === idx ? "current " : "") + (k < open ? "done" : reachable ? "" : "locked");
+        stepDots.appendChild(h("li", { class: cls.trim(), title: STEP_LABEL[s.type] + (reachable ? "" : " (finish the earlier steps first)") },
+          reachable ? h("a", { href: `#/lesson/${lesson.id}/${k}`, "aria-label": `step ${k + 1}: ${STEP_LABEL[s.type]}` }, String(k + 1))
+            : h("span", { "aria-label": `step ${k + 1}: ${STEP_LABEL[s.type]} (locked)`, "aria-disabled": "true" }, String(k + 1))));
+      });
+    }
     const body = h("div.step-body");
     const footer = h("div.lesson-footer");
     page.append(crumbs, bar, head, stepDots, body, footer);
@@ -275,6 +396,7 @@
     let nextFn = null;
     const ctx = {
       body,
+      lessonId: lesson.id,
       progress(f) {
         const pct = steps.length ? ((idx + Math.max(0, Math.min(1, f))) / steps.length) * 100 : 100;
         bar.firstChild.style.width = pct.toFixed(1) + "%";
@@ -289,9 +411,10 @@
         App.pageEnter = ghost ? null : () => b.click();
       },
       clearNext() { footer.innerHTML = ""; nextFn = null; App.pageEnter = null; },
-      next() {
-        Store.setStep(lesson.id, idx + 1, steps.length);
-        idx++;
+      next(n) {
+        n = n || 1;
+        Store.setStep(lesson.id, idx + n, steps.length);
+        idx += n;
         if (idx >= steps.length) return finish();
         history.replaceState(null, "", `#/lesson/${lesson.id}/${idx}`);
         run();
@@ -300,20 +423,20 @@
     };
     function run() {
       const s = steps[idx];
-      App.$$("li", stepDots).forEach((li, k) => { li.className = k < idx || Store.lessonState(lesson.id).step > k ? "done" : ""; if (k === idx) li.classList.add("current"); });
+      renderDots();
       head.querySelector(".step-label").textContent = `Step ${idx + 1} of ${steps.length} · ${STEP_LABEL[s.type] || s.type}`;
       ctx.clearNext();
       body.innerHTML = "";
       ctx.progress(0);
       const fn = RUNNERS[s.type];
       if (!fn) return ctx.next();
-      try { fn(s, ctx); } catch (e) { console.error(e); body.appendChild(h("p", "Something went wrong with this step. ")); ctx.setNext("Skip →", () => ctx.next()); }
+      try { fn(s, ctx, steps, idx); } catch (e) { console.error(e); body.appendChild(h("p", "Something went wrong with this step. ")); ctx.setNext("Skip →", () => ctx.next()); }
     }
     function finish() {
       ctx.clearNext();
       bar.firstChild.style.width = "100%";
       body.innerHTML = "";
-      App.$$("li", stepDots).forEach((li) => (li.className = "done"));
+      renderDots();
       head.querySelector(".step-label").textContent = "Lesson complete";
       const nxt = Store.nextLesson();
       const learnedHere = steps.filter((s) => s.type === "learn").reduce((n, s) => n + s.items.length, 0);

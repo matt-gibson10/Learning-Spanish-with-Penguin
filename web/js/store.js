@@ -9,6 +9,7 @@
     return {
       v: 1, updated: 0,
       learned: {},          // itemId -> first learned (ms)
+      recog: {},            // itemId -> number of correct recognitions (see Spanish/hear it -> meaning); gates typed production
       cards: {},            // itemId -> {ef, ivl (days), reps, lapses, due (ms), last (ms), seen}
       lessons: {},          // lessonId -> {step, done (ms)}
       grammar: {},          // unitId -> {done (ms), best}
@@ -60,7 +61,7 @@
     const newer = (a.updated || 0) >= (b.updated || 0) ? a : b;
     const older = newer === a ? b : a;
     const out = JSON.parse(JSON.stringify(newer));
-    const mapKeys = ["learned", "cards", "lessons", "grammar", "sounds", "prompts", "stories", "drafts", "days", "readings"];
+    const mapKeys = ["learned", "recog", "cards", "lessons", "grammar", "sounds", "prompts", "stories", "drafts", "days", "readings"];
     const stamp = (x) => (x == null ? 0 : typeof x === "number" ? x : (x.last || x.done || x.at || x.updated || 0));
     for (const k of mapKeys) {
       const o = older[k] || {};
@@ -69,7 +70,8 @@
         if (!(id in out[k])) out[k][id] = val;
         else if (k === "lessons") {
           const n = out[k][id];
-          out[k][id] = { step: Math.max(n.step || 0, val.step || 0), done: n.done || val.done };
+          out[k][id] = { step: Math.max(n.step || 0, val.step || 0), done: n.done || val.done,
+            flow: Array.from(new Set([].concat(n.flow || [], val.flow || []))) };
         } else if (k === "days") {
           const n = out[k][id];
           out[k][id] = { reviews: Math.max(n.reviews || 0, val.reviews || 0), new: Math.max(n.new || 0, val.new || 0), steps: Math.max(n.steps || 0, val.steps || 0) };
@@ -162,6 +164,19 @@
     Store.save();
     return n;
   };
+  /** Recognition ladder: typed production only after at least one correct recognition. */
+  Store.markRecognised = function (id) {
+    Store.state.recog = Store.state.recog || {};
+    Store.state.recog[id] = (Store.state.recog[id] || 0) + 1;
+    Store.save();
+  };
+  Store.recognised = (id) => (Store.state.recog && Store.state.recog[id]) || 0;
+  /** May this item be tested by typing Spanish in review? recognised once + PRODUCTION_AFTER good reviews. */
+  Store.PRODUCTION_AFTER = 2;
+  Store.canProduce = function (id) {
+    const c = Store.state.cards[id];
+    return Store.recognised(id) > 0 && !!c && (c.ok || 0) >= Store.PRODUCTION_AFTER;
+  };
   Store.unlearn = function (id) { delete Store.state.learned[id]; delete Store.state.cards[id]; Store.save(); };
 
   const RATING = { again: 0, hard: 1, good: 2, easy: 3 };
@@ -172,6 +187,8 @@
     const c = Store.state.cards[id] || { ef: 2.5, ivl: 0, reps: 0, lapses: 0, due: now, last: now, seen: 0 };
     const q = RATING[rating] ?? 2;
     c.seen = (c.seen || 0) + 1;
+    if (q > 0 && !opts.practice) c.ok = (c.ok || 0) + 1;
+    if (q > 0 && opts.recognition) { Store.state.recog = Store.state.recog || {}; Store.state.recog[id] = (Store.state.recog[id] || 0) + 1; }
     if (q === 0) {
       c.lapses = (c.lapses || 0) + (c.reps > 0 ? 1 : 0);
       c.reps = 0;

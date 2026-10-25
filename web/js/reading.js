@@ -46,6 +46,7 @@
     const wrap = h("div.reader");
     const head = h("div.reader-head",
       h("h2.reader-title", { lang: "es" }, r.title), r.title_en ? h("p.muted.reader-title-en", r.title_en) : null,
+      r.source ? h("p.muted.story-source", "📖 " + r.source) : null,
       r.level_note ? h("span.tag", r.level_note) : null);
     const bar = h("div.progress-bar", h("div.fill", { style: { width: "0%" } }));
     const sofar = h("div.reader-sofar", { "aria-label": "story so far" });
@@ -202,7 +203,7 @@
       const n = (r.sentences || []).length;
       const status = st && st.done ? "✓ read" : st && st.idx ? `${st.idx}/${n} read` : readingUnlocked(r) ? "" : `after: ${(App.grammar(r.after_grammar) || {}).title || "later grammar"}`;
       grid.appendChild(h("a.card.read-tile", { href: `#/read/${r.id}`, class: (st && st.done ? "done" : "") + (readingUnlocked(r) ? "" : " locked") },
-        h("h3", { lang: "es" }, r.title), r.title_en ? h("p.muted", r.title_en) : null,
+        h("h3", { lang: "es" }, r.title), r.title_en ? h("p.muted", r.title_en) : null, r.source ? h("small.muted.story-source", r.source) : null,
         h("div.chips", h("span.tag.tier", `tier ${r.tier || 1}`), r.topic ? h("span.tag.topic", r.topic) : null, h("span.tag", `${n} sentences`)),
         status ? h("small", status) : null));
     });

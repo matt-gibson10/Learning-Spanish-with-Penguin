@@ -252,3 +252,22 @@ table.conj td.pres { font-weight: 800; }
 .read-tile h3, .read-tile p { margin: 0; }
 .read-tile.locked { opacity: 0.8; }
 .read-tile.done { border-color: var(--good, #1a7f50); }
+
+/* ---- learn/check rounds, word help, locked step dots ---- */
+.round-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 12px; margin: 0 0 10px; }
+.round-label { font-family: var(--font-display, inherit); font-weight: 600; font-size: 1.15rem; }
+.round-learn .round-label { color: var(--primary, #1b65a6); }
+.round-check .round-label { color: var(--accent, #c8156a); }
+.round-mix .round-label { color: var(--good, #1a7f50); }
+.round-head .ex-counter { margin: 0; }
+.refresher { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 8px; }
+.word-help { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; padding: 8px 10px; border-radius: 12px; background: var(--surface-2, #fbefd9); }
+.word-help .help-chip { cursor: pointer; border: 0; font: inherit; }
+.word-help .help-en { font-weight: 600; opacity: 0.85; }
+.step-dots li.locked span {
+  display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; font-weight: 800; font-size: 0.85rem;
+  border: 2px dashed var(--line, #ebd9bc); color: var(--ink-soft, #5e6378); opacity: 0.6; cursor: not-allowed;
+}
+
+/* where a reading / goal story comes from (Esopo, Andersen, leyenda mexicana…) */
+.story-source { display: block; font-size: 0.85em; font-style: italic; margin: 0.1rem 0 0.4rem; }

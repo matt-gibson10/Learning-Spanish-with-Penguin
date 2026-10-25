@@ -7,7 +7,7 @@ __pycache__/
 .pytest_cache/
 
 # Local progress database and runtime data
-data/
+/data/
 
 # Editors / OS
 .vscode/

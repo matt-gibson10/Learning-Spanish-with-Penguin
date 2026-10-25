@@ -1,1484 +1,1621 @@
 [
   {
-    "id": "st_introduce_me",
+    "id": "st_bella_durmiente",
     "tier": 1,
-    "after_grammar": "g_estar",
-    "title": "Nice to meet you!",
-    "goal_en": "Write 4 sentences introducing yourself to someone new: your name, where you're from, your job, and why you're in Mexico.",
+    "after_grammar": "g_hay",
+    "title": "La bella durmiente (Sleeping Beauty)",
+    "source": "Charles Perrault, 1697 / Hermanos Grimm",
+    "goal_en": "Retell Sleeping Beauty in 4 sentences using ser, estar and hay: who she is, where she is, what's around the castle, and who is at the door.",
     "beats": [
       {
-        "en": "Say hello and give your name.",
-        "hint_es": "Hola, me llamo…",
+        "en": "The princess is young and very beautiful.",
+        "hint_es": "La princesa es…",
         "targets": [
-          "hola",
-          "me llamo"
+          "princesa",
+          "es",
+          "bonita"
         ]
       },
       {
-        "en": "Say where you're from.",
-        "hint_es": "Soy de…",
+        "en": "She's asleep in a tower of the castle.",
+        "hint_es": "Está dormida en…",
         "targets": [
-          "soy",
-          "de"
+          "está dormida",
+          "torre",
+          "castillo"
         ]
       },
       {
-        "en": "Say what you do (no un/una!).",
-        "hint_es": "Soy…",
+        "en": "Around the castle there's a forest of thorns.",
+        "hint_es": "Alrededor del castillo hay…",
         "targets": [
-          "soy",
-          "ingeniero"
+          "hay",
+          "bosque",
+          "espinas"
         ]
       },
       {
-        "en": "Say you're in Mexico on vacation and you're very happy.",
-        "hint_es": "Estoy en México…",
+        "en": "A brave prince is at the door.",
+        "hint_es": "Un príncipe valiente está…",
         "targets": [
-          "estoy",
-          "México",
-          "vacaciones",
-          "contento"
+          "príncipe",
+          "valiente",
+          "está",
+          "puerta"
         ]
       }
     ],
     "vocab_focus": [
-      "llamarse",
-      "ingeniero",
-      "investigador",
-      "vacaciones",
-      "contento"
+      "princesa",
+      "castillo",
+      "torre",
+      "dormido",
+      "bosque",
+      "príncipe"
     ],
     "grammar_focus": [
       "g_ser",
-      "g_estar"
-    ],
-    "model_es": "Hola, me llamo Matt. Soy de Houston, en Estados Unidos. Soy ingeniero e investigador. Estoy en México de vacaciones y estoy muy contento.",
-    "model_en": "Hi, my name is Matt. I'm from Houston, in the United States. I'm an engineer and a researcher. I'm in Mexico on vacation and I'm very happy."
-  },
-  {
-    "id": "st_arrive_cdmx",
-    "tier": 1,
-    "after_grammar": "g_present_ar",
-    "title": "Arriving in Mexico City",
-    "goal_en": "Write 5 sentences in the present: you land, take a taxi, find your hotel, describe the room and say how you feel.",
-    "beats": [
-      {
-        "en": "You land at the Mexico City airport in the afternoon.",
-        "hint_es": "Llego al aeropuerto…",
-        "targets": [
-          "llego",
-          "aeropuerto"
-        ]
-      },
-      {
-        "en": "You take an authorized taxi to the center.",
-        "hint_es": "Tomo un taxi…",
-        "targets": [
-          "tomo",
-          "taxi",
-          "centro"
-        ]
-      },
-      {
-        "en": "The hotel is on a quiet street.",
-        "hint_es": "El hotel está…",
-        "targets": [
-          "hotel",
-          "está",
-          "calle"
-        ]
-      },
-      {
-        "en": "In the room there's a big bed and a small window.",
-        "hint_es": "En el cuarto hay…",
-        "targets": [
-          "hay",
-          "cama",
-          "ventana"
-        ]
-      },
-      {
-        "en": "You're tired but very happy.",
-        "hint_es": "Estoy cansado, pero…",
-        "targets": [
-          "cansado",
-          "contento"
-        ]
-      }
-    ],
-    "vocab_focus": [
-      "aeropuerto",
-      "taxi",
-      "hotel",
-      "cuarto",
-      "cama",
-      "cansado"
-    ],
-    "grammar_focus": [
-      "g_present_ar",
       "g_estar",
       "g_hay"
     ],
-    "model_es": "Llego al aeropuerto de la Ciudad de México en la tarde. Tomo un taxi autorizado al centro. El hotel está en una calle tranquila. En el cuarto hay una cama grande y una ventana pequeña. Estoy cansado, pero muy contento.",
-    "model_en": "I land at the Mexico City airport in the afternoon. I take an authorized taxi to the center. The hotel is on a quiet street. In the room there's a big bed and a small window. I'm tired, but very happy."
+    "model_es": "La princesa es joven y muy bonita. Está dormida en una torre del castillo. Alrededor del castillo hay un bosque de espinas. Un príncipe valiente está en la puerta.",
+    "model_en": "The princess is young and very beautiful. She is asleep in a tower of the castle. Around the castle there's a forest of thorns. A brave prince is at the door."
   },
   {
-    "id": "st_tacos_market",
+    "id": "st_cenicienta",
     "tier": 1,
-    "after_grammar": "g_present_er_ir",
-    "title": "A day of tacos and markets",
-    "goal_en": "Write 6 sentences in the present about a day of eating your way through a market.",
+    "after_grammar": "g_present_ar",
+    "title": "Cenicienta (Cinderella)",
+    "source": "Charles Perrault, 1697",
+    "goal_en": "Retell Cinderella in 5 present-tense sentences: her hard life, the ball, midnight, the search, and the shoe.",
     "beats": [
       {
-        "en": "In the morning you walk to the Coyoacán market.",
-        "hint_es": "En la mañana camino…",
+        "en": "Cinderella works all day in her stepmother's house.",
+        "hint_es": "Cenicienta trabaja…",
         "targets": [
-          "camino",
-          "mercado"
+          "trabaja",
+          "casa",
+          "madrastra"
         ]
       },
       {
-        "en": "There are lots of fruits and colors.",
-        "hint_es": "Hay muchas…",
+        "en": "One night she dances with the prince at a party in the palace.",
+        "hint_es": "Una noche baila…",
         "targets": [
-          "hay",
-          "frutas",
-          "colores"
+          "baila",
+          "príncipe",
+          "fiesta",
+          "palacio"
         ]
       },
       {
-        "en": "You buy three mangoes and a papaya.",
-        "hint_es": "Compro…",
+        "en": "At midnight she escapes and leaves a glass slipper behind.",
+        "hint_es": "A las doce, Cenicienta escapa y deja…",
         "targets": [
-          "compro",
-          "mangos",
-          "papaya"
+          "doce",
+          "escapa",
+          "deja",
+          "zapato"
         ]
       },
       {
-        "en": "At midday you eat suadero tacos at a stand.",
-        "hint_es": "A mediodía como…",
+        "en": "The prince looks for the owner of the shoe all over the kingdom.",
+        "hint_es": "El príncipe busca…",
         "targets": [
-          "como",
-          "tacos",
-          "puesto"
+          "busca",
+          "dueña",
+          "reino"
         ]
       },
       {
-        "en": "You also drink an agua de jamaica.",
-        "hint_es": "También tomo…",
+        "en": "The shoe belongs to Cinderella!",
+        "hint_es": "¡El zapato es de…!",
         "targets": [
-          "tomo",
-          "agua de jamaica"
-        ]
-      },
-      {
-        "en": "Everything is cheap — and it tastes great!",
-        "hint_es": "Todo es barato y…",
-        "targets": [
-          "barato",
-          "rico"
+          "zapato",
+          "es de",
+          "Cenicienta"
         ]
       }
     ],
     "vocab_focus": [
-      "mercado",
-      "fruta",
-      "comprar",
-      "puesto",
-      "barato",
-      "rico"
+      "trabajar",
+      "madrastra",
+      "bailar",
+      "palacio",
+      "zapato",
+      "buscar"
     ],
     "grammar_focus": [
       "g_present_ar",
-      "g_present_er_ir",
-      "g_hay"
+      "g_ser"
     ],
-    "model_es": "En la mañana camino al mercado de Coyoacán. Hay muchas frutas y muchos colores. Compro tres mangos y una papaya. A mediodía como tacos de suadero en un puesto. También tomo un agua de jamaica. ¡Todo es barato y está muy rico!",
-    "model_en": "In the morning I walk to the Coyoacán market. There are lots of fruits and colors. I buy three mangoes and a papaya. At midday I eat suadero tacos at a stand. I also drink an agua de jamaica (hibiscus water). Everything is cheap and it's really tasty!"
+    "model_es": "Cenicienta trabaja todo el día en la casa de su madrastra. Una noche, baila con el príncipe en una fiesta en el palacio. A las doce, Cenicienta escapa y deja un zapato de cristal. El príncipe busca a la dueña del zapato en todo el reino. ¡El zapato es de Cenicienta!",
+    "model_en": "Cinderella works all day in her stepmother's house. One night, she dances with the prince at a party in the palace. At twelve o'clock, Cinderella escapes and leaves a glass slipper. The prince looks for the owner of the shoe all over the kingdom. The shoe is Cinderella's!"
   },
   {
-    "id": "st_new_friend",
-    "tier": 2,
-    "after_grammar": "g_tener",
-    "title": "Meeting a new friend",
-    "goal_en": "Write 7–8 sentences about someone you meet in a café: who she is, where she's from, her age and job, what you ask her, and what you do together.",
+    "id": "st_blancanieves",
+    "tier": 1,
+    "after_grammar": "g_present_er_ir",
+    "title": "Blancanieves (Snow White)",
+    "source": "Hermanos Grimm, 1812",
+    "goal_en": "Retell Snow White in 5 present-tense sentences with -ar, -er and -ir verbs: the queen, the mirror, the forest, the apple, the prince.",
     "beats": [
       {
-        "en": "Today in a café you talk with a woman. Her name is Lucía.",
-        "hint_es": "Hoy hablo con una chica… Se llama…",
+        "en": "Snow White lives in a castle with a very wicked queen.",
+        "hint_es": "Blancanieves vive…",
         "targets": [
-          "hablo",
-          "café",
-          "se llama",
-          "Lucía"
+          "vive",
+          "castillo",
+          "reina"
         ]
       },
       {
-        "en": "She's from Puebla but lives in Mexico City.",
-        "hint_es": "Es de Puebla, pero vive…",
+        "en": "The queen talks to a magic mirror every day.",
+        "hint_es": "La reina habla…",
         "targets": [
-          "es de",
-          "Puebla",
-          "vive"
+          "habla",
+          "espejo",
+          "mágico"
         ]
       },
       {
-        "en": "She's 29 and she's a teacher.",
-        "hint_es": "Tiene… años y es…",
+        "en": "Snow White runs to the forest and lives with seven dwarfs.",
+        "hint_es": "Blancanieves corre…",
         "targets": [
-          "tiene",
-          "años",
-          "maestra"
+          "corre",
+          "bosque",
+          "siete enanos"
         ]
       },
       {
-        "en": "You ask her what there is to eat in Puebla.",
-        "hint_es": "Le pregunto qué…",
+        "en": "One day she eats a poisoned apple and falls to the ground.",
+        "hint_es": "Un día come…",
         "targets": [
-          "pregunto",
-          "qué",
-          "comer",
-          "Puebla"
+          "come",
+          "manzana",
+          "envenenada",
+          "cae"
         ]
       },
       {
-        "en": "She says mole poblano is delicious.",
-        "hint_es": "Ella dice que…",
+        "en": "A prince arrives, and Snow White opens her eyes.",
+        "hint_es": "Un príncipe llega y…",
         "targets": [
-          "dice",
-          "mole poblano",
-          "rico"
-        ]
-      },
-      {
-        "en": "You're both hungry, so you eat some tacos together.",
-        "hint_es": "Tenemos hambre y…",
-        "targets": [
-          "tenemos",
-          "hambre",
-          "tacos"
-        ]
-      },
-      {
-        "en": "You have to go back to the hotel at six, but you have her number.",
-        "hint_es": "Tengo que regresar…",
-        "targets": [
-          "tengo que",
-          "regresar",
-          "número"
+          "llega",
+          "abre",
+          "ojos"
         ]
       }
     ],
     "vocab_focus": [
-      "café",
-      "maestra",
-      "años",
+      "reina",
+      "espejo",
+      "bosque",
+      "manzana",
+      "correr",
+      "abrir"
+    ],
+    "grammar_focus": [
+      "g_present_er_ir",
+      "g_present_ar"
+    ],
+    "model_es": "Blancanieves vive en un castillo con una reina muy mala. La reina habla todos los días con un espejo mágico. Blancanieves corre al bosque y vive con siete enanos. Un día, come una manzana envenenada y cae al suelo. Un príncipe llega, y Blancanieves abre los ojos.",
+    "model_en": "Snow White lives in a castle with a very wicked queen. The queen talks to a magic mirror every day. Snow White runs to the forest and lives with seven dwarfs. One day, she eats a poisoned apple and falls to the ground. A prince arrives, and Snow White opens her eyes."
+  },
+  {
+    "id": "st_hansel_gretel",
+    "tier": 2,
+    "after_grammar": "g_tener",
+    "title": "Hansel y Gretel",
+    "source": "Hermanos Grimm, 1812",
+    "goal_en": "Retell Hansel and Gretel in 6 sentences using tener (hunger, an idea), estar and hay.",
+    "beats": [
+      {
+        "en": "Hansel and Gretel are siblings, and they have a very poor father.",
+        "hint_es": "Hansel y Gretel son hermanos y tienen…",
+        "targets": [
+          "hermanos",
+          "tienen",
+          "padre",
+          "pobre"
+        ]
+      },
+      {
+        "en": "The family has no food and the kids are very hungry.",
+        "hint_es": "La familia no tiene comida y…",
+        "targets": [
+          "no tiene",
+          "comida",
+          "mucha hambre"
+        ]
+      },
+      {
+        "en": "One day they're lost in the forest.",
+        "hint_es": "Un día están perdidos…",
+        "targets": [
+          "están perdidos",
+          "bosque"
+        ]
+      },
+      {
+        "en": "There's a house made of bread, chocolate and candy.",
+        "hint_es": "Allí hay una casa de…",
+        "targets": [
+          "hay",
+          "casa",
+          "pan",
+          "chocolate",
+          "dulces"
+        ]
+      },
+      {
+        "en": "But the house belongs to a witch who eats children.",
+        "hint_es": "Pero la casa es de una bruja que…",
+        "targets": [
+          "es de",
+          "bruja",
+          "come niños"
+        ]
+      },
+      {
+        "en": "Gretel has an idea, and they escape with the witch's treasure.",
+        "hint_es": "Gretel tiene una idea, y…",
+        "targets": [
+          "tiene una idea",
+          "escapan",
+          "tesoro"
+        ]
+      }
+    ],
+    "vocab_focus": [
+      "hermano",
+      "pobre",
       "hambre",
-      "número",
-      "regresar"
+      "perdido",
+      "bruja",
+      "tesoro"
     ],
     "grammar_focus": [
       "g_tener",
-      "g_ser",
-      "g_questions"
+      "g_estar",
+      "g_hay"
     ],
-    "model_es": "Hoy hablo con una chica en un café. Se llama Lucía. Es de Puebla, pero vive en la Ciudad de México. Tiene veintinueve años y es maestra. Le pregunto qué hay de comer en Puebla. Ella dice que el mole poblano es muy rico. Tenemos hambre y comemos unos tacos juntos. Tengo que regresar al hotel a las seis, pero ya tengo su número.",
-    "model_en": "Today I talk with a woman in a café. Her name is Lucía. She's from Puebla, but she lives in Mexico City. She's 29 and she's a teacher. I ask her what there is to eat in Puebla. She says mole poblano is really good. We're hungry, so we eat some tacos together. I have to go back to the hotel at six, but now I have her number."
+    "model_es": "Hansel y Gretel son hermanos y tienen un padre muy pobre. La familia no tiene comida y los niños tienen mucha hambre. Un día, están perdidos en el bosque. Allí hay una casa de pan, chocolate y dulces. Pero la casa es de una bruja que come niños. Gretel tiene una idea, y los hermanos escapan con el tesoro de la bruja.",
+    "model_en": "Hansel and Gretel are brother and sister, and they have a very poor father. The family has no food and the children are very hungry. One day, they're lost in the forest. There's a house made of bread, chocolate and candy. But the house belongs to a witch who eats children. Gretel has an idea, and the siblings escape with the witch's treasure."
   },
   {
-    "id": "st_plan_pyramids",
+    "id": "st_jack_frijoles",
     "tier": 2,
     "after_grammar": "g_ir_a",
-    "title": "Planning a trip to Teotihuacán",
-    "goal_en": "Write 7 sentences about tomorrow's plan using ir a + infinitive: when you leave, how you get there, what you'll see, what you'll bring, and when you'll come back.",
+    "title": "Jack y los frijoles mágicos (Jack and the Beanstalk)",
+    "source": "Cuento tradicional inglés",
+    "goal_en": "Retell Jack and the Beanstalk in 7 sentences, using ir a + infinitive for plans and threats.",
     "beats": [
       {
-        "en": "Tomorrow you're going to visit Teotihuacán with your friend Daniel.",
-        "hint_es": "Mañana voy a visitar…",
+        "en": "Jack and his mom are poor and have no money.",
+        "hint_es": "Jack y su mamá son pobres y…",
         "targets": [
-          "voy a",
-          "visitar",
-          "Teotihuacán"
+          "pobres",
+          "no tienen",
+          "dinero"
         ]
       },
       {
-        "en": "You're going to leave the hotel at seven in the morning.",
-        "hint_es": "Vamos a salir…",
+        "en": "Jack goes to the market and swaps the cow for five magic beans.",
+        "hint_es": "Jack va al mercado y cambia…",
         "targets": [
-          "vamos a",
-          "salir",
-          "siete"
+          "va al mercado",
+          "cambia",
+          "vaca",
+          "frijoles"
         ]
       },
       {
-        "en": "You're going to take a bus from the Terminal del Norte.",
-        "hint_es": "Vamos a tomar un camión…",
+        "en": "At night the beans grow up to the clouds.",
+        "hint_es": "En la noche, los frijoles crecen…",
         "targets": [
-          "tomar",
-          "camión",
-          "Terminal del Norte"
+          "crecen",
+          "nubes"
         ]
       },
       {
-        "en": "There you're going to walk the Avenue of the Dead and see the Pyramid of the Sun.",
-        "hint_es": "Allá vamos a caminar…",
+        "en": "Jack says: 'I'm going to climb!'",
+        "hint_es": "Jack dice: «¡Voy a…!»",
         "targets": [
-          "caminar",
-          "Calzada de los Muertos",
-          "Pirámide del Sol"
+          "voy a subir"
         ]
       },
       {
-        "en": "It's going to be hot, so you're going to bring water and a hat.",
-        "hint_es": "Va a hacer calor, entonces…",
+        "en": "Up there is a castle where a giant lives with lots of gold coins.",
+        "hint_es": "Arriba hay un castillo…",
         "targets": [
-          "va a hacer calor",
-          "llevar",
-          "agua",
-          "sombrero"
+          "castillo",
+          "gigante",
+          "oro"
         ]
       },
       {
-        "en": "At midday you're going to eat at a restaurant near the pyramids.",
-        "hint_es": "A mediodía vamos a comer…",
+        "en": "Jack takes a bag of gold, and the giant shouts: 'I'm going to eat that boy!'",
+        "hint_es": "Jack toma una bolsa… y el gigante grita…",
         "targets": [
-          "comer",
-          "restaurante",
-          "pirámides"
+          "toma",
+          "bolsa",
+          "grita",
+          "voy a comer"
         ]
       },
       {
-        "en": "You're going to come back at night, tired but happy.",
-        "hint_es": "Vamos a regresar…",
+        "en": "Jack climbs down fast and cuts the plant; now they're going to live happily.",
+        "hint_es": "Jack baja rápido, corta la planta, y ahora…",
         "targets": [
-          "regresar",
-          "noche",
-          "cansados"
+          "baja",
+          "corta",
+          "planta",
+          "van a vivir"
         ]
       }
     ],
     "vocab_focus": [
-      "pirámide",
-      "camión",
-      "terminal",
-      "llevar",
-      "sombrero",
-      "regresar"
+      "vaca",
+      "frijol",
+      "crecer",
+      "nube",
+      "gigante",
+      "oro",
+      "subir",
+      "bajar"
     ],
     "grammar_focus": [
-      "g_ir_a"
+      "g_ir_a",
+      "g_tener"
     ],
-    "model_es": "Mañana voy a visitar Teotihuacán con mi amigo Daniel. Vamos a salir del hotel a las siete de la mañana. Vamos a tomar un camión en la Terminal del Norte. Allá vamos a caminar por la Calzada de los Muertos y ver la Pirámide del Sol. Va a hacer calor, entonces voy a llevar agua y un sombrero. A mediodía vamos a comer en un restaurante cerca de las pirámides. Vamos a regresar en la noche, muy cansados pero contentos.",
-    "model_en": "Tomorrow I'm going to visit Teotihuacán with my friend Daniel. We're going to leave the hotel at seven in the morning. We're going to take a bus at the Terminal del Norte. There we're going to walk along the Avenue of the Dead and see the Pyramid of the Sun. It's going to be hot, so I'm going to bring water and a hat. At midday we're going to eat at a restaurant near the pyramids. We're going to come back at night, very tired but happy."
+    "model_es": "Jack y su mamá son pobres y no tienen dinero. Jack va al mercado y cambia la vaca por cinco frijoles mágicos. En la noche, los frijoles crecen hasta las nubes. Jack dice: «¡Voy a subir!» Arriba hay un castillo, y allí vive un gigante con muchas monedas de oro. Jack toma una bolsa de oro, y el gigante grita: «¡Voy a comer a ese niño!» Jack baja muy rápido y corta la planta, y ahora él y su mamá van a vivir felices.",
+    "model_en": "Jack and his mom are poor and have no money. Jack goes to the market and swaps the cow for five magic beans. At night, the beans grow all the way up to the clouds. Jack says: \"I'm going to climb!\" Up there is a castle, and a giant lives there with lots of gold coins. Jack takes a bag of gold, and the giant shouts: \"I'm going to eat that boy!\" Jack climbs down very fast and cuts the plant, and now he and his mom are going to live happily."
   },
   {
-    "id": "st_museum_day",
+    "id": "st_rapunzel",
     "tier": 2,
-    "after_grammar": "g_stem_change",
-    "title": "A museum day",
-    "goal_en": "Write 7 sentences about a day at the Museo Nacional de Antropología, using querer, poder, preferir, entender and volver.",
+    "after_grammar": "g_modals",
+    "title": "Rapunzel",
+    "source": "Hermanos Grimm, 1812",
+    "goal_en": "Retell Rapunzel in 7 sentences, using poder, querer and necesitar + infinitive.",
     "beats": [
       {
-        "en": "Today you want to visit the National Museum of Anthropology.",
-        "hint_es": "Hoy quiero visitar…",
+        "en": "Rapunzel lives in a very tall tower in the forest.",
+        "hint_es": "Rapunzel vive en una torre…",
         "targets": [
-          "quiero",
-          "visitar",
-          "museo"
+          "vive",
+          "torre",
+          "alta"
         ]
       },
       {
-        "en": "It opens at nine and closes at six.",
-        "hint_es": "Abre a las… y cierra…",
+        "en": "The tower has no door, and Rapunzel can't get out.",
+        "hint_es": "La torre no tiene puerta, y…",
         "targets": [
-          "abre",
-          "cierra"
+          "no tiene puerta",
+          "no puede salir"
         ]
       },
       {
-        "en": "The ticket doesn't cost much.",
-        "hint_es": "El boleto no…",
+        "en": "She has very, very long hair.",
+        "hint_es": "Ella tiene el pelo…",
         "targets": [
-          "boleto",
-          "cuesta"
+          "pelo",
+          "largo"
         ]
       },
       {
-        "en": "You can't touch anything, but you can take photos.",
-        "hint_es": "No puedo tocar nada, pero…",
+        "en": "A witch climbs up the tower using Rapunzel's hair.",
+        "hint_es": "Una bruja sube a la torre por…",
         "targets": [
-          "no puedo",
-          "tocar",
-          "nada",
-          "fotos"
+          "bruja",
+          "sube",
+          "pelo"
         ]
       },
       {
-        "en": "You prefer the Mexica hall, where the Sun Stone is.",
-        "hint_es": "Prefiero la sala…",
+        "en": "One day a prince hears her voice and wants to talk to her.",
+        "hint_es": "Un día, un príncipe escucha… y quiere…",
         "targets": [
-          "prefiero",
-          "sala",
-          "Piedra del Sol"
+          "príncipe",
+          "escucha",
+          "voz",
+          "quiere hablar"
         ]
       },
       {
-        "en": "You don't understand everything, but you ask the guide.",
-        "hint_es": "No entiendo todo, pero…",
+        "en": "He shouts: 'Rapunzel, can I come up?'",
+        "hint_es": "Él grita: «Rapunzel, ¿puedo…?»",
         "targets": [
-          "entiendo",
-          "pregunto",
-          "guía"
+          "grita",
+          "puedo subir"
         ]
       },
       {
-        "en": "After four hours you're very hungry and go back to the hotel.",
-        "hint_es": "Después de cuatro horas…",
+        "en": "Rapunzel and the prince want to escape together and live happily.",
+        "hint_es": "Rapunzel y el príncipe quieren…",
         "targets": [
-          "tengo",
-          "hambre",
-          "vuelvo",
-          "hotel"
+          "quieren escapar",
+          "juntos",
+          "felices"
         ]
       }
     ],
     "vocab_focus": [
-      "museo",
-      "boleto",
-      "sala",
-      "guía",
-      "tocar",
-      "fotos"
+      "torre",
+      "pelo",
+      "largo",
+      "bruja",
+      "voz",
+      "escapar"
+    ],
+    "grammar_focus": [
+      "g_modals",
+      "g_tener"
+    ],
+    "model_es": "Rapunzel vive en una torre muy alta en el bosque. La torre no tiene puerta, y Rapunzel no puede salir. Ella tiene el pelo muy, muy largo. Una bruja sube a la torre por el pelo de Rapunzel. Un día, un príncipe escucha su voz y quiere hablar con ella. Él grita: «Rapunzel, Rapunzel, ¿puedo subir?» Rapunzel y el príncipe quieren escapar juntos y vivir felices.",
+    "model_en": "Rapunzel lives in a very tall tower in the forest. The tower has no door, and Rapunzel can't get out. She has very, very long hair. A witch climbs up the tower by Rapunzel's hair. One day, a prince hears her voice and wants to talk with her. He shouts: \"Rapunzel, Rapunzel, can I come up?\" Rapunzel and the prince want to escape together and live happily."
+  },
+  {
+    "id": "st_pinocho",
+    "tier": 2,
+    "after_grammar": "g_stem_change",
+    "title": "Pinocho (Pinocchio)",
+    "source": "Carlo Collodi, 1883",
+    "goal_en": "Retell Pinocchio in 7 sentences, using stem-changing verbs (querer, poder, mentir, volver, encontrar, pensar).",
+    "beats": [
+      {
+        "en": "Geppetto is an old carpenter, and he makes a wooden boy.",
+        "hint_es": "Geppetto es un carpintero viejo y hace…",
+        "targets": [
+          "carpintero",
+          "hace",
+          "madera"
+        ]
+      },
+      {
+        "en": "The puppet is called Pinocchio, and he can talk and walk.",
+        "hint_es": "El muñeco se llama Pinocho y puede…",
+        "targets": [
+          "se llama",
+          "puede hablar",
+          "caminar"
+        ]
+      },
+      {
+        "en": "Pinocchio wants to be a real boy.",
+        "hint_es": "Pinocho quiere ser…",
+        "targets": [
+          "quiere ser",
+          "niño de verdad"
+        ]
+      },
+      {
+        "en": "But when he lies, his nose grows.",
+        "hint_es": "Pero cuando miente…",
+        "targets": [
+          "miente",
+          "nariz",
+          "crece"
+        ]
+      },
+      {
+        "en": "One day Pinocchio doesn't come home, and Geppetto goes out to look for his son.",
+        "hint_es": "Un día, Pinocho no vuelve a casa y…",
+        "targets": [
+          "no vuelve",
+          "sale a buscar",
+          "hijo"
+        ]
+      },
+      {
+        "en": "Pinocchio finds his dad inside an enormous whale.",
+        "hint_es": "Pinocho encuentra a su papá dentro de…",
+        "targets": [
+          "encuentra",
+          "papá",
+          "ballena"
+        ]
+      },
+      {
+        "en": "In the end Pinocchio tells the truth, thinks of others, and becomes a real boy.",
+        "hint_es": "Al final, Pinocho dice la verdad, piensa… y se convierte…",
+        "targets": [
+          "dice la verdad",
+          "piensa",
+          "se convierte"
+        ]
+      }
+    ],
+    "vocab_focus": [
+      "carpintero",
+      "madera",
+      "mentir",
+      "nariz",
+      "ballena",
+      "verdad"
     ],
     "grammar_focus": [
       "g_stem_change",
       "g_modals"
     ],
-    "model_es": "Hoy quiero visitar el Museo Nacional de Antropología. El museo abre a las nueve y cierra a las seis. El boleto no cuesta mucho. No puedo tocar nada, pero sí puedo tomar fotos. Prefiero la sala mexica, donde está la Piedra del Sol. No entiendo todo, pero le pregunto a la guía. Después de cuatro horas tengo mucha hambre y vuelvo al hotel.",
-    "model_en": "Today I want to visit the National Museum of Anthropology. The museum opens at nine and closes at six. The ticket doesn't cost much. I can't touch anything, but I can take photos. I prefer the Mexica hall, where the Sun Stone is. I don't understand everything, but I ask the guide. After four hours I'm really hungry and I go back to the hotel."
+    "model_es": "Geppetto es un carpintero viejo y hace un niño de madera. El muñeco se llama Pinocho y puede hablar y caminar. Pinocho quiere ser un niño de verdad. Pero cuando miente, su nariz crece. Un día, Pinocho no vuelve a casa y Geppetto sale a buscar a su hijo. Pinocho encuentra a su papá dentro de una ballena enorme. Al final, Pinocho dice la verdad, piensa en los demás y se convierte en un niño de verdad.",
+    "model_en": "Geppetto is an old carpenter, and he makes a wooden boy. The puppet is called Pinocchio and he can talk and walk. Pinocchio wants to be a real boy. But when he lies, his nose grows. One day, Pinocchio doesn't come home and Geppetto goes out to look for his son. Pinocchio finds his dad inside an enormous whale. In the end, Pinocchio tells the truth, thinks of others and becomes a real boy."
   },
   {
-    "id": "st_mezcal_tasting",
+    "id": "st_gato_botas",
     "tier": 2,
     "after_grammar": "g_gustar",
-    "title": "A mezcal tasting",
-    "goal_en": "Write 7–8 sentences about a mezcal tasting: where, what's on the table, what you like and love, what your friend doesn't like, and how you feel at the end.",
+    "title": "El gato con botas (Puss in Boots)",
+    "source": "Charles Perrault, 1697",
+    "goal_en": "Retell Puss in Boots in 7 sentences, using gustar and encantar for what the king likes.",
     "beats": [
       {
-        "en": "Tonight you go to a mezcal tasting in Colonia Roma.",
-        "hint_es": "Esta noche voy a una cata…",
+        "en": "A very poor young man has nothing but a cat.",
+        "hint_es": "Un joven muy pobre tiene solo…",
         "targets": [
-          "voy",
-          "cata",
-          "mezcal",
-          "Roma"
+          "joven",
+          "pobre",
+          "gato"
         ]
       },
       {
-        "en": "The mezcalero explains that mezcal comes from agave.",
-        "hint_es": "El mezcalero nos explica que…",
+        "en": "But the cat is very clever and asks him for some boots and a sack.",
+        "hint_es": "Pero el gato es muy listo y le pide…",
         "targets": [
-          "explica",
-          "viene",
-          "agave"
+          "listo",
+          "le pide",
+          "botas",
+          "saco"
         ]
       },
       {
-        "en": "On the table there are four mezcals, with orange and sal de gusano.",
-        "hint_es": "En la mesa hay…",
+        "en": "The king really likes rabbits, so the cat brings him rabbits every day.",
+        "hint_es": "Al rey le gustan mucho…",
         "targets": [
-          "hay",
-          "mezcales",
-          "naranja",
-          "sal de gusano"
+          "al rey le gustan",
+          "conejos",
+          "le lleva"
         ]
       },
       {
-        "en": "You like the espadín a lot.",
-        "hint_es": "Me gusta mucho…",
+        "en": "The cat says: 'They're a gift from my master, the Marquis of Carabas.'",
+        "hint_es": "El gato dice: «Son un regalo de…»",
         "targets": [
-          "me gusta",
-          "espadín"
+          "regalo",
+          "amo",
+          "marqués"
         ]
       },
       {
-        "en": "You love the tobalá: it's smooth and a little smoky.",
-        "hint_es": "¡Me encanta…!",
+        "en": "In a castle lives an ogre who can turn into any animal.",
+        "hint_es": "En un castillo vive un ogro que puede…",
         "targets": [
-          "me encanta",
-          "suave",
-          "ahumado"
+          "castillo",
+          "ogro",
+          "puede convertirse",
+          "animal"
         ]
       },
       {
-        "en": "Your friend doesn't like the last one because it's very strong.",
-        "hint_es": "A mi amigo no le gusta…",
+        "en": "The ogre turns into a mouse, and the cat eats it.",
+        "hint_es": "El ogro se convierte en ratón, y…",
         "targets": [
-          "a mi amigo",
-          "no le gusta",
-          "fuerte"
+          "se convierte",
+          "ratón",
+          "lo come"
         ]
       },
       {
-        "en": "At the end your head hurts a little, but you're very happy.",
-        "hint_es": "Al final me duele…",
+        "en": "The king loves the castle, and the young man marries the princess.",
+        "hint_es": "Al rey le encanta…, y el joven se casa…",
         "targets": [
-          "me duele",
-          "cabeza",
-          "contento"
+          "le encanta",
+          "se casa",
+          "princesa"
         ]
       }
     ],
     "vocab_focus": [
-      "mezcal",
-      "cata",
-      "agave",
-      "naranja",
-      "suave",
-      "fuerte"
+      "gato",
+      "botas",
+      "rey",
+      "conejo",
+      "ogro",
+      "ratón",
+      "regalo"
     ],
     "grammar_focus": [
       "g_gustar",
-      "g_hay"
+      "g_irregular_yo"
     ],
-    "model_es": "Esta noche voy a una cata de mezcal en la colonia Roma. El mezcalero nos explica que el mezcal viene del agave. En la mesa hay cuatro mezcales, con naranja y sal de gusano. Me gusta mucho el espadín. ¡Y me encanta el tobalá! Es suave y un poco ahumado. A mi amigo no le gusta el último porque es muy fuerte. Al final me duele un poco la cabeza, pero estoy muy contento.",
-    "model_en": "Tonight I go to a mezcal tasting in Colonia Roma. The mezcalero explains to us that mezcal comes from agave. On the table there are four mezcals, with orange slices and worm salt. I really like the espadín. And I love the tobalá! It's smooth and a little smoky. My friend doesn't like the last one because it's very strong. At the end my head hurts a little, but I'm very happy."
+    "model_es": "Un joven muy pobre tiene solo un gato. Pero el gato es muy listo y le pide unas botas y un saco. Al rey le gustan mucho los conejos, entonces el gato le lleva conejos todos los días. El gato dice: «Son un regalo de mi amo, el marqués de Carabás.» En un castillo vive un ogro que puede convertirse en cualquier animal. El ogro se convierte en ratón, ¡y el gato lo come! Al rey le encanta el castillo, y el joven se casa con la princesa.",
+    "model_en": "A very poor young man has nothing but a cat. But the cat is very clever and asks him for some boots and a sack. The king really likes rabbits, so the cat brings him rabbits every day. The cat says: \"They're a gift from my master, the Marquis of Carabas.\" In a castle lives an ogre who can turn into any animal. The ogre turns into a mouse, and the cat eats it! The king loves the castle, and the young man marries the princess."
   },
   {
-    "id": "st_hotel_problem",
+    "id": "st_robin_hood",
     "tier": 3,
     "after_grammar": "g_indirect_objects",
-    "title": "A problem at the hotel",
-    "goal_en": "Write 8 sentences about a problem in your hotel room and how it gets solved. Use le / me with explicar, decir, pedir and dar.",
+    "title": "Robin Hood",
+    "source": "Leyenda inglesa medieval",
+    "goal_en": "Retell Robin Hood in 8 sentences, using le / les (rob from, give to) and lo / la.",
     "beats": [
       {
-        "en": "You come back to your room at ten at night.",
-        "hint_es": "Regreso a mi cuarto…",
+        "en": "Robin Hood lives in Sherwood Forest with his friends.",
+        "hint_es": "Robin Hood vive en el bosque de…",
         "targets": [
-          "regreso",
-          "cuarto",
-          "noche"
+          "vive",
+          "bosque",
+          "Sherwood",
+          "amigos"
         ]
       },
       {
-        "en": "The air conditioning doesn't work and there's no hot water.",
-        "hint_es": "El aire acondicionado no…",
+        "en": "In the town, the Sheriff of Nottingham takes the poor people's money.",
+        "hint_es": "En la ciudad, el sheriff… les quita…",
         "targets": [
-          "no funciona",
-          "aire acondicionado",
-          "no hay",
-          "agua caliente"
+          "sheriff",
+          "les quita",
+          "dinero",
+          "pobres"
         ]
       },
       {
-        "en": "You call reception and explain the problem to the receptionist.",
-        "hint_es": "Llamo a recepción y le explico…",
+        "en": "Robin doesn't agree, so he robs the rich and gives the money to the poor.",
+        "hint_es": "Robin no está de acuerdo, entonces les roba… y les da…",
         "targets": [
-          "llamo",
-          "recepción",
-          "le explico",
-          "problema"
+          "les roba",
+          "ricos",
+          "les da"
         ]
       },
       {
-        "en": "She tells you she'll send someone right away.",
-        "hint_es": "Ella me dice que ahorita…",
+        "en": "The people love him, but the sheriff hates him.",
+        "hint_es": "La gente lo quiere mucho, pero…",
         "targets": [
-          "me dice",
-          "ahorita",
-          "manda"
+          "lo quiere",
+          "lo odia"
         ]
       },
       {
-        "en": "Thirty minutes go by and nobody comes.",
-        "hint_es": "Pasan treinta minutos y…",
+        "en": "One day the sheriff organizes an archery contest.",
+        "hint_es": "Un día, el sheriff organiza…",
         "targets": [
-          "pasan",
-          "minutos",
-          "nadie"
+          "organiza",
+          "concurso",
+          "tiro con arco"
         ]
       },
       {
-        "en": "You go down to reception and ask for another room.",
-        "hint_es": "Bajo a recepción y le pido…",
+        "en": "The prize is a golden arrow, and Robin wants to win it.",
+        "hint_es": "El premio es una flecha de oro, y Robin quiere…",
         "targets": [
-          "bajo",
-          "le pido",
-          "otro cuarto"
+          "premio",
+          "flecha de oro",
+          "ganarla"
         ]
       },
       {
-        "en": "They give you a new room and a free breakfast.",
-        "hint_es": "Me dan…",
+        "en": "Robin arrives in disguise and wins the contest.",
+        "hint_es": "Robin llega disfrazado y…",
         "targets": [
-          "me dan",
-          "cuarto nuevo",
-          "desayuno"
+          "llega",
+          "disfrazado",
+          "gana"
         ]
       },
       {
-        "en": "Not bad!",
-        "hint_es": "¡No está…!",
+        "en": "The sheriff gives him the golden arrow — but he doesn't know it's Robin Hood.",
+        "hint_es": "El sheriff le da la flecha…, pero no sabe que…",
         "targets": [
-          "no está mal"
+          "le da",
+          "no sabe",
+          "Robin Hood"
         ]
       }
     ],
     "vocab_focus": [
-      "recepción",
-      "aire acondicionado",
-      "funcionar",
-      "explicar",
-      "pedir",
-      "gratis"
+      "bosque",
+      "rico",
+      "pobre",
+      "robar",
+      "concurso",
+      "flecha",
+      "premio"
     ],
     "grammar_focus": [
       "g_indirect_objects",
-      "g_negation"
+      "g_direct_objects"
     ],
-    "model_es": "Regreso a mi cuarto a las diez de la noche. El aire acondicionado no funciona y no hay agua caliente. Llamo a recepción y le explico el problema a la recepcionista. Ella me dice que ahorita manda a alguien. Pero pasan treinta minutos y no viene nadie. Entonces bajo a recepción y le pido otro cuarto. Me dan un cuarto nuevo y, además, un desayuno gratis. ¡No está mal!",
-    "model_en": "I come back to my room at ten at night. The air conditioning doesn't work and there's no hot water. I call reception and explain the problem to the receptionist. She tells me she'll send someone right away. But thirty minutes go by and nobody comes. So I go down to reception and ask for another room. They give me a new room and, on top of that, a free breakfast. Not bad!"
+    "model_es": "Robin Hood vive en el bosque de Sherwood con sus amigos. En la ciudad, el sheriff de Nottingham les quita el dinero a los pobres. Robin no está de acuerdo, entonces les roba a los ricos y les da el dinero a los pobres. La gente lo quiere mucho, pero el sheriff lo odia. Un día, el sheriff organiza un concurso de tiro con arco. El premio es una flecha de oro, y Robin quiere ganarla. Robin llega disfrazado y gana el concurso. El sheriff le da la flecha de oro, pero no sabe que es Robin Hood.",
+    "model_en": "Robin Hood lives in Sherwood Forest with his friends. In the town, the Sheriff of Nottingham takes the poor people's money. Robin doesn't agree, so he robs the rich and gives the money to the poor. The people love him, but the sheriff hates him. One day, the sheriff organizes an archery contest. The prize is a golden arrow, and Robin wants to win it. Robin arrives in disguise and wins the contest. The sheriff gives him the golden arrow, but he doesn't know it's Robin Hood."
   },
   {
-    "id": "st_lost_directions",
+    "id": "st_aladino",
     "tier": 3,
     "after_grammar": "g_commands",
-    "title": "Lost in the Centro",
-    "goal_en": "Write 8 sentences: you get lost downtown, ask a street vendor for directions (quote her usted commands), and find your way.",
+    "title": "Aladino y la lámpara maravillosa (Aladdin)",
+    "source": "Las mil y una noches (versión de Antoine Galland, 1710)",
+    "goal_en": "Retell Aladdin in 9 sentences. Put the sorcerer's and the genie's words in quotes as commands (tú and usted).",
     "beats": [
       {
-        "en": "You're walking in the Centro Histórico and you're lost.",
-        "hint_es": "Camino por el Centro Histórico y…",
+        "en": "Aladdin is a poor young man who lives in a city in the East.",
+        "hint_es": "Aladino es un joven pobre que vive…",
         "targets": [
-          "camino",
-          "Centro",
-          "perdido"
+          "joven",
+          "pobre",
+          "vive",
+          "ciudad"
         ]
       },
       {
-        "en": "Your phone has no battery.",
-        "hint_es": "Mi celular no tiene…",
+        "en": "A sorcerer tells him: 'Go into the cave and bring me the lamp.'",
+        "hint_es": "Un hechicero le dice: «Entra en la cueva y tráeme…»",
         "targets": [
-          "celular",
-          "no tiene",
-          "pila"
+          "hechicero",
+          "entra",
+          "cueva",
+          "tráeme"
         ]
       },
       {
-        "en": "You ask a lady who sells elotes: 'Excuse me, where is the Palacio de Bellas Artes?'",
-        "hint_es": "Le pregunto a una señora…: «Disculpe, ¿dónde…?»",
+        "en": "Inside the cave there's gold and jewels, but Aladdin only looks for the lamp.",
+        "hint_es": "Dentro de la cueva hay… pero Aladino solo busca…",
         "targets": [
-          "le pregunto",
-          "señora",
-          "disculpe",
-          "dónde está"
+          "hay",
+          "oro",
+          "joyas",
+          "busca",
+          "lámpara"
         ]
       },
       {
-        "en": "She says: 'Go straight down Madero street and cross the Eje Central. It's on the right.'",
-        "hint_es": "Ella me dice: «Siga derecho…»",
+        "en": "He rubs the lamp and an enormous genie comes out.",
+        "hint_es": "Él frota la lámpara y sale…",
         "targets": [
-          "siga derecho",
-          "cruce",
-          "derecha"
+          "frota",
+          "sale",
+          "genio"
         ]
       },
       {
-        "en": "You thank her and buy an elote from her.",
-        "hint_es": "Le doy las gracias y…",
+        "en": "The genie says: 'Tell me, master! What do you wish?'",
+        "hint_es": "El genio le dice: «¡Dígame, amo!…»",
         "targets": [
-          "gracias",
-          "compro",
-          "elote"
+          "dígame",
+          "amo",
+          "desea"
         ]
       },
       {
-        "en": "Ten minutes later you see the building. It's gorgeous!",
-        "hint_es": "Diez minutos después…",
+        "en": "Aladdin asks for a palace and fine clothes to meet the princess.",
+        "hint_es": "Aladino le pide un palacio…",
         "targets": [
-          "veo",
-          "edificio",
-          "precioso"
+          "le pide",
+          "palacio",
+          "ropa",
+          "princesa"
         ]
       },
       {
-        "en": "Next time you're going to charge your phone!",
-        "hint_es": "La próxima vez voy a…",
+        "en": "One day the sorcerer comes back and shouts in the street: 'New lamps for old!'",
+        "hint_es": "Un día, el hechicero vuelve y grita…",
         "targets": [
-          "voy a",
-          "cargar",
-          "celular"
+          "vuelve",
+          "grita",
+          "lámparas nuevas",
+          "viejas"
+        ]
+      },
+      {
+        "en": "The princess gives him the magic lamp, and the sorcerer takes the palace away.",
+        "hint_es": "La princesa le da la lámpara, y el hechicero se lleva…",
+        "targets": [
+          "le da",
+          "se lleva",
+          "palacio"
+        ]
+      },
+      {
+        "en": "But Aladdin finds him, gets the lamp back and lives happily with the princess.",
+        "hint_es": "Pero Aladino lo encuentra, recupera… y vive…",
+        "targets": [
+          "lo encuentra",
+          "recupera",
+          "vive feliz"
         ]
       }
     ],
     "vocab_focus": [
-      "perdido",
-      "pila",
-      "derecho",
-      "cruzar",
-      "esquina",
-      "elote"
+      "lámpara",
+      "genio",
+      "cueva",
+      "hechicero",
+      "deseo",
+      "palacio",
+      "joya"
     ],
     "grammar_focus": [
       "g_commands",
-      "g_indirect_objects",
-      "g_questions"
+      "g_indirect_objects"
     ],
-    "model_es": "Camino por el Centro Histórico y estoy perdido. Mi celular no tiene pila. Le pregunto a una señora que vende elotes: «Disculpe, ¿dónde está el Palacio de Bellas Artes?» Ella me dice: «Siga derecho por la calle Madero y cruce el Eje Central. Está a la derecha.» Le doy las gracias y le compro un elote. Diez minutos después, veo el edificio. ¡Es precioso! La próxima vez voy a cargar mi celular.",
-    "model_en": "I'm walking around the Historic Center and I'm lost. My phone has no battery. I ask a lady who sells corn on the cob: \"Excuse me, where is the Palacio de Bellas Artes?\" She tells me: \"Go straight along Madero street and cross the Eje Central. It's on the right.\" I thank her and buy an elote from her. Ten minutes later, I see the building. It's gorgeous! Next time I'm going to charge my phone."
+    "model_es": "Aladino es un joven pobre que vive en una ciudad de Oriente. Un hechicero le dice: «Entra en la cueva y tráeme la lámpara.» Dentro de la cueva hay oro y joyas, pero Aladino solo busca la lámpara. Él frota la lámpara y sale un genio enorme. El genio le dice: «¡Dígame, amo! ¿Qué desea?» Aladino le pide un palacio y ropa elegante para conocer a la princesa. Un día, el hechicero vuelve y grita en la calle: «¡Cambio lámparas nuevas por viejas!» La princesa le da la lámpara mágica, y el hechicero se lleva el palacio. Pero Aladino lo encuentra, recupera la lámpara y vive feliz con la princesa.",
+    "model_en": "Aladdin is a poor young man who lives in a city in the East. A sorcerer tells him: \"Go into the cave and bring me the lamp.\" Inside the cave there's gold and jewels, but Aladdin only looks for the lamp. He rubs the lamp and an enormous genie comes out. The genie says to him: \"Tell me, master! What do you wish?\" Aladdin asks him for a palace and fine clothes so he can meet the princess. One day, the sorcerer comes back and shouts in the street: \"New lamps for old!\" The princess gives him the magic lamp, and the sorcerer carries off the palace. But Aladdin finds him, gets the lamp back and lives happily with the princess."
   },
   {
-    "id": "st_my_work",
+    "id": "st_romeo_julieta",
     "tier": 3,
     "after_grammar": "g_reflexive",
-    "title": "Telling someone about my work",
-    "goal_en": "A new friend asks about your job. Write 8 sentences: what you do and where, your daily routine (reflexive verbs), and what you like about it.",
+    "title": "Romeo y Julieta",
+    "source": "William Shakespeare, 1597",
+    "goal_en": "Retell Romeo and Juliet in 9 simple sentences, using reflexive and reciprocal verbs (conocerse, enamorarse, casarse, irse, despertarse).",
     "beats": [
       {
-        "en": "You're an engineer and you work at a university in Houston.",
-        "hint_es": "Soy ingeniero y trabajo…",
+        "en": "In Verona there are two enemy families: the Montagues and the Capulets.",
+        "hint_es": "En Verona hay dos familias enemigas…",
         "targets": [
-          "soy",
-          "ingeniero",
-          "trabajo",
-          "universidad"
+          "Verona",
+          "familias enemigas",
+          "Montesco",
+          "Capuleto"
         ]
       },
       {
-        "en": "You study the brain: your team makes tiny sensors that measure its electrical activity.",
-        "hint_es": "Estudio el cerebro: hacemos…",
+        "en": "Romeo is a Montague and Juliet is a Capulet.",
+        "hint_es": "Romeo es un Montesco y Julieta…",
         "targets": [
-          "estudio",
-          "cerebro",
-          "sensores",
-          "actividad"
+          "Romeo es",
+          "Julieta es"
         ]
       },
       {
-        "en": "You get up at six and have a coffee.",
-        "hint_es": "Me levanto a las seis y…",
+        "en": "They meet at a party and fall in love immediately.",
+        "hint_es": "Se conocen en una fiesta y se enamoran…",
         "targets": [
-          "me levanto",
-          "café"
+          "se conocen",
+          "fiesta",
+          "se enamoran"
         ]
       },
       {
-        "en": "Then you drive to the lab.",
-        "hint_es": "Después voy al laboratorio…",
+        "en": "At night, Romeo talks with Juliet under her balcony.",
+        "hint_es": "En la noche, Romeo habla con Julieta debajo de…",
         "targets": [
-          "voy",
-          "laboratorio",
-          "carro"
+          "habla",
+          "debajo",
+          "balcón"
         ]
       },
       {
-        "en": "In the morning you write code and read papers.",
-        "hint_es": "En la mañana escribo…",
+        "en": "The next day, they get married in secret.",
+        "hint_es": "Al día siguiente, se casan…",
         "targets": [
-          "escribo",
-          "código",
-          "leo",
-          "artículos"
+          "se casan",
+          "en secreto"
         ]
       },
       {
-        "en": "In the afternoon you have meetings with your team.",
-        "hint_es": "En la tarde tengo…",
+        "en": "But Romeo fights with Tybalt, Juliet's cousin, and has to leave Verona.",
+        "hint_es": "Pero Romeo pelea con Teobaldo… y tiene que irse…",
         "targets": [
-          "tengo",
-          "juntas",
-          "equipo"
+          "pelea",
+          "primo",
+          "tiene que irse"
         ]
       },
       {
-        "en": "You love your work, but sometimes you get very tired.",
-        "hint_es": "Me encanta mi trabajo, pero…",
+        "en": "Juliet drinks a potion to sleep and looks dead.",
+        "hint_es": "Julieta toma una poción para dormir y parece…",
         "targets": [
-          "me encanta",
-          "trabajo",
-          "me canso"
+          "toma",
+          "poción",
+          "parece muerta"
         ]
       },
       {
-        "en": "Many nights you go to bed late because you're thinking about the data.",
-        "hint_es": "Muchas noches me acuesto…",
+        "en": "Romeo doesn't know the plan; he sees Juliet, thinks she's dead and drinks poison.",
+        "hint_es": "Romeo no conoce el plan. Ve a Julieta, cree que…",
         "targets": [
-          "me acuesto",
-          "tarde",
-          "datos"
+          "no conoce el plan",
+          "cree",
+          "veneno"
+        ]
+      },
+      {
+        "en": "Juliet wakes up, sees Romeo and dies with him.",
+        "hint_es": "Julieta se despierta, ve a Romeo y…",
+        "targets": [
+          "se despierta",
+          "muere"
         ]
       }
     ],
     "vocab_focus": [
-      "ingeniero",
-      "universidad",
-      "cerebro",
-      "sensor",
-      "laboratorio",
-      "junta",
-      "equipo",
-      "datos"
+      "familia",
+      "enemigo",
+      "enamorarse",
+      "casarse",
+      "balcón",
+      "veneno",
+      "despertarse"
     ],
     "grammar_focus": [
       "g_reflexive",
       "g_present_ar",
-      "g_gustar"
+      "g_tener"
     ],
-    "model_es": "Soy ingeniero y trabajo en una universidad en Houston. Estudio el cerebro: hacemos sensores muy pequeños que miden su actividad eléctrica. Me levanto a las seis y me tomo un café. Después voy al laboratorio en carro. En la mañana escribo código y leo artículos. En la tarde tengo juntas con mi equipo. Me encanta mi trabajo, pero a veces me canso mucho. Muchas noches me acuesto tarde porque pienso en los datos.",
-    "model_en": "I'm an engineer and I work at a university in Houston. I study the brain: we make very small sensors that measure its electrical activity. I get up at six and have a coffee. Then I drive to the lab. In the morning I write code and read papers. In the afternoon I have meetings with my team. I love my job, but sometimes I get really tired. Many nights I go to bed late because I'm thinking about the data."
+    "model_es": "En Verona hay dos familias enemigas: los Montesco y los Capuleto. Romeo es un Montesco y Julieta es una Capuleto. Se conocen en una fiesta y se enamoran inmediatamente. En la noche, Romeo habla con Julieta debajo de su balcón. Al día siguiente, se casan en secreto. Pero Romeo pelea con Teobaldo, el primo de Julieta, y tiene que irse de Verona. Julieta toma una poción para dormir y parece muerta. Romeo no conoce el plan. Ve a Julieta, cree que está muerta y toma veneno. Julieta se despierta, ve a Romeo y muere con él.",
+    "model_en": "In Verona there are two enemy families: the Montagues and the Capulets. Romeo is a Montague and Juliet is a Capulet. They meet at a party and fall in love immediately. At night, Romeo talks with Juliet beneath her balcony. The next day, they get married in secret. But Romeo fights with Tybalt, Juliet's cousin, and has to leave Verona. Juliet drinks a potion to sleep and looks dead. Romeo doesn't know the plan. He sees Juliet, thinks she's dead and drinks poison. Juliet wakes up, sees Romeo and dies with him."
   },
   {
-    "id": "st_dia_muertos_night",
+    "id": "st_rey_arturo",
     "tier": 3,
-    "after_grammar": "g_por_para",
-    "title": "Día de Muertos night",
-    "goal_en": "Write 9 sentences in the present about walking through Coyoacán on the night of November 1st. Use estar + -ando/-iendo and para / por.",
+    "after_grammar": "g_progressive",
+    "title": "El rey Arturo y la espada en la piedra (The Sword in the Stone)",
+    "source": "Leyenda artúrica (Thomas Malory, 1485)",
+    "goal_en": "Retell the Sword in the Stone in 9 sentences, using estar + -ando/-iendo for what everyone is doing.",
     "beats": [
       {
-        "en": "It's the night of November 1st and you're walking through Coyoacán.",
-        "hint_es": "Es la noche del primero de noviembre y estoy…",
+        "en": "England has no king, and everyone is waiting for a sign.",
+        "hint_es": "En Inglaterra no hay rey, y todos están…",
         "targets": [
-          "noche",
-          "noviembre",
-          "estoy caminando",
-          "Coyoacán"
+          "no hay rey",
+          "están esperando",
+          "señal"
         ]
       },
       {
-        "en": "There are ofrendas everywhere, with photos, candles and cempasúchil flowers.",
-        "hint_es": "Hay ofrendas por todas partes…",
+        "en": "In a square there's a sword stuck in a stone.",
+        "hint_es": "En una plaza hay una espada…",
         "targets": [
-          "ofrendas",
-          "fotos",
-          "velas",
-          "cempasúchil"
-        ]
-      },
-      {
-        "en": "The orange flowers are to guide the souls home.",
-        "hint_es": "Las flores anaranjadas son para…",
-        "targets": [
-          "flores",
-          "para",
-          "guiar",
-          "almas"
-        ]
-      },
-      {
-        "en": "A family is putting pan de muerto and a bottle of tequila on their ofrenda.",
-        "hint_es": "Una familia está poniendo…",
-        "targets": [
-          "está poniendo",
-          "pan de muerto",
-          "tequila"
-        ]
-      },
-      {
-        "en": "The grandmother explains that the tequila is for her husband, who is no longer here.",
-        "hint_es": "La abuela me explica que…",
-        "targets": [
-          "me explica",
-          "para",
-          "esposo"
-        ]
-      },
-      {
-        "en": "Lots of people have their faces painted like catrinas.",
-        "hint_es": "Mucha gente lleva…",
-        "targets": [
-          "gente",
-          "cara pintada",
-          "catrina"
-        ]
-      },
-      {
-        "en": "You buy a sugar skull for your sister.",
-        "hint_es": "Compro una calavera de azúcar para…",
-        "targets": [
-          "compro",
-          "calavera",
-          "azúcar",
-          "para"
-        ]
-      },
-      {
-        "en": "Then you walk around the plaza for two hours.",
-        "hint_es": "Luego camino por…",
-        "targets": [
-          "camino",
-          "por",
           "plaza",
-          "horas"
+          "espada",
+          "piedra"
         ]
       },
       {
-        "en": "You're tired, but it's an incredible night.",
-        "hint_es": "Estoy cansado, pero…",
+        "en": "A message says the true king is going to pull out the sword.",
+        "hint_es": "Un mensaje dice que el rey verdadero va a…",
         "targets": [
-          "cansado",
-          "noche",
-          "increíble"
+          "mensaje",
+          "rey verdadero",
+          "va a sacar"
+        ]
+      },
+      {
+        "en": "Many strong knights are trying to pull it out, but nobody can.",
+        "hint_es": "Muchos caballeros fuertes están tratando de…",
+        "targets": [
+          "caballeros",
+          "están tratando",
+          "nadie puede"
+        ]
+      },
+      {
+        "en": "Arthur is a young squire; he's looking for a sword for his brother Kay.",
+        "hint_es": "Arturo es un joven escudero; está buscando…",
+        "targets": [
+          "escudero",
+          "está buscando",
+          "hermano"
+        ]
+      },
+      {
+        "en": "He sees the sword in the stone and pulls it out very easily.",
+        "hint_es": "Ve la espada en la piedra y la saca…",
+        "targets": [
+          "ve",
+          "la saca",
+          "fácilmente"
+        ]
+      },
+      {
+        "en": "Everyone stands there staring: they can't believe it!",
+        "hint_es": "Todos se quedan mirando…",
+        "targets": [
+          "se quedan mirando",
+          "no lo pueden creer"
+        ]
+      },
+      {
+        "en": "The wizard Merlin smiles and says: 'This is the new king.'",
+        "hint_es": "El mago Merlín sonríe y dice…",
+        "targets": [
+          "Merlín",
+          "sonríe",
+          "nuevo rey"
+        ]
+      },
+      {
+        "en": "From that day on, Arthur is the king of England.",
+        "hint_es": "Desde ese día, Arturo es…",
+        "targets": [
+          "desde ese día",
+          "rey de Inglaterra"
         ]
       }
     ],
     "vocab_focus": [
-      "ofrenda",
-      "vela",
-      "cempasúchil",
-      "alma",
-      "pan de muerto",
-      "calavera",
-      "catrina"
+      "rey",
+      "espada",
+      "piedra",
+      "caballero",
+      "escudero",
+      "mago",
+      "sacar"
     ],
     "grammar_focus": [
-      "g_por_para",
-      "g_progressive"
+      "g_progressive",
+      "g_reflexive",
+      "g_direct_objects"
     ],
-    "model_es": "Es la noche del primero de noviembre y estoy caminando por Coyoacán. Hay ofrendas por todas partes, con fotos, velas y flores de cempasúchil. Las flores anaranjadas son para guiar a las almas a casa. Una familia está poniendo pan de muerto y una botella de tequila en su ofrenda. La abuela me explica que el tequila es para su esposo, que ya no está. Mucha gente lleva la cara pintada de catrina. Compro una calavera de azúcar para mi hermana. Luego camino por la plaza durante dos horas. Estoy cansado, pero es una noche increíble.",
-    "model_en": "It's the night of November 1st and I'm walking through Coyoacán. There are ofrendas everywhere, with photos, candles and cempasúchil (marigold) flowers. The orange flowers are there to guide the souls home. A family is putting pan de muerto and a bottle of tequila on their ofrenda. The grandmother explains to me that the tequila is for her husband, who is no longer with us. Lots of people have their faces painted like catrinas. I buy a sugar skull for my sister. Then I walk around the plaza for two hours. I'm tired, but it's an incredible night."
+    "model_es": "En Inglaterra no hay rey, y todos están esperando una señal. En una plaza hay una espada clavada en una piedra. Un mensaje dice que el rey verdadero va a sacar la espada. Muchos caballeros fuertes están tratando de sacarla, pero nadie puede. Arturo es un joven escudero; está buscando una espada para su hermano Kay. Ve la espada en la piedra y la saca muy fácilmente. Todos se quedan mirando: ¡no lo pueden creer! El mago Merlín sonríe y dice: «Este es el nuevo rey.» Desde ese día, Arturo es el rey de Inglaterra.",
+    "model_en": "England has no king, and everyone is waiting for a sign. In a square there's a sword stuck in a stone. A message says the true king is going to pull out the sword. Many strong knights are trying to pull it out, but nobody can. Arthur is a young squire; he's looking for a sword for his brother Kay. He sees the sword in the stone and pulls it out very easily. Everyone stands there staring: they can't believe it! The wizard Merlin smiles and says: \"This is the new king.\" From that day on, Arthur is the king of England."
   },
   {
-    "id": "st_yesterday_coyoacan",
+    "id": "st_icaro",
     "tier": 4,
     "after_grammar": "g_preterite_regular",
-    "title": "What I did yesterday",
-    "goal_en": "Write 8 sentences in the preterite about yesterday in Coyoacán: morning, museum, afternoon, evening.",
+    "title": "Ícaro (Icarus)",
+    "source": "Mitología griega (Ovidio, Metamorfosis)",
+    "goal_en": "Retell the myth of Icarus in 9 sentences in the preterite: the prison, the wings, the warning, the flight and the fall.",
     "beats": [
       {
-        "en": "Yesterday you got up late, at nine.",
-        "hint_es": "Ayer me levanté…",
+        "en": "King Minos locked Daedalus and his son Icarus in the labyrinth of Crete.",
+        "hint_es": "El rey Minos encerró a Dédalo y a su hijo…",
         "targets": [
-          "ayer",
-          "me levanté",
-          "tarde"
+          "encerró",
+          "Dédalo",
+          "Ícaro",
+          "laberinto"
         ]
       },
       {
-        "en": "You had green chilaquiles for breakfast at a fonda.",
-        "hint_es": "Desayuné…",
+        "en": "Daedalus, a very clever inventor, prepared a plan.",
+        "hint_es": "Dédalo, un inventor muy inteligente, preparó…",
         "targets": [
-          "desayuné",
-          "chilaquiles",
-          "fonda"
+          "inventor",
+          "preparó",
+          "plan"
         ]
       },
       {
-        "en": "Then you visited the Casa Azul, Frida Kahlo's museum.",
-        "hint_es": "Después visité…",
+        "en": "He gathered bird feathers and wax and built two pairs of wings.",
+        "hint_es": "Juntó plumas… y construyó…",
         "targets": [
-          "visité",
-          "Casa Azul",
-          "Frida Kahlo"
+          "juntó",
+          "plumas",
+          "cera",
+          "construyó",
+          "alas"
         ]
       },
       {
-        "en": "You bought the tickets online the night before.",
-        "hint_es": "Compré los boletos…",
+        "en": "He warned Icarus: 'Don't fly too close to the sun.'",
+        "hint_es": "Le advirtió a Ícaro: «No vueles…»",
         "targets": [
-          "compré",
-          "boletos",
-          "en línea"
+          "advirtió",
+          "no vueles",
+          "sol"
         ]
       },
       {
-        "en": "You walked through the garden and took lots of photos.",
-        "hint_es": "Caminé por el jardín y…",
+        "en": "The two of them flew over the sea.",
+        "hint_es": "Los dos volaron…",
         "targets": [
-          "caminé",
-          "jardín",
-          "tomé",
-          "fotos"
+          "volaron",
+          "mar"
         ]
       },
       {
-        "en": "At four it started to rain.",
-        "hint_es": "A las cuatro empezó…",
+        "en": "Icarus got excited and climbed higher and higher.",
+        "hint_es": "Ícaro se emocionó y subió…",
         "targets": [
-          "empezó",
-          "llover"
+          "se emocionó",
+          "subió",
+          "más alto"
         ]
       },
       {
-        "en": "So you and your friend ate tostadas at the Coyoacán market.",
-        "hint_es": "Entonces mi amigo y yo comimos…",
+        "en": "The sun melted the wax on his wings.",
+        "hint_es": "El sol derritió…",
         "targets": [
-          "comimos",
-          "tostadas",
-          "mercado"
+          "derritió",
+          "cera",
+          "alas"
         ]
       },
       {
-        "en": "In the evening you went back to the hotel by Uber.",
-        "hint_es": "En la noche regresé…",
+        "en": "Icarus fell into the sea and never came back.",
+        "hint_es": "Ícaro cayó al mar y nunca…",
         "targets": [
-          "regresé",
-          "hotel",
-          "Uber"
+          "cayó",
+          "nunca volvió"
+        ]
+      },
+      {
+        "en": "Daedalus arrived in Sicily alone, very sad.",
+        "hint_es": "Dédalo llegó solo a Sicilia…",
+        "targets": [
+          "llegó",
+          "solo",
+          "triste"
         ]
       }
     ],
     "vocab_focus": [
-      "desayunar",
-      "fonda",
-      "boleto",
-      "jardín",
-      "llover",
-      "tostada"
+      "inventor",
+      "pluma",
+      "cera",
+      "ala",
+      "volar",
+      "sol",
+      "caer"
     ],
     "grammar_focus": [
-      "g_preterite_regular",
-      "g_reflexive"
+      "g_preterite_regular"
     ],
-    "model_es": "Ayer me levanté tarde, a las nueve. Desayuné chilaquiles verdes en una fonda. Después visité la Casa Azul, el museo de Frida Kahlo. Compré los boletos en línea la noche anterior. Caminé por el jardín y tomé muchas fotos. A las cuatro empezó a llover. Entonces mi amigo y yo comimos tostadas en el mercado de Coyoacán. En la noche regresé al hotel en Uber.",
-    "model_en": "Yesterday I got up late, at nine. I had green chilaquiles for breakfast at a fonda (small family restaurant). Then I visited the Casa Azul, Frida Kahlo's museum. I'd bought the tickets online the night before. I walked through the garden and took lots of photos. At four it started to rain. So my friend and I ate tostadas at the Coyoacán market. In the evening I went back to the hotel by Uber."
+    "model_es": "El rey Minos encerró a Dédalo y a su hijo Ícaro en el laberinto de Creta. Dédalo, un inventor muy inteligente, preparó un plan. Juntó plumas de pájaros y cera, y construyó dos pares de alas. Antes de salir, le advirtió a Ícaro: «No vueles muy cerca del sol.» Los dos volaron sobre el mar. Pero Ícaro se emocionó y subió cada vez más alto. El sol derritió la cera de sus alas. Ícaro cayó al mar y nunca volvió. Dédalo llegó solo a Sicilia, muy triste.",
+    "model_en": "King Minos locked Daedalus and his son Icarus in the labyrinth of Crete. Daedalus, a very clever inventor, came up with a plan. He gathered bird feathers and wax, and built two pairs of wings. Before leaving, he warned Icarus: \"Don't fly too close to the sun.\" The two of them flew over the sea. But Icarus got excited and climbed higher and higher. The sun melted the wax on his wings. Icarus fell into the sea and never came back. Daedalus arrived in Sicily alone, very sad."
   },
   {
-    "id": "st_teotihuacan_day",
+    "id": "st_caballo_troya",
     "tier": 4,
     "after_grammar": "g_preterite_irregular",
-    "title": "A day at the pyramids",
-    "goal_en": "Write 9–10 sentences in the past about your trip to Teotihuacán, using fui, tuve, hizo, traje, vimos and fue.",
+    "title": "El caballo de Troya (The Trojan Horse)",
+    "source": "Mitología griega (Homero, Virgilio)",
+    "goal_en": "Retell the Trojan Horse in 10 sentences with irregular preterites: estuvieron, pudieron, tuvo, hicieron, pusieron, dijeron, trajeron, fue.",
     "beats": [
       {
-        "en": "Last Saturday you went to Teotihuacán with some friends.",
-        "hint_es": "El sábado pasado fui…",
+        "en": "The Greeks spent ten years outside Troy, but they couldn't get into the city.",
+        "hint_es": "Los griegos estuvieron diez años… pero no pudieron…",
         "targets": [
-          "sábado pasado",
-          "fui",
-          "Teotihuacán"
+          "estuvieron",
+          "Troya",
+          "no pudieron"
         ]
       },
       {
-        "en": "You had to get up at six in the morning.",
-        "hint_es": "Tuve que…",
+        "en": "Then Odysseus had a brilliant idea.",
+        "hint_es": "Entonces Ulises tuvo…",
         "targets": [
-          "tuve que",
-          "levantarme",
-          "seis"
+          "Ulises",
+          "tuvo",
+          "idea"
         ]
       },
       {
-        "en": "The bus ride took an hour.",
-        "hint_es": "El viaje en camión…",
+        "en": "The Greeks made an enormous wooden horse.",
+        "hint_es": "Los griegos hicieron un caballo…",
         "targets": [
-          "viaje",
-          "camión",
-          "duró",
-          "hora"
+          "hicieron",
+          "caballo",
+          "madera"
         ]
       },
       {
-        "en": "You walked along the Avenue of the Dead and saw the Pyramids of the Sun and the Moon.",
-        "hint_es": "Caminamos por… y vimos…",
+        "en": "They put soldiers inside and left it in front of the gates of Troy.",
+        "hint_es": "Pusieron soldados dentro… y lo dejaron…",
         "targets": [
-          "caminamos",
-          "Calzada de los Muertos",
-          "vimos",
-          "Pirámide"
+          "pusieron",
+          "soldados",
+          "lo dejaron",
+          "puertas"
         ]
       },
       {
-        "en": "It was very hot and you didn't bring a hat, so you bought one from a vendor.",
-        "hint_es": "Hizo mucho calor y no traje…",
+        "en": "Then the rest of the army left in their ships.",
+        "hint_es": "Después, el resto del ejército se fue…",
         "targets": [
-          "hizo",
-          "calor",
-          "no traje",
-          "sombrero",
-          "compré"
+          "ejército",
+          "se fue",
+          "barcos"
         ]
       },
       {
-        "en": "You saw colorful hot-air balloons in the sky.",
-        "hint_es": "Vimos globos…",
+        "en": "The Trojans saw the horse and said: 'It's a gift! We won the war!'",
+        "hint_es": "Los troyanos vieron el caballo y dijeron…",
         "targets": [
-          "vimos",
-          "globos",
-          "cielo"
+          "vieron",
+          "dijeron",
+          "regalo",
+          "ganamos"
         ]
       },
       {
-        "en": "Afterwards you ate at a restaurant inside a cave.",
-        "hint_es": "Después comimos…",
+        "en": "They brought the horse into the city and threw a big party.",
+        "hint_es": "Trajeron el caballo a la ciudad e hicieron…",
         "targets": [
-          "comimos",
-          "restaurante",
-          "cueva"
+          "trajeron",
+          "hicieron",
+          "fiesta"
         ]
       },
       {
-        "en": "You were at the pyramids for five hours.",
-        "hint_es": "Estuve en las pirámides…",
+        "en": "At night the soldiers came out of the horse and opened the gates.",
+        "hint_es": "En la noche, los soldados salieron… y abrieron…",
         "targets": [
-          "estuve",
-          "cinco horas"
+          "salieron",
+          "abrieron",
+          "puertas"
         ]
       },
       {
-        "en": "You came back exhausted, but it was an incredible day.",
-        "hint_es": "Regresamos muertos de cansancio, pero…",
+        "en": "The Greek army came back and entered Troy.",
+        "hint_es": "El ejército griego volvió y entró…",
         "targets": [
-          "regresamos",
-          "fue",
-          "día increíble"
+          "volvió",
+          "entró"
+        ]
+      },
+      {
+        "en": "That was the end of Troy.",
+        "hint_es": "Así fue…",
+        "targets": [
+          "así fue",
+          "el fin"
         ]
       }
     ],
     "vocab_focus": [
-      "pirámide",
-      "calzada",
-      "sombrero",
-      "vendedor",
-      "globo",
-      "cueva",
-      "cansancio"
+      "caballo",
+      "madera",
+      "soldado",
+      "ejército",
+      "barco",
+      "regalo",
+      "guerra",
+      "puerta"
     ],
     "grammar_focus": [
       "g_preterite_irregular",
       "g_preterite_regular"
     ],
-    "model_es": "El sábado pasado fui a Teotihuacán con unos amigos. Tuve que levantarme a las seis de la mañana. El viaje en camión duró una hora. Caminamos por la Calzada de los Muertos y vimos la Pirámide del Sol y la Pirámide de la Luna. Hizo mucho calor y yo no traje sombrero, así que le compré uno a un vendedor. En el cielo vimos globos aerostáticos de muchos colores. Después comimos en un restaurante dentro de una cueva. Estuve en las pirámides cinco horas. Regresamos muertos de cansancio, pero fue un día increíble.",
-    "model_en": "Last Saturday I went to Teotihuacán with some friends. I had to get up at six in the morning. The bus ride took an hour. We walked along the Avenue of the Dead and saw the Pyramid of the Sun and the Pyramid of the Moon. It was very hot and I didn't bring a hat, so I bought one from a vendor. In the sky we saw hot-air balloons of many colors. Afterwards we ate at a restaurant inside a cave. I was at the pyramids for five hours. We came back dead tired, but it was an incredible day."
+    "model_es": "Los griegos estuvieron diez años frente a Troya, pero no pudieron entrar en la ciudad. Entonces Ulises tuvo una idea genial. Los griegos hicieron un caballo enorme de madera. Pusieron soldados dentro del caballo y lo dejaron frente a las puertas de Troya. Después, el resto del ejército se fue en sus barcos. Los troyanos vieron el caballo y dijeron: «¡Es un regalo! ¡Ganamos la guerra!» Trajeron el caballo a la ciudad e hicieron una gran fiesta. En la noche, los soldados salieron del caballo y abrieron las puertas. El ejército griego volvió y entró en Troya. Así fue el fin de Troya.",
+    "model_en": "The Greeks spent ten years outside Troy, but they couldn't get into the city. Then Odysseus had a brilliant idea. The Greeks built an enormous wooden horse. They put soldiers inside the horse and left it in front of the gates of Troy. Then the rest of the army sailed away in their ships. The Trojans saw the horse and said: \"It's a gift! We won the war!\" They brought the horse into the city and threw a big party. At night, the soldiers came out of the horse and opened the gates. The Greek army came back and entered Troy. That was the end of Troy."
   },
   {
-    "id": "st_panteon_night",
+    "id": "st_rip_van_winkle",
     "tier": 4,
     "after_grammar": "g_imperfect",
-    "title": "A night in the cemetery",
-    "goal_en": "Tell the story of a Día de Muertos night at a cemetery, in the past. Set the scene with the imperfect (time, weather, what people were doing) and tell the events with the preterite. 10–11 sentences.",
+    "title": "Rip Van Winkle",
+    "source": "Washington Irving, 1819",
+    "goal_en": "Retell Rip Van Winkle in 11 sentences. Describe Rip and the changed village with the imperfect, and tell the events with the preterite.",
     "beats": [
       {
-        "en": "On the night of November 1st you went to a cemetery near the city.",
-        "hint_es": "La noche del primero de noviembre fui…",
+        "en": "Rip Van Winkle lived in a small village near the mountains.",
+        "hint_es": "Rip Van Winkle vivía en…",
         "targets": [
-          "fui",
-          "panteón",
-          "noviembre"
+          "vivía",
+          "pueblo",
+          "montañas"
         ]
       },
       {
-        "en": "It was ten at night and it was a little cold.",
-        "hint_es": "Eran las diez… y hacía…",
+        "en": "He was a very friendly man, but he didn't like to work.",
+        "hint_es": "Era un hombre muy simpático, pero no le gustaba…",
         "targets": [
-          "eran",
-          "diez",
-          "hacía",
-          "frío"
-        ]
-      },
-      {
-        "en": "There were thousands of candles and marigolds on the graves.",
-        "hint_es": "Había miles de…",
-        "targets": [
-          "había",
-          "velas",
-          "cempasúchil",
-          "tumbas"
-        ]
-      },
-      {
-        "en": "Families were eating, chatting and listening to music next to their dead.",
-        "hint_es": "Las familias comían, platicaban…",
-        "targets": [
-          "comían",
-          "platicaban",
-          "escuchaban",
-          "música"
-        ]
-      },
-      {
-        "en": "Some mariachis were playing a very sad song.",
-        "hint_es": "Unos mariachis tocaban…",
-        "targets": [
-          "mariachis",
-          "tocaban",
-          "canción",
-          "triste"
-        ]
-      },
-      {
-        "en": "Suddenly, a lady invited you to sit with her family.",
-        "hint_es": "De repente, una señora me invitó…",
-        "targets": [
-          "de repente",
-          "me invitó",
-          "sentarme",
-          "familia"
-        ]
-      },
-      {
-        "en": "She told you her husband was very cheerful and loved to dance.",
-        "hint_es": "Me contó que su esposo era… y que le encantaba…",
-        "targets": [
-          "me contó",
-          "esposo",
           "era",
-          "le encantaba",
-          "bailar"
+          "simpático",
+          "no le gustaba",
+          "trabajar"
         ]
       },
       {
-        "en": "She gave you two tamales and a cup of atole.",
-        "hint_es": "Me dio…",
+        "en": "One day he went up into the mountains with his dog to escape from his wife.",
+        "hint_es": "Un día, subió a las montañas con su perro…",
         "targets": [
-          "me dio",
-          "tamales",
-          "atole"
+          "subió",
+          "perro",
+          "esposa"
         ]
       },
       {
-        "en": "You stayed with them until midnight.",
-        "hint_es": "Me quedé con ellos…",
+        "en": "There he found some strange men who were playing ninepins.",
+        "hint_es": "Allí encontró a unos hombres extraños que jugaban…",
         "targets": [
-          "me quedé",
-          "medianoche"
+          "encontró",
+          "extraños",
+          "jugaban",
+          "bolos"
         ]
       },
       {
-        "en": "When you left the cemetery, you felt very grateful.",
-        "hint_es": "Cuando salí del panteón, me sentía…",
+        "en": "Rip drank some of their drink and fell asleep under a tree.",
+        "hint_es": "Rip tomó un poco de su bebida y se durmió…",
         "targets": [
-          "cuando salí",
-          "me sentía",
-          "agradecido"
+          "tomó",
+          "bebida",
+          "se durmió",
+          "árbol"
+        ]
+      },
+      {
+        "en": "When he woke up, he had a very long white beard.",
+        "hint_es": "Cuando se despertó, tenía…",
+        "targets": [
+          "se despertó",
+          "tenía",
+          "barba blanca"
+        ]
+      },
+      {
+        "en": "He went down to the village, but everything was different.",
+        "hint_es": "Bajó al pueblo, pero todo era…",
+        "targets": [
+          "bajó",
+          "todo era diferente"
+        ]
+      },
+      {
+        "en": "He didn't know anybody, and nobody knew him. He had slept twenty years!",
+        "hint_es": "No conocía a nadie y… ¡Durmió…!",
+        "targets": [
+          "no conocía a nadie",
+          "nadie lo conocía",
+          "durmió",
+          "veinte años"
+        ]
+      },
+      {
+        "en": "His wife was already dead and his daughter was a grown woman.",
+        "hint_es": "Su esposa ya estaba muerta y su hija era…",
+        "targets": [
+          "estaba muerta",
+          "hija",
+          "era una mujer"
+        ]
+      },
+      {
+        "en": "Rip stayed in the village and told his story to everyone.",
+        "hint_es": "Rip se quedó en el pueblo y les contaba…",
+        "targets": [
+          "se quedó",
+          "les contaba",
+          "historia"
         ]
       }
     ],
     "vocab_focus": [
-      "panteón",
-      "vela",
-      "tumba",
-      "platicar",
-      "mariachi",
-      "atole",
-      "agradecido"
+      "pueblo",
+      "montaña",
+      "extraño",
+      "barba",
+      "dormirse",
+      "despertarse",
+      "diferente"
     ],
     "grammar_focus": [
       "g_imperfect",
       "g_preterite_irregular",
       "g_preterite_regular"
     ],
-    "model_es": "La noche del primero de noviembre fui a un panteón cerca de la ciudad. Eran las diez de la noche y hacía un poco de frío. Había miles de velas y flores de cempasúchil sobre las tumbas. Las familias comían, platicaban y escuchaban música junto a sus muertos. Unos mariachis tocaban una canción muy triste. De repente, una señora me invitó a sentarme con su familia. Me contó que su esposo era muy alegre y que le encantaba bailar. Me dio dos tamales y una taza de atole. Me quedé con ellos hasta la medianoche. Cuando salí del panteón, me sentía muy agradecido.",
-    "model_en": "On the night of November 1st I went to a cemetery near the city. It was ten at night and it was a little cold. There were thousands of candles and marigolds on the graves. Families were eating, chatting and listening to music next to their dead. Some mariachis were playing a very sad song. Suddenly, a lady invited me to sit with her family. She told me her husband had been very cheerful and that he loved to dance. She gave me two tamales and a cup of atole. I stayed with them until midnight. When I left the cemetery, I felt very grateful."
+    "model_es": "Rip Van Winkle vivía en un pueblo pequeño cerca de las montañas. Era un hombre muy simpático, pero no le gustaba trabajar. Un día, subió a las montañas con su perro para escapar de su esposa. Allí encontró a unos hombres extraños que jugaban a los bolos. Rip tomó un poco de su bebida y se durmió debajo de un árbol. Cuando se despertó, tenía una barba blanca muy larga. Bajó al pueblo, pero todo era diferente. No conocía a nadie y nadie lo conocía a él. ¡Durmió veinte años! Su esposa ya estaba muerta y su hija era una mujer adulta. Rip se quedó en el pueblo y les contaba su historia a todos.",
+    "model_en": "Rip Van Winkle lived in a small village near the mountains. He was a very friendly man, but he didn't like to work. One day, he went up into the mountains with his dog to get away from his wife. There he found some strange men who were playing ninepins. Rip drank a little of their drink and fell asleep under a tree. When he woke up, he had a very long white beard. He went down to the village, but everything was different. He didn't know anybody and nobody knew him. He had slept for twenty years! His wife was already dead and his daughter was a grown woman. Rip stayed in the village and used to tell his story to everyone."
   },
   {
-    "id": "st_thank_you_note",
+    "id": "st_leyenda_maiz",
     "tier": 4,
     "after_grammar": "g_comparisons",
-    "title": "A thank-you message",
-    "goal_en": "Write a thank-you message (9–10 sentences) to Lucía, your friend from Puebla, after your trip: thank her, remember the best moments, compare, and invite her to visit.",
+    "title": "La leyenda del maíz (Quetzalcóatl y las hormigas)",
+    "source": "Leyenda mexica",
+    "goal_en": "Retell the Mexica legend of how Quetzalcóatl brought corn to the people, in 11 sentences mixing imperfect and preterite, with comparisons (más… que, tan… como, el más…).",
     "beats": [
       {
-        "en": "Greet Lucía warmly.",
-        "hint_es": "Querida Lucía:",
+        "en": "Long ago, the Aztecs only ate roots and animals from the forest.",
+        "hint_es": "Hace mucho tiempo, los aztecas solo comían…",
         "targets": [
-          "querida",
-          "Lucía"
+          "aztecas",
+          "comían",
+          "raíces",
+          "animales"
         ]
       },
       {
-        "en": "Thank her for everything this week.",
-        "hint_es": "Muchas gracias por…",
+        "en": "Corn existed, but it was hidden inside a mountain.",
+        "hint_es": "El maíz existía, pero estaba escondido…",
         "targets": [
-          "gracias",
-          "por todo",
-          "semana"
+          "existía",
+          "estaba escondido",
+          "montaña"
         ]
       },
       {
-        "en": "Say the dinner at her parents' house was the best meal of your trip.",
-        "hint_es": "La cena en casa de tus papás fue…",
+        "en": "The gods tried to move the mountain, but it was stronger than them.",
+        "hint_es": "Los dioses intentaron mover la montaña, pero era más fuerte que…",
         "targets": [
-          "cena",
-          "fue",
-          "la mejor",
-          "viaje"
+          "dioses",
+          "intentaron",
+          "más fuerte que"
         ]
       },
       {
-        "en": "Say her mom's mole is better than the mole at any restaurant.",
-        "hint_es": "¡El mole de tu mamá es mejor que…!",
+        "en": "Then Quetzalcóatl, the wisest god of all, had an idea.",
+        "hint_es": "Entonces Quetzalcóatl, el dios más sabio…, tuvo…",
         "targets": [
-          "mole",
-          "mejor que",
-          "restaurante"
+          "Quetzalcóatl",
+          "el dios más sabio",
+          "tuvo una idea"
         ]
       },
       {
-        "en": "Remember that you laughed a lot when you got lost in the metro.",
-        "hint_es": "También nos reímos mucho cuando…",
+        "en": "He turned into a black ant, as small as a grain of sand.",
+        "hint_es": "Se convirtió en una hormiga negra, tan pequeña como…",
         "targets": [
-          "nos reímos",
-          "cuando",
-          "nos perdimos",
-          "metro"
+          "se convirtió",
+          "hormiga negra",
+          "tan pequeña como"
         ]
       },
       {
-        "en": "Say you learned lots of new words with her.",
-        "hint_es": "Contigo aprendí…",
+        "en": "A red ant showed him the secret path to the corn.",
+        "hint_es": "Una hormiga roja le mostró…",
         "targets": [
-          "aprendí",
-          "palabras",
-          "nuevas"
+          "hormiga roja",
+          "le mostró",
+          "camino secreto"
         ]
       },
       {
-        "en": "Say Mexico City is now one of your favorite cities.",
-        "hint_es": "Ahora la Ciudad de México es…",
+        "en": "The journey was long and hard, but he didn't give up.",
+        "hint_es": "El viaje fue largo y difícil, pero…",
         "targets": [
-          "una de mis ciudades favoritas"
+          "viaje",
+          "fue largo",
+          "no se rindió"
         ]
       },
       {
-        "en": "Tell her she has to visit you in Houston someday.",
-        "hint_es": "Tienes que visitarme…",
+        "en": "At last he took a grain of corn and brought it to the Aztecs.",
+        "hint_es": "Por fin tomó un grano de maíz y lo llevó…",
         "targets": [
-          "tienes que",
-          "visitarme",
-          "Houston"
+          "por fin",
+          "grano",
+          "lo llevó"
         ]
       },
       {
-        "en": "Say you hope to see her soon, and sign off with a hug.",
-        "hint_es": "Espero verte pronto. Un abrazo,",
+        "en": "The Aztecs planted the corn and their life was much better than before.",
+        "hint_es": "Los aztecas sembraron el maíz y su vida fue mucho mejor…",
         "targets": [
-          "espero",
-          "verte",
-          "pronto",
-          "abrazo"
+          "sembraron",
+          "mucho mejor que antes"
+        ]
+      },
+      {
+        "en": "With corn they built bigger, richer cities — that's why corn is Quetzalcóatl's most important gift.",
+        "hint_es": "Con el maíz construyeron ciudades más… Por eso, el maíz es el regalo más importante…",
+        "targets": [
+          "construyeron",
+          "más grandes",
+          "por eso",
+          "el regalo más importante"
         ]
       }
     ],
     "vocab_focus": [
-      "querido",
-      "cena",
-      "mejor",
-      "reírse",
-      "perderse",
-      "abrazo"
+      "maíz",
+      "dios",
+      "montaña",
+      "hormiga",
+      "grano",
+      "sembrar",
+      "regalo"
     ],
     "grammar_focus": [
       "g_comparisons",
-      "g_preterite_irregular",
-      "g_por_para"
+      "g_imperfect",
+      "g_preterite_irregular"
     ],
-    "model_es": "Querida Lucía:\nMuchas gracias por todo esta semana. La cena en casa de tus papás fue la mejor comida de mi viaje. ¡El mole de tu mamá es mejor que el mole de cualquier restaurante! También nos reímos mucho cuando nos perdimos en el metro. Contigo aprendí muchas palabras nuevas. Ahora la Ciudad de México es una de mis ciudades favoritas. Tienes que visitarme en Houston algún día. Espero verte pronto.\nUn abrazo,\nMatt",
-    "model_en": "Dear Lucía,\nThank you so much for everything this week. The dinner at your parents' house was the best meal of my trip. Your mom's mole is better than the mole at any restaurant! We also laughed a lot when we got lost in the metro. With you I learned lots of new words. Now Mexico City is one of my favorite cities. You have to visit me in Houston someday. I hope to see you soon.\nA hug,\nMatt"
+    "model_es": "Hace mucho tiempo, los aztecas solo comían raíces y animales del bosque. El maíz existía, pero estaba escondido dentro de una montaña. Los dioses intentaron mover la montaña, pero era más fuerte que ellos. Entonces Quetzalcóatl, el dios más sabio de todos, tuvo una idea. Se convirtió en una hormiga negra, tan pequeña como un grano de arena. Una hormiga roja le mostró el camino secreto hacia el maíz. El viaje fue largo y difícil, pero Quetzalcóatl no se rindió. Por fin tomó un grano de maíz y lo llevó a los aztecas. Los aztecas sembraron el maíz y su vida fue mucho mejor que antes. Con el maíz construyeron ciudades más grandes y más ricas. Por eso, el maíz es el regalo más importante de Quetzalcóatl.",
+    "model_en": "Long ago, the Aztecs only ate roots and animals from the forest. Corn existed, but it was hidden inside a mountain. The gods tried to move the mountain, but it was stronger than them. Then Quetzalcóatl, the wisest god of all, had an idea. He turned into a black ant, as small as a grain of sand. A red ant showed him the secret path to the corn. The journey was long and hard, but Quetzalcóatl didn't give up. At last he took a grain of corn and brought it to the Aztecs. The Aztecs planted the corn and their life was much better than before. With corn they built bigger and richer cities. That's why corn is Quetzalcóatl's most important gift."
   },
   {
-    "id": "st_next_trip",
+    "id": "st_caja_pandora",
     "tier": 4,
     "after_grammar": "g_subjunctive_taste",
-    "title": "My next trip",
-    "goal_en": "Write 10–12 sentences: look back on this trip (preterite + imperfect), plan the next one (ir a + infinitive), and finish with a wish (quiero que…, ojalá).",
+    "title": "La caja de Pandora (Pandora's Box)",
+    "source": "Mitología griega (Hesíodo)",
+    "goal_en": "Retell Pandora's Box in 11 sentences: tell the story in the past (preterite + imperfect), then finish with the future (va a…) and a wish with ojalá.",
     "beats": [
       {
-        "en": "On this trip you spent five days in Mexico City.",
-        "hint_es": "En este viaje pasé…",
+        "en": "Zeus gave Pandora a very beautiful box.",
+        "hint_es": "Zeus le dio a Pandora…",
         "targets": [
-          "pasé",
-          "cinco días",
-          "Ciudad de México"
+          "Zeus",
+          "le dio",
+          "caja"
         ]
       },
       {
-        "en": "You saw Día de Muertos for the first time and it was unforgettable.",
-        "hint_es": "Vi el Día de Muertos por primera vez y…",
+        "en": "He told her: 'I don't want you to ever open this box.'",
+        "hint_es": "Le dijo: «No quiero que abras…»",
         "targets": [
-          "vi",
-          "por primera vez",
-          "fue",
-          "inolvidable"
+          "le dijo",
+          "no quiero que abras"
         ]
       },
       {
-        "en": "When you arrived, you understood very little Spanish and were shy about speaking.",
-        "hint_es": "Cuando llegué, entendía… y me daba pena…",
+        "en": "Pandora lived happily with her husband, but every day she thought about the box.",
+        "hint_es": "Pandora vivía feliz…, pero cada día pensaba…",
         "targets": [
-          "cuando llegué",
-          "entendía",
-          "poco",
-          "me daba pena"
+          "vivía feliz",
+          "esposo",
+          "pensaba"
         ]
       },
       {
-        "en": "Now you can order food, ask how to get places and chat a little.",
-        "hint_es": "Ahora puedo pedir comida…",
+        "en": "'What's inside?' she wondered.",
+        "hint_es": "«¿Qué hay dentro?», se preguntaba.",
         "targets": [
-          "ahora",
-          "puedo",
-          "pedir",
-          "platicar"
+          "qué hay dentro",
+          "se preguntaba"
         ]
       },
       {
-        "en": "Next time you're going to stay two weeks.",
-        "hint_es": "La próxima vez voy a…",
+        "en": "One night she couldn't stand it anymore and opened the box.",
+        "hint_es": "Una noche, no pudo más y abrió…",
         "targets": [
-          "la próxima vez",
-          "voy a",
-          "quedarme",
-          "dos semanas"
+          "no pudo más",
+          "abrió la caja"
         ]
       },
       {
-        "en": "First you're going to Oaxaca to try the moles and the mezcal.",
-        "hint_es": "Primero voy a ir a Oaxaca para…",
+        "en": "All the evils of the world came out: sickness, sadness and war.",
+        "hint_es": "De la caja salieron todos los males…",
         "targets": [
-          "primero",
-          "Oaxaca",
-          "para",
-          "probar"
+          "salieron",
+          "males",
+          "enfermedad",
+          "tristeza",
+          "guerra"
         ]
       },
       {
-        "en": "Then you want to go to the beach in Puerto Escondido.",
-        "hint_es": "Después quiero ir…",
+        "en": "Pandora closed the box very fast, but it was already too late.",
+        "hint_es": "Pandora cerró la caja…, pero ya era tarde.",
         "targets": [
-          "después",
-          "playa",
-          "Puerto Escondido"
+          "cerró",
+          "ya era tarde"
         ]
       },
       {
-        "en": "You're also going to take Spanish classes every morning.",
-        "hint_es": "Además, voy a tomar clases…",
+        "en": "Only one thing stayed inside: hope.",
+        "hint_es": "Solo quedó una cosa dentro…",
         "targets": [
-          "además",
-          "clases",
-          "todas las mañanas"
+          "quedó",
+          "esperanza"
         ]
       },
       {
-        "en": "You want your friend Lucía to come with you for a few days.",
-        "hint_es": "Quiero que mi amiga Lucía…",
+        "en": "Since that day, people suffer, but they never lose hope.",
+        "hint_es": "Desde ese día, la gente sufre, pero nunca pierde…",
         "targets": [
-          "quiero que",
-          "venga",
-          "conmigo"
+          "desde ese día",
+          "sufre",
+          "nunca pierde"
         ]
       },
       {
-        "en": "Hopefully you can come back very soon!",
-        "hint_es": "¡Ojalá que pueda…!",
+        "en": "Tomorrow there will be problems again, but hope will always be with us. Let's hope we never lose it!",
+        "hint_es": "Mañana va a haber problemas otra vez, pero… ¡Ojalá que nunca…!",
         "targets": [
+          "va a haber",
+          "va a estar",
           "ojalá",
-          "pueda",
-          "volver",
-          "pronto"
+          "perdamos"
         ]
       }
     ],
     "vocab_focus": [
-      "viaje",
-      "inolvidable",
-      "dar pena",
-      "platicar",
-      "playa",
-      "clase",
-      "ojalá"
+      "caja",
+      "abrir",
+      "curiosidad",
+      "mal",
+      "guerra",
+      "esperanza",
+      "perder"
     ],
     "grammar_focus": [
       "g_subjunctive_taste",
@@ -1486,7 +1623,7 @@
       "g_preterite_irregular",
       "g_ir_a"
     ],
-    "model_es": "En este viaje pasé cinco días en la Ciudad de México. Vi el Día de Muertos por primera vez y fue inolvidable. Cuando llegué, entendía muy poco español y me daba pena hablar. Ahora puedo pedir comida, preguntar cómo llegar a los lugares y platicar un poco con la gente. La próxima vez voy a quedarme dos semanas. Primero voy a ir a Oaxaca para probar los moles y el mezcal. Después quiero ir a la playa en Puerto Escondido. Además, voy a tomar clases de español todas las mañanas. Quiero que mi amiga Lucía venga conmigo unos días. ¡Ojalá que pueda volver muy pronto! México, ¡nos vemos pronto!",
-    "model_en": "On this trip I spent five days in Mexico City. I saw Día de Muertos for the first time and it was unforgettable. When I arrived, I understood very little Spanish and I was shy about speaking. Now I can order food, ask how to get places and chat a little with people. Next time I'm going to stay two weeks. First I'm going to go to Oaxaca to try the moles and the mezcal. Then I want to go to the beach in Puerto Escondido. Also, I'm going to take Spanish classes every morning. I want my friend Lucía to come with me for a few days. I hope I can come back very soon! Mexico, see you soon!"
+    "model_es": "Zeus le dio a Pandora una caja muy bonita. Le dijo: «No quiero que abras esta caja nunca.» Pandora vivía feliz con su esposo Epimeteo, pero cada día pensaba en la caja. «¿Qué hay dentro?», se preguntaba. Una noche, no pudo más y abrió la caja. De la caja salieron todos los males del mundo: la enfermedad, la tristeza y la guerra. Pandora cerró la caja muy rápido, pero ya era tarde. Solo quedó una cosa dentro: la esperanza. Desde ese día, la gente sufre, pero nunca pierde la esperanza. Mañana va a haber problemas otra vez, pero la esperanza siempre va a estar con nosotros. ¡Ojalá que nunca la perdamos!",
+    "model_en": "Zeus gave Pandora a very beautiful box. He told her: \"I don't want you to ever open this box.\" Pandora lived happily with her husband Epimetheus, but every day she thought about the box. \"What's inside?\" she wondered. One night, she couldn't stand it any longer and opened the box. Out of the box came all the evils of the world: sickness, sadness and war. Pandora shut the box very fast, but it was already too late. Only one thing remained inside: hope. Since that day, people suffer, but they never lose hope. Tomorrow there will be problems again, but hope will always be with us. Let's hope we never lose it!"
   }
 ]
