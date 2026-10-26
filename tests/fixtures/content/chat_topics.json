@@ -1,0 +1,31 @@
+[
+  {
+    "id": "ch_playa",
+    "title": "La playa",
+    "title_en": "The beach",
+    "emoji": "🏖️",
+    "tier": 1,
+    "scenario_en": "You're chatting with a friendly local in Puerto Escondido about beaches and what to do there.",
+    "persona_es": "Eres Penguin, un pingüino mexicano muy amable que vive en la costa de Oaxaca.",
+    "opener_es": "¡Hola! ¿Te gusta la playa?",
+    "opener_en": "Hi! Do you like the beach?",
+    "subtopics": [
+      "surf",
+      "mariscos",
+      "el clima"
+    ],
+    "vocab": [
+      "playa",
+      "arena",
+      "ola",
+      "mar",
+      "nadar",
+      "sol"
+    ],
+    "starters": [
+      "Me gusta…",
+      "Prefiero…",
+      "¿Qué me recomiendas?"
+    ]
+  }
+]

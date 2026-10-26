@@ -62,6 +62,7 @@
       stat(Store.dueCards().length, "reviews due", "accent"),
       stat(`${day.new || 0}/${goal}`, "new today", "marigold"),
       stat(day.reviews || 0, "reviewed today"),
+      stat(day.unsure || 0, "“not sure” today"),
       stat(Store.streak(), "day streak", "good"),
       stat(`${Store.knownCount()}/${total}`, "words & phrases")));
     if ((day.new || 0) >= goal) page.appendChild(h("p.muted", "You've hit today's new-words goal 🎉 — reviews, Speak and Sounds are great next steps (or keep going if you have the energy)."));
@@ -79,6 +80,7 @@
       ["#/sounds", "👂", "How it really sounds", "Fast Mexican speech"],
       ["#/speak", "💬", "Speak", "Respond to situations"],
       ["#/read", "📚", "Read", "Stories, sentence by sentence"],
+      ["#/chat", "🗨️", "Charla", "Chat in Spanish with Penguin"],
       ["#/story", "✍️", "Your story", "Write it in Spanish"],
       ["#/grammar", "🧩", "Grammar", "Gender, agreement, verbs"],
       ["#/words", "📖", "Words", "Browse & search"],
@@ -186,7 +188,7 @@
       const el = App.exercise(ex, {
         rate: true,
         onDone: (res, rating) => {
-          Store.rate(id, rating || "good", { recognition: RECOG_DIRS.has(ex.dir) });
+          Store.rate(id, rating || "good", { recognition: RECOG_DIRS.has(ex.dir) && res.outcome !== "unsure" });
           reps[id] = (reps[id] || 0) + 1;
           if (rating === "again" && reps[id] < 3) again.push(id); else { n++; if (rating !== "hard" && rating !== "again") good++; }
           next();
@@ -337,7 +339,7 @@
         let good = 0;
         const ex = App.grammarDrillExercises(g);
         App.runExercises(host, App.shuffle(ex), {
-          onAnswer: (e, r) => { if (r.outcome !== "miss") good++; },
+          onAnswer: (e, r) => { if (r.outcome !== "miss" && r.outcome !== "unsure") good++; },
           onFinish: () => {
             const prev = Store.state.grammar[g.id] || {};
             const score = ex.length ? good / ex.length : 1;

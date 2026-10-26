@@ -57,6 +57,9 @@ content/grammar.json              grammar agent
 content/prompts.json              grammar agent
 content/stories.json              grammar agent
 content/readings.json             readings agent
+content/chat_topics.json          chat-model agent
+server/chat.py, scripts/setup_chat_model.py, models/ (git-ignored)   chat-model agent
+web/js/chat.js                    engine (chat page)
 web/index.html                    engine (single-page app, hash routes)
 web/js/*.js                       engine (except web/js/penguin.js)
 web/js/penguin.js                 design agent
@@ -251,6 +254,42 @@ their own words, then reveals the translation. **Not graded** — the learner se
   ]
 }
 ```
+
+### Conversation topic (`content/chat_topics.json`)
+
+Topics for the Spanish-only conversation partner ("Charla con Penguin"). The partner only talks about the chosen
+topic and steers back to it gently.
+
+```json
+{
+  "id": "ch_playa",
+  "title": "La playa",
+  "title_en": "The beach",
+  "emoji": "🏖️",
+  "tier": 1,                           // 1 = present tense, short sentences; 2 = + ir a / gustar / past basics; 3 = free
+  "scenario_en": "You're chatting with a friendly local in Puerto Escondido about beaches and what to do there.",
+  "persona_es": "Eres Penguin, un pingüino mexicano muy amable que vive en la costa de Oaxaca…",
+  "opener_es": "¡Hola! ¿Te gusta la playa?",
+  "opener_en": "Hi! Do you like the beach?",
+  "subtopics": ["surf", "mariscos", "pueblos de playa", "el clima"],
+  "vocab": ["playa", "arena", "ola", "mar", "nadar", "sol", "mariscos", "ceviche"],   // Spanish words to weave in
+  "starters": ["Me gusta…", "Prefiero…", "¿Qué me recomiendas…?"]                 // sentence starters shown as chips
+}
+```
+
+### Conversation API (`server/chat.py`, mounted by `server/app.py`)
+
+- `GET /api/chat/status` → `{"available": bool, "backend": "local" | "claude" | null, "model": "…", "note": "…"}`.
+  `local` = small open-source model on this computer (works offline); `claude` = Anthropic API if
+  `ANTHROPIC_API_KEY` is set and the user picks it (or no local model is installed).
+- `POST /api/chat` with
+  `{"topic_id": "ch_playa", "level": 1, "history": [{"role": "bot" | "user", "text": "…"}], "backend": "local" | "claude" | null}`
+  → `{"reply_es": "…", "reply_en": "…", "correction": {"original": "…", "fixed": "…", "why_en": "…"} | null,
+     "suggestions": ["2–3 short things the learner could say next, in Spanish"], "backend": "local", "ms": 1234}`.
+  `reply_es` is ONLY Spanish, 1–3 short sentences at the learner's level, ending with a question that keeps the
+  topic going. `correction` gently fixes the learner's LAST message (null if it was fine or not Spanish).
+  If the learner writes in English, reply in simple Spanish anyway (maybe recasting what they meant).
+- Errors → HTTP 503 `{"error": "…", "setup": "how to install the local model"}`; the page shows that nicely.
 
 ## Lesson plan (built by `scripts/build_course.py`, consumed by the app)
 

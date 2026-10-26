@@ -1,0 +1,5 @@
+# Optional: offline chat partner ("Charla con Penguin"). Installed by scripts/setup_chat_model.py.
+# Prebuilt CPU wheel (no compiler needed); works on Windows x64 with Python 3.13.
+--extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cpu
+--only-binary llama-cpp-python
+llama-cpp-python==0.3.36

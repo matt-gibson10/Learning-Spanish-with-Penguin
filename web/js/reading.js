@@ -5,9 +5,10 @@
   const App = window.App, h = App.h, esc = App.esc;
   App.pages = App.pages || {};
 
-  const MARKS = [["got", "Got it", "good"], ["partly", "Partly", "close"], ["missed", "Missed it", "miss"]];
+  const MARKS = [["got", "Got it", "good"], ["partly", "Partly", "close"], ["unsure", "Not sure 🤷", "unsure"], ["missed", "Missed it", "miss"]];
   const REACT = {
     got: ["¡Eso! You read that like a local.", "¡Muy bien! That sentence is yours now.", "Exactly the idea. ¡Órale!"],
+    unsure: ["Not sure is a fine answer — the translation's right there, and its words are in your reviews now.", "No pasa nada. Read the English, then the Spanish once more."],
     partly: ["Half the battle! The glossed words are going into your reviews.", "Close — you caught the gist. The new bits will come back in review.", "Good guess from context — that's real reading."],
     missed: ["No pasa nada — that one was dense. I've queued its words for review.", "Tricky one! Read the English, then the Spanish once more.", "That's what reading practice is for. Its words are now in your deck."],
   };
@@ -55,7 +56,7 @@
     let listenFirst = !!(Store.state.settings.listenFirst);
     let i = opts.restart ? 0 : Math.min(st.idx || 0, sents.length);
     if (opts.restart || i >= sents.length) { i = 0; }
-    const counts = { got: 0, partly: 0, missed: 0 };
+    const counts = { got: 0, partly: 0, unsure: 0, missed: 0 };
 
     function renderSoFar() {
       sofar.innerHTML = "";
@@ -136,7 +137,7 @@
           Store.save();
           row.innerHTML = "";
           react.innerHTML = "";
-          react.appendChild(App.coach(k === "got" ? "happy" : k === "partly" ? "thinking" : "oops", `<p class="speech-line">${esc(App.pick(REACT[k]))}</p>`, { size: 64, name: false }));
+          react.appendChild(App.coach(k === "got" ? "happy" : k === "partly" || k === "unsure" ? "thinking" : "oops", `<p class="speech-line">${esc(App.pick(REACT[k]))}</p>`, { size: 64, name: false }));
           const nx = h("button.btn.btn-primary.btn-next", { type: "button", onclick: () => { i++; st.idx = i; Store.save(); show(); window.scrollTo({ top: 0, behavior: "smooth" }); } }, i < sents.length - 1 ? "Next sentence →" : "Finish →");
           react.appendChild(nx);
           App.pageEnter = () => nx.click();
@@ -152,11 +153,11 @@
       Store.touchStreak();
       Store.save();
       bar.firstChild.style.width = "100%";
-      const tally = { got: 0, partly: 0, missed: 0 };
+      const tally = { got: 0, partly: 0, unsure: 0, missed: 0 };
       sents.forEach((_, k) => { if (st.marks[k]) tally[st.marks[k]]++; });
       const review = sents.map((s, k) => ({ s, k })).filter((x) => st.marks[x.k] && st.marks[x.k] !== "got");
       const end = h("div.card.card-hero.reader-end");
-      end.appendChild(App.coach("cheer", `<h3 class="title">${esc(App.line("done"))}</h3><p>${tally.got} got it · ${tally.partly} partly · ${tally.missed} missed — and you read a whole story in Spanish.</p>`, { size: 110 }));
+      end.appendChild(App.coach("cheer", `<h3 class="title">${esc(App.line("done"))}</h3><p>${tally.got} got it · ${tally.partly} partly${tally.unsure ? ` · ${tally.unsure} not sure` : ""} · ${tally.missed} missed — and you read a whole story in Spanish.</p>`, { size: 110 }));
       if (review.length) {
         end.appendChild(h("h4", "Worth another look"));
         end.appendChild(h("ul.reader-review", review.map(({ s, k }) => h("li", h("span", { lang: "es" }, s.es), " ", App.playBtn(s.es, "careful", { label: "" }),

@@ -271,3 +271,61 @@ table.conj td.pres { font-weight: 800; }
 
 /* where a reading / goal story comes from (Esopo, Andersen, leyenda mexicana…) */
 .story-source { display: block; font-size: 0.85em; font-style: italic; margin: 0.1rem 0 0.4rem; }
+
+/* ---- "Not sure" ---- */
+.btn-unsure { opacity: 0.85; }
+.ex-secondary { display: flex; justify-content: flex-end; gap: 8px; }
+.feedback.unsure { border-left: 5px solid var(--talavera, #1b65a6); background: var(--talavera-soft, #dcebfa); }
+.feedback.unsure .title::before, .feedback.unsure h3::before { content: '?'; background: var(--talavera, #1b65a6); }
+.refresher-inline { margin-top: 10px; padding: 12px; border-radius: 12px; background: var(--surface, #fff); }
+.mark-unsure { opacity: 0.9; }
+
+/* ---- chat (Charla) ---- */
+.chat-page { display: flex; flex-direction: column; gap: 12px; }
+.chat-topic { display: flex; flex-direction: column; gap: 4px; }
+.chat-topic h3, .chat-topic p { margin: 0; }
+.chat-emoji { font-size: 1.8rem; line-height: 1; }
+.level-row { align-items: center; }
+.chat-head .page-title { display: inline-flex; align-items: center; gap: 8px; }
+.chat-head p { margin: 4px 0 0; }
+.chat-log { display: flex; flex-direction: column; gap: 12px; padding: 12px; border-radius: var(--radius, 16px); background: var(--surface-2, #fbefd9); min-height: 240px; }
+.chat-row { display: flex; gap: 8px; align-items: flex-end; max-width: 100%; }
+.chat-row.user { flex-direction: column; align-items: flex-end; }
+.chat-avatar { flex: 0 0 44px; width: 44px; height: 44px; line-height: 0; }
+.chat-avatar svg { width: 44px; height: 44px; }
+.chat-bubble { max-width: min(88%, 560px); padding: 10px 14px; border-radius: 18px; box-shadow: var(--shadow-sm, 0 1px 3px rgba(0,0,0,.08)); overflow-wrap: anywhere; }
+.chat-bubble.bot { background: var(--surface, #fff); border: 1px solid var(--line, #ebd9bc); border-bottom-left-radius: 6px; }
+.chat-bubble.user { background: var(--primary, #1b65a6); color: var(--primary-ink, #fff); border-bottom-right-radius: 6px; }
+.chat-es { margin: 0; font-size: 1.1rem; line-height: 1.45; }
+.chat-en { margin: 6px 0 0; font-size: 0.95rem; }
+.chat-tools { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-top: 6px; }
+.tap-word { cursor: pointer; border-radius: 4px; }
+.tap-word:hover, .tap-word:focus-visible { background: var(--marigold-soft, #fff1d6); outline: none; }
+.gloss-box { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-top: 8px; padding: 6px 10px; border-radius: 10px; background: var(--marigold-soft, #fff1d6); }
+.gloss-close { margin-left: auto; }
+.chat-fixes { max-width: min(88%, 560px); display: flex; flex-direction: column; gap: 4px; }
+.chat-fix { font-size: 0.92rem; padding: 6px 10px; border-radius: 10px; background: var(--surface, #fff); border: 1px dashed var(--close, #e08e0b); }
+.chat-fix s { color: var(--miss, #bd4f35); }
+.fix-label { font-weight: 800; color: var(--ink-soft, #5e6378); }
+.typing-dots { display: inline-flex; gap: 4px; }
+.typing-dots i { width: 8px; height: 8px; border-radius: 50%; background: var(--ink-soft, #5e6378); opacity: .4; animation: chat-dot 1s infinite ease-in-out; }
+.typing-dots i:nth-child(2) { animation-delay: .15s; } .typing-dots i:nth-child(3) { animation-delay: .3s; }
+@keyframes chat-dot { 50% { opacity: 1; transform: translateY(-3px); } }
+@media (prefers-reduced-motion: reduce) { .typing-dots i { animation: none; } }
+.chat-composer { position: sticky; bottom: 0; display: flex; flex-direction: column; gap: 8px; padding: 10px 0 calc(10px + env(safe-area-inset-bottom)); background: linear-gradient(to top, var(--bg, #fff7ea) 85%, transparent); }
+.chat-suggestions { display: flex; flex-wrap: wrap; gap: 6px; }
+.chat-suggestions:empty { display: none; }
+.chat-chip { cursor: pointer; border: 0; font: inherit; }
+.chat-input { min-height: 52px; }
+.chat-footer { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+.chat-setup-text { white-space: pre-wrap; font-size: 0.85rem; background: var(--surface-2, #fbefd9); padding: 10px; border-radius: 10px; overflow-x: auto; }
+.chat-disclaimer { margin: 0; }
+.chat-setup code { overflow-wrap: anywhere; word-break: break-all; }
+.chat-setup { min-width: 0; }
+.chat-composer .accent-keys { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: thin; padding-bottom: 2px; }
+.chat-composer .accent-keys .btn { flex: 0 0 auto; }
+@media (max-width: 719px) {
+  .chat-composer { position: static; padding-top: 4px; background: none; }
+  .chat-composer .answer-row { flex-wrap: nowrap; }
+  .chat-composer .answer-row .answer-input { flex: 1 1 auto; }
+}

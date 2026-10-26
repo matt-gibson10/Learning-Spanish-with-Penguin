@@ -263,8 +263,17 @@ readings = [
          ]),
 ]
 
+chat_topics = [
+    dict(id="ch_playa", title="La playa", title_en="The beach", emoji="🏖️", tier=1,
+         scenario_en="You're chatting with a friendly local in Puerto Escondido about beaches and what to do there.",
+         persona_es="Eres Penguin, un pingüino mexicano muy amable que vive en la costa de Oaxaca.",
+         opener_es="¡Hola! ¿Te gusta la playa?", opener_en="Hi! Do you like the beach?",
+         subtopics=["surf", "mariscos", "el clima"], vocab=["playa", "arena", "ola", "mar", "nadar", "sol"],
+         starters=["Me gusta…", "Prefiero…", "¿Qué me recomiendas?"]),
+]
+
 OUT.mkdir(parents=True, exist_ok=True)
 for name, data in [("vocab_nouns", nouns), ("vocab_verbs", verbs), ("vocab_other", other), ("chunks", chunks), ("sounds", sounds),
-                   ("grammar", grammar), ("prompts", prompts), ("stories", stories), ("readings", readings), ("about", about)]:
+                   ("grammar", grammar), ("prompts", prompts), ("stories", stories), ("readings", readings), ("chat_topics", chat_topics), ("about", about)]:
     (OUT / f"{name}.json").write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 print("wrote", OUT)

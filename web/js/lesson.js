@@ -25,8 +25,8 @@
           if (opts.onAnswer) opts.onAnswer(ex, res);
         },
         onDone: (res) => {
-          if (res.outcome === "miss" && !ex.retry && opts.retry !== false) { queue.push(Object.assign({}, ex, { retry: true, title: "Once more: " + (ex.title || "") })); }
-          else { doneCount++; if (res.outcome !== "miss") good++; }
+          if ((res.outcome === "miss" || res.outcome === "unsure") && !ex.retry && opts.retry !== false) { queue.push(Object.assign({}, ex, { retry: true, title: "Once more: " + (ex.title || "") })); }
+          else { doneCount++; if (res.outcome !== "miss" && res.outcome !== "unsure") good++; }
           if (opts.onProgress) opts.onProgress(doneCount / total);
           nextEx();
         },
@@ -138,13 +138,14 @@
       const el = App.exercise(ex, {
         nextLabel: queue.length ? "Next →" : (r < rounds.length - 1 ? "Continue →" : "Finish →"),
         onDone: (res) => {
-          const ok = res.outcome !== "miss";
+          const unsure = res.outcome === "unsure";
+          const ok = res.outcome !== "miss" && !unsure;
           if (ok && EASY.has(t.type)) { okHere.add(it.id); Store.markRecognised(it.id); }
           if (!ok) {
             missedIds.add(it.id);
             if (!TYPED.has(t.type)) struggled.add(it.id);       // missed an easy one -> no typing for it this lesson
             if (!t.retry) {
-              queue.unshift({ kind: "flash", item: it });
+              if (!unsure) queue.unshift({ kind: "flash", item: it });     // "Not sure" already showed the card
               // try again later in this round (an easier version if it was typed)
               const again = { kind: "ex", item: it, type: TYPED.has(t.type) ? "produce-choice" : t.type, retry: true };
               queue.push(again);
@@ -284,7 +285,7 @@
       let good = 0;
       const ex = App.grammarDrillExercises(g, 8);
       App.runExercises(ctx.body, ex, {
-        onAnswer: (e, res) => { if (res.outcome !== "miss") good++; },
+        onAnswer: (e, res) => { if (res.outcome !== "miss" && res.outcome !== "unsure") good++; },
         onProgress: (f) => ctx.progress(0.3 + 0.7 * f),
         onFinish: () => {
           const prev = Store.state.grammar[g.id] || {};

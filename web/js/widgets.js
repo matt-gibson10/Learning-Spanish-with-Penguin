@@ -67,7 +67,7 @@
     });
     return d;
   };
-  const MOOD = { good: "happy", close: "thinking", miss: "oops" };
+  const MOOD = { good: "happy", close: "thinking", miss: "oops", unsure: "talking" };
   /**
    * Feedback panel (.feedback.good|close|miss): the penguin with the line + notes, the marked answer (.diff), the answer (.model).
    * res = grader result (or {outcome}). opts: {answer, why, extra (Node), line, audio, showDiff, alwaysAnswer, answerLang}
@@ -80,7 +80,7 @@
     html += (res.notes || []).map((n) => `<p class="note note-${n.kind}">${n.html}</p>`).join("");
     if (opts.why) html += `<p class="note why">${App.inline(opts.why)}</p>`;
     const moods = window.Penguin && window.Penguin.moodFor;
-    const coach = App.coach((moods && moods[o]) || MOOD[o], html, { size: 64, name: false });
+    const coach = App.coach((o !== "unsure" && moods && moods[o]) || MOOD[o], html, { size: 64, name: false });
     if (coach.firstChild && coach.firstChild.classList) coach.firstChild.classList.add("sm");
     box.appendChild(coach);
     if (res.tokens && res.tokens.length && opts.showDiff !== false) box.appendChild(App.diffEl(res.tokens));
@@ -255,6 +255,21 @@
       }
       if (opts.onAnswer) opts.onAnswer(res);
     }
+    /** "Not sure": reveal the answer (with a refresher card for words), no guessing, scheduled like a miss. */
+    function notSure() {
+      if (finished) return;
+      if (root._lock) root._lock();
+      const it = ex.item;
+      const extra = it ? h("div.refresher.refresher-inline", App.wordBig(it), h("p.gloss", it.en),
+        h("div.audio-row", App.playBtn(it.es, "careful", { item: it }), App.playBtn(it.es, "slow", { item: it })),
+        it.ex_es ? h("p.example", { lang: "es" }, it.ex_es, it.ex_en ? h("span.en", it.ex_en) : null) : null) : null;
+      Store.noteUnsure(it ? it.id : null);
+      finish({ outcome: "unsure", score: 0, notes: [] }, { alwaysAnswer: !it, answer: it ? null : (ex.display || (ex.answers || [])[0]), line: App.line("unsure"), extra, showDiff: false });
+      if (it) App.say(it.es, "careful", it);
+      else if (ex.lang !== "en" && (ex.display || (ex.answers || [])[0])) App.say(ex.display || ex.answers[0], "careful");
+    }
+    root._unsure = notSure;
+    const unsureBtn = () => h("button.btn.btn-ghost.btn-unsure", { type: "button", title: "Not sure (? or 0)", onclick: notSure }, "Not sure 🤷");
     let doneCalled = false;
     function done(res, rating) {
       if (doneCalled) return;
@@ -282,6 +297,11 @@
         grid.appendChild(b);
       });
       body.appendChild(grid);
+      body.appendChild(h("div.ex-secondary", unsureBtn()));
+      root._lock = () => App.$$(".choice", grid).forEach((c) => {
+        c.disabled = true;
+        if ((ex.answers || []).some((a) => App.fold(a) === App.fold(c.textContent.replace(/^\d+\s*/, "")))) c.classList.add("correct");
+      });
       root._keys = (k) => { const b = grid.querySelector(`[data-key="${k}"]`); if (b && !finished) b.click(); };
     } else if (ex.mode === "type") {
       const multi = !!ex.multiline;
@@ -291,7 +311,7 @@
         "aria-label": "your answer",
       });
       const check = h("button.btn.btn-primary", { type: "button" }, "Check");
-      const giveUp = h("button.btn.btn-ghost", { type: "button" }, "Show answer");
+      const giveUp = unsureBtn();
       const row = h("div.answer-row", inp, check);
       body.appendChild(row);
       if (ex.lang !== "en") body.appendChild(accentBar(inp));
@@ -304,11 +324,14 @@
         finish(res);
       };
       check.onclick = grade;
-      giveUp.onclick = () => { inp.readOnly = true; check.disabled = true; giveUp.disabled = true; finish({ outcome: "miss", score: 0, notes: [] }, { alwaysAnswer: true }); };
+      root._lock = () => { inp.readOnly = true; check.disabled = true; giveUp.disabled = true; };
       inp.addEventListener("keydown", (e) => { if (e.key === "Enter" && !e.shiftKey && !finished) { e.preventDefault(); e.stopPropagation(); grade(); } });
       setTimeout(() => { if (root.isConnected && !("ontouchstart" in window)) inp.focus(); }, 60);
     } else if (ex.mode === "tiles") {
-      body.appendChild(App.tiles(ex, (res) => finish(res, { alwaysAnswer: true })));
+      const tw = App.tiles(ex, (res) => finish(res, { alwaysAnswer: true }));
+      body.appendChild(tw);
+      body.appendChild(h("div.ex-secondary", unsureBtn()));
+      root._lock = () => { tw._locked = true; App.$$("button", tw).forEach((b) => (b.disabled = true)); };
     } else if (ex.mode === "flash") {
       const fc = h("div.flashcard", { tabindex: 0, role: "button", "aria-pressed": "false", "aria-label": "flip card" },
         h("div.front", ex.front || ""), h("div.back", ex.back || ""));
@@ -331,7 +354,23 @@
       flip.onclick = doFlip;
       root._enter = doFlip;
       body.appendChild(fc);
+      const nsb = unsureBtn();
+      nsb.onclick = () => {
+        if (fc.classList.contains("flipped")) return;
+        fc.classList.add("flipped"); fc.setAttribute("aria-pressed", "true"); flip.remove(); nsb.remove();
+        Store.noteUnsure(ex.id || (ex.item && ex.item.id));
+        if (opts.rate && ex.id) {
+          actions.innerHTML = "";
+          fb.innerHTML = "";
+          fb.appendChild(App.feedback({ outcome: "unsure", notes: [] }, { line: App.line("unsure"), showDiff: false }));
+          const rr = App.rateRow(ex.id, "again", (k) => done({ outcome: "unsure", score: 0, notes: [] }, k));
+          actions.appendChild(rr);
+          root._enter = () => done({ outcome: "unsure", score: 0, notes: [] }, "again");
+        } else finish({ outcome: "unsure", score: 0, notes: [] }, { showDiff: false, line: App.line("unsure") });
+      };
+      root._unsure = () => nsb.click();
       actions.appendChild(flip);
+      actions.appendChild(nsb);
     }
     return root;
   };
@@ -444,6 +483,11 @@
    * gender | cloze | recognise-flash | listen-natural
    */
   App.makeExercise = function (it, type) {
+    const ex = makeExercise(it, type);
+    if (ex && !ex.item) ex.item = it;
+    return ex;
+  };
+  function makeExercise(it, type) {
     const disp = App.withArticle(it);
     const accepted = Array.from(new Set([it.es, disp, it.es.replace(/[¿?¡!…]/g, "").trim()]));
     const big = () => App.wordBig(it);
@@ -511,7 +555,7 @@
             Array.isArray(it.natural) && it.natural.length ? h("span.natural", { lang: "es" }, it.natural[0]) : null],
           audio: null, autoplayFront: it.es };
     }
-  };
+  }
 
   // ------------------------------------------------------------------ word help for words not learned yet
   const SKIP_POS = new Set(["det", "prep", "conj", "pron"]);

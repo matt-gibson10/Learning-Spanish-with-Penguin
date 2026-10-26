@@ -285,6 +285,22 @@ def check_reading(e: dict, where: str, rep: Report, grammar_ids: set) -> dict | 
     return e
 
 
+def check_chat_topic(e: dict, where: str, rep: Report) -> dict | None:
+    eid = e.get("id")
+    if not eid or not e.get("title") or not e.get("opener_es"):
+        rep.add(where, f"{eid or '?'}: needs id, title and opener_es — skipped")
+        return None
+    if not str(eid).startswith("ch_"):
+        rep.add(where, f"{eid}: id should start with ch_")
+    if e.get("tier") not in (1, 2, 3):
+        e["tier"] = 1
+    for k in ("subtopics", "vocab", "starters"):
+        if k in e and not (isinstance(e[k], list) and all(isinstance(x, str) for x in e[k])):
+            rep.add(where, f"{eid}: {k} must be a list of strings — dropped")
+            e.pop(k)
+    return e
+
+
 def check_story(e: dict, where: str, rep: Report, grammar_ids: set) -> dict | None:
     eid = e.get("id")
     if not eid or not e.get("title"):
@@ -555,7 +571,7 @@ def main(argv=None) -> int:
     files = {p.name: p for p in sorted(cdir.glob("*.json")) if not p.name.startswith("_")}
     vocab_files = [files[n] for n in sorted(files) if n.startswith("vocab_")]
     raw = {k: load_json(files[f"{k}.json"], rep) if f"{k}.json" in files else []
-           for k in ("chunks", "sounds", "grammar", "prompts", "stories", "readings", "about")}
+           for k in ("chunks", "sounds", "grammar", "prompts", "stories", "readings", "about", "chat_topics")}
 
     # vocab: merge, dedupe by id (first file wins, but report), sort by rank
     vocab, seen = [], {}
@@ -594,6 +610,7 @@ def main(argv=None) -> int:
     prompts = dedupe(raw["prompts"], "prompts", check_prompt, gids)
     stories = dedupe(raw["stories"], "stories", check_story, gids)
     readings = dedupe(raw["readings"], "readings", check_reading, gids)
+    chat_topics = dedupe(raw["chat_topics"], "chat_topics", check_chat_topic)
     about = [a for a in raw["about"] if isinstance(a, dict) and (a.get("title") or a.get("body"))]
 
     sids = {s["id"] for s in sounds}
@@ -620,11 +637,11 @@ def main(argv=None) -> int:
             "version": 1, "trip": "2026-10-30",
             "counts": {"vocab": len(vocab), "chunks": len(chunks), "sounds": len(sounds), "grammar": len(grammar),
                        "prompts": len(prompts), "stories": len(stories), "readings": len(readings),
-                       "units": len(units), "lessons": n_lessons},
+                       "chat_topics": len(chat_topics), "units": len(units), "lessons": n_lessons},
             "sources": sorted(p.name for p in [*vocab_files, *[files[f"{k}.json"] for k in raw if f"{k}.json" in files]]),
         },
         "vocab": vocab, "chunks": chunks, "sounds": sounds, "grammar": grammar,
-        "prompts": prompts, "stories": stories, "readings": readings, "about": about, "units": units,
+        "prompts": prompts, "stories": stories, "readings": readings, "chatTopics": chat_topics, "about": about, "units": units,
     }
     course = clean(course)
     body = json.dumps(course, ensure_ascii=False, separators=(",", ":"), sort_keys=False)
@@ -637,7 +654,7 @@ def main(argv=None) -> int:
         out.write_text(text, encoding="utf-8")
 
     summary = (f"course.js {'written' if changed else 'unchanged'} ({len(text) / 1024:.0f} KB): {len(vocab)} words, {len(chunks)} chunks, "
-               f"{len(sounds)} sound rules, {len(grammar)} grammar units, {len(prompts)} prompts, {len(stories)} stories, {len(readings)} readings, "
+               f"{len(sounds)} sound rules, {len(grammar)} grammar units, {len(prompts)} prompts, {len(stories)} stories, {len(readings)} readings, {len(chat_topics)} chat topics, "
                f"{len(about)} about cards -> {len(units)} units / {n_lessons} lessons "
                f"(steps: {', '.join(f'{k} {v}' for k, v in sorted(step_counts.items()))}); {rep.count()} problems")
     if not args.quiet:

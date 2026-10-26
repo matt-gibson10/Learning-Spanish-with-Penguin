@@ -96,7 +96,7 @@
 
   // ------------------------------------------------------------------ course index
   const C = (window.COURSE = window.COURSE || { meta: {}, vocab: [], chunks: [], sounds: [], grammar: [], prompts: [], stories: [], about: [], units: [] });
-  ["vocab", "chunks", "sounds", "grammar", "prompts", "stories", "about", "units"].forEach((k) => { if (!Array.isArray(C[k])) C[k] = []; });
+  ["vocab", "chunks", "sounds", "grammar", "prompts", "stories", "readings", "chatTopics", "about", "units"].forEach((k) => { if (!Array.isArray(C[k])) C[k] = []; });
   const items = new Map();
   C.vocab.forEach((v) => items.set(v.id, Object.assign(v, { cat: "word" })));
   C.chunks.forEach((c) => items.set(c.id, Object.assign(c, { cat: "chunk" })));
@@ -135,6 +135,8 @@
   const FALLBACK_LINES = {
     good: ["¡Muy bien!", "¡Eso!", "¡Perfecto!", "¡Excelente!", "¡Así se dice!", "¡Órale, qué bien!"],
     close: ["¡Casi! Look at the marked bits.", "So close — just a small slip.", "Good memory! Tiny fix below.", "¡Ya mero! Almost there."],
+    unsure: ["No pasa nada — here it is. Have a look and it'll come back in a bit.", "Good call to ask! Here's the answer — we'll see it again soon.",
+      "Not sure is fine. Take a peek, say it once, and on we go.", "¡Tranquilo! Here's the word — it'll stick next time."],
     miss: ["No pasa nada — have a look and try the next one.", "Tricky one! It'll come back around soon.", "That's how we learn. ¡Ánimo!"],
     streak: ["¡Racha! You're on a roll.", "Look at you go!", "¡Imparable!"],
     done: ["¡Listo! Lesson done.", "¡Terminamos! Great work.", "¡Bien hecho! On to the next one."],
@@ -172,7 +174,7 @@
   App.penguinName = () => App.penguin().name || "Penguin";
   App.line = function (kind) {
     const P = window.Penguin;
-    if (P && typeof P.line === "function") { try { const l = P.line(kind); if (l) return String(l).replace(/<[^>]+>/g, ""); } catch (e) { /* fall through */ } }
+    if (P && typeof P.line === "function" && P.lines && Array.isArray(P.lines[kind]) && P.lines[kind].length) { try { const l = P.line(kind); if (l) return String(l).replace(/<[^>]+>/g, ""); } catch (e) { /* fall through */ } }
     const arr = (P && P.lines && Array.isArray(P.lines[kind]) && P.lines[kind].length) ? P.lines[kind] : FALLBACK_LINES[kind] || FALLBACK_LINES.good;
     return App.pick(arr);
   };

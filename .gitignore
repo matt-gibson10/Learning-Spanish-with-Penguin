@@ -19,3 +19,9 @@ desktop.ini
 
 # Secrets
 .env
+
+# Local chat models (downloaded by scripts/setup_chat_model.py)
+/models/
+
+# Private business/legal research (kept local, not in the public repo)
+docs/COMMERCIAL.md

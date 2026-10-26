@@ -6,11 +6,11 @@
 
   const NAV = [
     ["home", "#/", "Home"], ["course", "#/course", "Course"], ["review", "#/review", "Review"], ["words", "#/words", "Words"],
-    ["sounds", "#/sounds", "Sounds"], ["grammar", "#/grammar", "Grammar"], ["speak", "#/speak", "Speak"], ["read", "#/read", "Read"], ["story", "#/story", "Story"],
+    ["sounds", "#/sounds", "Sounds"], ["grammar", "#/grammar", "Grammar"], ["speak", "#/speak", "Speak"], ["read", "#/read", "Read"], ["chat", "#/chat", "Chat"], ["story", "#/story", "Story"],
     ["about", "#/about", "Why"], ["settings", "#/settings", "⚙"],
   ];
   const TITLES = { home: "Home", course: "Course", lesson: "Lesson", review: "Review", words: "Words", sounds: "Sounds", grammar: "Grammar",
-    speak: "Speak", read: "Read", story: "Story", about: "Why this works", settings: "Settings" };
+    speak: "Speak", read: "Read", chat: "Charla", story: "Story", about: "Why this works", settings: "Settings" };
 
   function header() {
     const hd = App.$(".app-header");
@@ -87,6 +87,9 @@
       if (tag === "BUTTON" || tag === "A") { if (!(ex && ex._enter)) return; }   // let the focused control act
       if (ex && ex._enter) { e.preventDefault(); ex._enter(); return; }
       if (App.pageEnter && tag !== "INPUT") { e.preventDefault(); App.pageEnter(); }
+    } else if ((e.key === "?" || e.key === "0") && ex && ex._unsure && tag !== "INPUT" && !ex.classList.contains("answered")) {
+      e.preventDefault();
+      ex._unsure();
     } else if (/^[1-9]$/.test(e.key) && ex && ex._keys && tag !== "INPUT") {
       e.preventDefault();
       ex._keys(+e.key);

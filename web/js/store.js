@@ -17,6 +17,7 @@
       prompts: {},          // promptId -> {best, outcome, at}
       stories: {},          // storyId -> {done (ms)}
       drafts: {},           // storyId -> {beats: [], all: "", mode}; "p:" + promptId -> text
+      chats: {},            // chatTopicId -> {messages: [{role, text, en, correction, notes, suggestions, ts}], updated}
       readings: {},         // readingId -> {idx, marks: {i: got|partly|missed}, notes: {i: text}, done, at, runs}
       days: {},             // "YYYY-MM-DD" -> {reviews, new, steps}
       streak: { count: 0, last: "" },
@@ -61,7 +62,7 @@
     const newer = (a.updated || 0) >= (b.updated || 0) ? a : b;
     const older = newer === a ? b : a;
     const out = JSON.parse(JSON.stringify(newer));
-    const mapKeys = ["learned", "recog", "cards", "lessons", "grammar", "sounds", "prompts", "stories", "drafts", "days", "readings"];
+    const mapKeys = ["learned", "recog", "cards", "lessons", "grammar", "sounds", "prompts", "stories", "drafts", "days", "readings", "chats"];
     const stamp = (x) => (x == null ? 0 : typeof x === "number" ? x : (x.last || x.done || x.at || x.updated || 0));
     for (const k of mapKeys) {
       const o = older[k] || {};
@@ -74,7 +75,8 @@
             flow: Array.from(new Set([].concat(n.flow || [], val.flow || []))) };
         } else if (k === "days") {
           const n = out[k][id];
-          out[k][id] = { reviews: Math.max(n.reviews || 0, val.reviews || 0), new: Math.max(n.new || 0, val.new || 0), steps: Math.max(n.steps || 0, val.steps || 0) };
+          out[k][id] = { reviews: Math.max(n.reviews || 0, val.reviews || 0), new: Math.max(n.new || 0, val.new || 0), steps: Math.max(n.steps || 0, val.steps || 0),
+            unsure: Math.max(n.unsure || 0, val.unsure || 0) };
         } else if (stamp(val) > stamp(out[k][id])) out[k][id] = val;
       }
     }
@@ -131,7 +133,7 @@
   function today() { return window.App.dayKey(); }
   Store.day = function () {
     const k = today();
-    if (!Store.state.days[k]) Store.state.days[k] = { reviews: 0, new: 0, steps: 0 };
+    if (!Store.state.days[k]) Store.state.days[k] = { reviews: 0, new: 0, steps: 0, unsure: 0 };
     return Store.state.days[k];
   };
   Store.touchStreak = function () {
@@ -248,8 +250,16 @@
     return Store.dueCards(Date.now() + 12 * 60 * MIN).length;
   };
   /** Outcome of the grader -> suggested rating. */
+  /** "Not sure" pressed: counted separately (stats), scheduled like a miss elsewhere. */
+  Store.noteUnsure = function (id) {
+    const d = Store.day();
+    d.unsure = (d.unsure || 0) + 1;
+    if (id && Store.state.cards[id]) Store.state.cards[id].unsure = (Store.state.cards[id].unsure || 0) + 1;
+    Store.save();
+  };
   Store.suggest = function (res) {
     if (!res) return "good";
+    if (res.outcome === "unsure") return "again";
     if (res.outcome === "miss") return "again";
     if (res.outcome === "close") return "hard";
     const slips = (res.notes || []).filter((n) => n.kind === "grammar" || n.kind === "typo").length;
