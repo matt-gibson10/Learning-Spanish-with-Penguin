@@ -15,7 +15,7 @@ The learner must be able to:
 1. **Learn** the ~3000 most frequent words (lemmas) plus high-frequency **word sequences / chunks**.
 2. **Drill** words and chunks (spaced repetition): read, listen, type, recognise.
 3. **Hear** them at careful speed *and* in natural fast speech, with **"how it actually sounds"** respellings
-   (e.g. *para* → *pa'*, *¿qué onda?*, *todo* → *to'o*, *lo que es* → *lo kes*), like "by the way" → "badaway".
+   (e.g. *para* → *pa'*, *¿qué onda?*, *está* → *'tá*, *lo que es* → *lo kes*), like "by the way" → "badaway".
 4. Learn and drill **grammar** (gender o/a, agreement, ser/estar, conjugation, …) as well as vocabulary.
 5. **Respond to prompts** in Spanish (typed), graded *leniently*: typos and accents are forgiven, grammar slips
    are pointed out kindly but do not fail the answer. Meaning/recall is what is scored.
@@ -88,7 +88,7 @@ All JSON files are UTF-8, a top-level **array** of objects, pretty-printed (2-sp
 - Examples: short, natural, Mexican-flavoured, mostly present tense and high-frequency words, ≤ 10 words.
 - `natural` (optional everywhere): array of **"how it sounds in fast speech" respellings**, written so that a
   Spanish TTS voice reading the respelling sounds roughly like the reduced form (e.g. `"pa' que"`,
-  `"to'o bien"`, `"ps"`). Leave out when the word is not reduced in practice.
+  `"'tá bien"`, `"ps"`). Leave out when the word is not reduced in practice.
 
 ## Schemas
 
@@ -123,9 +123,19 @@ All JSON files are UTF-8, a top-level **array** of objects, pretty-printed (2-sp
   "ex_es": "Mi casa es tu casa.",
   "ex_en": "My house is your house.",
   "note": "optional learner tip: false friend, gender exception, Mexico usage",
-  "natural": ["optional fast-speech respellings"]
+  "natural": ["optional fast-speech respellings"],
+  "priority": 150                     // optional, see below
 }
 ```
+
+`natural` must be how **this word itself** sounds (e.g. *para* → `pa'`, *verdad* → `verdá`), never another form or a
+phrase (*voy a* → "voya" belongs on the chunk `c_voy_a_x`, not on `v_ir`). Central Mexico keeps its consonants: do
+not write /d/ dropped between vowels (*to'o, na'a, cansa'o*) — that is taught only inside `s_d_loss` as
+something to recognise. Final -d loss (*verdá, usté*) is fine.
+
+`priority` (optional integer, vocab and chunks, same scale as `rank`; lower = earlier): where the lesson plan
+places the item instead of its rank. Use it only for things a beginner traveller needs early (*taco* has corpus rank
+3200 but priority 150). It never changes `rank` or `tier`.
 
 ### Chunk / word sequence (`content/chunks.json`)
 
@@ -147,11 +157,14 @@ All JSON files are UTF-8, a top-level **array** of objects, pretty-printed (2-sp
 }
 ```
 
+Fillers / discourse markers (*este…, o sea, pues, ¿sabes?*) use `kind: "filler"`.
+
 ### Connected-speech rule (`content/sounds.json`)
 
 ```json
 {
   "id": "s_sinalefa",
+  "order": 2,                         // optional teaching order (1 = first); the file is kept in this order
   "name": "Vowel linking (sinalefa)",
   "summary": "one line",
   "explain": "3-6 sentences, plain English, how to hear it",
@@ -291,10 +304,42 @@ topic and steers back to it gently.
   If the learner writes in English, reply in simple Spanish anyway (maybe recasting what they meant).
 - Errors → HTTP 503 `{"error": "…", "setup": "how to install the local model"}`; the page shows that nicely.
 
+### Think out loud (`#/say`, `web/js/say.js`; `POST /api/translate` in `server/chat.py`)
+
+The learner speaks or types what he wants to say — in English, in attempted Spanish, or a mix ("quiero ir to the
+beach mañana") — and gets it back in natural Mexican Spanish with a word-by-word breakdown. The page splits the
+input into sentences and sends **one sentence per request** so results appear progressively.
+
+- `POST /api/translate` with `{"text": "one sentence, ≤ ~40 words", "backend": "local" | "claude" | null}` →
+
+```json
+{
+  "input_lang": "en",                  // "en" | "es" | "mixed"
+  "en": "I want to go to the beach tomorrow, but I don't know how to get there.",   // what he meant, clean English
+  "es": "Quiero ir a la playa mañana, pero no sé cómo llegar.",                     // natural Mexican Spanish
+  "pieces": [                          // the Spanish sentence cut into small chunks IN SPANISH ORDER; joined they
+    {"es": "Quiero", "en": "I want"},  // reproduce `es` (punctuation attached to a piece is fine)
+    {"es": "ir", "en": "to go"},
+    {"es": "a la playa", "en": "to the beach"},
+    {"es": "mañana,", "en": "tomorrow"},
+    {"es": "pero", "en": "but"},
+    {"es": "no sé", "en": "I don't know"},
+    {"es": "cómo llegar.", "en": "how to get there"}
+  ],
+  "tip": "Spanish drops 'I': quiero already means 'I want'.",   // optional, one short line, or ""
+  "correction": null,                  // when input was a Spanish attempt: {"original", "fixed", "why_en"} | null
+  "backend": "local", "ms": 5200
+}
+```
+
+- The server validates that the pieces' `es` joined equal `es` (ignoring spaces/punctuation); if not, it returns
+  `"pieces": []` and the page falls back to its own word-by-word gloss from the course lexicon (form → lemma → `en`).
+- Same error shape as chat (503 `{error, setup}`), same backends, same warm-up (`/api/chat/status?warm=1`).
+
 ## Lesson plan (built by `scripts/build_course.py`, consumed by the app)
 
 `window.COURSE = { meta, vocab, chunks, sounds, grammar, prompts, stories, units }` where `vocab` etc. are the
-merged arrays (deduplicated by `id`, sorted by `rank`) and
+merged arrays (deduplicated by `id`, sorted by `rank`; `sounds` sorted by `order`) and
 
 ```json
 "units": [
@@ -316,6 +361,38 @@ merged arrays (deduplicated by `id`, sorted by `rank`) and
 
 Front-load what a traveller needs (greetings, numbers, ordering, directions, hotel, transport) while still
 following frequency.
+
+### Starter path (`content/starter_path.json`)
+
+The first lessons are authored, not generated. The file is an ordered array; entry *n* becomes lesson *n*:
+
+```json
+[
+  {"title": "Eleven to twenty · paying",            // shown as the lesson title
+   "items": ["v_once", "v_doce", "c_cuanto_es"],     // learn/drill order as written; every id must exist
+   "grammar": "g_numbers",                           // or null
+   "sounds": "s_numbers",                            // or null
+   "prompt": "p_order_tacos",                        // optional; else the build picks the next unlocked prompt
+   "note": "optional, for authors only"}
+]
+```
+
+The build validates every id (unknown ids and ids used twice are reported and skipped), places these lessons first,
+then continues with every item not used yet, ordered by `priority` (when present) else `rank`, 11 per lesson, with
+the remaining grammar units (by `order`) and sound rules (by `order`) spread out as before. **Entry 1 is lesson
+`u01l01`, which the owner has completed: never change its items or their order.** Without a starter path (e.g. the
+test fixture) the old generated "trip pack" is used.
+
+Other plan rules:
+
+- **Aliases.** A chunk and a word with the same text and an overlapping gloss (*c_gracias* / *v_gracias*) are taught
+  once. The build keeps one (the starter path's choice, else the chunk unless the word is richer) and emits the
+  other with `"alias_of": "<kept id>"`. Aliased records stay in `vocab` / `chunks` so saved progress still resolves;
+  they never appear in a lesson. The app may treat progress on either id as progress on the kept one.
+- **Optional lessons.** The Día de Muertos lesson is emitted with `"optional": true` (around lesson 30) together
+  with the Día de Muertos prompts. The app may let the learner skip it.
+- **Titles.** Starter lessons use their `title`; generated lessons are "Topic · headline item", e.g.
+  "Eating out · ¿qué me recomienda?".
 
 ## UI contract (`web/css/theme.css` + `web/js/penguin.js`)
 

@@ -16,9 +16,15 @@
     if ((spec.targets || []).length) {
       extra.appendChild(h("div.fb-row", h("span.fb-label", `Key words ${r.targets.hit.length}/${spec.targets.length}`), targetChips(r)));
     }
-    const line = r.outcome === "good" ? App.line("good") + " Your meaning comes across." :
+    const slips = (r.notes || []).filter((n) => n.kind === "grammar").length;
+    const line = r.outcome === "good" ? (slips ? "Your meaning comes across — a couple of small fixes below." : App.line("good") + " Your meaning comes across.") :
       r.outcome === "close" ? "¡Casi! Good start — try to work in the missing words." : "Let's try that again — the key words below will help.";
     return App.feedback(r, { line, extra, showDiff: true });
+  }
+  /** penguin:answer for free writing (see App.emitAnswer in widgets.js). */
+  function emitFree(r, d) {
+    App.emitAnswer(Object.assign({ mode: "free", outcome: r.outcome, score: typeof r.score === "number" ? r.score : null, production: true,
+      slip: r.outcome === "good" && (r.notes || []).some((n) => n.kind === "grammar") }, d));
   }
   function grammarLinks(ids) {
     const gs = (ids || []).map(App.grammar).filter(Boolean);
@@ -97,24 +103,28 @@
     const card = h("div.card.prompt-card");
     card.appendChild(h("p.situation", h("span.tag", p.situation || "Situation")));
     card.appendChild(h("p.prompt-en", p.prompt_en));
+    // listen first: what they say is heard at natural speed; the text only on demand or after Check
+    let revealSaid = () => {};
     if (p.prompt_es) {
+      const text = h("span.prompt-es.hidden", { lang: "es" }, p.prompt_es);
+      const showBtn = h("button.btn.btn-ghost.btn-sm", { type: "button" }, "Show what they said");
+      revealSaid = () => { text.classList.remove("hidden"); showBtn.remove(); };
+      showBtn.onclick = revealSaid;
       const said = h("div.they-say",
-        h("span.fb-label", "They say"),
-        h("span.prompt-es", { lang: "es" }, p.prompt_es),
-        h("div.audio-row", App.playBtn(p.prompt_es, "careful"), App.playBtn(p.prompt_es, "natural"), App.playBtn(p.prompt_es, "slow")));
+        h("span.fb-label", "They say"), text, showBtn,
+        h("div.audio-row", App.playBtn(p.prompt_es, "natural"), App.playBtn(p.prompt_es, "careful"), App.playBtn(p.prompt_es, "slow")));
       card.appendChild(said);
-      if (Store.state.settings.autoplay !== false) setTimeout(() => { if (card.isConnected) App.say(p.prompt_es, "careful"); }, 300);
+      if (Store.state.settings.autoplay !== false) setTimeout(() => { if (card.isConnected) App.say(p.prompt_es, "natural"); }, 300);
     }
     const draftKey = "p:" + p.id;
     const ta = h("textarea.answer-input", { rows: 3, lang: "es", placeholder: "Responde en español…", "aria-label": "your answer", spellcheck: "false" });
     ta.value = Store.state.drafts[draftKey] || "";
     ta.addEventListener("input", App.debounce(() => { Store.state.drafts[draftKey] = ta.value; Store.save(); }, 500));
-    const help = App.wordHelp((p.targets || []).join(" "));
-    if (help) card.appendChild(help);
     card.appendChild(ta);
     card.appendChild(App.accentBar(ta));
+    const help = App.wordHelp((p.targets || []).join(" "));
     const hints = h("details.hints", h("summary", "Hints"),
-      (p.targets || []).length ? h("p", "Try to use: ", h("span", { lang: "es" }, p.targets.join(" · "))) : null,
+      help, (p.targets || []).length ? h("p", "Try to use: ", h("span", { lang: "es" }, p.targets.join(" · "))) : null,
       (p.hints || []).map((x) => h("p", { html: App.inline(x) })));
     const check = h("button.btn.btn-primary", { type: "button" }, "Check");
     const mic = micInto(ta);
@@ -122,18 +132,28 @@
     card.appendChild(hints);
     const fb = h("div.prompt-feedback");
     card.appendChild(fb);
+    let tries = 0;
     check.onclick = () => {
       const text = ta.value;
       if (!text.trim()) { ta.focus(); return; }
+      tries++;
       const spec = { targets: p.targets || [], models: p.models || [] };
       const r = Grader.gradeFree(text, spec);
+      emitFree(r, { itemKind: "prompt", refId: p.id, exType: "prompt", context: opts.inLesson ? "lesson" : "speak", retry: tries > 1 });
+      revealSaid();
       fb.innerHTML = "";
       fb.appendChild(freeFeedback(r, spec));
       const more = h("div.prompt-more");
       const gl = grammarLinks(p.grammar);
       if (gl) more.appendChild(gl);
-      more.appendChild(h("h4", "Model answers"));
-      more.appendChild(modelList(p.models));
+      // a weak first try: hints open, models behind a click, so the retry comes from memory
+      if (r.outcome === "miss" && tries < 2) {
+        hints.open = true;
+        more.appendChild(h("details.models-wrap", h("summary", "Show model answers"), modelList(p.models)));
+      } else {
+        more.appendChild(h("h4", "Model answers"));
+        more.appendChild(modelList(p.models));
+      }
       const cb = App.coachButton(() => ({ kind: "prompt", task_en: p.prompt_en, context_es: p.prompt_es || "", text: ta.value, targets: p.targets || [], model_answers: p.models || [] }));
       if (cb) more.appendChild(cb);
       const prev = Store.state.prompts[p.id] || {};
@@ -154,7 +174,18 @@
     ta.addEventListener("keydown", (e) => { if (e.key === "Enter" && (e.ctrlKey || e.metaKey)) { e.preventDefault(); check.click(); } });
     return card;
   };
-  function unlocked(x) { return !x.after_grammar || Store.isGrammarDone(x.after_grammar) || lessonReached(x.id); }
+  function unlocked(x) { return !x.after_grammar || Store.isGrammarDone(x.after_grammar) || lessonReached(x.id) || targetsLearned(x); }
+  /** Tier-1 prompts open as soon as most of their target words are learned (not only after their lesson). */
+  function targetsLearned(p) {
+    const ts = p.targets || [];
+    if (!ts.length || (p.tier || 1) > 1) return false;
+    const known = ts.filter((t) => {
+      const f = App.fold(t);
+      if (App.allItems().some((x) => Store.isLearned(x.id) && App.fold(x.es.replace(/[¿?¡!.,]/g, "")).includes(f))) return true;
+      try { return Grader.lookup(t).some((e) => Store.isLearned(e.lemma)); } catch (e) { return false; }
+    });
+    return known.length >= Math.ceil(ts.length * 0.75);
+  }
   function lessonReached(id) {   // the course has reached the lesson that contains this prompt/story
     for (const l of App.lessons()) {
       if (l.steps.some((s) => s.id === id)) return (Store.lessonState(l.id).step || 0) > 0;
@@ -215,8 +246,10 @@
         const check = h("button.btn.btn-secondary", { type: "button", onclick: () => {
           if (!ta.value.trim()) { ta.focus(); return; }
           const spec = { targets: b.targets || [] };
+          const r = Grader.gradeFree(ta.value, spec);
+          emitFree(r, { itemKind: "story", refId: s.id, refIndex: i, exType: "story-beat", context: opts.inLesson ? "lesson" : "story", retry: !!fb.childNodes.length });
           fb.innerHTML = "";
-          fb.appendChild(freeFeedback(Grader.gradeFree(ta.value, spec), spec));
+          fb.appendChild(freeFeedback(r, spec));
         } }, "Check");
         box.append(App.wordHelp([(b.targets || []).join(" "), b.hint_es || ""]) || "", ta, h("div.answer-row", check, micInto(ta), hint), fb);
         area.appendChild(box);
@@ -233,8 +266,10 @@
         if (!ta.value.trim()) { ta.focus(); return; }
         const targets = Array.from(new Set((s.beats || []).flatMap((b) => b.targets || [])));
         const spec = { targets, models: s.model_es ? [s.model_es] : [] };
+        const r = Grader.gradeFree(ta.value, spec);
+        emitFree(r, { itemKind: "story", refId: s.id, exType: "story-all", context: opts.inLesson ? "lesson" : "story", retry: !!fb.childNodes.length });
         fb.innerHTML = "";
-        fb.appendChild(freeFeedback(Grader.gradeFree(ta.value, spec), spec));
+        fb.appendChild(freeFeedback(r, spec));
       } }, "Check my story");
       area.append(beatsList, App.wordHelp((s.beats || []).flatMap((b) => (b.targets || []).concat(b.hint_es || []))) || "", ta, App.accentBar(ta), h("div.answer-row", check, micInto(ta)), fb);
     }
@@ -277,7 +312,9 @@
     page.appendChild(h("h1.page-title", "Speak: respond to real situations"));
     page.appendChild(App.coach("talking", "Read the situation, listen to what they say, then answer in Spanish. <strong>Typos and slips are fine</strong> — I check that your meaning gets across and point out grammar gently."));
     if (!ps.length) { page.appendChild(h("p", "No prompts yet.")); return; }
-    const first = ps.find((x) => unlocked(x) && !(Store.state.prompts[x.id] && Store.state.prompts[x.id].outcome === "good"));
+    const notDone = (x) => !(Store.state.prompts[x.id] && Store.state.prompts[x.id].outcome === "good");
+    // always a Start: the first open prompt, else the easiest one not done yet (every tile opens anyway)
+    const first = ps.find((x) => unlocked(x) && notDone(x)) || ps.filter(notDone).sort((a, b) => (a.tier || 1) - (b.tier || 1))[0];
     if (first) page.appendChild(h("a.btn.btn-primary.btn-big", { href: `#/speak/${first.id}` }, `Start: ${first.situation || "next prompt"} →`));
     const grid = h("div.card-grid.prompt-list");
     ps.forEach((p) => {

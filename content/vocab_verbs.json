@@ -54,11 +54,7 @@
     },
     "ex_es": "Soy de Texas, ¿y tú?",
     "ex_en": "I'm from Texas, and you?",
-    "note": "ser = what or who something is (origin, job, time, material, events); estar = where it is or how it is right now. Present: soy, eres, es, somos, son; preterite: fui, fue; imperfect: era; subjunctive: sea; tú command: sé.",
-    "natural": [
-      "osea",
-      "eske"
-    ]
+    "note": "ser = what or who something is (origin, job, time, material, events); estar = where it is or how it is right now. Present: soy, eres, es, somos, son; preterite: fui, fue; imperfect: era; subjunctive: sea; tú command: sé."
   },
   {
     "id": "v_haber",
@@ -115,10 +111,7 @@
     },
     "ex_es": "¿Hay un cajero por aquí?",
     "ex_en": "Is there an ATM around here?",
-    "note": "\"Hay\" = there is/are (never \"ha\" in that sense); he/has/ha + participle = have done (¿ya has comido?); \"hay que\" + infinitive = you have to. Present: he, has, ha, hemos, han; preterite: hube, hubo (no accents); future: habré; subjunctive: haya; tú command: he.",
-    "natural": [
-      "quiubo"
-    ]
+    "note": "\"Hay\" = there is/are (never \"ha\" in that sense); he/has/ha + participle = have done (¿ya has comido?); \"hay que\" + infinitive = you have to. Present: he, has, ha, hemos, han; preterite: hube, hubo (no accents); future: habré; subjunctive: haya; tú command: he."
   },
   {
     "id": "v_estar",
@@ -175,15 +168,7 @@
     },
     "ex_es": "¿Dónde está el baño?",
     "ex_en": "Where is the bathroom?",
-    "note": "estar = where something is or how it is right now; estar + gerund = -ing (estoy comiendo); ser = what something is. Present: estoy, estás, está, estamos, están; preterite: estuve, estuvo (no accents); subjunctive: esté.",
-    "natural": [
-      "'toy",
-      "'tás",
-      "'tá",
-      "'tamos",
-      "'tán",
-      "'tá bien"
-    ]
+    "note": "estar = where something is or how it is right now; estar + gerund = -ing (estoy comiendo); ser = what something is. Present: estoy, estás, está, estamos, están; preterite: estuve, estuvo (no accents); subjunctive: esté."
   },
   {
     "id": "v_tener",
@@ -468,13 +453,7 @@
     },
     "ex_es": "Voy al centro en metro.",
     "ex_en": "I'm going downtown on the metro.",
-    "note": "ir a + infinitive = going to (voy a comer); ¡Vamos! = let's go; ¡Ya voy! = coming! Present: voy, vas, va, vamos, van; preterite: fui, fue; imperfect: iba; subjunctive: vaya; tú command: ve; gerund: yendo.",
-    "natural": [
-      "voya",
-      "vasa",
-      "vamosa",
-      "vamo' a"
-    ]
+    "note": "ir a + infinitive = going to (voy a comer); ¡Vamos! = let's go; ¡Ya voy! = coming! Present: voy, vas, va, vamos, van; preterite: fui, fue; imperfect: iba; subjunctive: vaya; tú command: ve; gerund: yendo."
   },
   {
     "id": "v_ver",
@@ -531,11 +510,7 @@
     },
     "ex_es": "¿Vemos una película esta noche?",
     "ex_en": "Shall we watch a movie tonight?",
-    "note": "\"A ver\" = let's see; in Mexico ver is the normal verb for watching TV. Irregular yo: veo; imperfect: veía; participle: visto.",
-    "natural": [
-      "aver",
-      "vasaver"
-    ]
+    "note": "\"A ver\" = let's see; in Mexico ver is the normal verb for watching TV. Irregular yo: veo; imperfect: veía; participle: visto."
   },
   {
     "id": "v_dar",
@@ -649,10 +624,7 @@
     },
     "ex_es": "No sé dónde está la parada.",
     "ex_en": "I don't know where the stop is.",
-    "note": "saber = know a fact or know how to (sé nadar); conocer = be familiar with people or places; saber a = to taste like. Irregular yo: sé; preterite: supe, supo (no accents); future: sabré; subjunctive: sepa.",
-    "natural": [
-      "nosé"
-    ]
+    "note": "saber = know a fact or know how to (sé nadar); conocer = be familiar with people or places; saber a = to taste like. Irregular yo: sé; preterite: supe, supo (no accents); future: sabré; subjunctive: sepa."
   },
   {
     "id": "v_querer",
@@ -709,11 +681,7 @@
     },
     "ex_es": "Quiero un café de olla, por favor.",
     "ex_en": "I'd like a café de olla, please.",
-    "note": "\"Te quiero\" = I love you (friends, family, partner); \"te amo\" is stronger; \"quisiera\" = I'd like (polite). Present: quiero, quieres, quiere, queremos, quieren; preterite: quise, quiso (no accents); future: querré.",
-    "natural": [
-      "¿quiés?",
-      "¿quiés que?"
-    ]
+    "note": "\"Te quiero\" = I love you (friends, family, partner); \"te amo\" is stronger; \"quisiera\" = I'd like (polite). Present: quiero, quieres, quiere, queremos, quieren; preterite: quise, quiso (no accents); future: querré."
   },
   {
     "id": "v_llegar",
@@ -825,8 +793,8 @@
       "irregular": false,
       "reflexive": false
     },
-    "ex_es": "¿Qué pasó? ¿Todo bien?",
-    "ex_en": "What happened? Everything OK?",
+    "ex_es": "¿Qué pasa? ¿Todo bien?",
+    "ex_en": "What's up? Everything OK?",
     "note": "\"¡Pásale!\" / \"¡Pásele!\" = come in / go ahead (Mexico); \"¿Qué pasó?\" is also a casual hello."
   },
   {
@@ -1338,8 +1306,8 @@
       "irregular": true,
       "reflexive": false
     },
-    "ex_es": "Siga derecho dos cuadras.",
-    "ex_en": "Go straight for two blocks.",
+    "ex_es": "Sigo derecho dos cuadras, ¿verdad?",
+    "ex_en": "I keep going straight for two blocks, right?",
     "note": "seguir + gerund = to keep doing (sigo estudiando). Stem change e→i: sigo, seguimos; also siguió, siguiendo; spelling: sigo, siga."
   },
   {
@@ -1738,10 +1706,7 @@
     },
     "ex_es": "Ya me voy, nos vemos.",
     "ex_en": "I'm off now, see you.",
-    "note": "\"¡Vámonos!\" = let's go; irse = leave (for good), salir = go out / depart. Present: voy, vas, va, vamos, van; preterite: fui, fue; imperfect: iba; subjunctive: vaya; tú command: ve; gerund: yendo; pronominal: me voy, te vas, se va, nos vamos, se van; commands vete / váyase.",
-    "natural": [
-      "vámonos"
-    ]
+    "note": "\"¡Vámonos!\" = let's go; irse = leave (for good), salir = go out / depart. Present: voy, vas, va, vamos, van; preterite: fui, fue; imperfect: iba; subjunctive: vaya; tú command: ve; gerund: yendo; pronominal: me voy, te vas, se va, nos vamos, se van; commands vete / váyase."
   },
   {
     "id": "v_tomar",
@@ -2082,11 +2047,7 @@
     },
     "ex_es": "¡Mira! Ahí está el mercado.",
     "ex_en": "Look! There's the market.",
-    "note": "\"¡Mira!\" also opens an explanation (\"look, …\"); Mexican speech often clips it to \"¡ira!\".",
-    "natural": [
-      "ira",
-      "ire"
-    ]
+    "note": "\"¡Mira!\" also opens an explanation (\"look, …\"); Mexican speech often clips it to \"¡ira!\"."
   },
   {
     "id": "v_llamarse",
@@ -2312,12 +2273,9 @@
       "irregular": false,
       "reflexive": false
     },
-    "ex_es": "Espérame tantito, ya voy.",
-    "ex_en": "Wait a sec for me, I'm coming.",
-    "note": "esperar = wait AND hope: \"espero que sí\" = I hope so.",
-    "natural": [
-      "'pérame"
-    ]
+    "ex_es": "Te espero en la entrada.",
+    "ex_en": "I'll wait for you at the entrance.",
+    "note": "esperar = wait AND hope: \"espero que sí\" = I hope so."
   },
   {
     "id": "v_buscar",
@@ -2655,8 +2613,8 @@
       "irregular": true,
       "reflexive": false
     },
-    "ex_es": "Escríbeme por WhatsApp.",
-    "ex_en": "Write to me on WhatsApp.",
+    "ex_es": "Te escribo por WhatsApp.",
+    "ex_en": "I'll write to you on WhatsApp.",
     "note": "Participle: escrito."
   },
   {
@@ -2712,8 +2670,8 @@
       "irregular": true,
       "reflexive": false
     },
-    "ex_es": "Perdí el camión de las ocho.",
-    "ex_en": "I missed the eight o'clock bus.",
+    "ex_es": "Siempre pierdo las llaves.",
+    "ex_en": "I always lose my keys.",
     "note": "perderse = to get lost. Stem change e→ie: pierdo, perdemos."
   },
   {
@@ -2883,8 +2841,8 @@
       "irregular": false,
       "reflexive": false
     },
-    "ex_es": "¿Qué ocurrió aquí?",
-    "ex_en": "What happened here?",
+    "ex_es": "Se me ocurre una idea.",
+    "ex_en": "I've got an idea.",
     "note": "\"Se me ocurre…\" = it occurs to me / I've got an idea."
   },
   {
@@ -2997,8 +2955,8 @@
       "irregular": true,
       "reflexive": false
     },
-    "ex_es": "¿Ya pidieron, jóvenes?",
-    "ex_en": "Have you ordered yet, folks?",
+    "ex_es": "¿Qué pides? Yo pido tacos.",
+    "ex_en": "What are you ordering? I'm getting tacos.",
     "note": "pedir = ask FOR something / order food; preguntar = ask a question. Stem change e→i: pido, pedimos; also pidió, pidiendo."
   },
   {
@@ -3054,8 +3012,8 @@
       "irregular": false,
       "reflexive": false
     },
-    "ex_es": "¿Recibiste mi mensaje?",
-    "ex_en": "Did you get my message?"
+    "ex_es": "¿Aquí reciben dólares?",
+    "ex_en": "Do you take dollars here?"
   },
   {
     "id": "v_recordar",
@@ -3679,8 +3637,8 @@
       "irregular": false,
       "reflexive": false
     },
-    "ex_es": "Resultó muy fácil.",
-    "ex_en": "It turned out to be very easy."
+    "ex_es": "Resulta que el museo cierra los lunes.",
+    "ex_en": "It turns out the museum is closed on Mondays."
   },
   {
     "id": "v_leer",
@@ -4359,8 +4317,8 @@
       "irregular": false,
       "reflexive": false
     },
-    "ex_es": "¿Quién ganó el partido?",
-    "ex_en": "Who won the game?",
+    "ex_es": "¿Quién gana, el América o las Chivas?",
+    "ex_en": "Who's winning, América or Chivas?",
     "note": "ganas (noun) = desire: tengo ganas de… = I feel like…."
   },
   {
@@ -4586,8 +4544,8 @@
       "irregular": true,
       "reflexive": false
     },
-    "ex_es": "Mi abuelo murió el año pasado.",
-    "ex_en": "My grandfather died last year.",
+    "ex_es": "Me muero de hambre.",
+    "ex_en": "I'm starving.",
     "note": "\"Me muero de hambre\" = I'm starving. Stem change o→ue: muero, morimos; also murió, muriendo; participle: muerto."
   },
   {
@@ -4870,8 +4828,8 @@
       "irregular": false,
       "reflexive": false
     },
-    "ex_es": "Por fin logré dormir.",
-    "ex_en": "I finally managed to sleep."
+    "ex_es": "No logro abrir la puerta.",
+    "ex_en": "I can't manage to open the door."
   },
   {
     "id": "v_explicar",
@@ -5097,8 +5055,8 @@
       "irregular": true,
       "reflexive": false
     },
-    "ex_es": "No te reconocí con lentes.",
-    "ex_en": "I didn't recognize you with glasses.",
+    "ex_es": "¿No me reconoces? Soy Ana.",
+    "ex_en": "Don't you recognise me? I'm Ana.",
     "note": "Irregular yo: reconozco."
   },
   {
@@ -8731,10 +8689,7 @@
     },
     "ex_es": "¿Cómo andas?",
     "ex_en": "How are you doing?",
-    "note": "Mexico: andar = to be / go around (ando cansado); \"¡Ándale!\" = come on / that's it / hurry. Preterite: anduve, anduvo (no accents).",
-    "natural": [
-      "ándale"
-    ]
+    "note": "Mexico: andar = to be / go around (ando cansado); \"¡Ándale!\" = come on / that's it / hurry. Preterite: anduve, anduvo (no accents)."
   },
   {
     "id": "v_guardar",

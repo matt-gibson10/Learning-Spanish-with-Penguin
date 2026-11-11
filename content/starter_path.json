@@ -1,0 +1,122 @@
+[
+  {
+    "title": "Hello & thank you",
+    "note": "Lesson u01l01: the owner has completed it. Keep these items, in this order, with no grammar/sounds/prompt.",
+    "items": ["c_hola_buenos_dias", "v_ir", "c_por_favor", "v_si_2", "c_gracias", "v_aqui", "c_muchas_gracias", "v_llegar", "v_el", "v_la", "v_de"],
+    "grammar": null,
+    "sounds": null
+  },
+  {
+    "title": "Good afternoon & excuse me",
+    "items": ["c_buenas_tardes", "c_buenas_noches", "c_buenas", "c_de_nada", "v_no", "c_perdon", "c_disculpe", "c_con_permiso", "c_hasta_luego", "c_habla_ingles", "c_hablo_poquito_espanol"],
+    "grammar": "g_pronunciation",
+    "sounds": "s_linking"
+  },
+  {
+    "title": "Sorry? · when the word won't come",
+    "items": ["c_no_entiendo", "c_mande", "c_mas_despacio_por_favor", "c_me_lo_puede_repetir", "c_no_se", "c_como_se_dice_x", "c_que_significa_x", "c_como_se_llama_esto", "c_es_como_x", "c_es_una_cosa_para_x", "c_no_me_acuerdo_de_la_palabra", "c_este"],
+    "grammar": null,
+    "sounds": "s_sinalefa"
+  },
+  {
+    "title": "One to ten · ¿cuánto cuesta?",
+    "items": ["v_uno", "v_dos", "v_tres", "v_cuatro", "v_cinco", "v_seis", "v_siete", "v_ocho", "v_nueve", "v_diez", "c_cuanto_cuesta", "c_a_ver"],
+    "grammar": null,
+    "sounds": null
+  },
+  {
+    "title": "Ordering · ¿me da…?",
+    "items": ["c_me_da_x_por_favor", "c_quiero_x", "c_quisiera_x", "c_que_va_a_querer", "c_tiene_x", "c_para_llevar", "c_la_cuenta_por_favor", "c_pues", "v_taco", "v_agua", "v_cerveza", "v_cafe"],
+    "grammar": "g_gender",
+    "sounds": null
+  },
+  {
+    "title": "Eleven to twenty · paying",
+    "items": ["v_once", "v_doce", "v_trece", "v_catorce", "v_quince", "v_dieciseis", "v_diecisiete", "v_dieciocho", "v_diecinueve", "v_veinte", "c_cuanto_es", "c_son_x_pesos", "c_aceptan_tarjeta"],
+    "grammar": "g_numbers",
+    "sounds": "s_numbers",
+    "prompt": "p_order_tacos"
+  },
+  {
+    "title": "What? Where? When? Who?",
+    "items": ["v_que_2", "v_donde_2", "v_cuando_2", "v_como_2", "v_cuanto_2", "v_quien_2", "v_por_que", "v_cual_2", "c_donde_esta_x", "c_donde_esta_el_bano", "v_bano", "v_cerca", "v_lejos"],
+    "grammar": null,
+    "sounds": "s_aphaeresis",
+    "prompt": "p_oxxo_water_price"
+  },
+  {
+    "title": "I am, I have, I can",
+    "items": ["v_ser", "c_soy_de_x", "v_estar", "c_estoy_x", "v_tener", "c_tengo_x", "v_querer", "c_quiere_x", "v_poder", "c_puedo_x", "c_voy_a_x", "c_necesito_x"],
+    "grammar": "g_ser",
+    "sounds": null,
+    "prompt": "p_where_from"
+  },
+  {
+    "title": "O sea… · more ways round a word",
+    "items": ["c_o_sea", "c_es_que_x", "c_como", "c_otra_vez_por_favor", "c_que_quiere_decir_x", "c_me_entiende", "c_no_se_como_decirlo", "c_es_algo_que_x", "c_es_un_lugar_donde_x", "c_es_lo_contrario_de_x", "c_la_cosa_esa", "c_como_te_explico"],
+    "grammar": null,
+    "sounds": "s_markers"
+  },
+  {
+    "title": "Right, left, straight on",
+    "items": ["c_a_la_derecha", "c_a_la_izquierda", "c_todo_derecho", "v_derecho_2", "c_a_dos_cuadras", "v_cuadra", "c_en_la_esquina", "c_como_llego_a_x", "c_esta_lejos", "c_esta_cerca", "c_de_vuelta_a_x", "c_me_lleva_a_x"],
+    "grammar": "g_estar",
+    "sounds": null,
+    "prompt": "p_where_bathroom"
+  },
+  {
+    "title": "Me llamo… · you and me",
+    "items": ["v_yo", "v_tu_2", "v_usted", "c_me_llamo_x", "c_como_te_llamas", "c_mucho_gusto", "c_de_donde_eres", "c_como_estas", "c_como_esta", "c_bien_gracias_y_tu", "c_muy_bien_y_usted"],
+    "grammar": "g_pronouns",
+    "sounds": "s_seseo",
+    "prompt": "p_introduce_name"
+  },
+  {
+    "title": "Today, tomorrow, ahorita",
+    "items": ["v_hoy", "v_manana_2", "v_ayer", "v_ahora", "c_ahorita", "c_ahorita_vengo", "c_que_hora_es", "c_a_que_hora_x", "c_a_las_x", "c_hasta_manana", "c_al_rato", "c_un_momento"],
+    "grammar": "g_articles",
+    "sounds": null,
+    "prompt": "p_tell_time"
+  },
+  {
+    "title": "Hay · me gusta · tengo que",
+    "items": ["c_hay_x", "c_no_hay_problema", "c_me_gusta_x", "c_que_rico", "c_esta_muy_rico", "c_tengo_que_x", "c_tengo_hambre", "c_tengo_sed", "c_esta_bien", "c_me_encanta", "c_algo_mas", "c_es_todo_gracias"],
+    "grammar": "g_hay",
+    "sounds": "s_same_letters",
+    "prompt": "p_restaurant_table"
+  },
+  {
+    "title": "Cash or card?",
+    "items": ["v_efectivo", "v_tarjeta", "v_cambio", "c_tiene_cambio", "c_no_tengo_cambio", "c_solo_efectivo", "c_en_efectivo_o_con_tarjeta", "v_caro", "v_barato", "c_esta_muy_caro", "c_me_hace_un_descuento", "c_cuanto_le_debo"],
+    "grammar": null,
+    "sounds": null,
+    "prompt": "p_pay_cash"
+  },
+  {
+    "title": "At the hotel",
+    "items": ["v_hotel", "v_cuarto", "v_llave", "v_reservacion", "c_tengo_una_reservacion", "c_a_nombre_de_x", "c_hay_wifi", "c_cual_es_la_contrasena_del_wifi", "c_no_funciona_x", "c_no_hay_agua_caliente", "c_puedo_dejar_mi_maleta_aqui"],
+    "grammar": "g_present_ar",
+    "sounds": "s_apocope",
+    "prompt": "p_hotel_checkin"
+  },
+  {
+    "title": "Getting around",
+    "items": ["v_metro", "v_camion", "v_taxi", "v_boleto", "c_un_boleto_para_x", "c_este_camion_va_a_x", "c_donde_esta_la_parada", "c_a_que_hora_sale", "c_aqui_me_bajo", "c_aqui_esta_bien", "c_pedir_un_uber", "c_ya_llego_tu_uber"],
+    "grammar": null,
+    "sounds": null,
+    "prompt": "p_taxi_destination"
+  },
+  {
+    "title": "What I did · fui, comí, me gustó",
+    "items": ["c_fui_a_x", "c_comi_x", "c_vi_x", "c_me_gusto_x", "c_estuvo_increible", "c_me_la_pase_muy_bien", "c_como_te_fue", "c_me_fue_bien", "c_que_te_parecio", "c_ayer_en_la_noche"],
+    "grammar": "g_present_er_ir",
+    "sounds": null
+  },
+  {
+    "title": "Help! · feeling ill",
+    "items": ["c_ayuda", "c_me_siento_mal", "c_me_duele_x", "c_necesito_un_doctor", "c_donde_hay_una_farmacia", "v_farmacia", "c_llame_a_la_policia", "c_estoy_perdido", "c_cuidado", "c_aguas", "c_perdi_mi_pasaporte"],
+    "grammar": null,
+    "sounds": null,
+    "prompt": "p_good_but_tired"
+  }
+]

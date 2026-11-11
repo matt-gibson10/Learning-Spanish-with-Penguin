@@ -6,6 +6,20 @@
   const DAY = 86400000;
 
   // ------------------------------------------------------------------ continue logic
+  /** Today's new-items goal reached? (Words auto-added by Read and personal phrases don't count.) */
+  App.goalReached = function () {
+    const d = Store.state.days[App.dayKey()] || {};
+    return (d.new || 0) >= (Store.state.settings.newPerDay || 20);
+  };
+  /** A "done" line that never contradicts the button beside it (no "go enjoy your day" next to "Next →"). */
+  App.doneLine = function (goal) {
+    for (let k = 0; k < 10; k++) {
+      const l = App.line("done");
+      if (!/enjoy|rest of (the|your) day|see you tomorrow|day off|that's enough/i.test(l) && (goal || !/goal/i.test(l))) return l;
+    }
+    return "¡Bien hecho!";
+  };
+  const GOAL_SUB = "Today's new-word goal is done. More new words are on the Course map if you want them.";
   App.continueTarget = function () {
     const due = Store.dueCards().length;
     const nxt = Store.nextLesson();
@@ -14,6 +28,12 @@
     if (due && (due >= 8 || sinceReview > 3 * 3600000 || !nxt || due > 10 * goal)) {
       return { href: "#/review", label: `Review ${due} card${due === 1 ? "" : "s"}`,
         sub: due > 10 * goal ? "Big review pile — new words are paused until it's smaller." : "Due reviews first — they keep what you've learned." };
+    }
+    if (App.goalReached()) {
+      // the daily goal is real: Review if anything is due, else a short listening session, else Speak
+      if (due) return { href: "#/review", label: `Review ${due} card${due === 1 ? "" : "s"}`, sub: GOAL_SUB };
+      if (App.listenPool().length >= 4) return { href: "#/review?mode=listen", label: "5-minute listening", sub: GOAL_SUB };
+      return { href: "#/speak", label: "Practise speaking", sub: GOAL_SUB };
     }
     if (nxt) {
       const st = Store.lessonState(nxt.id);
@@ -31,7 +51,7 @@
     const el = h("div.countdown", { role: "timer" });
     if (days > 0) el.append(h("span.num", String(days)), h("span.label", h("strong", days === 1 ? "day to Mexico" : "days to Mexico"), h("span", "trip starts " + App.TRIP.toLocaleDateString(undefined, { weekday: "short", month: "short", day: "numeric" }))));
     else if (days === 0) el.append(h("span.num", "¡Hoy!"), h("span.label", h("strong", "Trip day!"), h("span", "¡Buen viaje!")));
-    else el.append(h("span.num", "🇲🇽"), h("span.label", h("strong", "¡Buen viaje!"), h("span", "Keep practising while you're there.")));
+    else el.append(h("span.num", "🇲🇽"), h("span.label", h("strong", "¡Sigue así!"), h("span", "A little Spanish every day keeps it alive.")));
     return el;
   }
   function stat(num, label, cls) { return h("div.stat", { class: cls || "" }, h("span.num", String(num)), h("span.label", label)); }
@@ -57,6 +77,7 @@
     const total = App.allItems().length;
     const day = Store.state.days[App.dayKey()] || { reviews: 0, new: 0 };
     const goal = Store.state.settings.newPerDay || 20;
+    if (window.Rating && Rating.homeCard) { try { const rc = Rating.homeCard(); if (rc) page.appendChild(rc); } catch (e) { console.error(e); } }
     page.appendChild(h("h2.section-title", "Today"));
     page.appendChild(h("div.stat-row",
       stat(Store.dueCards().length, "reviews due", "accent"),
@@ -65,7 +86,7 @@
       stat(day.unsure || 0, "“not sure” today"),
       stat(Store.streak(), "day streak", "good"),
       stat(`${Store.knownCount()}/${total}`, "words & phrases")));
-    if ((day.new || 0) >= goal) page.appendChild(h("p.muted", "You've hit today's new-words goal 🎉 — reviews, Speak and Sounds are great next steps (or keep going if you have the energy)."));
+    if ((day.new || 0) >= goal) page.appendChild(h("p.muted", "You've hit today's new-words goal 🎉 — reviews, listening and Speak are the next steps. More new words are on the Course map if you want them."));
 
     const done = App.lessons().filter((l) => Store.lessonState(l.id).done).length;
     const all = App.lessons().length;
@@ -77,6 +98,8 @@
     const links = [
       ["#/course", "🗺️", "Course map", "All units and lessons"],
       ["#/review", "🔁", "Review", "Spaced repetition"],
+      ["#/say", "💭", "Think out loud → Spanish", "Say it in English, see it word by word"],
+      ["#/review?mode=listen", "🎧", "5-minute listening", "Dictation and gist, natural speed first"],
       ["#/sounds", "👂", "How it really sounds", "Fast Mexican speech"],
       ["#/speak", "💬", "Speak", "Respond to situations"],
       ["#/read", "📚", "Read", "Stories, sentence by sentence"],
@@ -126,46 +149,132 @@
   };
 
   // ------------------------------------------------------------------ review
-  // Main card: hear it -> recall the meaning. Typed production mostly for survival words and phrases.
-  const SURVIVAL_TOPICS = new Set(["courtesy", "restaurant", "food", "drink", "hotel", "directions", "transport", "money", "emergency", "shopping", "travel"]);
-  const isSurvival = (it) => (it.cat === "chunk" && (it.rank || 9999) <= 300) || (SURVIVAL_TOPICS.has(it.topic) && (it.rank || 9999) <= 1500);
+  // Recall-first (docs/REVIEW.md improvements 1–4). First review: hear it -> meaning (function words: a gap in a sentence).
+  // Afterwards the directions rotate recall, hear, cloze, recall, dictation, read; very common function words only ever
+  // appear inside a sentence (cloze, dictation). Verb cards with 2+ successes get a verb-form card every third review.
   const RECOG_DIRS = new Set(["hear", "read", "hearpick"]);
-  function reviewExercise(it, card) {
-    const seen = card.seen || 0;
-    let dir;
-    if (!Store.canProduce(it.id)) {
-      // new / not yet graduated: recognition and listening only (never typed Spanish)
-      dir = ["hear", "hearpick", "read"][seen % 3];
-    } else {
-      const dirs = isSurvival(it) ? ["hear", "produce", "read", "hear", "listen", "cloze"] : ["hear", "read", "hear", "cloze", "hear", "listen"];
-      dir = dirs[seen % dirs.length];
-    }
-    if (dir === "cloze" && !App.clozeOf(it)) dir = "hear";
-    let ex;
-    if (dir === "hearpick") ex = App.makeExercise(it, (it.natural || []).length && card.reps >= 1 ? "listen-natural-meaning" : "listen-meaning");
-    else if (dir === "hear") ex = App.makeExercise(it, "hear-flash");
-    else if (dir === "read") ex = App.makeExercise(it, "recognise-flash");
-    else if (dir === "produce") ex = App.makeExercise(it, "produce-type");
-    else if (dir === "listen") ex = App.makeExercise(it, card.reps >= 2 && (it.natural || []).length ? "listen-natural" : "listen-type");
-    else ex = App.makeExercise(it, "cloze");
-    ex.id = it.id;
-    ex.dir = dir;
-    if (dir === "recognise") ex.backAudio = null;
+  const DIRS = ["recall", "hear", "cloze", "recall", "dictation", "read"], FN_DIRS = ["cloze", "dictation"];
+  const DIR_LABEL = { hearpick: "Listen → meaning", hear: "Listen → meaning", read: "Read → meaning", recall: "From memory", produce: "Say it in Spanish",
+    listen: "Listen → write", cloze: "In context", dictation: "Dictation", form: "Verb form", relearn: "Relearn",
+    "mine-produce": "My phrase · say it in Spanish", "mine-hear": "My phrase · listen → meaning" };
+  function fnSentence(it) {   // a function word, inside its example sentence
+    const cz = App.makeExercise(it, "cloze");
+    if (cz && cz.exType === "cloze") return [cz, "cloze"];
+    const cc = App.makeExercise(it, "cloze-choice");
+    return cc ? [cc, "cloze"] : [App.makeExercise(it, "hear-flash"), "hear"];
+  }
+  /** Verb-form card: the unlocked form with the most misses, then the fewest successes; hear it until it has one success. */
+  function formExercise(it, card) {
+    const forms = App.verbForms(it).filter((f) => f.unlocked);
+    if (!forms.length) return null;
+    const st = (k) => (card.forms && card.forms[k]) || { ok: 0, miss: 0 };
+    forms.sort((a, b) => st(b.key).miss - st(a.key).miss || st(a.key).ok - st(b.key).ok || (Math.random() - 0.5));
+    const f = forms[0];
+    const ex = App.makeExercise(it, st(f.key).ok >= 1 ? "conj-produce" : "conj-hear", { formKey: f.key });
+    if (!ex) return null;
+    ex.id = it.id; ex.dir = "form"; ex.formKey = f.key;
     return ex;
   }
-  App.pages.review = function (main) {
+  function reviewExercise(it, card) {
+    if (it.cat === "mine" && App.phraseExercise) return App.phraseExercise(it, card);   // "My phrases" (say.js)
+    const seen = card.seen || 0, ok = card.ok || 0;
+    if (it.pos === "verb" && it.conj && ok >= 2 && seen % 3 === 2) { const fx = formExercise(it, card); if (fx) return finishEx(fx); }
+    const fn = App.isFunctionWord(it);
+    let dir = ok < 1 ? (fn ? "cloze" : "hear") : (fn ? FN_DIRS : DIRS)[(Math.max(1, seen) - 1) % (fn ? FN_DIRS : DIRS).length];
+    // standing rule: typed Spanish only for items he has been shown and recognised
+    if (!fn && ["recall", "cloze", "dictation"].includes(dir) && !Store.canProduce(it.id)) dir = "hear";
+    let ex;
+    if (fn && dir === "cloze") [ex, dir] = fnSentence(it);
+    else if (dir === "cloze") { ex = App.makeExercise(it, "cloze"); if (ex.exType !== "cloze") dir = "recall"; }
+    else if (dir === "dictation") {
+      if (App.dictationOf(it)) ex = App.makeExercise(it, "dictation");
+      else if (fn) [ex, dir] = fnSentence(it);
+      else { ex = App.makeExercise(it, App.naturalOf(it) ? "listen-natural" : "listen-type"); dir = "listen"; }
+    }
+    if (!ex) ex = App.makeExercise(it, dir === "recall" ? "produce-recall" : dir === "read" ? "recognise-flash" : "hear-flash");
+    ex.id = it.id;
+    ex.dir = dir;
+    return finishEx(ex);
+  }
+  function finishEx(ex) {
+    ex.rateOpts = { production: !!ex.production };
+    return ex;
+  }
+  App.reviewExercise = reviewExercise;
+
+  /** Material for the listening session: learned items whose example is a fair dictation, plus finished readings. */
+  App.listenPool = function () {
+    const out = [];
+    Object.keys(Store.state.learned).forEach((id) => {
+      const it = App.item(id);
+      if (it && it.cat !== "mine" && App.dictationOf(it)) out.push({ it, s: it.ex_es, en: it.ex_en });
+    });
+    (App.course.readings || []).forEach((r) => {
+      const st = (Store.state.readings || {})[r.id];
+      if (!st || !st.done) return;
+      (r.sentences || []).forEach((s, i) => { const n = Grader.tokenize(s.es).length; if (n >= 3 && n <= 9) out.push({ reading: r, i, s: s.es, en: s.en }); });
+    });
+    return out;
+  };
+  /** "5-minute listening" (#/review?mode=listen): ten items alternating dictation and gist. No effect on intervals. */
+  function listenSession(page) {
+    page.appendChild(h("h1.page-title", "5-minute listening"));
+    const pool = App.shuffle(App.listenPool());
+    const gistPool = App.shuffle(Object.keys(Store.state.learned).map(App.item).filter((x) => x && x.cat !== "mine" && x.ex_es && x.ex_en));
+    if (pool.length < 2 && gistPool.length < 4) {
+      page.appendChild(App.coach("sleepy", "<strong>Not enough material yet.</strong><br>Finish a few lessons (or a reading) and the listening session fills up with sentences you can follow."));
+      page.appendChild(h("div.btn-row", h("a.btn.btn-primary", { href: App.continueTarget().href }, "Continue →")));
+      return;
+    }
+    page.appendChild(App.coach("talking", "Ten sentences at natural speed. <strong>Play again</strong> slows it down step by step. Dictations: type what you hear. Gist: pick what it means.", { size: 72 }));
+    const list = [];
+    let pi = 0, gi = 0;
+    for (let k = 0; k < 10; k++) {
+      if (k % 2 === 0 && pi < pool.length) {
+        const p = pool[pi++];
+        const ex = p.it ? App.makeExercise(p.it, "dictation") : {
+          mode: "type", title: "Dictation: type the sentence you hear", prompt: h("div.listen-icon", "🔊"), answers: [p.s], display: p.s, lang: "es",
+          audio: { text: p.s, speed: "natural", natText: p.s, slowText: p.s, ramp: true }, listen: true, production: true, exType: "dictation",
+          itemKind: "reading", refId: p.reading.id, refIndex: p.i, after: h("p.ex-en", p.en) };
+        if (ex) list.push(ex);
+      } else if (gi < gistPool.length) {
+        const it = gistPool[gi++];
+        const others = App.shuffle(gistPool.filter((x) => x !== it && App.fold(x.ex_en) !== App.fold(it.ex_en))).slice(0, 3).map((x) => x.ex_en);
+        if (others.length < 3) continue;
+        list.push({ mode: "choice", title: "Listen — what's the gist?", prompt: h("div.listen-icon", "⚡🔊"), options: App.shuffle([it.ex_en].concat(others)),
+          answers: [it.ex_en], display: `${it.ex_es} — ${it.ex_en}`, optLang: "en", lang: "en", listen: true, item: it, exType: "listen-natural-meaning",
+          audio: { text: it.ex_es, speed: "natural", natText: it.ex_es, slowText: it.ex_es, ramp: true } });
+      }
+    }
+    const host = h("div.review-host");
+    page.appendChild(host);
+    let good = 0;
+    App.runExercises(host, list, {
+      context: "review", retry: false,
+      onAnswer: (e, r) => { if (r.outcome === "good" || r.outcome === "close") good++; },
+      onFinish: () => {
+        host.innerHTML = "";
+        host.appendChild(h("div.card.card-hero", App.coach("proud", `<strong>${esc(App.doneLine(App.goalReached()))}</strong><br>${good} of ${list.length} caught.`),
+          h("div.btn-row", h("a.btn.btn-primary.btn-big", { href: "#/review?mode=listen&t=" + Date.now() }, "Another five minutes"), h("a.btn.btn-secondary", { href: "#/" }, "Home"))));
+      },
+    });
+  }
+
+  App.pages.review = function (main, params, query) {
     const page = h("div.page.review-page");
     main.appendChild(page);
+    if (query && query.mode === "listen") return listenSession(page);
     page.appendChild(h("h1.page-title", "Review"));
-    const queue = Store.dueCards().slice(0, 40);
+    const queue = App.shuffle(Store.dueCards().slice(0, 40));      // shuffled: lesson order mustn't prime the answers
     const total = queue.length;
     if (!total) {
       const cards = Object.keys(Store.state.cards).length;
       const soon = Object.values(Store.state.cards).sort((a, b) => a.due - b.due)[0];
-      page.appendChild(App.coach("sleepy", cards ? `<strong>Nothing due right now.</strong><br>Next review ${soon ? "in " + Store.describeIvl(soon) : "later"}. Learn something new?` :
+      page.appendChild(App.coach("sleepy", cards ? `<strong>Nothing due right now.</strong><br>Next review ${soon ? "in " + Store.describeIvl(soon) : "later"}.` :
         "<strong>No cards yet.</strong><br>Finish a lesson (or add words from the Words page) and they'll show up here."));
-      const nxt = Store.nextLesson();
-      page.appendChild(h("div.btn-row", nxt ? h("a.btn.btn-primary.btn-big", { href: `#/lesson/${nxt.id}` }, "Next lesson →") : null, h("a.btn.btn-secondary", { href: "#/" }, "Home")));
+      const c = App.continueTarget();
+      page.appendChild(h("div.btn-row", c.href !== "#/review" ? h("a.btn.btn-primary.btn-big", { href: c.href }, c.label + " →") : null,
+        h("a.btn.btn-secondary", { href: "#/review?mode=listen" }, "🎧 5-minute listening"), h("a.btn.btn-ghost", { href: "#/" }, "Home")));
       return;
     }
     const bar = h("div.progress-bar", h("div.fill", { style: { width: "0%" } }));
@@ -173,7 +282,7 @@
     const host = h("div.review-host");
     page.append(bar, info, host);
     let n = 0, good = 0;
-    const again = [], reps = {};
+    const again = [], reps = {}, relearned = new Set();
     function next() {
       host.innerHTML = "";
       bar.firstChild.style.width = ((n / total) * 100).toFixed(1) + "%";
@@ -184,25 +293,51 @@
       const card = Store.state.cards[id];
       if (!it || !card) return next();
       info.textContent = `${Math.min(n + 1, total)} / ${total}` + (again.length ? ` · ${again.length} to repeat` : "");
-      const ex = reviewExercise(it, card);
+      if (card.leech && it.cat !== "mine" && !relearned.has(id)) return relearn(id, it, card);
+      show(id, it, reviewExercise(it, card));
+    }
+    /** Leech (4+ lapses): see the card again, then recall it from memory. */
+    function relearn(id, it, card) {
+      relearned.add(id);
+      host.appendChild(h("div.relearn-head", App.coach("thinking", `<p class="speech-line"><strong>Let's relearn this one.</strong> It keeps slipping away — have a good look, say it out loud, then try it from memory.</p>`, { size: 64, name: false })));
+      host.appendChild(App.itemCard(it, { showEnglish: true, mic: false }));
+      if (Store.state.settings.autoplay !== false) setTimeout(() => App.say(it.es, "careful", it), 200);
+      host.appendChild(h("div.btn-row", h("button.btn.btn-primary.btn-big", { type: "button", onclick: () => {
+        host.innerHTML = "";
+        const ex = App.isFunctionWord(it) ? fnSentence(it)[0] : App.makeExercise(it, "produce-recall");
+        ex.id = id; ex.dir = "relearn";
+        show(id, it, finishEx(ex));
+      } }, "Now from memory →")));
+      App.pageEnter = () => { const b = host.querySelector(".btn-big"); if (b) b.click(); };
+    }
+    function show(id, it, ex) {
+      App.pageEnter = null;
+      const card = Store.state.cards[id];
       const el = App.exercise(ex, {
-        rate: true,
+        rate: true, context: "review",
         onDone: (res, rating) => {
-          Store.rate(id, rating || "good", { recognition: RECOG_DIRS.has(ex.dir) && res.outcome !== "unsure" });
+          rating = rating || "good";
+          if (ex.dir === "form" && ex.formKey) {
+            card.forms = card.forms || {};
+            const f = card.forms[ex.formKey] || (card.forms[ex.formKey] = { ok: 0, miss: 0 });
+            if (res.outcome === "miss" || res.outcome === "unsure") { f.miss++; if (rating === "again") rating = "hard"; } else f.ok++;
+          }
+          Store.rate(id, rating, { recognition: RECOG_DIRS.has(ex.dir) && res.outcome !== "unsure", production: !!ex.production, hints: res.hintsUsed || 0 });
           reps[id] = (reps[id] || 0) + 1;
           if (rating === "again" && reps[id] < 3) again.push(id); else { n++; if (rating !== "hard" && rating !== "again") good++; }
           next();
         },
       });
-      el.appendChild(h("p.dir-label", { hearpick: "Listen → meaning", hear: "Listen → meaning", read: "Read → meaning", produce: "Say it in Spanish", listen: "Listen → write", cloze: "In context" }[ex.dir] || ""));
+      el.appendChild(h("p.dir-label", DIR_LABEL[ex.dir] || ""));
       host.appendChild(el);
     }
     function finish() {
       bar.firstChild.style.width = "100%";
       info.textContent = "";
-      host.appendChild(h("div.card.card-hero", App.coach("proud", `<strong>${esc(App.line("done"))}</strong><br>${total} cards reviewed${good ? `, ${good} solid` : ""}.`),
-        h("div.btn-row", h("a.btn.btn-primary.btn-big", { href: App.continueTarget().href }, "Continue →"), h("a.btn.btn-secondary", { href: "#/" }, "Home"))));
-      App.pageEnter = () => { location.hash = App.continueTarget().href; };
+      const c = App.continueTarget();
+      host.appendChild(h("div.card.card-hero", App.coach("proud", `<strong>${esc(App.doneLine(App.goalReached()))}</strong><br>${total} cards reviewed${good ? `, ${good} solid` : ""}.`),
+        h("div.btn-row", h("a.btn.btn-primary.btn-big", { href: c.href }, c.label + " →"), h("a.btn.btn-secondary", { href: "#/" }, "Home"))));
+      App.pageEnter = () => { location.hash = c.href; };
     }
     next();
   };
@@ -220,7 +355,8 @@
     const fTier = sel("tier", [["", "All tiers"], ...[1, 2, 3, 4, 5, 6].map((t) => [String(t), `Tier ${t}`])]);
     const fPos = sel("pos", [["", "All types"], ...["noun", "verb", "adj", "adv", "pron", "prep", "conj", "det", "num", "interj"].map((p) => [p, App.posLabel(p)])]);
     const fTopic = sel("topic", [["", "All topics"], ...topics.map((t) => [t, t])]);
-    const fLearned = sel("learned", [["", "Learned or not"], ["yes", "Learned"], ["no", "Not yet"]]);
+    const fLearned = sel("learned", [["", "Learned or not"], ["yes", "Learned"], ["no", "Not yet"], ["tricky", "Tricky (keeps slipping)"]]);
+    if (query.learned) fLearned.value = query.learned;
     const filters = h("div.filters", q, fKind, fTier, fPos, fTopic, fLearned);
     page.appendChild(filters);
     const count = h("p.muted.count");
@@ -228,8 +364,31 @@
     const more = h("button.btn.btn-secondary.more", { type: "button" }, "Show more");
     page.append(count, list, more);
     let shown = 0, rows = [];
+    let formTags = new Map();     // itemId -> "fui = ir · yo · past" when the query is a form of that lemma
+    /** A one-word query that is a verb (or other) form: the lemma items, accent-exact matches first. */
+    function formMatches(raw) {
+      formTags = new Map();
+      const word = raw.trim().toLowerCase();
+      if (!word || /\s/.test(word)) return [];
+      let entries = [];
+      try { entries = Grader.lookupExact ? Grader.lookupExact(word) : Grader.lookup(word); } catch (e) { entries = []; }
+      const accented = word !== App.fold(word);
+      if (accented && entries.some((e) => e.form === word)) entries = entries.filter((e) => e.form === word);
+      const out = [];
+      entries.forEach((e) => {
+        const it = App.item(e.lemma);
+        if (!it || App.fold(it.es) === App.fold(word)) return;
+        const bits = [App.PERSON_SHORT && App.PERSON_SHORT[e.person] && e.tense !== "inf" ? App.PERSON_SHORT[e.person].split(" / ")[0] : null,
+          e.tense ? (App.TENSE_SHORT || {})[e.tense] || e.tense : e.number === "p" ? "plural" : e.gender === "f" ? "feminine" : null].filter(Boolean);
+        const tag = `${e.form} = ${it.es}${bits.length ? " · " + bits.join(" · ") : ""}`;
+        if (!formTags.has(it.id)) { formTags.set(it.id, tag); out.push(it); }
+      });
+      return out;
+    }
     function apply() {
       const t = App.fold(q.value.trim());
+      const lemmas = formMatches(q.value);
+      const lemmaIds = new Set(lemmas.map((x) => x.id));
       rows = all.filter((x) => {
         if (fKind.value && x.cat !== fKind.value) return false;
         if (fTier.value && String(x.tier) !== fTier.value) return false;
@@ -237,10 +396,12 @@
         if (fTopic.value && x.topic !== fTopic.value) return false;
         if (fLearned.value === "yes" && !Store.isLearned(x.id)) return false;
         if (fLearned.value === "no" && Store.isLearned(x.id)) return false;
-        if (t && !App.fold(x.es).includes(t) && !App.fold(x.en).includes(t) && !App.fold(x.plural || "").includes(t)) return false;
+        if (fLearned.value === "tricky" && !(Store.state.cards[x.id] && Store.state.cards[x.id].leech)) return false;
+        if (t && !lemmaIds.has(x.id) && !App.fold(x.es).includes(t) && !App.fold(x.en).includes(t) && !App.fold(x.plural || "").includes(t)) return false;
         return true;
       });
-      if (t) rows.sort((a, b) => (App.fold(a.es).startsWith(t) ? 0 : 1) - (App.fold(b.es).startsWith(t) ? 0 : 1) || (a.rank || 0) - (b.rank || 0));
+      if (t) rows.sort((a, b) => (lemmaIds.has(a.id) ? 0 : 1) - (lemmaIds.has(b.id) ? 0 : 1) ||
+        (App.fold(a.es).startsWith(t) ? 0 : 1) - (App.fold(b.es).startsWith(t) ? 0 : 1) || (a.rank || 0) - (b.rank || 0));
       list.innerHTML = ""; shown = 0;
       count.textContent = `${rows.length} item${rows.length === 1 ? "" : "s"}`;
       render();
@@ -263,7 +424,7 @@
         App.toast(`Added <b>${esc(x.es)}</b> to review.`);
       };
       const head = h("div.word-row-head", { role: "button", tabindex: 0, "aria-expanded": "false" },
-        h("span.wr-es", { lang: "es" }, App.withArticle(x)), App.genderChip(x), h("span.wr-en", x.en),
+        h("span.wr-es", { lang: "es" }, App.withArticle(x)), App.genderChip(x), formTags.has(x.id) ? h("span.chip.marigold.form-tag", { lang: "es" }, formTags.get(x.id)) : null, h("span.wr-en", x.en),
         h("span.wr-meta", h("span.tag.tier", "T" + (x.tier || "?")), App.playBtn(x.es, "careful", { label: "", item: x }), add));
       const detail = h("div.word-detail");
       head.onclick = () => {
@@ -296,6 +457,7 @@
       page.appendChild(h("h2.section-title", "Drills"));
       page.appendChild(host);
       const start = () => App.runExercises(host, App.soundDrills(r), {
+        context: "sounds",
         onFinish: () => {
           Store.state.sounds[r.id] = Date.now(); Store.save();
           host.innerHTML = "";
@@ -339,7 +501,8 @@
         let good = 0;
         const ex = App.grammarDrillExercises(g);
         App.runExercises(host, App.shuffle(ex), {
-          onAnswer: (e, r) => { if (r.outcome !== "miss" && r.outcome !== "unsure") good++; },
+          context: "grammar",
+          onAnswer: (e, r) => { if (!e.retry && r.outcome !== "miss" && r.outcome !== "unsure") good++; },   // first attempts only
           onFinish: () => {
             const prev = Store.state.grammar[g.id] || {};
             const score = ex.length ? good / ex.length : 1;
@@ -471,6 +634,7 @@
     dataCard.append(status, stats, h("div.btn-row", exp, imp, file, reset));
     page.appendChild(dataCard);
     const m = App.course.meta || {};
+    page.appendChild(h("p", h("a", { href: "#/about" }, "💡 Why this works — the method behind the course")));
     page.appendChild(h("p.muted.small", `Course data: ${(m.counts && m.counts.vocab) || App.course.vocab.length} words, ${App.course.chunks.length} phrases, ${App.course.units.length} units.`));
   };
 })();

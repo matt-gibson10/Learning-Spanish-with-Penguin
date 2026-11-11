@@ -448,13 +448,13 @@
       '¡Hola! I\'m Penguin. Ready for a bit of Spanish?',
       '¡Bienvenido! Let\'s pick up where we left off.',
       '¿Qué onda? Shall we do a quick round?',
-      '¡Buenos días! A few words now, a lot of words by October 30th.',
+      '¡Buenos días! A few words now, a lot of words by next month.',
       'Hey there — your words are waiting for you.',
       '¡Hola, hola! Time for a little review.',
-      'Welcome back. Small steps, big trip.',
+      'Welcome back. Small steps, big rating.',
       '¡Qué gusto verte! Let\'s go.',
       'Ready when you are. Just press the big button.',
-      '¡Vamos! One lesson, one step closer to Mexico.'
+      '¡Vamos! One lesson, one step closer to real conversations.'
     ]
   };
 

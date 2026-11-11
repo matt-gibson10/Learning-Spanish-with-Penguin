@@ -8,10 +8,11 @@
     prompt: "Say something", story: "Your story", read: "Read a story" };
   App.STEP_LABEL = STEP_LABEL;
 
-  /** Run a list of exercises one at a time inside `host`. Misses come back once at the end. */
+  /** Run a list of exercises one at a time inside `host`. Misses come back once at the end.
+   * opts: {context (for the answer event), onAnswer(ex, res) (ex.retry tells a repeat), onFinish({total, good}), onProgress} */
   App.runExercises = function (host, list, opts) {
     opts = opts || {};
-    const queue = list.slice();
+    const queue = list.filter(Boolean);
     const total = queue.length;
     let doneCount = 0, good = 0;
     function nextEx() {
@@ -20,6 +21,7 @@
       const ex = queue.shift();
       if (opts.counter !== false) host.appendChild(h("p.ex-counter", `${Math.min(doneCount + 1, total)} / ${total}`));
       const el = App.exercise(ex, {
+        context: opts.context,
         nextLabel: queue.length ? "Next →" : (opts.lastLabel || "Continue →"),
         onAnswer: (res) => {
           if (opts.onAnswer) opts.onAnswer(ex, res);
@@ -39,24 +41,32 @@
 
   // ------------------------------------------------------------------ learn <-> check rounds
   const GROUP = 4;
-  const EASY = new Set(["recognise-choice", "listen-meaning", "listen-natural-meaning"]);     // see/hear Spanish -> meaning
-  const TYPED = new Set(["produce-type", "listen-type", "cloze", "listen-natural"]);
+  const EASY = new Set(["recognise-choice", "listen-meaning", "listen-natural-meaning", "cloze-choice"]);     // see/hear Spanish -> meaning
+  const TYPED = new Set(["produce-type", "produce-recall", "listen-type", "cloze", "listen-natural", "dictation", "conj-produce"]);
   function groupsOf(items) {
     const g = [];
     for (let k = 0; k < items.length; k += GROUP) g.push(items.slice(k, k + GROUP));
     if (g.length > 1 && g[g.length - 1].length < 2) g[g.length - 2].push(...g.pop());
     return g;
   }
-  const typedFor = (it, k) => {
-    const opts = ["produce-type", App.clozeOf(it) ? "cloze" : "produce-type", "listen-type"];
-    return opts[k % opts.length];
-  };
+  /** Present-tense person used in a verb's example sentence ("pres3s"), else yo. */
+  function exampleFormKey(it) {
+    const cz = App.clozeOf(it);
+    return cz && cz.entry && cz.entry.tense === "pres" && cz.entry.person ? "pres" + cz.entry.person : "pres1s";
+  }
+  /** Does this item have a fair typed gap (the blank's tense is unlocked)? */
+  const fairCloze = (it) => { const ex = App.clozeOf(it) && App.makeExercise(it, "cloze"); return !!ex && ex.exType === "cloze"; };
 
   /**
    * The lesson's core flow. For each group of ~4 items: learn cards, then a quick check on just those
-   * (see Spanish -> meaning, then hear it -> meaning). Then one mixed round on all items:
-   * pick the Spanish (en -> es), fast-speech listening for items with `natural`, and typed Spanish —
-   * typed only for items already recognised correctly (this lesson or before) and not missed this lesson.
+   * (see Spanish -> meaning, then hear it -> meaning; very common function words get one gap-choice in a sentence
+   * instead). Then one mixed round on all items (recall-first, docs/REVIEW.md improvement 1):
+   * - recall: every item recognised correctly and not missed in a quick check, typed from English with a hint ladder
+   *   (standing rule: never type a word he hasn't been shown AND recognised — the quick checks come first);
+   * - pick: only the items missed in a quick check, as multiple choice en -> es;
+   * - fast: up to three items with a genuine fast-speech respelling;
+   * - verbs: one conj-hear each (+ one conj-produce once g_present_ar is done);
+   * - extra: up to three fair typed gaps.
    * opts: {learn (show cards; false = practice only), onDone}
    */
   App.learnFlow = function (items, ctx, opts) {
@@ -69,17 +79,34 @@
       const a = items.indexOf(g[0]) + 1, b = items.indexOf(g[g.length - 1]) + 1;
       const lab = g.length > 1 ? `${a}–${b}` : `${a}`;
       if (opts.learn !== false) rounds.push({ label: `New words ${lab}`, kind: "learn", build: () => g.map((it) => ({ kind: "card", item: it })) });
-      rounds.push({ label: opts.learn === false ? "Warm-up: what do they mean?" : `Quick check ${lab}`, kind: "check", build: () =>
-        App.shuffle(g).map((it) => ({ kind: "ex", item: it, type: "recognise-choice" }))
-          .concat(App.shuffle(g).map((it) => ({ kind: "ex", item: it, type: "listen-meaning" }))) });
+      rounds.push({ label: opts.learn === false ? "Warm-up: what do they mean?" : `Quick check ${lab}`, kind: "check", build: () => {
+        const fn = g.filter((it) => App.isFunctionWord(it)), rest = g.filter((it) => !App.isFunctionWord(it));
+        return App.shuffle(rest).map((it) => ({ kind: "ex", item: it, type: "recognise-choice" }))
+          .concat(App.shuffle(fn).filter((it) => App.clozeOf(it)).map((it) => ({ kind: "ex", item: it, type: "cloze-choice" })))
+          .concat(App.shuffle(rest).map((it) => ({ kind: "ex", item: it, type: "listen-meaning" })));
+      } });
     });
     rounds.push({ label: "Mix it up — all the new words", kind: "mix", build: () => {
-      const pick = App.shuffle(items).map((it) => ({ kind: "ex", item: it, type: it.pos === "noun" && it.gender && it.gender !== "mf" && Math.random() < 0.3 ? "gender" : "produce-choice" }));
-      const fast = App.shuffle(items.filter((it) => (it.natural || []).length && !struggled.has(it.id))).slice(0, 3)
+      const canType = (it) => !struggled.has(it.id) && (okHere.has(it.id) || Store.recognised(it.id) > 0);
+      const recall = App.shuffle(items.filter((it) => canType(it) && !App.isFunctionWord(it)))
+        .map((it) => ({ kind: "ex", item: it, type: "produce-recall", typed: true }));
+      const fnGaps = items.filter((it) => canType(it) && App.isFunctionWord(it) && fairCloze(it))
+        .map((it) => ({ kind: "ex", item: it, type: "cloze", typed: true }));
+      const pick = App.shuffle(items.filter((it) => struggled.has(it.id) && !App.isFunctionWord(it)))
+        .map((it) => ({ kind: "ex", item: it, type: it.pos === "noun" && it.gender && it.gender !== "mf" && Math.random() < 0.3 ? "gender" : "produce-choice" }));
+      const fast = App.shuffle(items.filter((it) => App.naturalOf(it) && !struggled.has(it.id) && !App.isFunctionWord(it))).slice(0, 3)
         .map((it) => ({ kind: "ex", item: it, type: "listen-natural-meaning" }));
-      const typed = App.shuffle(items.filter((it) => !struggled.has(it.id) && (okHere.has(it.id) || Store.recognised(it.id) > 0)))
-        .map((it, k) => ({ kind: "ex", item: it, type: typedFor(it, k), typed: true }));
-      return pick.concat(fast, typed);
+      const verbs = items.filter((it) => it.pos === "verb" && it.conj && Array.isArray(it.conj.pres));
+      const conj = verbs.map((it) => ({ kind: "ex", item: it, type: "conj-hear", formKey: exampleFormKey(it) }));
+      if (Store.isGrammarDone("g_present_ar")) {
+        verbs.filter(canType).forEach((it) => {
+          const f = App.shuffle(App.verbForms(it).filter((x) => x.unlocked && x.tense === "pres"))[0];
+          if (f) conj.push({ kind: "ex", item: it, type: "conj-produce", formKey: f.key, typed: true });
+        });
+      }
+      const extra = App.shuffle(items.filter((it) => canType(it) && !App.isFunctionWord(it) && fairCloze(it))).slice(0, 3)
+        .map((it) => ({ kind: "ex", item: it, type: "cloze", typed: true }));
+      return pick.concat(App.shuffle(recall.concat(fnGaps)), fast, App.shuffle(conj), extra);
     } });
 
     let r = -1, queue = [], roundTotal = 0, roundDone = 0;
@@ -132,10 +159,12 @@
     function showExercise(t) {
       ctx.clearNext();
       const it = t.item;
-      const ex = App.makeExercise(it, t.type);
-      if (t.retry) ex.title = "Once more: " + (ex.title || "");
+      const ex = App.makeExercise(it, t.type, { formKey: t.formKey });
+      if (!ex) { roundDone++; return next(); }
+      if (t.retry) { ex.title = "Once more: " + (ex.title || ""); ex.retry = true; }
       ctx.body.appendChild(header());
       const el = App.exercise(ex, {
+        context: "lesson",
         nextLabel: queue.length ? "Next →" : (r < rounds.length - 1 ? "Continue →" : "Finish →"),
         onDone: (res) => {
           const unsure = res.outcome === "unsure";
@@ -146,8 +175,10 @@
             if (!TYPED.has(t.type)) struggled.add(it.id);       // missed an easy one -> no typing for it this lesson
             if (!t.retry) {
               if (!unsure) queue.unshift({ kind: "flash", item: it });     // "Not sure" already showed the card
-              // try again later in this round (an easier version if it was typed)
-              const again = { kind: "ex", item: it, type: TYPED.has(t.type) ? "produce-choice" : t.type, retry: true };
+              // try again later in this round: recall comes back as recall; other typed formats get an easier version
+              const againType = t.type === "produce-recall" || t.type === "conj-produce" || t.type === "conj-hear" ? t.type
+                : TYPED.has(t.type) ? (App.isFunctionWord(it) ? "cloze-choice" : "produce-choice") : t.type;
+              const again = { kind: "ex", item: it, type: againType, formKey: t.formKey, retry: true };
               queue.push(again);
               roundTotal++;
             }
@@ -160,7 +191,9 @@
       ctx.body.appendChild(el);
     }
     function finish() {
-      missedIds.forEach((id) => Store.rate(id, "again", { practice: true }));
+      // missed in the lesson: back soon, and its first real interval is capped at 1 day whatever is tapped
+      missedIds.forEach((id) => { Store.rate(id, "again", { practice: true }); const c = Store.state.cards[id]; if (c) c.missedInLesson = true; });
+      if (missedIds.size) Store.save();
       if (opts.onDone) opts.onDone();
     }
     if (!items.length) return opts.onDone && opts.onDone();
@@ -208,15 +241,18 @@
     return card;
   };
   App.soundDrills = function (rule) {
-    return (rule.drills || []).map((d) => {
+    return (rule.drills || []).map((d, i) => {
+      const differs = d.say !== d.answer && !App.soundsSame(d.say, d.answer);
+      const base = { itemKind: "sound", refId: rule.id, refIndex: i, listen: true,
+        audio: { text: d.say, speed: "natural", natText: d.say, slowText: d.answer, ramp: true } };
       if (d.type === "hear_pick") {
-        return { mode: "choice", title: "Fast speech: what did they say?", prompt: h("div.listen-icon", "⚡🔊"), options: App.shuffle(d.options || [d.answer]),
-          answers: [d.answer], display: d.answer, audio: { text: d.say, speed: "natural", slowText: d.answer }, optLang: "es",
-          why: d.say !== d.answer ? `Written *${d.answer}*, said fast it sounds like *${d.say}*.` : null };
+        return Object.assign(base, { mode: "choice", title: "Fast speech: what did they say?", prompt: h("div.listen-icon", "⚡🔊"), options: App.shuffle(d.options || [d.answer]),
+          answers: [d.answer], display: d.answer, optLang: "es", exType: "sound-pick",
+          why: differs ? `Written *${d.answer}*, said fast it sounds like *${d.say}*.` : null });
       }
-      return { mode: "type", title: "Fast speech: type it in normal spelling", prompt: h("div.listen-icon", "⚡🔊"), answers: [d.answer].concat(d.alts || []),
-        display: d.answer, audio: { text: d.say, speed: "natural", slowText: d.answer }, lang: "es",
-        why: d.say !== d.answer ? `*${d.say}* is the fast-speech version of *${d.answer}*.` : null };
+      return Object.assign(base, { mode: "type", title: "Fast speech: type it in normal spelling", prompt: h("div.listen-icon", "⚡🔊"), answers: [d.answer].concat(d.alts || []),
+        display: d.answer, lang: "es", exType: "sound-type", production: true,
+        why: differs ? `*${d.say}* is the fast-speech version of *${d.answer}*.` : null });
     });
   };
   function soundsStep(step, ctx) {
@@ -227,6 +263,7 @@
     ctx.setNext("Try the drills →", () => {
       ctx.clearNext();
       App.runExercises(ctx.body, App.soundDrills(rule), {
+        context: "lesson",
         onProgress: (f) => ctx.progress(0.3 + 0.7 * f),
         onFinish: () => { Store.state.sounds[rule.id] = Date.now(); Store.save(); ctx.next(); },
       });
@@ -267,12 +304,14 @@
     }
     return drills.map((d) => {
       const accepted = [d.answer].concat(d.alts || []);
-      const q = h("div.grammar-q", { lang: d.type === "translate" ? "en" : "es", html: App.inline(String(d.q).replace(/___/g, "<span class=\"blank\">___</span>")) });
+      const q = h("div.grammar-q", { lang: d.type === "translate" ? "en" : "es" });
       q.innerHTML = App.esc(d.q).replace(/___/g, '<span class="blank">_____</span>');
       const title = { choice: "Pick the right form", fill: "Fill the gap", transform: "Change it", translate: "Say it in Spanish" }[d.type] || "Grammar";
-      if (d.type === "choice") return { mode: "choice", title, prompt: q, options: App.shuffle(d.options || [d.answer]), answers: accepted, display: d.answer, why: d.why, optLang: "es" };
-      const help = d.type === "translate" || d.type === "fill" ? App.wordHelp(d.answer) : null;
-      return { mode: "type", title, prompt: q, answers: accepted, display: d.answer, why: d.why, lang: "es", help };
+      const base = { itemKind: "grammar", refId: g.id, refIndex: (g.drills || []).indexOf(d), exType: "grammar-" + (d.type || "fill"), why: d.why };
+      if (d.type === "choice") return Object.assign(base, { mode: "choice", title, prompt: q, options: App.shuffle(d.options || [d.answer]), answers: accepted, display: d.answer, optLang: "es" });
+      // word help must not leak the answer: none on fill; on translate only dictionary forms ("trabajar — work")
+      const help = d.type === "translate" ? App.wordHelp(d.answer, { lemma: true }) : null;
+      return Object.assign(base, { mode: "type", title, prompt: q, answers: accepted, display: d.answer, lang: "es", help, production: d.type === "translate" });
     });
   };
   function grammarStep(step, ctx) {
@@ -285,7 +324,8 @@
       let good = 0;
       const ex = App.grammarDrillExercises(g, 8);
       App.runExercises(ctx.body, ex, {
-        onAnswer: (e, res) => { if (res.outcome !== "miss" && res.outcome !== "unsure") good++; },
+        context: "lesson",
+        onAnswer: (e, res) => { if (!e.retry && res.outcome !== "miss" && res.outcome !== "unsure") good++; },   // first attempts only
         onProgress: (f) => ctx.progress(0.3 + 0.7 * f),
         onFinish: () => {
           const prev = Store.state.grammar[g.id] || {};
@@ -306,7 +346,8 @@
   };
 
   function buildStep(step, ctx) {
-    const all = step.items.map(App.item).filter((x) => x && x.ex_es);
+    // at least four tiles (two-tile sentences give the order away)
+    const all = step.items.map(App.item).filter((x) => x && x.ex_es && Grader.tokenize(x.ex_es.replace(/[—–-]/g, " ")).length >= 4);
     if (!all.length) return ctx.next();
     // prefer example sentences whose words are all learned (fewest unknown words first)
     const items = all.map((x) => ({ x, n: App.unknownWords(x.ex_es).length }))
@@ -320,13 +361,15 @@
       const it = items[i];
       ctx.body.appendChild(h("p.ex-counter", `Sentence ${i + 1} / ${items.length}`));
       const ex = App.buildExercise(it, items.filter((x) => x !== it));
-      const el = App.exercise(ex, { nextLabel: i < items.length - 1 ? "Next sentence →" : "Continue →", onDone: () => { i++; show(); } });
+      if (!ex) { i++; return show(); }
+      const el = App.exercise(ex, { context: "lesson", nextLabel: i < items.length - 1 ? "Next sentence →" : "Continue →", onDone: () => { i++; show(); } });
       ctx.body.appendChild(el);
       // optional: type it too
       const typeBtn = h("button.btn.btn-ghost.type-too", { type: "button", onclick: () => {
         typeBtn.remove();
-        const tx = { mode: "type", title: "Now type it (optional)", prompt: h("div.prompt-en", it.ex_en), answers: [it.ex_es], display: it.ex_es, lang: "es", help: App.wordHelp(it.ex_es) };
-        const tel = App.exercise(tx, { nextLabel: i < items.length - 1 ? "Next sentence →" : "Continue →", onDone: () => { i++; show(); } });
+        const tx = { mode: "type", title: "Now type it (optional)", prompt: h("div.prompt-en", it.ex_en), answers: [it.ex_es], display: it.ex_es, lang: "es",
+          help: App.wordHelp(it.ex_es), item: it, exType: "build-type", production: true };
+        const tel = App.exercise(tx, { context: "lesson", nextLabel: i < items.length - 1 ? "Next sentence →" : "Continue →", onDone: () => { i++; show(); } });
         ctx.body.innerHTML = "";
         ctx.body.appendChild(tel);
       } }, "✍ Type it too");
@@ -441,12 +484,20 @@
       head.querySelector(".step-label").textContent = "Lesson complete";
       const nxt = Store.nextLesson();
       const learnedHere = steps.filter((s) => s.type === "learn").reduce((n, s) => n + s.items.length, 0);
+      // the daily new-words goal decides the main button; the line never contradicts it
+      const goal = App.goalReached ? App.goalReached() : false;
+      const c = goal && App.continueTarget ? App.continueTarget() : null;
+      const mainHref = c ? c.href : nxt ? `#/lesson/${nxt.id}` : "#/review";
+      const mainLabel = c ? c.label + " →" : nxt ? `Next: ${nxt.title} →` : "Review →";
+      const line = App.doneLine ? App.doneLine(goal) : App.line("done");
       body.appendChild(h("div.card.card-hero.lesson-done",
-        App.coach("proud", `<strong>${App.esc(App.line("done"))}</strong><br>${learnedHere} new words and phrases are now in your review deck.`),
+        App.coach("proud", `<strong>${App.esc(line)}</strong><br>${learnedHere} new words and phrases are now in your review deck.` +
+          (goal ? "<br>Today's new-word goal is done — the next lesson can wait for tomorrow." : "")),
         h("div.done-actions",
-          nxt ? h("a.btn.btn-primary.btn-big", { href: `#/lesson/${nxt.id}` }, `Next: ${nxt.title} →`) : h("a.btn.btn-primary.btn-big", { href: "#/review" }, "Review →"),
+          h("a.btn.btn-primary.btn-big", { href: mainHref }, mainLabel),
+          goal && nxt ? h("a.btn.btn-ghost", { href: `#/lesson/${nxt.id}` }, `Next lesson anyway: ${nxt.title}`) : null,
           h("a.btn.btn-secondary", { href: "#/" }, "Home"))));
-      App.pageEnter = () => { location.hash = nxt ? `#/lesson/${nxt.id}` : "#/review"; };
+      App.pageEnter = () => { location.hash = mainHref; };
     }
     run();
   };

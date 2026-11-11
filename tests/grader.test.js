@@ -221,6 +221,36 @@
     return show(r);
   });
 
+  // ---- review fixes (docs/REVIEW.md 5i / bug 11, bug 12)
+  test("'la favor' for 'el favor' (bare 'favor' also accepted) → ≤ 0.85 with a gender note", () => {
+    const r = G.gradeAnswer("la favor", ["el favor", "favor"], O);
+    expect(r.score <= 0.85, "score not capped: " + show(r));
+    expect(/masculine|el favor/.test(notesText(r)), "no gender note: " + show(r));
+    const ok = G.gradeAnswer("el favor", ["el favor", "favor"], O);
+    expect(ok.outcome === "good" && ok.score === 1 && !ok.notes.length, "correct article penalised: " + show(ok));
+    const bare = G.gradeAnswer("favor", ["el favor", "favor"], O);
+    expect(bare.outcome === "good", "bare noun no longer accepted: " + show(bare));
+    return show(r);
+  });
+  test("missing space ('porfavor') → good with a typo note", () => {
+    const r = G.gradeAnswer("porfavor", ["por favor"], O);
+    expect(r.outcome === "good", show(r));
+    expect(/Missing space/.test(notesText(r)), "no space note: " + show(r));
+    return show(r);
+  });
+  test("form labels use the accent-exact entry (habló = preterite, not yo)", () => {
+    const r = G.gradeAnswer("hablaste", ["habló"], O);
+    expect(/preterite/.test(notesText(r)) && !/habló \(yo\)/.test(notesText(r)), show(r));
+    return show(r);
+  });
+  test("'de el' / 'a el' → contraction note", () => {
+    const r = G.gradeFree("Voy a el hotel", {}, O);
+    expect(/al/.test(notesText(r)) && r.notes.some((n) => n.kind === "grammar"), show(r));
+    const ok = G.gradeFree("Voy al hotel", {}, O);
+    expect(!ok.notes.some((n) => n.kind === "grammar"), "false positive: " + show(ok));
+    return show(r);
+  });
+
   window.__graderResults = results;
   window.__renderGraderResults = function () {
   const results = window.__graderResults;

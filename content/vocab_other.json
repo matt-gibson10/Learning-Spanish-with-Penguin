@@ -33,11 +33,7 @@
     "topic": "function",
     "ex_es": "Soy de Texas.",
     "ex_en": "I'm from Texas.",
-    "note": "de + el = del (el centro del pueblo). Possession: el carro de Ana = Ana's car. Material/kind: taco de pastor. Before a vowel it glides into the next word.",
-    "natural": [
-      "d'aquí",
-      "d'eso"
-    ]
+    "note": "de + el = del (el centro del pueblo). Possession: el carro de Ana = Ana's car. Material/kind: taco de pastor. Before a vowel it glides into the next word."
   },
   {
     "id": "v_que",
@@ -206,13 +202,9 @@
     "topic": "function",
     "ex_es": "Es para mi mamá.",
     "ex_en": "It's for my mom.",
-    "note": "por vs para: para = purpose (para comer), destination (para el centro), recipient (para ti), deadline (para el lunes), opinion (para mí). por = cause, route, exchange, duration. para que + subjunctive = so that. In speech para is almost always pa'.",
+    "note": "por vs para: para = purpose (para comer), destination (para el centro), recipient (para ti), deadline (para el lunes), opinion (para mí). por = cause, route, exchange, duration. para que + subjunctive = so that. In speech para is almost always pa'. Fast forms you'll hear: pa' que (para que), pa'l (para el), pa'cá (para acá), pa'llá (para allá).",
     "natural": [
-      "pa'",
-      "pa' que",
-      "pa'l",
-      "pa'cá",
-      "pa'llá"
+      "pa'"
     ]
   },
   {
@@ -311,13 +303,7 @@
     "fem": "toda",
     "ex_es": "Todo bien, gracias.",
     "ex_en": "All good, thanks.",
-    "note": "todo el día = all day; todos los días = every day; todo = everything. ¿Todo bien? is a standard greeting check.",
-    "natural": [
-      "to'o",
-      "to'a",
-      "to'os",
-      "to'o bien"
-    ]
+    "note": "todo el día = all day; todos los días = every day; todo = everything. ¿Todo bien? is a standard greeting check."
   },
   {
     "id": "v_otro",
@@ -772,7 +758,7 @@
     "note": "Both 'at that time' (en ese entonces) and the conversational 'so...'. Very common filler; heavily reduced in fast speech.",
     "natural": [
       "'tons",
-      "ento's"
+      "entons"
     ]
   },
   {
@@ -835,12 +821,7 @@
     "topic": "function",
     "ex_es": "No quiero nada, gracias.",
     "ex_en": "I don't want anything, thanks.",
-    "note": "Double negative is required: no veo nada (I don't see anything). De nada = you're welcome. Nada más = only / that's all.",
-    "natural": [
-      "na'a",
-      "na'",
-      "na' más"
-    ]
+    "note": "Double negative is required: no veo nada (I don't see anything). De nada = you're welcome. Nada más = only / that's all."
   },
   {
     "id": "v_usted",
@@ -981,7 +962,7 @@
     "es": "donde",
     "en": "where (not a question)",
     "pos": "adv",
-    "rank": 90,
+    "rank": 140,
     "tier": 1,
     "topic": "directions",
     "ex_es": "Es la casa donde vivo.",
@@ -1192,7 +1173,7 @@
     "es": "dónde",
     "en": "where?",
     "pos": "adv",
-    "rank": 140,
+    "rank": 90,
     "tier": 1,
     "topic": "directions",
     "ex_es": "¿Dónde está el baño?",
@@ -1529,7 +1510,8 @@
     "topic": "numbers",
     "ex_es": "Son mil pesos.",
     "ex_en": "It's a thousand pesos.",
-    "note": "Never 'un mil': mil = 1,000, dos mil = 2,000. Doesn't take -s: tres mil. Miles = thousands (miles de personas). Mexico writes 1,000 with a comma like the US."
+    "note": "Never 'un mil': mil = 1,000, dos mil = 2,000. Doesn't take -s: tres mil. Miles = thousands (miles de personas). Mexico writes 1,000 with a comma like the US.",
+    "priority": 260
   },
   {
     "id": "v_politico",
@@ -1709,10 +1691,7 @@
     "topic": "time",
     "ex_es": "Todavía no llega el camión.",
     "ex_en": "The bus still hasn't come.",
-    "note": "todavía no = not yet; aún means the same. Fast speech drops the d.",
-    "natural": [
-      "toavía"
-    ]
+    "note": "todavía no = not yet; aún means the same. Fast speech drops the d."
   },
   {
     "id": "v_viejo",
@@ -2472,7 +2451,8 @@
     "topic": "numbers",
     "ex_es": "Son cien pesos.",
     "ex_en": "It's a hundred pesos.",
-    "note": "cien alone or before a noun or mil/millones (cien pesos, cien mil); ciento when more follows (ciento veinte). Never 'un cien'. Percent: por ciento."
+    "note": "cien alone or before a noun or mil/millones (cien pesos, cien mil); ciento when more follows (ciento veinte). Never 'un cien'. Percent: por ciento.",
+    "priority": 240
   },
   {
     "id": "v_claro_2",
@@ -2994,16 +2974,16 @@
   {
     "id": "v_natural",
     "es": "natural",
-    "en": "natural; (drinks, Mexico) room temperature",
+    "en": "natural; (water) plain, still (not sparkling or flavoured)",
     "pos": "adj",
     "rank": 820,
     "tier": 2,
     "topic": "drink",
     "plural": "naturales",
     "fem": "natural",
-    "ex_es": "Agua natural, por favor.",
-    "ex_en": "Room-temperature water, please.",
-    "note": "Mexico: ¿fría o natural? (or al tiempo) = cold or room temperature. Agua natural = plain still water; agua de sabor = fruit water."
+    "ex_es": "Un agua natural y una cerveza, por favor.",
+    "ex_en": "A plain still water and a beer, please.",
+    "note": "Agua natural = plain still water (not sparkling, not flavoured). For temperature: fría = cold, al tiempo = room temperature (some people say \"natural\" for that too)."
   },
   {
     "id": "v_azul",
@@ -3771,7 +3751,8 @@
     "topic": "numbers",
     "ex_es": "Son treinta pesos.",
     "ex_en": "It's thirty pesos.",
-    "note": "From 31 on, numbers are written in three words: treinta y uno, treinta y cinco."
+    "note": "From 31 on, numbers are written in three words: treinta y uno, treinta y cinco.",
+    "priority": 280
   },
   {
     "id": "v_adios",
@@ -4007,7 +3988,8 @@
     "fem": "cara",
     "ex_es": "Está muy caro.",
     "ex_en": "It's too expensive.",
-    "note": "Mexico uses estar for prices: está caro. Carísimo = super expensive. Querido is the usual 'dear'."
+    "note": "Mexico uses estar for prices: está caro. Carísimo = super expensive. Querido is the usual 'dear'.",
+    "priority": 250
   },
   {
     "id": "v_cerrado",
@@ -4441,7 +4423,8 @@
     "tier": 3,
     "topic": "numbers",
     "ex_es": "¿Tiene cambio de cincuenta?",
-    "ex_en": "Do you have change for fifty?"
+    "ex_en": "Do you have change for fifty?",
+    "priority": 300
   },
   {
     "id": "v_completamente",
@@ -4484,15 +4467,15 @@
   {
     "id": "v_derecho_2",
     "es": "derecho",
-    "en": "right (side); straight; upright",
+    "en": "straight (ahead); right (side); upright",
     "pos": "adj",
-    "rank": 1500,
-    "tier": 3,
+    "rank": 470,
+    "tier": 1,
     "topic": "directions",
     "plural": "derechos",
     "fem": "derecha",
-    "ex_es": "Me duele la mano derecha.",
-    "ex_en": "My right hand hurts.",
+    "ex_es": "Está todo derecho, a dos cuadras.",
+    "ex_en": "It's straight ahead, two blocks away.",
     "note": "a la derecha = to the right (noun la derecha). As an adverb: siga derecho / todo derecho = go straight ahead (Mexico: derechito). The noun el derecho = law / a right."
   },
   {
@@ -6559,7 +6542,8 @@
     "topic": "communication",
     "ex_es": "Más despacio, por favor.",
     "ex_en": "Slower, please.",
-    "note": "Lifesaver phrase: ¿Puede hablar más despacio? Mexican diminutive: despacito."
+    "note": "Lifesaver phrase: ¿Puede hablar más despacio? Mexican diminutive: despacito.",
+    "priority": 400
   },
   {
     "id": "v_despierto",
@@ -6746,7 +6730,8 @@
     "fem": "barata",
     "ex_es": "Aquí es más barato.",
     "ex_en": "It's cheaper here.",
-    "note": "¿Me lo deja más barato? = can you give it to me cheaper? (bargaining at markets). Lo barato sale caro = buy cheap, pay twice."
+    "note": "¿Me lo deja más barato? = can you give it to me cheaper? (bargaining at markets). Lo barato sale caro = buy cheap, pay twice.",
+    "priority": 250
   },
   {
     "id": "v_conveniente",
@@ -7062,7 +7047,8 @@
     "note": "Very Mexican and slippery: ahorita can mean 'this second', 'in a bit', or a polite 'not happening'. Tone and context decide. Ahorita mismo / ahoritita = right now, for real. A waiter's ¡ahorita se lo traigo! usually means soon.",
     "natural": [
       "orita"
-    ]
+    ],
+    "priority": 200
   },
   {
     "id": "v_borracho",
@@ -8211,7 +8197,8 @@
     "fem": "poquita",
     "ex_es": "Un poquito más, por favor.",
     "ex_en": "A little bit more, please.",
-    "note": "Mexican speech loves diminutives (-ito/-ita) to sound softer and friendlier: un poquito, ahorita, cerquita, tantito."
+    "note": "Mexican speech loves diminutives (-ito/-ita) to sound softer and friendlier: un poquito, ahorita, cerquita, tantito.",
+    "priority": 400
   },
   {
     "id": "v_principalmente",

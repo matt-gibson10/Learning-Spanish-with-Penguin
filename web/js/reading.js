@@ -26,17 +26,34 @@
   function vocabFor(w) {
     const key = App.fold(String(w.es || "").replace(/[¿?¡!.,]/g, "").trim());
     if (!key) return null;
-    let hit = App.allItems().find((x) => App.fold(x.es.replace(/[¿?¡!.,…]/g, "").trim()) === key);
+    // the lemma named in the gloss wins ("gana — wins (ganar)" -> ganar, not the noun "gana")
+    const m = /\(([^)]+)\)/.exec(w.en || "");
+    let hit = m ? App.allItems().find((x) => App.fold(x.es) === App.fold(m[1].trim())) : null;
+    if (hit) return hit;
+    hit = App.allItems().find((x) => App.fold(x.es.replace(/[¿?¡!.,…]/g, "").trim()) === key);
     if (hit) return hit;
     // inflected form -> lemma via the grader's lexicon (e.g. "llega" -> llegar)
-    const m = /\(([^)]+)\)/.exec(w.en || "");
-    if (m) { hit = App.allItems().find((x) => App.fold(x.es) === App.fold(m[1].trim())); if (hit) return hit; }
     try {
       for (const e of Grader.lookup(key)) { hit = App.item(e.lemma); if (hit) return hit; }
     } catch (e) { /* ignore */ }
     return null;
   }
   App.readingVocabFor = vocabFor;
+
+  /** "▶ Play the whole story": every sentence queued at natural speed (its fast-speech version when there is one). */
+  function playAll(r) {
+    const b = h("button.btn.btn-secondary.btn-sm.play-story", { type: "button" }, "▶ Play the whole story");
+    let on = false;
+    b.onclick = () => {
+      if (on) { Speech.cancel(); on = false; b.textContent = "▶ Play the whole story"; return; }
+      on = true; b.textContent = "■ Stop";
+      const sents = r.sentences || [];
+      let last = null;
+      sents.forEach((s, k) => { last = k === 0 ? Speech.speak(s.natural || s.es, "natural") : Speech.speak(s.natural || s.es, "natural", { queue: true }); });
+      Promise.resolve(last).finally(() => { on = false; b.textContent = "▶ Play the whole story"; });
+    };
+    return h("div.btn-row.play-story-row", b);
+  }
 
   /** The sentence-by-sentence reader. opts: {inLesson, onDone, spanishOnly} */
   App.readView = function (r, opts) {
@@ -52,7 +69,7 @@
     const bar = h("div.progress-bar", h("div.fill", { style: { width: "0%" } }));
     const sofar = h("div.reader-sofar", { "aria-label": "story so far" });
     const stage = h("div.reader-stage");
-    wrap.append(head, bar, sofar, stage);
+    wrap.append(head, playAll(r), bar, sofar, stage);
     let listenFirst = !!(Store.state.settings.listenFirst);
     let i = opts.restart ? 0 : Math.min(st.idx || 0, sents.length);
     if (opts.restart || i >= sents.length) { i = 0; }
@@ -86,14 +103,18 @@
       const ta = h("textarea.answer-input", { rows: 2, lang: "en", placeholder: "What's this sentence about? (in English, your own words — optional)", "aria-label": "your explanation" });
       ta.value = st.notes[i] || "";
       ta.addEventListener("input", App.debounce(() => { st.notes[i] = ta.value; Store.save(); }, 400));
-      const reveal = h("button.btn.btn-primary", { type: "button" }, "Reveal");
-      card.append(ta, h("div.answer-row", reveal));
+      // Reveal needs an attempt (or an explicit "no idea"), so a story can't be clicked through with Enter
+      const reveal = h("button.btn.btn-primary", { type: "button", disabled: !(ta.value || "").trim() ? true : null, title: "say what it means first" }, "Reveal");
+      const skip = h("button.btn.btn-ghost.btn-sm", { type: "button" }, "No idea — show me");
+      ta.addEventListener("input", () => { reveal.disabled = !ta.value.trim(); });
+      card.append(ta, h("div.answer-row", reveal, skip));
       const after = h("div.reader-reveal");
       card.appendChild(after);
       stage.appendChild(card);
-      App.pageEnter = () => reveal.click();
+      App.pageEnter = null;
+      skip.onclick = () => { reveal.disabled = false; reveal.click(); };
       reveal.onclick = () => {
-        reveal.remove();
+        reveal.remove(); skip.remove();
         text.classList.remove("hidden"); showBtn.remove();
         st.notes[i] = ta.value; Store.save();
         ta.readOnly = true;
@@ -126,11 +147,16 @@
         App.pageEnter = null;
         function mark(k) {
           st.marks[i] = k; counts[k]++;
+          App.emitAnswer({ itemKind: "reading", refId: r.id, refIndex: i, exType: "read-mark", mode: "free", context: opts.inLesson ? "lesson" : "read",
+            outcome: { got: "good", partly: "close", unsure: "unsure", missed: "miss" }[k], score: null, retry: (st.runs || 0) > 0 });
           if (k !== "got") {
-            const ids = (s.words || []).map(vocabFor).filter(Boolean).map((x) => x.id);
+            // auto-add only common words (rank ≤ 1500) or ones already learned; rarer ones keep their "+ review" button.
+            // Auto-added words don't count toward today's new-word goal.
+            const items = (s.words || []).map(vocabFor).filter(Boolean).filter((x) => Store.isLearned(x.id) || (x.rank || 9999) <= 1500);
+            const ids = items.map((x) => x.id);
             if (ids.length) {
               const fresh = ids.filter((id) => !Store.isLearned(id));
-              Store.learn(ids, { dueNow: true });
+              Store.learn(ids, { dueNow: true, countNew: false });
               ids.forEach((id) => { if (!fresh.includes(id)) { const c = Store.state.cards[id]; if (c) c.due = Math.min(c.due, Date.now()); } });
             }
           }
@@ -166,6 +192,7 @@
       const list = App.course.readings || [];
       const idx = list.indexOf(r);
       const next = list.slice(idx + 1).find((x) => !(Store.state.readings && Store.state.readings[x.id] && Store.state.readings[x.id].done));
+      end.appendChild(playAll(r));
       const btns = h("div.btn-row");
       if (opts.onDone) btns.appendChild(h("button.btn.btn-primary.btn-next", { type: "button", onclick: opts.onDone }, "Continue →"));
       btns.appendChild(h("a.btn.btn-secondary", { href: `#/read/${r.id}?mode=es` , onclick: (e) => { if (location.hash.startsWith(`#/read/${r.id}`)) { e.preventDefault(); location.hash = `#/read/${r.id}?mode=es&t=${Date.now()}`; } } }, "Read again (Spanish only)"));

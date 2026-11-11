@@ -81,6 +81,11 @@
   function glossFor(word) {
     let entries = [];
     try { entries = Grader.lookup(word); } catch (e) { entries = []; }
+    // "sé" is far more often "I know" (saber) than the command "be!" (ser): everyday forms before commands/subjunctive
+    // and the accent-exact form before a look-alike ("sé" is not the pronoun "se")
+    const w = String(word).toLowerCase();
+    const rare = (e) => (e.form && e.form !== w ? 2 : 0) + (e.tense === "cmd" || e.tense === "subj" ? 1 : 0);
+    entries = entries.slice().sort((a, b) => rare(a) - rare(b));
     for (const e of entries) {
       const it = App.item(e.lemma);
       if (it) return { it, form: word };
@@ -181,6 +186,11 @@
     return box;
   }
 
+  // shared with the Think-out-loud page (say.js)
+  App.glossFor = glossFor;
+  App.chatSetupCard = setupCard;
+  App.graderNotes = graderNotes;
+
   // ------------------------------------------------------------------ pages
   App.pages.chat = async function (main, params) {
     const page = h("div.page.chat-page");
@@ -264,11 +274,26 @@
       } }, "New conversation"),
       h("span.small.muted.chat-disclaimer", `${App.penguinName()}'s Spanish is usually right but not perfect — he's a small AI model.`));
     page.appendChild(footer);
+    let chipText = null;       // text a suggestion chip put in the box (an unedited chip isn't scored)
     function setSuggestions(list) {
       sugg.innerHTML = "";
       (list || []).slice(0, 4).forEach((s) => sugg.appendChild(h("button.chip.chat-chip", { type: "button", lang: "es", onclick: () => {
         ta.value = String(s).replace(/…$/, " ").replace(/\.\.\.$/, " "); ta.focus(); ta.setSelectionRange(ta.value.length, ta.value.length);
+        chipText = ta.value.trim();
       } }, s)));
+    }
+    /** penguin:answer for a chat turn: good = clean Spanish, close = needed a correction, miss = mostly English.
+     * Turns under 3 words and unedited suggestion chips are not scored. */
+    function emitTurn(text, um) {
+      const toks = Grader.tokenize(text);
+      if (toks.length < 3 || (chipText && App.fold(text) === App.fold(chipText))) return;
+      const EN = /^(the|a|an|i|you|is|are|am|do|does|it|my|and|but|what|where|how|want|like|have|to|of|in|on|with|this|that|we|they|he|she|can|not|don|t)$/;
+      let es = 0, en = 0;
+      toks.forEach((t) => { if (EN.test(t.n)) en++; else if (Grader.lookup(t.n).length) es++; });
+      const fixed = (um.correction && um.correction.fixed && App.fold(um.correction.fixed) !== App.fold(um.correction.original || "")) || (um.notes || []).length;
+      const outcome = en > es ? "miss" : fixed ? "close" : "good";
+      App.emitAnswer({ itemKind: "chat", refId: topic.id, exType: "chat-turn", mode: "free", context: "chat", production: true,
+        outcome, score: null, level: S.chatLevel || 1 });
     }
     const lastBot = c.messages.slice().reverse().find((m) => m.role === "bot");
     setSuggestions((lastBot && lastBot.suggestions) || topic.starters || []);
@@ -301,6 +326,8 @@
         const res = await sendChat(topic, S.chatLevel || 1, c.messages, S.chatBackend);
         um.correction = res.correction || null;
         um.notes = graderNotes(text, um.correction);
+        emitTurn(text, um);
+        chipText = null;
         uEl.replaceWith(userBubble(um));
         const bm = { role: "bot", text: res.reply_es || "…", en: res.reply_en || "", suggestions: res.suggestions || [], ts: Date.now() };
         c.messages.push(bm);

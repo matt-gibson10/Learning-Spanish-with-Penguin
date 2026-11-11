@@ -101,7 +101,8 @@
   C.vocab.forEach((v) => items.set(v.id, Object.assign(v, { cat: "word" })));
   C.chunks.forEach((c) => items.set(c.id, Object.assign(c, { cat: "chunk" })));
   App.course = C;
-  App.item = (id) => items.get(id);
+  // personal phrase cards ("my_<hash>", Think out loud) resolve through App.phraseItem (say.js); never part of allItems()
+  App.item = (id) => items.get(id) || (typeof id === "string" && id.startsWith("my_") && App.phraseItem ? App.phraseItem(id) : undefined);
   App.allItems = () => Array.from(items.values());
   App.sound = (id) => C.sounds.find((s) => s.id === id);
   App.grammar = (id) => C.grammar.find((g) => g.id === id);

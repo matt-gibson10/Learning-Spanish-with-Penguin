@@ -3,10 +3,11 @@
     python scripts/build_course.py                       # content/ -> web/data/course.js
     python scripts/build_course.py --content DIR --out FILE [--quiet] [--strict] [--force]
 
-Loads whatever content exists (vocab_*.json, chunks, sounds, grammar, prompts, stories, about), validates every
-entry against the contract (problems are reported, a bad entry is skipped or repaired, never fatal), merges the vocab
-files (dedupe by id, sort by rank), generates units -> lessons -> steps, and writes `window.COURSE = {...};` as compact
-JSON. Deterministic: same input -> byte-identical output (the file is only rewritten when it changes).
+Loads whatever content exists (vocab_*.json, chunks, sounds, grammar, prompts, stories, about, starter_path),
+validates every entry against the contract (problems are reported, a bad entry is skipped or repaired, never fatal),
+merges the vocab files (dedupe by id, sort by rank), marks chunk/word pairs that are the same item (`alias_of`),
+generates units -> lessons -> steps (the starter path first, then priority-or-rank order), and writes
+`window.COURSE = {...};` as compact JSON. Deterministic: same input -> byte-identical output (the file is only rewritten when it changes).
 Files whose names start with "_" (work-in-progress parts) are ignored.
 """
 from __future__ import annotations
@@ -39,7 +40,7 @@ SOUND_EVERY = 4          # one connected-speech rule every N lessons
 BUILD_MAX = 4            # sentences per build step
 TRIP_UNITS = 2           # units at the start that form the "trip pack"
 SURVIVAL_CHUNK_RANK = 270
-DDM_LESSON = 5           # position of the Día de Muertos lesson
+DDM_LESSON = 30          # position of the (optional) Día de Muertos lesson: the trip is over, so it sits late
 TRIP_PACK_TOPICS = {"travel", "hotel", "restaurant", "food", "drink", "transport", "directions", "money", "emergency",
                     "courtesy", "shopping"}
 TRIP_FLAG_TOPICS = {"food", "drink", "hotel", "restaurant", "transport", "emergency"}
@@ -155,7 +156,15 @@ def check_vocab(e: dict, where: str, rep: Report) -> dict | None:
     if "natural" in e and not (isinstance(e["natural"], list) and all(isinstance(x, str) for x in e["natural"])):
         rep.add(where, f"{eid}: natural must be an array of strings — dropped")
         e.pop("natural")
+    check_priority(e, where, rep)
     return e
+
+
+def check_priority(e: dict, where: str, rep: Report) -> None:
+    p = e.get("priority")
+    if p is not None and (isinstance(p, bool) or not isinstance(p, int)):
+        rep.add(where, f"{e.get('id')}: priority must be an integer — dropped")
+        e.pop("priority")
 
 
 def check_chunk(e: dict, where: str, rep: Report) -> dict | None:
@@ -180,6 +189,7 @@ def check_chunk(e: dict, where: str, rep: Report) -> dict | None:
         rep.add(where, f"{eid}: frame without slot")
     if not e.get("ex_es"):
         rep.add(where, f"{eid}: missing ex_es")
+    check_priority(e, where, rep)
     return e
 
 
@@ -191,6 +201,9 @@ def check_sound(e: dict, where: str, rep: Report) -> dict | None:
     for k in ("summary", "explain"):
         if not e.get(k):
             rep.add(where, f"{eid}: missing {k}")
+    if e.get("order") is not None and (isinstance(e["order"], bool) or not isinstance(e["order"], int)):
+        rep.add(where, f"{eid}: order must be an integer — dropped")
+        e.pop("order")
     exs = [x for x in e.get("examples") or [] if isinstance(x, dict) and x.get("written")]
     if not exs:
         rep.add(where, f"{eid}: no examples")
@@ -358,125 +371,255 @@ def short_en(item: dict) -> str:
     return en.rstrip("?.! ")
 
 
-def build_plan(vocab: list, chunks: list, sounds: list, grammar: list, prompts: list, stories: list, readings: list | None = None) -> list:
+def eff_rank(x: dict) -> int:
+    """Ordering key on the rank scale: an item's optional `priority` (traveller-first placement) wins over its rank."""
+    p = x.get("priority")
+    return p if isinstance(p, int) else x["rank"]
+
+
+GLOSS_STOP = {"the", "and", "you", "your", "for", "not", "one", "with", "what", "how", "who", "mexico", "used", "that",
+              "this", "when", "very", "also", "informal", "formal", "polite"}
+
+
+def gloss_words(en: str) -> set:
+    return {w for w in re.findall(r"[a-z']+", (en or "").lower()) if len(w) >= 3 and w not in GLOSS_STOP}
+
+
+def find_aliases(vocab: list, chunks: list, pinned: set, rep: Report | None = None) -> dict:
+    """Chunk/word pairs with the same folded text and an overlapping gloss are one thing taught twice: keep one
+    (the one pinned by the starter path; else the chunk unless the word is richer) and alias the other to it.
+    Returns {dropped_id: kept_id}."""
+    words: dict = defaultdict(list)
+    for v in vocab:
+        words[fold(v["es"])].append(v)
+    rich = lambda x: 2 * bool(x.get("natural")) + bool(x.get("note")) + bool(x.get("ex_es"))
+    taken: set = set()
+    alias: dict = {}
+    for c in sorted(chunks, key=lambda c: (c["rank"], c["id"])):
+        for v in sorted(words.get(fold(c["es"]), []), key=lambda v: (v["rank"], v["id"])):
+            if v["id"] in taken or c["id"] in taken or not (gloss_words(c["en"]) & gloss_words(v["en"])):
+                continue
+            if c["id"] in pinned and v["id"] in pinned:
+                if rep:
+                    rep.add("starter_path.json", f"{c['id']} and {v['id']} are the same item; teach only one")
+                continue
+            keep, drop = (c, v) if (c["id"] in pinned or (v["id"] not in pinned and rich(c) >= rich(v))) else (v, c)
+            alias[drop["id"]] = keep["id"]
+            taken.update((c["id"], v["id"]))
+            break
+    return alias
+
+
+def check_starter(raw: list, ids: set, grammar_ids: set, sound_ids: set, prompt_ids: set, rep: Report) -> list:
+    out, seen = [], set()
+    for i, l in enumerate(raw):
+        where = "starter_path.json"
+        items = []
+        for x in l.get("items") or []:
+            if x not in ids:
+                rep.add(where, f"lesson {i + 1}: unknown id {x!r} — skipped")
+            elif x in seen:
+                rep.add(where, f"lesson {i + 1}: {x} already used in an earlier starter lesson — skipped")
+            else:
+                seen.add(x)
+                items.append(x)
+        if not items:
+            rep.add(where, f"lesson {i + 1}: no usable items — lesson skipped")
+            continue
+        les = {"title": str(l.get("title") or f"Lesson {i + 1}"), "items": items}
+        for k, pool in (("grammar", grammar_ids), ("sounds", sound_ids), ("prompt", prompt_ids)):
+            v = l.get(k)
+            if v and v not in pool:
+                rep.add(where, f"lesson {i + 1}: unknown {k} {v!r} — ignored")
+                v = None
+            les[k] = v or None
+        out.append(les)
+    for k in ("grammar", "sounds", "prompt"):
+        vals = [l[k] for l in out if l[k]]
+        for v, n in Counter(vals).items():
+            if n > 1:
+                rep.add("starter_path.json", f"{k} {v} placed {n}× (only the first is used)")
+    return out
+
+
+def lesson_title(items: list) -> str:
+    """"Topic · headline item" for generated lessons, e.g. "Eating out · la cuenta"."""
+    topics = Counter(x.get("topic") for x in items if x.get("topic") and x.get("topic") != "function")
+    order = [x.get("topic") for x in items]
+    top = sorted(topics.items(), key=lambda kv: (-kv[1], order.index(kv[0])))[0][0] if topics else "function"
+
+    def pick(cands):
+        return (next((x for x in cands if x["id"].startswith("c_")), None)
+                or next((x for x in cands if x.get("pos") == "noun"), None)
+                or next((x for x in cands if x.get("pos") in ("verb", "adj", "adv", "interj")), None))
+    head = pick([x for x in items if x.get("topic") == top]) or pick(items) or items[0]
+    es = re.sub(r"\s*_{2,}\s*", " … ", head["es"]).strip().rstrip(",.")
+    es = re.sub(r"\s+", " ", es).replace(" …", "…").strip()
+    first = re.sub(r"^[¿¡]", "", es).split(" ")[0]
+    if not (first.isupper() and len(first) > 1):           # keep "OK", "UNAM"…; lower-case "Hay" -> "hay"
+        es = re.sub(r"^([¿¡]?)(\w)", lambda m: m.group(1) + m.group(2).lower(), es)
+    return f"{TOPIC_TITLES.get(top, str(top).title())} · {es}"
+
+
+def build_plan(vocab: list, chunks: list, sounds: list, grammar: list, prompts: list, stories: list, readings: list | None = None,
+               starter: list | None = None, aliases: dict | None = None) -> list:
     readings = readings or []
+    starter = starter or []
+    aliases = aliases or {}
     # --- new-item sequence -------------------------------------------------------------------------
-    # 1) "Trip pack" (first TRIP_UNITS units): survival chunks (rank <= SURVIVAL_CHUNK_RANK), trip-topic words
-    #    (rank <= 1500, or Mexico/trip-flagged) and the most frequent core words, interleaved 4 : 4 : 3 per lesson,
-    #    plus a Día de Muertos lesson at DDM_LESSON (the trip overlaps Nov 1–2).
-    # 2) Everything else: words and chunks merged in frequency order (chunk ranks share the vocab scale).
-    by_rank = lambda x: (x["rank"], x["id"])
-    pack_size = TRIP_UNITS * LESSONS_PER_UNIT * ITEMS_PER_LESSON
+    # 1) Starter path (content/starter_path.json): authored lessons, placed first, in authored item order.
+    # 2) Without a starter path, the old "trip pack" (first TRIP_UNITS units): survival chunks, trip-topic words and
+    #    core words interleaved 4 : 4 : 3 per lesson.
+    # 3) Everything else: words and chunks merged by priority-or-rank (chunk ranks share the vocab scale).
+    # A Día de Muertos lesson (optional) sits at DDM_LESSON. Aliased duplicates (find_aliases) are never taught.
+    by_rank = lambda x: (eff_rank(x), x["rank"], x["id"])
+    pool = [x for x in vocab + chunks if x["id"] not in aliases]
+    by_id = {x["id"]: x for x in vocab + chunks}
     used: set = set()
+    lessons_items: list = []   # (items, title, meta)
+    for l in starter:
+        its = [by_id[i] for i in l["items"] if i not in used]
+        used.update(x["id"] for x in its)
+        lessons_items.append((its, l["title"], l))
     ddm, seen_es = [], set()
-    for x in sorted(vocab + chunks, key=by_rank):
-        if is_ddm(x) and fold(x["es"]) not in seen_es and len(ddm) < ITEMS_PER_LESSON:
+    for x in sorted(pool, key=by_rank):
+        if x["id"] not in used and is_ddm(x) and fold(x["es"]) not in seen_es and len(ddm) < ITEMS_PER_LESSON:
             seen_es.add(fold(x["es"]))
             ddm.append(x)
     if len(ddm) < 4:
         ddm = []
     used.update(x["id"] for x in ddm)
-    surv = [c for c in sorted(chunks, key=by_rank) if c["rank"] <= SURVIVAL_CHUNK_RANK]
-    trip = sorted([v for v in vocab if v["id"] not in used and is_trip_word(v)],
-                  key=lambda v: (0 if v["rank"] <= 1500 else 1, v["rank"], v["id"]))
-    core = [v for v in sorted(vocab, key=by_rank) if v["id"] not in used]
-    queues = [surv, trip, core]
-    quota = [4, 4, 3]
-    pos = [0, 0, 0]
-    pack_lessons: list = []
-    budget = pack_size - (len(ddm) if ddm else 0)
-    taken = 0
-    while taken < budget:
-        lesson, progress = [], False
-        for q, n in zip(range(3), quota):
-            k = 0
-            while k < n and pos[q] < len(queues[q]):
-                x = queues[q][pos[q]]
-                pos[q] += 1
-                if x["id"] in used:
-                    continue
-                used.add(x["id"])
-                lesson.append(x)
-                k += 1
-                progress = True
-        if not progress:
-            break
-        # top up short lessons (small queues) with the next most frequent items
-        if len(lesson) < ITEMS_PER_LESSON:
-            for x in sorted(vocab + chunks, key=by_rank):
-                if len(lesson) >= ITEMS_PER_LESSON:
-                    break
-                if x["id"] not in used:
+    if not starter:
+        pack_size = TRIP_UNITS * LESSONS_PER_UNIT * ITEMS_PER_LESSON
+        surv = [c for c in sorted(chunks, key=by_rank) if c["rank"] <= SURVIVAL_CHUNK_RANK and c["id"] not in aliases]
+        trip = sorted([v for v in vocab if v["id"] not in used and v["id"] not in aliases and is_trip_word(v)],
+                      key=lambda v: (0 if eff_rank(v) <= 1500 else 1, eff_rank(v), v["id"]))
+        core = [v for v in sorted(vocab, key=by_rank) if v["id"] not in used and v["id"] not in aliases]
+        queues, quota, pos = [surv, trip, core], [4, 4, 3], [0, 0, 0]
+        budget = pack_size - len(ddm)
+        taken = 0
+        while taken < budget:
+            lesson, progress = [], False
+            for q, n in zip(range(3), quota):
+                k = 0
+                while k < n and pos[q] < len(queues[q]):
+                    x = queues[q][pos[q]]
+                    pos[q] += 1
+                    if x["id"] in used:
+                        continue
                     used.add(x["id"])
                     lesson.append(x)
-        # interleave sources within the lesson: chunk, word, core, chunk, ...
-        pack_lessons.append(interleave(lesson))
-        taken += len(lesson)
-    lessons_items: list = [(items, None) for items in pack_lessons]
+                    k += 1
+                    progress = True
+            if not progress:
+                break
+            if len(lesson) < ITEMS_PER_LESSON:
+                for x in sorted(pool, key=by_rank):
+                    if len(lesson) >= ITEMS_PER_LESSON:
+                        break
+                    if x["id"] not in used:
+                        used.add(x["id"])
+                        lesson.append(x)
+            lessons_items.append((interleave(lesson), None, None))
+            taken += len(lesson)
+    rest = [x for x in sorted(pool, key=by_rank) if x["id"] not in used]
+    for k in range(0, len(rest), ITEMS_PER_LESSON):
+        lessons_items.append((rest[k:k + ITEMS_PER_LESSON], None, None))
     if ddm:
         at = min(DDM_LESSON - 1, len(lessons_items))
-        lessons_items.insert(at, (ddm, "Día de Muertos"))
-    rest = [x for x in sorted(vocab + chunks, key=by_rank) if x["id"] not in used]
-    for k in range(0, len(rest), ITEMS_PER_LESSON):
-        lessons_items.append((rest[k:k + ITEMS_PER_LESSON], None))
-    lesson_titles = [t for _, t in lessons_items]
-    lessons_items = [items for items, _ in lessons_items]
+        lessons_items.insert(at, (ddm, "Día de Muertos (optional)", {"optional": True}))
 
-    # --- sound rules in order of first use by the chunks being learned, then file order
+    # --- sound rules: starter-path rules where authored, then by `order` (else first use by chunks, then file order)
     sound_ids = [s["id"] for s in sounds]
     first_use: dict[str, int] = {}
-    for li, items in enumerate(lessons_items):
+    for li, (items, _, _) in enumerate(lessons_items):
         for it in items:
             for r in it.get("sound_rules") or []:
                 if r in sound_ids and r not in first_use:
                     first_use[r] = li
-    sound_queue = sorted(sound_ids, key=lambda s: (first_use.get(s, 10_000), sound_ids.index(s)))
+    sorder = {s["id"]: s.get("order") for s in sounds}
+    sound_queue = sorted(sound_ids, key=lambda s: ((sorder[s], 0) if isinstance(sorder[s], int) else (10_000, first_use.get(s, 10_000)),
+                                                   sound_ids.index(s)))
     gram_queue = sorted(grammar, key=lambda g: (g["order"], g["id"]))
+    starter_sounds = {m["sounds"] for _, _, m in lessons_items if m and m.get("sounds")}
+    starter_grammar = {m["grammar"] for _, _, m in lessons_items if m and m.get("grammar")}
+    starter_prompts = {m["prompt"] for _, _, m in lessons_items if m and m.get("prompt")}
+    sound_queue = [s for s in sound_queue if s not in starter_sounds]
+    gram_by_id = {g["id"]: g for g in grammar}
+    gram_queue = [g for g in gram_queue if g["id"] not in starter_grammar]
     placed_grammar: set = set()
+    placed_sounds: set = set()
+    is_ddm_prompt = lambda p: "muertos" in fold(p.get("situation"))
+    prompt_by_id = {p["id"]: p for p in prompts}
     prompt_pool = sorted(prompts, key=lambda p: (p.get("tier", 1), prompts.index(p)))
     story_pool = sorted(stories, key=lambda s: (s.get("tier", 1), stories.index(s)))
-    used_prompts: set = set()
+    used_prompts: set = set(starter_prompts)
     used_stories: set = set()
     reading_pool = sorted(readings, key=lambda r: (r.get("tier", 1), readings.index(r)))
     used_readings: set = set()
+    if ddm:
+        used_prompts.update(p["id"] for p in prompts if is_ddm_prompt(p))
 
     units, last_grammar, last_sound = [], -99, -99
     unit_lessons: list = []
-    for li, items in enumerate(lessons_items):
+    for li, (items, ltitle, meta) in enumerate(lessons_items):
+        meta = meta or {}
         steps = [{"type": "learn", "items": [x["id"] for x in items]}]
         cur_tier = max(1, round(sum(x.get("tier", 1) for x in items) / len(items)))
-        if sound_queue and li - last_sound >= SOUND_EVERY and li >= 1:
-            steps.append({"type": "sounds", "rule": sound_queue.pop(0)})
-            last_sound = li
-        if gram_queue and li - last_grammar >= GRAMMAR_EVERY and li >= 1 and gram_queue[0].get("tier", 1) <= cur_tier + 1:
-            g = gram_queue.pop(0)
-            steps.append({"type": "grammar", "unit": g["id"]})
-            placed_grammar.add(g["id"])
-            last_grammar = li
+        in_starter = bool(meta.get("items"))
+        if in_starter:
+            if meta.get("sounds") and meta["sounds"] not in placed_sounds:
+                steps.append({"type": "sounds", "rule": meta["sounds"]})
+                placed_sounds.add(meta["sounds"])
+                last_sound = li
+            if meta.get("grammar") and meta["grammar"] not in placed_grammar:
+                steps.append({"type": "grammar", "unit": meta["grammar"]})
+                placed_grammar.add(meta["grammar"])
+                last_grammar = li
+        elif not meta.get("optional"):
+            if sound_queue and li - last_sound >= SOUND_EVERY and li >= 1:
+                s = sound_queue.pop(0)
+                steps.append({"type": "sounds", "rule": s})
+                placed_sounds.add(s)
+                last_sound = li
+            if gram_queue and li - last_grammar >= GRAMMAR_EVERY and li >= 1 and gram_queue[0].get("tier", 1) <= cur_tier + 1:
+                g = gram_queue.pop(0)
+                steps.append({"type": "grammar", "unit": g["id"]})
+                placed_grammar.add(g["id"])
+                last_grammar = li
         steps.append({"type": "drill", "items": [x["id"] for x in items]})
         buildable = [x["id"] for x in items if x.get("ex_es") and x.get("ex_en") and 2 <= len(x["ex_es"].split()) <= 9]
         if buildable:
             steps.append({"type": "build", "items": buildable[:BUILD_MAX]})
-        if li >= 1:
+        if meta.get("optional"):
+            for p in prompts:
+                if is_ddm_prompt(p):
+                    steps.append({"type": "prompt", "id": p["id"]})
+        elif meta.get("prompt"):
+            steps.append({"type": "prompt", "id": meta["prompt"]})
+        elif li >= 1:
             p = next((p for p in prompt_pool if p["id"] not in used_prompts and
                       (not p.get("after_grammar") or p["after_grammar"] in placed_grammar)), None)
             if p:
                 used_prompts.add(p["id"])
                 steps.append({"type": "prompt", "id": p["id"]})
-        unit_lessons.append({"id": None, "title": lesson_titles[li], "steps": steps, "_items": items})
+        unit_lessons.append({"id": None, "title": ltitle, "steps": steps, "_items": items,
+                             "optional": bool(meta.get("optional"))})
         end_of_unit = len(unit_lessons) == LESSONS_PER_UNIT or li == len(lessons_items) - 1
         if end_of_unit:
             rd = next((r for r in reading_pool if r["id"] not in used_readings and
                        (not r.get("after_grammar") or r["after_grammar"] in placed_grammar)), None)
             if rd:
                 used_readings.add(rd["id"])
-                target = unit_lessons[-2] if len(unit_lessons) >= 2 else unit_lessons[-1]
+                core_l = [l for l in unit_lessons if not l["optional"]] or unit_lessons
+                target = core_l[-2] if len(core_l) >= 2 else core_l[-1]
                 target["steps"].append({"type": "read", "id": rd["id"]})
             s = next((s for s in story_pool if s["id"] not in used_stories and
                       (not s.get("after_grammar") or s["after_grammar"] in placed_grammar)), None)
             if s:
                 used_stories.add(s["id"])
-                unit_lessons[-1]["steps"].append({"type": "story", "id": s["id"]})
+                core_l = [l for l in unit_lessons if not l["optional"]] or unit_lessons
+                core_l[-1]["steps"].append({"type": "story", "id": s["id"]})
             units.append(unit_lessons)
             unit_lessons = []
 
@@ -496,10 +639,12 @@ def build_plan(vocab: list, chunks: list, sounds: list, grammar: list, prompts: 
             steps.insert(i, step)
 
         for s in sound_queue:
-            insert_before_drill(nxt(), {"type": "sounds", "rule": s})
+            if s not in placed_sounds:
+                insert_before_drill(nxt(), {"type": "sounds", "rule": s})
         for g in gram_queue:
-            insert_before_drill(nxt(), {"type": "grammar", "unit": g["id"]})
-            placed_grammar.add(g["id"])
+            if g["id"] not in placed_grammar:
+                insert_before_drill(nxt(), {"type": "grammar", "unit": g["id"]})
+                placed_grammar.add(g["id"])
         for p in prompt_pool:
             if p["id"] not in used_prompts:
                 nxt().append({"type": "prompt", "id": p["id"]})
@@ -538,11 +683,11 @@ def build_plan(vocab: list, chunks: list, sounds: list, grammar: list, prompts: 
         tiers = sorted(x.get("tier", 1) for x in all_items) or [1]
         unit = {"id": f"u{ui:02d}", "title": title, "tier": tiers[len(tiers) // 2], "lessons": []}
         for lj, l in enumerate(lessons, 1):
-            its = l["_items"]
-            named = [x for x in its if x.get("pos") not in ("det", "prep", "conj", "pron") and short_en(x)]
-            names = [short_en(x) for x in (named or its)[:2]]
-            ltitle = l.get("title") or (" & ".join(names).capitalize() if names else f"Lesson {lj}")
-            unit["lessons"].append({"id": f"u{ui:02d}l{lj:02d}", "title": ltitle[:48], "steps": l["steps"]})
+            ltitle = l.get("title") or lesson_title(l["_items"])
+            les = {"id": f"u{ui:02d}l{lj:02d}", "title": ltitle[:48], "steps": l["steps"]}
+            if l["optional"]:
+                les["optional"] = True
+            unit["lessons"].append(les)
         out.append(unit)
     return out
 
@@ -571,7 +716,7 @@ def main(argv=None) -> int:
     files = {p.name: p for p in sorted(cdir.glob("*.json")) if not p.name.startswith("_")}
     vocab_files = [files[n] for n in sorted(files) if n.startswith("vocab_")]
     raw = {k: load_json(files[f"{k}.json"], rep) if f"{k}.json" in files else []
-           for k in ("chunks", "sounds", "grammar", "prompts", "stories", "readings", "about", "chat_topics")}
+           for k in ("chunks", "sounds", "grammar", "prompts", "stories", "readings", "about", "chat_topics", "starter_path")}
 
     # vocab: merge, dedupe by id (first file wins, but report), sort by rank
     vocab, seen = [], {}
@@ -605,6 +750,7 @@ def main(argv=None) -> int:
 
     chunks = sorted(dedupe(raw["chunks"], "chunks", check_chunk), key=lambda c: (c["rank"], c["id"]))
     sounds = dedupe(raw["sounds"], "sounds", check_sound)
+    sounds = [s for _, s in sorted(enumerate(sounds), key=lambda t: (t[1].get("order", 10_000), t[0]))]
     grammar = sorted(dedupe(raw["grammar"], "grammar", check_grammar), key=lambda g: (g["order"], g["id"]))
     gids = {g["id"] for g in grammar}
     prompts = dedupe(raw["prompts"], "prompts", check_prompt, gids)
@@ -628,7 +774,16 @@ def main(argv=None) -> int:
         print(f"No vocab or chunks found in {cdir}; leaving {args.out} unchanged.")
         return 0
 
-    units = build_plan(vocab, chunks, sounds, grammar, prompts, stories, readings)
+    all_ids = {x["id"] for x in vocab + chunks}
+    for x in vocab + chunks:
+        x.pop("alias_of", None)      # computed below, never authored
+    starter = check_starter(raw["starter_path"], all_ids, gids, sids, {p["id"] for p in prompts}, rep)
+    pinned = {i for l in starter for i in l["items"]}
+    aliases = find_aliases(vocab, chunks, pinned, rep)
+    for x in vocab + chunks:
+        if x["id"] in aliases:
+            x["alias_of"] = aliases[x["id"]]    # same item as alias_of; kept so saved progress ids still resolve
+    units = build_plan(vocab, chunks, sounds, grammar, prompts, stories, readings, starter, aliases)
     n_lessons = sum(len(u["lessons"]) for u in units)
     step_counts = Counter(s["type"] for u in units for l in u["lessons"] for s in l["steps"])
 
@@ -637,7 +792,8 @@ def main(argv=None) -> int:
             "version": 1, "trip": "2026-10-30",
             "counts": {"vocab": len(vocab), "chunks": len(chunks), "sounds": len(sounds), "grammar": len(grammar),
                        "prompts": len(prompts), "stories": len(stories), "readings": len(readings),
-                       "chat_topics": len(chat_topics), "units": len(units), "lessons": n_lessons},
+                       "chat_topics": len(chat_topics), "units": len(units), "lessons": n_lessons,
+                       "aliases": len(aliases), "starter_lessons": len(starter)},
             "sources": sorted(p.name for p in [*vocab_files, *[files[f"{k}.json"] for k in raw if f"{k}.json" in files]]),
         },
         "vocab": vocab, "chunks": chunks, "sounds": sounds, "grammar": grammar,

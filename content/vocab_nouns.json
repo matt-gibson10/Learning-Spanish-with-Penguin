@@ -27,11 +27,7 @@
     "plural": "señores",
     "ex_es": "Buenas tardes, señor.",
     "ex_en": "Good afternoon, sir.",
-    "note": "Short form Sr. In fast speech often 'señó'.",
-    "natural": [
-      "señó",
-      "siñor"
-    ]
+    "note": "Short form Sr. Polite address for any man you don't know: \"Disculpe, señor.\""
   },
   {
     "id": "v_vez",
@@ -182,10 +178,7 @@
     "plural": "hijos",
     "ex_es": "Tienen dos hijos y una hija.",
     "ex_en": "They have two sons and a daughter.",
-    "note": "los hijos = children (sons and daughters). mijo = my son / dear.",
-    "natural": [
-      "mijo"
-    ]
+    "note": "los hijos = children (sons and daughters). mijo = my son / dear."
   },
   {
     "id": "v_vida",
@@ -424,8 +417,7 @@
     "ex_en": "My dad cooks really well.",
     "note": "los papás = parents (Mexico). Accent matters: papa = potato.",
     "natural": [
-      "apá",
-      "pa'"
+      "apá"
     ]
   },
   {
@@ -443,8 +435,7 @@
     "ex_en": "I'm going to call my mom.",
     "note": "Accent on the last a.",
     "natural": [
-      "amá",
-      "ma'"
+      "amá"
     ]
   },
   {
@@ -1026,7 +1017,8 @@
     "plural": "cuentas",
     "ex_es": "La cuenta, por favor.",
     "ex_en": "The check, please.",
-    "note": "darse cuenta = to realize; cuenta bancaria = bank account"
+    "note": "darse cuenta = to realize; cuenta bancaria = bank account",
+    "priority": 250
   },
   {
     "id": "v_gusto",
@@ -1085,10 +1077,7 @@
     "plural": "hijas",
     "ex_es": "Mi hija estudia en Guadalajara.",
     "ex_en": "My daughter studies in Guadalajara.",
-    "note": "m: hijo. mija = my daughter / dear.",
-    "natural": [
-      "mija"
-    ]
+    "note": "m: hijo. mija = my daughter / dear."
   },
   {
     "id": "v_camino",
@@ -1473,8 +1462,8 @@
     "es": "derecho",
     "en": "right (entitlement); law",
     "pos": "noun",
-    "rank": 470,
-    "tier": 1,
+    "rank": 1500,
+    "tier": 3,
     "topic": "abstract",
     "gender": "m",
     "article": "el",
@@ -1626,7 +1615,8 @@
     "article": "la",
     "plural": "mesas",
     "ex_es": "Una mesa para dos, por favor.",
-    "ex_en": "A table for two, please."
+    "ex_en": "A table for two, please.",
+    "priority": 300
   },
   {
     "id": "v_realidad",
@@ -2256,7 +2246,8 @@
     "plural": "baños",
     "ex_es": "¿Dónde está el baño?",
     "ex_en": "Where's the bathroom?",
-    "note": "Signs: Sanitarios, Damas (women), Caballeros (men)."
+    "note": "Signs: Sanitarios, Damas (women), Caballeros (men).",
+    "priority": 120
   },
   {
     "id": "v_modo",
@@ -2344,7 +2335,8 @@
     "plural": "cuartos",
     "ex_es": "Mi cuarto está en el segundo piso.",
     "ex_en": "My room is on the second floor.",
-    "note": "Mexico: cuarto = room. Also a quarter: un cuarto de hora."
+    "note": "Mexico: cuarto = room. Also a quarter: un cuarto de hora.",
+    "priority": 400
   },
   {
     "id": "v_foto",
@@ -2436,7 +2428,7 @@
   {
     "id": "v_cuidado",
     "es": "cuidado",
-    "en": "care",
+    "en": "care; ¡cuidado! = careful!, watch out!",
     "pos": "noun",
     "rank": 700,
     "tier": 2,
@@ -2680,7 +2672,8 @@
     "plural": "llaves",
     "ex_es": "Perdí la llave del cuarto.",
     "ex_en": "I lost the room key.",
-    "note": "Mexico: la llave also = tap/faucet."
+    "note": "Mexico: la llave also = tap/faucet.",
+    "priority": 400
   },
   {
     "id": "v_actividad",
@@ -3076,7 +3069,8 @@
     "plural": "hoteles",
     "ex_es": "El hotel está cerca de la playa.",
     "ex_en": "The hotel is near the beach.",
-    "note": "The h is silent: 'otel'."
+    "note": "The h is silent: 'otel'.",
+    "priority": 300
   },
   {
     "id": "v_ingles",
@@ -3194,7 +3188,8 @@
     "plural": "pesos",
     "ex_es": "Son cincuenta pesos.",
     "ex_en": "That's fifty pesos.",
-    "note": "Mexican currency: el peso (MXN). Also weight."
+    "note": "Mexican currency: el peso (MXN). Also weight.",
+    "priority": 230
   },
   {
     "id": "v_prueba",
@@ -3550,7 +3545,8 @@
     "plural": "derechas",
     "ex_es": "Está a la derecha.",
     "ex_en": "It's on the right.",
-    "note": "a la derecha = on the right; derecho = straight ahead."
+    "note": "a la derecha = on the right; derecho = straight ahead.",
+    "priority": 180
   },
   {
     "id": "v_falta",
@@ -3916,7 +3912,8 @@
     "plural": "cafés",
     "ex_es": "Un café americano, por favor.",
     "ex_en": "An Americano, please.",
-    "note": "café de olla = Mexican spiced coffee"
+    "note": "café de olla = Mexican spiced coffee",
+    "priority": 170
   },
   {
     "id": "v_calor",
@@ -4047,7 +4044,8 @@
     "plural": "izquierdas",
     "ex_es": "Gire a la izquierda.",
     "ex_en": "Turn left.",
-    "note": "a la izquierda = on the left"
+    "note": "a la izquierda = on the left",
+    "priority": 180
   },
   {
     "id": "v_llamada",
@@ -4502,7 +4500,8 @@
     "article": "el",
     "ex_es": "Tengo mucha hambre.",
     "ex_en": "I'm very hungry.",
-    "note": "Feminine but el hambre (stressed a-): tengo mucha hambre, el hambre."
+    "note": "Feminine but el hambre (stressed a-): tengo mucha hambre, el hambre.",
+    "priority": 260
   },
   {
     "id": "v_miembro",
@@ -5067,7 +5066,8 @@
     "plural": "metros",
     "ex_es": "Vamos en metro, es más rápido.",
     "ex_en": "Let's take the subway, it's faster.",
-    "note": "Both 'meter' and 'subway (Metro)'."
+    "note": "Both 'meter' and 'subway (Metro)'.",
+    "priority": 350
   },
   {
     "id": "v_mirada",
@@ -6472,7 +6472,8 @@
     "plural": "cervezas",
     "ex_es": "Dos cervezas bien frías, por favor.",
     "ex_en": "Two really cold beers, please.",
-    "note": "Mexican slang: chela. una michelada = beer with lime, salt and sauces."
+    "note": "Mexican slang: chela. una michelada = beer with lime, salt and sauces.",
+    "priority": 160
   },
   {
     "id": "v_concepto",
@@ -6848,7 +6849,8 @@
     "plural": "tarjetas",
     "ex_es": "¿Aceptan tarjeta?",
     "ex_en": "Do you take cards?",
-    "note": "tarjeta de crédito / débito"
+    "note": "tarjeta de crédito / débito",
+    "priority": 210
   },
   {
     "id": "v_viento",
@@ -7695,7 +7697,8 @@
     "plural": "camiones",
     "ex_es": "Tomamos el camión a Oaxaca.",
     "ex_en": "We take the bus to Oaxaca.",
-    "note": "Mexico: camión = bus (and truck). Plural: camiones."
+    "note": "Mexico: camión = bus (and truck). Plural: camiones.",
+    "priority": 350
   },
   {
     "id": "v_caracter",
@@ -8574,7 +8577,8 @@
     "plural": "taxis",
     "ex_es": "¿Me puede pedir un taxi?",
     "ex_en": "Can you call me a taxi?",
-    "note": "Use sitio (licensed) taxis or apps in big cities."
+    "note": "Use sitio (licensed) taxis or apps in big cities.",
+    "priority": 350
   },
   {
     "id": "v_unidad",
@@ -10476,7 +10480,8 @@
     "plural": "esquinas",
     "ex_es": "Dé vuelta en la esquina.",
     "ex_en": "Turn at the corner.",
-    "note": "Outside corner (street) = esquina; inside corner = rincón."
+    "note": "Outside corner (street) = esquina; inside corner = rincón.",
+    "priority": 220
   },
   {
     "id": "v_explicacion",
@@ -12394,7 +12399,8 @@
     "plural": "boletos",
     "ex_es": "Dos boletos para Puebla, por favor.",
     "ex_en": "Two tickets to Puebla, please.",
-    "note": "Mexico: boleto (bus, plane, concert). Spain: billete / entrada."
+    "note": "Mexico: boleto (bus, plane, concert). Spain: billete / entrada.",
+    "priority": 300
   },
   {
     "id": "v_campeon",
@@ -12850,7 +12856,8 @@
     "article": "la",
     "ex_es": "Tengo sed.",
     "ex_en": "I'm thirsty.",
-    "note": "tener sed = to be thirsty"
+    "note": "tener sed = to be thirsty",
+    "priority": 260
   },
   {
     "id": "v_suegra",
@@ -13544,7 +13551,8 @@
     "plural": "cuadras",
     "ex_es": "Está a dos cuadras de aquí.",
     "ex_en": "It's two blocks from here.",
-    "note": "Latin America: cuadra. Spain: manzana."
+    "note": "Latin America: cuadra. Spain: manzana.",
+    "priority": 200
   },
   {
     "id": "v_este",
@@ -14307,7 +14315,8 @@
     "article": "la",
     "plural": "farmacias",
     "ex_es": "¿Hay una farmacia cerca?",
-    "ex_en": "Is there a pharmacy nearby?"
+    "ex_en": "Is there a pharmacy nearby?",
+    "priority": 300
   },
   {
     "id": "v_feria",
@@ -14512,7 +14521,8 @@
     "plural": "menús",
     "ex_es": "¿Tiene menú en inglés?",
     "ex_en": "Do you have a menu in English?",
-    "note": "menú del día / comida corrida = set lunch menu"
+    "note": "menú del día / comida corrida = set lunch menu",
+    "priority": 320
   },
   {
     "id": "v_miel",
@@ -15161,7 +15171,8 @@
     "article": "el",
     "ex_es": "¿Puedo pagar en efectivo?",
     "ex_en": "Can I pay in cash?",
-    "note": "en efectivo = in cash. (Also an adjective: effective.)"
+    "note": "en efectivo = in cash. (Also an adjective: effective.)",
+    "priority": 200
   },
   {
     "id": "v_falda",
@@ -15291,7 +15302,8 @@
     "plural": "tacos",
     "ex_es": "Tres tacos al pastor, por favor.",
     "ex_en": "Three tacos al pastor, please.",
-    "note": "Mexico: echarse unos tacos = to grab some tacos."
+    "note": "Mexico: echarse unos tacos = to grab some tacos.",
+    "priority": 150
   },
   {
     "id": "v_terraza",
@@ -18500,21 +18512,8 @@
     "plural": "propinas",
     "ex_es": "¿La propina está incluida?",
     "ex_en": "Is the tip included?",
-    "note": "Usual tip in Mexican restaurants: 10–15%."
-  },
-  {
-    "id": "v_agua_natural",
-    "es": "agua natural",
-    "en": "still water (not flavored)",
-    "pos": "noun",
-    "rank": 5000,
-    "tier": 6,
-    "topic": "drink",
-    "gender": "f",
-    "article": "el",
-    "ex_es": "Un agua natural, por favor.",
-    "ex_en": "A plain bottled water, please.",
-    "note": "Feminine but el agua: el agua natural. Mexico: plain water (vs agua mineral = sparkling, agua fresca = fruit drink). ¿Fría o al tiempo? = cold or room temperature?"
+    "note": "Usual tip in Mexican restaurants: 10–15%.",
+    "priority": 340
   },
   {
     "id": "v_arete",
@@ -19034,7 +19033,8 @@
     "plural": "reservaciones",
     "ex_es": "Tengo una reservación a nombre de Smith.",
     "ex_en": "I have a reservation under Smith.",
-    "note": "Mexico: reservación. Spain: reserva."
+    "note": "Mexico: reservación. Spain: reserva.",
+    "priority": 350
   },
   {
     "id": "v_salchicha",

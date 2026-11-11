@@ -207,6 +207,78 @@ The target was < 6 s per reply; this CPU gets 5–9 s with a model that is good 
 (Note the slip "Como ceviche" → "I love ceviche": the translation is a little loose. That is the kind of
 imperfection to expect.)
 
+## Think out loud / translate
+
+The owner's request: *"a way for me to think out loud then it gets translated word by word for me"*. The `#/say`
+page sends what he says or types, **one sentence per request**, to `POST /api/translate` (contract:
+docs/CONTRACT.md, "Think out loud"). Input may be English, attempted Spanish or a mix (*"quiero ir to the beach
+mañana"*), including speech-recognition fillers (*"um so like…"*).
+
+```
+POST /api/translate {"text": "I'm hungry, is there a taco place around here?", "backend": "local"|"claude"|null}
+→ {"input_lang": "en", "en": "I'm hungry. Is there a taco place around here?",
+   "es": "Tengo hambre. ¿Hay una taquería por aquí?",
+   "pieces": [{"es": "Tengo hambre.", "en": "I'm hungry"}, {"es": "¿Hay", "en": "is there"},
+              {"es": "una taquería", "en": "a taco place"}, {"es": "por aquí?", "en": "around here"}],
+   "tip": "Spanish uses tener (to have) here: 'tengo hambre' is literally 'have hunger'.",
+   "correction": null, "backend": "local", "ms": 5200}
+```
+
+Errors: `422 {"error", "setup"}` for empty text or more than 300 characters; `503 {"error", "setup"}` as for chat.
+Warm-up: `GET /api/chat/status?warm=1` **without** `topic_id` loads the model and pre-reads the translate prompt
+(the Chat page always passes a `topic_id`, so it warms its topic instead). There is no separate status route.
+
+### How it works (prompt structure, for future tuning)
+
+All of it is in `server/chat.py`, section "think out loud".
+
+* **One model call, slot 0.** `TRANSLATE_SYSTEM` (rules: Mexican Spanish, tú vs usted, Mexican words / Spain
+  words to avoid, an idiom list, how to cut pieces) + `TRANSLATE_EXAMPLES` (8 few-shot pairs sent as earlier
+  user/assistant turns: English, fillers, formal *usted*, a Spanish attempt with errors, mixed, gustar/extrañar,
+  tener + feeling, a two-word phrase) + the sentence. The system prompt and examples never change, so they sit
+  in llama-server's prompt cache and only the new sentence is read (~10–30 tokens). Temperature 0.1.
+* **Constrained JSON** (`TRANSLATE_SCHEMA`): `input_language` (enum), `meaning_en`, `spanish`, `pieces`.
+  Descriptive keys, as in chat. **Pieces are strings `"a la playa = to the beach"`**, not objects: roughly half
+  the output tokens of `{"es": …, "en": …}`, which is most of the latency on this CPU. A regex pattern forces the
+  `"… = …"` shape.
+* **Grammar check in parallel, slot 1.** If the input may be Spanish (`maybe_spanish`: accents/¿¡ or Spanish
+  function words), the chat's own `CHECK_SYSTEM` request runs alongside; `make_correction` (unchanged filters:
+  ignores accents/punctuation/pronouns, rejects rewrites and word swaps) turns it into `correction`. Only kept when
+  the model says the input was Spanish (`input_lang == "es"`); a mixed sentence is not "corrected".
+* **Server checks, one retry** (temperature 0.5, with a hint appended to the sentence): Spanish leaking English,
+  Spain-only forms (`peninsular()`: vosotros, os, -áis/-éis verbs, coche, móvil, zumo, vale!, coger…), idioms
+  translated literally (`_IDIOM_GUARDS`: *I'm hot* → must be *tengo calor*, *I'm 32* → *tengo 32 años*,
+  *embarrassed* ≠ *embarazada*, *excited* ≠ *excitado*, *I miss you* → *extrañar*, *how do you say* → *se dice*),
+  pieces that do not fit. The better of the two attempts wins. Safe same-gender swaps (`mexicanize`: coche→carro,
+  móvil→celular, zumo→jugo, ordenador→la computadora…) are applied to whatever is left.
+* **Pieces are cut from `es` itself** (`align_pieces`). The model's piece texts are matched word by word against
+  the final sentence, ignoring case, accents and punctuation; the returned `es` of each piece is the exact text of
+  the sentence (punctuation included), so joined they always reproduce `es`. Small slips are repaired: up to 2
+  words added or left out (a left-out word must be short, ≤ 3 letters, and joins its neighbour piece) and 1-word
+  spelling slips. Anything else (wrong order, missing content words, a piece without English) → `pieces: []`, and
+  the page falls back to its own lexicon gloss.
+* **The tip is rule-based, not model text** (`make_tip`). ~20 rules, most surprising first: false friends
+  (embarazada, excitado, actualmente, librería), idioms (a cántaros, ¿cómo se dice?), tener + age/hunger/heat…,
+  hacer + weather, doler, gustar/encantar (singular vs plural), *me llamo*, object pronoun before the verb, adjective
+  after the noun, estar for states, tener que, ir a + infinitive, questions without "do", dropped *yo*, *no* before
+  the verb. Each rule fires only if its Spanish pattern is in the final `es` (and usually its English trigger in
+  `en` or the input), and quotes the words on screen, so a tip cannot be false about the sentence; `""` when no
+  rule fits. The model's own tips were not trusted: "no tip is better than a wrong tip".
+* **Claude backend**: one request, same system prompt plus `learner_fixed` / `why_en` / `tip` fields, the
+  examples inlined, structured JSON output, effort low, server-side refusal fallback (as in chat). Its tip is used
+  if non-empty, else the rule-based tip. Pieces, Mexican checks and correction filters are the same.
+* Chat and translate share the one llama-server (2 slots, prompt cache saved to RAM when a slot switches
+  prompts, so going back to Chat does not re-read the topic).
+* Pure-function tests (no model): `.venv\Scripts\python.exe tests\test_chat.py` (pytest also works if installed).
+
+### Results (test set of 69 sentences)
+
+*To be measured.* <!-- results table + 10 examples go here -->
+
+### Limits
+
+*To be filled after measurement.*
+
 ## Switching models
 
 * Any instruct-tuned GGUF works: put it in `models\` and set `CHAT_MODEL_PATH=models\your-model.gguf` before

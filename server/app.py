@@ -42,6 +42,15 @@ _db().close()   # create the database on start
 
 app = FastAPI(title="Learning Spanish with Penguin")
 
+
+@app.middleware("http")
+async def _revalidate_static(request, call_next):
+    """The app changes often: make the browser re-check every page/script (cheap 304s) instead of using stale copies."""
+    response = await call_next(request)
+    if not request.url.path.startswith("/api/"):
+        response.headers.setdefault("Cache-Control", "no-cache")
+    return response
+
 from server.chat import router as chat_router   # noqa: E402  Charla con Penguin: /api/chat, /api/chat/status
 app.include_router(chat_router)
 

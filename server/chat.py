@@ -6,6 +6,10 @@ API (see docs/CONTRACT.md, "Conversation API"; details in docs/CHAT.md):
                              pre-reads that topic's instructions, so the first reply is fast.
   POST /api/chat          -> {"reply_es", "reply_en", "correction", "suggestions", "backend", "ms"}
                              errors: 4xx/503 {"error": "...", "setup": "..."}
+  POST /api/translate     -> {"input_lang", "en", "es", "pieces": [{"es", "en"}], "tip", "correction", "backend", "ms"}
+                             "think out loud": one sentence (EN, ES attempt or mixed, <= 300 chars) -> natural
+                             Mexican Spanish cut into pieces. /api/chat/status?warm=1 without topic_id warms it.
+                             See the "think out loud" section below.
 
 How a local reply is made: two requests run at the same time on the same model.
   1. the reply      (persona + topic + level rules -> reply_es, reply_en, suggestions)
@@ -633,11 +637,10 @@ class LocalModel:
 
     def warm(self, topic: Optional[dict], level: int) -> None:
         """Load the model and pre-read a topic's instructions (prompt cache), in the background."""
-        key = ((topic or {}).get("id"), level)
-        if self.loading or (self.loaded() and (topic is None or key == self.warm_key)):
+        key = ((topic or {}).get("id") or "translate", level if topic else 0)
+        if self.loading or (self.loaded() and key == self.warm_key):
             return
-        if topic is not None:
-            self.warm_key = key
+        self.warm_key = key
 
         def run() -> None:
             try:
@@ -646,6 +649,10 @@ class LocalModel:
                     hist = [Turn(role="bot", text=topic.get("opener_es", "")), Turn(role="user", text="Hola")]
                     self.complete(build_check(hist), schema=None, max_tokens=1, slot=SLOT_CHECK)
                     self.complete(build_messages(topic, level, hist[:1]), schema=None, max_tokens=1)
+                else:   # no topic: the Think-out-loud page -> pre-read the translate prompt and the check
+                    self.complete(build_translate("Hola"), schema=None, max_tokens=1, slot=SLOT_TRANSLATE)
+                    self.complete(build_check([Turn(role="user", text="Hola")]), schema=None, max_tokens=1,
+                                  slot=SLOT_CHECK)
             except Exception:
                 pass
         threading.Thread(target=run, daemon=True).start()
@@ -765,6 +772,532 @@ def chat_claude(topic: dict, level: int, history: list["Turn"]) -> dict:
     return out
 
 
+# ---------------------------------------------------------------- think out loud: translate one sentence
+# POST /api/translate (docs/CONTRACT.md "Think out loud"; docs/CHAT.md "Think out loud / translate").
+#
+# How a local translation is made (one model call, plus the grammar check when the input may be Spanish):
+#   slot 0  TRANSLATE_SYSTEM + few-shot examples (fixed prefix, prompt-cached) + the sentence
+#           -> {input_language, meaning_en, spanish, pieces: ["es words = English", ...]}
+#   slot 1  CHECK_SYSTEM (the chat's grammar check, reused unchanged) on the sentence, in parallel, only when it
+#           does not look English -> correction via make_correction()
+#   server  align_pieces(): the pieces' Spanish must re-join to `spanish` (repairs small slips, else [])
+#           make_tip(): a rule-based tip, only from patterns verified in the final Spanish + English (no model
+#           text), so a tip is never wrong; "" when no rule fires.
+#           Peninsular words -> one retry with a hint, then safe word swaps (coche -> carro, ...).
+# Pieces are plain "es = en" strings rather than objects: about half the output tokens, so ~40% faster.
+MAX_TRANSLATE_CHARS = 300
+SLOT_TRANSLATE = SLOT_REPLY
+
+TRANSLATE_SYSTEM = """You help an English speaker who is learning Mexican Spanish to think out loud. He says ONE sentence: in English, in Spanish (maybe with mistakes), or a mix of both. You say what he means in natural, simple Mexican Spanish and cut it into small pieces.
+
+FIELDS
+1. input_language: "english", "spanish" (a Spanish attempt, even with mistakes) or "mixed" (Spanish and English words together).
+2. meaning_en: what he means, in clean natural English. Leave out speech fillers (um, uh, like, so, you know, I mean, or something) and false starts.
+3. spanish: what a friendly Mexican would really say. Natural, simple and correct. Translate the MEANING, never word for word.
+   - Use tú. Use usted only when he speaks politely to a stranger (sir, ma'am, excuse me, a waiter, a driver, an officer).
+   - Mexican words: carro, celular, jugo, camión (bus), boleto, computadora, departamento, enojado, manejar, estacionar, alberca, papas, lentes, ahorita, padre or chido (cool), la cuenta.
+   - NEVER use vosotros, os, or words from Spain (coche, móvil, zumo, ordenador, vale, coger, guay, conducir, aparcar, gafas, patatas, piscina, enfadado).
+   - Leave out yo, tú and other subject words unless they are needed. Questions start with ¿ and exclamations with ¡.
+   - Idioms by meaning: I'm hungry / thirsty / hot / cold / sleepy / scared = tengo hambre / sed / calor / frío / sueño / miedo. I'm 32 = tengo 32 años. It's hot / cold (weather) = hace calor / frío. I'm full = estoy lleno. I'm embarrassed = me da pena. I'm excited = estoy emocionado. I miss you = te extraño. I like tacos = me gustan los tacos. How do you say X? = ¿cómo se dice X? It's raining cats and dogs = está lloviendo a cántaros. My name is = me llamo. Have a good time = que te diviertas.
+   - If he wrote Spanish: spanish is his sentence with the mistakes fixed and made natural, keeping his meaning and his words when they are fine.
+4. pieces: the spanish sentence cut into small chunks, in Spanish order. Each piece is "Spanish words = English meaning".
+   - Every word of spanish is in exactly one piece, in the same order. Add nothing, leave nothing out.
+   - Pieces are 1 to 3 words, one idea each. Keep set phrases together: "por favor", "tengo que", "me gusta", "a la playa", "hace calor", "te extraño", "me da pena", "¿cómo se dice".
+   - The English is what that piece means in this sentence."""
+
+# Few-shot examples, sent as earlier turns (fixed, so they stay in the prompt cache).
+TRANSLATE_EXAMPLES = [
+    ("I want to go to the beach tomorrow, but I don't know how to get there.",
+     {"input_language": "english",
+      "meaning_en": "I want to go to the beach tomorrow, but I don't know how to get there.",
+      "spanish": "Quiero ir a la playa mañana, pero no sé cómo llegar.",
+      "pieces": ["Quiero = I want", "ir = to go", "a la playa = to the beach", "mañana = tomorrow", "pero = but",
+                 "no sé = I don't know", "cómo llegar = how to get there"]}),
+    ("um so like I'm really hungry, is there a good taco place around here or something",
+     {"input_language": "english",
+      "meaning_en": "I'm really hungry. Is there a good taco place around here?",
+      "spanish": "Tengo mucha hambre. ¿Hay una buena taquería por aquí?",
+      "pieces": ["Tengo mucha hambre = I'm really hungry", "¿Hay = is there", "una buena taquería = a good taco place",
+                 "por aquí = around here"]}),
+    ("Excuse me sir, where is the bathroom?",
+     {"input_language": "english", "meaning_en": "Excuse me, sir, where is the bathroom?",
+      "spanish": "Disculpe, señor, ¿dónde está el baño?",
+      "pieces": ["Disculpe = excuse me", "señor = sir", "¿dónde está = where is", "el baño = the bathroom"]}),
+    ("ayer yo voy al mercado y compro muchos frutas",
+     {"input_language": "spanish", "meaning_en": "Yesterday I went to the market and bought a lot of fruit.",
+      "spanish": "Ayer fui al mercado y compré mucha fruta.",
+      "pieces": ["Ayer = yesterday", "fui = I went", "al mercado = to the market", "y = and", "compré = I bought",
+                 "mucha fruta = a lot of fruit"]}),
+    ("quiero comprar a new charger para mi phone",
+     {"input_language": "mixed", "meaning_en": "I want to buy a new charger for my phone.",
+      "spanish": "Quiero comprar un cargador nuevo para mi celular.",
+      "pieces": ["Quiero = I want", "comprar = to buy", "un cargador = a charger", "nuevo = new",
+                 "para mi celular = for my phone"]}),
+    ("I really miss my family and I like Mexican food a lot",
+     {"input_language": "english", "meaning_en": "I really miss my family, and I like Mexican food a lot.",
+      "spanish": "Extraño mucho a mi familia y me gusta mucho la comida mexicana.",
+      "pieces": ["Extraño = I miss", "mucho = a lot", "a mi familia = my family", "y = and", "me gusta = I like",
+                 "mucho = a lot", "la comida mexicana = Mexican food"]}),
+    ("I'm really cold, can we close the window?",
+     {"input_language": "english", "meaning_en": "I'm really cold. Can we close the window?",
+      "spanish": "Tengo mucho frío. ¿Podemos cerrar la ventana?",
+      "pieces": ["Tengo mucho frío = I'm really cold", "¿Podemos = can we", "cerrar = close",
+                 "la ventana = the window"]}),
+    ("thanks a lot",
+     {"input_language": "english", "meaning_en": "Thanks a lot.", "spanish": "Muchas gracias.",
+      "pieces": ["Muchas gracias = thanks a lot"]}),
+]
+
+_PIECE = r'^[^ "\\=][^"\\=]{0,48} = [^ "\\=][^"\\=]{0,58}$'
+TRANSLATE_SCHEMA = {
+    "type": "object",
+    "properties": {
+        "input_language": {"type": "string", "enum": ["english", "spanish", "mixed"]},
+        "meaning_en": {"type": "string", "minLength": 1, "maxLength": 300},
+        "spanish": {"type": "string", "minLength": 1, "maxLength": 300},
+        "pieces": {"type": "array", "items": {"type": "string", "pattern": _PIECE}, "minItems": 1, "maxItems": 24},
+    },
+    "required": ["input_language", "meaning_en", "spanish", "pieces"],
+    "additionalProperties": False,
+}
+CLAUDE_TRANSLATE_SCHEMA = {
+    "type": "object",
+    "properties": {
+        "input_language": {"type": "string", "enum": ["english", "spanish", "mixed"]},
+        "meaning_en": {"type": "string"}, "spanish": {"type": "string"},
+        "pieces": {"type": "array", "items": {"type": "string"}},
+        "learner_fixed": {"type": "string"}, "why_en": {"type": "string"}, "tip": {"type": "string"},
+    },
+    "required": ["input_language", "meaning_en", "spanish", "pieces", "learner_fixed", "why_en", "tip"],
+    "additionalProperties": False,
+}
+CLAUDE_TRANSLATE_EXTRA = """
+5. learner_fixed: only if he wrote Spanish or a mix: his own sentence with ONLY its real grammar mistakes fixed, keeping his words (copy it exactly if it is correct; "" for English input).
+6. why_en: one short friendly line in English about the main fix, or "".
+7. tip: at most ONE short line (max 20 words) for a beginner about the biggest English-to-Spanish difference in THIS sentence (dropped subject pronoun, gustar, ser vs estar, tener for hunger/age, word order, a false friend). It must be exactly true. "" if nothing is worth saying."""
+
+_LANG = {"english": "en", "spanish": "es", "mixed": "mixed"}
+
+
+def build_translate(text: str, hint: str = "") -> list[dict]:
+    msgs: list[dict] = [{"role": "system", "content": TRANSLATE_SYSTEM}]
+    for said, out in TRANSLATE_EXAMPLES:
+        msgs.append({"role": "user", "content": said})
+        msgs.append({"role": "assistant", "content": json.dumps(out, ensure_ascii=False)})
+    msgs.append({"role": "user", "content": text + (f"\n\n({hint})" if hint else "")})
+    return msgs
+
+
+# --- pieces: validation and repair
+_OPENERS = set("¿¡\"'«“‘([")
+
+
+def _tokens(es: str) -> list[tuple[str, list[str]]]:
+    """Whitespace tokens of the Spanish sentence with their normalised words ('¿Dónde' -> ['donde'])."""
+    return [(t, _norm(t).split()) for t in (es or "").split()]
+
+
+def split_piece(p: Any) -> Optional[tuple[str, str]]:
+    """'a la playa = to the beach' (or {"es", "en"}) -> ('a la playa', 'to the beach')."""
+    if isinstance(p, dict):
+        es, en = _str(p.get("es"), 120), _str(p.get("en"), 120)
+    elif isinstance(p, str) and "=" in p:
+        es, en = (x.strip() for x in p.split("=", 1))
+    else:
+        return None
+    en = latinize(en).strip(" .;,")
+    return (es, en) if es else None
+
+
+def align_pieces(es: str, raw: list) -> list[dict]:
+    """The pieces in contract shape, their `es` cut from `es` itself, so joined they always reproduce it.
+    Exact match (ignoring case, accents, spaces, punctuation) or a small repair: up to 2 words that the pieces
+    added or left out (a left-out word joins its neighbour piece; only short words, so no meaning is lost) and
+    1-word spelling slips. Anything else -> [] (the page then glosses word by word itself)."""
+    pieces = [sp for sp in (split_piece(p) for p in raw or []) if sp]
+    toks = _tokens(es)
+    words = [(ti, w) for ti, (_, ws) in enumerate(toks) for w in ws]
+    if not pieces or not words or any(not en for _, en in pieces):
+        return []
+    pw = [(pi, w) for pi, (pes, _) in enumerate(pieces) for w in _norm(pes).split()]
+    owner: list[Optional[int]] = [None] * len(words)       # es word -> piece index
+    edits = 0
+    sm = difflib.SequenceMatcher(None, [w for _, w in words], [w for _, w in pw], autojunk=False)
+    for op, i1, i2, j1, j2 in sm.get_opcodes():
+        if op == "equal":
+            for k in range(i2 - i1):
+                owner[i1 + k] = pw[j1 + k][0]
+        elif op == "replace" and i2 - i1 == j2 - j1 == 1 and \
+                difflib.SequenceMatcher(None, words[i1][1], pw[j1][1]).ratio() >= 0.75:
+            owner[i1] = pw[j1][0]
+            edits += 1
+        elif op == "delete":                 # in es, missing from the pieces
+            if any(len(w) > 3 for _, w in words[i1:i2]):
+                return []
+            edits += i2 - i1
+        elif op == "insert":                 # in the pieces, not in es
+            edits += j2 - j1
+        else:
+            return []
+        if edits > 2:
+            return []
+    for k in range(len(owner)):              # left-out words join the piece before (or after, at the start)
+        if owner[k] is None:
+            owner[k] = next((owner[j] for j in range(k - 1, -1, -1) if owner[j] is not None),
+                            next((o for o in owner[k + 1:] if o is not None), None))
+    if any(o is None for o in owner):
+        return []
+    # token -> piece: a token with several words (rare) belongs to its first word's piece; punctuation-only
+    # tokens join the next token if they open (¿ ¡), else the previous one.
+    tok_owner: list[Optional[int]] = [None] * len(toks)
+    for (ti, _), o in zip(words, owner):
+        if tok_owner[ti] is None:
+            tok_owner[ti] = o
+    for ti, (t, ws) in enumerate(toks):
+        if tok_owner[ti] is None:
+            nxt = next((tok_owner[j] for j in range(ti + 1, len(toks)) if tok_owner[j] is not None), None)
+            prv = next((tok_owner[j] for j in range(ti - 1, -1, -1) if tok_owner[j] is not None), None)
+            tok_owner[ti] = nxt if (t[:1] in _OPENERS and nxt is not None) or prv is None else prv
+    if any(tok_owner[i] > tok_owner[i + 1] for i in range(len(toks) - 1)):    # pieces out of order
+        return []
+    out: list[dict] = []
+    for ti, (t, _) in enumerate(toks):
+        o = tok_owner[ti]
+        if out and out[-1]["_i"] == o:
+            out[-1]["es"] += " " + t
+        else:
+            out.append({"_i": o, "es": t, "en": pieces[o][1]})
+    for p in out:
+        del p["_i"]
+    return out
+
+
+def pieces_ok(es: str, pieces: list[dict]) -> bool:
+    """The contract check: pieces joined == es, ignoring whitespace, punctuation, accents and case."""
+    return bool(pieces) and _norm(" ".join(p["es"] for p in pieces)).replace(" ", "") == _norm(es).replace(" ", "")
+
+
+# --- Mexican, not Peninsular
+_PENINSULAR = re.compile(
+    r"\b(vosotros|vosotras|vuestros?|vuestras?|os|coches?|m[oó]vil(es)?|zumos?|ordenador(es)?|guay|"
+    r"cog(er|e|es|emos|en|[ií]|i[oó]|iste|ido)|patatas?|gafas|piscinas?|melocot[oó]n(es)?|aparca(r|mos|r[eé])|"
+    r"conduc(ir|zco|es|e|imos)|enfadad[oa]s?|\w+[aáeé]is)\b|(^|[¡,.]\s*)vale\s*[,.!]", re.IGNORECASE)
+# Same gender and number, so a swap cannot break agreement.
+_MX_SWAPS = {"coche": "carro", "coches": "carros", "móvil": "celular", "movil": "celular", "móviles": "celulares",
+             "zumo": "jugo", "zumos": "jugos", "ordenador": "computadora", "patata": "papa", "patatas": "papas",
+             "piscina": "alberca", "piscinas": "albercas", "melocotón": "durazno", "aparcar": "estacionar",
+             "conducir": "manejar", "conduzco": "manejo", "enfadado": "enojado", "enfadada": "enojada",
+             "enfadados": "enojados", "enfadadas": "enojadas", "guay": "padre"}
+_SWAP_RE = re.compile(r"\b(" + "|".join(sorted(_MX_SWAPS, key=len, reverse=True)) + r")\b", re.IGNORECASE)
+
+
+def peninsular(es: str) -> list[str]:
+    """Spain-only forms in a sentence (vosotros, os, -áis/-éis verbs, coche, móvil, zumo, vale!...)."""
+    found = []
+    for m in _PENINSULAR.finditer(es or ""):
+        w = m.group(0).strip(" ¡,.!").lower()
+        if w in ("país", "jamás", "demás", "además", "detrás", "atrás", "más", "verás"):   # \w+[aáeé]is misses
+            continue
+        found.append(w)
+    return found
+
+
+def mexicanize(s: str) -> str:
+    """coche -> carro, móvil -> celular, zumo -> jugo ... (keeps a capital letter)."""
+    def sub(m: re.Match) -> str:
+        w = _MX_SWAPS.get(m.group(0).lower(), m.group(0))
+        return w[:1].upper() + w[1:] if m.group(0)[:1].isupper() else w
+    # "ordenador" is masculine, "computadora" feminine: fix the article in front.
+    s = re.sub(r"\b(el|un|mi|tu|su)\s+(ordenador)\b",
+               lambda m: {"el": "la", "un": "una"}.get(m.group(1).lower(), m.group(1)) + " computadora", s or "",
+               flags=re.IGNORECASE)
+    return _SWAP_RE.sub(sub, s)
+
+
+# --- the tip: rule based, every rule checks its pattern in the final Spanish (and usually the English)
+_TENER_IDIOM = {"hambre": "hunger", "sed": "thirst", "calor": "heat", "frío": "cold", "frio": "cold",
+                "sueño": "sleepiness", "miedo": "fear", "prisa": "hurry", "razón": "reason", "suerte": "luck"}
+_TENER_EN = {"hambre": r"hungry|starving", "sed": r"thirsty", "calor": r"hot|warm|boiling", "frío": r"cold|freezing",
+             "frio": r"cold|freezing", "sueño": r"sleepy|tired", "miedo": r"scared|afraid|frightened",
+             "prisa": r"hurry|rush", "razón": r"right", "suerte": r"lucky"}
+_HACER_W = {"calor": "heat", "frío": "cold", "frio": "cold", "viento": "wind", "sol": "sun",
+            "buen tiempo": "good weather", "mal tiempo": "bad weather"}
+_OBJ = {"me": "me", "te": "you", "le": "him/her", "nos": "us", "les": "them"}
+_ADJ = {"barat": "cheap", "car": "expensive", "roj": "red", "azul": "blue", "verde": "green", "blanc": "white",
+        "negr": "black", "mexican": "Mexican", "nuev": "new", "abiert": "open", "picante": "spicy",
+        "fresc": "fresh", "limpi": "clean", "tranquil": "quiet|calm|peaceful", "bonit": "pretty|beautiful|nice",
+        "típic": "typical", "local": "local", "grande": "big|large", "pequeñ": "small|little", "cercan": "nearby",
+        "american": "American", "favorit": "favorite|favourite"}
+_ADJ_RE = re.compile(r"\b(un|una|unos|unas|el|la|los|las|mi|mis|tu|tus)\s+(?!poco\b|muy\b|más\b|menos\b|tan\b|bien\b)"
+                     r"([a-záéíóúñ]{3,})\s+((" + "|".join(sorted(_ADJ, key=len, reverse=True)) +
+                     r")(o|a|os|as|e|es|)?)\b", re.IGNORECASE)
+_OBJ_VERBS = ("extraño extrañas extraña extrañamos quiero quieres amo veo ves llamo llamas espero esperas necesito "
+              "necesitas conozco entiendo entiendes traigo traes compro busco encontré vi llamé dije mandé mando "
+              "recomiendas recomiendo pasas ayudas regalo invito").split()
+_OBJ_RE = re.compile(r"(?<![\w])(te|lo|la|los|las|me|nos)\s+(" + "|".join(_OBJ_VERBS) + r")\b", re.IGNORECASE)
+_YO_ENDING = re.compile(r"(o|oy|é|í|i|e|ía|aba|ría)$")
+
+
+def _piece_with(pieces: list[dict], phrase: str) -> Optional[dict]:
+    n = _norm(phrase)
+    return next((p for p in pieces if n and n in _norm(p["es"])), None)
+
+
+def make_tip(en: str, es: str, pieces: list[dict], said: str = "") -> str:
+    """At most one short, true tip about this sentence, or "". Rules are tried from the most surprising
+    (false friends, idioms) to the most general (dropped 'I'); each only fires when its Spanish pattern is in
+    the final sentence, so the tip always describes what is on screen. `said` (the raw input) is also searched
+    for the idiom / false-friend rules, since meaning_en may have paraphrased the idiom away."""
+    en_l, es_l = (en or "").lower(), (es or "").lower()
+    src = f"{en_l}\n{(said or '').lower()}"
+    if not es_l:
+        return ""
+    if "embarrass" in src and re.search(r"\b(pena|vergüenza|verguenza)\b", es_l):
+        return "Careful: 'embarazada' means pregnant. For embarrassed, Mexicans say 'me da pena'."
+    if "excited" in src and "emocionad" in es_l:
+        return "Say 'emocionado' for excited: 'excitado' usually means sexually aroused."
+    if re.search(r"\bactually\b", src) and "en realidad" in es_l:
+        return "'Actualmente' means 'currently'. 'Actually' is 'en realidad'."
+    if "library" in src and "biblioteca" in es_l:
+        return "A library is a 'biblioteca'. A 'librería' is a bookshop."
+    if "cats and dogs" in src and "cántaros" in es_l:
+        return "Idioms don't translate word for word: Spanish rains 'a cántaros' (by the jugful), not cats and dogs."
+    if re.search(r"how (do|would|can) (you|i) say", src) and "se dice" in es_l:
+        return "'¿Cómo se dice…?' (literally 'how is it said?') is the set phrase for 'how do you say…?'."
+    m = re.search(r"\b(tengo|tienes|tiene|tenemos|tienen)\s+(\d+|[a-záéíóúñ]+(?:\s+y\s+[a-záéíóúñ]+)?)\s+años\b", es_l)
+    if m and re.search(r"\bold\b|\bage\b|years", en_l):
+        return f"For age Spanish uses tener: '{m.group(0)}' is literally 'have {m.group(2)} years'."
+    m = re.search(r"\b(tengo|tienes|tiene|tenemos|tienen)\s+(?:(?:mucho|mucha|muchísimo|muchísima|un poco de|tanto|tanta)\s+)?"
+                  r"(hambre|sed|calor|frío|frio|sueño|miedo|prisa|razón|suerte)\b", es_l)
+    if m and re.search(r"\b(" + _TENER_EN[m.group(2)] + r")\b", en_l):
+        return (f"Spanish uses tener (to have) here: '{m.group(0)}' is literally 'have {_TENER_IDIOM[m.group(2)]}'.")
+    m = re.search(r"\bhace\s+(?:(?:mucho|muchísimo|un poco de|bastante)\s+)?(calor|frío|frio|viento|sol|buen tiempo|mal tiempo)\b",
+                  es_l)
+    if m and re.search(r"\b(hot|cold|warm|windy|sunny|weather|freezing|nice out|nice day)\b", en_l):
+        return f"Weather uses hacer: '{m.group(0)}' is literally 'it makes {_HACER_W[m.group(1)]}'."
+    m = re.search(r"\b(me|te|le|nos|les)\s+(duele|duelen)\b", es_l)
+    if m:
+        return f"Pain works like gustar: '{m.group(0)}' is literally 'it hurts {_OBJ[m.group(1)]}'."
+    m = re.search(r"\b(me|te|le|nos|les)\s+(gusta|gustan|gustó|gustaron|gustaba|gustaría|encanta|encantan|encantó)\b", es_l)
+    if m:
+        pron, verb = m.group(1), m.group(2)
+        if verb == "gustaría":
+            return (f"'{pron.capitalize()} gustaría' (literally 'it would please {_OBJ[pron]}') is the polite "
+                    f"way to say 'would like'.")
+        if verb in ("gustan", "gustaron", "encantan"):
+            return (f"'{pron} {verb}' is literally 'they please {_OBJ[pron]}': the liked things are the subject, "
+                    f"so the verb is plural.")
+        lit = "delights" if verb.startswith("encant") else "pleases"
+        plural = "encantan" if verb.startswith("encant") else "gustan"
+        return f"'{pron} {verb}' is literally 'it {lit} {_OBJ[pron]}'. For plural things it's '{pron} {plural}'."
+    if re.search(r"\bme llamo\b", es_l) and re.search(r"\bname\b", en_l):
+        return "'Me llamo…' is literally 'I call myself…'."
+    m = _OBJ_RE.search(es or "")
+    if m and m.group(0).lower() != "me llamo" and re.search(r"\b(you|it|him|her|them|me|us)\b", en_l):
+        p = _piece_with(pieces, m.group(0))
+        phrase = m.group(0).lower()
+        if p and _norm(p["es"]) == _norm(m.group(0)):
+            return f"Object words go before the verb: '{phrase}' = '{p['en']}'."
+        return f"Object words like '{m.group(1).lower()}' go before the verb: '{phrase}'."
+    m = _ADJ_RE.search(es or "")
+    if m:
+        eng = _ADJ[m.group(4).lower()]
+        if re.search(r"\b(" + eng.lower() + r")\s+[a-z]{3,}", en_l):
+            return f"Most adjectives go after the noun in Spanish: '{m.group(0).lower()}'."
+    m = re.search(r"\b(estoy|estás|está|estamos|están)\s+(?:(?:muy|un poco|bien|tan|súper|super|bastante)\s+)?"
+                  r"(?!de\b|por\b|para\b|a\b|que\b|en\b|aquí\b|allá\b|ahí\b|bien\b)([a-záéíóúñ]+)\b", es_l)
+    if m and not re.search(r"(ando|iendo|yendo)$", m.group(2)) and \
+            re.search(r"\b(i'm|i am|you're|you are|he's|she's|it's|it is|is|are|we're|feel|feeling|look)\b", en_l):
+        return f"For feelings and states Spanish uses estar, not ser: '{m.group(0)}'."
+    m = re.search(r"\b(tengo|tienes|tiene|tenemos|tienen)\s+que\s+[a-záéíóúñ]+", es_l)
+    if m and re.search(r"\b(have to|has to|need to|must|got to|gotta|had to)\b", en_l):
+        return f"'Tener que + verb' means 'have to': '{m.group(0)}'."
+    m = re.search(r"\b(voy|vas|va|vamos|van)\s+a\s+[a-záéíóúñ]+(ar|er|ir)\b", es_l)
+    if m and re.search(r"\b(going to|gonna|will|'ll|let's)\b", en_l):
+        if "let's" in en_l and m.group(1) == "vamos":
+            return f"'Vamos a + verb' also means 'let's…': '{m.group(0)}'."
+        return f"Easy future: ir a + verb, just like 'going to': '{m.group(0)}'."
+    if re.match(r"\s*(do|does|did)\s+(you|they|we|he|she|it)\b", en_l) and es_l.lstrip().startswith("¿") and \
+            not re.search(r"\b(hacer|haces|hace|hiciste|hizo)\b", es_l):
+        return "Spanish questions need no 'do': the verb alone, with ¿…?, makes the question."
+    if re.match(r"\s*(i|i'm|i'd|i'll|i've|we|we're)\b", en_l) and not re.search(r"\b(yo|nosotros|nosotras)\b", es_l):
+        for p in pieces[:3]:
+            w = p["es"].strip("¿¡!?.,; ")
+            pen = p["en"].lower()
+            if " " in w or not _YO_ENDING.search(_norm(w)) or _norm(w) in _PRONOUNS | {"me", "te", "no", "se", "lo"}:
+                continue
+            if re.match(r"(i|i'm|i'll|i'd|i've)\s", pen):
+                return f"No 'yo' needed: '{w}' already means '{p['en']}'."
+            if re.match(r"we\s", pen) and _norm(w).endswith("mos"):
+                return f"No 'nosotros' needed: '{w}' already means '{p['en']}'."
+    m = re.search(r"\b(don't|doesn't|didn't)\b", en_l)
+    if m:
+        p = next((p for p in pieces if re.match(r"no\s", _norm(p["es"]) + " ") and _norm(p["es"]) != "no"
+                  and "n't" in p["en"].lower()), None)
+        if p:
+            return f"For 'don't', just put 'no' before the verb: '{p['es'].strip('¿¡!?.,; ')}' = '{p['en']}'."
+    return ""
+
+
+# Idioms a small model may still translate literally: (English pattern in what he said, check on the Spanish,
+# hint for the retry). Checked on the input and on meaning_en.
+_IDIOM_GUARDS = [
+    (r"\bi'?m\s+(?:so\s+|really\s+|very\s+|a\s+bit\s+|a\s+little\s+|super\s+)?(hot|cold|warm|freezing)\b",
+     lambda es: re.search(r"\b(tengo|tenemos)\b[^.?!]*\b(calor|frío|frio)\b", es),
+     "a person feeling hot / cold is 'tengo calor' / 'tengo frío' ('hace calor' is the weather)"),
+    (r"\bi'?m\s+(?:so\s+|really\s+|very\s+|a\s+bit\s+|a\s+little\s+|super\s+)?(hungry|starving|thirsty|sleepy|scared|afraid)\b",
+     lambda es: re.search(r"\b(tengo|tenemos|me\s+muero\s+de)\b", es),
+     "hungry / thirsty / sleepy / scared use tener: tengo hambre / sed / sueño / miedo"),
+    (r"\bi'?m\s+\d+(\s+years?\s+old)?\b", lambda es: re.search(r"\btengo\s+\d+\s+años\b", es),
+     "age uses tener: 'tengo 32 años'"),
+    (r"\bembarrass", lambda es: not re.search(r"embarazad", es), "embarrassed is 'me da pena' (embarazada = pregnant)"),
+    (r"\bexcited\b", lambda es: not re.search(r"excitad", es), "excited is 'emocionado' (never excitado)"),
+    (r"\b(i|we)\s+miss\s+(you|him|her|them|my|our|home|mexico)\b", lambda es: re.search(r"\bextra[ñn]", es),
+     "'I miss you' is 'te extraño'"),
+    (r"\bhow\s+do\s+you\s+say\b", lambda es: re.search(r"\bse\s+dice\b", es), "'how do you say X' is '¿cómo se dice X?'"),
+]
+
+
+def idiom_problems(said: str, en: str, es: str) -> list[str]:
+    src = f"{said}\n{en}".lower()
+    es_l = (es or "").lower()
+    return [hint for pat, ok, hint in _IDIOM_GUARDS if re.search(pat, src) and not ok(es_l)]
+
+
+def maybe_spanish(text: str) -> bool:
+    """Cheap pre-check, so the grammar check only runs (in parallel) when the input may be a Spanish attempt."""
+    if re.search(r"[áéíóúñ¿¡]", text.lower()):
+        return True
+    w = _words(text)
+    es = sum(1 for x in w if x in _ES_HINT)
+    en = sum(1 for x in w if x in _EN_WORDS and x not in _ES_HINT)
+    return es > 0 and es >= en
+
+
+def clean_spanish(es: str) -> bool:
+    return bool(es) and english_score(es) < 0.15 and not odd_script(es)
+
+
+def validate_translation(data: Any) -> Optional[dict]:
+    """The model's JSON -> {input_lang, en, es, pieces(raw)}; None if unusable."""
+    if not isinstance(data, dict):
+        return None
+    es = latinize(_str(data.get("spanish"), 400))
+    if not es:
+        return None
+    lang = _LANG.get(_str(data.get("input_language")).lower(), "en")
+    return {"input_lang": lang, "en": latinize(_str(data.get("meaning_en"), 400)), "es": es,
+            "raw_pieces": data.get("pieces") if isinstance(data.get("pieces"), list) else []}
+
+
+def finish_translation(text: str, cand: dict, correction: Optional[dict], tip: Optional[str] = None) -> dict:
+    """Mexican swaps, pieces check, tip, correction -> the contract shape."""
+    es = mexicanize(cand["es"])
+    raw = []
+    for p in cand["raw_pieces"]:
+        sp = split_piece(p)
+        if sp:
+            raw.append({"es": mexicanize(sp[0]), "en": sp[1]})
+    pieces = align_pieces(es, raw)
+    if not pieces_ok(es, pieces):
+        pieces = []
+    en = cand["en"] or (text if cand["input_lang"] == "en" else "")
+    if tip is None or not tip.strip():
+        tip = make_tip(en, es, pieces, said=text)
+    if cand["input_lang"] != "es":
+        correction = None
+    return {"input_lang": cand["input_lang"], "en": en, "es": es, "pieces": pieces, "tip": (tip or "").strip()[:200],
+            "correction": correction}
+
+
+def translate_local(text: str) -> dict:
+    LOCAL.warm_key = ("translate", 0)
+    LOCAL.ensure_loaded()
+    check: dict[str, Any] = {}
+    th = None
+    if maybe_spanish(text):           # maybe Spanish: run the chat's grammar check alongside
+        def run_check() -> None:
+            try:
+                check["c"] = check_local([Turn(role="user", text=text)])
+            except Exception as e:
+                check["error"] = e
+        th = threading.Thread(target=run_check, daemon=True)
+        th.start()
+    LAST.clear()
+    best, hint = None, ""
+    for temp in (0.1, 0.5):
+        try:
+            out, st = LOCAL.complete(build_translate(text, hint), schema=TRANSLATE_SCHEMA, temperature=temp,
+                                     max_tokens=360, slot=SLOT_TRANSLATE)
+        except urllib.error.HTTPError as e:
+            LAST.setdefault("attempts", []).append({"error": f"HTTP {e.code}"})
+            continue
+        LAST.setdefault("attempts", []).append({**st, "text": out[:600]})
+        cand = validate_translation(parse_json(out))
+        if cand is None:
+            continue
+        problems = []
+        if not clean_spanish(cand["es"]):
+            problems.append("spanish must be only Spanish")
+        spain = [w for w in peninsular(cand["es"]) if w not in _MX_SWAPS]
+        if spain:
+            problems.append("Mexican Spanish, never " + ", ".join(sorted(set(spain))))
+        problems += idiom_problems(text, cand["en"], cand["es"])
+        cand_pieces_ok = pieces_ok(mexicanize(cand["es"]), align_pieces(
+            mexicanize(cand["es"]), [{"es": mexicanize(s[0]), "en": s[1]} for s in
+                                     (split_piece(p) for p in cand["raw_pieces"]) if s]))
+        score = (not problems) * 2 + cand_pieces_ok
+        if best is None or score > best[0]:
+            best = (score, cand)
+        if score == 3 or (not problems and temp > 0.1):
+            break
+        if problems:
+            hint = "; ".join(problems)
+        elif not cand_pieces_ok:
+            hint = "every word of spanish in the pieces, in order"
+    if th is not None:
+        th.join(60)
+    if best is None:
+        raise ChatError(503, "Penguin could not translate that one. Try saying it another way.")
+    return finish_translation(text, best[1], check.get("c"))
+
+
+def _claude_json(system: str, user: str, schema: dict) -> Any:
+    """One Claude request with structured JSON output (same settings as chat_claude)."""
+    import anthropic
+    client = anthropic.Anthropic()
+    kwargs: dict[str, Any] = dict(model=CLAUDE_MODEL, max_tokens=4000, system=system,
+                                  messages=[{"role": "user", "content": user}],
+                                  output_config={"effort": "low", "format": {"type": "json_schema", "schema": schema}})
+    try:
+        try:
+            resp = client.beta.messages.create(betas=["server-side-fallback-2026-07-01"], fallbacks="default", **kwargs)
+        except TypeError:
+            resp = client.messages.create(**kwargs)
+    except anthropic.AuthenticationError:
+        raise ChatError(503, "The Claude API key was rejected.", "Check ANTHROPIC_API_KEY and restart start.bat.")
+    except anthropic.RateLimitError:
+        raise ChatError(503, "Claude is busy right now. Try again in a minute.")
+    except anthropic.APIStatusError as e:
+        raise ChatError(503, f"Claude error ({e.status_code}). Try again in a moment.")
+    except anthropic.APIConnectionError:
+        raise ChatError(503, "Could not reach Claude (no internet?).", SETUP_HINT)
+    if resp.stop_reason == "refusal":
+        raise ChatError(503, "Claude declined to answer this one. Try saying it another way.")
+    return parse_json(next((b.text for b in resp.content if getattr(b, "type", "") == "text"), ""))
+
+
+def translate_claude(text: str) -> dict:
+    examples = "\n".join(f"{said}\n-> {json.dumps(out, ensure_ascii=False)}" for said, out in TRANSLATE_EXAMPLES)
+    data = _claude_json(TRANSLATE_SYSTEM + CLAUDE_TRANSLATE_EXTRA + "\n\nEXAMPLES (fields 5-7 left out)\n" + examples,
+                        text, CLAUDE_TRANSLATE_SCHEMA)
+    cand = validate_translation(data)
+    if cand is None:
+        raise ChatError(503, "Claude could not translate that one. Try saying it another way.")
+    corr = make_correction(text, _str(data.get("learner_fixed")), _str(data.get("why_en")))
+    return finish_translation(text, cand, corr, tip=_str(data.get("tip"), 200))
+
+
 # ---------------------------------------------------------------- routes
 class Turn(BaseModel):
     role: Literal["bot", "user"]
@@ -838,6 +1371,38 @@ def chat(body: ChatIn):
         return _err(e.status, e.msg, e.setup)
     except Exception as e:     # model failed to load, out of memory, ...
         return _err(503, f"Penguin could not answer ({type(e).__name__}: {str(e)[:200]}).", SETUP_HINT)
+    out["backend"] = backend
+    out["ms"] = int((time.perf_counter() - t0) * 1000)
+    return out
+
+
+class TranslateIn(BaseModel):
+    text: str = ""
+    backend: Optional[Literal["local", "claude"]] = None
+
+
+@router.post("/api/translate")
+def translate(body: TranslateIn):
+    text = " ".join((body.text or "").split())
+    if not text or not _words(text) and not re.search(r"\w", text):
+        return _err(422, "Say or type a sentence first.")
+    if len(text) > MAX_TRANSLATE_CHARS:
+        return _err(422, f"That is too long for one go (max {MAX_TRANSLATE_CHARS} characters). "
+                         "Send one sentence at a time.")
+    backend = body.backend or _default_backend()
+    if backend is None:
+        return _err(503, "Penguin's model is not set up on this computer yet.", SETUP_HINT)
+    if backend == "claude" and not claude_available():
+        return _err(503, "Claude is not configured (ANTHROPIC_API_KEY is not set).", SETUP_HINT)
+    if backend == "local" and not LOCAL.installed():
+        return _err(503, "The offline model is not installed.", SETUP_HINT)
+    t0 = time.perf_counter()
+    try:
+        out = translate_local(text) if backend == "local" else translate_claude(text)
+    except ChatError as e:
+        return _err(e.status, e.msg, e.setup)
+    except Exception as e:
+        return _err(503, f"Penguin could not translate ({type(e).__name__}: {str(e)[:200]}).", SETUP_HINT)
     out["backend"] = backend
     out["ms"] = int((time.perf_counter() - t0) * 1000)
     return out

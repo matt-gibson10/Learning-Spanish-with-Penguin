@@ -90,7 +90,11 @@
 
   /** Play the "natural" (fast) version: the first respelling if present, else the text, at natural speed. */
   function speakNatural(item, text) {
-    const nat = item && Array.isArray(item.natural) && item.natural.length ? item.natural[0] : null;
+    // only a respelling that really is this item said fast (App.naturalOf rejects e.g. ser -> "osea"), and only when
+    // the text being played is the item itself
+    const same = !text || !item || String(text).toLowerCase().trim() === String(item.es).toLowerCase().trim();
+    const nat = !item || !same ? null : window.App && App.naturalOf ? App.naturalOf(item)
+      : Array.isArray(item.natural) && item.natural.length ? item.natural[0] : null;
     return speak(nat || text || (item && item.es), "natural");
   }
 
@@ -109,7 +113,7 @@
       if (!Rec) return reject(new Error("unsupported"));
       cancel();
       const r = new Rec();
-      r.lang = "es-MX";
+      r.lang = opts.lang || "es-MX";
       r.interimResults = false;
       r.maxAlternatives = 3;
       let got = false;
@@ -125,6 +129,65 @@
     });
   }
 
-  window.Speech = { speak, speakNatural, cancel, bestVoice, spanishVoices, hasSpanish, whenReady, canListen, listen,
+  /**
+   * Continuous "think out loud" listening with live interim text.
+   * opts: {lang ("en-US" | "es-MX", default "es-MX"), silenceMs (auto-stop after this long without speech, default 8000),
+   *        onInterim(text), onFinal(text) (once per finished phrase, i.e. at each pause), onEnd(reason), onError(code)}
+   * -> controller {stop() (finish, delivering pending finals), abort(), get active}. reason: "stopped" | "silence" | "error".
+   * Engines end continuous sessions on their own (~60 s in Chrome); while the learner is still talking we restart.
+   */
+  function listenLive(opts) {
+    opts = opts || {};
+    if (!Rec) { if (opts.onError) opts.onError("unsupported"); return { stop() {}, abort() {}, get active() { return false; } }; }
+    cancel();
+    const silenceMs = opts.silenceMs || 8000;
+    let r = null, stopped = false, ended = false, last = Date.now(), reason = "stopped", timer = null;
+    const finish = (why) => {
+      if (ended) return;
+      ended = true; clearInterval(timer);
+      if (opts.onInterim) opts.onInterim("");
+      if (opts.onEnd) opts.onEnd(why);
+    };
+    function start() {
+      r = new Rec();
+      r.lang = opts.lang || "es-MX";
+      r.continuous = true;
+      r.interimResults = true;
+      r.maxAlternatives = 1;
+      r.onresult = (e) => {
+        last = Date.now();
+        let interim = "";
+        for (let i = e.resultIndex; i < e.results.length; i++) {
+          const res = e.results[i];
+          const t = (res[0] && res[0].transcript || "").trim();
+          if (res.isFinal) { if (t && opts.onFinal) opts.onFinal(t); }
+          else interim += (interim ? " " : "") + t;
+        }
+        if (opts.onInterim) opts.onInterim(interim);
+      };
+      r.onerror = (e) => {
+        const code = e.error || "error";
+        if (code === "no-speech" || code === "aborted") return;      // silence is handled by our own timer
+        stopped = true; reason = "error";
+        if (opts.onError) opts.onError(code);
+      };
+      r.onend = () => {
+        if (!stopped && Date.now() - last < silenceMs) { try { start(); return; } catch (e) { /* fall through */ } }
+        finish(reason);
+      };
+      try { r.start(); } catch (e) { stopped = true; if (opts.onError) opts.onError(e.message || "error"); finish("error"); }
+    }
+    start();
+    timer = setInterval(() => {
+      if (!stopped && Date.now() - last >= silenceMs) { stopped = true; reason = "silence"; try { r.stop(); } catch (e) { finish("silence"); } }
+    }, 500);
+    return {
+      stop() { if (stopped) return; stopped = true; reason = "stopped"; try { r.stop(); } catch (e) { finish("stopped"); } },
+      abort() { stopped = true; reason = "stopped"; try { r.abort(); } catch (e) { /* ignore */ } finish("stopped"); },
+      get active() { return !ended; },
+    };
+  }
+
+  window.Speech = { speak, speakNatural, cancel, bestVoice, spanishVoices, hasSpanish, whenReady, canListen, listen, listenLive,
     supported: !!synth, NO_VOICE_HELP, DEFAULT_RATES, allVoices: () => voices };
 })();

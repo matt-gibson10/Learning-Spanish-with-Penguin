@@ -88,6 +88,7 @@
     ["cuánto", "cuánto", "m", "s"], ["cuánta", "cuánto", "f", "s"], ["cuántos", "cuánto", "m", "p"], ["cuántas", "cuánto", "f", "p"],
     ["del", "el", "m", "s"], ["al", "el", "m", "s"],
   ];
+  const ARTICLES = new Set(["el", "la", "los", "las", "un", "una", "unos", "unas"]);
   // Determiners that can also be pronouns are only checked when followed by a noun.
   const SUBJ = { yo: "1s", "tú": "2s", "él": "3s", ella: "3s", usted: "3s", nosotros: "1p", nosotras: "1p",
     ellos: "3p", ellas: "3p", ustedes: "3p" };
@@ -198,6 +199,10 @@
     return _defaultLex;
   }
   const look = (lex, w) => (lex && lex.forms.get(fold(w))) || [];
+  // label priority among same-spelling forms: the everyday reading first (siga = usted command before subjunctive)
+  const TENSE_PRI = { pres: 0, inf: 0, pret: 1, cmd: 2, imp: 3, fut: 4, cond: 4, ger: 5, part: 5, subj: 6 };
+  const exactFirst = (arr, n) => (arr.length < 2 ? arr : arr.slice().sort((a, b) => (b.form === n) - (a.form === n) ||
+    (TENSE_PRI[a.tense] ?? 0) - (TENSE_PRI[b.tense] ?? 0)));
   const lemmaOf = (lex, id) => lex && lex.lemmas.get(id);
 
   // ------------------------------------------------------------------ word comparison
@@ -208,7 +213,8 @@
     if (/^\d+$/.test(e.n) && NUMWORDS[u.f] === +e.n) return { mark: "ok", cost: 0, credit: 1 };
     if (u.f === e.f) return { mark: "accent", cost: 0.1, credit: 1, note: { kind: "accent", word: e.raw.toLowerCase() } };
     if (lex) {
-      const gu = look(lex, u.f), ge = look(lex, e.f);
+      // accent-exact entries first, so labels describe the form actually written (ganó = preterite, not gano = yo)
+      const gu = exactFirst(look(lex, u.f), u.n), ge = exactFirst(look(lex, e.f), e.n);
       for (const a of gu) for (const b of ge) {
         if (a.lemma === b.lemma && a.form !== b.form) {
           return { mark: "grammar", cost: 0.3, credit: 0.85, note: { kind: "grammar", u: a, e: b, uRaw: u.raw, eRaw: e.raw, ctx } };
@@ -286,6 +292,7 @@
         return `Right verb, different tense: you wrote ${U} (${TENSE_LABEL[u.tense] || u.tense}) — here it's ${E} (${TENSE_LABEL[e.tense] || e.tense}).`;
       }
       const lab = (x) => (x.tense === "inf" || x.tense === "ger" || x.tense === "part") ? PERSON_LABEL[x.person] :
+        x.tense === "cmd" ? `${x.person === "2s" ? "tú" : x.person === "3p" ? "ustedes" : "usted"}, command` :
         PERSON_LABEL[x.person] + (x.tense && x.tense !== "pres" ? ", " + (TENSE_LABEL[x.tense] || x.tense) : "");
       let subj = "";
       if (ctx && ctx.et) {
@@ -332,7 +339,8 @@
       let html = null, kind = n.kind;
       if (n.kind === "accent") { if (!accents.includes(n.word)) accents.push(n.word); continue; }
       if (n.kind === "typo") {
-        html = `Small typo: ${em(String(n.u).toLowerCase())} → ${em(String(n.e).toLowerCase())}.` +
+        html = n.space ? `Missing space: ${em(String(n.u).toLowerCase())} → ${em(String(n.e).toLowerCase())}.` :
+          `Small typo: ${em(String(n.u).toLowerCase())} → ${em(String(n.e).toLowerCase())}.` +
           (n.other ? ` (Careful: ${em(n.other.es)} is a different word — “${esc(n.other.en)}”.)` : "");
       } else if (n.kind === "grammar" && !n.html) html = explainGrammar(n, lex);
       else html = n.html;
@@ -359,6 +367,9 @@
     for (let i = 0; i < toks.length; i++) {
       const w = W[i], f = toks[i].f, next = W[i + 1], next2 = W[i + 2];
       // --- common learner errors ---------------------------------------------
+      if ((w === "de" || w === "a") && next === "el" && toks[i + 1] && !toks[i].brk) {
+        flag(i, `${em(w + " el")} always contracts: ${em(w === "de" ? "del" : "al")}.`, "contraction");
+      }
       if (w === "yo" && /^gust(o|a|an)$/.test(next || "")) {
         const obj = W.slice(i + 2).find((x) => look(lex, x).some((e) => e.pos === "noun")) || "";
         const pl = obj && look(lex, obj).some((e) => e.pos === "noun" && e.number === "p");
@@ -509,10 +520,26 @@
     return 1;
   }
 
+  /** "porfavor" for "por favor": split a typed token that is two expected words run together (counts as a typo). */
+  function splitRunTogether(ut, et, rawNotes) {
+    if (et.length < 2) return ut;
+    const out = [];
+    for (const u of ut) {
+      let hit = -1;
+      for (let j = 0; j + 1 < et.length && hit < 0; j++) if (u.f === et[j].f + et[j + 1].f) hit = j;
+      if (hit < 0) { out.push(u); continue; }
+      const a = et[hit], b = et[hit + 1];
+      out.push(Object.assign({}, a, { brk: false }), Object.assign({}, b, { brk: u.brk }));
+      rawNotes.push({ kind: "typo", u: u.raw, e: `${a.raw} ${b.raw}`, space: true });
+    }
+    return out;
+  }
+
   function gradeOne(input, answer, lex, lang) {
-    const ut = tokenize(input), et = tokenize(answer);
-    const ops = align(ut, et, lang === "en" ? null : lex);
     const tokens = [], rawNotes = [];
+    const et = tokenize(answer);
+    const ut = splitRunTogether(tokenize(input), et, rawNotes);
+    const ops = align(ut, et, lang === "en" ? null : lex);
     let wTot = 0, wGot = 0, contentTot = 0, contentGot = 0, fnMissing = 0, extras = 0, grammar = 0, nTot = 0, nGot = 0;
     for (const o of ops) {
       if (o.op === "s") {
@@ -561,6 +588,16 @@
     let list = (Array.isArray(accepted) ? accepted : [accepted]).filter((x) => x != null && String(x).trim());
     if (lang === "en") list = expandEnglish(list);
     if (!list.length) return { outcome: "miss", score: 0, tokens: [], notes: [], expected: "" };
+    // "(with el/la)" answers: when the learner typed an article and some accepted answers carry one, grade against those
+    // only, so "la favor" can't hide behind the bare "favor" alternative; a wrong-gender article scores at most 0.85.
+    let articleCheck = false;
+    if (lex) {
+      const isArt = (t) => !!t && ARTICLES.has(t.f);
+      const first = tokenize(input)[0];
+      const withArt = list.filter((a) => isArt(tokenize(a)[0]));
+      if (isArt(first) && withArt.length && withArt.length < list.length) { list = withArt; articleCheck = true; }
+      else if (isArt(first) && withArt.length) articleCheck = true;
+    }
     let best = null;
     for (const a of list) {
       const r = gradeOne(input, a, lex, lang);
@@ -570,9 +607,15 @@
     if (lang !== "en" && lex) {
       const rc = ruleChecks(best.ut, lex);
       // keep only the "common learner error" checks that alignment can't explain
-      for (const n of rc.notes) if (["gustar", "gustar2", "age", "location", "ira", "llamarse"].includes(n.key)) notes = notes.concat([n]);
+      for (const n of rc.notes) if (["gustar", "gustar2", "age", "location", "ira", "llamarse", "contraction"].includes(n.key)) notes = notes.concat([n]);
     }
-    const res = { outcome: best.outcome, score: best.score, tokens: best.tokens, notes: finishNotes(notes, lex), expected: best.expected };
+    let score = best.score;
+    if (articleCheck && best.tokens.length && best.tokens[0].mark === "grammar") {
+      const a = fold(best.tokens[0].text), b = fold(best.tokens[0].expected || "");
+      const g = (w) => DETS.find((d) => d[0] === w);
+      if (g(a) && g(b) && g(a)[2] !== g(b)[2]) score = Math.min(score, 0.85);
+    }
+    const res = { outcome: best.outcome, score, tokens: best.tokens, notes: finishNotes(notes, lex), expected: best.expected };
     if (opts.lang === "en") res.expected = list[0];
     return res;
   }
@@ -677,6 +720,8 @@
 
   const Grader = { normalize, fold, tokenize, levenshtein, buildLexicon, gradeAnswer, gradeFree, ruleChecks,
     lookup(word, lex) { return look(lex || defaultLexicon(), word); },
+    /** lookup with accent-exact, everyday-reading entries first (for labels: "siga" = usted command) */
+    lookupExact(word, lex) { return exactFirst(look(lex || defaultLexicon(), word), String(word || "").toLowerCase()); },
     setLexicon(l) { _defaultLex = l; }, resetLexicon() { _defaultLex = null; }, PERSON_LABEL, TENSE_LABEL, derivePlural };
   root.Grader = Grader;
   if (typeof module !== "undefined" && module.exports) module.exports = Grader;

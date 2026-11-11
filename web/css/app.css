@@ -28,6 +28,18 @@ body { margin: 0; background: var(--bg, #fff7ea); color: var(--ink, #2a2e45); fo
   .nav a { flex: 0 0 auto; padding: 6px 11px; }
 }
 
+@media (min-width: 900px) {
+  /* desktop: keep the (13-item) nav on one row next to the brand; tighter pills, sideways scroll if still too narrow */
+  .app-header { flex-wrap: nowrap; }
+  .app-header .nav { flex: 0 1 auto; min-width: 0; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+  .app-header .nav::-webkit-scrollbar { display: none; }
+  .nav a { flex: 0 0 auto; padding: 6px 10px; }
+}
+@media (min-width: 900px) and (max-width: 1199px) {
+  .app-header .brand-text { display: none; }
+  .nav a { padding: 6px 8px; }
+}
+
 /* ---- generic ---- */
 .coach-slot { margin: 0 0 12px; }
 .coach-slot .speech-bubble p:last-child, .coach-slot .speech-bubble ul:last-child { margin-bottom: 0; }
@@ -329,3 +341,107 @@ table.conj td.pres { font-weight: 800; }
   .chat-composer .answer-row { flex-wrap: nowrap; }
   .chat-composer .answer-row .answer-input { flex: 1 1 auto; }
 }
+
+/* ---- think out loud (#/say) ---- */
+.say-page { display: flex; flex-direction: column; gap: 12px; }
+.say-page .coach-slot { margin: 0; }
+.say-status { min-width: 0; }
+.say-status:empty { display: none; }
+.say-input { display: flex; flex-direction: column; gap: 12px; }
+.say-lang { gap: 6px; }
+.say-mic { align-self: center; width: 100%; max-width: 440px; }
+.say-mic.listening { background: var(--accent, #c8156a); box-shadow: 0 5px 0 var(--rosa-deep, #9e0f53), 0 0 0 6px var(--rosa-soft, #fce1ee); animation: say-pulse 1.4s infinite ease-in-out; }
+@keyframes say-pulse { 50% { box-shadow: 0 5px 0 var(--rosa-deep, #9e0f53), 0 0 0 12px var(--rosa-soft, #fce1ee); } }
+@media (prefers-reduced-motion: reduce) { .say-mic.listening { animation: none; } }
+.say-live { padding: 10px 14px; border-radius: 12px; background: var(--surface-2, #fbefd9); font-size: 1.1rem; line-height: 1.45; min-height: 1.45em; overflow-wrap: anywhere; }
+.say-interim { color: var(--ink-soft, #5e6378); font-style: italic; }
+.say-row .say-text { min-height: 52px; }
+.say-try { flex-wrap: wrap; min-height: 36px; }
+.say-examples { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.say-results { display: flex; flex-direction: column; gap: 12px; }
+.say-results:empty { display: none; }
+.say-card { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.say-you { display: flex; align-items: baseline; gap: 8px; color: var(--ink-soft, #5e6378); font-size: 0.95rem; }
+.say-you-label { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; flex: 0 0 auto; }
+.say-you-text { flex: 1 1 auto; min-width: 0; overflow-wrap: anywhere; }
+.say-edit { flex: 0 0 auto; min-height: 32px; padding: 2px 10px; }
+.say-meant { margin: -4px 0 0; }
+.say-thinking { display: flex; align-items: center; gap: 10px; }
+.say-thinking .chat-avatar, .say-thinking .chat-avatar svg { width: 36px; height: 36px; flex-basis: 36px; }
+.say-body, .say-reveal { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.say-foot { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; justify-content: flex-end; }
+.say-audio { display: flex; flex-wrap: wrap; gap: 8px; }
+.say-tip { margin: 0; padding: 6px 10px; border-radius: 10px; background: var(--marigold-soft, #fff1d6); }
+.say-note { margin: 0; }
+.say-fixes { display: flex; flex-direction: column; gap: 4px; }
+.say-try-box { display: flex; flex-direction: column; gap: 8px; padding: 12px; border-radius: 12px; background: var(--talavera-soft, #dcebfa); }
+.say-try-q { margin: 0; font-weight: 800; }
+.say-try-box .accent-keys { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: thin; padding-bottom: 2px; }
+.say-try-box .accent-keys .btn { flex: 0 0 auto; }
+.say-rough-label { margin: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.say-rough-note { margin: 4px 0 0; }
+.say-failed .coach-slot { margin: 0; }
+
+/* interlinear word-by-word: Spanish on top, English underneath, tiles wrap like a sentence */
+.ilin { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 4px 2px; margin: 2px -6px; }
+.ilin-tile {
+  -webkit-appearance: none; appearance: none; display: inline-flex; flex-direction: column; align-items: center; gap: 2px;
+  min-height: 44px; max-width: 100%; padding: 4px 6px 5px; border: 1px solid transparent; border-radius: 10px; background: none;
+  font: inherit; color: inherit; text-align: center; cursor: pointer;
+}
+.ilin-tile:hover { background: var(--marigold-soft, #fff1d6); border-color: var(--line, #ebd9bc); }
+.ilin-tile:focus-visible { outline: none; box-shadow: var(--focus, 0 0 0 3px #1b65a6); }
+.ilin-tile.active { background: var(--talavera-soft, #dcebfa); border-color: var(--talavera, #1b65a6); }
+.ilin-es { font-family: var(--font-display, inherit); font-weight: 600; font-size: clamp(1.3rem, 1.05rem + 1.1vw, 1.65rem); line-height: 1.2; color: var(--ink, #2a2e45); overflow-wrap: anywhere; }
+.ilin-en {
+  font-size: 0.8rem; font-weight: 700; line-height: 1.15; color: var(--ink-soft, #5e6378); max-width: 11em;
+  padding-top: 3px; border-top: 2px dotted var(--line, #ebd9bc); align-self: stretch; overflow-wrap: anywhere;
+}
+.ilin-tile.no-en .ilin-en { opacity: 0.45; }
+.ilin-tile.unknown .ilin-es { color: var(--ink-soft, #5e6378); opacity: 0.6; }
+.ilin.rough .ilin-es { font-size: 1.2rem; }
+.say-gloss { flex-direction: column; align-items: stretch; position: relative; padding-right: 40px; }
+.say-gloss-head { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.say-gloss .gloss-close { position: absolute; top: 4px; right: 4px; }
+.say-lex { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; padding-top: 6px; border-top: 1px dashed var(--line, #ebd9bc); }
+.say-review-es { font-family: var(--font-display, inherit); font-size: 1.5rem; font-weight: 600; margin: 0; }
+
+/* My phrases */
+.say-history .section-title { margin-top: 16px; }
+.say-history .search { width: 100%; box-sizing: border-box; margin-bottom: 8px; }
+.say-list { display: flex; flex-direction: column; gap: 6px; }
+.say-phrase { border: 1px solid var(--line, #ebd9bc); border-radius: var(--radius-sm, 10px); background: var(--surface, #fff); }
+.say-phrase.practising { border-left: 4px solid var(--talavera, #1b65a6); }
+.say-phrase-head { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; padding: 8px 10px; cursor: pointer; }
+.say-phrase-text { display: flex; flex-direction: column; flex: 1 1 220px; min-width: 0; }
+.say-phrase-es { font-weight: 800; font-size: 1.1rem; overflow-wrap: anywhere; }
+.say-phrase-en { font-size: 0.92rem; overflow-wrap: anywhere; }
+.say-phrase-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-left: auto; }
+.say-phrase-detail { padding: 0 10px 10px; }
+.say-phrase-detail:empty { display: none; }
+.say-del { min-height: 36px; padding: 4px 10px; }
+
+/* ---- recall-first / listening-first / verb forms (docs/REVIEW.md top 5) ---- */
+.natural.alt::before { content: "you'll also hear"; }
+.recall-as { margin: 6px 0 0; font-size: 0.95rem; }
+.hint-line { font-size: 1.35rem; font-weight: 800; letter-spacing: 0.08em; color: var(--talavera-deep, #124b7e); overflow-wrap: anywhere; }
+.hint-line:empty { display: none; }
+.hint-cue { display: inline-flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.ramp-row { align-items: center; }
+.ramp-now { font-weight: 700; }
+.fb-extra { display: flex; flex-direction: column; gap: 8px; margin-top: 8px; }
+.listen-reveal, .prod-audio { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.dictation-after { display: flex; flex-direction: column; gap: 6px; }
+.dictation-after .ex-en { margin: 0; }
+.form-row-wrap p { margin: 0 0 6px; }
+.form-row { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 4px; }
+.form-cell { display: flex; flex-direction: column; align-items: center; padding: 4px 2px; border-radius: 8px; background: var(--surface-2, #fbefd9); text-align: center; min-width: 0; }
+.form-cell small { font-size: 0.68rem; color: var(--ink-soft, #5e6378); }
+.form-cell span { font-weight: 800; overflow-wrap: anywhere; }
+.form-cell.target { background: var(--talavera-soft, #dcebfa); outline: 2px solid var(--talavera, #1b65a6); }
+@media (max-width: 420px) { .form-row { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.form-tag { font-weight: 700; }
+.relearn-head .coach-slot { margin: 0 0 8px; }
+.play-story-row { margin: 4px 0 8px; }
+.models-wrap summary { cursor: pointer; font-weight: 800; }
+.they-say .btn-sm { align-self: flex-start; }

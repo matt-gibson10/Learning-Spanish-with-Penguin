@@ -1,16 +1,17 @@
 /* Router, top bar, keyboard shortcuts and boot. Hash routes: #/ #/course #/lesson/:id[/:step] #/review #/words
- * #/sounds[/:id] #/grammar[/:id] #/speak[/:id] #/story[/:id] #/about #/settings */
+ * #/sounds[/:id] #/grammar[/:id] #/speak[/:id] #/read #/chat[/:id] #/say #/story[/:id] #/progress[/checkup] #/about #/settings */
 (function () {
   "use strict";
   const App = window.App, h = App.h;
 
+  // "Why this works" (#/about) lives on Home's quick links and in Settings, which keeps the nav on one row
   const NAV = [
     ["home", "#/", "Home"], ["course", "#/course", "Course"], ["review", "#/review", "Review"], ["words", "#/words", "Words"],
-    ["sounds", "#/sounds", "Sounds"], ["grammar", "#/grammar", "Grammar"], ["speak", "#/speak", "Speak"], ["read", "#/read", "Read"], ["chat", "#/chat", "Chat"], ["story", "#/story", "Story"],
-    ["about", "#/about", "Why"], ["settings", "#/settings", "⚙"],
+    ["sounds", "#/sounds", "Sounds"], ["grammar", "#/grammar", "Grammar"], ["speak", "#/speak", "Speak"], ["read", "#/read", "Read"], ["chat", "#/chat", "Chat"], ["say", "#/say", "💭 Say it"], ["story", "#/story", "Story"],
+    ["progress", "#/progress", "Progress"], ["settings", "#/settings", "⚙"],
   ];
   const TITLES = { home: "Home", course: "Course", lesson: "Lesson", review: "Review", words: "Words", sounds: "Sounds", grammar: "Grammar",
-    speak: "Speak", read: "Read", chat: "Charla", story: "Story", about: "Why this works", settings: "Settings" };
+    speak: "Speak", read: "Read", chat: "Charla", say: "Think out loud", story: "Story", progress: "Progress", about: "Why this works", settings: "Settings" };
 
   function header() {
     const hd = App.$(".app-header");
@@ -99,6 +100,18 @@
     }
   });
 
+  // Build the rating from saved progress. A rating that was started from an empty browser (no scored answers
+  // yet) is rebuilt, so progress merged in from the server afterwards still counts. Returns true if it rebuilt.
+  function startRating() {
+    if (!window.Rating || !Rating.bootstrap) return false;
+    const rt = Store.state.rating;
+    const empty = !rt || !Object.values(rt.skills || {}).some((s) => s.n > 0);
+    if (rt && !empty) return false;
+    Store.state.rating = null;
+    Rating.bootstrap(Store.state, window.COURSE);
+    return true;
+  }
+
   // ------------------------------------------------------------------ boot
   function boot() {
     header();
@@ -106,14 +119,33 @@
     Store.onChange(App.debounce(updateBadge, 200));
     App.render();
     Store.connect().then((r) => {
-      if (r.online) {
-        document.documentElement.classList.add("online");
-        const { route } = parse();
-        // refresh pages whose numbers may have changed after merging server progress (not mid-exercise)
-        if (["home", "course", "settings"].includes(route)) { App._keepScroll = true; App.render(); }
+      // the rating tracker (web/js/rating.js, optional) starts once server progress has been merged in
+      let ratingReady = false;
+      if (window.Rating) {
+        try { if (Rating.init) Rating.init(window.COURSE); startRating(); ratingReady = true; }
+        catch (e) { console.error(e); }
       }
+      if (r.online) document.documentElement.classList.add("online");
+      const { route } = parse();
+      // refresh pages whose numbers may have changed after merging server progress / rating bootstrap (not mid-exercise)
+      if ((r.online && ["home", "course", "settings"].includes(route)) || (ratingReady && ["home", "progress"].includes(route))) { App._keepScroll = true; App.render(); }
     });
     setInterval(updateBadge, 60000);
+    // the server can miss the first probe (slow start, busy CPU) or drop later: keep trying, so progress
+    // always reaches the database and not only this browser
+    if (/^https?:/.test(location.protocol)) {
+      setInterval(() => {
+        if (Store.online) return;
+        Store.connect().then((r) => {
+          if (!r.online) return;
+          document.documentElement.classList.add("online");
+          // a rating that was started from an empty browser (no answers yet) is rebuilt from the merged progress
+          try { if (startRating()) Store.save(); } catch (e) { console.error(e); }
+          const { route } = parse();
+          if (["home", "course", "progress"].includes(route)) { App._keepScroll = true; App.render(); }
+        });
+      }, 20000);
+    }
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot); else boot();
 })();

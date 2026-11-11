@@ -8,16 +8,10 @@
     "topic": "courtesy",
     "kind": "phrase",
     "slot": null,
-    "natural": [
-      "hola, buen día",
-      "¡buenas!"
-    ],
-    "sound_rules": [
-      "s_clipping"
-    ],
     "ex_es": "Hola, buenos días, ¿cómo está?",
     "ex_en": "Hello, good morning, how are you?",
-    "note": "Until about noon. \"Buen día\" is also common in Mexico."
+    "note": "Until about noon. \"Buen día\" is also common in Mexico, and a quick \"¡Buenas!\" works as a casual hi at any time of day.",
+    "sound_rules": null
   },
   {
     "id": "c_por_favor",
@@ -88,14 +82,9 @@
     "topic": "courtesy",
     "kind": "reply",
     "slot": null,
-    "natural": [
-      "de na'a"
-    ],
-    "sound_rules": [
-      "s_d_loss"
-    ],
     "ex_es": "—Gracias. —De nada.",
-    "ex_en": "—Thanks. —You're welcome."
+    "ex_en": "—Thanks. —You're welcome.",
+    "sound_rules": null
   },
   {
     "id": "c_buenas_tardes",
@@ -107,11 +96,9 @@
     "kind": "phrase",
     "slot": null,
     "natural": [
-      "¡buenas!",
       "buenas tard's"
     ],
     "sound_rules": [
-      "s_clipping",
       "s_vowel_devoicing"
     ],
     "ex_es": "Buenas tardes, ¿tiene mesa?",
@@ -128,16 +115,14 @@
     "kind": "phrase",
     "slot": null,
     "natural": [
-      "¡buenas!",
       "buenas noch's"
     ],
     "sound_rules": [
-      "s_clipping",
       "s_vowel_devoicing"
     ],
     "ex_es": "Buenas noches, una mesa para cuatro.",
     "ex_en": "Good evening, a table for four.",
-    "note": "Greeting and goodbye after dark."
+    "note": "Greeting and goodbye after dark. Just \"¡Buenas!\" is very common."
   },
   {
     "id": "c_mande",
@@ -150,7 +135,8 @@
     "slot": null,
     "ex_es": "¿Mande? No le escuché.",
     "ex_en": "Sorry? I didn't hear you.",
-    "note": "Very Mexican and polite: answer \"¿Mande?\" when someone calls you or you didn't catch something. Not used in Spain."
+    "note": "Very Mexican and polite: answer \"¿Mande?\" when someone calls you or you didn't catch something. Not used in Spain.",
+    "sound_rules": null
   },
   {
     "id": "c_no_entiendo",
@@ -238,7 +224,8 @@
     "slot": null,
     "ex_es": "Disculpe, ¿dónde está el baño?",
     "ex_en": "Excuse me, where is the bathroom?",
-    "note": "Usted form. To a friend: \"disculpa\" or \"oye\"."
+    "note": "Usted form. To a friend: \"disculpa\" or \"oye\".",
+    "sound_rules": null
   },
   {
     "id": "c_perdon",
@@ -251,7 +238,8 @@
     "slot": null,
     "ex_es": "Perdón, ¿me repite?",
     "ex_en": "Sorry, could you say that again?",
-    "note": "Quick all-purpose apology."
+    "note": "Quick all-purpose apology.",
+    "sound_rules": null
   },
   {
     "id": "c_donde_esta_el_bano",
@@ -264,7 +252,7 @@
     "slot": null,
     "natural": [
       "¿dónde'stá el baño?",
-      "¿ónde 'tá el baño?"
+      "¿dónde 'tá el baño?"
     ],
     "sound_rules": [
       "s_sinalefa",
@@ -310,7 +298,8 @@
     "kind": "question",
     "slot": null,
     "ex_es": "¿Cuánto cuesta este sombrero?",
-    "ex_en": "How much is this hat?"
+    "ex_en": "How much is this hat?",
+    "sound_rules": null
   },
   {
     "id": "c_cuanto_es",
@@ -400,11 +389,11 @@
     "slot": null,
     "natural": [
       "¿cómo'stá?",
-      "¿cómo'stá usté?"
+      "¿cómo 'tá?"
     ],
     "sound_rules": [
       "s_sinalefa",
-      "s_d_loss"
+      "s_aphaeresis"
     ],
     "ex_es": "Buenos días, señora, ¿cómo está?",
     "ex_en": "Good morning, ma'am, how are you?",
@@ -439,7 +428,8 @@
     "kind": "reply",
     "slot": null,
     "ex_es": "Mucho gusto, soy Matt.",
-    "ex_en": "Nice to meet you, I'm Matt."
+    "ex_en": "Nice to meet you, I'm Matt.",
+    "sound_rules": null
   },
   {
     "id": "c_me_llamo_x",
@@ -639,7 +629,8 @@
       "\"neta\""
     ],
     "ex_es": "¿Qué significa \"chido\"?",
-    "ex_en": "What does \"chido\" mean?"
+    "ex_en": "What does \"chido\" mean?",
+    "sound_rules": null
   },
   {
     "id": "c_no_se",
@@ -689,11 +680,10 @@
     "kind": "question",
     "slot": null,
     "natural": [
-      "¿melo pue' repetir?"
+      "¿melo puede repetir?"
     ],
     "sound_rules": [
-      "s_clitics",
-      "s_d_loss"
+      "s_clitics"
     ],
     "ex_es": "Perdón, ¿me lo puede repetir?",
     "ex_en": "Sorry, could you repeat that?"
@@ -789,7 +779,8 @@
     "slot": null,
     "ex_es": "¿Me cobra, por favor?",
     "ex_en": "Can I pay, please?",
-    "note": "Extremely common in Mexico for asking to pay."
+    "note": "Extremely common in Mexico for asking to pay.",
+    "sound_rules": null
   },
   {
     "id": "c_para_llevar",
@@ -821,12 +812,10 @@
     "kind": "phrase",
     "slot": null,
     "natural": [
-      "pa' comer aquí",
-      "pa'quí"
+      "pa' comer aquí"
     ],
     "sound_rules": [
-      "s_apocope",
-      "s_sinalefa"
+      "s_apocope"
     ],
     "ex_es": "Para comer aquí, por favor.",
     "ex_en": "For here, please."
@@ -860,15 +849,10 @@
     "topic": "restaurant",
     "kind": "phrase",
     "slot": null,
-    "natural": [
-      "con to'o"
-    ],
-    "sound_rules": [
-      "s_d_loss"
-    ],
     "ex_es": "Dos de pastor con todo.",
     "ex_en": "Two al pastor with everything.",
-    "note": "For tacos: onion and cilantro (and often pineapple)."
+    "note": "For tacos: onion and cilantro (and often pineapple).",
+    "sound_rules": null
   },
   {
     "id": "c_sin_picante",
@@ -900,7 +884,8 @@
     "slot": null,
     "ex_es": "¿Esta salsa pica?",
     "ex_en": "Is this salsa spicy?",
-    "note": "\"Pica poquito\" usually means quite spicy."
+    "note": "\"Pica poquito\" usually means quite spicy.",
+    "sound_rules": null
   },
   {
     "id": "c_algo_mas",
@@ -912,7 +897,8 @@
     "kind": "question",
     "slot": null,
     "ex_es": "¿Algo más, joven?",
-    "ex_en": "Anything else, sir?"
+    "ex_en": "Anything else, sir?",
+    "sound_rules": null
   },
   {
     "id": "c_es_todo_gracias",
@@ -924,10 +910,9 @@
     "kind": "reply",
     "slot": null,
     "natural": [
-      "es to'o, grasias"
+      "es todo, grasias"
     ],
     "sound_rules": [
-      "s_d_loss",
       "s_seseo"
     ],
     "ex_es": "No, es todo, gracias.",
@@ -966,7 +951,7 @@
     "sound_rules": [
       "s_apocope"
     ],
-    "ex_es": "¿Y para tomar? ¿Una agua fresca?",
+    "ex_es": "¿Y para tomar? ¿Un agua fresca?",
     "ex_en": "And to drink? An agua fresca?",
     "note": "\"Tomar\" = to drink in Mexico."
   },
@@ -992,7 +977,7 @@
   {
     "id": "c_agua_natural",
     "es": "Agua natural",
-    "en": "still water (not cold)",
+    "en": "plain still water (not sparkling or flavoured)",
     "rank": 54,
     "tier": 1,
     "topic": "drink",
@@ -1004,9 +989,9 @@
     "sound_rules": [
       "s_soft_consonants"
     ],
-    "ex_es": "¿Agua natural o fría?",
-    "ex_en": "Room-temperature or cold water?",
-    "note": "In Mexico \"natural\" means not chilled."
+    "ex_es": "Un agua natural, por favor.",
+    "ex_en": "A plain still water, please.",
+    "note": "Agua natural = plain water: not agua mineral (sparkling), not agua fresca (fruit water). Feminine but el/un agua. For temperature say fría (cold) or al tiempo (room temperature); you'll also hear \"¿fría o natural?\"."
   },
   {
     "id": "c_quiero_x",
@@ -1024,7 +1009,8 @@
     ],
     "ex_es": "Quiero tres tacos de pastor.",
     "ex_en": "I want three al pastor tacos.",
-    "note": "Fine when ordering; \"Me da…\" sounds softer."
+    "note": "Fine when ordering; \"Me da…\" sounds softer.",
+    "sound_rules": null
   },
   {
     "id": "c_quisiera_x",
@@ -1040,7 +1026,8 @@
       "ver el menú"
     ],
     "ex_es": "Quisiera una mesa afuera.",
-    "ex_en": "I'd like a table outside."
+    "ex_en": "I'd like a table outside.",
+    "sound_rules": null
   },
   {
     "id": "c_necesito_x",
@@ -1079,14 +1066,9 @@
       "entrar",
       "tomar fotos"
     ],
-    "natural": [
-      "¿se pue' ___?"
-    ],
-    "sound_rules": [
-      "s_d_loss"
-    ],
     "ex_es": "¿Se puede pagar con tarjeta?",
-    "ex_en": "Can you pay by card?"
+    "ex_en": "Can you pay by card?",
+    "sound_rules": null
   },
   {
     "id": "c_puedo_x",
@@ -1102,14 +1084,9 @@
       "sentarme aquí",
       "pagar en dólares"
     ],
-    "natural": [
-      "¿pue'o ___?"
-    ],
-    "sound_rules": [
-      "s_d_loss"
-    ],
     "ex_es": "¿Puedo pagar en dólares?",
-    "ex_en": "Can I pay in dollars?"
+    "ex_en": "Can I pay in dollars?",
+    "sound_rules": null
   },
   {
     "id": "c_hay_x",
@@ -1150,7 +1127,8 @@
       "menú en inglés"
     ],
     "ex_es": "¿Tiene menú en inglés?",
-    "ex_en": "Do you have a menu in English?"
+    "ex_en": "Do you have a menu in English?",
+    "sound_rules": null
   },
   {
     "id": "c_que_hora_es",
@@ -1282,15 +1260,10 @@
     "topic": "directions",
     "kind": "phrase",
     "slot": null,
-    "natural": [
-      "to'o derecho"
-    ],
-    "sound_rules": [
-      "s_d_loss"
-    ],
     "ex_es": "Siga todo derecho dos cuadras.",
     "ex_en": "Keep going straight two blocks.",
-    "note": "\"Derecho\" = straight; \"derecha\" = right. Listen for the last vowel."
+    "note": "\"Derecho\" = straight; \"derecha\" = right. Listen for the last vowel.",
+    "sound_rules": null
   },
   {
     "id": "c_a_la_derecha",
@@ -1302,7 +1275,8 @@
     "kind": "phrase",
     "slot": null,
     "ex_es": "El baño está a la derecha.",
-    "ex_en": "The bathroom is on the right."
+    "ex_en": "The bathroom is on the right.",
+    "sound_rules": null
   },
   {
     "id": "c_a_la_izquierda",
@@ -1333,7 +1307,8 @@
     "slot": null,
     "ex_es": "La farmacia está a dos cuadras.",
     "ex_en": "The pharmacy is two blocks away.",
-    "note": "\"Cuadra\" = city block."
+    "note": "\"Cuadra\" = city block.",
+    "sound_rules": null
   },
   {
     "id": "c_de_vuelta_a_x",
@@ -1430,7 +1405,8 @@
     "slot": null,
     "ex_es": "Bajan, aquí me bajo.",
     "ex_en": "Getting off, I'm getting off here.",
-    "note": "On a bus, call \"¡Bajan!\" to get the driver to stop."
+    "note": "On a bus, call \"¡Bajan!\" to get the driver to stop.",
+    "sound_rules": null
   },
   {
     "id": "c_estoy_perdido",
@@ -1442,12 +1418,10 @@
     "kind": "phrase",
     "slot": null,
     "natural": [
-      "'toy perdido",
-      "'toy perdío"
+      "'toy perdido"
     ],
     "sound_rules": [
-      "s_aphaeresis",
-      "s_d_loss"
+      "s_aphaeresis"
     ],
     "ex_es": "Disculpe, estoy perdido.",
     "ex_en": "Excuse me, I'm lost.",
@@ -1463,7 +1437,8 @@
     "kind": "phrase",
     "slot": null,
     "ex_es": "¡Ayuda, por favor!",
-    "ex_en": "Help, please!"
+    "ex_en": "Help, please!",
+    "sound_rules": null
   },
   {
     "id": "c_llame_a_una_ambulancia",
@@ -1533,7 +1508,8 @@
     "kind": "phrase",
     "slot": null,
     "ex_es": "Me siento mal del estómago.",
-    "ex_en": "My stomach feels bad."
+    "ex_en": "My stomach feels bad.",
+    "sound_rules": null
   },
   {
     "id": "c_me_duele_x",
@@ -1551,7 +1527,8 @@
     ],
     "ex_es": "Me duele la cabeza.",
     "ex_en": "My head hurts.",
-    "note": "Use \"la\", not \"mi\": \"me duele la mano\"."
+    "note": "Use \"la\", not \"mi\": \"me duele la mano\".",
+    "sound_rules": null
   },
   {
     "id": "c_donde_hay_una_farmacia",
@@ -1680,7 +1657,8 @@
     "kind": "reply",
     "slot": null,
     "ex_es": "—¿Me ayuda? —Claro que sí.",
-    "ex_en": "—Can you help me? —Of course."
+    "ex_en": "—Can you help me? —Of course.",
+    "sound_rules": null
   },
   {
     "id": "c_si_claro",
@@ -1692,7 +1670,8 @@
     "kind": "reply",
     "slot": null,
     "ex_es": "Sí, claro, pásele.",
-    "ex_en": "Yes, of course, come in."
+    "ex_en": "Yes, of course, come in.",
+    "sound_rules": null
   },
   {
     "id": "c_lo_siento",
@@ -1704,7 +1683,8 @@
     "kind": "phrase",
     "slot": null,
     "ex_es": "Lo siento, no tengo cambio.",
-    "ex_en": "Sorry, I don't have change."
+    "ex_en": "Sorry, I don't have change.",
+    "sound_rules": null
   },
   {
     "id": "c_buen_provecho",
@@ -1715,15 +1695,10 @@
     "topic": "courtesy",
     "kind": "phrase",
     "slot": null,
-    "natural": [
-      "¡provecho!"
-    ],
-    "sound_rules": [
-      "s_clipping"
-    ],
     "ex_es": "¡Buen provecho!",
     "ex_en": "Enjoy your meal!",
-    "note": "In Mexico people say \"¡Provecho!\" even to strangers eating as they pass."
+    "note": "In Mexico people say \"¡Provecho!\" even to strangers eating as they pass.",
+    "sound_rules": null
   },
   {
     "id": "c_salud",
@@ -1748,7 +1723,7 @@
     "id": "c_o_sea",
     "es": "O sea",
     "en": "I mean; like; so",
-    "rank": 95,
+    "rank": 56,
     "tier": 1,
     "topic": "function",
     "kind": "filler",
@@ -1767,7 +1742,7 @@
     "id": "c_este",
     "es": "Este…",
     "en": "um…; er…",
-    "rank": 96,
+    "rank": 50,
     "tier": 1,
     "topic": "function",
     "kind": "filler",
@@ -1792,8 +1767,7 @@
     "kind": "question",
     "slot": null,
     "natural": [
-      "¿verdá?",
-      "¿ve'dá?"
+      "¿verdá?"
     ],
     "sound_rules": [
       "s_d_loss"
@@ -1813,13 +1787,14 @@
     "slot": null,
     "ex_es": "Está bueno, ¿no?",
     "ex_en": "It's good, right?",
-    "note": "Tag questions go up at the end."
+    "note": "Tag questions go up at the end.",
+    "sound_rules": null
   },
   {
     "id": "c_a_ver",
     "es": "A ver",
     "en": "let's see",
-    "rank": 99,
+    "rank": 52,
     "tier": 1,
     "topic": "function",
     "kind": "filler",
@@ -1884,7 +1859,8 @@
     "kind": "reply",
     "slot": null,
     "ex_es": "—Mucho gusto. —Igualmente.",
-    "ex_en": "—Nice to meet you. —Likewise."
+    "ex_en": "—Nice to meet you. —Likewise.",
+    "sound_rules": null
   },
   {
     "id": "c_que_tal",
@@ -1896,7 +1872,8 @@
     "kind": "question",
     "slot": null,
     "ex_es": "Hola, ¿qué tal?",
-    "ex_en": "Hi, how's it going?"
+    "ex_en": "Hi, how's it going?",
+    "sound_rules": null
   },
   {
     "id": "c_como_te_llamas",
@@ -1925,14 +1902,9 @@
     "topic": "people",
     "kind": "question",
     "slot": null,
-    "natural": [
-      "¿de'ónde eres?"
-    ],
-    "sound_rules": [
-      "s_sinalefa"
-    ],
     "ex_es": "¿De dónde eres? ¿De Estados Unidos?",
-    "ex_en": "Where are you from? The US?"
+    "ex_en": "Where are you from? The US?",
+    "sound_rules": null
   },
   {
     "id": "c_soy_de_x",
@@ -1949,7 +1921,8 @@
       "Houston"
     ],
     "ex_es": "Soy de Texas.",
-    "ex_en": "I'm from Texas."
+    "ex_en": "I'm from Texas.",
+    "sound_rules": null
   },
   {
     "id": "c_mas_o_menos",
@@ -1997,15 +1970,10 @@
     "topic": "function",
     "kind": "phrase",
     "slot": null,
-    "natural": [
-      "un momentito"
-    ],
-    "sound_rules": [
-      "s_clipping"
-    ],
     "ex_es": "Un momento, por favor.",
     "ex_en": "One moment, please.",
-    "note": "Mexicans soften with diminutives: \"un momentito\", \"tantito\"."
+    "note": "Mexicans soften with diminutives: \"un momentito\", \"tantito\".",
+    "sound_rules": null
   },
   {
     "id": "c_aqui_esta",
@@ -2037,7 +2005,8 @@
     "kind": "phrase",
     "slot": null,
     "ex_es": "Aquí tiene, gracias.",
-    "ex_en": "Here you go, thanks."
+    "ex_en": "Here you go, thanks.",
+    "sound_rules": null
   },
   {
     "id": "c_cuanto_cuesta_el_boleto",
@@ -2174,15 +2143,9 @@
       "Matt García",
       "Smith"
     ],
-    "natural": [
-      "a nombre'e ___"
-    ],
-    "sound_rules": [
-      "s_d_loss",
-      "s_sinalefa"
-    ],
     "ex_es": "Tengo una reservación a nombre de Matt.",
-    "ex_en": "I have a reservation under Matt."
+    "ex_en": "I have a reservation under Matt.",
+    "sound_rules": null
   },
   {
     "id": "c_cual_es_la_contrasena_del_wifi",
@@ -2274,10 +2237,9 @@
     "kind": "question",
     "slot": null,
     "natural": [
-      "¿pue'o dejar mi maleta'quí?"
+      "¿puedo dejar mi maleta'quí?"
     ],
     "sound_rules": [
-      "s_d_loss",
       "s_sinalefa"
     ],
     "ex_es": "¿Puedo dejar mi maleta aquí un rato?",
@@ -2294,7 +2256,8 @@
     "slot": null,
     "ex_es": "¿Tiene cambio de quinientos?",
     "ex_en": "Do you have change for 500?",
-    "note": "Big bills (500, 1000) are hard to break at stalls."
+    "note": "Big bills (500, 1000) are hard to break at stalls.",
+    "sound_rules": null
   },
   {
     "id": "c_no_tengo_cambio",
@@ -2307,7 +2270,8 @@
     "slot": null,
     "ex_es": "Perdón, no tengo cambio.",
     "ex_en": "Sorry, I don't have change.",
-    "note": "You'll hear vendors say this a lot."
+    "note": "You'll hear vendors say this a lot.",
+    "sound_rules": null
   },
   {
     "id": "c_en_efectivo_o_con_tarjeta",
@@ -2337,7 +2301,8 @@
     "kind": "question",
     "slot": null,
     "ex_es": "¿Cuánto le debo, joven?",
-    "ex_en": "What do I owe you?"
+    "ex_en": "What do I owe you?",
+    "sound_rules": null
   },
   {
     "id": "c_son_x_pesos",
@@ -2355,7 +2320,8 @@
     ],
     "ex_es": "Son ochenta y cinco pesos.",
     "ex_en": "That's 85 pesos.",
-    "note": "Listen for the tens: -enta (ochenta) vs -ce (once…quince)."
+    "note": "Listen for the tens: -enta (ochenta) vs -ce (once…quince).",
+    "sound_rules": null
   },
   {
     "id": "c_tengo_hambre",
@@ -2423,7 +2389,8 @@
     "kind": "phrase",
     "slot": null,
     "ex_es": "¡Qué rico huele!",
-    "ex_en": "It smells so good!"
+    "ex_en": "It smells so good!",
+    "sound_rules": null
   },
   {
     "id": "c_estoy_lleno",
@@ -2494,7 +2461,8 @@
     "slot": null,
     "ex_es": "¿Pedimos un Uber?",
     "ex_en": "Shall we get an Uber?",
-    "note": "Didi and Uber are both everywhere in Mexican cities."
+    "note": "Didi and Uber are both everywhere in Mexican cities.",
+    "sound_rules": null
   },
   {
     "id": "c_que_le_vaya_bien",
@@ -2507,7 +2475,8 @@
     "slot": null,
     "ex_es": "Gracias, que le vaya bien.",
     "ex_en": "Thanks, have a good one.",
-    "note": "Informal: \"que te vaya bien\"."
+    "note": "Informal: \"que te vaya bien\".",
+    "sound_rules": null
   },
   {
     "id": "c_hasta_manana",
@@ -2557,7 +2526,8 @@
     "slot": null,
     "ex_es": "¿Qué pasó? ¿Todo bien?",
     "ex_en": "What happened? Everything OK?",
-    "note": "Also a casual greeting in Mexico."
+    "note": "Also a casual greeting in Mexico.",
+    "sound_rules": null
   },
   {
     "id": "c_orale",
@@ -2570,7 +2540,8 @@
     "slot": null,
     "ex_es": "—¿Vamos? —¡Órale!",
     "ex_en": "—Shall we go? —Sure!",
-    "note": "Very Mexican; meaning depends on tone."
+    "note": "Very Mexican; meaning depends on tone.",
+    "sound_rules": null
   },
   {
     "id": "c_sale",
@@ -2583,7 +2554,8 @@
     "slot": null,
     "ex_es": "—Nos vemos a las ocho. —Sale.",
     "ex_en": "—See you at eight. —Deal.",
-    "note": "Mexico City \"OK\". Also \"¿sale?\" = \"deal?\"."
+    "note": "Mexico City \"OK\". Also \"¿sale?\" = \"deal?\".",
+    "sound_rules": null
   },
   {
     "id": "c_va",
@@ -2596,7 +2568,8 @@
     "slot": null,
     "ex_es": "—¿Tacos? —Va.",
     "ex_en": "—Tacos? —Sure.",
-    "note": "Short and casual."
+    "note": "Short and casual.",
+    "sound_rules": null
   },
   {
     "id": "c_ni_modo",
@@ -2609,7 +2582,8 @@
     "slot": null,
     "ex_es": "Ya cerraron. Ni modo.",
     "ex_en": "They already closed. Oh well.",
-    "note": "Mexican shrug in two words."
+    "note": "Mexican shrug in two words.",
+    "sound_rules": null
   },
   {
     "id": "c_que_padre",
@@ -2622,7 +2596,8 @@
     "slot": null,
     "ex_es": "¡Qué padre está tu casa!",
     "ex_en": "Your house is so cool!",
-    "note": "Mexico. \"Padre\" here = cool, not father."
+    "note": "Mexico. \"Padre\" here = cool, not father.",
+    "sound_rules": null
   },
   {
     "id": "c_no_manches",
@@ -2635,7 +2610,8 @@
     "slot": null,
     "ex_es": "¡No manches! ¿En serio?",
     "ex_en": "No way! Seriously?",
-    "note": "Mild slang, fine among friends. Its vulgar cousin is \"¡no mames!\"."
+    "note": "Mild slang, fine among friends. Its vulgar cousin is \"¡no mames!\".",
+    "sound_rules": null
   },
   {
     "id": "c_aguas",
@@ -2665,14 +2641,9 @@
     "topic": "emergency",
     "kind": "phrase",
     "slot": null,
-    "natural": [
-      "¡cuida'o!"
-    ],
-    "sound_rules": [
-      "s_d_loss"
-    ],
     "ex_es": "¡Cuidado, está mojado!",
-    "ex_en": "Careful, it's wet!"
+    "ex_en": "Careful, it's wet!",
+    "sound_rules": null
   },
   {
     "id": "c_como_le_va",
@@ -2684,7 +2655,8 @@
     "kind": "question",
     "slot": null,
     "ex_es": "Buenas tardes, don José, ¿cómo le va?",
-    "ex_en": "Good afternoon, don José, how's it going?"
+    "ex_en": "Good afternoon, don José, how's it going?",
+    "sound_rules": null
   },
   {
     "id": "c_como_te_va",
@@ -2696,7 +2668,8 @@
     "kind": "question",
     "slot": null,
     "ex_es": "¿Y cómo te va en el trabajo?",
-    "ex_en": "And how's work going?"
+    "ex_en": "And how's work going?",
+    "sound_rules": null
   },
   {
     "id": "c_todo_bien",
@@ -2707,14 +2680,9 @@
     "topic": "courtesy",
     "kind": "reply",
     "slot": null,
-    "natural": [
-      "to'o bien"
-    ],
-    "sound_rules": [
-      "s_d_loss"
-    ],
     "ex_es": "—¿Todo bien? —Sí, todo bien.",
-    "ex_en": "—All good? —Yes, all good."
+    "ex_en": "—All good? —Yes, all good.",
+    "sound_rules": null
   },
   {
     "id": "c_aqui_nomas",
@@ -2727,7 +2695,8 @@
     "slot": null,
     "ex_es": "—¿Qué haces? —Aquí nomás.",
     "ex_en": "—What are you up to? —Not much.",
-    "note": "\"Nomás\" = just/only, very Mexican."
+    "note": "\"Nomás\" = just/only, very Mexican.",
+    "sound_rules": null
   },
   {
     "id": "c_no_hay_de_que",
@@ -2777,7 +2746,8 @@
     "kind": "reply",
     "slot": null,
     "ex_es": "—¿Me ayuda? —Con mucho gusto.",
-    "ex_en": "—Can you help me? —With pleasure."
+    "ex_en": "—Can you help me? —With pleasure.",
+    "sound_rules": null
   },
   {
     "id": "c_que_se_le_ofrece",
@@ -2810,7 +2780,8 @@
     "slot": null,
     "ex_es": "¡Pásele, pásele, güero!",
     "ex_en": "Come on in!",
-    "note": "Market vendors call this out. \"Güero/güera\" = light-skinned; used for foreigners, not rude."
+    "note": "Market vendors call this out. \"Güero/güera\" = light-skinned; used for foreigners, not rude.",
+    "sound_rules": null
   },
   {
     "id": "c_que_le_damos",
@@ -2823,7 +2794,8 @@
     "slot": null,
     "ex_es": "¿Qué le damos, joven?",
     "ex_en": "What can we get you?",
-    "note": "Taquería staff use this."
+    "note": "Taquería staff use this.",
+    "sound_rules": null
   },
   {
     "id": "c_que_va_a_querer",
@@ -2917,7 +2889,8 @@
     "slot": null,
     "ex_es": "Una coca bien fría, por favor.",
     "ex_en": "A nice cold Coke, please.",
-    "note": "\"Bien\" = very, in Mexican speech."
+    "note": "\"Bien\" = very, in Mexican speech.",
+    "sound_rules": null
   },
   {
     "id": "c_para_mi_x",
@@ -2969,7 +2942,8 @@
     "kind": "question",
     "slot": null,
     "ex_es": "¿Qué me recomienda de aquí?",
-    "ex_en": "What do you recommend here?"
+    "ex_en": "What do you recommend here?",
+    "sound_rules": null
   },
   {
     "id": "c_esta_incluida_la_propina",
@@ -3070,14 +3044,9 @@
       "del banco",
       "del Oxxo"
     ],
-    "natural": [
-      "al la'o de ___"
-    ],
-    "sound_rules": [
-      "s_d_loss"
-    ],
     "ex_es": "Está al lado del banco.",
-    "ex_en": "It's next to the bank."
+    "ex_en": "It's next to the bank.",
+    "sound_rules": null
   },
   {
     "id": "c_enfrente_de_x",
@@ -3092,15 +3061,9 @@
       "la iglesia",
       "el parque"
     ],
-    "natural": [
-      "enfrent'e ___"
-    ],
-    "sound_rules": [
-      "s_d_loss",
-      "s_sinalefa"
-    ],
     "ex_es": "Está enfrente de la iglesia.",
-    "ex_en": "It's across from the church."
+    "ex_en": "It's across from the church.",
+    "sound_rules": null
   },
   {
     "id": "c_cerca_de_aqui",
@@ -3251,7 +3214,8 @@
       "la mochila"
     ],
     "ex_es": "Me robaron la cartera en el metro.",
-    "ex_en": "My wallet was stolen on the metro."
+    "ex_en": "My wallet was stolen on the metro.",
+    "sound_rules": null
   },
   {
     "id": "c_perdi_mi_pasaporte",
@@ -3263,7 +3227,8 @@
     "kind": "phrase",
     "slot": null,
     "ex_es": "Perdí mi pasaporte, ¿qué hago?",
-    "ex_en": "I lost my passport, what do I do?"
+    "ex_en": "I lost my passport, what do I do?",
+    "sound_rules": null
   },
   {
     "id": "c_es_una_emergencia",
@@ -3323,7 +3288,8 @@
       "pagar"
     ],
     "ex_es": "Tengo que irme, perdón.",
-    "ex_en": "I have to go, sorry."
+    "ex_en": "I have to go, sorry.",
+    "sound_rules": null
   },
   {
     "id": "c_hay_que_x",
@@ -3362,7 +3328,8 @@
     ],
     "ex_es": "Me gusta mucho la comida mexicana.",
     "ex_en": "I really like Mexican food.",
-    "note": "Plural: \"me gustan los tacos\"."
+    "note": "Plural: \"me gustan los tacos\".",
+    "sound_rules": null
   },
   {
     "id": "c_me_gustaria_x",
@@ -3378,7 +3345,8 @@
       "probar el mole"
     ],
     "ex_es": "Me gustaría ver el menú.",
-    "ex_en": "I'd like to see the menu."
+    "ex_en": "I'd like to see the menu.",
+    "sound_rules": null
   },
   {
     "id": "c_me_puede_x",
@@ -3394,14 +3362,9 @@
       "ayudar",
       "decir"
     ],
-    "natural": [
-      "¿me pue' ___?"
-    ],
-    "sound_rules": [
-      "s_d_loss"
-    ],
     "ex_es": "¿Me puede tomar una foto?",
-    "ex_en": "Could you take a photo of me?"
+    "ex_en": "Could you take a photo of me?",
+    "sound_rules": null
   },
   {
     "id": "c_estoy_buscando_x",
@@ -3435,7 +3398,8 @@
     "kind": "phrase",
     "slot": null,
     "ex_es": "Espérame un ratito.",
-    "ex_en": "Wait for me a little while."
+    "ex_en": "Wait for me a little while.",
+    "sound_rules": null
   },
   {
     "id": "c_tantito",
@@ -3448,7 +3412,8 @@
     "slot": null,
     "ex_es": "Espérame tantito.",
     "ex_en": "Wait a sec.",
-    "note": "Mexican colloquial."
+    "note": "Mexican colloquial.",
+    "sound_rules": null
   },
   {
     "id": "c_esperame_x",
@@ -3483,7 +3448,8 @@
     "kind": "reply",
     "slot": null,
     "ex_es": "¡Ya voy, ya voy!",
-    "ex_en": "I'm coming!"
+    "ex_en": "I'm coming!",
+    "sound_rules": null
   },
   {
     "id": "c_ya_esta",
@@ -3513,7 +3479,8 @@
     "kind": "reply",
     "slot": null,
     "ex_es": "—¿Ya? —Listo.",
-    "ex_en": "—Done? —Ready."
+    "ex_en": "—Done? —Ready.",
+    "sound_rules": null
   },
   {
     "id": "c_bienvenido_a_mexico",
@@ -3546,7 +3513,8 @@
     "slot": null,
     "ex_es": "Al rato te escribo.",
     "ex_en": "I'll text you in a bit.",
-    "note": "Very Mexican."
+    "note": "Very Mexican.",
+    "sound_rules": null
   },
   {
     "id": "c_nos_vemos",
@@ -3558,7 +3526,8 @@
     "kind": "phrase",
     "slot": null,
     "ex_es": "Nos vemos mañana.",
-    "ex_en": "See you tomorrow."
+    "ex_en": "See you tomorrow.",
+    "sound_rules": null
   },
   {
     "id": "c_cuidate",
@@ -3570,7 +3539,8 @@
     "kind": "phrase",
     "slot": null,
     "ex_es": "Bueno, cuídate mucho.",
-    "ex_en": "OK, take good care."
+    "ex_en": "OK, take good care.",
+    "sound_rules": null
   },
   {
     "id": "c_neta",
@@ -3583,7 +3553,8 @@
     "slot": null,
     "ex_es": "¿Neta? ¿Ya te vas?",
     "ex_en": "Seriously? You're leaving already?",
-    "note": "Mexican slang, very common."
+    "note": "Mexican slang, very common.",
+    "sound_rules": null
   },
   {
     "id": "c_a_poco",
@@ -3596,7 +3567,8 @@
     "slot": null,
     "ex_es": "¿A poco sí?",
     "ex_en": "Really?",
-    "note": "Mexico. Expresses surprise or doubt."
+    "note": "Mexico. Expresses surprise or doubt.",
+    "sound_rules": null
   },
   {
     "id": "c_como_ves",
@@ -3609,7 +3581,8 @@
     "slot": null,
     "ex_es": "Vamos mañana, ¿cómo ves?",
     "ex_en": "Let's go tomorrow, what do you think?",
-    "note": "Mexico."
+    "note": "Mexico.",
+    "sound_rules": null
   },
   {
     "id": "c_sale_2",
@@ -3622,7 +3595,8 @@
     "slot": null,
     "ex_es": "Te veo a las cinco, ¿sale?",
     "ex_en": "See you at five, OK?",
-    "note": "Mexico City."
+    "note": "Mexico City.",
+    "sound_rules": null
   },
   {
     "id": "c_la_verdad",
@@ -3691,7 +3665,8 @@
     "slot": null,
     "ex_es": "Ya mero llegamos.",
     "ex_en": "We're almost there.",
-    "note": "Mexico."
+    "note": "Mexico.",
+    "sound_rules": null
   },
   {
     "id": "c_andale_pues",
@@ -3740,14 +3715,9 @@
     "topic": "courtesy",
     "kind": "reply",
     "slot": null,
-    "natural": [
-      "no pasa na'a"
-    ],
-    "sound_rules": [
-      "s_d_loss"
-    ],
     "ex_es": "Tranquilo, no pasa nada.",
-    "ex_en": "Relax, it's fine."
+    "ex_en": "Relax, it's fine.",
+    "sound_rules": null
   },
   {
     "id": "c_no_te_preocupes",
@@ -3760,21 +3730,23 @@
     "slot": null,
     "ex_es": "No te preocupes, yo pago.",
     "ex_en": "Don't worry, I'll pay.",
-    "note": "Formal: \"no se preocupe\"."
+    "note": "Formal: \"no se preocupe\".",
+    "sound_rules": null
   },
   {
     "id": "c_otra_vez_por_favor",
     "es": "Otra vez, por favor",
     "en": "again, please",
-    "rank": 213,
+    "rank": 32,
     "tier": 1,
     "topic": "communication",
     "kind": "phrase",
     "slot": null,
     "natural": [
-      "otra ve', porfa"
+      "otra ves, porfa"
     ],
     "sound_rules": [
+      "s_seseo",
       "s_clipping"
     ],
     "ex_es": "¿Otra vez, por favor? No escuché.",
@@ -3784,14 +3756,15 @@
     "id": "c_como",
     "es": "¿Cómo?",
     "en": "Sorry? What?",
-    "rank": 214,
+    "rank": 33,
     "tier": 1,
     "topic": "communication",
     "kind": "question",
     "slot": null,
     "ex_es": "¿Cómo? No te oí.",
     "ex_en": "What? I didn't hear you.",
-    "note": "\"¿Mande?\" is more polite in Mexico."
+    "note": "\"¿Mande?\" is more polite in Mexico.",
+    "sound_rules": null
   },
   {
     "id": "c_puede_hablar_mas_despacio",
@@ -3803,10 +3776,9 @@
     "kind": "question",
     "slot": null,
     "natural": [
-      "¿pue' ablar más despasio?"
+      "¿puede ablar más despasio?"
     ],
     "sound_rules": [
-      "s_d_loss",
       "s_same_letters"
     ],
     "ex_es": "¿Puede hablar más despacio, por favor?",
@@ -3864,7 +3836,8 @@
       "diez"
     ],
     "ex_es": "Nos vemos a las ocho.",
-    "ex_en": "See you at eight."
+    "ex_en": "See you at eight.",
+    "sound_rules": null
   },
   {
     "id": "c_como_a_las_ocho",
@@ -3895,7 +3868,8 @@
     "kind": "question",
     "slot": null,
     "ex_es": "¿Cuántos son? —Somos dos.",
-    "ex_en": "How many of you? —Two."
+    "ex_en": "How many of you? —Two.",
+    "sound_rules": null
   },
   {
     "id": "c_somos_dos",
@@ -3907,7 +3881,8 @@
     "kind": "reply",
     "slot": null,
     "ex_es": "Somos dos, para comer aquí.",
-    "ex_en": "Two of us, eating in."
+    "ex_en": "Two of us, eating in.",
+    "sound_rules": null
   },
   {
     "id": "c_cien_pesos",
@@ -4093,12 +4068,10 @@
     "kind": "phrase",
     "slot": null,
     "natural": [
-      "'toy cansa'o",
-      "'toy cansao"
+      "'toy cansado"
     ],
     "sound_rules": [
-      "s_aphaeresis",
-      "s_d_loss"
+      "s_aphaeresis"
     ],
     "ex_es": "Estoy cansado, ya me voy a dormir.",
     "ex_en": "I'm tired, I'm off to bed.",
@@ -4115,7 +4088,8 @@
     "slot": null,
     "ex_es": "¿Y tú a qué te dedicas?",
     "ex_en": "And what do you do?",
-    "note": "Formal: \"¿A qué se dedica?\""
+    "note": "Formal: \"¿A qué se dedica?\"",
+    "sound_rules": null
   },
   {
     "id": "c_es_tu_primera_vez_en_mexico",
@@ -4127,10 +4101,11 @@
     "kind": "question",
     "slot": null,
     "natural": [
-      "¿es tu primera ve'n Méjico?"
+      "¿es tu primera vesen Méjico?"
     ],
     "sound_rules": [
-      "s_sinalefa",
+      "s_seseo",
+      "s_linking",
       "s_x_tl"
     ],
     "ex_es": "¿Es tu primera vez en México?",
@@ -4220,7 +4195,8 @@
     "kind": "phrase",
     "slot": null,
     "ex_es": "¿En serio? ¡Qué padre!",
-    "ex_en": "Really? How cool!"
+    "ex_en": "Really? How cool!",
+    "sound_rules": null
   },
   {
     "id": "c_de_verdad",
@@ -4250,11 +4226,10 @@
     "kind": "phrase",
     "slot": null,
     "natural": [
-      "pa' na'a"
+      "pa' nada"
     ],
     "sound_rules": [
-      "s_apocope",
-      "s_d_loss"
+      "s_apocope"
     ],
     "ex_es": "—¿Te molesta? —Para nada.",
     "ex_en": "—Does it bother you? —Not at all."
@@ -4313,16 +4288,17 @@
       "pasa"
     ],
     "ex_es": "Lo que quieras está bien.",
-    "ex_en": "Whatever you want is fine."
+    "ex_en": "Whatever you want is fine.",
+    "sound_rules": null
   },
   {
     "id": "c_lo_que_pasa_es_que",
     "es": "Lo que pasa es que…",
     "en": "the thing is…",
-    "rank": 244,
+    "rank": 59,
     "tier": 1,
     "topic": "function",
-    "kind": "phrase",
+    "kind": "filler",
     "slot": null,
     "natural": [
       "lo que pasa'es que…"
@@ -4338,7 +4314,7 @@
     "id": "c_es_que_x",
     "es": "Es que ___",
     "en": "it's just that ___",
-    "rank": 245,
+    "rank": 47,
     "tier": 1,
     "topic": "function",
     "kind": "frame",
@@ -4349,7 +4325,13 @@
     ],
     "ex_es": "Es que no entiendo bien.",
     "ex_en": "It's just that I don't understand well.",
-    "note": "Classic excuse-starter."
+    "note": "Classic excuse-starter.",
+    "natural": [
+      "eske ___"
+    ],
+    "sound_rules": [
+      "s_linking"
+    ]
   },
   {
     "id": "c_creo_que_x",
@@ -4365,7 +4347,8 @@
       "es por allá"
     ],
     "ex_es": "Creo que es por allá.",
-    "ex_en": "I think it's over there."
+    "ex_en": "I think it's over there.",
+    "sound_rules": null
   },
   {
     "id": "c_creo_que_si",
@@ -4377,7 +4360,8 @@
     "kind": "phrase",
     "slot": null,
     "ex_es": "—¿Está abierto? —Creo que sí.",
-    "ex_en": "—Is it open? —I think so."
+    "ex_en": "—Is it open? —I think so.",
+    "sound_rules": null
   },
   {
     "id": "c_creo_que_no",
@@ -4389,7 +4373,8 @@
     "kind": "phrase",
     "slot": null,
     "ex_es": "Creo que no, ya cerró.",
-    "ex_en": "I don't think so, it closed."
+    "ex_en": "I don't think so, it closed.",
+    "sound_rules": null
   },
   {
     "id": "c_ya_voy_en_camino",
@@ -4446,10 +4431,11 @@
       "el centro"
     ],
     "natural": [
+      "vamosa ___",
       "vamo' a ___"
     ],
     "sound_rules": [
-      "s_sinalefa",
+      "s_linking",
       "s_s_aspiration"
     ],
     "ex_es": "Vamos a ver.",
@@ -4466,7 +4452,8 @@
     "kind": "phrase",
     "slot": null,
     "ex_es": "¡Ya, vámonos!",
-    "ex_en": "OK, let's go!"
+    "ex_en": "OK, let's go!",
+    "sound_rules": null
   },
   {
     "id": "c_vamos_a_ver",
@@ -4498,7 +4485,8 @@
     "kind": "phrase",
     "slot": null,
     "ex_es": "Ya no hay tacos de pastor.",
-    "ex_en": "There are no more pastor tacos."
+    "ex_en": "There are no more pastor tacos.",
+    "sound_rules": null
   },
   {
     "id": "c_todavia_no",
@@ -4509,14 +4497,9 @@
     "topic": "function",
     "kind": "phrase",
     "slot": null,
-    "natural": [
-      "toavía no"
-    ],
-    "sound_rules": [
-      "s_d_loss"
-    ],
     "ex_es": "Todavía no llega el camión.",
-    "ex_en": "The bus hasn't come yet."
+    "ex_en": "The bus hasn't come yet.",
+    "sound_rules": null
   },
   {
     "id": "c_acabo_de_x",
@@ -4531,15 +4514,9 @@
       "llegar",
       "comer"
     ],
-    "natural": [
-      "acabo'e ___"
-    ],
-    "sound_rules": [
-      "s_d_loss",
-      "s_sinalefa"
-    ],
     "ex_es": "Acabo de llegar a México.",
-    "ex_en": "I just arrived in Mexico."
+    "ex_en": "I just arrived in Mexico.",
+    "sound_rules": null
   },
   {
     "id": "c_me_hace_falta_x",
@@ -4574,10 +4551,9 @@
     "kind": "question",
     "slot": null,
     "natural": [
-      "¿me pue' dar otra toaya?"
+      "¿me puede dar otra toaya?"
     ],
     "sound_rules": [
-      "s_d_loss",
       "s_same_letters"
     ],
     "ex_es": "¿Me puede dar otra toalla, por favor?",
@@ -4632,7 +4608,8 @@
     "slot": null,
     "ex_es": "¿Me da el ticket, por favor?",
     "ex_en": "Can I have the receipt, please?",
-    "note": "Mexico: \"ticket\" = receipt; \"factura\" = tax invoice."
+    "note": "Mexico: \"ticket\" = receipt; \"factura\" = tax invoice.",
+    "sound_rules": null
   },
   {
     "id": "c_quedese_con_el_cambio",
@@ -4644,7 +4621,8 @@
     "kind": "phrase",
     "slot": null,
     "ex_es": "Gracias, quédese con el cambio.",
-    "ex_en": "Thanks, keep the change."
+    "ex_en": "Thanks, keep the change.",
+    "sound_rules": null
   },
   {
     "id": "c_tiene_cambio_de_quinientos",
@@ -4655,15 +4633,9 @@
     "topic": "money",
     "kind": "question",
     "slot": null,
-    "natural": [
-      "¿tiene cambio'e quinientos?"
-    ],
-    "sound_rules": [
-      "s_d_loss",
-      "s_numbers"
-    ],
     "ex_es": "¿Tiene cambio de quinientos? Perdón.",
-    "ex_en": "Change for 500? Sorry."
+    "ex_en": "Change for 500? Sorry.",
+    "sound_rules": null
   },
   {
     "id": "c_me_puede_llamar_un_taxi",
@@ -4675,10 +4647,9 @@
     "kind": "question",
     "slot": null,
     "natural": [
-      "¿me pue' yamar un taxi?"
+      "¿me puede yamar un taxi?"
     ],
     "sound_rules": [
-      "s_d_loss",
       "s_same_letters"
     ],
     "ex_es": "¿Me puede llamar un taxi seguro?",
@@ -4699,7 +4670,8 @@
       "su pasaporte"
     ],
     "ex_es": "¿Me permite pasar?",
-    "ex_en": "May I get by?"
+    "ex_en": "May I get by?",
+    "sound_rules": null
   },
   {
     "id": "c_permiso",
@@ -4712,7 +4684,8 @@
     "slot": null,
     "ex_es": "Permiso, permiso…",
     "ex_en": "Excuse me, excuse me…",
-    "note": "Short for \"con permiso\"."
+    "note": "Short for \"con permiso\".",
+    "sound_rules": null
   },
   {
     "id": "c_tengo_x_anos",
@@ -4728,7 +4701,8 @@
       "treinta y dos"
     ],
     "ex_es": "Tengo treinta años.",
-    "ex_en": "I'm thirty."
+    "ex_en": "I'm thirty.",
+    "sound_rules": null
   },
   {
     "id": "c_cuantos_anos_tienes",
@@ -4740,7 +4714,8 @@
     "kind": "question",
     "slot": null,
     "ex_es": "¿Y cuántos años tienes?",
-    "ex_en": "And how old are you?"
+    "ex_en": "And how old are you?",
+    "sound_rules": null
   },
   {
     "id": "c_donde_vives",
@@ -4752,7 +4727,8 @@
     "kind": "question",
     "slot": null,
     "ex_es": "¿Dónde vives? ¿Aquí en el centro?",
-    "ex_en": "Where do you live? Here downtown?"
+    "ex_en": "Where do you live? Here downtown?",
+    "sound_rules": null
   },
   {
     "id": "c_vivo_en_x",
@@ -4805,7 +4781,8 @@
     "kind": "collocation",
     "slot": null,
     "ex_es": "Tengo mucho sueño, ya me voy.",
-    "ex_en": "I'm really sleepy, I'm off."
+    "ex_en": "I'm really sleepy, I'm off.",
+    "sound_rules": null
   },
   {
     "id": "c_tener_frio",
@@ -4818,7 +4795,8 @@
     "slot": null,
     "ex_es": "¿Tienes frío? Toma mi chamarra.",
     "ex_en": "Are you cold? Take my jacket.",
-    "note": "Mexico: \"chamarra\" = jacket."
+    "note": "Mexico: \"chamarra\" = jacket.",
+    "sound_rules": null
   },
   {
     "id": "c_tener_calor",
@@ -4830,7 +4808,8 @@
     "kind": "collocation",
     "slot": null,
     "ex_es": "Tengo calor, ¿abrimos la ventana?",
-    "ex_en": "I'm hot, shall we open the window?"
+    "ex_en": "I'm hot, shall we open the window?",
+    "sound_rules": null
   },
   {
     "id": "c_tener_prisa",
@@ -4843,7 +4822,8 @@
     "slot": null,
     "ex_es": "Perdón, tengo prisa.",
     "ex_en": "Sorry, I'm in a hurry.",
-    "note": "Mexico also: \"andar con prisa\"."
+    "note": "Mexico also: \"andar con prisa\".",
+    "sound_rules": null
   },
   {
     "id": "c_tener_miedo",
@@ -4854,14 +4834,9 @@
     "topic": "emotions",
     "kind": "collocation",
     "slot": null,
-    "natural": [
-      "tener mie'o"
-    ],
-    "sound_rules": [
-      "s_d_loss"
-    ],
     "ex_es": "No tengas miedo, es seguro.",
-    "ex_en": "Don't be afraid, it's safe."
+    "ex_en": "Don't be afraid, it's safe.",
+    "sound_rules": null
   },
   {
     "id": "c_tener_razon",
@@ -4890,14 +4865,9 @@
     "topic": "actions",
     "kind": "collocation",
     "slot": null,
-    "natural": [
-      "tener cuida'o"
-    ],
-    "sound_rules": [
-      "s_d_loss"
-    ],
     "ex_es": "Ten cuidado en la calle.",
-    "ex_en": "Be careful on the street."
+    "ex_en": "Be careful on the street.",
+    "sound_rules": null
   },
   {
     "id": "c_tengo_ganas_de_x",
@@ -4913,15 +4883,9 @@
       "dormir",
       "salir"
     ],
-    "natural": [
-      "tengo ganas'e ___"
-    ],
-    "sound_rules": [
-      "s_d_loss",
-      "s_sinalefa"
-    ],
     "ex_es": "Tengo ganas de unos tacos.",
-    "ex_en": "I feel like some tacos."
+    "ex_en": "I feel like some tacos.",
+    "sound_rules": null
   },
   {
     "id": "c_hace_mucho_sol",
@@ -4953,11 +4917,10 @@
     "kind": "phrase",
     "slot": null,
     "natural": [
-      "'tá nubla'o"
+      "'tá nublado"
     ],
     "sound_rules": [
-      "s_aphaeresis",
-      "s_d_loss"
+      "s_aphaeresis"
     ],
     "ex_es": "Hoy está nublado.",
     "ex_en": "It's cloudy today."
@@ -4972,7 +4935,8 @@
     "kind": "phrase",
     "slot": null,
     "ex_es": "¡Qué calor hace hoy!",
-    "ex_en": "It's so hot today!"
+    "ex_en": "It's so hot today!",
+    "sound_rules": null
   },
   {
     "id": "c_tengo_fiebre",
@@ -4984,7 +4948,8 @@
     "kind": "phrase",
     "slot": null,
     "ex_es": "Creo que tengo fiebre.",
-    "ex_en": "I think I have a fever."
+    "ex_en": "I think I have a fever.",
+    "sound_rules": null
   },
   {
     "id": "c_me_duele_el_estomago",
@@ -5014,11 +4979,10 @@
     "kind": "phrase",
     "slot": null,
     "natural": [
-      "'toy marea'o"
+      "'toy mareado"
     ],
     "sound_rules": [
-      "s_aphaeresis",
-      "s_d_loss"
+      "s_aphaeresis"
     ],
     "ex_es": "Estoy mareado, necesito sentarme.",
     "ex_en": "I'm dizzy, I need to sit down.",
@@ -5034,7 +4998,8 @@
     "kind": "phrase",
     "slot": null,
     "ex_es": "No me siento bien, me voy al hotel.",
-    "ex_en": "I don't feel well, I'm going to the hotel."
+    "ex_en": "I don't feel well, I'm going to the hotel.",
+    "sound_rules": null
   },
   {
     "id": "c_tiene_algo_para_x",
@@ -5110,7 +5075,8 @@
     "slot": null,
     "ex_es": "Me picó un mosco en la noche.",
     "ex_en": "A mosquito bit me at night.",
-    "note": "Mexico: \"mosco\"."
+    "note": "Mexico: \"mosco\".",
+    "sound_rules": null
   },
   {
     "id": "c_me_cai",
@@ -5122,7 +5088,8 @@
     "kind": "phrase",
     "slot": null,
     "ex_es": "Me caí en la escalera.",
-    "ex_en": "I fell on the stairs."
+    "ex_en": "I fell on the stairs.",
+    "sound_rules": null
   },
   {
     "id": "c_no_encuentro_mi_x",
@@ -5237,7 +5204,8 @@
     "kind": "phrase",
     "slot": null,
     "ex_es": "Es muy caro para mí.",
-    "ex_en": "It's too expensive for me."
+    "ex_en": "It's too expensive for me.",
+    "sound_rules": null
   },
   {
     "id": "c_me_lo_puedo_probar",
@@ -5249,11 +5217,10 @@
     "kind": "question",
     "slot": null,
     "natural": [
-      "¿melo pue'o probar?"
+      "¿melo puedo probar?"
     ],
     "sound_rules": [
-      "s_clitics",
-      "s_d_loss"
+      "s_clitics"
     ],
     "ex_es": "¿Me lo puedo probar? ¿Dónde están los probadores?",
     "ex_en": "Can I try it on? Where are the fitting rooms?"
@@ -5288,7 +5255,8 @@
     "slot": null,
     "ex_es": "¿Tiene bolsa? No traigo.",
     "ex_en": "Do you have a bag? I didn't bring one.",
-    "note": "Many shops charge for bags."
+    "note": "Many shops charge for bags.",
+    "sound_rules": null
   },
   {
     "id": "c_no_necesito_bolsa",
@@ -5336,15 +5304,9 @@
     "topic": "transport",
     "kind": "question",
     "slot": null,
-    "natural": [
-      "¿dónde compro la tarjeta'el metro?"
-    ],
-    "sound_rules": [
-      "s_d_loss",
-      "s_sinalefa"
-    ],
     "ex_es": "¿Dónde compro la tarjeta del metro?",
-    "ex_en": "Where do I buy the metro card?"
+    "ex_en": "Where do I buy the metro card?",
+    "sound_rules": null
   },
   {
     "id": "c_en_que_estacion_me_bajo_para_x",
@@ -5381,7 +5343,8 @@
     "slot": null,
     "ex_es": "¡Bajan en la esquina, por favor!",
     "ex_en": "Stop at the corner, please!",
-    "note": "Shout it on a pesero/micro."
+    "note": "Shout it on a pesero/micro.",
+    "sound_rules": null
   },
   {
     "id": "c_cual_es_la_terminal",
@@ -5470,14 +5433,9 @@
     "topic": "directions",
     "kind": "phrase",
     "slot": null,
-    "natural": [
-      "del otro la'o"
-    ],
-    "sound_rules": [
-      "s_d_loss"
-    ],
     "ex_es": "Está del otro lado de la calle.",
-    "ex_en": "It's on the other side of the street."
+    "ex_en": "It's on the other side of the street.",
+    "sound_rules": null
   },
   {
     "id": "c_aqui_a_la_vuelta",
@@ -5489,7 +5447,8 @@
     "kind": "phrase",
     "slot": null,
     "ex_es": "Hay un Oxxo aquí a la vuelta.",
-    "ex_en": "There's an Oxxo just around the corner."
+    "ex_en": "There's an Oxxo just around the corner.",
+    "sound_rules": null
   },
   {
     "id": "c_cuanto_falta",
@@ -5501,7 +5460,8 @@
     "kind": "question",
     "slot": null,
     "ex_es": "¿Cuánto falta para llegar?",
-    "ex_en": "How much longer till we get there?"
+    "ex_en": "How much longer till we get there?",
+    "sound_rules": null
   },
   {
     "id": "c_falta_poco",
@@ -5513,7 +5473,8 @@
     "kind": "phrase",
     "slot": null,
     "ex_es": "Tranquilo, falta poco.",
-    "ex_en": "Relax, not much longer."
+    "ex_en": "Relax, not much longer.",
+    "sound_rules": null
   },
   {
     "id": "c_ya_casi",
@@ -5525,7 +5486,8 @@
     "kind": "phrase",
     "slot": null,
     "ex_es": "Ya casi está tu comida.",
-    "ex_en": "Your food's almost ready."
+    "ex_en": "Your food's almost ready.",
+    "sound_rules": null
   },
   {
     "id": "c_que_dia_es_hoy",
@@ -5593,7 +5555,8 @@
     "kind": "phrase",
     "slot": null,
     "ex_es": "En la tarde vamos al museo.",
-    "ex_en": "In the afternoon we're going to the museum."
+    "ex_en": "In the afternoon we're going to the museum.",
+    "sound_rules": null
   },
   {
     "id": "c_ayer_en_la_noche",
@@ -5623,14 +5586,10 @@
     "topic": "time",
     "kind": "phrase",
     "slot": null,
-    "natural": [
-      "el finde"
-    ],
-    "sound_rules": [
-      "s_clipping"
-    ],
     "ex_es": "¿Qué haces el fin de semana?",
-    "ex_en": "What are you doing this weekend?"
+    "ex_en": "What are you doing this weekend?",
+    "note": "Some young people clip it to \"el finde\".",
+    "sound_rules": null
   },
   {
     "id": "c_la_semana_que_viene",
@@ -5642,7 +5601,8 @@
     "kind": "phrase",
     "slot": null,
     "ex_es": "Regreso la semana que viene.",
-    "ex_en": "I'm back next week."
+    "ex_en": "I'm back next week.",
+    "sound_rules": null
   },
   {
     "id": "c_todos_los_dias",
@@ -5653,14 +5613,9 @@
     "topic": "time",
     "kind": "phrase",
     "slot": null,
-    "natural": [
-      "to'os los días"
-    ],
-    "sound_rules": [
-      "s_d_loss"
-    ],
     "ex_es": "Como tacos todos los días.",
-    "ex_en": "I eat tacos every day."
+    "ex_en": "I eat tacos every day.",
+    "sound_rules": null
   },
   {
     "id": "c_a_veces",
@@ -5753,7 +5708,8 @@
     "kind": "phrase",
     "slot": null,
     "ex_es": "¿Llegamos a tiempo?",
-    "ex_en": "Will we make it on time?"
+    "ex_en": "Will we make it on time?",
+    "sound_rules": null
   },
   {
     "id": "c_llegar_tarde",
@@ -5830,7 +5786,8 @@
     "slot": null,
     "ex_es": "A las nueve en punto.",
     "ex_en": "At nine on the dot.",
-    "note": "Rare in practice in Mexico."
+    "note": "Rare in practice in Mexico.",
+    "sound_rules": null
   },
   {
     "id": "c_de_lunes_a_viernes",
@@ -5880,7 +5837,8 @@
     "kind": "question",
     "slot": null,
     "ex_es": "¿Qué me cuentas? ¿Todo bien?",
-    "ex_en": "What's new? All good?"
+    "ex_en": "What's new? All good?",
+    "sound_rules": null
   },
   {
     "id": "c_que_haces",
@@ -5993,7 +5951,8 @@
     "slot": null,
     "ex_es": "Vamos al cine, ¿te late?",
     "ex_en": "Let's go to the movies, sound good?",
-    "note": "Mexican slang."
+    "note": "Mexican slang.",
+    "sound_rules": null
   },
   {
     "id": "c_me_la_pase_muy_bien",
@@ -6006,7 +5965,8 @@
     "slot": null,
     "ex_es": "Gracias, me la pasé muy bien.",
     "ex_en": "Thanks, I had a great time.",
-    "note": "Mexico: \"pasársela bien\"."
+    "note": "Mexico: \"pasársela bien\".",
+    "sound_rules": null
   },
   {
     "id": "c_fue_un_placer",
@@ -6037,7 +5997,8 @@
     "kind": "question",
     "slot": null,
     "ex_es": "¿Me pasas tu número? Te escribo.",
-    "ex_en": "Give me your number? I'll text you."
+    "ex_en": "Give me your number? I'll text you.",
+    "sound_rules": null
   },
   {
     "id": "c_te_mando_un_mensaje",
@@ -6086,7 +6047,8 @@
     "kind": "question",
     "slot": null,
     "ex_es": "¿Dónde nos vemos, en el metro?",
-    "ex_en": "Where shall we meet, at the metro?"
+    "ex_en": "Where shall we meet, at the metro?",
+    "sound_rules": null
   },
   {
     "id": "c_a_que_hora_nos_vemos",
@@ -6116,7 +6078,8 @@
     "kind": "question",
     "slot": null,
     "ex_es": "¿Cómo te fue en el museo?",
-    "ex_en": "How was the museum?"
+    "ex_en": "How was the museum?",
+    "sound_rules": null
   },
   {
     "id": "c_me_fue_bien",
@@ -6128,7 +6091,8 @@
     "kind": "reply",
     "slot": null,
     "ex_es": "Me fue muy bien, gracias.",
-    "ex_en": "It went very well, thanks."
+    "ex_en": "It went very well, thanks.",
+    "sound_rules": null
   },
   {
     "id": "c_que_te_parecio",
@@ -6197,7 +6161,8 @@
     "slot": null,
     "ex_es": "¡Qué chido tu sombrero!",
     "ex_en": "Cool hat!",
-    "note": "Mexican slang."
+    "note": "Mexican slang.",
+    "sound_rules": null
   },
   {
     "id": "c_esta_chido",
@@ -6228,7 +6193,8 @@
     "kind": "phrase",
     "slot": null,
     "ex_es": "¡Qué bonito está el centro!",
-    "ex_en": "The center is so pretty!"
+    "ex_en": "The center is so pretty!",
+    "sound_rules": null
   },
   {
     "id": "c_que_bueno",
@@ -6258,7 +6224,8 @@
     "kind": "phrase",
     "slot": null,
     "ex_es": "—Ya llegué. —¡Qué bien!",
-    "ex_en": "—I'm here. —Great!"
+    "ex_en": "—I'm here. —Great!",
+    "sound_rules": null
   },
   {
     "id": "c_que_lastima",
@@ -6270,7 +6237,8 @@
     "kind": "phrase",
     "slot": null,
     "ex_es": "¡Qué lástima que te vas!",
-    "ex_en": "What a shame you're leaving!"
+    "ex_en": "What a shame you're leaving!",
+    "sound_rules": null
   },
   {
     "id": "c_que_pena",
@@ -6283,7 +6251,8 @@
     "slot": null,
     "ex_es": "¡Qué pena, se me olvidó tu nombre!",
     "ex_en": "How embarrassing, I forgot your name!",
-    "note": "In Mexico \"pena\" leans toward embarrassment."
+    "note": "In Mexico \"pena\" leans toward embarrassment.",
+    "sound_rules": null
   },
   {
     "id": "c_me_da_pena",
@@ -6296,7 +6265,8 @@
     "slot": null,
     "ex_es": "Me da pena hablar español.",
     "ex_en": "I'm shy about speaking Spanish.",
-    "note": "Mexico: shame/embarrassment, not sadness."
+    "note": "Mexico: shame/embarrassment, not sadness.",
+    "sound_rules": null
   },
   {
     "id": "c_me_da_gusto",
@@ -6309,7 +6279,8 @@
     "slot": null,
     "ex_es": "Me da gusto verte.",
     "ex_en": "I'm glad to see you.",
-    "note": "Mexico."
+    "note": "Mexico.",
+    "sound_rules": null
   },
   {
     "id": "c_que_gusto_verte",
@@ -6321,7 +6292,8 @@
     "kind": "phrase",
     "slot": null,
     "ex_es": "¡Juan! ¡Qué gusto verte!",
-    "ex_en": "Juan! So good to see you!"
+    "ex_en": "Juan! So good to see you!",
+    "sound_rules": null
   },
   {
     "id": "c_me_da_miedo",
@@ -6332,14 +6304,9 @@
     "topic": "emotions",
     "kind": "phrase",
     "slot": null,
-    "natural": [
-      "me da mie'o"
-    ],
-    "sound_rules": [
-      "s_d_loss"
-    ],
     "ex_es": "Me da miedo manejar aquí.",
-    "ex_en": "Driving here scares me."
+    "ex_en": "Driving here scares me.",
+    "sound_rules": null
   },
   {
     "id": "c_estoy_muy_contento",
@@ -6387,11 +6354,10 @@
     "kind": "phrase",
     "slot": null,
     "natural": [
-      "'toy aburri'o"
+      "'toy aburrido"
     ],
     "sound_rules": [
-      "s_aphaeresis",
-      "s_d_loss"
+      "s_aphaeresis"
     ],
     "ex_es": "Estoy aburrido, ¿salimos?",
     "ex_en": "I'm bored, shall we go out?"
@@ -6407,7 +6373,8 @@
     "slot": null,
     "ex_es": "Tranquilo, no pasa nada.",
     "ex_en": "Relax, it's fine.",
-    "note": "To a woman: \"tranquila\"."
+    "note": "To a woman: \"tranquila\".",
+    "sound_rules": null
   },
   {
     "id": "c_con_calma",
@@ -6419,7 +6386,8 @@
     "kind": "phrase",
     "slot": null,
     "ex_es": "Con calma, no hay prisa.",
-    "ex_en": "Take it easy, no rush."
+    "ex_en": "Take it easy, no rush.",
+    "sound_rules": null
   },
   {
     "id": "c_poco_a_poco",
@@ -6486,7 +6454,8 @@
     "slot": null,
     "ex_es": "¡Échale ganas con el español!",
     "ex_en": "Keep at it with your Spanish!",
-    "note": "Very Mexican encouragement."
+    "note": "Very Mexican encouragement.",
+    "sound_rules": null
   },
   {
     "id": "c_por_supuesto",
@@ -6498,7 +6467,8 @@
     "kind": "phrase",
     "slot": null,
     "ex_es": "Por supuesto, pásele.",
-    "ex_en": "Of course, come in."
+    "ex_en": "Of course, come in.",
+    "sound_rules": null
   },
   {
     "id": "c_sobre_todo",
@@ -6509,14 +6479,9 @@
     "topic": "function",
     "kind": "phrase",
     "slot": null,
-    "natural": [
-      "sobre to'o"
-    ],
-    "sound_rules": [
-      "s_d_loss"
-    ],
     "ex_es": "Me gusta todo, sobre todo los tacos.",
-    "ex_en": "I like it all, especially the tacos."
+    "ex_en": "I like it all, especially the tacos.",
+    "sound_rules": null
   },
   {
     "id": "c_por_lo_menos",
@@ -6528,7 +6493,8 @@
     "kind": "phrase",
     "slot": null,
     "ex_es": "Por lo menos no llueve.",
-    "ex_en": "At least it's not raining."
+    "ex_en": "At least it's not raining.",
+    "sound_rules": null
   },
   {
     "id": "c_asi_que",
@@ -6576,7 +6542,8 @@
     "kind": "phrase",
     "slot": null,
     "ex_es": "Además, es barato.",
-    "ex_en": "Besides, it's cheap."
+    "ex_en": "Besides, it's cheap.",
+    "sound_rules": null
   },
   {
     "id": "c_sin_embargo",
@@ -6589,7 +6556,8 @@
     "slot": null,
     "ex_es": "Es caro; sin embargo, vale la pena.",
     "ex_en": "It's pricey; however, it's worth it.",
-    "note": "More formal/written."
+    "note": "More formal/written.",
+    "sound_rules": null
   },
   {
     "id": "c_al_final",
@@ -6601,7 +6569,8 @@
     "kind": "phrase",
     "slot": null,
     "ex_es": "Al final no fuimos.",
-    "ex_en": "In the end we didn't go."
+    "ex_en": "In the end we didn't go.",
+    "sound_rules": null
   },
   {
     "id": "c_por_fin",
@@ -6613,7 +6582,8 @@
     "kind": "phrase",
     "slot": null,
     "ex_es": "¡Por fin llegamos!",
-    "ex_en": "We finally made it!"
+    "ex_en": "We finally made it!",
+    "sound_rules": null
   },
   {
     "id": "c_de_repente",
@@ -6626,7 +6596,8 @@
     "slot": null,
     "ex_es": "De repente empezó a llover.",
     "ex_en": "Suddenly it started to rain.",
-    "note": "In Mexico also \"sometimes\"."
+    "note": "In Mexico also \"sometimes\".",
+    "sound_rules": null
   },
   {
     "id": "c_en_vez_de",
@@ -6638,7 +6609,7 @@
     "kind": "phrase",
     "slot": null,
     "natural": [
-      "en ve'de"
+      "en ves de"
     ],
     "sound_rules": [
       "s_seseo"
@@ -6655,14 +6626,9 @@
     "topic": "function",
     "kind": "phrase",
     "slot": null,
-    "natural": [
-      "de to'os modos"
-    ],
-    "sound_rules": [
-      "s_d_loss"
-    ],
     "ex_es": "De todos modos, gracias.",
-    "ex_en": "Anyway, thanks."
+    "ex_en": "Anyway, thanks.",
+    "sound_rules": null
   },
   {
     "id": "c_por_si_acaso",
@@ -6711,7 +6677,8 @@
     "kind": "phrase",
     "slot": null,
     "ex_es": "Menos mal que trajiste paraguas.",
-    "ex_en": "Good thing you brought an umbrella."
+    "ex_en": "Good thing you brought an umbrella.",
+    "sound_rules": null
   },
   {
     "id": "c_ya_estuvo",
@@ -6807,7 +6774,8 @@
     ],
     "ex_es": "Ando cansado hoy.",
     "ex_en": "I'm tired today.",
-    "note": "Mexico uses \"andar\" a lot for estar."
+    "note": "Mexico uses \"andar\" a lot for estar.",
+    "sound_rules": null
   },
   {
     "id": "c_esta_x",
@@ -6866,7 +6834,8 @@
     "slot": null,
     "ex_es": "Está bien padre la vista.",
     "ex_en": "The view is really cool.",
-    "note": "Mexico: \"bien\" = very."
+    "note": "Mexico: \"bien\" = very.",
+    "sound_rules": null
   },
   {
     "id": "c_que_onda_guey",
@@ -6918,15 +6887,10 @@
     "topic": "people",
     "kind": "phrase",
     "slot": null,
-    "natural": [
-      "¿qué pe'o?"
-    ],
-    "sound_rules": [
-      "s_d_loss"
-    ],
     "ex_es": "¿Qué pedo, güey?",
     "ex_en": "What's up, dude?",
-    "note": "Vulgar slang; heard constantly among young men. Don't use with strangers."
+    "note": "Vulgar slang; heard constantly among young men. Don't use with strangers.",
+    "sound_rules": null
   },
   {
     "id": "c_no_mames",
@@ -6939,7 +6903,8 @@
     "slot": null,
     "ex_es": "¡No mames, qué caro!",
     "ex_en": "No way, how expensive!",
-    "note": "Vulgar; very common among friends. \"No manches\" is the polite version."
+    "note": "Vulgar; very common among friends. \"No manches\" is the polite version.",
+    "sound_rules": null
   },
   {
     "id": "c_no_inventes",
@@ -6990,7 +6955,8 @@
     "slot": null,
     "ex_es": "¡Qué flojera ir hasta allá!",
     "ex_en": "What a drag to go all the way there!",
-    "note": "Mexico."
+    "note": "Mexico.",
+    "sound_rules": null
   },
   {
     "id": "c_esta_canon",
@@ -7022,7 +6988,8 @@
     "slot": null,
     "ex_es": "¡Qué gacho que te robaron!",
     "ex_en": "That sucks that you got robbed!",
-    "note": "Mexico slang."
+    "note": "Mexico slang.",
+    "sound_rules": null
   },
   {
     "id": "c_me_vale",
@@ -7035,7 +7002,8 @@
     "slot": null,
     "ex_es": "Me vale, yo voy.",
     "ex_en": "I don't care, I'm going.",
-    "note": "Rude-ish; \"me vale madre\" is vulgar."
+    "note": "Rude-ish; \"me vale madre\" is vulgar.",
+    "sound_rules": null
   },
   {
     "id": "c_guacala",
@@ -7067,7 +7035,8 @@
     "slot": null,
     "ex_es": "Tu amigo me cae muy bien.",
     "ex_en": "I really like your friend.",
-    "note": "Not romantic. \"Me cae mal\" = I don't like them."
+    "note": "Not romantic. \"Me cae mal\" = I don't like them.",
+    "sound_rules": null
   },
   {
     "id": "c_mijo_mija",
@@ -7078,17 +7047,10 @@
     "topic": "people",
     "kind": "phrase",
     "slot": null,
-    "natural": [
-      "mijo",
-      "mija"
-    ],
-    "sound_rules": [
-      "s_fusion",
-      "s_same_letters"
-    ],
     "ex_es": "Ven, mija, ya vámonos.",
     "ex_en": "Come on, dear, let's go.",
-    "note": "Affectionate; older people use it with anyone younger."
+    "note": "Affectionate; older people use it with anyone younger.",
+    "sound_rules": null
   },
   {
     "id": "c_oiga",
@@ -7101,7 +7063,8 @@
     "slot": null,
     "ex_es": "Oiga, ¿este camión va al centro?",
     "ex_en": "Excuse me, does this bus go downtown?",
-    "note": "Informal: \"oye\"."
+    "note": "Informal: \"oye\".",
+    "sound_rules": null
   },
   {
     "id": "c_oye",
@@ -7113,7 +7076,8 @@
     "kind": "phrase",
     "slot": null,
     "ex_es": "Oye, ¿tienes hambre?",
-    "ex_en": "Hey, are you hungry?"
+    "ex_en": "Hey, are you hungry?",
+    "sound_rules": null
   },
   {
     "id": "c_mira",
@@ -7126,7 +7090,11 @@
     "slot": null,
     "ex_es": "Mira, es por aquí.",
     "ex_en": "Look, it's this way.",
-    "note": "Used to start explanations."
+    "note": "Used to start explanations. Mexican speech often clips it to \"¡ira!\" (and usted mire → \"¡ire!\").",
+    "natural": [
+      "ira"
+    ],
+    "sound_rules": null
   },
   {
     "id": "c_fijate_que",
@@ -7139,7 +7107,8 @@
     "slot": null,
     "ex_es": "Fíjate que no hay boletos.",
     "ex_en": "Turns out there are no tickets.",
-    "note": "Mexico: softens bad news."
+    "note": "Mexico: softens bad news.",
+    "sound_rules": null
   },
   {
     "id": "c_darse_cuenta",
@@ -7151,7 +7120,8 @@
     "kind": "collocation",
     "slot": null,
     "ex_es": "No me di cuenta, perdón.",
-    "ex_en": "I didn't realize, sorry."
+    "ex_en": "I didn't realize, sorry.",
+    "sound_rules": null
   },
   {
     "id": "c_dar_igual",
@@ -7163,7 +7133,8 @@
     "kind": "collocation",
     "slot": null,
     "ex_es": "Me da igual, tú escoge.",
-    "ex_en": "I don't mind, you choose."
+    "ex_en": "I don't mind, you choose.",
+    "sound_rules": null
   },
   {
     "id": "c_me_da_igual",
@@ -7193,7 +7164,8 @@
     "kind": "collocation",
     "slot": null,
     "ex_es": "Teotihuacán vale la pena.",
-    "ex_en": "Teotihuacán is worth it."
+    "ex_en": "Teotihuacán is worth it.",
+    "sound_rules": null
   },
   {
     "id": "c_vale_la_pena",
@@ -7205,7 +7177,8 @@
     "kind": "phrase",
     "slot": null,
     "ex_es": "Vale la pena ir temprano.",
-    "ex_en": "It's worth going early."
+    "ex_en": "It's worth going early.",
+    "sound_rules": null
   },
   {
     "id": "c_tomar_una_decision",
@@ -7257,7 +7230,8 @@
     "slot": null,
     "ex_es": "Te echo de menos.",
     "ex_en": "I miss you.",
-    "note": "More Spain; in Mexico you'll hear \"te extraño\"."
+    "note": "More Spain; in Mexico you'll hear \"te extraño\".",
+    "sound_rules": null
   },
   {
     "id": "c_tomar_fotos",
@@ -7269,7 +7243,8 @@
     "kind": "collocation",
     "slot": null,
     "ex_es": "¿Se pueden tomar fotos aquí?",
-    "ex_en": "Can you take photos here?"
+    "ex_en": "Can you take photos here?",
+    "sound_rules": null
   },
   {
     "id": "c_tomar_el_metro",
@@ -7415,7 +7390,8 @@
     "slot": null,
     "ex_es": "¡Que la pases bien!",
     "ex_en": "Have a good time!",
-    "note": "Mexico."
+    "note": "Mexico.",
+    "sound_rules": null
   },
   {
     "id": "c_perder_el_tiempo",
@@ -7445,7 +7421,8 @@
     "kind": "collocation",
     "slot": null,
     "ex_es": "¿Dónde puedo cambiar dinero?",
-    "ex_en": "Where can I change money?"
+    "ex_en": "Where can I change money?",
+    "sound_rules": null
   },
   {
     "id": "c_sacar_dinero",
@@ -7457,7 +7434,8 @@
     "kind": "collocation",
     "slot": null,
     "ex_es": "Necesito sacar dinero del cajero.",
-    "ex_en": "I need to get money from the ATM."
+    "ex_en": "I need to get money from the ATM.",
+    "sound_rules": null
   },
   {
     "id": "c_pagar_la_cuenta",
@@ -7469,7 +7447,8 @@
     "kind": "collocation",
     "slot": null,
     "ex_es": "Yo pago la cuenta hoy.",
-    "ex_en": "I'll pay the bill today."
+    "ex_en": "I'll pay the bill today.",
+    "sound_rules": null
   },
   {
     "id": "c_gastar_dinero",
@@ -7481,7 +7460,8 @@
     "kind": "collocation",
     "slot": null,
     "ex_es": "Gastamos mucho dinero en comida.",
-    "ex_en": "We spent a lot on food."
+    "ex_en": "We spent a lot on food.",
+    "sound_rules": null
   },
   {
     "id": "c_estar_de_acuerdo",
@@ -7546,14 +7526,9 @@
     "topic": "actions",
     "kind": "collocation",
     "slot": null,
-    "natural": [
-      "pedir presta'o"
-    ],
-    "sound_rules": [
-      "s_d_loss"
-    ],
     "ex_es": "¿Te puedo pedir prestado un lápiz?",
-    "ex_en": "Can I borrow a pencil?"
+    "ex_en": "Can I borrow a pencil?",
+    "sound_rules": null
   },
   {
     "id": "c_pedir_perdon",
@@ -7565,7 +7540,8 @@
     "kind": "collocation",
     "slot": null,
     "ex_es": "Te pido perdón.",
-    "ex_en": "I apologize to you."
+    "ex_en": "I apologize to you.",
+    "sound_rules": null
   },
   {
     "id": "c_cumplir_anos",
@@ -7595,7 +7571,8 @@
     "kind": "collocation",
     "slot": null,
     "ex_es": "¡Qué suerte tienes!",
-    "ex_en": "You're so lucky!"
+    "ex_en": "You're so lucky!",
+    "sound_rules": null
   },
   {
     "id": "c_tener_la_culpa",
@@ -7607,7 +7584,8 @@
     "kind": "collocation",
     "slot": null,
     "ex_es": "No es tu culpa.",
-    "ex_en": "It's not your fault."
+    "ex_en": "It's not your fault.",
+    "sound_rules": null
   },
   {
     "id": "c_quedarse_dormido",
@@ -7618,14 +7596,9 @@
     "topic": "actions",
     "kind": "collocation",
     "slot": null,
-    "natural": [
-      "quedarse dormi'o"
-    ],
-    "sound_rules": [
-      "s_d_loss"
-    ],
     "ex_es": "Me quedé dormido en el camión.",
-    "ex_en": "I fell asleep on the bus."
+    "ex_en": "I fell asleep on the bus.",
+    "sound_rules": null
   },
   {
     "id": "c_quedar_en_x",
@@ -7659,7 +7632,8 @@
     "kind": "collocation",
     "slot": null,
     "ex_es": "Eso no tiene nada que ver.",
-    "ex_en": "That has nothing to do with it."
+    "ex_en": "That has nothing to do with it.",
+    "sound_rules": null
   },
   {
     "id": "c_nada_que_ver",
@@ -7670,14 +7644,9 @@
     "topic": "abstract",
     "kind": "phrase",
     "slot": null,
-    "natural": [
-      "na'a que ver"
-    ],
-    "sound_rules": [
-      "s_d_loss"
-    ],
     "ex_es": "¡Nada que ver! No es así.",
-    "ex_en": "Not at all! That's not how it is."
+    "ex_en": "Not at all! That's not how it is.",
+    "sound_rules": null
   },
   {
     "id": "c_cada_vez_mas",
@@ -7689,7 +7658,7 @@
     "kind": "phrase",
     "slot": null,
     "natural": [
-      "cada ve'más"
+      "cada ves más"
     ],
     "sound_rules": [
       "s_seseo"
@@ -7707,11 +7676,11 @@
     "kind": "phrase",
     "slot": null,
     "natural": [
-      "de ve'n cuando"
+      "de vesen cuando"
     ],
     "sound_rules": [
       "s_seseo",
-      "s_sinalefa"
+      "s_linking"
     ],
     "ex_es": "De vez en cuando como picante.",
     "ex_en": "Now and then I eat spicy food."
@@ -7745,7 +7714,8 @@
     "slot": null,
     "ex_es": "A propósito, ¿ya comiste?",
     "ex_en": "By the way, have you eaten?",
-    "note": "Also \"on purpose\"."
+    "note": "Also \"on purpose\".",
+    "sound_rules": null
   },
   {
     "id": "c_de_una_vez",
@@ -7794,10 +7764,10 @@
     "kind": "phrase",
     "slot": null,
     "natural": [
-      "to'o el mundo"
+      "todoel mundo"
     ],
     "sound_rules": [
-      "s_d_loss"
+      "s_sinalefa"
     ],
     "ex_es": "Todo el mundo habla de ese lugar.",
     "ex_en": "Everyone talks about that place.",
@@ -7813,10 +7783,10 @@
     "kind": "phrase",
     "slot": null,
     "natural": [
-      "to'o el día"
+      "todoel día"
     ],
     "sound_rules": [
-      "s_d_loss"
+      "s_sinalefa"
     ],
     "ex_es": "Caminamos todo el día.",
     "ex_en": "We walked all day."
@@ -7843,8 +7813,8 @@
     "id": "c_o_algo_asi",
     "es": "O algo así",
     "en": "or something like that",
-    "rank": 1440,
-    "tier": 3,
+    "rank": 57,
+    "tier": 1,
     "topic": "function",
     "kind": "phrase",
     "slot": null,
@@ -7885,7 +7855,8 @@
     "kind": "phrase",
     "slot": null,
     "ex_es": "¿Y qué si llueve?",
-    "ex_en": "So what if it rains?"
+    "ex_en": "So what if it rains?",
+    "sound_rules": null
   },
   {
     "id": "c_ojala",
@@ -7898,7 +7869,8 @@
     "slot": null,
     "ex_es": "Ojalá no llueva mañana.",
     "ex_en": "Hopefully it won't rain tomorrow.",
-    "note": "From Arabic \"if God wills\"."
+    "note": "From Arabic \"if God wills\".",
+    "sound_rules": null
   },
   {
     "id": "c_ojala_que_x",
@@ -7915,7 +7887,8 @@
     ],
     "ex_es": "Ojalá que te guste.",
     "ex_en": "I hope you like it.",
-    "note": "Followed by subjunctive."
+    "note": "Followed by subjunctive.",
+    "sound_rules": null
   },
   {
     "id": "c_me_parece_que_x",
@@ -7953,7 +7926,8 @@
       "comemos aquí"
     ],
     "ex_es": "¿Qué tal si vamos al mercado?",
-    "ex_en": "How about we go to the market?"
+    "ex_en": "How about we go to the market?",
+    "sound_rules": null
   },
   {
     "id": "c_prefiero_x",
@@ -7969,7 +7943,8 @@
       "agua natural"
     ],
     "ex_es": "Prefiero el metro, es más rápido.",
-    "ex_en": "I prefer the metro, it's faster."
+    "ex_en": "I prefer the metro, it's faster.",
+    "sound_rules": null
   },
   {
     "id": "c_no_me_gusta_x",
@@ -7985,7 +7960,8 @@
       "el tráfico"
     ],
     "ex_es": "No me gusta el picante.",
-    "ex_en": "I don't like spicy food."
+    "ex_en": "I don't like spicy food.",
+    "sound_rules": null
   },
   {
     "id": "c_te_gusta_x",
@@ -8001,7 +7977,8 @@
       "bailar"
     ],
     "ex_es": "¿Te gusta el mezcal?",
-    "ex_en": "Do you like mezcal?"
+    "ex_en": "Do you like mezcal?",
+    "sound_rules": null
   },
   {
     "id": "c_me_encanta_x",
@@ -8060,21 +8037,16 @@
       "comprar una SIM",
       "cambiar dinero"
     ],
-    "natural": [
-      "¿dónde pue'o ___?"
-    ],
-    "sound_rules": [
-      "s_d_loss"
-    ],
     "ex_es": "¿Dónde puedo comprar una SIM?",
-    "ex_en": "Where can I buy a SIM card?"
+    "ex_en": "Where can I buy a SIM card?",
+    "sound_rules": null
   },
   {
     "id": "c_se_me_olvido_x",
     "es": "Se me olvidó ___",
     "en": "I forgot ___",
-    "rank": 1570,
-    "tier": 4,
+    "rank": 60,
+    "tier": 1,
     "topic": "actions",
     "kind": "frame",
     "slot": "Se me olvidó ___",
@@ -8108,7 +8080,8 @@
       "pagar"
     ],
     "ex_es": "Déjame ver.",
-    "ex_en": "Let me see."
+    "ex_en": "Let me see.",
+    "sound_rules": null
   },
   {
     "id": "c_dejame_ver",
@@ -8120,7 +8093,8 @@
     "kind": "phrase",
     "slot": null,
     "ex_es": "Déjame ver si tengo cambio.",
-    "ex_en": "Let me see if I have change."
+    "ex_en": "Let me see if I have change.",
+    "sound_rules": null
   },
   {
     "id": "c_me_pasas_x",
@@ -8136,7 +8110,8 @@
       "las servilletas"
     ],
     "ex_es": "¿Me pasas la salsa?",
-    "ex_en": "Can you pass the salsa?"
+    "ex_en": "Can you pass the salsa?",
+    "sound_rules": null
   },
   {
     "id": "c_me_regala_x",
@@ -8153,7 +8128,8 @@
     ],
     "ex_es": "¿Me regala su nombre, por favor?",
     "ex_en": "Could I have your name, please?",
-    "note": "Shop and service phrase in Mexico; not a gift."
+    "note": "Shop and service phrase in Mexico; not a gift.",
+    "sound_rules": null
   },
   {
     "id": "c_me_toca_x",
@@ -8169,7 +8145,8 @@
       "manejar"
     ],
     "ex_es": "Hoy me toca pagar a mí.",
-    "ex_en": "Today it's my turn to pay."
+    "ex_en": "Today it's my turn to pay.",
+    "sound_rules": null
   },
   {
     "id": "c_estoy_a_punto_de_x",
@@ -8206,15 +8183,9 @@
       "trabajar",
       "preocuparte"
     ],
-    "natural": [
-      "deja'e ___"
-    ],
-    "sound_rules": [
-      "s_d_loss",
-      "s_sinalefa"
-    ],
     "ex_es": "Deja de trabajar, ¡estás de vacaciones!",
-    "ex_en": "Stop working, you're on vacation!"
+    "ex_en": "Stop working, you're on vacation!",
+    "sound_rules": null
   },
   {
     "id": "c_vuelvo_a_x",
@@ -8252,7 +8223,8 @@
       "aprendiendo"
     ],
     "ex_es": "Sigo buscando el hotel.",
-    "ex_en": "I'm still looking for the hotel."
+    "ex_en": "I'm still looking for the hotel.",
+    "sound_rules": null
   },
   {
     "id": "c_llevo_x_aqui",
@@ -8290,7 +8262,8 @@
       "barato"
     ],
     "ex_es": "El metro es más rápido que el taxi.",
-    "ex_en": "The metro is faster than a taxi."
+    "ex_en": "The metro is faster than a taxi.",
+    "sound_rules": null
   },
   {
     "id": "c_suena_x",
@@ -8306,7 +8279,8 @@
       "padre"
     ],
     "ex_es": "¡Suena bien!",
-    "ex_en": "Sounds good!"
+    "ex_en": "Sounds good!",
+    "sound_rules": null
   },
   {
     "id": "c_suena_bien",
@@ -8318,7 +8292,8 @@
     "kind": "phrase",
     "slot": null,
     "ex_es": "—¿A las ocho? —Suena bien.",
-    "ex_en": "—At eight? —Sounds good."
+    "ex_en": "—At eight? —Sounds good.",
+    "sound_rules": null
   },
   {
     "id": "c_a_cada_rato",
@@ -8331,7 +8306,8 @@
     "slot": null,
     "ex_es": "Llueve a cada rato.",
     "ex_en": "It rains all the time.",
-    "note": "Mexico colloquial."
+    "note": "Mexico colloquial.",
+    "sound_rules": null
   },
   {
     "id": "c_hace_mucho",
@@ -8366,11 +8342,12 @@
       "mucho"
     ],
     "natural": [
-      "des'ase ___"
+      "desde'ase ___"
     ],
     "sound_rules": [
       "s_same_letters",
-      "s_seseo"
+      "s_seseo",
+      "s_sinalefa"
     ],
     "ex_es": "Vivo aquí desde hace un año.",
     "ex_en": "I've lived here for a year."
@@ -8385,7 +8362,8 @@
     "kind": "phrase",
     "slot": null,
     "ex_es": "El próximo año regreso.",
-    "ex_en": "I'll come back next year."
+    "ex_en": "I'll come back next year.",
+    "sound_rules": null
   },
   {
     "id": "c_el_ano_pasado",
@@ -8396,14 +8374,9 @@
     "topic": "time",
     "kind": "phrase",
     "slot": null,
-    "natural": [
-      "el año pasa'o"
-    ],
-    "sound_rules": [
-      "s_d_loss"
-    ],
     "ex_es": "El año pasado fui a Cancún.",
-    "ex_en": "Last year I went to Cancún."
+    "ex_en": "Last year I went to Cancún.",
+    "sound_rules": null
   },
   {
     "id": "c_la_semana_pasada",
@@ -8415,7 +8388,8 @@
     "kind": "phrase",
     "slot": null,
     "ex_es": "Llegué la semana pasada.",
-    "ex_en": "I arrived last week."
+    "ex_en": "I arrived last week.",
+    "sound_rules": null
   },
   {
     "id": "c_manana_temprano",
@@ -8427,7 +8401,8 @@
     "kind": "phrase",
     "slot": null,
     "ex_es": "Salimos mañana temprano.",
-    "ex_en": "We leave early tomorrow."
+    "ex_en": "We leave early tomorrow.",
+    "sound_rules": null
   },
   {
     "id": "c_al_mediodia",
@@ -8440,7 +8415,8 @@
     "slot": null,
     "ex_es": "Comemos al mediodía.",
     "ex_en": "We eat at noon.",
-    "note": "Mexican \"comida\" is often 2–4 pm."
+    "note": "Mexican \"comida\" is often 2–4 pm.",
+    "sound_rules": null
   },
   {
     "id": "c_dos_por_uno",
@@ -8471,14 +8447,9 @@
     "topic": "numbers",
     "kind": "phrase",
     "slot": null,
-    "natural": [
-      "medio kilo"
-    ],
-    "sound_rules": [
-      "s_numbers"
-    ],
     "ex_es": "Medio kilo de tortillas, por favor.",
-    "ex_en": "Half a kilo of tortillas, please."
+    "ex_en": "Half a kilo of tortillas, please.",
+    "sound_rules": null
   },
   {
     "id": "c_un_kilo_de_x",
@@ -8493,15 +8464,9 @@
       "mangos",
       "tortillas"
     ],
-    "natural": [
-      "un kilo'e ___"
-    ],
-    "sound_rules": [
-      "s_d_loss",
-      "s_numbers"
-    ],
     "ex_es": "Un kilo de mangos, por favor.",
-    "ex_en": "A kilo of mangoes, please."
+    "ex_en": "A kilo of mangoes, please.",
+    "sound_rules": null
   },
   {
     "id": "c_le_faltan_x_pesos",
@@ -8517,7 +8482,8 @@
       "diez"
     ],
     "ex_es": "Le faltan cinco pesos, joven.",
-    "ex_en": "You're five pesos short."
+    "ex_en": "You're five pesos short.",
+    "sound_rules": null
   },
   {
     "id": "c_dos_cincuenta",
@@ -8548,15 +8514,10 @@
     "topic": "money",
     "kind": "question",
     "slot": null,
-    "natural": [
-      "¿me pue' dar factura?"
-    ],
-    "sound_rules": [
-      "s_d_loss"
-    ],
     "ex_es": "¿Me puede dar factura, por favor?",
     "ex_en": "Can I get an invoice?",
-    "note": "Mexico: \"factura\" is the official tax receipt."
+    "note": "Mexico: \"factura\" is the official tax receipt.",
+    "sound_rules": null
   },
   {
     "id": "c_donde_estan_los_probadores",
@@ -8623,7 +8584,8 @@
     "kind": "question",
     "slot": null,
     "ex_es": "¿Cuánto cuesta la noche con desayuno?",
-    "ex_en": "How much per night with breakfast?"
+    "ex_en": "How much per night with breakfast?",
+    "sound_rules": null
   },
   {
     "id": "c_me_quedo_x",
@@ -8639,7 +8601,8 @@
       "una semana"
     ],
     "ex_es": "Me quedo tres noches.",
-    "ex_en": "I'm staying three nights."
+    "ex_en": "I'm staying three nights.",
+    "sound_rules": null
   },
   {
     "id": "c_puede_llamar_a_x",
@@ -8655,10 +8618,9 @@
       "un taxi"
     ],
     "natural": [
-      "¿pue' yamar a ___?"
+      "¿puede yamar a ___?"
     ],
     "sound_rules": [
-      "s_d_loss",
       "s_same_letters"
     ],
     "ex_es": "¿Puede llamar a mantenimiento?",
@@ -8692,10 +8654,9 @@
     "kind": "question",
     "slot": null,
     "natural": [
-      "¿dónde pue'o cargar mi selular?"
+      "¿dónde puedo cargar mi selular?"
     ],
     "sound_rules": [
-      "s_d_loss",
       "s_seseo"
     ],
     "ex_es": "¿Dónde puedo cargar mi celular?",
@@ -8712,7 +8673,8 @@
     "kind": "phrase",
     "slot": null,
     "ex_es": "Aquí no tengo señal.",
-    "ex_en": "I've got no signal here."
+    "ex_en": "I've got no signal here.",
+    "sound_rules": null
   },
   {
     "id": "c_tiene_cargador",
@@ -8724,7 +8686,8 @@
     "kind": "question",
     "slot": null,
     "ex_es": "¿Tiene cargador para iPhone?",
-    "ex_en": "Do you have an iPhone charger?"
+    "ex_en": "Do you have an iPhone charger?",
+    "sound_rules": null
   },
   {
     "id": "c_que_hay_que_ver_aqui",
@@ -8841,7 +8804,8 @@
     "kind": "phrase",
     "slot": null,
     "ex_es": "Vengo por trabajo, una semana.",
-    "ex_en": "I'm here for work, a week."
+    "ex_en": "I'm here for work, a week.",
+    "sound_rules": null
   },
   {
     "id": "c_cuanto_tiempo_te_quedas",
@@ -8853,7 +8817,8 @@
     "kind": "question",
     "slot": null,
     "ex_es": "¿Y cuánto tiempo te quedas?",
-    "ex_en": "And how long are you staying?"
+    "ex_en": "And how long are you staying?",
+    "sound_rules": null
   },
   {
     "id": "c_estas_casado",
@@ -8865,11 +8830,10 @@
     "kind": "question",
     "slot": null,
     "natural": [
-      "¿'tás casa'o?"
+      "¿'tás casado?"
     ],
     "sound_rules": [
-      "s_aphaeresis",
-      "s_d_loss"
+      "s_aphaeresis"
     ],
     "ex_es": "¿Estás casado o soltero?",
     "ex_en": "Are you married or single?",
@@ -8932,7 +8896,8 @@
     ],
     "ex_es": "Soy ingeniero.",
     "ex_en": "I'm an engineer.",
-    "note": "No \"un/una\" before professions."
+    "note": "No \"un/una\" before professions.",
+    "sound_rules": null
   },
   {
     "id": "c_perdon_por_llegar_tarde",
@@ -8962,7 +8927,8 @@
     "kind": "phrase",
     "slot": null,
     "ex_es": "Voy tarde, llego en diez.",
-    "ex_en": "Running late, there in ten."
+    "ex_en": "Running late, there in ten.",
+    "sound_rules": null
   },
   {
     "id": "c_me_esperas_tantito",
@@ -9051,7 +9017,8 @@
     "kind": "phrase",
     "slot": null,
     "ex_es": "Me corté con el cuchillo.",
-    "ex_en": "I cut myself with the knife."
+    "ex_en": "I cut myself with the knife.",
+    "sound_rules": null
   },
   {
     "id": "c_tomo_este_medicamento",
@@ -9101,7 +9068,8 @@
     "slot": null,
     "ex_es": "Tengo diarrea desde ayer.",
     "ex_en": "I've had diarrhea since yesterday.",
-    "note": "Ask at a pharmacy for \"suero\" (oral rehydration)."
+    "note": "Ask at a pharmacy for \"suero\" (oral rehydration).",
+    "sound_rules": null
   },
   {
     "id": "c_me_asaltaron",
@@ -9144,8 +9112,8 @@
     "id": "c_como_se_escribe",
     "es": "¿Cómo se escribe?",
     "en": "How is it spelled?",
-    "rank": 2180,
-    "tier": 5,
+    "rank": 61,
+    "tier": 1,
     "topic": "communication",
     "kind": "question",
     "slot": null,
@@ -9180,8 +9148,8 @@
     "id": "c_me_explico",
     "es": "¿Me explico?",
     "en": "Do you know what I mean?",
-    "rank": 2200,
-    "tier": 5,
+    "rank": 64,
+    "tier": 1,
     "topic": "communication",
     "kind": "phrase",
     "slot": null,
@@ -9200,8 +9168,8 @@
     "id": "c_me_entiendes",
     "es": "¿Me entiendes?",
     "en": "Do you understand me?",
-    "rank": 2210,
-    "tier": 5,
+    "rank": 58,
+    "tier": 1,
     "topic": "communication",
     "kind": "phrase",
     "slot": null,
@@ -9242,7 +9210,8 @@
     "kind": "phrase",
     "slot": null,
     "ex_es": "¡Te lo dije, pica mucho!",
-    "ex_en": "I told you, it's really spicy!"
+    "ex_en": "I told you, it's really spicy!",
+    "sound_rules": null
   },
   {
     "id": "c_como_que",
@@ -9255,7 +9224,8 @@
     "slot": null,
     "ex_es": "¿Cómo que ya no hay?",
     "ex_en": "What do you mean there's none left?",
-    "note": "Expresses surprise."
+    "note": "Expresses surprise.",
+    "sound_rules": null
   },
   {
     "id": "c_en_que_te_puedo_ayudar",
@@ -9267,10 +9237,10 @@
     "kind": "phrase",
     "slot": null,
     "natural": [
-      "¿en qué te pue'o ayudar?"
+      "¿en qué te puedo'ayudar?"
     ],
     "sound_rules": [
-      "s_d_loss"
+      "s_sinalefa"
     ],
     "ex_es": "Hola, ¿en qué te puedo ayudar?",
     "ex_en": "Hi, how can I help you?"
@@ -9304,7 +9274,8 @@
     "kind": "phrase",
     "slot": null,
     "ex_es": "Puede pagar como guste.",
-    "ex_en": "You can pay however you like."
+    "ex_en": "You can pay however you like.",
+    "sound_rules": null
   },
   {
     "id": "c_que_te_diviertas",
@@ -9316,7 +9287,8 @@
     "kind": "phrase",
     "slot": null,
     "ex_es": "¡Que te diviertas en la playa!",
-    "ex_en": "Have fun at the beach!"
+    "ex_en": "Have fun at the beach!",
+    "sound_rules": null
   },
   {
     "id": "c_que_descanses",
@@ -9328,7 +9300,8 @@
     "kind": "phrase",
     "slot": null,
     "ex_es": "Buenas noches, que descanses.",
-    "ex_en": "Good night, rest well."
+    "ex_en": "Good night, rest well.",
+    "sound_rules": null
   },
   {
     "id": "c_que_tengas_buen_dia",
@@ -9340,7 +9313,8 @@
     "kind": "phrase",
     "slot": null,
     "ex_es": "Gracias, que tengas buen día.",
-    "ex_en": "Thanks, have a good day."
+    "ex_en": "Thanks, have a good day.",
+    "sound_rules": null
   },
   {
     "id": "c_saludos_a_tu_familia",
@@ -9390,7 +9364,8 @@
     "slot": null,
     "ex_es": "Esta salsa pica poquito.",
     "ex_en": "This salsa is a little spicy.",
-    "note": "Often an understatement!"
+    "note": "Often an understatement!",
+    "sound_rules": null
   },
   {
     "id": "c_esta_bien_picante",
@@ -9420,7 +9395,8 @@
     "kind": "phrase",
     "slot": null,
     "ex_es": "¡Otra ronda, por favor!",
-    "ex_en": "Another round, please!"
+    "ex_en": "Another round, please!",
+    "sound_rules": null
   },
   {
     "id": "c_vamos_por_unas_chelas",
@@ -9451,7 +9427,8 @@
     "kind": "question",
     "slot": null,
     "ex_es": "¿Le pongo salsa, güero?",
-    "ex_en": "Want salsa on it?"
+    "ex_en": "Want salsa on it?",
+    "sound_rules": null
   },
   {
     "id": "c_cuantos_le_doy",
@@ -9463,7 +9440,8 @@
     "kind": "question",
     "slot": null,
     "ex_es": "¿Cuántos le doy, joven?",
-    "ex_en": "How many, young man?"
+    "ex_en": "How many, young man?",
+    "sound_rules": null
   },
   {
     "id": "c_tienen_menu_en_ingles",
@@ -9511,7 +9489,8 @@
     "kind": "question",
     "slot": null,
     "ex_es": "Disculpe, ¿me trae la cuenta?",
-    "ex_en": "Excuse me, can you bring the check?"
+    "ex_en": "Excuse me, can you bring the check?",
+    "sound_rules": null
   },
   {
     "id": "c_sin_cebolla",
@@ -9561,16 +9540,10 @@
     "topic": "transport",
     "kind": "phrase",
     "slot": null,
-    "natural": [
-      "un taxi'e sitio"
-    ],
-    "sound_rules": [
-      "s_d_loss",
-      "s_sinalefa"
-    ],
     "ex_es": "Mejor pide un taxi de sitio.",
     "ex_en": "Better get a licensed taxi.",
-    "note": "Safer than hailing on the street in CDMX."
+    "note": "Safer than hailing on the street in CDMX.",
+    "sound_rules": null
   },
   {
     "id": "c_cuanto_me_cobra_a_x",
@@ -9738,7 +9711,8 @@
     "kind": "phrase",
     "slot": null,
     "ex_es": "El camión ya se fue.",
-    "ex_en": "The bus already left."
+    "ex_en": "The bus already left.",
+    "sound_rules": null
   },
   {
     "id": "c_se_acabo",
@@ -9768,11 +9742,10 @@
     "kind": "phrase",
     "slot": null,
     "natural": [
-      "ay de to'o"
+      "ay de todo"
     ],
     "sound_rules": [
-      "s_same_letters",
-      "s_d_loss"
+      "s_same_letters"
     ],
     "ex_es": "En el mercado hay de todo.",
     "ex_en": "The market has everything."
@@ -9787,7 +9760,8 @@
     "kind": "phrase",
     "slot": null,
     "ex_es": "Mientras tanto, pido las bebidas.",
-    "ex_en": "Meanwhile, I'll order drinks."
+    "ex_en": "Meanwhile, I'll order drinks.",
+    "sound_rules": null
   },
   {
     "id": "c_a_pesar_de",
@@ -9799,7 +9773,8 @@
     "kind": "phrase",
     "slot": null,
     "ex_es": "Fuimos a pesar de la lluvia.",
-    "ex_en": "We went despite the rain."
+    "ex_en": "We went despite the rain.",
+    "sound_rules": null
   },
   {
     "id": "c_ya_que",
@@ -9811,7 +9786,8 @@
     "kind": "phrase",
     "slot": null,
     "ex_es": "Ya que estamos aquí, comamos.",
-    "ex_en": "Since we're here, let's eat."
+    "ex_en": "Since we're here, let's eat.",
+    "sound_rules": null
   },
   {
     "id": "c_en_cambio",
@@ -9823,7 +9799,8 @@
     "kind": "phrase",
     "slot": null,
     "ex_es": "Él es serio; ella, en cambio, no.",
-    "ex_en": "He's serious; she, on the other hand, isn't."
+    "ex_en": "He's serious; she, on the other hand, isn't.",
+    "sound_rules": null
   },
   {
     "id": "c_o_sea_que",
@@ -9871,7 +9848,8 @@
     "kind": "phrase",
     "slot": null,
     "ex_es": "Quién sabe a qué hora llega.",
-    "ex_en": "Who knows when it'll arrive."
+    "ex_en": "Who knows when it'll arrive.",
+    "sound_rules": null
   },
   {
     "id": "c_asi_es",
@@ -9938,7 +9916,8 @@
     "kind": "phrase",
     "slot": null,
     "ex_es": "—¿Es caro? —Depende.",
-    "ex_en": "—Is it expensive? —It depends."
+    "ex_en": "—Is it expensive? —It depends.",
+    "sound_rules": null
   },
   {
     "id": "c_es_lo_de_menos",
@@ -9950,7 +9929,8 @@
     "kind": "phrase",
     "slot": null,
     "ex_es": "El precio es lo de menos.",
-    "ex_en": "The price is the least of it."
+    "ex_en": "The price is the least of it.",
+    "sound_rules": null
   },
   {
     "id": "c_lo_bueno_es_que",
@@ -10035,11 +10015,10 @@
     "kind": "phrase",
     "slot": null,
     "natural": [
-      "por'un la'o"
+      "por'un lado"
     ],
     "sound_rules": [
-      "s_linking",
-      "s_d_loss"
+      "s_linking"
     ],
     "ex_es": "Por un lado es caro, por otro…",
     "ex_en": "On one hand it's pricey, on the other…"
@@ -10097,5 +10076,635 @@
     ],
     "ex_es": "Es decir, mañana no hay clases.",
     "ex_en": "That is, there's no class tomorrow."
+  },
+  {
+    "id": "c_como_se_llama_esto",
+    "es": "¿Cómo se llama esto?",
+    "en": "What's this called?",
+    "rank": 34,
+    "tier": 1,
+    "topic": "communication",
+    "kind": "question",
+    "slot": null,
+    "natural": [
+      "¿cómo se yama esto?"
+    ],
+    "sound_rules": [
+      "s_same_letters"
+    ],
+    "ex_es": "Perdón, ¿cómo se llama esto en español?",
+    "ex_en": "Sorry, what's this called in Spanish?",
+    "note": "Point at the thing. For something further away: ¿cómo se llama eso?"
+  },
+  {
+    "id": "c_es_como_x",
+    "es": "Es como ___",
+    "en": "it's like ___",
+    "rank": 36,
+    "tier": 1,
+    "topic": "communication",
+    "kind": "frame",
+    "slot": "Es como ___",
+    "sound_rules": null,
+    "ex_es": "Es como un taco, pero frito.",
+    "ex_en": "It's like a taco, but fried.",
+    "note": "The number-one rescue when the word won't come: compare it with something you can name.",
+    "slot_examples": [
+      "un taco, pero frito",
+      "una sopa",
+      "un pan dulce"
+    ]
+  },
+  {
+    "id": "c_es_una_cosa_para_x",
+    "es": "Es una cosa para ___",
+    "en": "it's a thing for ___ (-ing)",
+    "rank": 37,
+    "tier": 1,
+    "topic": "communication",
+    "kind": "frame",
+    "slot": "Es una cosa para ___",
+    "natural": [
+      "es una cosa pa' ___"
+    ],
+    "sound_rules": [
+      "s_apocope"
+    ],
+    "ex_es": "Es una cosa para abrir botellas.",
+    "ex_en": "It's a thing for opening bottles.",
+    "note": "para + infinitive = for -ing (para abrir = for opening). The clerk will give you the word: ¡Ah, un destapador!",
+    "slot_examples": [
+      "abrir botellas",
+      "cargar el celular",
+      "cortar el pan"
+    ]
+  },
+  {
+    "id": "c_es_algo_que_x",
+    "es": "Es algo que ___",
+    "en": "it's something (that) ___",
+    "rank": 38,
+    "tier": 1,
+    "topic": "communication",
+    "kind": "frame",
+    "slot": "Es algo que ___",
+    "natural": [
+      "esalgo que ___"
+    ],
+    "sound_rules": [
+      "s_linking"
+    ],
+    "ex_es": "Es algo que se come en Navidad.",
+    "ex_en": "It's something you eat at Christmas.",
+    "note": "se come = people eat it; se usa = people use it. Describe what it does or where it shows up.",
+    "slot_examples": [
+      "se come en Navidad",
+      "se usa en la playa",
+      "se pone en la cabeza"
+    ]
+  },
+  {
+    "id": "c_es_un_lugar_donde_x",
+    "es": "Es un lugar donde ___",
+    "en": "it's a place where ___",
+    "rank": 39,
+    "tier": 1,
+    "topic": "communication",
+    "kind": "frame",
+    "slot": "Es un lugar donde ___",
+    "natural": [
+      "esun lugar donde ___"
+    ],
+    "sound_rules": [
+      "s_linking"
+    ],
+    "ex_es": "Es un lugar donde venden medicinas.",
+    "ex_en": "It's a place where they sell medicine.",
+    "note": "For places whose name you've lost: then someone says \"¿una farmacia?\".",
+    "slot_examples": [
+      "venden medicinas",
+      "cambian dinero",
+      "hay muchos libros"
+    ]
+  },
+  {
+    "id": "c_es_una_persona_que_x",
+    "es": "Es una persona que ___",
+    "en": "it's someone who ___",
+    "rank": 40,
+    "tier": 1,
+    "topic": "communication",
+    "kind": "frame",
+    "slot": "Es una persona que ___",
+    "natural": [
+      "esuna persona que ___"
+    ],
+    "sound_rules": [
+      "s_linking"
+    ],
+    "ex_es": "Es una persona que arregla carros.",
+    "ex_en": "It's someone who fixes cars.",
+    "note": "For jobs and people: the answer here is un mecánico.",
+    "slot_examples": [
+      "arregla carros",
+      "trabaja en un hotel",
+      "vende tacos"
+    ]
+  },
+  {
+    "id": "c_es_lo_contrario_de_x",
+    "es": "Es lo contrario de ___",
+    "en": "it's the opposite of ___",
+    "rank": 41,
+    "tier": 1,
+    "topic": "communication",
+    "kind": "frame",
+    "slot": "Es lo contrario de ___",
+    "sound_rules": null,
+    "ex_es": "Es lo contrario de caro.",
+    "ex_en": "It's the opposite of expensive.",
+    "note": "Great for adjectives: lo contrario de caro = barato, de frío = caliente.",
+    "slot_examples": [
+      "caro",
+      "frío",
+      "abierto"
+    ]
+  },
+  {
+    "id": "c_es_parecido_a_x",
+    "es": "Es parecido a ___",
+    "en": "it's similar to ___",
+    "rank": 42,
+    "tier": 1,
+    "topic": "communication",
+    "kind": "frame",
+    "slot": "Es parecido a ___",
+    "sound_rules": null,
+    "ex_es": "Es parecido a un taco, pero más grande.",
+    "ex_en": "It's similar to a taco, but bigger.",
+    "note": "Feminine things take parecida: la salsa es parecida a… (and a + el = al: parecido al mole).",
+    "slot_examples": [
+      "un taco",
+      "la salsa verde",
+      "una tortilla"
+    ]
+  },
+  {
+    "id": "c_tiene_forma_de_x",
+    "es": "Tiene forma de ___",
+    "en": "it's shaped like ___",
+    "rank": 43,
+    "tier": 1,
+    "topic": "communication",
+    "kind": "frame",
+    "slot": "Tiene forma de ___",
+    "sound_rules": null,
+    "ex_es": "Tiene forma de estrella.",
+    "ex_en": "It's shaped like a star.",
+    "note": "Shape, colour and size carry a description: es redondo (round), es rojo, es así de grande.",
+    "slot_examples": [
+      "estrella",
+      "pelota",
+      "caja"
+    ]
+  },
+  {
+    "id": "c_es_mas_o_menos_asi",
+    "es": "Es más o menos así",
+    "en": "it's kind of like this (with a gesture)",
+    "rank": 44,
+    "tier": 1,
+    "topic": "communication",
+    "kind": "phrase",
+    "slot": null,
+    "natural": [
+      "es masomenos así"
+    ],
+    "sound_rules": [
+      "s_linking",
+      "s_sinalefa"
+    ],
+    "ex_es": "Es más o menos así de grande.",
+    "ex_en": "It's about this big.",
+    "note": "Use your hands: así de grande = this big, así de largo = this long."
+  },
+  {
+    "id": "c_se_usa_para_x",
+    "es": "Se usa para ___",
+    "en": "it's used for ___ (-ing)",
+    "rank": 45,
+    "tier": 1,
+    "topic": "communication",
+    "kind": "frame",
+    "slot": "Se usa para ___",
+    "natural": [
+      "se usa pa' ___"
+    ],
+    "sound_rules": [
+      "s_apocope"
+    ],
+    "ex_es": "Se usa para cargar el celular.",
+    "ex_en": "It's used to charge your phone.",
+    "note": "Then the clerk says the word: ¡Ah, un cargador!",
+    "slot_examples": [
+      "cargar el celular",
+      "limpiar",
+      "abrir la puerta"
+    ]
+  },
+  {
+    "id": "c_sirve_para_x",
+    "es": "Sirve para ___",
+    "en": "it's for ___ (-ing); it works for ___",
+    "rank": 46,
+    "tier": 1,
+    "topic": "communication",
+    "kind": "frame",
+    "slot": "Sirve para ___",
+    "natural": [
+      "sirve pa' ___"
+    ],
+    "sound_rules": [
+      "s_apocope"
+    ],
+    "ex_es": "Sirve para cortar el pan.",
+    "ex_en": "It's for cutting the bread.",
+    "note": "servir para = to be for / to be good for. ¿Para qué sirve? = What is it for?",
+    "slot_examples": [
+      "cortar el pan",
+      "el dolor de cabeza",
+      "abrir latas"
+    ]
+  },
+  {
+    "id": "c_no_me_acuerdo_de_la_palabra",
+    "es": "No me acuerdo de la palabra",
+    "en": "I can't remember the word",
+    "rank": 35,
+    "tier": 1,
+    "topic": "communication",
+    "kind": "phrase",
+    "slot": null,
+    "natural": [
+      "no m'acuerdo de la palabra"
+    ],
+    "sound_rules": [
+      "s_sinalefa"
+    ],
+    "ex_es": "Perdón, no me acuerdo de la palabra.",
+    "ex_en": "Sorry, I can't remember the word.",
+    "note": "Also: se me olvidó la palabra (the word slipped my mind). Saying it buys you time, and people help."
+  },
+  {
+    "id": "c_no_se_como_decirlo",
+    "es": "No sé cómo decirlo",
+    "en": "I don't know how to say it",
+    "rank": 47,
+    "tier": 1,
+    "topic": "communication",
+    "kind": "phrase",
+    "slot": null,
+    "natural": [
+      "nosé cómo desirlo"
+    ],
+    "sound_rules": [
+      "s_syllable_timing",
+      "s_seseo"
+    ],
+    "ex_es": "No sé cómo decirlo en español.",
+    "ex_en": "I don't know how to say it in Spanish.",
+    "note": "Follow it with a description: es como…, es una cosa para…"
+  },
+  {
+    "id": "c_como_te_explico",
+    "es": "¿Cómo te explico?",
+    "en": "how can I explain (it to you)?",
+    "rank": 48,
+    "tier": 1,
+    "topic": "communication",
+    "kind": "filler",
+    "slot": null,
+    "natural": [
+      "¿cómo t'esplico?"
+    ],
+    "sound_rules": [
+      "s_sinalefa",
+      "s_x_tl"
+    ],
+    "ex_es": "Es que… ¿cómo te explico? Es un pan dulce.",
+    "ex_en": "It's just… how do I explain? It's a sweet bread.",
+    "note": "Said while you search for words. With a stranger: ¿cómo le explico?"
+  },
+  {
+    "id": "c_que_quiere_decir_x",
+    "es": "¿Qué quiere decir ___?",
+    "en": "what does ___ mean?",
+    "rank": 49,
+    "tier": 1,
+    "topic": "communication",
+    "kind": "frame",
+    "slot": "¿Qué quiere decir ___?",
+    "natural": [
+      "¿qué quiere desir ___?"
+    ],
+    "sound_rules": [
+      "s_seseo"
+    ],
+    "ex_es": "¿Qué quiere decir \"ahorita\"?",
+    "ex_en": "What does \"ahorita\" mean?",
+    "note": "Same as ¿Qué significa ___?, a little more conversational.",
+    "slot_examples": [
+      "\"ahorita\"",
+      "\"chido\"",
+      "\"neta\""
+    ]
+  },
+  {
+    "id": "c_puedes_repetirlo",
+    "es": "¿Puedes repetirlo?",
+    "en": "can you say it again? (tú)",
+    "rank": 50,
+    "tier": 1,
+    "topic": "communication",
+    "kind": "question",
+    "slot": null,
+    "sound_rules": null,
+    "ex_es": "Perdón, ¿puedes repetirlo más despacio?",
+    "ex_en": "Sorry, can you say it again more slowly?",
+    "note": "Informal (tú). With strangers use ¿Me lo puede repetir? Friends also say ¿Me lo repites?"
+  },
+  {
+    "id": "c_me_entiende",
+    "es": "¿Me entiende?",
+    "en": "do you understand me? (usted)",
+    "rank": 51,
+    "tier": 1,
+    "topic": "communication",
+    "kind": "question",
+    "slot": null,
+    "natural": [
+      "¿m'entiende?"
+    ],
+    "sound_rules": [
+      "s_sinalefa"
+    ],
+    "ex_es": "Busco una farmacia, ¿me entiende?",
+    "ex_en": "I'm looking for a pharmacy, do you understand?",
+    "note": "Usted form; with a friend: ¿me entiendes?"
+  },
+  {
+    "id": "c_la_cosa_esa",
+    "es": "La cosa esa",
+    "en": "that thing (the thingy)",
+    "rank": 52,
+    "tier": 1,
+    "topic": "abstract",
+    "kind": "phrase",
+    "slot": null,
+    "sound_rules": null,
+    "ex_es": "¿Me pasas la cosa esa? La roja.",
+    "ex_en": "Can you pass me that thing? The red one.",
+    "note": "Putting esa after the noun is casual and very Mexican. You'll also hear el coso and el chunche (the thingamajig)."
+  },
+  {
+    "id": "c_el_este",
+    "es": "El este…",
+    "en": "the, um… (the whatchamacallit)",
+    "rank": 53,
+    "tier": 1,
+    "topic": "communication",
+    "kind": "filler",
+    "slot": null,
+    "sound_rules": null,
+    "ex_es": "Pásame el este… el control.",
+    "ex_en": "Pass me the… um… the remote.",
+    "note": "Mexicans fill the gap with este… even right after el or la. Hearing it means the word is coming."
+  },
+  {
+    "id": "c_como_se_llama",
+    "es": "¿Cómo se llama…?",
+    "en": "what's it called… (while searching for a word)",
+    "rank": 54,
+    "tier": 1,
+    "topic": "communication",
+    "kind": "filler",
+    "slot": null,
+    "natural": [
+      "¿cómo se yama…?"
+    ],
+    "sound_rules": [
+      "s_same_letters"
+    ],
+    "ex_es": "Busco el… ¿cómo se llama…? el cargador.",
+    "ex_en": "I'm looking for the… what's it called… the charger.",
+    "note": "Also the usted way to ask a name: ¿Cómo se llama? = What's your name? Context tells you which."
+  },
+  {
+    "id": "c_sabes",
+    "es": "¿Sabes?",
+    "en": "you know?",
+    "rank": 55,
+    "tier": 1,
+    "topic": "communication",
+    "kind": "filler",
+    "slot": null,
+    "sound_rules": null,
+    "ex_es": "Es muy bonito, ¿sabes?",
+    "ex_en": "It's really pretty, you know?",
+    "note": "Tú form; with usted it's ¿sabe? Mexicans also tag sentences with ¿no? and ¿verdad?"
+  },
+  {
+    "id": "c_lo_que_quiero_decir_es_que",
+    "es": "Lo que quiero decir es que…",
+    "en": "what I mean is…",
+    "rank": 56,
+    "tier": 1,
+    "topic": "communication",
+    "kind": "phrase",
+    "slot": null,
+    "natural": [
+      "lo que quiero desires que…"
+    ],
+    "sound_rules": [
+      "s_seseo",
+      "s_linking"
+    ],
+    "ex_es": "Lo que quiero decir es que está muy lejos.",
+    "ex_en": "What I mean is, it's really far.",
+    "note": "A second try when your first sentence didn't land. Shorter: o sea…"
+  },
+  {
+    "id": "c_buenas",
+    "es": "¡Buenas!",
+    "en": "hi! (any time of day)",
+    "rank": 9,
+    "tier": 1,
+    "topic": "courtesy",
+    "kind": "phrase",
+    "slot": null,
+    "sound_rules": null,
+    "ex_es": "¡Buenas! ¿Tiene tortillas?",
+    "ex_en": "Hi! Do you have tortillas?",
+    "note": "Short for buenos días / buenas tardes / buenas noches. Casual and friendly; you hear it walking into small shops."
+  },
+  {
+    "id": "c_tengo_x",
+    "es": "Tengo ___",
+    "en": "I have ___",
+    "rank": 62,
+    "tier": 1,
+    "topic": "actions",
+    "kind": "frame",
+    "slot": "Tengo ___",
+    "sound_rules": null,
+    "ex_es": "Tengo una pregunta.",
+    "ex_en": "I have a question.",
+    "note": "tener = to have: tengo (I have), tiene (you/he/she have/has). Also for age and feelings: tengo hambre.",
+    "slot_examples": [
+      "una pregunta",
+      "una reservación",
+      "hambre"
+    ]
+  },
+  {
+    "id": "c_quiere_x",
+    "es": "¿Quiere ___?",
+    "en": "do you want ___? (usted); does he/she want ___?",
+    "rank": 63,
+    "tier": 1,
+    "topic": "restaurant",
+    "kind": "frame",
+    "slot": "¿Quiere ___?",
+    "sound_rules": null,
+    "ex_es": "¿Quiere algo de tomar?",
+    "ex_en": "Would you like something to drink?",
+    "note": "What a waiter or host says to you (usted). Answer: Sí, quiero… / No, gracias.",
+    "slot_examples": [
+      "algo de tomar",
+      "una bolsa",
+      "la cuenta"
+    ]
+  },
+  {
+    "id": "c_quieres_x",
+    "es": "¿Quieres ___?",
+    "en": "do you want ___? (tú)",
+    "rank": 260,
+    "tier": 1,
+    "topic": "actions",
+    "kind": "frame",
+    "slot": "¿Quieres ___?",
+    "natural": [
+      "¿quiés ___?"
+    ],
+    "sound_rules": null,
+    "ex_es": "¿Quieres ir por unos tacos?",
+    "ex_en": "Do you want to go get some tacos?",
+    "note": "\"¿Quiés?\" is a casual squeeze of quieres you'll hear among friends.",
+    "slot_examples": [
+      "ir por unos tacos",
+      "un café",
+      "venir"
+    ]
+  },
+  {
+    "id": "c_vas_a_x",
+    "es": "¿Vas a ___?",
+    "en": "are you going to ___? (tú)",
+    "rank": 252,
+    "tier": 1,
+    "topic": "actions",
+    "kind": "frame",
+    "slot": "¿Vas a ___?",
+    "natural": [
+      "¿vasa ___?"
+    ],
+    "sound_rules": [
+      "s_linking"
+    ],
+    "ex_es": "¿Vas a ir al centro hoy?",
+    "ex_en": "Are you going downtown today?",
+    "note": "ir a + infinitive: voy a, vas a, va a. In speech vas a runs together: \"vasa\".",
+    "slot_examples": [
+      "ir al centro",
+      "comer",
+      "venir"
+    ]
+  },
+  {
+    "id": "c_fui_a_x",
+    "es": "Fui a ___",
+    "en": "I went to ___",
+    "rank": 271,
+    "tier": 1,
+    "topic": "travel",
+    "kind": "frame",
+    "slot": "Fui a ___",
+    "sound_rules": null,
+    "ex_es": "Ayer fui a Teotihuacán.",
+    "ex_en": "Yesterday I went to Teotihuacán.",
+    "note": "fui = I went (it is also \"I was\", from ser). Learn it as a chunk now; the past tense comes later.",
+    "slot_examples": [
+      "Teotihuacán",
+      "la playa",
+      "un mercado"
+    ]
+  },
+  {
+    "id": "c_comi_x",
+    "es": "Comí ___",
+    "en": "I ate ___",
+    "rank": 272,
+    "tier": 1,
+    "topic": "food",
+    "kind": "frame",
+    "slot": "Comí ___",
+    "sound_rules": null,
+    "ex_es": "Comí tacos al pastor en el mercado.",
+    "ex_en": "I ate al pastor tacos at the market.",
+    "note": "comí = I ate. ¿Qué comiste? = What did you eat?",
+    "slot_examples": [
+      "tacos al pastor",
+      "mole",
+      "unos tamales"
+    ]
+  },
+  {
+    "id": "c_vi_x",
+    "es": "Vi ___",
+    "en": "I saw ___",
+    "rank": 273,
+    "tier": 1,
+    "topic": "travel",
+    "kind": "frame",
+    "slot": "Vi ___",
+    "sound_rules": null,
+    "ex_es": "Vi las pirámides.",
+    "ex_en": "I saw the pyramids.",
+    "note": "vi = I saw (from ver). ¿Qué viste? = What did you see?",
+    "slot_examples": [
+      "las pirámides",
+      "a mis amigos",
+      "una película"
+    ]
+  },
+  {
+    "id": "c_me_gusto_x",
+    "es": "Me gustó ___",
+    "en": "I liked ___ (one thing)",
+    "rank": 274,
+    "tier": 1,
+    "topic": "emotions",
+    "kind": "frame",
+    "slot": "Me gustó ___",
+    "sound_rules": null,
+    "ex_es": "Me gustó mucho la comida.",
+    "ex_en": "I really liked the food.",
+    "note": "Past of me gusta. For more than one thing: me gustaron los tacos.",
+    "slot_examples": [
+      "la comida",
+      "el museo",
+      "mucho"
+    ]
   }
 ]

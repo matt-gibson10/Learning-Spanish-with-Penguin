@@ -10,7 +10,9 @@
       v: 1, updated: 0,
       learned: {},          // itemId -> first learned (ms)
       recog: {},            // itemId -> number of correct recognitions (see Spanish/hear it -> meaning); gates typed production
-      cards: {},            // itemId -> {ef, ivl (days), reps, lapses, due (ms), last (ms), seen}
+      cards: {},            // itemId -> {ef, ivl (days), reps, lapses, due (ms), last (ms), seen (real reviews), ok (successes),
+                            //   prod (production successes), streak (successes in a row), leech, missedInLesson, unsure,
+                            //   forms: {formKey: {ok, miss}} (verb-form cards)}
       lessons: {},          // lessonId -> {step, done (ms)}
       grammar: {},          // unitId -> {done (ms), best}
       sounds: {},           // ruleId -> done (ms)
@@ -19,11 +21,29 @@
       drafts: {},           // storyId -> {beats: [], all: "", mode}; "p:" + promptId -> text
       chats: {},            // chatTopicId -> {messages: [{role, text, en, correction, notes, suggestions, ts}], updated}
       readings: {},         // readingId -> {idx, marks: {i: got|partly|missed}, notes: {i: text}, done, at, runs}
+      phrases: {},          // "my_<hash>" -> {id, input, input_lang, en, es, pieces, tip, correction, ts, attempts: [{text, outcome, ts}],
+                            //   outcome, practise, updated} — "My phrases" from Think out loud (#/say); {id, deleted, updated} = tombstone.
+                            //   practise: true -> a personal review card with the same id in `cards` (resolved by App.item via App.phraseItem)
       days: {},             // "YYYY-MM-DD" -> {reviews, new, steps}
       streak: { count: 0, last: "" },
       lastReview: 0,
-      settings: { voice: "", rates: { careful: 0.9, slow: 0.65, natural: 1.25 }, newPerDay: 20, showEnglish: true, autoplay: true },
+      rating: null,         // Elo-style progress tracker (web/js/rating.js, docs/RATING.md §6.1); filled by Rating.bootstrap
+      settings: { voice: "", rates: { careful: 0.9, slow: 0.65, natural: 1.25 }, newPerDay: 20, showEnglish: true, autoplay: true,
+        listenFirst: true },  // listenFirst: Read hides each sentence until heard (default for new users only, see load())
     };
+  }
+  const MAX_IVL = 120;
+  /** Scheduler repair (2026-11): cap stored intervals at 120 d (due no later than last review + 120 d). Idempotent. */
+  function migrate(s) {
+    for (const c of Object.values(s.cards || {})) {
+      if (!c || typeof c !== "object") continue;
+      if ((c.ivl || 0) > MAX_IVL) {
+        c.ivl = MAX_IVL;
+        const latest = (c.last || Date.now()) + MAX_IVL * DAY;
+        if (c.due > latest) c.due = latest;
+      }
+    }
+    return s;
   }
 
   function load() {
@@ -32,9 +52,11 @@
     const base = fresh();
     if (!s || typeof s !== "object") return base;
     for (const k of Object.keys(base)) if (s[k] === undefined) s[k] = base[k];
+    // existing users who never touched "Listen first" keep the old default (off); only brand-new users get listen-first
+    if (s.settings && typeof s.settings === "object" && s.settings.listenFirst === undefined) s.settings.listenFirst = false;
     s.settings = Object.assign(base.settings, s.settings || {});
     s.settings.rates = Object.assign({}, fresh().settings.rates, s.settings.rates || {});
-    return s;
+    return migrate(s);
   }
 
   const Store = (window.Store = { state: load(), online: false, coach: false, listeners: [] });
@@ -62,7 +84,7 @@
     const newer = (a.updated || 0) >= (b.updated || 0) ? a : b;
     const older = newer === a ? b : a;
     const out = JSON.parse(JSON.stringify(newer));
-    const mapKeys = ["learned", "recog", "cards", "lessons", "grammar", "sounds", "prompts", "stories", "drafts", "days", "readings", "chats"];
+    const mapKeys = ["learned", "recog", "cards", "lessons", "grammar", "sounds", "prompts", "stories", "drafts", "days", "readings", "chats", "phrases"];
     const stamp = (x) => (x == null ? 0 : typeof x === "number" ? x : (x.last || x.done || x.at || x.updated || 0));
     for (const k of mapKeys) {
       const o = older[k] || {};
@@ -81,6 +103,19 @@
       }
     }
     out.lastReview = Math.max(a.lastReview || 0, b.lastReview || 0);
+    // rating (docs/RATING.md §6.1): newer blob wins; days unioned (larger n wins); badges unioned (earlier date); checkups by day
+    const rn = newer.rating, ro = older.rating;
+    if (!rn && ro) out.rating = JSON.parse(JSON.stringify(ro));
+    else if (rn && ro) {
+      const r = out.rating;
+      r.days = r.days || {};
+      for (const [d, v] of Object.entries(ro.days || {})) if (v && (!r.days[d] || (v.n || 0) > (r.days[d].n || 0))) r.days[d] = v;
+      r.badges = r.badges || {};
+      for (const [id, d] of Object.entries(ro.badges || {})) if (!r.badges[id] || d < r.badges[id]) r.badges[id] = d;
+      const byDay = new Map((r.checkups || []).map((x) => [x.day, x]));
+      (ro.checkups || []).forEach((x) => { if (x && !byDay.has(x.day)) byDay.set(x.day, x); });
+      r.checkups = Array.from(byDay.values()).sort((x, y) => (x.day < y.day ? -1 : x.day > y.day ? 1 : 0)).slice(-24);
+    }
     if ((older.streak && older.streak.last || "") > (out.streak && out.streak.last || "")) out.streak = older.streak;
     out.updated = Math.max(a.updated || 0, b.updated || 0);
     return out;
@@ -91,7 +126,7 @@
   Store.connect = async function () {
     if (!/^https?:/.test(location.protocol)) return { online: false, coach: false };
     const ctl = new AbortController();
-    const t = setTimeout(() => ctl.abort(), 2000);
+    const t = setTimeout(() => ctl.abort(), 6000);   // a busy laptop can take seconds to answer
     try {
       const h = await fetch("api/health", { signal: ctl.signal, cache: "no-store" }).then((r) => (r.ok ? r.json() : null));
       clearTimeout(t);
@@ -100,9 +135,12 @@
       Store.coach = !!h.coach;
       const remote = await fetch("api/state", { cache: "no-store" }).then((r) => r.json()).catch(() => null);
       if (remote && remote.state && typeof remote.state === "object") {
+        // an existing user's saved settings without "Listen first" keep the old default (off)
+        const rs = remote.state.settings;
+        if (rs && typeof rs === "object" && rs.listenFirst === undefined && Object.keys(remote.state.learned || {}).length) rs.listenFirst = false;
         const merged = merge(Store.state, remote.state);
         const changed = JSON.stringify(merged) !== JSON.stringify(Store.state);
-        Store.state = Object.assign(fresh(), merged);
+        Store.state = migrate(Object.assign(fresh(), merged));
         Store.state.settings = Object.assign(fresh().settings, merged.settings || {});
         persist();
         if (changed) Store.listeners.forEach((f) => { try { f(); } catch (e) { /* ignore */ } });
@@ -152,17 +190,19 @@
 
   // ------------------------------------------------------------------ learning + SRS (SM-2 style)
   Store.isLearned = (id) => !!Store.state.learned[id];
+  /** opts: {dueNow, countNew (default true; false for words auto-added by Read — they don't count toward the daily goal)} */
   Store.learn = function (ids, opts) {
     opts = opts || {};
     const now = Date.now();
     let n = 0;
     for (const id of ids) {
-      if (!Store.state.learned[id]) { Store.state.learned[id] = now; n++; }
+      if (!Store.state.learned[id]) { Store.state.learned[id] = now; if (!String(id).startsWith("my_")) n++; }
       if (!Store.state.cards[id]) {
         Store.state.cards[id] = { ef: 2.5, ivl: 0, reps: 0, lapses: 0, due: now + (opts.dueNow ? 0 : 6 * 60 * MIN), last: now, seen: 0 };
       }
     }
-    if (n) { Store.day().new += n; Store.touchStreak(); }
+    if (n && opts.countNew !== false) Store.day().new += n;
+    if (n) Store.touchStreak();
     Store.save();
     return n;
   };
@@ -174,7 +214,7 @@
   };
   Store.recognised = (id) => (Store.state.recog && Store.state.recog[id]) || 0;
   /** May this item be tested by typing Spanish in review? recognised once + PRODUCTION_AFTER good reviews. */
-  Store.PRODUCTION_AFTER = 2;
+  Store.PRODUCTION_AFTER = 1;
   Store.canProduce = function (id) {
     const c = Store.state.cards[id];
     return Store.recognised(id) > 0 && !!c && (c.ok || 0) >= Store.PRODUCTION_AFTER;
@@ -182,14 +222,31 @@
   Store.unlearn = function (id) { delete Store.state.learned[id]; delete Store.state.cards[id]; Store.save(); };
 
   const RATING = { again: 0, hard: 1, good: 2, easy: 3 };
-  /** Schedule a card after a review. rating: again | hard | good | easy. Returns next interval text. */
+  const PROD_GATE = 7, LEECH_LAPSES = 4, LEECH_CLEAR = 3;
+  Store.MAX_IVL = MAX_IVL;
+  Store.PROD_GATE = PROD_GATE;
+  /** Deterministic ±5% spread from a hash of id + reps (so Store.preview shows exactly what Store.rate will do). */
+  function spread(id, reps) {
+    const s = String(id) + ":" + reps;
+    let x = 0x811c9dc5;
+    for (let i = 0; i < s.length; i++) { x ^= s.charCodeAt(i); x = Math.imul(x, 0x01000193) >>> 0; }
+    return 0.95 + (x % 1001) / 10000;
+  }
+  /**
+   * Schedule a card after a review. rating: again | hard | good | easy. Returns next interval text.
+   * opts: {practice (a lesson re-rate: not a review, doesn't bump `seen`/`ok`), recognition, production, hints}
+   * First success: hard 0.5 d / good 1 d / easy 2 d; second 1.5 / 3 / 5; later ivl × 1.2 | ef | ef × 1.15, ±5% spread.
+   * Missed in its lesson -> first interval ≤ 1 d. Fewer than 2 production successes -> ≤ 7 d. Never above 120 d.
+   * Four lapses mark a leech (c.leech); three successes in a row clear it.
+   */
   Store.rate = function (id, rating, opts) {
     opts = opts || {};
     const now = Date.now();
     const c = Store.state.cards[id] || { ef: 2.5, ivl: 0, reps: 0, lapses: 0, due: now, last: now, seen: 0 };
     const q = RATING[rating] ?? 2;
-    c.seen = (c.seen || 0) + 1;
+    if (!opts.practice) c.seen = (c.seen || 0) + 1;
     if (q > 0 && !opts.practice) c.ok = (c.ok || 0) + 1;
+    if (q > 0 && !opts.practice && opts.production) c.prod = (c.prod || 0) + 1;
     if (q > 0 && opts.recognition) { Store.state.recog = Store.state.recog || {}; Store.state.recog[id] = (Store.state.recog[id] || 0) + 1; }
     if (q === 0) {
       c.lapses = (c.lapses || 0) + (c.reps > 0 ? 1 : 0);
@@ -197,16 +254,25 @@
       c.ivl = 0;
       c.ef = Math.max(1.3, c.ef - 0.2);
       c.due = now + 10 * MIN;
+      c.streak = 0;
+      if (c.lapses >= LEECH_LAPSES) c.leech = true;
     } else {
       if (q === 1) c.ef = Math.max(1.3, c.ef - 0.15);
       if (q === 3) c.ef = Math.min(3.0, c.ef + 0.15);
       let ivl;
-      if (c.reps === 0) ivl = q === 1 ? 0.5 : q === 2 ? 1 : 3;
-      else if (c.reps === 1) ivl = q === 1 ? 2 : q === 2 ? 3 : 6;
-      else ivl = Math.max(1, c.ivl * (q === 1 ? 1.2 : q === 2 ? c.ef : c.ef * 1.3));
+      if (c.reps === 0) ivl = q === 1 ? 0.5 : q === 2 ? 1 : 2;
+      else if (c.reps === 1) ivl = q === 1 ? 1.5 : q === 2 ? 3 : 5;
+      else ivl = Math.max(1, (c.ivl || 1) * (q === 1 ? 1.2 : q === 2 ? c.ef : c.ef * 1.15));
+      if (c.missedInLesson && c.reps === 0) ivl = Math.min(ivl, 1);
+      if (!opts.practice) delete c.missedInLesson;
+      ivl *= spread(id, c.reps);
+      if ((c.prod || 0) < 2) ivl = Math.min(ivl, PROD_GATE);
+      ivl = Math.min(MAX_IVL, ivl);
       c.reps += 1;
       c.ivl = Math.round(ivl * 10) / 10;
       c.due = now + c.ivl * DAY;
+      c.streak = (c.streak || 0) + 1;
+      if (c.leech && c.streak >= LEECH_CLEAR) delete c.leech;
     }
     c.last = now;
     Store.state.cards[id] = c;
@@ -226,13 +292,15 @@
     const d = Math.round(ms / DAY);
     return d === 1 ? "1 day" : `${d} days`;
   };
-  Store.preview = function (id, rating) {   // what interval a rating would give, without saving
+  Store.preview = function (id, rating, opts) {   // what interval a rating would give, without saving
     const saved = JSON.stringify(Store.state.cards[id] || null);
     const st = JSON.stringify(Store.state.days), lr = Store.state.lastReview, sk = JSON.stringify(Store.state.streak), le = Store.state.learned[id];
+    const rc = JSON.stringify(Store.state.recog || {});
     const realSave = Store.save; Store.save = () => {};
     let txt;
-    try { txt = Store.rate(id, rating); } finally {
+    try { txt = Store.rate(id, rating, opts); } finally {
       Store.save = realSave;
+      Store.state.recog = JSON.parse(rc);
       if (saved === "null") delete Store.state.cards[id]; else Store.state.cards[id] = JSON.parse(saved);
       Store.state.days = JSON.parse(st); Store.state.lastReview = lr; Store.state.streak = JSON.parse(sk);
       if (!le) delete Store.state.learned[id];
@@ -257,13 +325,12 @@
     if (id && Store.state.cards[id]) Store.state.cards[id].unsure = (Store.state.cards[id].unsure || 0) + 1;
     Store.save();
   };
+  /** Grader outcome -> suggested rating. Never Easy (the button stays available); 2+ hints or a slow replay -> Hard. */
   Store.suggest = function (res) {
     if (!res) return "good";
-    if (res.outcome === "unsure") return "again";
-    if (res.outcome === "miss") return "again";
-    if (res.outcome === "close") return "hard";
-    const slips = (res.notes || []).filter((n) => n.kind === "grammar" || n.kind === "typo").length;
-    return slips ? "good" : (res.score >= 0.99 ? "easy" : "good");
+    if (res.outcome === "unsure" || res.outcome === "miss") return "again";
+    if (res.outcome === "close" || (res.hintsUsed || 0) >= 2 || res.slowUsed) return "hard";
+    return "good";
   };
 
   // ------------------------------------------------------------------ lessons
@@ -282,7 +349,7 @@
     return all.find((l) => !Store.lessonState(l.id).done) || null;
   };
   Store.knownCount = function () {
-    return Object.keys(Store.state.learned).filter((id) => window.App.item(id)).length;
+    return Object.keys(Store.state.learned).filter((id) => !id.startsWith("my_") && window.App.item(id)).length;
   };
   Store.isGrammarDone = (gid) => !!(Store.state.grammar[gid] && Store.state.grammar[gid].done);
 })();
