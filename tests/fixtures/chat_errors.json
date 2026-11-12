@@ -1,0 +1,362 @@
+[
+ {
+  "learner": "yo gusto nadar en el mar",
+  "fixed": "me gusta nadar en el mar",
+  "type": "gustar",
+  "kept": true
+ },
+ {
+  "learner": "la agua es muy frío en Canadá",
+  "fixed": "el agua es muy fría en Canadá",
+  "type": "gender+agreement",
+  "kept": true
+ },
+ {
+  "learner": "la playa es en Oaxaca",
+  "fixed": "la playa está en Oaxaca",
+  "type": "ser/estar",
+  "kept": true
+ },
+ {
+  "learner": "Gracias, Penguin. Voy nadar mañana.",
+  "fixed": "Gracias, Penguin. Voy a nadar mañana.",
+  "type": "missing-a",
+  "kept": true
+ },
+ {
+  "learner": "me gusta los tacos de pescado",
+  "fixed": "me gustan los tacos de pescado",
+  "type": "gustar-plural",
+  "kept": true
+ },
+ {
+  "learner": "yo quiere una michelada",
+  "fixed": "yo quiero una michelada",
+  "type": "conjugation",
+  "kept": true
+ },
+ {
+  "learner": "el ceviche es muy rica",
+  "fixed": "el ceviche es muy rico",
+  "type": "agreement",
+  "kept": true
+ },
+ {
+  "learner": "soy lleno",
+  "fixed": "estoy lleno",
+  "type": "ser/estar",
+  "kept": true
+ },
+ {
+  "learner": "soy cansado porque trabajo mucho",
+  "fixed": "estoy cansado porque trabajo mucho",
+  "type": "ser/estar",
+  "kept": true
+ },
+ {
+  "learner": "nosotros va al parque los domingos",
+  "fixed": "nosotros vamos al parque los domingos",
+  "type": "conjugation",
+  "kept": true
+ },
+ {
+  "learner": "ayer yo como con mi mamá",
+  "fixed": "ayer yo comí con mi mamá",
+  "type": "tense",
+  "kept": true
+ },
+ {
+  "learner": "estoy embarazado porque mi español es malo",
+  "fixed": "estoy avergonzado porque mi español es malo",
+  "type": "false-friend",
+  "kept": true
+ },
+ {
+  "learner": "la problema es que no tengo tiempo",
+  "fixed": "el problema es que no tengo tiempo",
+  "type": "gender",
+  "kept": true
+ },
+ {
+  "learner": "mi comida favorito es la pizza",
+  "fixed": "mi comida favorita es la pizza",
+  "type": "agreement",
+  "kept": true
+ },
+ {
+  "learner": "no me gusta el chile, es mucho picante",
+  "fixed": "no me gusta el chile, es muy picante",
+  "type": "muy/mucho",
+  "kept": true
+ },
+ {
+  "learner": "quiero tres tacos por llevar",
+  "fixed": "quiero tres tacos para llevar",
+  "type": "por/para",
+  "kept": true
+ },
+ {
+  "learner": "el sábado voy comer en un restaurante",
+  "fixed": "el sábado voy a comer en un restaurante",
+  "type": "missing-a",
+  "kept": true
+ },
+ {
+  "learner": "ayer yo voy al mercado",
+  "fixed": "ayer yo fui al mercado",
+  "type": "tense",
+  "kept": true
+ },
+ {
+  "learner": "el fin de semana pasado yo visité mi abuela",
+  "fixed": "el fin de semana pasado yo visité a mi abuela",
+  "type": "personal-a",
+  "kept": true
+ },
+ {
+  "learner": "la película fue muy bueno",
+  "fixed": "la película fue muy buena",
+  "type": "agreement",
+  "kept": true
+ },
+ {
+  "learner": "el domingo nosotros vamos a la playa por nadar",
+  "fixed": "el domingo nosotros vamos a la playa para nadar",
+  "type": "por/para",
+  "kept": true
+ },
+ {
+  "learner": "quiero viajar por camión",
+  "fixed": "quiero viajar en camión",
+  "type": "preposition",
+  "kept": true
+ },
+ {
+  "learner": "yo tiene dos maletas grande",
+  "fixed": "yo tengo dos maletas grandes",
+  "type": "conjugation+agreement",
+  "kept": true
+ },
+ {
+  "learner": "las pirámides es muy interesante",
+  "fixed": "las pirámides son muy interesantes",
+  "type": "agreement-number",
+  "kept": true
+ },
+ {
+  "learner": "en mi país nosotros no tiene esta fiesta",
+  "fixed": "en mi país nosotros no tenemos esta fiesta",
+  "type": "conjugation",
+  "kept": true
+ },
+ {
+  "learner": "las flores es muy bonito",
+  "fixed": "las flores son muy bonitas",
+  "type": "agreement",
+  "kept": true
+ },
+ {
+  "learner": "yo quiero poner un foto de mi abuelo",
+  "fixed": "yo quiero poner una foto de mi abuelo",
+  "type": "gender",
+  "kept": true
+ },
+ {
+  "learner": "soy emocionado para ver el panteón",
+  "fixed": "estoy emocionado por ver el panteón",
+  "type": "ser/estar+por/para",
+  "kept": true
+ },
+ {
+  "learner": "yo no sabe bailar",
+  "fixed": "yo no sé bailar",
+  "type": "conjugation",
+  "kept": true
+ },
+ {
+  "learner": "me gusta mucho las canciones de mariachi",
+  "fixed": "me gustan mucho las canciones de mariachi",
+  "type": "gustar-plural",
+  "kept": true
+ },
+ {
+  "learner": "la fiesta fue muy divertido",
+  "fixed": "la fiesta fue muy divertida",
+  "type": "agreement",
+  "kept": true
+ },
+ {
+  "learner": "toco el guitarra un poco",
+  "fixed": "toco la guitarra un poco",
+  "type": "gender",
+  "kept": true
+ },
+ {
+  "learner": "hoy es frío en mi ciudad",
+  "fixed": "hoy hace frío en mi ciudad",
+  "type": "weather-hacer",
+  "kept": true
+ },
+ {
+  "learner": "estoy calor",
+  "fixed": "tengo calor",
+  "type": "tener-calor",
+  "kept": true
+ },
+ {
+  "learner": "los montañas son muy bonitos",
+  "fixed": "las montañas son muy bonitas",
+  "type": "gender",
+  "kept": true
+ },
+ {
+  "learner": "me gusta caminar en el montaña",
+  "fixed": "me gusta caminar en la montaña",
+  "type": "gender",
+  "kept": true
+ },
+ {
+  "learner": "cuando yo era niño, yo jugué béisbol todos los veranos",
+  "fixed": "cuando yo era niño, yo jugaba béisbol todos los veranos",
+  "type": "imperfect",
+  "kept": true
+ },
+ {
+  "learner": "si yo tengo tiempo, yo iría al estadio Azteca",
+  "fixed": "si yo tuviera tiempo, yo iría al estadio Azteca",
+  "type": "conditional",
+  "kept": true
+ },
+ {
+  "learner": "el partido fue muy emocionado",
+  "fixed": "el partido fue muy emocionante",
+  "type": "word-form",
+  "kept": true
+ },
+ {
+  "learner": "espero que mi equipo gana este año",
+  "fixed": "espero que mi equipo gane este año",
+  "type": "subjunctive",
+  "kept": true
+ },
+ {
+  "learner": "ayer nadé por dos horas y ahora soy muy cansado",
+  "fixed": "ayer nadé por dos horas y ahora estoy muy cansado",
+  "type": "ser/estar",
+  "kept": true
+ },
+ {
+  "learner": "ayer yo comí dos tamal",
+  "fixed": "ayer yo comí dos tamales",
+  "type": "plural",
+  "kept": true
+ },
+ {
+  "learner": "yo gusto mucho la horchata",
+  "fixed": "me gusta mucho la horchata",
+  "type": "gustar",
+  "kept": true
+ },
+ {
+  "learner": "yo trabaja en una oficina",
+  "fixed": "yo trabajo en una oficina",
+  "type": "conjugation",
+  "kept": true
+ },
+ {
+  "learner": "mi esposa es muy simpático",
+  "fixed": "mi esposa es muy simpática",
+  "type": "agreement",
+  "kept": true
+ },
+ {
+  "learner": "tengo dos hijos. Ellos es pequeños",
+  "fixed": "tengo dos hijos. Ellos son pequeños",
+  "type": "conjugation",
+  "kept": true
+ },
+ {
+  "learner": "busco un hotel barato pero limpio que está cerca del centro",
+  "fixed": "busco un hotel barato pero limpio que esté cerca del centro",
+  "type": "subjunctive",
+  "kept": true
+ },
+ {
+  "learner": "hace dos años yo he ido a Cancún",
+  "fixed": "hace dos años fui a Cancún",
+  "type": "tense",
+  "kept": true
+ },
+ {
+  "learner": "me gusta las calaveras",
+  "fixed": "me gustan las calaveras",
+  "type": "gustar-plural",
+  "kept": true
+ },
+ {
+  "learner": "la altar es bonito",
+  "fixed": "el altar es bonito",
+  "type": "gender",
+  "kept": true
+ },
+ {
+  "learner": "si tendría más tiempo, aprendería a tocar la guitarra",
+  "fixed": "si tuviera más tiempo, aprendería a tocar la guitarra",
+  "type": "subjunctive",
+  "kept": true
+ },
+ {
+  "learner": "me gustaría que tú me enseñas a bailar cumbia",
+  "fixed": "me gustaría que tú me enseñaras a bailar cumbia",
+  "type": "subjunctive",
+  "kept": true
+ },
+ {
+  "learner": "ayer llovió mucho y yo no salgo de casa",
+  "fixed": "ayer llovió mucho y yo no salí de casa",
+  "type": "tense",
+  "kept": true
+ },
+ {
+  "learner": "quiero nadar en una cenote",
+  "fixed": "quiero nadar en un cenote",
+  "type": "gender",
+  "kept": true
+ },
+ {
+  "learner": "es muy lejos de aquí?",
+  "fixed": "¿está muy lejos de aquí?",
+  "type": "ser/estar",
+  "kept": true
+ },
+ {
+  "learner": "yo juego fútbol los sabado",
+  "fixed": "yo juego fútbol los sábados",
+  "type": "plural",
+  "kept": true
+ },
+ {
+  "learner": "no me gusta correr, es aburrida",
+  "fixed": "no me gusta correr, es aburrido",
+  "type": "agreement",
+  "kept": true
+ },
+ {
+  "learner": "cuando era joven, yo salí todos los fines de semana",
+  "fixed": "cuando era joven, yo salía todos los fines de semana",
+  "type": "imperfect",
+  "kept": true
+ },
+ {
+  "learner": "ojalá que no llueve el sábado",
+  "fixed": "ojalá que no llueva el sábado",
+  "type": "subjunctive",
+  "kept": true
+ },
+ {
+  "learner": "los camarones estaba muy ricos",
+  "fixed": "los camarones estaban muy ricos",
+  "type": "conjugation",
+  "kept": true
+ }
+]

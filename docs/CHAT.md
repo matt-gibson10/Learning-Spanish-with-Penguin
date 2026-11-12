@@ -5,9 +5,11 @@ with a sombrero, **only in Spanish**. Penguin keeps to the topic, answers at you
 question, gently fixes real mistakes in your last message, and offers 2–3 things you could say next. It runs on a
 small open-source model **on this laptop, offline**. Claude can be used instead if an API key is set.
 
-> **Penguin's Spanish is usually right but not perfect.** It is a 4-billion-parameter model. Expect an occasional
-> slip (about 1 in 20 replies in testing, e.g. *"¡El tacos de pescado son deliciosos!"*) and once in a while an odd
-> English translation. The corrections of *your* Spanish are the most reliable part (see the benchmark).
+> **Penguin's Spanish is usually right but not perfect, and he can get facts about Mexico wrong.** It is a
+> 4-billion-parameter model. Expect an occasional slip (about 1 in 20 replies in testing, e.g. *"¡El tacos de
+> pescado son deliciosos!"*), now and then a loose English translation, and invented details about places,
+> dishes and prices that are not on the topic's fact sheet. See docs/CHAT_EVAL.md for the full evaluation and
+> "Fixes from the evaluation" below for what changed. Use the Claude backend for anything you must trust.
 
 ## Setup (once, ~2.5 GB download)
 
@@ -45,11 +47,19 @@ web/js/chat.js ──POST /api/chat──▶ server/chat.py ──┬─ slot 0:
   time. Splitting them was the biggest quality win. When one prompt had to reply *and* correct, Qwen3-4B caught 1
   of 6 test mistakes. The dedicated check (temperature 0) catches 6/6, and in testing raised no false alarm on
   correct sentences.
-* **The check rewrites, the server judges.** The check returns the learner's sentence with only grammar fixed
-  (copied unchanged if it is already right). `server/chat.py` turns that into a `correction` only if the change is
-  real. It ignores accents, ¿¡, punctuation, case and subject pronouns, rejects total rewrites, and rejects word
-  swaps (a "fix" of *aguachile* → *aguacate* is dropped; *rica → rico*, *voy → fui*, *soy → estoy* pass). English
-  messages are never "corrected".
+* **The check rewrites, the server judges.** The check first lists the mistakes (`mistakes`: "es -> son"), then
+  returns the learner's sentence with exactly those fixed (`fixed`), then one line why (`why_en`). If it named a
+  mistake but copied the sentence unchanged, a second pass is asked to apply it. `make_correction` turns that into
+  a `correction` only if the change is real: it ignores accents, ¿¡, punctuation, case and subject pronouns;
+  rejects total rewrites, word swaps (*aguachile* → *aguacate*, *rentar* → *alquilar*) and fixes that delete a
+  word (*oy ase mucho calor* → *oyen mucho calor*); never removes a Mexican word (*ahorita, carro, celular, jugo,
+  camión, platicar, rentar, órale…*); drops anything with a Spain/voseo form or a `why_en` that says "correct".
+  New words may be inflections (*jugué → jugaba*, *mucho → muchas*) or false-friend fixes (*embarazado →
+  avergonzado*). **`why_en` is only shown when the rule it names is visible in the change** (plural/singular,
+  ser/estar, gustar, tense, por/para, muy/mucho, personal *a*, tener/hacer; a gender claim needs the course
+  lexicon to agree; every quoted word must be in the sentence). Otherwise it is replaced by an always-true line
+  built from the diff: *"Small fix: es → son; bonito → bonitas."* or *"la → el: mar is masculine."* (lexicon
+  confirmed). English messages and help requests (*no entiendo*, *¿cómo se dice…?*) are never "corrected".
 * **Constrained JSON.** Both requests use JSON-schema constrained decoding (llama.cpp grammar), so the output is
   always valid JSON of the right shape (24/24 in every benchmark run). Strings are length-capped and may not start
   with a space, which once caused a run-away string. The server still validates: if JSON fails or `reply_es` is
@@ -58,10 +68,29 @@ web/js/chat.js ──POST /api/chat──▶ server/chat.py ──┬─ slot 0:
 * **Spanish-only guard.** `reply_es` is checked for English words and for stray non-Latin tokens (small models
   sometimes leak e.g. a Chinese or Thai character); either triggers the retry. Stray look-alike characters in
   `reply_en` are repaired.
-* **Prompt.** Built from the topic's `persona_es`, `scenario_en`, `subtopics` and `vocab` plus the level rules
-  (1: present tense, 1–2 sentences ≤ 10 words, common words, one question; 2: + *ir a*, *gustar*, simple past;
-  3: natural but clear). It also says: Mexican Spanish, Spanish only, stay in character, refuse off-topic questions
-  kindly and steer back, reply in Spanish to English messages. History is cut to the last 12 turns.
+* **Prompt.** Built from the topic's `persona_es`, `scenario_en`, `subtopics`, `vocab`, **`facts_es`** (a short
+  sheet of checked, true facts per topic: "TRUE FACTS … never contradict them; if not sure, do not state it") and
+  `about_es` (for "Prefiero hablar de la playa."), plus the level rules (1: present tense only, no *te gustaría*,
+  1–2 sentences ≤ 10 words; 2: + *ir a*, *gustar*, simple past; 3: natural but clear). Rules: Mexican Spanish only
+  (no vosotros, no voseo, Mexican words listed), react then one new question, never repeat a question, remember
+  what the learner said, single quotes only, refuse off-topic kindly and always end with a question, "Aquí
+  hablamos español" for jailbreaks, common slips to avoid, help requests first, faithful `reply_en` (with notes:
+  camión = bus, limón = lime…), suggestions that answer the question just asked. No literal example suggestions
+  (the old "Sí, me gusta mucho." was copied into a third of all sets).
+* **The reminder** after the learner's last message is chosen by `detect_intent()`: *no entiendo / más despacio /
+  ¿mande?* → say the last message again, simpler, no new question; *¿cómo se dice X?* → "X se dice '…'" + a
+  question with the word; *¿qué significa X?* → one simple sentence; *¿y tú?* → answer about Penguin first;
+  *¿te acuerdas…?* → the learner's earlier messages are quoted so the model can answer from them. Otherwise it
+  lists the questions Penguin already asked ("do not ask these again") and an unused subtopic.
+* **Server checks, one retry** (`reply_problems`): English in `reply_es`, a repeated question
+  (`repeated_question`, ~85% the same words), a Spain/voseo form (`banned_forms`: vosotros, -áis/-éis, vos forms
+  such as *tenés, jugás, llamás* found by a generic stressed -ás/-és/-ís test with a whitelist, coche, piscina,
+  zumo, vale!…), a level-1 conditional/future (*¿Te gustaría…?*, *visitarás*), a sentence over 12/16 words at
+  level 1/2, a `reply_en` that is still Spanish, no question at all. The retry gets the problems as a note; the
+  attempt with fewer problems wins. A reply without a question gets the topic opener's question appended.
+  Suggestions with a banned form, English, a hyphen, a non-Spanish word or a cut-off end are dropped;
+  "me gusta" becomes "me gustan" after "¿Te gustan…?".
+* **History**: the last 40 turns (was 12), trimmed 10 at a time so the cached prompt prefix survives.
 * **Engines.** `server` (default when installed) runs `models\llama.cpp\llama-server.exe` as a hidden child
   process on a free localhost port. It sits in a Windows job object, so it dies with the app even on a crash or
   hard kill (tested). `python` runs llama-cpp-python in-process (one context per slot, the weights are shared via
@@ -80,7 +109,8 @@ web/js/chat.js ──POST /api/chat──▶ server/chat.py ──┬─ slot 0:
 {"available": true, "backend": "local", "model": "Qwen3-4B-Instruct-2507 (Q4_K_M)",
  "note": "Small open-source model running on this computer; works offline. Loaded and ready.",
  "backends": ["local"], "loaded": true, "loading": false, "engine": "server", "claude_model": null,
- "disclaimer": "Penguin's Spanish is usually right but not perfect.", "setup": null}
+ "disclaimer": "Penguin's Spanish is usually right but not perfect. Penguin can get facts about Mexico wrong (places, dishes, prices) — he's a small AI model, so check before you plan your trip.",
+ "setup": null}
 ```
 
 `backends` lists only the usable ones (`"local"` if a model and an engine are installed, `"claude"` if
@@ -207,6 +237,76 @@ The target was < 6 s per reply; this CPU gets 5–9 s with a model that is good 
 (Note the slip "Como ceviche" → "I love ceviche": the translation is a little loose. That is the kind of
 imperfection to expect.)
 
+## Fixes from the evaluation (docs/CHAT_EVAL.md)
+
+The evaluation (186 judged turns) found: 55% of direct questions about Mexico answered wrongly, repeated
+questions in 22% of turns, "no entiendo" ignored, everything older than 6 exchanges forgotten, 29% of correction
+reasons false and 15% of shown corrections wrong (*ahorita → ahora*), two voseo forms, level-1 *¿te gustaría?*.
+What was implemented (R-numbers are the evaluation's):
+
+| | what | where |
+|---|---|---|
+| R1 | `facts_es` per topic (50 short, checked facts; fewer and certain: no prices, no exact heights) + `about_es`, the content fixes of §9 (*e ir*, *futbol/beisbol*, *las luchas*, places with their states, no mountains in Yucatán, more weekend variety, Penguin already lives in Mexico), *El Santo* has a silver mask | `content/chat_topics.json`, `build_system` |
+| R2 | `detect_intent`: no entiendo / más despacio / ¿mande?, ¿cómo se dice X?, ¿qué significa X?, ¿y tú?, ¿te acuerdas…? → a specific reminder; no grammar check on help requests | `detect_intent`, `reminder`, `build_check` |
+| R3 | questions already asked + an unused subtopic in the reminder; retry on a repeated question, and on a third question in a row with the same opening (*¿Te gustaría saber…* ×7) | `repeated_question`, `same_question_stem`, `reply_problems` |
+| R4 | 40 turns of history, trimmed 10 at a time; the memory intent quotes what the learner said about himself | `_window`, `reminder` |
+| R5 | `banned_forms`: vosotros, -áis/-éis, voseo (list + generic stressed -ás/-és/-ís test), Spain words, Portuguese/Italian → retry the reply, drop the suggestion, drop the correction; Mexican words are protected in corrections | `banned_forms`, `PROTECTED_MX` |
+| R6 | **filter v2** (the v2 "mistakes first" check prompt was built and A/B tested, and lost — see below — so the evaluated check prompt stays; the second pass for a named-but-unapplied mistake only runs if a `mistakes` field is ever returned); filter v2 (keeps all 60 ideal fixes of the evaluation's error sentences, rejects word swaps, deletions, person changes, fixes that break gender agreement by the lexicon, *es los…*); `why_en` kept only when verifiable, else a neutral line from the diff | `CHECK_SYSTEM`, `check_local`, `make_correction`, `_why_claims_ok`, `neutral_why`, `breaks_agreement` |
+| R7 | the new reply prompt (+ sympathy, natural reactions, translation notes) | `build_system` |
+| R8 | level-1 check (conditional, future, perfect; sentence length per level) → retry; then *te gustaría → quieres* swapped on the server | `level_problems`, `present_tense_l1` |
+| R9 | suggestion filter (banned forms, English, hyphens, k/w/th/sh words, -ity/-tion words, cut-offs), *me gusta → me gustan* after *¿Te gustan…?*, final period | `suggestion_ok`, `fix_suggestion` |
+| R10 | `reply_en` must be English (no ¿¡ñ, no *se dice*, ≤ 1/3 Spanish words) and complete; *Claro.* → *Sure.* | `reply_en_ok`, `fix_reactions` |
+| R11 | off-topic: always end with a question (the opener's, or *¿Qué más te gusta de …?*) | `chat_local` |
+| R12 | single quotes only in prompts and reminders; JSON strings must end with . ! ? (a quote-fused token used to cut words: *cempasúch*) | `REPLY_SCHEMA`, `reminder` |
+| R14 | default `CHAT_THREADS` 6 (no priority change) | `_threads` |
+| R15 | the evaluation's 60 scripted errors as a model-free regression test of the filter; the live script is kept outside the default test run | `tests/fixtures/chat_errors.json`, `tests/test_chat.py` |
+| — | *¡Felicidades!* only for real news; the disclaimer says Penguin can get facts wrong | `fix_reactions`, `DISCLAIMER` |
+
+Skipped: R13 (sampling change, untested, so left as it was).
+
+**Before / after** (before = the evaluation's judged numbers; after = a targeted live run of 59 turns on the same
+model and machine, judged the same way: 11 fact questions, 5 help requests, 12 correction probes, 3 voseo/vosotros
+baits, and the evaluation's two 14-turn conversations c01 (playa L1) and c10 (deportes L3)). The live run used
+the code as it was then; the fixes added after it (marked ‡) are covered by unit tests on the exact failing
+outputs, not by a second live run.
+
+| | before (evaluation) | after (live run) |
+|---|---|---|
+| direct fact questions answered truly | 14 of 31 (45%) | **12 of 14 (86%)**; the 2 misses were not on a fact sheet (*El Santo's* "red and white" mask ‡ now on the sheet; "the best Mexico player") |
+| "no entiendo" / "más despacio" handled | 0 of 3 | **2 of 3** (the third rephrased but changed the question) |
+| "¿cómo se dice X?" good | 1 of 5 | **2 of 3** (one came back as just *towel* ‡: quotes removed from the reminder, a 1-word reply now retries) |
+| "¿qué significa X?" good | 5 of 6 | **2 of 2** |
+| memory after many exchanges | 0 of 3 | **1 of 2** (name + country right; the team said 9 turns earlier forgotten ‡: the memory reminder now quotes personal messages first) |
+| repeated question (same question again; automatic count on c01 + c10) | 4 of 28 (14%) | **1 of 28 (4%)**; but c10 opened 7 questions with *¿Te gustaría saber…* ‡ (now retried) |
+| voseo / vosotros / Spain words in replies and suggestions | 3 of 186 | **0 of 59** (incl. the *los sabado* and *¿cómo te llamas?* baits) |
+| level 1 conditional / future | 13 of 67 (19%) | **2 of 29 (7%)** ‡ the remaining *te gustaría* is now swapped to *quieres* |
+| corrections shown that are wrong or harmful | 8 of 52 (15%) | 3 of 13 live (*mucha → mucho sed*, *son → es los Canucks*, *vosotros vais → yo voy*) ‡ all 3 now rejected by the filter → **0 of 10** |
+| correction reasons (`why_en`) false | 13 of 45 (29%) | 1 of 13 live (*jugaba* called "past simple") ‡ now replaced by a neutral line → **0 of 10** |
+| *ahorita* "corrected" to *ahora* | yes | **no** (protected word) |
+| errors caught (recall) | 45 of 61 (74%) | 9 of 16 (56%) live with the v2 check prompt; **12 of 14** with the kept prompt + new filter (A/B below) |
+| off-topic refused | 4 of 5 | **2 of 2** (*2+2*, *World Cup in English*), but without a question ‡ (now appended) |
+| latency (busy machine, not representative) | median 24.6 s (8 threads, raised priority) | median 89 s (6 threads, normal priority, 100% CPU from other jobs) |
+
+**Recall is the open problem.** In the conversations the check missed *la agua es muy frío*, *Voy nadar
+mañana*, *espero que mi equipo gana* and *me gusta las calaveras*; replayed directly, the model returned
+*"frío -> frío"* for the first, and for *la playa es en Oaxaca* it also "corrected" the place (*Oaxaca →
+Sayulita*, rejected by the filter). The check is unstable at temperature 0 (the evaluation saw this too: the
+calaveras case is caught on some runs and not others). See the A/B below.
+
+**A/B of the check prompt** (same model, temperature 0, same new filter; 14 beginner errors taken from the live
+misses and the evaluation, plus 6 correct sentences with Mexican words and traps):
+
+| check prompt | errors fixed right | false alarms shown |
+|---|---|---|
+| **evaluated prompt (fixed → why_en): kept** | **12 / 14** | **0 / 6** |
+| R6 v2 "mistakes first" prompt | 9 / 14 | 1 / 6 (*el agua → el aguas*) |
+| R6 v2 without the "Penguin asked" context | 9 / 14 | 0 / 6 |
+
+The v2 prompt often wrote *"frío -> frío"* or *"none"* and left the error; its long rule list seems to distract the
+4B model. So `CHECK_SYSTEM` is the evaluated prompt again, and the gains come from the filter: on this sample it
+blocked *rentar → alquilar* and *son → es los Canucks*. The live 9-of-16 recall was measured with the v2 prompt;
+the kept prompt was not re-run live (CPU limit), only on this sample.
+
 ## Think out loud / translate
 
 The owner's request: *"a way for me to think out loud then it gets translated word by word for me"*. The `#/say`
@@ -271,13 +371,68 @@ All of it is in `server/chat.py`, section "think out loud".
   prompts, so going back to Chat does not re-read the topic).
 * Pure-function tests (no model): `.venv\Scripts\python.exe tests\test_chat.py` (pytest also works if installed).
 
-### Results (test set of 69 sentences)
+### Results
 
-*To be measured.* <!-- results table + 10 examples go here -->
+Test set: 69 sentences a beginner traveller/engineer would think out loud (needs, feelings, past/future,
+questions, 15 idioms, 5 mixed, 8 Spanish attempts with and without errors, short phrases, speech-recognition
+fillers). Because the laptop was at 100% CPU from other jobs, a stratified 41 were run (all idioms, mixed and
+Spanish attempts, plus 13 of the rest), then the failures and a regression sample were re-run after the fixes.
+Every output was judged by hand (correct and natural Mexican Spanish; pieces; tip true and useful).
+
+| | first run (41) | after fixes (failures + regressions re-run) | target |
+|---|---|---|---|
+| translation correct and natural | 34 / 41 (83%) | **40 / 41 (98%)** | ≥ 90% |
+| Peninsular / voseo forms | 0 (1 *alquilar*, not wrong but not Mexican) | **0** (*alquilar* → *rentar* swap) | 0 |
+| pieces valid (else `[]`) | 41 / 41 | **41 / 41** (16 / 16 in the re-run) | ≥ 85% |
+| tips shown / wrong | 29 / **2** (*'está el'* on *¿Dónde está el baño?*) | 10 of 16 / **0** | 0 wrong |
+| corrections on Spanish attempts | 3 of 5 errors (2 lost: model said "English") | **5 of 5**, all fixes right | |
+| latency (not representative) | median 34 s, mean 44 s | median 34 s | ≤ 6–8 s |
+
+What the fixes were (all in `server/chat.py`): idiom lines and guards for *I'm hot* (→ *tengo calor*, was *hace
+calor*), *nervous* (→ *nervioso*, was *tengo miedo*), *last night* (→ *anoche*, was *ayer*), *can I have the bill*
+(→ *¿Me trae la cuenta?*, was *¿Puedo tener la cuenta?*), *my phone is dead* (→ *se me acabó la pila*, was *está
+muerto*), *how do you say 'spoon'* (keep the English word; it had answered *¿Cómo se dice cuchara?*); the server
+decides `input_lang` itself (the model called *me gusta los tacos* English, so no correction was shown); a Spanish
+attempt must keep the learner's content words (*yo soy cansado* had become *Yo tengo sueño*); *me gusta los* →
+*me gustan los* fixed on the server; the estar tip no longer fires on articles or *¿dónde está…?*.
+
+**Latency.** Not representative: every run shared the CPU with other analysis jobs at 100% load, with 6 threads at
+normal priority. Short idioms took 17–33 s, longer sentences 30–60 s, the first request after a restart ~100–170 s.
+A short sentence is about 40 output tokens, a long one about 100; at the ~15–18 tokens/s this model reaches on a
+quiet machine (chat benchmark above) that would be roughly 3–7 s. Not measured on a quiet machine.
+
+**Ten real outputs** (local model, final code; pieces shown as `es = en`):
+
+| he said | `es` | `pieces` | `tip` |
+|---|---|---|---|
+| I'm looking for a pharmacy that's still open. | Busco una farmacia que aún esté abierta. | Busco = I'm looking for · una farmacia = a pharmacy · que aún esté abierta. = that's still open | No 'yo' needed: 'Busco' already means 'I'm looking for'. |
+| Can I have the bill, please? | ¿Me trae la cuenta, por favor? | ¿Me trae = can I have · la cuenta, = the bill · por favor? = please | — |
+| My phone is dead, can I charge it here? | Se me acabó la pila. ¿Puedo cargarlo aquí? | Se me acabó la pila. = my phone is dead · ¿Puedo = can I · cargarlo = charge it · aquí? = here | — |
+| I'm hot. | Tengo calor. | Tengo calor. = I'm hot | Spanish uses tener (to have) here: 'tengo calor' is literally 'have heat'. |
+| I'm embarrassed. | Me da pena. | Me da pena. = I'm embarrassed | Careful: 'embarazada' means pregnant. For embarrassed, Mexicans say 'me da pena'. |
+| It's raining cats and dogs. | Está lloviendo a cántaros. | Está lloviendo = it's raining · a cántaros. = cats and dogs | Idioms don't translate word for word: Spanish rains 'a cántaros' (by the jugful), not cats and dogs. |
+| I'm 32 years old. | Tengo 32 años. | Tengo = I have · 32 años. = 32 years old | For age Spanish uses tener: 'tengo 32 años' is literally 'have 32 years'. |
+| quiero ir to the beach mañana | Quiero ir a la playa mañana. | Quiero = I want · ir = to go · a la playa = to the beach · mañana. = tomorrow | No 'yo' needed: 'Quiero' already means 'I want'. |
+| yo soy cansado | Estoy cansado. (+ correction *estoy cansado*: "Use estar for how you feel") | Estoy = I am · cansado. = tired | For feelings and states Spanish uses estar, not ser: 'estoy cansado'. |
+| um so I think like maybe we could go to the beach or something | Creo que tal vez podamos ir a la playa. | Creo = I think · que = that · tal vez = maybe · podamos = we could · ir = to go · a la playa. = to the beach | No 'yo' needed: 'Creo' already means 'I think'. |
 
 ### Limits
 
-*To be filled after measurement.*
+* **One failure left in the judged set:** *I don't like crowded places* → *No me gusta el lugar con mucha gente*
+  ("the place with lots of people": singular, too specific). The first attempt had *No me gusta los lugares* (now
+  repaired on the server) and a garbled `en` (*"I don-than crowded places"*; a garbled `en` now triggers the retry).
+* 28 of the 69 sentences (mostly everyday needs, opinions and questions) were not run on the final code because
+  of the CPU limit; the 41 run cover every category.
+* Piece glosses are the model's and can be loose (*Tengo = I have* inside *tengo un poco de miedo*; *Ayer = last
+  night* before the *anoche* guard). The Spanish of each piece is always exactly the sentence's.
+* `es` is natural but sometimes not the most Mexican choice (*aún* where *todavía* is more common, *¿Puedo…?*
+  where *¿Me deja…?* is more polite). The guards cover the idioms in the test set, not every idiom.
+* Tips are rule-based: about 70% of sentences get one; whole areas (subjunctive, por/para, reflexives) have no rule
+  yet, so those sentences get none rather than a guess.
+* `input_lang` is the server's guess from word lists; an English sentence with a Spanish name may come back
+  "mixed". It only matters for whether a `correction` is shown.
+* Corrections in translate come from the same grammar check as chat (same filters and `why_en` rules).
+* Latency on this busy laptop is 20–60 s per sentence; on a quiet machine it should be a few seconds (estimate).
 
 ## Switching models
 
@@ -286,7 +441,8 @@ All of it is in `server/chat.py`, section "think out loud".
   `CHAT_MODEL_PATH`, the app uses `Qwen3-4B-Instruct-2507-Q4_K_M.gguf`, or else the first `.gguf` in `models\`.
 * A bigger model (e.g. Qwen3-8B or Qwen2.5-7B, both Apache-2.0) would be noticeably better but about 2× slower on
   this CPU (~15–20 s per reply).
-* Tuning env vars: `CHAT_ENGINE=server|python`, `CHAT_THREADS` (generation threads, default 8),
+* Tuning env vars: `CHAT_ENGINE=server|python`, `CHAT_THREADS` (generation threads, default 6 = the performance cores; 8 was
+  far slower whenever the laptop was busy),
   `CHAT_THREADS_BATCH` (prompt threads, default cores−2), `CHAT_CTX` (context per slot, default 4096),
   `CHAT_LLAMA_SERVER` (path to another llama-server build, e.g. a Vulkan or CUDA one on another PC),
   `CHAT_SERVER_ARGS` (extra llama-server flags).

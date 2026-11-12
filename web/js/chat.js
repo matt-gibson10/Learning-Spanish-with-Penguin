@@ -220,7 +220,7 @@
     });
     page.appendChild(grid);
     page.appendChild(status);
-    page.appendChild(h("p.small.muted.chat-disclaimer", `${App.penguinName()}'s Spanish is usually right but not perfect — he's a small AI model.`));
+    page.appendChild(h("p.small.muted.chat-disclaimer", `${App.penguinName()}'s Spanish is usually right but not perfect, and he can get facts about Mexico wrong — he's a small AI model.`));
     const st = await chatStatus();
     if (!page.isConnected) return;
     if (!st.available) status.appendChild(setupCard(st));
@@ -272,7 +272,7 @@
         if (!confirm("Start a new conversation on this topic? (This one will be cleared.)")) return;
         chats()[topic.id] = { messages: [], updated: Date.now() }; Store.save(); App.render();
       } }, "New conversation"),
-      h("span.small.muted.chat-disclaimer", `${App.penguinName()}'s Spanish is usually right but not perfect — he's a small AI model.`));
+      h("span.small.muted.chat-disclaimer", `${App.penguinName()}'s Spanish is usually right but not perfect, and he can get facts about Mexico wrong — he's a small AI model.`));
     page.appendChild(footer);
     let chipText = null;       // text a suggestion chip put in the box (an unedited chip isn't scored)
     function setSuggestions(list) {

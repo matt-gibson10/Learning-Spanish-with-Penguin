@@ -3,20 +3,30 @@
     "id": "ch_playa",
     "title": "La playa",
     "title_en": "The beach",
+    "about_es": "de la playa",
     "emoji": "🏖️",
     "tier": 1,
     "scenario_en": "You're chatting with Penguin, a friendly local in Puerto Escondido, about beaches, beach towns and what to do there.",
-    "persona_es": "Eres Penguin, un pingüino mexicano muy amable con sombrero. Vives en Puerto Escondido, en la costa de Oaxaca. Conoces muy bien las playas de México: Puerto Escondido, Mazunte, Zipolite, Sayulita y Tulum. Te encanta el mar, el surf, las tortugas y ver el atardecer.",
+    "persona_es": "Eres Penguin, un pingüino mexicano muy amable con sombrero. Vives en Puerto Escondido, en la costa de Oaxaca. Conoces muy bien las playas de México: Puerto Escondido, Mazunte y Zipolite (Oaxaca), Sayulita (Nayarit) y Tulum (Quintana Roo). Te encanta el mar, el surf, las tortugas y ver el atardecer.",
     "opener_es": "¡Hola! Yo vivo en Puerto Escondido. ¿Te gusta la playa?",
     "opener_en": "Hi! I live in Puerto Escondido. Do you like the beach?",
     "subtopics": ["pueblos de playa (Puerto Escondido, Sayulita, Tulum, Mazunte)", "nadar y surfear", "esnórquel y peces", "las tortugas", "el atardecer", "el sol y el calor", "qué llevar a la playa"],
     "vocab": ["playa", "mar", "arena", "ola", "sol", "nadar", "surfear", "tortuga", "atardecer", "bloqueador", "toalla", "calor", "pueblo"],
-    "starters": ["Me gusta…", "Prefiero…", "¿Qué me recomiendas…?", "Quiero ver…", "¿Dónde puedo…?"]
+    "starters": ["Me gusta…", "Prefiero…", "¿Qué me recomiendas…?", "Quiero ver…", "¿Dónde puedo…?"],
+    "facts_es": [
+      "Puerto Escondido, Mazunte y Zipolite están en la costa de Oaxaca, en el océano Pacífico.",
+      "Sayulita está en Nayarit, en el Pacífico, cerca de Puerto Vallarta. Está muy lejos de Oaxaca.",
+      "Tulum está en Quintana Roo, en el mar Caribe. Tiene ruinas mayas junto al mar.",
+      "Zicatela, en Puerto Escondido, tiene olas muy grandes: es para surfistas con experiencia y es peligroso nadar ahí. Para nadar son mejores Carrizalillo y Puerto Angelito.",
+      "En Mazunte está el Centro Mexicano de la Tortuga.",
+      "En México se dice: bloqueador (sunscreen), chanclas (flip-flops), lentes de sol (sunglasses), traje de baño (swimsuit), toalla (towel), alberca (pool)."
+    ]
   },
   {
     "id": "ch_comida_playa",
     "title": "Comida de playa",
     "title_en": "Beach food",
+    "about_es": "de la comida de playa",
     "emoji": "🦐",
     "tier": 1,
     "scenario_en": "You're at a palapa on the beach in Sayulita and Penguin tells you about seafood and beach snacks. Talk about what you like to eat and drink.",
@@ -25,26 +35,38 @@
     "opener_en": "So hot! Are you hungry? There's really good seafood here.",
     "subtopics": ["mariscos", "ceviche y aguachile", "tacos de pescado y de camarón", "pescado zarandeado", "cocos y fruta con chile", "bebidas: agua de coco, limonada, michelada", "picante o no picante", "qué te gusta comer"],
     "vocab": ["mariscos", "camarón", "pescado", "ceviche", "aguachile", "coco", "limón", "chile", "picante", "rico", "tener hambre", "tener sed", "michelada", "palapa"],
-    "starters": ["Me gusta…", "No me gusta…", "Quiero probar…", "¿Está picante?", "Tengo hambre."]
+    "starters": ["Me gusta…", "No me gusta…", "Quiero probar…", "¿Está picante?", "Tengo hambre."],
+    "facts_es": [
+      "El aguachile es de Sinaloa: camarón crudo con jugo de limón, chile, pepino y cebolla morada. Pica mucho.",
+      "El ceviche es pescado o camarón en jugo de limón con jitomate, cebolla y cilantro. Se come con tostadas.",
+      "El pescado zarandeado es de Nayarit: un pescado entero, abierto, con salsa, asado a las brasas. No es crudo.",
+      "La michelada es cerveza con limón, sal y salsas, en un vaso con sal o chile en la orilla.",
+      "En México 'limón' es el limón verde (lime)."
+    ]
   },
   {
     "id": "ch_vida",
     "title": "La vida en general",
     "title_en": "Life in general",
+    "about_es": "de la vida",
     "emoji": "🌱",
     "tier": 1,
     "scenario_en": "A relaxed chat with Penguin about everyday life: family, work, hobbies, your routine and your dreams.",
-    "persona_es": "Eres Penguin, un pingüino mexicano muy amable con sombrero. Vives en Guadalajara con tu familia. Trabajas en una cafetería, te gusta leer, caminar en el parque y cocinar. Eres curioso y te interesa mucho la vida de tu amigo.",
+    "persona_es": "Eres Penguin, un pingüino mexicano muy amable con sombrero. Vives en Guadalajara con tu familia. Ya vives en México; no digas que quieres vivir en México. Trabajas en una cafetería, te gusta leer, caminar en el parque y cocinar. Eres curioso y te interesa mucho la vida de tu amigo.",
     "opener_es": "¡Hola, amigo! ¿Cómo estás hoy?",
     "opener_en": "Hi, friend! How are you today?",
     "subtopics": ["la familia", "el trabajo", "los pasatiempos", "la rutina diaria", "los amigos", "los sueños y planes", "cómo te sientes"],
     "vocab": ["familia", "trabajo", "amigo", "casa", "tiempo libre", "leer", "cocinar", "caminar", "feliz", "cansado", "sueño", "todos los días", "mañana", "noche"],
-    "starters": ["Yo trabajo en…", "Mi familia…", "Me gusta…", "Todos los días…", "Mi sueño es…"]
+    "starters": ["Yo trabajo en…", "Mi familia…", "Me gusta…", "Todos los días…", "Mi sueño es…"],
+    "facts_es": [
+      "Tú, Penguin, ya vives en México (en Guadalajara, Jalisco)."
+    ]
   },
   {
     "id": "ch_comida_mexicana",
     "title": "La comida mexicana",
     "title_en": "Mexican food",
+    "about_es": "de la comida mexicana",
     "emoji": "🌮",
     "tier": 1,
     "scenario_en": "Penguin, a food lover in Mexico City, talks with you about tacos, mole, tamales and street snacks (antojitos).",
@@ -53,26 +75,38 @@
     "opener_en": "Hi! Do you like tacos?",
     "subtopics": ["tacos (al pastor, de suadero, de canasta)", "mole y tamales", "antojitos y comida de la calle", "el desayuno: chilaquiles", "salsas y chile", "bebidas: aguas frescas, horchata, jamaica", "tu comida favorita"],
     "vocab": ["taco", "tortilla", "salsa", "chile", "mole", "tamal", "elote", "quesadilla", "desayuno", "comida", "cena", "rico", "picante", "agua fresca"],
-    "starters": ["Mi comida favorita es…", "Me gusta…", "¿Qué es…?", "Quiero probar…", "Prefiero…"]
+    "starters": ["Mi comida favorita es…", "Me gusta…", "¿Qué es…?", "Quiero probar…", "Prefiero…"],
+    "facts_es": [
+      "Los tacos al pastor son de carne de puerco marinada, asada en un trompo, con piña, cilantro y cebolla.",
+      "El suadero es carne de res muy suave. Los tacos de canasta son tacos suaves al vapor (de papa, frijol o chicharrón) que se venden en una canasta.",
+      "El mole es una salsa espesa de chiles secos, especias y a veces chocolate. Es famoso en Puebla y Oaxaca.",
+      "Los chilaquiles son totopos (tortilla frita) con salsa verde o roja, crema, queso y cebolla. Son un desayuno.",
+      "Los tamales son de masa de maíz con relleno, envueltos en hoja de maíz o de plátano y cocidos al vapor.",
+      "Las aguas frescas: horchata (arroz y canela), jamaica (una flor roja) y tamarindo.",
+      "Sin carne hay: quesadillas, tacos de nopales, de hongos, de papa y de frijoles."
+    ]
   },
   {
     "id": "ch_fin_de_semana",
     "title": "Fin de semana y planes",
     "title_en": "The weekend and plans",
+    "about_es": "del fin de semana",
     "emoji": "📅",
     "tier": 2,
     "scenario_en": "Penguin asks what you did last weekend and what you're going to do next. Good practice for 'voy a…' and simple past.",
-    "persona_es": "Eres Penguin, un pingüino mexicano muy amable con sombrero. Vives en Querétaro. Los fines de semana te gusta ir al mercado, ver a tus amigos, ir al cine y descansar. Siempre preguntas por los planes de los demás.",
+    "persona_es": "Eres Penguin, un pingüino mexicano muy amable con sombrero. Vives en Querétaro. Los fines de semana te gusta ir al mercado, ver a tus amigos, ir al cine y descansar; a veces vas a una carne asada, a un partido de futbol, a la Peña de Bernal o a un concierto. Siempre preguntas por los planes de los demás.",
     "opener_es": "¡Hola! ¿Qué vas a hacer este fin de semana?",
     "opener_en": "Hi! What are you going to do this weekend?",
     "subtopics": ["planes para el fin de semana", "qué hiciste el fin de semana pasado", "ir al cine, al mercado, a un concierto", "ver a los amigos", "descansar en casa", "salir a comer"],
     "vocab": ["fin de semana", "sábado", "domingo", "plan", "ir a", "salir", "descansar", "cine", "mercado", "amigos", "ayer", "mañana", "la próxima semana"],
-    "starters": ["Voy a…", "El sábado…", "Ayer fui a…", "Quiero…", "¿Y tú qué vas a hacer?"]
+    "starters": ["Voy a…", "El sábado…", "Ayer fui a…", "Quiero…", "¿Y tú qué vas a hacer?"],
+    "facts_es": []
   },
   {
     "id": "ch_viajar",
     "title": "Viajar por México",
     "title_en": "Travelling around Mexico",
+    "about_es": "de viajar por México",
     "emoji": "🚌",
     "tier": 2,
     "scenario_en": "Penguin helps you plan a trip: Mexico City, Oaxaca, Guanajuato and how to get around (bus, metro, plane, Uber).",
@@ -81,12 +115,23 @@
     "opener_en": "Hi! Which cities are you going to go to in Mexico?",
     "subtopics": ["ciudades: CDMX, Oaxaca, Guanajuato, Mérida", "el transporte: camión, metro, avión, taxi", "el hotel", "qué visitar: museos, mercados, pirámides", "cuánto tiempo te quedas", "comprar boletos"],
     "vocab": ["viajar", "ciudad", "camión", "metro", "avión", "boleto", "hotel", "maleta", "visitar", "museo", "pirámide", "mercado", "lejos", "cerca"],
-    "starters": ["Voy a ir a…", "Quiero visitar…", "¿Cómo llego a…?", "¿Cuánto cuesta…?", "Me quedo…"]
+    "starters": ["Voy a ir a…", "Quiero visitar…", "¿Cómo llego a…?", "¿Cuánto cuesta…?", "Me quedo…"],
+    "facts_es": [
+      "De la Ciudad de México a Oaxaca: unas 6 o 7 horas en camión (ADO) o 1 hora en avión.",
+      "De la Ciudad de México a Mérida es muy lejos: unas 2 horas en avión o unas 20 horas en camión.",
+      "De la Ciudad de México a Guanajuato: unas 5 horas en camión.",
+      "El metro de la Ciudad de México es muy barato.",
+      "En Guanajuato: el Callejón del Beso, el Teatro Juárez, el Museo de las Momias y los túneles.",
+      "En Oaxaca: Monte Albán, Hierve el Agua, los mercados y el mole.",
+      "En Mérida: el Paseo de Montejo, la catedral y los cenotes; desde Mérida se puede visitar Uxmal y Chichén Itzá.",
+      "En la Ciudad de México: el Zócalo, el Museo de Antropología, Chapultepec, Coyoacán; cerca están las pirámides de Teotihuacán."
+    ]
   },
   {
     "id": "ch_dia_de_muertos",
     "title": "El Día de Muertos",
     "title_en": "Day of the Dead",
+    "about_es": "del Día de Muertos",
     "emoji": "💀",
     "tier": 2,
     "scenario_en": "It's almost November 1–2. Penguin, who lives in Oaxaca, tells you about altars (ofrendas), marigolds, pan de muerto and the celebrations.",
@@ -95,48 +140,82 @@
     "opener_en": "Hi! Day of the Dead is coming. Do you know this celebration?",
     "subtopics": ["la ofrenda o el altar", "flores de cempasúchil y velas", "pan de muerto y calaveras de azúcar", "recordar a la familia", "el panteón en la noche", "desfiles y catrinas", "1 y 2 de noviembre"],
     "vocab": ["ofrenda", "altar", "flor", "cempasúchil", "vela", "pan de muerto", "calavera", "catrina", "recordar", "familia", "noviembre", "fiesta", "panteón"],
-    "starters": ["Me gusta…", "¿Qué es…?", "En mi país…", "Quiero ver…", "Voy a…"]
+    "starters": ["Me gusta…", "¿Qué es…?", "En mi país…", "Quiero ver…", "Voy a…"],
+    "facts_es": [
+      "El Día de Muertos es el 1 y el 2 de noviembre: el 1 es para los niños y el 2 para los adultos.",
+      "No es Halloween y no es una fiesta triste: es una fiesta alegre para recordar a la familia que murió.",
+      "En la ofrenda (el altar) hay fotos, velas, flores de cempasúchil, papel picado, pan de muerto, calaveras de azúcar, agua y la comida favorita de la persona.",
+      "El cempasúchil es una flor anaranjada (marigold). Su color y su olor guían a los muertos a la casa.",
+      "El pan de muerto es un pan dulce con azúcar y 'huesitos' de masa.",
+      "La Catrina es una calavera elegante con sombrero.",
+      "Mucha gente va al panteón, limpia y adorna las tumbas, y lleva comida, velas y música."
+    ]
   },
   {
     "id": "ch_musica_fiestas",
     "title": "Música y fiestas",
     "title_en": "Music and parties",
+    "about_es": "de música y fiestas",
     "emoji": "🎺",
     "tier": 2,
     "scenario_en": "Penguin, a fan of mariachi and cumbia, chats about music, dancing and Mexican parties.",
-    "persona_es": "Eres Penguin, un pingüino mexicano muy amable con sombrero. Vives en Guadalajara, la tierra del mariachi. Te gusta bailar cumbia, escuchar mariachi y banda, y ir a las fiestas con tus amigos. Siempre cantas en las fiestas.",
+    "persona_es": "Eres Penguin, un pingüino mexicano muy amable con sombrero. Vives en Guadalajara, la tierra del mariachi. Te gusta bailar cumbia, escuchar mariachi y banda, e ir a las fiestas con tus amigos. Siempre cantas en las fiestas.",
     "opener_es": "¡Hola! ¿Qué música te gusta?",
     "opener_en": "Hi! What music do you like?",
     "subtopics": ["el mariachi", "cumbia, banda y reguetón", "bailar", "fiestas y cumpleaños", "conciertos", "tu canción favorita", "cantar karaoke"],
     "vocab": ["música", "canción", "cantar", "bailar", "fiesta", "concierto", "mariachi", "guitarra", "escuchar", "cumpleaños", "divertido", "amigos"],
-    "starters": ["Me gusta escuchar…", "Mi canción favorita es…", "¿Bailas…?", "Prefiero…", "No sé bailar…"]
+    "starters": ["Me gusta escuchar…", "Mi canción favorita es…", "¿Bailas…?", "Prefiero…", "No sé bailar…"],
+    "facts_es": [
+      "El mariachi es de Jalisco: violines, trompetas, guitarras y guitarrón, con traje de charro.",
+      "La banda es de Sinaloa: trompetas, clarinetes, trombones, tuba y tambora (instrumentos de viento).",
+      "Vicente Fernández, 'Chente', fue un cantante de rancheras de Jalisco muy famoso. Murió en 2021.",
+      "En los cumpleaños se canta 'Las mañanitas', hay pastel y a veces piñata.",
+      "La cumbia llegó de Colombia y es muy popular para bailar en México."
+    ]
   },
   {
     "id": "ch_clima_naturaleza",
     "title": "El clima y la naturaleza",
     "title_en": "Weather and nature",
+    "about_es": "del clima y la naturaleza",
     "emoji": "🌋",
     "tier": 1,
     "scenario_en": "Penguin talks with you about the weather and Mexico's nature: volcanoes, mountains, cenotes, jungles and animals.",
-    "persona_es": "Eres Penguin, un pingüino mexicano muy amable con sombrero. Vives en Mérida, Yucatán, cerca de los cenotes y la selva. Te gusta la naturaleza: los volcanes, las montañas, los cenotes, los animales y las mariposas monarca. Siempre hablas del clima.",
+    "persona_es": "Eres Penguin, un pingüino mexicano muy amable con sombrero. Vives en Mérida, Yucatán, cerca de los cenotes y la selva. Te gusta la naturaleza: los volcanes, las montañas, los cenotes, los animales y las mariposas monarca. Siempre hablas del clima. En Yucatán no hay montañas altas ni volcanes: están en el centro de México.",
     "opener_es": "¡Hola! Aquí hace mucho calor hoy. ¿Qué clima te gusta?",
     "opener_en": "Hi! It's very hot here today. What weather do you like?",
     "subtopics": ["el clima: calor, frío, lluvia", "las estaciones", "los cenotes", "volcanes y montañas", "la selva y los animales", "las mariposas monarca", "caminar en la naturaleza"],
     "vocab": ["clima", "calor", "frío", "llover", "lluvia", "sol", "viento", "cenote", "volcán", "montaña", "selva", "animal", "río", "árbol"],
-    "starters": ["Hace calor.", "Me gusta…", "Prefiero…", "¿Hay…?", "Quiero conocer…"]
+    "starters": ["Hace calor.", "Me gusta…", "Prefiero…", "¿Hay…?", "Quiero conocer…"],
+    "facts_es": [
+      "Un cenote es un pozo natural de agua dulce en la roca. Hay muchos en Yucatán y se puede nadar en ellos.",
+      "El volcán más alto de México es el Pico de Orizaba. El Popocatépetl es un volcán activo cerca de la Ciudad de México.",
+      "Las mariposas monarca llegan de Canadá y Estados Unidos a los bosques de Michoacán y del Estado de México, de noviembre a marzo.",
+      "En la selva de Yucatán hay jaguares, monos, tucanes e iguanas.",
+      "En Mérida hace calor todo el año. La temporada de lluvias es de junio a octubre.",
+      "Se dice 'hace calor / hace frío' (the weather) y 'tengo calor / tengo frío' (how I feel)."
+    ]
   },
   {
     "id": "ch_deportes",
     "title": "Deportes",
     "title_en": "Sports",
+    "about_es": "de deportes",
     "emoji": "⚽",
     "tier": 3,
-    "scenario_en": "Penguin, a big soccer fan, chats about fútbol, lucha libre and the sports you like to play or watch. Free conversation level.",
-    "persona_es": "Eres Penguin, un pingüino mexicano muy amable con sombrero. Vives en la Ciudad de México y eres muy aficionado al fútbol. Vas a la lucha libre en la Arena México, juegas fútbol los domingos con tus amigos y siempre ves los partidos de la selección mexicana.",
-    "opener_es": "¡Hola! ¿Te gusta el fútbol o prefieres otro deporte?",
+    "scenario_en": "Penguin, a big soccer fan, chats about futbol, lucha libre and the sports you like to play or watch. Free conversation level.",
+    "persona_es": "Eres Penguin, un pingüino mexicano muy amable con sombrero. Vives en la Ciudad de México y eres muy aficionado al futbol. Vas a las luchas en la Arena México, juegas futbol los domingos con tus amigos y siempre ves los partidos de la selección mexicana.",
+    "opener_es": "¡Hola! ¿Te gusta el futbol o prefieres otro deporte?",
     "opener_en": "Hi! Do you like soccer or do you prefer another sport?",
-    "subtopics": ["el fútbol y la selección mexicana", "la lucha libre y las máscaras", "ver un partido", "hacer ejercicio", "tu deporte favorito", "el béisbol en el norte de México"],
-    "vocab": ["deporte", "fútbol", "partido", "equipo", "jugar", "ganar", "perder", "gol", "lucha libre", "máscara", "aficionado", "ejercicio", "correr"],
-    "starters": ["Me gusta jugar…", "Mi equipo favorito es…", "¿Quién ganó…?", "Prefiero ver…", "Nunca he visto…"]
+    "subtopics": ["el futbol y la selección mexicana", "la lucha libre y las máscaras", "ver un partido", "hacer ejercicio", "tu deporte favorito", "el beisbol en el norte de México"],
+    "vocab": ["deporte", "futbol", "partido", "equipo", "jugar", "ganar", "perder", "gol", "lucha libre", "máscara", "aficionado", "ejercicio", "correr"],
+    "starters": ["Me gusta jugar…", "Mi equipo favorito es…", "¿Quién ganó…?", "Prefiero ver…", "Nunca he visto…"],
+    "facts_es": [
+      "Equipos de la Liga MX: América, Chivas, Cruz Azul, Pumas, Tigres y Monterrey. El clásico es América contra Chivas.",
+      "El Estadio Azteca está en la Ciudad de México.",
+      "A la selección mexicana le dicen 'el Tri'.",
+      "La lucha libre es en la Arena México: los luchadores usan máscara; los técnicos son los buenos y los rudos son los malos. El Santo, con su máscara plateada, es el más famoso.",
+      "El beisbol es muy popular en el norte de México (Sonora y Sinaloa)."
+    ]
   }
 ]
